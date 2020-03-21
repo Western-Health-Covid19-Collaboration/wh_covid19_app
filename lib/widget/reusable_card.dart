@@ -49,7 +49,9 @@ class ReusableCard extends StatelessWidget {
         ),
       ),
       onTap: () {
-        routeTo != null ? Navigator.pushNamed(context, routeTo) : null;
+        if(routeTo != null) {
+          Navigator.pushNamed(context, routeTo);
+        }
       },
     );
   }
