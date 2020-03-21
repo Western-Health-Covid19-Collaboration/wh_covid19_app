@@ -22,7 +22,7 @@ samples, guidance on mobile development, and a full API reference.
 
 When contributing to this repository, please first discuss the change you wish to make via slack, issue, or email or any other method with the owners of this repository before making a change.
 
-Currently the project is being primarily co-ordinated via the GDG Melbourne slack group.  You can join GDG Melbourne's slack via http://bit.ly/join_gdgslack .  DM `@luke.sleeman` on GDG Melbourne slack to be invited.
+Currently the project is being primarily co-ordinated via the GDG Melbourne slack group.  You can join GDG Melbourne's slack via http://bit.ly/join_gdgslack .  DM `@luke.sleeman` on GDG Melbourne slack to be invited to the channel being used for co-ordination.
 
 Designs are hosted in zeplin cloud.  DM `@luke.sleeman` on GDG Melbourne slack to be invited.
 
