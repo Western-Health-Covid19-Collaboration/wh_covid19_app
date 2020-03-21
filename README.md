@@ -1,15 +1,18 @@
 # EGBA
 
 > Everything
+
 > Gonna
+
 > Be
+
 > Alright
 
 A tool to safeguard the welfare of Western Health anaesthetists during COVID19 and provide instant access to the most up-to-date information for time-critical procedures to ensure optimal patient care.  Currently under development by a community of volunteers.
 
 ## Getting Started
 
-TODO:  Flutter specific information
+*TODO:  Flutter specific information*
 
 For help getting started with Flutter, view googles
 [online documentation](https://flutter.dev/docs), which offers tutorials,
@@ -32,6 +35,7 @@ Designs are hosted in zeplin cloud.  DM `@luke.sleeman` on GDG Melbourne slack t
 ## Authors
 
 Gregg Miller - Initial Development and ideas
+
 Matt Kelsh - Design
 
 ## License
