@@ -69,7 +69,7 @@ class HomePage extends StatelessWidget {
           'EGBA',
           style: TextStyle(color: Colors.black),
         )),
-        backgroundColor: Color.fromRGBO(249, 249, 249, 0.94),
+        //backgroundColor: Color.fromRGBO(249, 249, 249, 0.94),
       ),
       body: SingleChildScrollView(
         child: Container(
