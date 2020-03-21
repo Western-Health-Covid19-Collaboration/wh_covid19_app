@@ -5,7 +5,7 @@
 > Be
 > Alright
 
-A tool to safeguard the welfare of WH anaesthetists during COVID19 and provide instant access to the most up-to-date information for time-critical procedures to ensure optimal patient care.  Currently under development by a community of volunteers.
+A tool to safeguard the welfare of Western Health anaesthetists during COVID19 and provide instant access to the most up-to-date information for time-critical procedures to ensure optimal patient care.  Currently under development by a community of volunteers.
 
 ## Getting Started
 
@@ -17,7 +17,17 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Contributing
 
-TODO instructions for branching, etc
+When contributing to this repository, please first discuss the change you wish to make via slack, issue, or email or any other method with the owners of this repository before making a change.
+
+Currently the project is being primarily co-ordinated via the GDG Melbourne slack group.  You can join GDG Melbourne's slack via http://bit.ly/join_gdgslack .  DM `@luke.sleeman` on GDG Melbourne slack to be invited.
+
+Designs are hosted in zeplin cloud.  DM `@luke.sleeman` on GDG Melbourne slack to be invited.
+
+### Pull Request Process
+
+* Develop your work in a branch.  Branch names should be prefixed with `feature`, `tech`, or `bugfix` depending on what is being done in them.  eg:  `feature\update-readme`
+* Open a pull request into master.  Other contributors will comment on your code or approve it
+* Once your pull request has been approved, please merge into master.
 
 ## Authors
 
@@ -26,7 +36,7 @@ Matt Kelsh - Design
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE.md file for details
+This project is licensed under the Apache 2.0 - see the `LICENSE-2.0.txt` file for details.
 
 ## Acknowledgments
 
