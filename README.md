@@ -29,7 +29,7 @@ Designs are hosted in zeplin cloud.  DM `@luke.sleeman` on GDG Melbourne slack t
 ### Pull Request Process
 
 * Develop your work in a branch.  Branch names should be prefixed with `feature`, `tech`, or `bugfix` depending on what is being done in them.  eg:  `feature\update-readme`
-* Open a pull request into master.  Other contributors will comment on your code or approve it
+* Open a pull request into master.  Be sure to include a detailed description in your pull request.  Other contributors will comment on your code or approve it
 * Once your pull request has been approved, please merge into master.
 
 ## Authors
