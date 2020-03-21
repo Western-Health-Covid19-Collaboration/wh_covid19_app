@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wh_covid19/view/view_templates/image_view_template.dart';
-import 'package:wh_covid19/view/view_templates/list_view_template.dart';
 
 class ReusableCard extends StatelessWidget {
   /// Title of the card
@@ -12,7 +10,11 @@ class ReusableCard extends StatelessWidget {
   /// Color of the card
   final Color color;
 
-  ReusableCard({this.title, this.description, this.color = Colors.white})
+  /// Route to view
+  final String routeTo;
+
+  ReusableCard(
+      {this.title, this.description, this.color = Colors.white, this.routeTo})
       : assert(title != null);
 
   @override
@@ -47,24 +49,7 @@ class ReusableCard extends StatelessWidget {
         ),
       ),
       onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) =>
-                    ListViewTemplate(card: this, cards: <ReusableCard>[
-                      ReusableCard(
-                        title: "Test",
-                        description: "Test",
-                      ),
-                      ReusableCard(
-                        title: "Test1",
-                        description: "Test1",
-                      ),
-                      ReusableCard(
-                        title: "Test2",
-                        description: "Test2",
-                      )
-                    ])));
+        routeTo != null ? Navigator.pushNamed(context, routeTo) : null;
       },
     );
   }
