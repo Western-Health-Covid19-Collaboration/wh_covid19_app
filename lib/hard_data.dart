@@ -9,11 +9,13 @@ final List<ReusableCard> staffWelfare = [
     title: "Staff Welfare",
     description: "Description",
     color: Colors.white,
+    routeTo: "/staff_welfare",
   ),
   ReusableCard(
     title: "PPE",
     description: "Guides & Reccomandation",
     color: Colors.white,
+    routeTo: "/ppe",
   )
 ];
 

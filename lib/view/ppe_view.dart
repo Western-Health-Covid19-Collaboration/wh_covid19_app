@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:wh_covid19/widget/reusable_card.dart';
 
-class YourWelfareView extends StatelessWidget {
-  final title = 'Your Welfare';
+class PPEView extends StatelessWidget {
+  final title = "PPE";
   final color = Color.fromRGBO(255, 255, 255, 0.94);
 
   final cards = <ReusableCard>[
     ReusableCard(
-      title: "Find time to sleep",
-      description: "Description",
+      title: "Putting On",
+      description: "5 steps",
       color: Colors.white,
     ),
     ReusableCard(
-      title: "Speak to a Human",
+      title: "Taking Off",
       description: "Description",
       color: Colors.white,
-    ),
+    )
   ];
 
   @override
