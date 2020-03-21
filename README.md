@@ -44,4 +44,4 @@ This project is licensed under the Apache 2.0 - see the `LICENSE-2.0.txt` file f
 
 ## Acknowledgments
 
-🎩 Huge hat tip to everybody providing advice, helping out, etc including: Gregg Miller, Matt Kelsh, Mike Hughes,  Alessandro Favero Alessandro Favero Alessandro Favero, Maksim Lin, Brett Morgan, 
+🎩 Huge hat tip to everybody providing advice, helping out, etc including: Gregg Miller, Matt Kelsh, Mike Hughes,  Alessandro Favero, Maksim Lin, Brett Morgan, 
