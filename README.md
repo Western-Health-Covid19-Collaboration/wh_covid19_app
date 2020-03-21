@@ -1,6 +1,6 @@
 # EGBA
 
-> Everything
+> Everythings
 
 > Gonna
 
