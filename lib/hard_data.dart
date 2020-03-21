@@ -3,61 +3,70 @@ import 'package:flutter/material.dart';
 
 import 'widget/reusable_card.dart';
 
-final List<ReusableCard> cardsTwo = [
+// Staff Welfare card list composition
+final List<ReusableCard> staffWelfare = [
   ReusableCard(
-    title: "PPE Technique",
-    description: "3 guides",
+    title: "Staff Welfare",
+    description: "Description",
     color: Colors.white,
-    routeTo: '/ppe_technique',
   ),
   ReusableCard(
-    title: "Your Welfare",
-    description: "Vital info & contacts",
+    title: "PPE",
+    description: "Guides & Reccomandation",
     color: Colors.white,
-    routeTo: "/your_welfare",
   )
 ];
 
-// A list of three cards
-final List<ReusableCard> cardsThree = [
+// Intubation card list composition
+final List<ReusableCard> intubation = [
   ReusableCard(
-    title: "Step By Step Guidance",
-    description: "12 steps",
-    color: Color.fromRGBO(146, 211, 183, 1),
-    routeTo: "/sbs_guidance",
-  ),
-  ReusableCard(
-    title: "Checklists",
-    description: "12 steps",
+    title: "Infographic",
+    description: "SAS-COVID-19 Infographic",
     color: Color.fromRGBO(146, 211, 183, 1),
   ),
   ReusableCard(
-    title: "Alghorithm",
-    description: "12 steps",
+    title: "Intubation",
+    description: "Step by step",
+    color: Color.fromRGBO(146, 211, 183, 1),
+  ),
+  ReusableCard(
+    title: "Emergency",
+    description: "Checklist",
     color: Color.fromRGBO(146, 211, 183, 1),
   )
 ];
 
-// A list of four cards
-final List<ReusableCard> cardsFour = [
+// ICU card list composition
+final List<ReusableCard> icu = [
   ReusableCard(
-    title: "Strategy",
-    description: "12 steps",
+    title: "Ventilation",
+    description: "Description",
     color: Color.fromRGBO(143, 217, 255, 1),
   ),
   ReusableCard(
-    title: "Trubleshooting",
-    description: "12 steps",
+    title: "General Care",
+    description: "Description",
     color: Color.fromRGBO(143, 217, 255, 1),
   ),
   ReusableCard(
-    title: "ICU Tips",
-    description: "12 steps",
+    title: "Junior Staff",
+    description: "Education Resources",
     color: Color.fromRGBO(143, 217, 255, 1),
   ),
+];
+
+// Info card list composition
+final List<ReusableCard> info = [
   ReusableCard(
-    title: "ICU Tips",
-    description: "12 steps",
-    color: Color.fromRGBO(143, 217, 255, 1),
-  )
+    title: "Numbers",
+    description: "Important contacts",
+  ),
+  ReusableCard(
+    title: "WH COVID19",
+    description: "Daily Bullettin",
+  ),
+  ReusableCard(
+    title: "Recommendations",
+    description: "Descriptions",
+  ),
 ];

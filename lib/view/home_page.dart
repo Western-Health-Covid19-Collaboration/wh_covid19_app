@@ -22,17 +22,21 @@ class HomePage extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               CardContainer(
-                title: 'Look After Yourself',
-                cards: cardsTwo,
+                title: 'Staff Welfare & PPE',
+                cards: staffWelfare,
               ),
               CardContainer(
                 title: 'Intubations',
-                cards: cardsThree,
+                cards: intubation,
               ),
               CardContainer(
-                title: 'Ventilation',
-                cards: cardsFour,
+                title: 'ICU Non-Intesivist',
+                cards: icu,
               ),
+              CardContainer(
+                title: 'Additional Resources',
+                cards: info,
+              )
             ],
           ),
         ),

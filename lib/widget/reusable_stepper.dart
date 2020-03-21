@@ -8,20 +8,47 @@ class ReusableStepper extends StatefulWidget {
 class _ReusableStepperState extends State<ReusableStepper> {
   List<Step> steps = [
     Step(
-        title: const Text('Step 1'),
+        title: const Text('Hand Hygene'),
         isActive: true,
         state: StepState.indexed,
-        content: Text('Step 1 content')),
+        content: Text('Clean your hands carefully...')),
     Step(
-        title: const Text('Step 2'),
+        title: const Text('Gown'),
         isActive: true,
         state: StepState.indexed,
-        content: Text('Step 2 content')),
+        content: Image.asset(
+          "assets/images/gown_on.jpg",
+          fit: BoxFit.fill,
+        )),
     Step(
-        title: const Text('Step 3'),
+        title: const Text('Mask'),
         isActive: true,
         state: StepState.indexed,
-        content: Text('Step 3 content')),
+        content: Image.asset(
+          "assets/images/mask_on.jpg",
+          fit: BoxFit.fill,
+        )),
+    Step(
+        title: const Text('Eye Protection'),
+        isActive: true,
+        state: StepState.indexed,
+        content: Image.asset(
+          "assets/images/eye_protection_on.jpg",
+          fit: BoxFit.fill,
+        )),
+    Step(
+        title: const Text('Hand Hygene'),
+        isActive: true,
+        state: StepState.indexed,
+        content: Text('Clean your hands carefully...')),
+    Step(
+        title: const Text('Gloves'),
+        isActive: true,
+        state: StepState.indexed,
+        content: Image.asset(
+          "assets/images/gloves_on.jpg",
+          fit: BoxFit.fill,
+        )),
   ];
 
   int currentStep = 0;
@@ -39,8 +66,8 @@ class _ReusableStepperState extends State<ReusableStepper> {
         : setState(() => complete = true);
   }
 
-  void cancel(){
-    if(currentStep > 0) {
+  void cancel() {
+    if (currentStep > 0) {
       goToStep(currentStep - 1);
     }
   }
