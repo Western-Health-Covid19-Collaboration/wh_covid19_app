@@ -10,19 +10,27 @@ class HomePage extends StatelessWidget {
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
+            automaticallyImplyLeading: false,
+            expandedHeight: 100,
+            bottom: PreferredSize(
+              preferredSize: Size.fromHeight(50),
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Text(
+                'Weastern Healt',
+                style: appBarTextStyle,
+              ),
+              IconButton(icon: Icon(Icons.info_outline), onPressed: (){},)
+                              ],
+                            ),
+                          ),
+            ),
             backgroundColor: appBarColor,
             iconTheme: appBarIconTheme,
             floating: true,
-            title: Text(
-              'Weastern Healt',
-              style: appBarTextStyle,
-            ),
-            actions: <Widget>[
-              IconButton(
-                icon: Icon(Icons.info_outline),
-                onPressed: () {},
-              )
-            ],
           ),
           SliverList(
             delegate: SliverChildListDelegate([
