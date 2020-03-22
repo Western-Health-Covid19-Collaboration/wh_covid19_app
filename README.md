@@ -10,6 +10,8 @@
 
 A tool to safeguard the welfare of Western Health anaesthetists during COVID19 and provide instant access to the most up-to-date information for time-critical procedures to ensure optimal patient care.  Currently under development by a community of volunteers.
 
+[![Codemagic build status](https://api.codemagic.io/apps/5e75f4bfdd1d6d000a198e90/5e75f4bfdd1d6d000a198e8f/status_badge.svg)](https://codemagic.io/apps/5e75f4bfdd1d6d000a198e90/5e75f4bfdd1d6d000a198e8f/latest_build)
+
 ## Getting Started
 
 *TODO:  Flutter specific information*
@@ -30,6 +32,7 @@ Designs are hosted in zeplin cloud.  DM `@luke.sleeman` on GDG Melbourne slack t
 
 * Develop your work in a branch.  Branch names should be prefixed with `feature`, `tech`, or `bugfix` depending on what is being done in them.  eg:  `feature\update-readme`
 * Open a pull request into master.  Be sure to include a detailed description in your pull request.  Other contributors will comment on your code or approve it
+* Please be sure to note the build status of your PR reported by the Codemagic CI
 * Once your pull request has been approved, please merge into master.
 
 ## Authors
