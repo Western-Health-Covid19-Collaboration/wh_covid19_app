@@ -52,6 +52,8 @@ class HomePage extends StatelessWidget {
                 title: 'ICU Non-Intensivist',
                 cards: icu,
               ),
+              // Make sure the bottom CardContainer has room to breathe.
+              SizedBox(height: 16),
             ]),
           ),
         ],
