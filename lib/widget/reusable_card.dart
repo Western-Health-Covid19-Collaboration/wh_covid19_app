@@ -15,7 +15,7 @@ class ReusableCard extends StatelessWidget {
   final String routeTo;
 
   ReusableCard(
-      {this.title, this.description, this.color = Colors.white, this.routeTo})
+      {@required this.title, this.description, this.color = Colors.white, this.routeTo})
       : assert(title != null);
 
   @override

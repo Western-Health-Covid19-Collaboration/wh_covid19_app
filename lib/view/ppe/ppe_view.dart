@@ -3,18 +3,18 @@ import 'package:wh_covid19/style.dart';
 import 'package:wh_covid19/widget/reusable_card.dart';
 
 class PPEView extends StatelessWidget {
-  final title = "PPE";
+  final title = 'PPE';
   final color = Color.fromRGBO(255, 255, 255, 0.94);
 
   final cards = <ReusableCard>[
     ReusableCard(
-      title: "Putting On",
-      description: "5 steps",
+      title: 'Putting On',
+      description: '5 steps',
       color: Colors.white,
     ),
     ReusableCard(
-      title: "Taking Off",
-      description: "Description",
+      title: 'Taking Off',
+      description: 'Description',
       color: Colors.white,
     )
   ];
