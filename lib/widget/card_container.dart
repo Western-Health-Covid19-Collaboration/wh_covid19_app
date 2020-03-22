@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:wh_covid19/style.dart';
 import 'package:wh_covid19/widget/reusable_card.dart';
@@ -18,7 +20,7 @@ class CardContainer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          SizedBox(height: 32),
+          SizedBox(height: 25),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text(
@@ -27,7 +29,6 @@ class CardContainer extends StatelessWidget {
             ),
           ),
           cardsLayout(),
-          
         ],
       ),
     );
@@ -46,18 +47,40 @@ class CardContainer extends StatelessWidget {
     switch (cards.length) {
       case 2:
         return Row(
-          children: expandedCards,
+          children: <Widget>[
+            SizedBox(
+              width: 16,
+            ),
+            expandedCards[0],
+            SizedBox(width: 8),
+            expandedCards[1],
+            SizedBox(
+              width: 16,
+            ),
+          ],
         );
         break;
       case 3:
         return Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
+            Row(children: <Widget>[
+              SizedBox(
+                width: 16,
+              ),
+              expandedCards[0],
+              SizedBox(
+                width: 16,
+              ),
+            ]),
             Row(
-              children: <Widget>[expandedCards[0]],
-            ),
-            Row(
-              children: expandedCards.sublist(1, 3),
+              children: <Widget>[
+                SizedBox(width: 16,),
+                expandedCards[1],
+                SizedBox(width: 8,),
+                expandedCards[2],
+                SizedBox(width: 16,)
+              ],
             )
           ],
         );
@@ -67,10 +90,22 @@ class CardContainer extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Row(
-              children: expandedCards.sublist(0, 2),
+              children: <Widget>[
+                SizedBox(width: 16,),
+                expandedCards[0],
+                SizedBox(width: 8,),
+                expandedCards[1],
+                SizedBox(width: 16,)
+              ],
             ),
             Row(
-              children: expandedCards.sublist(2, 4),
+              children: <Widget>[
+                SizedBox(width: 16,),
+                expandedCards[2],
+                SizedBox(width: 8,),
+                expandedCards[3],
+                SizedBox(width: 16,)
+              ],,
             )
           ],
         );

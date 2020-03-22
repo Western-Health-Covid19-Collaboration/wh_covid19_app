@@ -14,19 +14,22 @@ class HomePage extends StatelessWidget {
             expandedHeight: 100,
             bottom: PreferredSize(
               preferredSize: Size.fromHeight(50),
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                Text(
-                'Weastern Healt',
-                style: appBarTextStyle,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      'Weastern Healt',
+                      style: appBarTextStyle,
+                    ),
+                    IconButton(
+                      icon: Icon(Icons.info_outline),
+                      onPressed: () {},
+                    )
+                  ],
+                ),
               ),
-              IconButton(icon: Icon(Icons.info_outline), onPressed: (){},)
-                              ],
-                            ),
-                          ),
             ),
             backgroundColor: appBarColor,
             iconTheme: appBarIconTheme,

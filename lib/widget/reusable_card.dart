@@ -22,7 +22,7 @@ class ReusableCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Card(
-        margin: EdgeInsets.fromLTRB(12, 5, 12, 5),
+        //margin: EdgeInsets.fromLTRB(12, 5, 12, 5),
         color: color,
         elevation: 6,
         shape: RoundedRectangleBorder(
@@ -30,7 +30,7 @@ class ReusableCard extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(12),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
