@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wh_covid19/style.dart';
 import 'package:wh_covid19/widget/reusable_card.dart';
 
 class PPEView extends StatelessWidget {
@@ -23,11 +24,11 @@ class PPEView extends StatelessWidget {
     return Scaffold(
       backgroundColor: color,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: appBarColor,
+        iconTheme: appBarIconTheme,
         title: Text(
           title,
-          style: TextStyle(color: Colors.black),
+          style: appBarTextStyle,
         ),
       ),
       body: Container(

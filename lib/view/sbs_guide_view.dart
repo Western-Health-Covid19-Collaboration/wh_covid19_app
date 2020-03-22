@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wh_covid19/style.dart';
 import 'package:wh_covid19/widget/reusable_stepper.dart';
 
 class SBSGuideView extends StatelessWidget {
@@ -8,13 +9,13 @@ class SBSGuideView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: color,
+      backgroundColor: appBarColor,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: appBarIconTheme,
         title: Text(
           title,
-          style: TextStyle(color: Colors.black),
+          style: appBarTextStyle,
         ),
       ),
       body: Container(

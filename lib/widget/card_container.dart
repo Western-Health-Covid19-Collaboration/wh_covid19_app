@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wh_covid19/style.dart';
 import 'package:wh_covid19/widget/reusable_card.dart';
 
 class CardContainer extends StatelessWidget {
@@ -17,14 +18,16 @@ class CardContainer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
+          SizedBox(height: 32),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text(
               title,
-              style: TextStyle(fontSize: 22),
+              style: cardContainerTextStyle,
             ),
           ),
           cardsLayout(),
+          
         ],
       ),
     );
@@ -33,7 +36,6 @@ class CardContainer extends StatelessWidget {
   // Generate the layout of the cards based on the qty of cards
   // Allowed: 2 cards, 3 cards, 4 cards
   Widget cardsLayout() {
-
     // Transform the card to an expanded
     var expandedCards = cards
         .map((c) => Expanded(
