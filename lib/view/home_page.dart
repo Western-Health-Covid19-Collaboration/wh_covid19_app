@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
-                      'Weastern Healt',
+                      'Western Health',
                       style: appBarTextStyle,
                     ),
                     IconButton(
@@ -48,7 +48,7 @@ class HomePage extends StatelessWidget {
                 cards: intubation,
               ),
               CardContainer(
-                title: 'ICU Non-Intesivist',
+                title: 'ICU Non-Intensivist',
                 cards: icu,
               ),
             ]),
