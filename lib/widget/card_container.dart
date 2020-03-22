@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:wh_covid19/style.dart';
 import 'package:wh_covid19/widget/reusable_card.dart';
@@ -105,7 +103,7 @@ class CardContainer extends StatelessWidget {
                 SizedBox(width: 8,),
                 expandedCards[3],
                 SizedBox(width: 16,)
-              ],,
+              ],
             )
           ],
         );
