@@ -5,6 +5,9 @@ const Color appBarColor = Color(0xf0f9f9f9);
 const TextStyle appBarTextStyle = TextStyle(color: Colors.black, fontSize: 32);
 const IconThemeData appBarIconTheme = IconThemeData(color: Colors.black);
 
+// Colors
+const Color appBackground = Color(0xffecf3f0);
+
 // Scaffold bg style
 
 // Card Container style

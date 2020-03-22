@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:package_info/package_info.dart';
+import 'package:wh_covid19/routes.dart';
 import 'package:wh_covid19/style.dart';
 import 'package:wh_covid19/widget/reusable_card.dart';
 
@@ -7,10 +8,9 @@ class InfoView extends StatelessWidget {
   final title = 'Information';
   static final _cardHeight = 34.0;
   static final _cardColor = Colors.white;
-  static final routeName = '/info';
 
   static void navigateTo(BuildContext context) {
-    Navigator.pushNamed(context, routeName);
+    Navigator.pushNamed(context, Routes.info);
   }
 
   final topCards = <Widget>[
@@ -42,6 +42,7 @@ class InfoView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: appBackground,
       appBar: AppBar(
         backgroundColor: appBarColor,
         iconTheme: appBarIconTheme,

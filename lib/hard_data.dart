@@ -1,5 +1,6 @@
 // A list of two cards
 import 'package:flutter/material.dart';
+import 'package:wh_covid19/routes.dart';
 
 import 'widget/reusable_card.dart';
 
@@ -9,13 +10,13 @@ final List<ReusableCard> staffWelfare = [
     title: 'PPE Technique',
     description: '3 guides',
     color: Colors.white,
-    routeTo: '/ppe',
+    routeTo: Routes.ppe,
   ),
   ReusableCard(
     title: 'Your Welfare',
     description: 'Vital info & contacts',
     color: Colors.white,
-    routeTo: '/staff_welfare',
+    routeTo: Routes.staffWelfare,
   )
 ];
 
