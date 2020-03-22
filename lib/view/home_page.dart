@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wh_covid19/hard_data.dart';
 import 'package:wh_covid19/style.dart';
+import 'package:wh_covid19/view/info_view.dart';
 import 'package:wh_covid19/widget/card_container.dart';
 
 class HomePage extends StatelessWidget {
@@ -25,7 +26,7 @@ class HomePage extends StatelessWidget {
                     ),
                     IconButton(
                       icon: Icon(Icons.info_outline),
-                      onPressed: () {},
+                      onPressed: () => InfoView.navigateTo(context),
                     )
                   ],
                 ),
