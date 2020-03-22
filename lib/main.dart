@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:wh_covid19/routes.dart';
+import 'package:wh_covid19/style.dart';
 import 'package:wh_covid19/view/home_page.dart';
 import 'package:wh_covid19/view/info_view.dart';
 import 'package:wh_covid19/view/ppe/ppe_view.dart';
@@ -14,16 +16,30 @@ class MyApp extends StatelessWidget {
       title: 'EGBA',
       theme: ThemeData(
         primaryColor: Colors.green,
-        backgroundColor: Color.fromRGBO(236, 243, 240, 1),
-        fontFamily: 'Inter'
+        backgroundColor: appBackground,
+        fontFamily: 'Inter',
       ),
-      initialRoute: '/',
+      initialRoute: Routes.home,
       routes: {
-        '/': (context) => HomePage(),
-        '/ppe': (context) => PPEView(),
-        '/staff_welfare': (context) => StaffWelfareView(),
-        '/sbs_guidance': (context) => SBSGuideView(),
-        '/info': (context) => InfoView(),
+        Routes.home: (context) => HomePage(),
+        Routes.ppe: (context) => PPEView(),
+        Routes.staffWelfare: (context) => StaffWelfareView(),
+        Routes.sbsGuidance: (context) => SBSGuideView(),
+      },
+      onGenerateRoute: (settings) {
+        // Use onGenerateRoute to set fullscreenDialog=true
+        switch (settings.name) {
+          case Routes.info:
+            return MaterialPageRoute<InfoView>(
+              builder: (context) => InfoView(),
+              fullscreenDialog: true,
+            );
+        }
+        // Fallback, won't be called unless an unknown route is called
+        return MaterialPageRoute<HomePage>(
+          builder: (context) => HomePage(),
+          fullscreenDialog: true,
+        );
       },
     );
   }

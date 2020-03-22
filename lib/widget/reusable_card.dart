@@ -45,8 +45,6 @@ class ReusableCard extends StatelessWidget {
                   title,
                   style: cardTitleTextStyle,
                 ),
-                if (description != null)
-                  Spacer(),
                 description != null ? Text(
                   description,
                   style: cardDescriptionTextStyle,
