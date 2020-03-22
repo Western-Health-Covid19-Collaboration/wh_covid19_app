@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.green,
         backgroundColor: Color.fromRGBO(236, 243, 240, 1),
+        fontFamily: 'Inter'
       ),
       initialRoute: '/',
       routes: {
