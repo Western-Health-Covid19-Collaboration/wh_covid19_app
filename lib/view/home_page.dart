@@ -31,6 +31,8 @@ class HomePage extends StatelessWidget {
             backgroundColor: appBarColor,
             iconTheme: appBarIconTheme,
             floating: true,
+            pinned: true,
+            snap: false,
           ),
           SliverList(
             delegate: SliverChildListDelegate([
