@@ -8,13 +8,13 @@ class StaffWelfareView extends StatelessWidget {
 
   final cards = <ReusableCard>[
     ReusableCard(
-      title: "Basic Tips",
-      description: "Description",
+      title: 'Basic Tips',
+      description: 'Description',
       color: Colors.white,
     ),
     ReusableCard(
-      title: "Pandemic Status",
-      description: "Phases & Recommendations",
+      title: 'Pandemic Status',
+      description: 'Phases & Recommendations',
       color: Colors.white,
     ),
   ];

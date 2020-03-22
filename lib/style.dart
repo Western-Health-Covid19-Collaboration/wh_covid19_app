@@ -16,7 +16,7 @@ const TextStyle cardTitleTextStyle = TextStyle(
   fontWeight: FontWeight.w600,
   fontStyle: FontStyle.normal,
   fontSize: 17.0,
-  fontFamily: "SFProText"
+  fontFamily: 'SFProText'
 );
 
 const TextStyle cardDescriptionTextStyle = TextStyle(
@@ -24,5 +24,5 @@ const TextStyle cardDescriptionTextStyle = TextStyle(
   fontWeight: FontWeight.w500,
   fontStyle: FontStyle.normal,
   fontSize: 12.0,
-  fontFamily: "SFProText"
+  fontFamily: 'SFProText'
 );

@@ -3,7 +3,7 @@ import 'package:wh_covid19/style.dart';
 import 'package:wh_covid19/widget/reusable_stepper.dart';
 
 class SBSGuideView extends StatelessWidget {
-  final title = "Step By Step Guidance";
+  final title = 'Step By Step Guidance';
   final color = Color.fromRGBO(146, 211, 183, 1);
 
   @override
