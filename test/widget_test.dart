@@ -10,5 +10,5 @@
 
 // import 'package:wh_covid19/main.dart';
 
-// void main() {
-// }
+void main() {
+}
