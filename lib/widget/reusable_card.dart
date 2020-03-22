@@ -30,7 +30,7 @@ class ReusableCard extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(12),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
@@ -41,10 +41,10 @@ class ReusableCard extends StatelessWidget {
               SizedBox(
                 height: 50,
               ),
-              Text(
+              description != null ? Text(
                 description,
                 style: cardDescriptionTextStyle,
-              )
+              ) : Container(),
             ],
           ),
         ),

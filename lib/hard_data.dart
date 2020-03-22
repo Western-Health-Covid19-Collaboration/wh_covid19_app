@@ -52,7 +52,6 @@ final List<ReusableCard> icu = [
   ),
   ReusableCard(
     title: "Tips for Junior Staffers",
-    description: "",
     color: Color.fromRGBO(143, 217, 255, 1),
   ),
 ];

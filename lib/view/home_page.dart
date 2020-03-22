@@ -7,26 +7,25 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: appBarColor,
-        iconTheme: appBarIconTheme,
-        elevation: 0.0,
-        title: Text(
-          'Weastern Healt',
-          style: appBarTextStyle,
-        ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.info_outline),
-            onPressed: () {},
-          )
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverAppBar(
+            backgroundColor: appBarColor,
+            iconTheme: appBarIconTheme,
+            floating: true,
+            title: Text(
+              'Weastern Healt',
+              style: appBarTextStyle,
+            ),
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(Icons.info_outline),
+                onPressed: () {},
+              )
+            ],
+          ),
+          SliverList(
+            delegate: SliverChildListDelegate([
               CardContainer(
                 title: 'Look After Yourself',
                 cards: staffWelfare,
@@ -39,13 +38,9 @@ class HomePage extends StatelessWidget {
                 title: 'ICU Non-Intesivist',
                 cards: icu,
               ),
-              CardContainer(
-                title: 'Additional Resources',
-                cards: info,
-              )
-            ],
+            ]),
           ),
-        ),
+        ],
       ),
     );
   }
