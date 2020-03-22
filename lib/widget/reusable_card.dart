@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wh_covid19/style.dart';
 
 class ReusableCard extends StatelessWidget {
   /// Title of the card
@@ -14,16 +15,16 @@ class ReusableCard extends StatelessWidget {
   final String routeTo;
 
   ReusableCard(
-      {this.title, this.description, this.color = Colors.white, this.routeTo})
+      {@required this.title, this.description, this.color = Colors.white, this.routeTo})
       : assert(title != null);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Card(
-        margin: EdgeInsets.fromLTRB(16, 10, 16, 10),
+        //margin: EdgeInsets.fromLTRB(12, 5, 12, 5),
         color: color,
-        elevation: 10,
+        elevation: 6,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(8))),
         child: Padding(
@@ -35,15 +36,15 @@ class ReusableCard extends StatelessWidget {
             children: <Widget>[
               Text(
                 title,
-                style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+                style: cardTitleTextStyle,
               ),
               SizedBox(
                 height: 50,
               ),
-              Text(
+              description != null ? Text(
                 description,
-                style: TextStyle(fontSize: 12),
-              )
+                style: cardDescriptionTextStyle,
+              ) : Container(),
             ],
           ),
         ),

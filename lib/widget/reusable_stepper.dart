@@ -17,7 +17,7 @@ class _ReusableStepperState extends State<ReusableStepper> {
         isActive: true,
         state: StepState.indexed,
         content: Image.asset(
-          "assets/images/gown_on.jpg",
+          'assets/images/gown_on.jpg',
           fit: BoxFit.fill,
         )),
     Step(
@@ -25,7 +25,7 @@ class _ReusableStepperState extends State<ReusableStepper> {
         isActive: true,
         state: StepState.indexed,
         content: Image.asset(
-          "assets/images/mask_on.jpg",
+          'assets/images/mask_on.jpg',
           fit: BoxFit.fill,
         )),
     Step(
@@ -33,7 +33,7 @@ class _ReusableStepperState extends State<ReusableStepper> {
         isActive: true,
         state: StepState.indexed,
         content: Image.asset(
-          "assets/images/eye_protection_on.jpg",
+          'assets/images/eye_protection_on.jpg',
           fit: BoxFit.fill,
         )),
     Step(
@@ -46,7 +46,7 @@ class _ReusableStepperState extends State<ReusableStepper> {
         isActive: true,
         state: StepState.indexed,
         content: Image.asset(
-          "assets/images/gloves_on.jpg",
+          'assets/images/gloves_on.jpg',
           fit: BoxFit.fill,
         )),
   ];
