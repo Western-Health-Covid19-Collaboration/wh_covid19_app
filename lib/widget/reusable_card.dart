@@ -14,8 +14,11 @@ class ReusableCard extends StatelessWidget {
   /// Route to view
   final String routeTo;
 
-  ReusableCard(
-      {@required this.title, this.description, this.color = Colors.white, this.routeTo})
+  /// Height of card
+  final double height;
+
+  ReusableCard({@required this.title, this.description, this.color = Colors
+      .white, this.routeTo, this.height = 84})
       : assert(title != null);
 
   @override
@@ -29,23 +32,27 @@ class ReusableCard extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(8))),
         child: Padding(
           padding: const EdgeInsets.all(12),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Text(
-                title,
-                style: cardTitleTextStyle,
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              description != null ? Text(
-                description,
-                style: cardDescriptionTextStyle,
-              ) : Container(),
-            ],
+          child: Container(
+            height: height,
+            child: Column(
+              mainAxisAlignment: description == null
+                  ? MainAxisAlignment.center
+                  : MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Text(
+                  title,
+                  style: cardTitleTextStyle,
+                ),
+                if (description != null)
+                  Spacer(),
+                description != null ? Text(
+                  description,
+                  style: cardDescriptionTextStyle,
+                ) : Container(),
+              ],
+            ),
           ),
         ),
       ),
