@@ -81,6 +81,10 @@ Currently the project is being primarily co-ordinated via the GDG Melbourne slac
 * Brett Morgan - Flutter dev
 * Adam Koch - Flutter dev
 * Eric Jiang - Flutter dev, and QA
+* Adam Koch - Flutter dev
+* Dylan Lange - Flutter dev
+
+
 
 ## License
 
@@ -92,6 +96,6 @@ For any urgent requests relating to this app you can contact luke.sleeman@gmail.
 
 ## Acknowledgments
 
-🎩 Huge hat tip to everybody providing advice, helping out, etc including: Gregg Miller, Matt Kelsh, Mike Hughes,  Alessandro Favero, Maksim Lin, Brett Morgan, Adam Koch, Eric Jiang, Hsiu-Mei Huang, Sean Woodhouse, Matt Delves, Kim Nguyen.
+🎩 Huge hat tip to everybody providing advice, helping out, etc including: Gregg Miller, Matt Kelsh, Mike Hughes,  Alessandro Favero, Maksim Lin, Brett Morgan, Adam Koch, Eric Jiang, Hsiu-Mei Huang, Sean Woodhouse, Matt Delves, Kim Nguyen, Martin from CM, Itty Bitty Apps, Bramley
 
 I've probably forgotten a bunch of people, so if you have done something and we have missed out on you;  I'm deeply sorry, and appreciate your contribution ❤️.  Message Luke Sleeman and he will make sure you get added.
