@@ -6,4 +6,5 @@ class Routes {
   static const info = '/info';
   static const ventilation = '/icu_non_interventionist/ventilation';
   static const ventilationInitialActions = '$ventilation/initial_actions';
+  static const ventilationAdjuncts = '$ventilation/adjuncts';
 }

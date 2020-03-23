@@ -16,14 +16,20 @@ class VentilationView extends StatelessWidget {
     ReusableCard(
       title: 'Adjuncts',
       color: Colors.white,
+      routeTo: Routes.ventilationAdjuncts,
     ),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.appBackground,
       appBar: AppBar(
-        title: Text(title),
-      ),
+          backgroundColor: AppColors.appBarBackground,
+          iconTheme: appBarIconTheme,
+          title: Text(
+            title,
+            style: appBarTextStyle,
+          )),
       body: Container(
         color: AppColors.backgroundBlue,
         padding: EdgeInsets.all(12),
