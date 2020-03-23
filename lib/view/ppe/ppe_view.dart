@@ -1,5 +1,4 @@
 import 'package:chewie/chewie.dart';
-import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'package:wh_covid19/style.dart';
@@ -115,9 +114,5 @@ class _PPEViewState extends State<PPEView> {
         child: Text(text, style: cardContainerTextStyle),
       ),
     );
-  }
-
-  Widget _buildVideo() {
-    return Chewie(controller: _chewieController1);
   }
 }
