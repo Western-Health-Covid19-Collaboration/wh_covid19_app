@@ -24,6 +24,8 @@ if (flutterVersionName == null) {
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.appdistribution'
 
 android {
     compileSdkVersion 28
@@ -37,7 +39,6 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "org.whegba.wh_covid19"
         minSdkVersion 16
         targetSdkVersion 28
@@ -47,9 +48,14 @@ android {
 
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
+            // Firebase App Distribution configuration
+            firebaseAppDistribution {
+                serviceCredentialsFile="./whcovid19-60e64-2169177dca72.json"
+                releaseNotesFile="./release-notes.txt"
+                testers="mikehughesemail@gmail.com"
+            }
         }
     }
 }
