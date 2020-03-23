@@ -38,7 +38,7 @@ The current development process is:
 
 The app will have these screens and sections:
 
-![App information architecture ](docs/Flow Diagram.png "The information architecture of the app")
+![App information architecture](docs/Flow-Diagram.png "The information architecture of the app")
 
 We will rapidly build out functionality and screens.  The plan is to ship early, and ship often, deploying new builds at least once a day.
 
