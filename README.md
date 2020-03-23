@@ -31,6 +31,8 @@ Everything is co-ordinated through github issues.  The current development proce
  
  Check out the full list [issues page](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues) to get an overview of everything that is happening.  Feel free to flag an issue with `design` at any time to summon a designer.
  
+ If your committing changes to the docs only add `[skip ci]` to your commit message to save build time.
+ 
 ⬇️
  
 🖥 **CI** builds the app and deploys to phones via firebase app distribution.
