@@ -46,6 +46,7 @@ final List<ReusableCard> icu = [
     title: 'Ventilation',
     description: 'Description',
     color: AppColors.backgroundBlue,
+    routeTo: Routes.ventilation,
   ),
   ReusableCard(
     title: 'General Care',
