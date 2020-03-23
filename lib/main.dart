@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'EGBA',
       theme: ThemeData(
         primaryColor: Colors.green,
-        backgroundColor: appBackground,
+        backgroundColor: AppColors.appBackground,
         fontFamily: 'Inter',
       ),
       initialRoute: Routes.home,

@@ -14,7 +14,6 @@ class PPEView extends StatefulWidget {
 class _PPEViewState extends State<PPEView> {
   final title = 'PPE';
 
-  final color = Color.fromRGBO(255, 255, 255, 0.94);
   VideoPlayerController _videoController1;
   ChewieController _chewieController1;
 
@@ -24,12 +23,12 @@ class _PPEViewState extends State<PPEView> {
   final puttingOnCards = <ReusableCard>[
     ReusableCard(
       title: 'Step By Step Guide',
-      color: backgroundGreen,
+      color: AppColors.backgroundGreen,
       height: PPEView._cardHeight,
     ),
     ReusableCard(
       title: 'Infographic',
-      color: backgroundGreen,
+      color: AppColors.backgroundGreen,
       height: PPEView._cardHeight,
     )
   ];
@@ -37,12 +36,12 @@ class _PPEViewState extends State<PPEView> {
   final takingOffCards = <ReusableCard>[
     ReusableCard(
       title: 'Step By Step Guide',
-      color: backgroundBrown,
+      color: AppColors.backgroundBrown,
       height: PPEView._cardHeight,
     ),
     ReusableCard(
       title: 'Infographic',
-      color: backgroundBrown,
+      color: AppColors.backgroundBrown,
       height: PPEView._cardHeight,
     )
   ];
@@ -73,9 +72,9 @@ class _PPEViewState extends State<PPEView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: color,
+      backgroundColor: AppColors.appBackground,
       appBar: AppBar(
-        backgroundColor: appBarColor,
+        backgroundColor: AppColors.appBarBackground,
         iconTheme: appBarIconTheme,
         title: Text(
           title,

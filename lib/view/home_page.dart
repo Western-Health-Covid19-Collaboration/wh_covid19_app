@@ -8,6 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.appBackground,
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
@@ -25,14 +26,17 @@ class HomePage extends StatelessWidget {
                       style: appBarTextStyle,
                     ),
                     IconButton(
-                      icon: Icon(Icons.info_outline),
+                      icon: Icon(
+                        Icons.info_outline,
+                        color: AppColors.appBarIcon,
+                      ),
                       onPressed: () => InfoView.navigateTo(context),
                     )
                   ],
                 ),
               ),
             ),
-            backgroundColor: appBarColor,
+            backgroundColor: AppColors.appBarBackground,
             iconTheme: appBarIconTheme,
             floating: true,
             pinned: true,
