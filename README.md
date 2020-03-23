@@ -19,19 +19,19 @@ Currently under development by a community of volunteers.
 
 The current development process is:
 
-👨‍⚕️👩‍⚕️ #Greg Miller# provides features, content and suggestions to the design team
+👨‍⚕️👩‍⚕️ **Greg Miller** provides features, content and suggestions to the design team
 
 ⬇️
 
-👩‍🎨👨‍🎨 #Marc Edwards# and several other designers help design and specify features, which are then added into github issues.  Check our [issues page](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues) for tasks to work on
+👩‍🎨👨‍🎨 **Marc Edwards** and several other designers help design and specify features, which are then added into github issues.  Check our [issues page](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues) for tasks to work on
 
 ⬇️
  
- 👩‍💻👨‍💻 #Developers# Pick up issues and submit PRs to the project when then get approved and merged
+ 👩‍💻👨‍💻 **Developers** Pick up issues and submit PRs to the project when then get approved and merged
  
 ⬇️
  
-🖥 #CI# Builds the app and deploys to phones via firebase app distribution.
+🖥 **CI** Builds the app and deploys to phones via firebase app distribution.
 
 
 ## The Plan
