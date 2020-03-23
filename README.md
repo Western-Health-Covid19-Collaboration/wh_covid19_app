@@ -1,6 +1,6 @@
 # Western Health COVID-19 app
 
-A tool to safeguard the welfare of Western Health anaesthetists during COVID19 and provide instant access to the most up-to-date information for time-critical procedures to ensure optimal patient care.  This app will contain information for frontline medical staff on subjects such as:
+A tool to safeguard the welfare of Western Health anaesthetists during COVID-19 and provide instant access to the most up-to-date information for time-critical procedures to ensure optimal patient care.  This app will contain information for frontline medical staff on subjects such as:
 
 - Putting on and taking off PPE (Personal Protective Equipment)
 - Taking care of your own welfare
@@ -71,11 +71,11 @@ Currently the project is being primarily co-ordinated via the GDG Melbourne slac
 
 * Gregg Miller - Initial Development and ideas
 * Matt Kelsh - Design
-* Marc Edwads - Design and management
+* Marc Edwards - Design and management
 * Luke Sleeman - Organising people and general dogsbody 😁
 * Alessandro Favero - Flutter Dev
-* Makim Lin - Flutter dev & CI
-* Mike Huges - Flutter dev & CI
+* Maksim Lin - Flutter dev & CI
+* Mike Hughes - Flutter dev & CI
 * Adam Koch - Flutter dev
 * Eric Jiang - Flutter dev, and QA
 
@@ -85,10 +85,10 @@ This project is licensed under the Apache 2.0 - see the `LICENSE-2.0.txt` file f
 
 ## Emergency contacts
 
-For any urgent requests relating to this app you can contact luke.sleeman@gmail.com - It will go to Lukes phone.  You can also DM luke through [GDG Melbourne's slack](http://bit.ly/join_gdgslack) - DM `@luke.sleeman`.
+For any urgent requests relating to this app you can contact luke.sleeman@gmail.com - It will go to Luke's phone.  You can also DM Luke through [GDG Melbourne's slack](http://bit.ly/join_gdgslack) - DM `@luke.sleeman`.
 
 ## Acknowledgments
 
-🎩 Huge hat tip to everybody providing advice, helping out, etc including: Gregg Miller, Matt Kelsh, Mike Hughes,  Alessandro Favero, Maksim Lin, Brett Morgan, Adam Koch, Eric Jiang, Hsiu-Mei Huang, Sean Woodhouse, Matt Delves.
+🎩 Huge hat tip to everybody providing advice, helping out, etc including: Gregg Miller, Matt Kelsh, Mike Hughes,  Alessandro Favero, Maksim Lin, Brett Morgan, Adam Koch, Eric Jiang, Hsiu-Mei Huang, Sean Woodhouse, Matt Delves, Kim Nguyen.
 
 I've probably forgotten a bunch of people, so if you have done something and we have missed out on you;  I'm deeply sorry, and appreciate your contribution ❤️.  Message Luke Sleeman and he will make sure you get added.
