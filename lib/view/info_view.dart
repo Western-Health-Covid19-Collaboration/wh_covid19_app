@@ -42,9 +42,9 @@ class InfoView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: appBackground,
+      backgroundColor: AppColors.appBackground,
       appBar: AppBar(
-        backgroundColor: appBarColor,
+        backgroundColor: AppColors.appBarBackground,
         iconTheme: appBarIconTheme,
         title: Text(
           title,

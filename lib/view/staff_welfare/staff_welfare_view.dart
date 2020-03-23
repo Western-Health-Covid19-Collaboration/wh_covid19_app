@@ -24,7 +24,7 @@ class StaffWelfareView extends StatelessWidget {
     return Scaffold(
       backgroundColor: color,
       appBar: AppBar(
-        backgroundColor: appBarColor,
+        backgroundColor: AppColors.appBarBackground,
         iconTheme: appBarIconTheme,
         title: Text(
           title,
