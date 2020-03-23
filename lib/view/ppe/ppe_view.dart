@@ -20,31 +20,48 @@ class _PPEViewState extends State<PPEView> {
   VideoPlayerController _videoController2;
   ChewieController _chewieController2;
 
-  final puttingOnCards = <ReusableCard>[
+  final puttingOnCards = <Widget>[
+    _buildVerticalSpacer(),
     ReusableCard(
       title: 'Step By Step Guide',
       color: AppColors.backgroundGreen,
       height: PPEView._cardHeight,
     ),
+    _buildVerticalSpacer(),
     ReusableCard(
       title: 'Infographic',
       color: AppColors.backgroundGreen,
       height: PPEView._cardHeight,
-    )
+    ),
+    _buildVerticalSpacer(),
   ];
 
-  final takingOffCards = <ReusableCard>[
+  final takingOffCards = <Widget>[
+    _buildVerticalSpacer(),
     ReusableCard(
       title: 'Step By Step Guide',
       color: AppColors.backgroundBrown,
       height: PPEView._cardHeight,
     ),
+    _buildVerticalSpacer(),
     ReusableCard(
       title: 'Infographic',
       color: AppColors.backgroundBrown,
       height: PPEView._cardHeight,
-    )
+    ),
+    _buildVerticalSpacer(),
   ];
+
+  static Widget _buildVerticalSpacer() => Container(height: 8);
+
+  static Widget _buildVideoPlaceholder() {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.all(Radius.circular(8)),
+      ),
+    );
+  }
 
   @override
   void initState() {
@@ -56,7 +73,7 @@ class _PPEViewState extends State<PPEView> {
       aspectRatio: 16 / 9,
       autoPlay: false,
       autoInitialize: true,
-      placeholder: Container(color: Colors.black),
+      placeholder: _buildVideoPlaceholder(),
     );
     _videoController2 =
         VideoPlayerController.asset('assets/videos/wh_icu_doffing.mp4');
@@ -65,7 +82,7 @@ class _PPEViewState extends State<PPEView> {
       aspectRatio: 16 / 9,
       autoPlay: false,
       autoInitialize: true,
-      placeholder: Container(color: Colors.black),
+      placeholder: _buildVideoPlaceholder(),
     );
   }
 
@@ -83,14 +100,20 @@ class _PPEViewState extends State<PPEView> {
       ),
       body: Container(
         width: double.infinity,
-        padding: EdgeInsets.all(12),
+        padding: EdgeInsets.all(16),
         child: ListView(
           children: [
             _buildHeader('Putting on Personal Protective Equipment'),
-            Chewie(controller: _chewieController1),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4.0),
+              child: Chewie(controller: _chewieController1),
+            ),
             ...puttingOnCards,
             _buildHeader('Taking off Personal Protective Equipment'),
-            Chewie(controller: _chewieController2),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4.0),
+              child: Chewie(controller: _chewieController2),
+            ),
             ...takingOffCards,
           ],
         ),
