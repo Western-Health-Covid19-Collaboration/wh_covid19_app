@@ -17,17 +17,19 @@ Currently under development by a community of volunteers.
 
 ## Development process
 
-The current development process is:
+Everything is co-ordinated through github issues.  The current development process is:
 
-👨‍⚕️👩‍⚕️ **Greg Miller** and other Western Health staff provide features, content and suggestions to the design team
+👨‍⚕️👩‍⚕️ **Greg Miller** and other Western Health staff provide features, content and suggestions to the design team via GitHub issues.  Greg & Co can create new issues for features to add and either assign to Marc or label them `design`.
 
 ⬇️
 
-👩‍🎨👨‍🎨 **Marc Edwards** and other designers help design and specify features, which are then added into github issues.  Check our [issues page](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues) for tasks to work on.
+👩‍🎨👨‍🎨 **Marc Edwards** and other designers help design and specify features.  They add design guidance, into the issues.  [These issues currently need design guidance.](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aopen+is%3Aissue+label%3Adesign).  Once they have done their ✨ magic ✨ the issue should be labeled as 'Ready for dev'
 
 ⬇️
  
- 👩‍💻👨‍💻 **Developers** pick up issues and submit PRs to the project when then get approved and merged.
+ 👩‍💻👨‍💻 **Developers** pick up [ready for Dev issues](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aopen+is%3Aissue+label%3A%22Ready+for+Dev%22+) and submit PRs to the project when then get approved and merged.
+ 
+ Check out the full list [issues page](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues) to get an overview of everything that is happening.  Feel free to flag an issue with `design` at any time to summon a designer.
  
 ⬇️
  
