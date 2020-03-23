@@ -21,17 +21,17 @@ The current development process is:
 
 👨‍⚕️👩‍⚕️ #Greg Miller# provides features, content and suggestions to the design team
 
-👇
+⬇️
 
 👩‍🎨👨‍🎨 #Marc Edwards# and several other designers help design and specify features, which are then added into github issues.  Check our [issues page](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues) for tasks to work on
 
-👇
+⬇️
  
  👩‍💻👨‍💻 #Developers# Pick up issues and submit PRs to the project when then get approved and merged
  
- 👇
+⬇️
  
- 🖥 #CI# Builds the app and deploys to phones via firebase app distribution.
+🖥 #CI# Builds the app and deploys to phones via firebase app distribution.
 
 
 ## The Plan
@@ -56,7 +56,7 @@ samples, guidance on mobile development, and a full API reference.
 
 When contributing to this repository, please first discuss the change you wish to make via slack, issue, or email or any other method with the owners of this repository before making a change.
 
-Currently the project is being primarily co-ordinated via the GDG Melbourne slack group.  You can join GDG Melbourne's slack via http://bit.ly/join_gdgslack .  DM `@luke.sleeman` on GDG Melbourne slack to be invited to the channel being used for co-ordination.
+Currently the project is being primarily co-ordinated via the GDG Melbourne slack group.  You can join GDG Melbourne's slack via (this invite)[http://bit.ly/join_gdgslack].  DM `@luke.sleeman` on GDG Melbourne slack to be invited to the channel being used for co-ordination.
 
 Designs are hosted in zeplin cloud.  DM `@luke.sleeman` on GDG Melbourne slack to be invited.
 
@@ -82,6 +82,10 @@ Eric Jiang - Flutter dev, and QA
 ## License
 
 This project is licensed under the Apache 2.0 - see the `LICENSE-2.0.txt` file for details.
+
+## Emergency contacts
+
+For any urgent requests relating to this app you can contact luke.sleeman@gmail.com - It will go to Lukes phone.  You can also DM luke through [GDG Melbourne's slack](http://bit.ly/join_gdgslack) - DM `@luke.sleeman`.
 
 ## Acknowledgments
 
