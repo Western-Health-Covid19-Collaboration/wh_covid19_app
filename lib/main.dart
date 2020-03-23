@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
             );
           case Routes.intubationAlgorithm:
             return MaterialPageRoute<IntubationAlgorithmPage>(
-              builder: (context) => IntubationGuidancePage(),
+              builder: (context) => IntubationAlgorithmPage(),
               fullscreenDialog: false,
             );
           case Routes.intubationChecklist:
