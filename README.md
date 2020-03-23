@@ -89,4 +89,6 @@ For any urgent requests relating to this app you can contact luke.sleeman@gmail.
 
 ## Acknowledgments
 
-🎩 Huge hat tip to everybody providing advice, helping out, etc including: Gregg Miller, Matt Kelsh, Mike Hughes,  Alessandro Favero, Maksim Lin, Brett Morgan, Adam Koch, Eric Jiang, Hsiu-Mei Huang, Sean Woodhouse, Matt Delves
+🎩 Huge hat tip to everybody providing advice, helping out, etc including: Gregg Miller, Matt Kelsh, Mike Hughes,  Alessandro Favero, Maksim Lin, Brett Morgan, Adam Koch, Eric Jiang, Hsiu-Mei Huang, Sean Woodhouse, Matt Delves.
+
+I've probably forgotten a bunch of people, so if you have done something and we have missed out on you;  I'm deeply sorry, and appreciate your contribution ❤️.  Message Luke Sleeman and he will make sure you get added.
