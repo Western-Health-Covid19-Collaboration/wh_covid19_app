@@ -17,8 +17,11 @@ class ReusableCard extends StatelessWidget {
   /// Height of card
   final double height;
 
+  /// Elevation of card
+  final double elevation;
+
   ReusableCard({@required this.title, this.description, this.color = Colors
-      .white, this.routeTo, this.height = 84})
+      .white, this.routeTo, this.height = 84, this.elevation = 4})
       : assert(title != null);
 
   @override
@@ -27,7 +30,7 @@ class ReusableCard extends StatelessWidget {
       child: Card(
         //margin: EdgeInsets.fromLTRB(12, 5, 12, 5),
         color: color,
-        elevation: 6,
+        elevation: elevation,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(8))),
         child: Padding(

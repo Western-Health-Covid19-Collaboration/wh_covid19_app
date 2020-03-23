@@ -44,6 +44,7 @@ class HomePage extends StatelessWidget {
           ),
           SliverList(
             delegate: SliverChildListDelegate([
+              Container(height: 24),
               CardContainer(
                 title: 'Look After Yourself',
                 cards: staffWelfare,
