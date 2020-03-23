@@ -98,49 +98,6 @@ Otherwise if you have setup [Android Studio](https://developer.android.com/studi
 flutter run adb
 ```
 
-##### Releasing
-
-1. Create a Keystore
-
-   If you have an existing keystore, skip to the next step. If not,create one by running the following at the command line:
-
-   On Mac/Linux, use the following command:
-
-   ```sh
-   keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
-   ```
-
-   On Windows, use the following command:
-
-   ```sh
-   keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000
-   ```
-
-2. Create a file named <app dir>/android/key.properties that contains a reference to your keystore:
-
-   ```
-   storePassword=<password from previous step>
-   keyPassword=<password from previous step>
-   keyAlias=key
-   storeFile=<location of the key store file, such as /Users/<user name>/key.jks>
-   ```
-
-3. You will also need to update the SHA1/SHA256 Certificate Fingerprint in Firebase Console with the signing certificate.
-
-   To get the certificate run:
-
-   macOS/Linux:
-
-   ```sh
-   keytool -list -v -alias key -keystore ~/key.jks
-   ```
-
-   Windows:
-
-   ```sh
-   keytool -list -v -alias key -keystore c:/Users/USER_NAME/key.jks
-   ```
-
 ## Contributing
 
 Check our [issues page](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues) for tasks to work on.
