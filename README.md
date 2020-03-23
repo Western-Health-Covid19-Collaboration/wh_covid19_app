@@ -46,7 +46,16 @@ Currently all data will be stored inside the app, with no CMS or web services. T
 
 You will need to install and setup Flutter to develop this application. You can read more on how to set up Flutter [here](https://flutter.dev/docs/get-started/install).
 
-### How to run
+**Tip!**: If you are using Visual Studio Code as your IDE (Code Editor), the [Flutter extension](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter) is really useful and helpful to perform multiple actions such as:
+
+- the installation of depencies
+- running the application
+
+### Installing dependencies
+
+To install dependencies, simply run `flutter pub get` in your terminal.
+
+### Developing the app
 
 #### iOS
 
