@@ -27,11 +27,11 @@ The current development process is:
 
 ⬇️
  
- 👩‍💻👨‍💻 **Developers** Pick up issues and submit PRs to the project when then get approved and merged.
+ 👩‍💻👨‍💻 **Developers** pick up issues and submit PRs to the project when then get approved and merged.
  
 ⬇️
  
-🖥 **CI** Builds the app and deploys to phones via firebase app distribution.
+🖥 **CI** builds the app and deploys to phones via firebase app distribution.
 
 
 ## The Plan
@@ -54,11 +54,11 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Contributing
 
+Check our [issues page](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues) for tasks to work on.
+
 When contributing to this repository, please first discuss the change you wish to make via slack, issue, or email or any other method with the owners of this repository before making a change.
 
-Currently the project is being primarily co-ordinated via the GDG Melbourne slack group.  You can join GDG Melbourne's slack via (this invite)[http://bit.ly/join_gdgslack].  DM `@luke.sleeman` on GDG Melbourne slack to be invited to the channel being used for co-ordination.
-
-Designs are hosted in zeplin cloud.  DM `@luke.sleeman` on GDG Melbourne slack to be invited.
+Currently the project is being primarily co-ordinated via the GDG Melbourne slack group.  You can join GDG Melbourne's slack via [this invite](http://bit.ly/join_gdgslack).  DM `@luke.sleeman` on GDG Melbourne slack to be invited to the channel being used for co-ordination.
 
 ### Pull Request Process
 
@@ -69,15 +69,15 @@ Designs are hosted in zeplin cloud.  DM `@luke.sleeman` on GDG Melbourne slack t
 
 ## Authors
 
-Gregg Miller - Initial Development and ideas
-Matt Kelsh - Design
-Marc Edwads - Design and management
-Luke Sleeman - Organising people and general dogsbody 😁
-Alessandro Favero - Flutter Dev
-Makim Lin - Flutter dev & CI
-Mike Huges - Flutter dev & CI
-Adam Koch - Flutter dev
-Eric Jiang - Flutter dev, and QA
+* Gregg Miller - Initial Development and ideas
+* Matt Kelsh - Design
+* Marc Edwads - Design and management
+* Luke Sleeman - Organising people and general dogsbody 😁
+* Alessandro Favero - Flutter Dev
+* Makim Lin - Flutter dev & CI
+* Mike Huges - Flutter dev & CI
+* Adam Koch - Flutter dev
+* Eric Jiang - Flutter dev, and QA
 
 ## License
 
