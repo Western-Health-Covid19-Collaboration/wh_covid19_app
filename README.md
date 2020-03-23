@@ -40,9 +40,9 @@ The app will have these screens and sections:
 
 ![App information architecture](docs/Flow-Diagram.png "The information architecture of the app")
 
-We will rapidly build out functionality and screens.  The plan is to ship early, and ship often, deploying new builds at least once a day.
+We will rapidly build out functionality and screens.  The plan is to ship early, and ship often, deploying new builds at least once a day via CI.
 
-Currently all data will be stored inside the app, with not CMS or web services.  The app should have minimal logic, and instead just focuses on providing important information in a mobile friendly format.
+Currently all data will be stored inside the app, with no CMS or web services.  The app should have minimal logic, and instead just focuses on providing important information in a mobile friendly format.
 
 ## Getting Started
 
@@ -70,8 +70,14 @@ Designs are hosted in zeplin cloud.  DM `@luke.sleeman` on GDG Melbourne slack t
 ## Authors
 
 Gregg Miller - Initial Development and ideas
-
 Matt Kelsh - Design
+Marc Edwads - Design and management
+Luke Sleeman - Organising people and general dogsbody 😁
+Alessandro Favero - Flutter Dev
+Makim Lin - Flutter dev & CI
+Mike Huges - Flutter dev & CI
+Adam Koch - Flutter dev
+Eric Jiang - Flutter dev, and QA
 
 ## License
 
