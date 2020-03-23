@@ -51,6 +51,7 @@ android {
     }
 
     signingConfigs {
+         // To sign a release build, you need a android/key.properties file with the keyAlias, keyPassword storeFile and storePassword specified.  Release build signing happens on our CI, so you shouldn't need to do it.
        release {
            keyAlias keystoreProperties['keyAlias']
            keyPassword keystoreProperties['keyPassword']
