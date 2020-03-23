@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
-import 'package:wh_covid19/style.dart';
-import 'package:wh_covid19/widget/reusable_card.dart';
+import 'package:wh_covid19/view/view_templates/html_text_card_view_template.dart';
 
 class InitialActionsView extends StatelessWidget {
   final title = 'Suggested initial actions';
-  final subtitle = 'Suggested initial ventilator settings';
 
   ///Source:
   ///https://github.com/Western-Health-Covid19-Collaboration/source-documents/blob/master/COVID-SARI%20Treatment%20Poster%202020.pdf
   static const kHtml = '''
+  <h2>Suggested initial ventilator settings</h2>
 <ul>
   <li>SIMV/VC</li>
   <li>
@@ -41,39 +39,6 @@ class InitialActionsView extends StatelessWidget {
 </ul>
 ''';
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: AppColors.appBackground,
-        appBar: AppBar(
-            backgroundColor: AppColors.appBarBackground,
-            iconTheme: appBarIconTheme,
-            title: Text(
-              title,
-              style: appBarTextStyle,
-            )),
-        body: SingleChildScrollView(
-            child: Padding(
-                padding: EdgeInsets.all(12),
-                child: Card(
-                    child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Padding(
-                        padding: EdgeInsets.fromLTRB(8, 8, 8, 0),
-                        child: Center(
-                            child: Text(
-                          subtitle,
-                          style: Theme.of(context).textTheme.headline,
-                          textAlign: TextAlign.center,
-                        ))),
-                    Padding(
-                        padding: EdgeInsets.fromLTRB(0, 8, 8, 8),
-                        child: HtmlWidget(
-                          kHtml,
-                          textStyle: cardDescriptionTextStyle,
-                          bodyPadding: EdgeInsets.all(0),
-                        ))
-                  ],
-                )))));
-  }
+  Widget build(BuildContext context) =>
+      HtmlTextCardViewTemplate(title: title, html: kHtml);
 }
