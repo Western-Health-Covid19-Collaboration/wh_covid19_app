@@ -1,16 +1,38 @@
-# EGBA
+# Western Health COVID-19 app
 
-> Everythings
+A tool to safeguard the welfare of Western Health anaesthetists during COVID19 and provide instant access to the most up-to-date information for time-critical procedures to ensure optimal patient care.  This app will contain information for frontline medical staff on subjects such as:
 
-> Gonna
+- Putting on and taking off PPE (Personal Protective Equipment)
+- Taking care of your own welfare
+- Intubation checklists and steps
+- Ventilation suggested initial actions and adjuncts
+- ICU General Care
+- ICU Tips for junior staffers
+- Contact details and newsfeeds
 
-> Be
 
-> Alright
-
-A tool to safeguard the welfare of Western Health anaesthetists during COVID19 and provide instant access to the most up-to-date information for time-critical procedures to ensure optimal patient care.  Currently under development by a community of volunteers.
+Currently under development by a community of volunteers.
 
 [![Codemagic build status](https://api.codemagic.io/apps/5e75f4bfdd1d6d000a198e90/5e75f4bfdd1d6d000a198e8f/status_badge.svg)](https://codemagic.io/apps/5e75f4bfdd1d6d000a198e90/5e75f4bfdd1d6d000a198e8f/latest_build)
+
+## Development process
+
+The current development process is:
+
+👨‍⚕️👩‍⚕️ #Greg Miller# provides features, content and suggestions to the design team
+
+👇
+
+👩‍🎨👨‍🎨 #Marc Edwards# and several other designers help design and specify features, which are then added into github issues.  Check our [issues page](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues) for tasks to work on
+
+👇
+ 
+ 👩‍💻👨‍💻 #Developers# Pick up issues and submit PRs to the project when then get approved and merged
+ 
+ 👇
+ 
+ 🖥 #CI# Builds the app and deploys to phones via firebase app distribution.
+
 
 ## Getting Started
 
