@@ -50,10 +50,10 @@ class InfoView extends StatelessWidget {
       backgroundColor: AppColors.appBackground,
       appBar: AppBar(
         backgroundColor: AppColors.appBarBackground,
-        iconTheme: appBarIconTheme,
+        iconTheme: AppStyles.appBarIconTheme,
         title: Text(
           title,
-          style: appBarTextStyle,
+          style: AppStyles.appBarTextStyle,
         ),
       ),
       body: Padding(

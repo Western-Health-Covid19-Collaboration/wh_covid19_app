@@ -92,10 +92,10 @@ class _PPEViewState extends State<PPEView> {
       backgroundColor: AppColors.appBackground,
       appBar: AppBar(
         backgroundColor: AppColors.appBarBackground,
-        iconTheme: appBarIconTheme,
+        iconTheme: AppStyles.appBarIconTheme,
         title: Text(
           title,
-          style: appBarTextStyle,
+          style: AppStyles.appBarTextStyle,
         ),
       ),
       body: Container(
@@ -133,7 +133,7 @@ class _PPEViewState extends State<PPEView> {
       padding: const EdgeInsets.all(8.0),
       child: Padding(
         padding: const EdgeInsets.only(top: 24, bottom: 4),
-        child: Text(text, style: cardContainerTextStyle),
+        child: Text(text, style: AppStyles.cardContainerTextStyle),
       ),
     );
   }
