@@ -34,6 +34,16 @@ The current development process is:
  🖥 #CI# Builds the app and deploys to phones via firebase app distribution.
 
 
+## The Plan
+
+The app will have these screens and sections:
+
+![App information architecture ](docs/Flow Diagram.png "The information architecture of the app")
+
+We will rapidly build out functionality and screens.  The plan is to ship early, and ship often, deploying new builds at least once a day.
+
+Currently all data will be stored inside the app, with not CMS or web services.  The app should have minimal logic, and instead just focuses on providing important information in a mobile friendly format.
+
 ## Getting Started
 
 *TODO:  Flutter specific information*
