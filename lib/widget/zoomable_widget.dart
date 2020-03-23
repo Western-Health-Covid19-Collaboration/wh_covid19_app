@@ -15,7 +15,7 @@ class _ZoomableWidgetState extends State<ZoomableWidget> {
   @override
   Widget build(BuildContext context) {
     return MatrixGestureDetector(
-      onMatrixUpdate: (Matrix4 m, Matrix4 tm, Matrix4 sm, Matrix4 rm) {
+      onMatrixUpdate: (m, tm, sm, rm) {
         setState(() {
           matrix = m;
         });

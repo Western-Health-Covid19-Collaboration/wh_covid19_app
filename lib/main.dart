@@ -8,7 +8,7 @@ import 'package:wh_covid19/view/intubation/checklist/intubation_checklist_page.d
 import 'package:wh_covid19/view/intubation/guidance/intubation_guidance_page.dart';
 import 'package:wh_covid19/view/ppe/ppe_view.dart';
 import 'package:wh_covid19/view/sbs_guide_view.dart';
-import 'package:wh_covid19/view/staff_welfare/staff_welfare_view.dart';
+import 'package:wh_covid19/view/staff_welfare/your_welfare_view.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       routes: {
         Routes.home: (context) => HomePage(),
         Routes.ppe: (context) => PPEView(),
-        Routes.staffWelfare: (context) => StaffWelfareView(),
+        Routes.staffWelfare: (context) => YourWelfareView(),
         Routes.sbsGuidance: (context) => SBSGuideView(),
       },
       onGenerateRoute: (settings) {
