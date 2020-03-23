@@ -7,6 +7,9 @@ const IconThemeData appBarIconTheme = IconThemeData(color: Colors.black);
 
 // Colors
 const Color appBackground = Color(0xffecf3f0);
+const Color backgroundGreen = Color(0xff92d3b7);
+const Color backgroundBlue = Color(0xff8fd9ff);
+const Color backgroundBrown = Color(0xffd3ca92);
 
 // Scaffold bg style
 
