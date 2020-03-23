@@ -10,6 +10,10 @@ dependencies:
   flutter:
     sdk: flutter
   package_info: ^0.4.0+16
+  chewie: ^0.9.10
+  video_player: ^0.10.8+1
+  matrix_gesture_detector: ^0.1.0
+  url_launcher: ^5.4.2
 
 dev_dependencies:
   flutter_test:
@@ -26,9 +30,22 @@ flutter:
   assets:
     - assets/images/
     - assets/images/icon/
+    - assets/videos/
 
   fonts:
     - family: Inter
       fonts:
-        - asset: assets/fonts/Inter.ttf
+        - asset: assets/fonts/Inter-300-Light.ttf
+          weight: 300
 
+        - asset: assets/fonts/Inter-400-Regular.ttf
+          weight: 400
+
+        - asset: assets/fonts/Inter-500-Medium.ttf
+          weight: 500
+
+        - asset: assets/fonts/Inter-600-SemiBold.ttf
+          weight: 600
+
+        - asset: assets/fonts/Inter-700-Bold.ttf
+          weight: 700

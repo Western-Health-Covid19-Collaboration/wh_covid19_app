@@ -3,6 +3,9 @@ import 'package:wh_covid19/style.dart';
 import 'package:wh_covid19/widget/reusable_card.dart';
 
 class CardContainer extends StatelessWidget {
+  static const double _outerPadding = 16;
+  static const double _innerPadding = 8;
+
   /// Title for the container
   final String title;
 
@@ -13,19 +16,17 @@ class CardContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Padding(
+      padding: const EdgeInsets.all(_outerPadding),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          SizedBox(height: 25),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              title,
-              style: cardContainerTextStyle,
-            ),
+          Text(
+            title,
+            style: AppStyles.cardContainerTextStyle,
           ),
+          _buildVerticalSpacer(),
           cardsLayout(),
         ],
       ),
@@ -37,24 +38,16 @@ class CardContainer extends StatelessWidget {
   Widget cardsLayout() {
     // Transform the card to an expanded
     var expandedCards = cards
-        .map((c) => Expanded(
-              child: c,
-            ))
+        .map((c) => Expanded(child: c))
         .toList();
 
     switch (cards.length) {
       case 2:
         return Row(
           children: <Widget>[
-            SizedBox(
-              width: 16,
-            ),
             expandedCards[0],
-            SizedBox(width: 8),
+            _buildHorizontalSpacer(),
             expandedCards[1],
-            SizedBox(
-              width: 16,
-            ),
           ],
         );
         break;
@@ -63,21 +56,14 @@ class CardContainer extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Row(children: <Widget>[
-              SizedBox(
-                width: 16,
-              ),
               expandedCards[0],
-              SizedBox(
-                width: 16,
-              ),
             ]),
+            _buildVerticalSpacer(),
             Row(
               children: <Widget>[
-                SizedBox(width: 16,),
                 expandedCards[1],
-                SizedBox(width: 8,),
+                _buildHorizontalSpacer(),
                 expandedCards[2],
-                SizedBox(width: 16,)
               ],
             )
           ],
@@ -89,20 +75,16 @@ class CardContainer extends StatelessWidget {
           children: <Widget>[
             Row(
               children: <Widget>[
-                SizedBox(width: 16,),
                 expandedCards[0],
-                SizedBox(width: 8,),
+                _buildHorizontalSpacer(),
                 expandedCards[1],
-                SizedBox(width: 16,)
               ],
             ),
             Row(
               children: <Widget>[
-                SizedBox(width: 16,),
                 expandedCards[2],
-                SizedBox(width: 8,),
+                _buildHorizontalSpacer(),
                 expandedCards[3],
-                SizedBox(width: 16,)
               ],
             )
           ],
@@ -112,4 +94,8 @@ class CardContainer extends StatelessWidget {
         return Container();
     }
   }
+
+  Widget _buildHorizontalSpacer() => Container(width: _innerPadding);
+
+  Widget _buildVerticalSpacer() => Container(height: _innerPadding);
 }

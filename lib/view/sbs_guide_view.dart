@@ -9,13 +9,13 @@ class SBSGuideView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: appBarColor,
+      backgroundColor: AppColors.appBarBackground,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        iconTheme: appBarIconTheme,
+        iconTheme: AppStyles.appBarIconTheme,
         title: Text(
           title,
-          style: appBarTextStyle,
+          style: AppStyles.appBarTextStyle,
         ),
       ),
       body: Container(

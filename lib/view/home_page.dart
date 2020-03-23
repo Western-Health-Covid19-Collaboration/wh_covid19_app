@@ -8,6 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.appBackground,
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
@@ -22,24 +23,28 @@ class HomePage extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       'Western Health',
-                      style: appBarTextStyle,
+                      style: AppStyles.appBarTextStyle,
                     ),
                     IconButton(
-                      icon: Icon(Icons.info_outline),
+                      icon: Icon(
+                        Icons.info_outline,
+                        color: AppColors.appBarIcon,
+                      ),
                       onPressed: () => InfoView.navigateTo(context),
                     )
                   ],
                 ),
               ),
             ),
-            backgroundColor: appBarColor,
-            iconTheme: appBarIconTheme,
+            backgroundColor: AppColors.appBarBackground,
+            iconTheme: AppStyles.appBarIconTheme,
             floating: true,
             pinned: true,
             snap: false,
           ),
           SliverList(
             delegate: SliverChildListDelegate([
+              Container(height: 24),
               CardContainer(
                 title: 'Look After Yourself',
                 cards: staffWelfare,
