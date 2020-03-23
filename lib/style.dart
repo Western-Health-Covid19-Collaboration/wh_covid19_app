@@ -46,31 +46,67 @@ abstract class AppColors {
   static Color blackAlpha900 = const Color.fromRGBO(0, 0, 0, 1.0);
 }
 
-// App bar style
-final TextStyle appBarTextStyle = TextStyle(
-  color: AppColors.majorText,
-  fontSize: 32,
-);
-final IconThemeData appBarIconTheme =
-    IconThemeData(color: AppColors.appBarIcon);
+abstract class AppStyles {
+  // Named styles
 
-// Card Container style
-final TextStyle cardContainerTextStyle = TextStyle(
-  fontSize: 22,
-  color: AppColors.majorText,
-);
+  // App bar styles
+  static final TextStyle appBarTextStyle = AppStyles.textH2;
+  static final IconThemeData appBarIconTheme =
+      IconThemeData(color: AppColors.appBarIcon);
 
-// Card styles
-final TextStyle cardTitleTextStyle = TextStyle(
-    color: AppColors.majorText,
-    fontWeight: FontWeight.w600,
-    fontStyle: FontStyle.normal,
-    fontSize: 17.0,
-    fontFamily: 'SFProText');
+  // Card styles
+  static final TextStyle cardContainerTextStyle = AppStyles.textH4;
+  static final TextStyle cardTitleTextStyle = AppStyles.textH5;
+  static final TextStyle cardDescriptionTextStyle = AppStyles.textFooter;
 
-final TextStyle cardDescriptionTextStyle = TextStyle(
-    color: AppColors.minorText,
-    fontWeight: FontWeight.w500,
-    fontStyle: FontStyle.normal,
-    fontSize: 12.0,
-    fontFamily: 'SFProText');
+  static const fontFamily = 'Inter';
+
+  // Core font styles
+  static final TextStyle textH1 = TextStyle(
+      color: AppColors.majorText,
+      fontWeight: FontWeight.bold,
+      fontSize: 28.0,
+      fontFamily: fontFamily);
+
+  static final TextStyle textH2 = TextStyle(
+      color: AppColors.majorText,
+      fontWeight: FontWeight.normal,
+      fontSize: 28.0,
+      fontFamily: fontFamily);
+
+  static final TextStyle textH3 = TextStyle(
+      color: AppColors.majorText,
+      fontWeight: FontWeight.bold,
+      fontSize: 22.0,
+      fontFamily: fontFamily);
+
+  static final TextStyle textH4 = TextStyle(
+      color: AppColors.majorText,
+      fontWeight: FontWeight.normal,
+      fontSize: 22.0,
+      fontFamily: fontFamily);
+
+  static final TextStyle textH5 = TextStyle(
+      color: AppColors.majorText,
+      fontWeight: FontWeight.w600, // semi-bold
+      fontSize: 17.0,
+      fontFamily: fontFamily);
+
+  static final TextStyle textP = TextStyle(
+      color: AppColors.minorText,
+      fontWeight: FontWeight.normal,
+      fontSize: 17.0,
+      fontFamily: fontFamily);
+
+  static final TextStyle textFooter = TextStyle(
+      color: AppColors.minorText,
+      fontWeight: FontWeight.normal,
+      fontSize: 13.0,
+      fontFamily: fontFamily);
+
+  static final TextStyle textCaption = TextStyle(
+      color: AppColors.minorText,
+      fontWeight: FontWeight.w600, // semi-bold
+      fontSize: 13.0,
+      fontFamily: fontFamily);
+}

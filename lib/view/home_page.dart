@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       'Western Health',
-                      style: appBarTextStyle,
+                      style: AppStyles.appBarTextStyle,
                     ),
                     IconButton(
                       icon: Icon(
@@ -37,13 +37,14 @@ class HomePage extends StatelessWidget {
               ),
             ),
             backgroundColor: AppColors.appBarBackground,
-            iconTheme: appBarIconTheme,
+            iconTheme: AppStyles.appBarIconTheme,
             floating: true,
             pinned: true,
             snap: false,
           ),
           SliverList(
             delegate: SliverChildListDelegate([
+              Container(height: 24),
               CardContainer(
                 title: 'Look After Yourself',
                 cards: staffWelfare,

@@ -8,6 +8,7 @@ class InfoView extends StatelessWidget {
   final title = 'Information';
   static final _cardHeight = 34.0;
   static final _cardColor = Colors.white;
+  static final _cardElevation = 1.0;
 
   static void navigateTo(BuildContext context) {
     Navigator.pushNamed(context, Routes.info);
@@ -18,11 +19,13 @@ class InfoView extends StatelessWidget {
       title: 'Contact Numbers',
       color: _cardColor,
       height: _cardHeight,
+      elevation: _cardElevation,
     ),
     ReusableCard(
       title: 'Society & College Recommendations',
       color: _cardColor,
       height: _cardHeight,
+      elevation: _cardElevation,
     )
   ];
 
@@ -31,11 +34,13 @@ class InfoView extends StatelessWidget {
       title: 'App Feedback',
       color: _cardColor,
       height: _cardHeight,
+      elevation: _cardElevation,
     ),
     ReusableCard(
       title: 'Disclaimer & Conditions of Use',
       color: _cardColor,
       height: _cardHeight,
+      elevation: _cardElevation,
     )
   ];
 
@@ -45,10 +50,10 @@ class InfoView extends StatelessWidget {
       backgroundColor: AppColors.appBackground,
       appBar: AppBar(
         backgroundColor: AppColors.appBarBackground,
-        iconTheme: appBarIconTheme,
+        iconTheme: AppStyles.appBarIconTheme,
         title: Text(
           title,
-          style: appBarTextStyle,
+          style: AppStyles.appBarTextStyle,
         ),
       ),
       body: Padding(
@@ -79,8 +84,11 @@ class InfoView extends StatelessWidget {
       ),
       Center(child: _buildVersionTextWidget()),
       _buildSpacer(),
-      Text(
-          'About this app. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus gravida quis blandit turpis cursus in hac habitasse platea. In vitae turpis massa sed elementum tempus. Pulvinar neque laoreet suspendisse interdum consectetur libero.'),
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text(
+            'About this app. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus gravida quis blandit turpis cursus in hac habitasse platea. In vitae turpis massa sed elementum tempus. Pulvinar neque laoreet suspendisse interdum consectetur libero.'),
+      ),
     ];
   }
 
