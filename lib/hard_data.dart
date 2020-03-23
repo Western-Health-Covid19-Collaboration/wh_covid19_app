@@ -1,6 +1,7 @@
 // A list of two cards
 import 'package:flutter/material.dart';
 import 'package:wh_covid19/routes.dart';
+import 'package:wh_covid19/style.dart';
 
 import 'widget/reusable_card.dart';
 
@@ -25,17 +26,17 @@ final List<ReusableCard> intubation = [
   ReusableCard(
     title: 'Step By Step Guidance',
     description: '12 steps',
-    color: Color.fromRGBO(146, 211, 183, 1),
+    color: AppColors.backgroundGreen,
   ),
   ReusableCard(
     title: 'Checklist',
     description: '12 steps',
-    color: Color.fromRGBO(146, 211, 183, 1),
+    color: AppColors.backgroundGreen,
   ),
   ReusableCard(
     title: 'Algorithm',
     description: '12 steps',
-    color: Color.fromRGBO(146, 211, 183, 1),
+    color: AppColors.backgroundGreen,
   )
 ];
 
@@ -44,17 +45,17 @@ final List<ReusableCard> icu = [
   ReusableCard(
     title: 'Ventilation',
     description: 'Description',
-    color: Color.fromRGBO(143, 217, 255, 1),
+    color: AppColors.backgroundBlue,
   ),
   ReusableCard(
     title: 'General Care',
     description: '',
-    color: Color.fromRGBO(143, 217, 255, 1),
+    color: AppColors.backgroundBlue,
   ),
   ReusableCard(
     title: 'Tips for Junior Staffers',
     description: '',
-    color: Color.fromRGBO(143, 217, 255, 1),
+    color: AppColors.backgroundBlue,
   ),
 ];
 
