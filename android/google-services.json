@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "20746164981",
+    "firebase_url": "https://whcovid19-60e64.firebaseio.com",
+    "project_id": "whcovid19-60e64",
+    "storage_bucket": "whcovid19-60e64.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20746164981:android:f5b9ef22a08adb5ed9c3bc",
+        "android_client_info": {
+          "package_name": "org.whegba.wh_covid19"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "20746164981-tv6qiugin45gf1dnqai68bfjrmmr21g0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfDHzBcVD0HnzLLHw4c-02gu9hkoWGdxE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "20746164981-tv6qiugin45gf1dnqai68bfjrmmr21g0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
