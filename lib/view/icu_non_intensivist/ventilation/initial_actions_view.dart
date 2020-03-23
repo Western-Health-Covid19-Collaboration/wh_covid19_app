@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:wh_covid19/view/view_templates/html_text_card_view_template.dart';
 
+import '../../../style.dart';
+
 class InitialActionsView extends StatelessWidget {
   final title = 'Suggested initial actions';
 
@@ -39,6 +41,6 @@ class InitialActionsView extends StatelessWidget {
 </ul>
 ''';
   @override
-  Widget build(BuildContext context) =>
-      HtmlTextCardViewTemplate(title: title, html: kHtml);
+  Widget build(BuildContext context) => HtmlTextCardViewTemplate(
+      title: title, bgColor: AppColors.backgroundBlue, html: kHtml);
 }

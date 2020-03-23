@@ -8,13 +8,13 @@ import '../../style.dart';
 class HtmlTextCardViewTemplate extends StatelessWidget {
   final String title;
   final String html;
-
-  HtmlTextCardViewTemplate({this.title, this.html});
+  final Color bgColor;
+  HtmlTextCardViewTemplate({this.title, this.bgColor, this.html});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppColors.appBackground,
+        backgroundColor: bgColor ?? AppColors.backgroundBlue,
         appBar: AppBar(
             backgroundColor: AppColors.appBarBackground,
             iconTheme: appBarIconTheme,

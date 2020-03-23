@@ -4,7 +4,10 @@ class Routes {
   static const staffWelfare = '/staff_welfare';
   static const sbsGuidance = '/sbs_guidance';
   static const info = '/info';
-  static const ventilation = '/icu_non_interventionist/ventilation';
+  static const _icuNonIntensivist = '/icu_non_intensivist';
+  static const ventilation = '$_icuNonIntensivist/ventilation';
   static const ventilationInitialActions = '$ventilation/initial_actions';
   static const ventilationAdjuncts = '$ventilation/adjuncts';
+  static const generalCare = '$_icuNonIntensivist/general_care';
+  static const tipsJuniorStaff = '$_icuNonIntensivist/tips_junior_staff';
 }

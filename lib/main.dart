@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:wh_covid19/routes.dart';
 import 'package:wh_covid19/style.dart';
 import 'package:wh_covid19/view/home_page.dart';
+import 'package:wh_covid19/view/icu_non_intensivist/general_care_view.dart';
+import 'package:wh_covid19/view/icu_non_intensivist/tips_junior_staff_view.dart';
 import 'package:wh_covid19/view/icu_non_intensivist/ventilation/adjuncts_view.dart';
 import 'package:wh_covid19/view/icu_non_intensivist/ventilation/initial_actions_view.dart';
 import 'package:wh_covid19/view/icu_non_intensivist/ventilation/ventilation_view.dart';
@@ -31,6 +33,8 @@ class MyApp extends StatelessWidget {
         Routes.ventilation: (context) => VentilationView(),
         Routes.ventilationInitialActions: (context) => InitialActionsView(),
         Routes.ventilationAdjuncts: (context) => AdjunctsView(),
+        Routes.generalCare: (context) => GeneralCareView(),
+        Routes.tipsJuniorStaff: (context) => TipsJuniorStaffView(),
       },
       onGenerateRoute: (settings) {
         // Use onGenerateRoute to set fullscreenDialog=true
