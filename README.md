@@ -76,7 +76,7 @@ Currently the project is being primarily co-ordinated via the GDG Melbourne slac
 * Alessandro Favero - Flutter Dev
 * Maksim Lin - Flutter dev & CI
 * Mike Hughes - Flutter dev & CI
-* Brett Morgan
+* Brett Morgan - Flutter dev
 * Adam Koch - Flutter dev
 * Eric Jiang - Flutter dev, and QA
 
