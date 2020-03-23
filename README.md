@@ -63,7 +63,7 @@ flutter run -d "iPhone"
 
 #### Android
 
-### Keychain Certificate Setup
+##### Keychain Certificate Setup
 
 1. Download the `google-services.json` configuration file from the Firebase Project and move it to the directory `<PROJECT-ROOT>/android/app`
 2. Get the Android Keychain by:
@@ -75,7 +75,7 @@ flutter run -d "iPhone"
 
 3. Copy either the SHA1 or the SHA256 certificate fingerprint onto the Android App on [Firebase Console]()
 
-### Development
+##### Development
 
 If you have a device plugged in just run:
 
@@ -89,7 +89,7 @@ Otherwise if you have setup [Android Studio](https://developer.android.com/studi
 flutter run adb
 ```
 
-### Releasing
+##### Releasing
 
 1. Create a Keystore
 
