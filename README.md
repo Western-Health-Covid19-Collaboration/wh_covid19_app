@@ -123,7 +123,12 @@ Currently the project is being primarily co-ordinated via the GDG Melbourne slac
 
 - 'Fork' the project by clicking on the fork button
 - Clone the repo and create a new branch. Branch names should be prefixed with `feature`, `tech`, or `bugfix` depending on what is being done in them. eg: `feature\update-readme`
-- [More to come!]
+- Once the updates have been commited, there would be an option to `Compare & Pull Request` in the code repo page. 
+- Open a pull request into master. Be sure to include a detailed description in your pull request. Other contributors will comment on your code or approve it
+- Please be sure to note the build status of your PR reported by the Codemagic CI
+- Once your pull request has been approved, please merge into master.
+
+
 ## Authors
 
 * Gregg Miller - Initial Development and ideas
