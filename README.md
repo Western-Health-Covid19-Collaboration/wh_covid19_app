@@ -112,8 +112,6 @@ Currently the project is being primarily co-ordinated via the GDG Melbourne slac
 
 ### Pull Request Process
 
-## Method 1
-
 - `Fork` the project by clicking on the fork button.
 - Develop your work in a branch. Branch names should be prefixed with `feature`, `tech`, or `bugfix` depending on what is being done in them. eg: `feature\update-readme`
 - Once the updates have been commited, there would be an option to `Compare & Pull Request` in the code repo page.
