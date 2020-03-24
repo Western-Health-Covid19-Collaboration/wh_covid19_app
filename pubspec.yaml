@@ -49,6 +49,3 @@ flutter:
 
         - asset: assets/fonts/Inter-700-Bold.ttf
           weight: 700
-    - family:  WHCovid19Icon
-      fonts:
-        - asset: assets/fonts/WHCovid19Icon.ttf
