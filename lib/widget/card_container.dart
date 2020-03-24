@@ -24,7 +24,7 @@ class CardContainer extends StatelessWidget {
         children: <Widget>[
           Text(
             title,
-            style: cardContainerTextStyle,
+            style: AppStyles.cardContainerTextStyle,
           ),
           _buildVerticalSpacer(),
           cardsLayout(),

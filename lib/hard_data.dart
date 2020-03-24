@@ -82,6 +82,7 @@ final List<ReusableCard> info = [
   ),
 ];
 
+
 ///Map of Route to ScreenData.
 ///For simple data screens that can be represented with eg a title
 ///and html text body in a card, there's no need to create separate
@@ -108,3 +109,7 @@ class HtmlTextScreenData {
     return await rootBundle.loadString(htmlFile);
   }
 }
+
+// Contacts web url
+const String whURL = 'http://wh.cyphix.net/';
+

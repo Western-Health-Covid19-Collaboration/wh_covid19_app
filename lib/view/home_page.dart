@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       'Western Health',
-                      style: appBarTextStyle,
+                      style: AppStyles.appBarTextStyle,
                     ),
                     IconButton(
                       icon: Icon(
@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             backgroundColor: AppColors.appBarBackground,
-            iconTheme: appBarIconTheme,
+            iconTheme: AppStyles.appBarIconTheme,
             floating: true,
             pinned: true,
             snap: false,
@@ -54,7 +54,7 @@ class HomePage extends StatelessWidget {
                 cards: intubation,
               ),
               CardContainer(
-                title: 'ICU Non-Intensivist',
+                title: 'ICU',
                 cards: icu,
               ),
               // Make sure the bottom CardContainer has room to breathe.
