@@ -20,8 +20,11 @@ class ReusableCard extends StatelessWidget {
   /// Elevation of card
   final double elevation;
 
+  /// Fallback instead of route
+  final Function fallback;
+
   ReusableCard({@required this.title, this.description, this.color = Colors
-      .white, this.routeTo, this.height = 84, this.elevation = 4})
+      .white, this.routeTo, this.height = 84, this.elevation = 4, this.fallback})
       : assert(title != null);
 
   @override
@@ -60,6 +63,11 @@ class ReusableCard extends StatelessWidget {
       onTap: () {
         if(routeTo != null) {
           Navigator.pushNamed(context, routeTo);
+        } else {
+          if(fallback != null){
+            fallback();
+          }
+      
         }
       },
     );
