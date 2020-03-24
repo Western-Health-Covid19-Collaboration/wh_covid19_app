@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-//import 'package:url_launcher/url_launcher.dart';
 import 'package:wh_covid19/contact_launcher.dart';
 import 'package:wh_covid19/hard_data.dart';
 import 'package:wh_covid19/style.dart';
@@ -48,18 +47,25 @@ class YourWelfareView extends StatelessWidget {
                   _buildSpacer(),
                   _buildSpacer(),
                   Text('Basic Tips', style: AppStyles.textH3),
-                  _buildIconTextRow('STOP, BREATHE then think'),
-                  _buildIconTextRow('Limit news intake'),
+                  _buildIconTextRow(Text('🛑'), 'STOP, BREATHE then think'),
+                  _buildIconTextRow(Text('🗞'), 'Limit news intake'),
                   _buildSpacer(),
                   Text('Take Care of Basic Needs', style: AppStyles.textH3),
-                  _buildIconTextRow('Rest'),
-                  _buildIconTextRow('Eat well'),
-                  _buildIconTextRow('Engage in physical activity'),
-                  _buildIconTextRow('Stay in contact with loved ones'),
+                  _buildIconTextRow(Text('🛌'), 'Rest'),
+                  _buildIconTextRow(Text('🥦'), 'Eat well'),
+                  _buildIconTextRow(Text('🏃‍'), 'Engage in physical activity'),
                   _buildIconTextRow(
-                      'Avoid unhelpful coping strategies (Tobacco, alcohol or other drugs)'),
+                    Text('🥰'),
+                    'Stay in contact with loved ones',
+                  ),
                   _buildIconTextRow(
-                      'Consider psychological energy levels. “Fill up” after “Emptying the tank'),
+                    Text('🧻'),
+                    'Avoid unhelpful coping strategies (Tobacco, alcohol or other drugs)',
+                  ),
+                  _buildIconTextRow(
+                    Text('🔋'),
+                    'Consider psychological energy levels. “Fill up” after “Emptying the tank”',
+                  ),
                 ],
               ),
             ),
@@ -73,7 +79,7 @@ class YourWelfareView extends StatelessWidget {
     );
   }
 
-  Widget _buildIconTextRow(String text) {
+  Widget _buildIconTextRow(Widget icon, String text) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
       child: Row(
@@ -81,13 +87,9 @@ class YourWelfareView extends StatelessWidget {
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.only(right: 16),
-            child: Icon(Icons.info),
+            child: icon,
           ),
-          Expanded(
-              child: Text(
-            text,
-            style: AppStyles.textP,
-          )),
+          Expanded(child: Text(text, style: AppStyles.textP)),
         ],
       ),
     );
