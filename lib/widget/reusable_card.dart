@@ -46,11 +46,11 @@ class ReusableCard extends StatelessWidget {
               children: <Widget>[
                 Text(
                   title,
-                  style: cardTitleTextStyle,
+                  style: AppStyles.cardTitleTextStyle,
                 ),
                 description != null ? Text(
                   description,
-                  style: cardDescriptionTextStyle,
+                  style: AppStyles.cardDescriptionTextStyle,
                 ) : Container(),
               ],
             ),
