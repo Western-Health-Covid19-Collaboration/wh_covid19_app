@@ -9,7 +9,7 @@ import 'package:flutter/services.dart' show rootBundle;
 // Staff Welfare card list composition
 final List<ReusableCard> staffWelfare = [
   ReusableCard(
-    title: 'PPE Technique',
+    title: "PPE Technique",
     description: '3 guides',
     color: Colors.white,
     routeTo: Routes.ppe,
@@ -82,7 +82,6 @@ final List<ReusableCard> info = [
   ),
 ];
 
-
 ///Map of Route to ScreenData.
 ///For simple data screens that can be represented with eg a title
 ///and html text body in a card, there's no need to create separate
@@ -112,4 +111,3 @@ class HtmlTextScreenData {
 
 // Contacts web url
 const String whURL = 'http://wh.cyphix.net/';
-
