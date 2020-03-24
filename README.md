@@ -119,6 +119,12 @@ Currently the project is being primarily co-ordinated via the GDG Melbourne slac
 - Please be sure to note the build status of your PR reported by the Codemagic CI
 - Once your pull request has been approved, please merge into master.
 
+- If you are not a part of the team, you can still work on the code by clicking on the `Fork` option in this page.
+- Once you have forked it, you would be able to clone it and work on it.
+- To create a pull request, you would have to push your local changes back to your account. 
+- You would then find the option to `Compare and Pull Request`. 
+- Please follow the instructions above on how to submit a pull request. 
+
 ## Authors
 
 * Gregg Miller - Initial Development and ideas
