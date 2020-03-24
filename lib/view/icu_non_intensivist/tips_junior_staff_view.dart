@@ -12,13 +12,8 @@ class TipsJuniorStaffView extends StatelessWidget {
       appBar: AppBar(
           backgroundColor: AppColors.appBarBackground,
           iconTheme: appBarIconTheme,
-          title: Text(
-            title,
-            style: appBarTextStyle,
-          )),
-      body: Center(
-        child: Text('TODO'),
-      ),
+          title: Text(title, style: appBarTextStyle)),
+      body: Center(child: Text('TODO')),
     );
   }
 }

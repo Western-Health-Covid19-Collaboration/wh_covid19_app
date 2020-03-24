@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:wh_covid19/static_data_repo.dart';
+import 'package:wh_covid19/style.dart';
 import 'package:wh_covid19/view/view_templates/html_text_card_view_template.dart';
-
-import '../../../static_data_repo.dart';
-import '../../../style.dart';
 
 class InitialActionsView extends StatelessWidget {
   final title = 'Suggested initial actions';

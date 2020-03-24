@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
-import 'package:wh_covid19/widget/reusable_card.dart';
-
-import '../../style.dart';
+import 'package:wh_covid19/style.dart';
 
 ///Renders html text in a card
 class HtmlTextCardViewTemplate extends StatelessWidget {
@@ -18,18 +16,13 @@ class HtmlTextCardViewTemplate extends StatelessWidget {
         appBar: AppBar(
             backgroundColor: AppColors.appBarBackground,
             iconTheme: appBarIconTheme,
-            title: Text(
-              title,
-              style: appBarTextStyle,
-            )),
+            title: Text(title, style: appBarTextStyle)),
         body: SingleChildScrollView(
             child: Padding(
                 padding: EdgeInsets.all(12),
                 child: Card(
-                    child: HtmlWidget(
-                  html,
-                  textStyle: cardDescriptionTextStyle,
-                  bodyPadding: EdgeInsets.all(6),
-                )))));
+                    child: HtmlWidget(html,
+                        textStyle: cardDescriptionTextStyle,
+                        bodyPadding: EdgeInsets.all(6))))));
   }
 }

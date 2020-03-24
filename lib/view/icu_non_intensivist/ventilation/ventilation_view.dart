@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:wh_covid19/routes.dart';
 import 'package:wh_covid19/style.dart';
 import 'package:wh_covid19/widget/reusable_card.dart';
-
-import '../../../routes.dart';
 
 class VentilationView extends StatelessWidget {
   final title = 'Ventilation';
@@ -26,17 +25,12 @@ class VentilationView extends StatelessWidget {
       appBar: AppBar(
           backgroundColor: AppColors.appBarBackground,
           iconTheme: appBarIconTheme,
-          title: Text(
-            title,
-            style: appBarTextStyle,
-          )),
+          title: Text(title, style: appBarTextStyle)),
       body: Container(
         color: AppColors.backgroundBlue,
         padding: EdgeInsets.all(12),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: cards,
-        ),
+            crossAxisAlignment: CrossAxisAlignment.stretch, children: cards),
       ),
     );
   }
