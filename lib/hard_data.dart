@@ -81,3 +81,4 @@ final List<ReusableCard> info = [
 
 // Contacts web url
 const String whURL = 'http://wh.cyphix.net/';
+const String phoneNumber = '+61398000000';
