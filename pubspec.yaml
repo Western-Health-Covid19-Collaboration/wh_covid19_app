@@ -34,4 +34,6 @@ flutter:
     - family: Inter
       fonts:
         - asset: assets/fonts/Inter.ttf
-
+    - family:  WHCovid19Icon
+      fonts:
+       - asset: assets/fonts/WHCovid19Icon.ttf
