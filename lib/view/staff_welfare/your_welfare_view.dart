@@ -42,7 +42,7 @@ class YourWelfareView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   _buildSpacer(),
-                  Text('It' 's okay to not be okay.', style: AppStyles.textH1),
+                  Text('It\'s okay to not be okay.', style: AppStyles.textH1),
                   _buildSpacer(),
                   Text('Please look after yourself.', style: AppStyles.textH2),
                   _buildSpacer(),
