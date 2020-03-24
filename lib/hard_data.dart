@@ -77,3 +77,7 @@ final List<ReusableCard> info = [
     description: 'Descriptions',
   ),
 ];
+
+
+// Contacts web url
+const String whURL = 'http://wh.cyphix.net/';
