@@ -40,7 +40,7 @@ class _DisclaimerViewState extends State<DisclaimerView>
 
     final _agreeButton = Container(
       //padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
-      margin: EdgeInsets.only(left:16, right:16, bottom:16),
+      margin: EdgeInsets.only(left: 16, right: 16, bottom: 16),
       height: 44.0,
       child: RaisedButton(
         child: Text(
@@ -59,7 +59,8 @@ class _DisclaimerViewState extends State<DisclaimerView>
     );
 
     final _agreedText = Container(
-      padding: EdgeInsets.all(16),
+      height: 44,
+      padding: EdgeInsets.only(left: 16, right: 16, bottom: 16),
       child: Text(
         'You have already agreed 👍',
         style: AppStyles.textH5,
@@ -67,18 +68,18 @@ class _DisclaimerViewState extends State<DisclaimerView>
       ),
     );
 
-    final _scrollDown = Container(
-      //width: double.infinity,
-      decoration: BoxDecoration(
-        color: AppColors.green50,
-        borderRadius: BorderRadius.all(Radius.circular(50))
-      ),
-      margin: EdgeInsets.only(bottom: 16),
-      padding: EdgeInsets.all(16),
-      child: Text(
-        'Scroll down to agree',
-        style: AppStyles.textP,
-        textAlign: TextAlign.center,
+    final _scrollDown = IgnorePointer(
+      child: Container(
+        decoration: BoxDecoration(
+            color: AppColors.green50,
+            borderRadius: BorderRadius.all(Radius.circular(50))),
+        margin: EdgeInsets.only(bottom: 16),
+        padding: EdgeInsets.all(16),
+        child: Text(
+          'Scroll down to agree',
+          style: AppStyles.textP,
+          textAlign: TextAlign.center,
+        ),
       ),
     );
 
@@ -102,15 +103,16 @@ class _DisclaimerViewState extends State<DisclaimerView>
               child: Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
-                  GestureDetector(
+                  NotificationListener<ScrollUpdateNotification>(
                     child: ListView(
                       children: <Widget>[
                         _content,
                         !snapshot.data ? _agreeButton : _agreedText,
                       ],
                     ),
-                    onVerticalDragDown: (details) {
+                    onNotification: (scrollNotification) {
                       _animationController.forward();
+                      return true;
                     },
                   ),
                   FadeTransition(opacity: _animation, child: _scrollDown)
