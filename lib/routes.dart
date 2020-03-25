@@ -15,5 +15,4 @@ class Routes {
   static const intubationGuidance = '/intubation/guidance';
   static const intubationChecklist = '/intubation/checklist';
   static const intubationAlgorithm = '/intubation/algorithm';
-
 }

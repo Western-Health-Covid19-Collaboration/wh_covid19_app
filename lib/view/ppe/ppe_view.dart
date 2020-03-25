@@ -1,11 +1,12 @@
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-import 'package:wh_covid19/style.dart';
-import 'package:wh_covid19/widget/reusable_card.dart';
+
+import '../../style.dart';
+import '../../widget/reusable_card.dart';
 
 class PPEView extends StatefulWidget {
-  static final _cardHeight = 34.0;
+  static const _cardHeight = 34.0;
 
   @override
   _PPEViewState createState() => _PPEViewState();
@@ -58,7 +59,7 @@ class _PPEViewState extends State<PPEView> {
     return Container(
       decoration: BoxDecoration(
         color: Colors.black,
-        borderRadius: BorderRadius.all(Radius.circular(8)),
+        borderRadius: const BorderRadius.all(Radius.circular(8)),
       ),
     );
   }
@@ -100,7 +101,7 @@ class _PPEViewState extends State<PPEView> {
       ),
       body: Container(
         width: double.infinity,
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: ListView(
           children: [
             _buildHeader('Putting on Personal Protective Equipment'),

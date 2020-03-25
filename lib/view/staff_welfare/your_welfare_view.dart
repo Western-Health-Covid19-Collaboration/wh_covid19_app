@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:wh_covid19/contact_launcher.dart';
-import 'package:wh_covid19/hard_data.dart';
-import 'package:wh_covid19/style.dart';
-import 'package:wh_covid19/widget/reusable_card.dart';
+
+import '../../contact_launcher.dart';
+import '../../hard_data.dart';
+import '../../style.dart';
+import '../../widget/reusable_card.dart';
 
 class YourWelfareView extends StatelessWidget {
   final _title = 'Your Welfare';
 
-  final card = ReusableCard(
+  final card = const ReusableCard(
     title: 'Phases of Pandemic and suggestions for self-care',
     description: '',
     color: Colors.white,
@@ -41,29 +42,31 @@ class YourWelfareView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   _buildSpacer(),
-                  Text('It\'s okay to not be okay.', style: AppStyles.textH1),
+                  Text("It's okay to not be okay.", style: AppStyles.textH1),
                   _buildSpacer(),
                   Text('Please look after yourself.', style: AppStyles.textH2),
                   _buildSpacer(),
                   _buildSpacer(),
                   Text('Basic Tips', style: AppStyles.textH3),
-                  _buildIconTextRow(Text('🛑'), 'STOP, BREATHE then think'),
-                  _buildIconTextRow(Text('🗞'), 'Limit news intake'),
+                  _buildIconTextRow(
+                      const Text('🛑'), 'STOP, BREATHE then think'),
+                  _buildIconTextRow(const Text('🗞'), 'Limit news intake'),
                   _buildSpacer(),
                   Text('Take Care of Basic Needs', style: AppStyles.textH3),
-                  _buildIconTextRow(Text('🛌'), 'Rest'),
-                  _buildIconTextRow(Text('🥦'), 'Eat well'),
-                  _buildIconTextRow(Text('🏃‍'), 'Engage in physical activity'),
+                  _buildIconTextRow(const Text('🛌'), 'Rest'),
+                  _buildIconTextRow(const Text('🥦'), 'Eat well'),
                   _buildIconTextRow(
-                    Text('🥰'),
+                      const Text('🏃‍'), 'Engage in physical activity'),
+                  _buildIconTextRow(
+                    const Text('🥰'),
                     'Stay in contact with loved ones',
                   ),
                   _buildIconTextRow(
-                    Text('🧻'),
+                    const Text('🧻'),
                     'Avoid unhelpful coping strategies (Tobacco, alcohol or other drugs)',
                   ),
                   _buildIconTextRow(
-                    Text('🔋'),
+                    const Text('🔋'),
                     'Consider psychological energy levels. “Fill up” after “Emptying the tank”',
                   ),
                 ],

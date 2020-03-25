@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:package_info/package_info.dart';
-import 'package:wh_covid19/contact_launcher.dart';
-import 'package:wh_covid19/hard_data.dart';
-import 'package:wh_covid19/routes.dart';
-import 'package:wh_covid19/style.dart';
-import 'package:wh_covid19/widget/reusable_card.dart';
+
+import '../contact_launcher.dart';
+import '../hard_data.dart';
+import '../routes.dart';
+import '../style.dart';
+import '../widget/reusable_card.dart';
 
 class InfoView extends StatelessWidget {
   final title = 'Information';
-  static final _cardHeight = 34.0;
-  static final _cardColor = Colors.white;
-  static final _cardElevation = 1.0;
+  static const _cardHeight = 34.0;
+  static const _cardColor = Colors.white;
+  static const _cardElevation = 1.0;
 
   static void navigateTo(BuildContext context) {
     Navigator.pushNamed(context, Routes.info);
@@ -24,7 +25,7 @@ class InfoView extends StatelessWidget {
       elevation: _cardElevation,
       fallback: () => ContactLauncher.launchWithBrowser(whURL),
     ),
-    ReusableCard(
+    const ReusableCard(
       title: 'Society & College Recommendations',
       color: _cardColor,
       height: _cardHeight,
@@ -33,13 +34,13 @@ class InfoView extends StatelessWidget {
   ];
 
   final bottomCards = <Widget>[
-    ReusableCard(
+    const ReusableCard(
       title: 'App Feedback',
       color: _cardColor,
       height: _cardHeight,
       elevation: _cardElevation,
     ),
-    ReusableCard(
+    const ReusableCard(
       title: 'Disclaimer & Conditions of Use',
       color: _cardColor,
       height: _cardHeight,
@@ -87,8 +88,8 @@ class InfoView extends StatelessWidget {
       ),
       Center(child: _buildVersionTextWidget()),
       _buildSpacer(),
-      Padding(
-        padding: const EdgeInsets.all(8.0),
+      const Padding(
+        padding: EdgeInsets.all(8.0),
         child: Text(
             'About this app. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus gravida quis blandit turpis cursus in hac habitasse platea. In vitae turpis massa sed elementum tempus. Pulvinar neque laoreet suspendisse interdum consectetur libero.'),
       ),

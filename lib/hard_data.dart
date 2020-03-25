@@ -1,13 +1,13 @@
 // A list of two cards
 import 'package:flutter/material.dart';
-import 'package:wh_covid19/routes.dart';
-import 'package:wh_covid19/style.dart';
-
-import 'widget/reusable_card.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
+import 'routes.dart';
+import 'style.dart';
+import 'widget/reusable_card.dart';
+
 // Staff Welfare card list composition
-final List<ReusableCard> staffWelfare = [
+const List<ReusableCard> staffWelfare = [
   ReusableCard(
     title: 'PPE Technique',
     description: '3 guides',
@@ -45,7 +45,7 @@ final List<ReusableCard> intubation = [
 ];
 
 // ICU card list composition
-final List<ReusableCard> icu = [
+const List<ReusableCard> icu = [
   ReusableCard(
     title: 'Ventilation',
     description: 'Description',
@@ -67,7 +67,7 @@ final List<ReusableCard> icu = [
 ];
 
 // Info card list composition
-final List<ReusableCard> info = [
+const List<ReusableCard> info = [
   ReusableCard(
     title: 'Numbers',
     description: 'Important contacts',
@@ -81,7 +81,6 @@ final List<ReusableCard> info = [
     description: 'Descriptions',
   ),
 ];
-
 
 ///Map of Route to ScreenData.
 ///For simple data screens that can be represented with eg a title
@@ -112,4 +111,3 @@ class HtmlTextScreenData {
 
 // Contacts web url
 const String whURL = 'http://wh.cyphix.net/';
-
