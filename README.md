@@ -46,13 +46,28 @@ If your committing changes to the docs only add `[skip ci]` to your commit messa
 
 ## The Plan
 
+We will rapidly build out functionality and screens. The plan is to ship early, and ship often, deploying new builds at least once a day via CI.
+
+Currently all data will be stored inside the app, with no CMS or web services. The app should have minimal logic, and instead just focuses on providing important information in a mobile friendly format.
+
+### Information architecture
+
 The app will have these screens and sections:
 
 ![App information architecture](docs/Flow-Diagram.png "The information architecture of the app")
 
-We will rapidly build out functionality and screens. The plan is to ship early, and ship often, deploying new builds at least once a day via CI.
+### Screenshots
 
-Currently all data will be stored inside the app, with no CMS or web services. The app should have minimal logic, and instead just focuses on providing important information in a mobile friendly format.
+The complete set of designs are in Zeplin, but this gives some indication of how the the app will look:
+
+![App main screen](docs/Main.png "The main screen of the app")
+![App main screen](docs/Yourself - PPE.png "The main screen of the app")
+![App main screen](docs/Yourself - Welfare.png "The main screen of the app")
+![App main screen](docs/Yourself - PPE - Detail 01 - Step by Step.png "The main screen of the app")
+![App main screen](docs/Yourself - PPE - Detail 03 - Method One.png "The main screen of the app")
+![App main screen](docs/Yourself - PPE - Detail 04 - Method Two.png "The main screen of the app")
+
+
 
 ## Getting Started & Development
 
