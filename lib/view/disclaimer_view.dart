@@ -13,6 +13,59 @@ class _DisclaimerViewState extends State<DisclaimerView>
     with SingleTickerProviderStateMixin {
   final String _title = 'Disclaimer and conditions of use';
 
+  // Content of the page
+  final _content = Container(
+    padding: EdgeInsets.all(16),
+    child: Text(
+      disclaimerBody,
+      style: AppStyles.textP,
+      //textAlign: TextAlign.justify,
+    ),
+  );
+
+  // Content to show at the bottom instead of [_agreedButton]
+  final _agreedText = Container(
+    height: 44,
+    padding: EdgeInsets.only(left: 16, right: 16, bottom: 16),
+    child: Text(
+      'You have already agreed 👍',
+      style: AppStyles.textH5,
+      textAlign: TextAlign.center,
+    ),
+  );
+
+  // Floating container indicating to scroll down to agree
+  final _scrollDownToAgree = IgnorePointer(
+    child: Container(
+      decoration: BoxDecoration(
+          color: AppColors.green50,
+          borderRadius: BorderRadius.all(Radius.circular(50))),
+      margin: EdgeInsets.only(bottom: 16),
+      padding: EdgeInsets.all(16),
+      child: Text(
+        'Scroll down to agree',
+        style: AppStyles.textP,
+        textAlign: TextAlign.center,
+      ),
+    ),
+  );
+
+  // Floating container indicating to scroll down
+  final _scrollDown = IgnorePointer(
+    child: Container(
+      decoration: BoxDecoration(
+          color: AppColors.green50,
+          borderRadius: BorderRadius.all(Radius.circular(50))),
+      margin: EdgeInsets.only(bottom: 16),
+      padding: EdgeInsets.all(16),
+      child: Text(
+        'Scroll down',
+        style: AppStyles.textP,
+        textAlign: TextAlign.center,
+      ),
+    ),
+  );
+
   AnimationController _animationController;
   Animation<double> _animation;
 
@@ -29,17 +82,9 @@ class _DisclaimerViewState extends State<DisclaimerView>
 
   @override
   Widget build(BuildContext context) {
-    final _content = Container(
-      padding: EdgeInsets.all(16),
-      child: Text(
-        disclaimerBody,
-        style: AppStyles.textP,
-        //textAlign: TextAlign.justify,
-      ),
-    );
 
+    // Bottom button to agree t&c
     final _agreeButton = Container(
-      //padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
       margin: EdgeInsets.only(left: 16, right: 16, bottom: 16),
       height: 44.0,
       child: RaisedButton(
@@ -55,31 +100,6 @@ class _DisclaimerViewState extends State<DisclaimerView>
           _setAgreed();
           Navigator.pushNamed(context, Routes.home);
         },
-      ),
-    );
-
-    final _agreedText = Container(
-      height: 44,
-      padding: EdgeInsets.only(left: 16, right: 16, bottom: 16),
-      child: Text(
-        'You have already agreed 👍',
-        style: AppStyles.textH5,
-        textAlign: TextAlign.center,
-      ),
-    );
-
-    final _scrollDown = IgnorePointer(
-      child: Container(
-        decoration: BoxDecoration(
-            color: AppColors.green50,
-            borderRadius: BorderRadius.all(Radius.circular(50))),
-        margin: EdgeInsets.only(bottom: 16),
-        padding: EdgeInsets.all(16),
-        child: Text(
-          'Scroll down to agree',
-          style: AppStyles.textP,
-          textAlign: TextAlign.center,
-        ),
       ),
     );
 
@@ -115,7 +135,9 @@ class _DisclaimerViewState extends State<DisclaimerView>
                       return true;
                     },
                   ),
-                  FadeTransition(opacity: _animation, child: _scrollDown)
+                  FadeTransition(
+                      opacity: _animation,
+                      child: !snapshot.data ? _scrollDownToAgree : _scrollDown)
                 ],
               ),
             ),
