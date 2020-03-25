@@ -96,10 +96,8 @@ class _HomePageState extends State<HomePage> {
                     mainLogo,
                     IconButton(
                       icon: Icon(Icons.info_outline,
-                          color: ColorUtils.generateIconColor(
-                              AppColors.homeAppBarIcon,
-                              AppColors.appBarIcon,
-                              percentage)),
+                          color: generateIconColor(AppColors.homeAppBarIcon,
+                              AppColors.appBarIcon, percentage)),
                       onPressed: () => InfoView.navigateTo(context),
                     )
                   ],
