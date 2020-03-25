@@ -18,9 +18,9 @@ Currently under development by a community of volunteers.
 
 Everything is co-ordinated through github issues.  The current development process is:
 
-👨‍⚕️👩‍⚕️ **Greg Miller** and other Western Health staff provide features, content and suggestions to the design team via GitHub issues.  Greg & Co can create new issues for features to add, things that need changing, etc.  
+👨‍⚕️👩‍⚕️ **Greg Miller** and other Western Health staff provide features, content and suggestions via GitHub issues.  Greg & Co can create new issues for features to add, things that need changing, etc.  
 
-If you need any help from the WH staff, you can label an issue as `Medic`.  [These issues currently need medic advice.](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aopen+is%3Aissue+label%3AMedic). You can also `@` mention and assign issues to `@Western-Health-Covid19-Collaboration/medical` in a comment to notify the whole WH team.
+If you need any help from the WH staff, you can label an issue as `Medic`.  [These issues currently need medic advice](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aopen+is%3Aissue+label%3AMedic). You can also `@` mention and assign issues to `@Western-Health-Covid19-Collaboration/medical` in a comment to notify the whole WH team.
 
 The WH staff can label issues as `#1 Priority`, `#2 Priority`, `#3 Priority`.  Everybody on the team should focus on #1 priority issues first, then #2 and so on.
 
@@ -28,9 +28,9 @@ Once a issue has all the appropriate info it, it can be labeled `design` to hand
 
 ⬇️
 
-👩‍🎨👨‍🎨 **Marc Edwards** and other designers help design and specify features.  They design upload designs to zeplin and add design guidance into the issues.  
+👩‍🎨👨‍🎨 **Marc Edwards** and other designers help design and specify features.  They  upload designs to zeplin and add design guidance into the issues.  
 
-If you need any help from the design team, you can label an issue as `design`.  [These issues currently need design guidance.](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aopen+is%3Aissue+label%3Adesign).   You can also `@` mention `@Western-Health-Covid19-Collaboration/designers` in a comment to notify the whole design team
+If you need any help from the design team, you can label an issue as `design`.  [These issues currently need design guidance](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aopen+is%3Aissue+label%3Adesign).   You can also `@` mention `@Western-Health-Covid19-Collaboration/designers` in a comment to notify the whole design team.
 
 Once they have done their ✨ magic ✨ the issue should be labeled as 'Ready for dev' ...
 
