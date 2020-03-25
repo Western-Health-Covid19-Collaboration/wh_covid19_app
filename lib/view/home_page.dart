@@ -65,11 +65,11 @@ class _HomePageState extends State<HomePage> {
     final Widget mainLogo = SvgPicture.asset('assets/images/main_logo.svg',
         height: logoHeight.toDouble());
 
-    var appBarBottom = appBarHeight.toDouble() - logoHeight.toDouble();
+    final appBarBottom = appBarHeight.toDouble() - logoHeight.toDouble();
 
-    var scrollPos = _scrollPosition.round();
+    final scrollPos = _scrollPosition.round();
 
-    var percentage = scrollPos < appBarBottom
+    final percentage = scrollPos < appBarBottom
         ? ((scrollPos) / appBarBottom.toDouble())
         : 1.00;
 
