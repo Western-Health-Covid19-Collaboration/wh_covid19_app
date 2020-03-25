@@ -120,7 +120,7 @@ Currently the project is being primarily co-ordinated via the GDG Melbourne slac
 
 ## Method 2 - If you are not yet part of the team
 - If you are not a part of the team, you can still work on the code by clicking on the `Fork` option in this page.
-- Once you have forked it, you would be able to clone it and work on it.
+- Once you have forked to your own github account,  you will be able to check out the fork and work on it.
 - To create a pull request, you would have to push your local changes back to your git account. 
 - You would then find the option to `Compare and Pull Request`. 
 - Please follow the instructions above on how to submit a pull request. 
