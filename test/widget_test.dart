@@ -5,9 +5,14 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-// import 'package:flutter/material.dart';
-// import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:wh_covid19/main.dart';
 
-// import 'package:wh_covid19/main.dart';
+void main() {
+  testWidgets('show WH org name on home page', (tester) async {
+    // dont use _initApp as for this we *dont* want the future to complete yet
+    await tester.pumpWidget(MyApp());
 
-void main() {}
+    expect(find.text('Western Health'), findsOneWidget);
+  });
+}
