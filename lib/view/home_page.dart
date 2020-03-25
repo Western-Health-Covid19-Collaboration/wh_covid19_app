@@ -23,6 +23,18 @@ class _HomePageState extends State<HomePage> {
     return Container(width: size.width, child: mainHeader);
   }
 
+  /**
+   * Renders a stack with a single child node.
+   */
+  Widget _renderStack(
+    BuildContext context,
+    Widget child,
+  ) {
+    return Stack(
+      children: <Widget>[_renderBackgroundContainer(context), child],
+    );
+  }
+
   Widget _renderList(BuildContext context) {
     return SliverList(
       delegate: SliverChildListDelegate([
@@ -51,15 +63,23 @@ class _HomePageState extends State<HomePage> {
     final Widget mainLogo = SvgPicture.asset('assets/images/main_logo.svg',
         height: logoHeight.toDouble());
 
-    var isHidden = _scrollPosition.round() < appBarHeight - logoHeight;
+    var appBarBottom = appBarHeight.toDouble() - logoHeight.toDouble();
+
+    var scrollPos = _scrollPosition.round();
+
+    var percentage = scrollPos < appBarBottom
+        ? ((scrollPos) / appBarBottom.toDouble())
+        : 1.00;
 
     return Builder(builder: (context) {
-      final _scr = PrimaryScrollController.of(context);
-      _scr.addListener(() {
+      final _scrollController = PrimaryScrollController.of(context);
+
+      _scrollController.addListener(() {
         setState(() {
-          _scrollPosition = _scr.position.pixels;
+          _scrollPosition = _scrollController.position.pixels;
         });
       });
+
       return CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
@@ -74,19 +94,15 @@ class _HomePageState extends State<HomePage> {
                   children: <Widget>[
                     mainLogo,
                     IconButton(
-                      icon: Icon(
-                        Icons.info_outline,
-                        color: isHidden
-                            ? AppColors.homeAppBarIcon
-                            : AppColors.appBarIcon,
-                      ),
+                      icon:
+                          Icon(Icons.info_outline, color: AppColors.appBarIcon),
                       onPressed: () => InfoView.navigateTo(context),
                     )
                   ],
                 ),
               ),
             ),
-            backgroundColor: isHidden ? Colors.transparent : Colors.white,
+            backgroundColor: Color.fromRGBO(255, 255, 255, percentage),
             iconTheme: AppStyles.appBarIconTheme,
             floating: true,
             pinned: true,
@@ -103,12 +119,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         // backgroundColor: AppColors.appBackground,
         body: Builder(builder: (context) {
-      return Stack(
-        children: <Widget>[
-          _renderBackgroundContainer(context),
-          _renderBody(context)
-        ],
-      );
+      return _renderStack(context, _renderBody(context));
     }));
   }
 }
