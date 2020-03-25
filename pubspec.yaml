@@ -12,8 +12,10 @@ dependencies:
   package_info: ^0.4.0+16
   chewie: ^0.9.10
   video_player: ^0.10.8+1
+  flutter_widget_from_html: ^0.3.2+2
   matrix_gesture_detector: ^0.1.0
   url_launcher: ^5.4.2
+  flutter_svg: ^0.17.3+1
 
 dev_dependencies:
   flutter_test:
@@ -30,6 +32,8 @@ flutter:
   assets:
     - assets/images/
     - assets/images/icon/
+    - assets/images/steps/
+    - assets/text/    
     - assets/videos/
 
   fonts:
