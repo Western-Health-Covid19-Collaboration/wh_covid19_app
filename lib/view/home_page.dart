@@ -57,6 +57,34 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  Color generateIconColor(
+      Color fromColor, Color toColor, double deltaPercentage) {
+    var fromRed = fromColor.red,
+        fromGreen = fromColor.green,
+        fromBlue = fromColor.blue;
+    var toRed = toColor.red, toGreen = toColor.green, toBlue = toColor.blue;
+
+    var deltaRed = (fromRed - toRed).abs(),
+        deltaGreen = (fromGreen - toGreen).abs(),
+        deltaBlue = (fromBlue - toBlue).abs();
+
+    print('$deltaPercentage $fromColor $toColor');
+    print('$deltaRed $deltaGreen $deltaBlue');
+
+    print(toRed + deltaRed * deltaPercentage);
+    var newRed = fromRed < toRed
+            ? fromRed + deltaRed * deltaPercentage
+            : fromRed - deltaRed * deltaPercentage,
+        newGreen = fromGreen < toGreen
+            ? fromGreen + deltaGreen * deltaPercentage
+            : fromGreen - deltaGreen * deltaPercentage,
+        newBlue = fromBlue < toGreen
+            ? fromBlue + deltaBlue * deltaPercentage
+            : fromBlue - deltaBlue * deltaPercentage;
+
+    return Color.fromRGBO(newRed.toInt(), newGreen.toInt(), newBlue.toInt(), 1);
+  }
+
   Widget _renderBody(BuildContext context) {
     var appBarHeight = 70, logoHeight = 24;
 
@@ -94,8 +122,9 @@ class _HomePageState extends State<HomePage> {
                   children: <Widget>[
                     mainLogo,
                     IconButton(
-                      icon:
-                          Icon(Icons.info_outline, color: AppColors.appBarIcon),
+                      icon: Icon(Icons.info_outline,
+                          color: generateIconColor(AppColors.homeAppBarIcon,
+                              AppColors.appBarIcon, percentage)),
                       onPressed: () => InfoView.navigateTo(context),
                     )
                   ],
