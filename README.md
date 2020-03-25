@@ -62,14 +62,14 @@ The complete set of designs are in Zeplin, but this gives some indication of how
 
 
 <p align="center">
-  <img src="docs/Main.png" width="256" style="vertical-align: top;" >
-  <img src="docs/Yourself - Welfare.png" width="256" style="vertical-align: top;">
-  <img src="docs/Yourself - PPE.png" width="256" style="vertical-align: top;">
+  <img src="docs/Main.png" width="256">
+  <img src="docs/Yourself - Welfare.png" width="256">
+  <img src="docs/Yourself - PPE.png" width="256">
 </p>
 <p align="center">
-  <img src="docs/Yourself - PPE - Detail 01 - Step by Step.png" width="256" style="vertical-align:top;">
-  <img src="docs/Yourself - PPE - Detail 03 - Method One.png" width="256" style="vertical-align:top;">
-  <img src="docs/Yourself - PPE - Detail 04 - Method Two.png" width="256" style="vertical-align:top;">
+  <img src="docs/Yourself - PPE - Detail 01 - Step by Step.png" width="256">
+  <img src="docs/Yourself - PPE - Detail 03 - Method One.png" width="256">
+  <img src="docs/Yourself - PPE - Detail 04 - Method Two.png" width="256">
 </p>
 
 ## Getting Started & Development
