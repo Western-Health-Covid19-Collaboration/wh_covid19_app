@@ -13,7 +13,8 @@ abstract class AppColors {
   static final Color minorText = blackAlpha600;
 
   // TODO: should come from color palette
-  static final Color appBarIcon = Colors.white;
+  static final Color appBarIcon = Color.fromRGBO(0, 122, 255, 1.0);
+  static final Color homeAppBarIcon = Colors.white;
 
   // TODO: should come from color palette
   static final Color appBarBackground = Color(0xf0f9f9f9);
