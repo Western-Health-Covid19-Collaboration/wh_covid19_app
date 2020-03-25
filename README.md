@@ -60,19 +60,17 @@ The app will have these screens and sections:
 
 The complete set of designs are in Zeplin, but this gives some indication of how the the app will look:
 
-![App main screen]("docs/Main.png" | width=100)
 
-![App main screen]("docs/Yourself - PPE.png" | width=100 "The main screen of the app")
-
-![App main screen](docs/Yourself - Welfare.png "The main screen of the app"| width=100)
-
-![App main screen](docs/Yourself - PPE - Detail 01 - Step by Step.png "The main screen of the app"| width=100)
-
-![App main screen](docs/Yourself - PPE - Detail 03 - Method One.png "The main screen of the app"| width=100)
-
-![App main screen](docs/Yourself - PPE - Detail 04 - Method Two.png "The main screen of the app"| width=100)
-
-
+<p align="center">
+  <img src="docs/Main.png" width="256" >
+  <img src="docs/Yourself - Welfare.png" width="256" >
+  <img src="docs/Yourself - PPE - Detail 01 - Step by Step.png" width="256" >
+</p>
+<p align="center">
+  <img src="docs/Yourself - PPE - Detail 03 - Method One.png" width="256" >
+  <img src="docs/Yourself - PPE - Detail 04 - Method Two.png" width="256" >
+  <img src="docs/Yourself - PPE - Detail 01 - Step by Step.png" width="256">
+</p>
 
 ## Getting Started & Development
 
