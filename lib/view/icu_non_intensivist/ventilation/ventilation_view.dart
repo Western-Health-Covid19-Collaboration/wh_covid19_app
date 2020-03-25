@@ -24,8 +24,8 @@ class VentilationView extends StatelessWidget {
       backgroundColor: AppColors.appBackground,
       appBar: AppBar(
           backgroundColor: AppColors.appBarBackground,
-          iconTheme: appBarIconTheme,
-          title: Text(title, style: appBarTextStyle)),
+          iconTheme: AppStyles.appBarIconTheme,
+          title: Text(title, style: AppStyles.appBarTextStyle)),
       body: Container(
         color: AppColors.backgroundBlue,
         padding: EdgeInsets.all(12),
