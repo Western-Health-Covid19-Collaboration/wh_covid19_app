@@ -8,9 +8,10 @@ If you're a developer there's more info at [README.md](https://github.com/Wester
 
 - [Issues tagged with design](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app//labels/design) need designer's attention
 
-- To install github mobile app head to [Android](market://details?id=com.github.android&hl=en) or [Apple placeholder]() store. You can login or sign up from there, for free.
+- To install github mobile app head to [Android mobile link](market://details?id=com.github.android&hl=en) (alternative [Laptop link for android app](https://play.google.com/store/apps/details?id=com.github.android&hl=en) or [Apple placeholder]() store. You can login or sign up from there, for free.
 
-- Install the Western Health Covid19 app head at [Android placeholder]() or [Apple placeholder]() store.
+- Install the Western Health Covid19 app head at [Android placeholder]() or [Apple placeholder]() store. 
+- If you're on Android you can also download last minute versions from slack: go into the `#covid-19-app-builds` channel, find the last post from codemagic and download the `.apk` file. This is actually a good opportunity to hunt for the freshest bugs.
 
 - [Join GDG Melbourne's slack](http://bit.ly/join_gdgslack) with either work or personal email
 
@@ -69,12 +70,25 @@ After that, hit the green button
 - Eventually some developer would assign herself/himself to work on it
 - Eventually that developer or another one will finish the work on it
 - The `source code` (computer instructions) produced as part of that work follows a set of procedures - like a medical protocol - that ends up in producing a new version of the app, that would be automatically updated into mobile's phones. This can happen very quickly or very slowly, depending on a number of factors such as urgency, developer's available time and technical hurdles.
+- After all work and procedures are wrapped up the `issue` is closed. 
 
-on top of that:
-- You can edit your own comments at any time. However it's not advised unless for minor corrections, since that can break the communication flow (what if somebody replied to something you deleted?). Good practice tells us to ADD text to the end of the comment, explaining what we changed.
-- Developers may get stuck with something either a) deeply technical, b) deeply domain specific (that means it's something that only Health professionals are suited to answer), or anywhere in between. They may add comments with their questions, and once their concerns are settled they may resume work on the `issue`
-- Only team members with special privileges can assign tasks to either themselves or others. It's expected to learn a bit more of ins and outs of github before a person can do that. Because with those bigger powers come bigger responsibilities.
+### Tips for creating and handling issues
 
+Good titles for new issues follow a common format such as 
+"As a user I'd like to":
+- see a video about doff
+- share a pdf over email
+- collapse and and uncollapse the text about 
+etc etc 
+
+
+More:
+
+- You can edit your own comments at any time. However it's not advised unless for minor corrections, since that can break the communication flow (what if somebody replied to something you deleted?). Good practice tells us to ADD text to the end of the comment, explaining what we changed. For example after editing the text to make a critical correction you'd add at the bottom of the comment something like "Edit: removed the requirement to have a video and replaced it with a bullet list".
+- Developers may get stuck with something either a) deeply technical, b) deeply domain specific (that means it's something that only Health professionals are suited to answer), or anywhere in between. They may add comments with their questions, and once their concerns are settled they may resume work on the `issue`.
+- Only team members with special privileges can assign tasks to either themselves or others. It's expected to learn a bit more of ins and outs of github before a person can do that. Because with those bigger powers come bigger responsibilities. However you can still drop a comment telling other people that you're taking care of it, and another one when you're done (optionally with the result of your findings).
+- You can still find it in the issues list, but you'd have to manually change the filter which is always defaulted to display only open `issues`.
+- If you'd like to get the attention to a specific person that may be oblivious to the conversation you can use that person's handle just like in Twitter. For example: "We should check with @greggmiller how to handle this problem". This is quite handy because  people tend to get involved in several issues, each one to a different degree, until they're closed. So if you notice that there's something without progress for an abnormal amount of time it's a good way to nudge it in motion again.
 
 # FAQ
  
