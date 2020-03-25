@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wh_covid19/intro_router..dart';
 import 'package:wh_covid19/routes.dart';
 import 'package:wh_covid19/hard_data.dart';
 import 'package:wh_covid19/style.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: AppColors.appBackground,
         fontFamily: 'Inter',
       ),
-      initialRoute: Routes.disclaimer,
+      initialRoute: Routes.introRouter,
       routes: {
         Routes.home: (context) => HomePage(),
         Routes.ppe: (context) => PPEView(),
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
             context, routeToScreenData[Routes.ventilationAdjuncts]),
         Routes.generalCare: (context) => GeneralCareView(),
         Routes.tipsJuniorStaff: (context) => TipsJuniorStaffView(),
-        //Routes.disclaimer: (context) => DisclaimerView(),
+        Routes.introRouter: (context) => IntroRouter(),
       },
       onGenerateRoute: (settings) {
         // Use onGenerateRoute to set fullscreenDialog=true

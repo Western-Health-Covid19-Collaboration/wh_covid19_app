@@ -5,6 +5,7 @@ class Routes {
   static const sbsGuidance = '/sbs_guidance';
   static const info = '/info';
   static const disclaimer = '/disclaimer';
+  static const introRouter = '/intro_router';
 
   static const _icuNonIntensivist = '/icu_non_intensivist';
   static const ventilation = '$_icuNonIntensivist/ventilation';
