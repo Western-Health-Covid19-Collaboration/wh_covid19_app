@@ -124,6 +124,7 @@ Currently the project is being primarily co-ordinated via the GDG Melbourne slac
 - To create a pull request, you would have to push your local changes back to your git account. 
 - You would then find the option to `Compare and Pull Request`. 
 - Please follow the instructions above on how to submit a pull request. 
+- Once the pull request is reviewed and approved by the team, they would be able to merge this with the main branch. 
 
 ## Authors
 
