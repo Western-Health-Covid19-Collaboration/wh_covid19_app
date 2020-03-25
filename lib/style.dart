@@ -19,6 +19,11 @@ abstract class AppColors {
   // TODO: should come from color palette
   static final Color appBarBackground = Color(0xf0f9f9f9);
 
+  static Color dynamicAppBarBackground(double transparency) {
+    return Color.fromRGBO(appBarBackground.red, appBarBackground.green,
+        appBarBackground.blue, transparency);
+  }
+
   // Color palette
   static Color green50 = const Color.fromRGBO(214, 233, 191, 1.0);
   static Color green500 = const Color.fromRGBO(173, 211, 127, 1.0);

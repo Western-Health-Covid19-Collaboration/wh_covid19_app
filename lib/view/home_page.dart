@@ -104,7 +104,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            backgroundColor: Color.fromRGBO(255, 255, 255, percentage),
+            backgroundColor: AppColors.dynamicAppBarBackground(percentage),
             iconTheme: AppStyles.appBarIconTheme,
             floating: true,
             pinned: true,
