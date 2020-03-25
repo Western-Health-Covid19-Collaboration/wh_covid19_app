@@ -60,9 +60,9 @@ The app will have these screens and sections:
 
 The complete set of designs are in Zeplin, but this gives some indication of how the the app will look:
 
-![App main screen](docs/Main.png | width=100)
+![App main screen]("docs/Main.png" | width=100)
 
-![App main screen](docs/Yourself - PPE.png | width=100 "The main screen of the app")
+![App main screen]("docs/Yourself - PPE.png" | width=100 "The main screen of the app")
 
 ![App main screen](docs/Yourself - Welfare.png "The main screen of the app"| width=100)
 
