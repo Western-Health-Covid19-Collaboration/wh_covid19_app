@@ -9,7 +9,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:wh_covid19/main.dart';
 
 void main() {
-  testWidgets('show WH org name on home page', (tester) async {
+  testWidgets('show WH organisation name on home page', (tester) async {
     await tester.pumpWidget(MyApp());
 
     expect(find.text('Western Health'), findsOneWidget);
