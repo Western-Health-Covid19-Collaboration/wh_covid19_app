@@ -4,6 +4,7 @@ class Routes {
   static const staffWelfare = '/staff_welfare';
   static const sbsGuidance = '/sbs_guidance';
   static const info = '/info';
+  static const disclaimer = '/disclaimer';
 
   static const _icuNonIntensivist = '/icu_non_intensivist';
   static const ventilation = '$_icuNonIntensivist/ventilation';
