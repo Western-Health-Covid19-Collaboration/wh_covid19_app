@@ -112,10 +112,19 @@ Currently the project is being primarily co-ordinated via the GDG Melbourne slac
 
 ### Pull Request Process
 
+## Method 1 - If you are part of the team
 - Develop your work in a branch. Branch names should be prefixed with `feature`, `tech`, or `bugfix` depending on what is being done in them. eg: `feature\update-readme`
 - Open a pull request into master. Be sure to include a detailed description in your pull request. Other contributors will comment on your code or approve it
 - Please be sure to note the build status of your PR reported by the Codemagic CI
 - Once your pull request has been approved, please merge into master.
+
+## Method 2 - If you are not yet part of the team
+- If you are not a part of the team, you can still work on the code by clicking on the `Fork` option in this page.
+- Once you have forked to your own github account,  you will be able to check out the fork and work on it.
+- To create a pull request, you would have to push your local changes back to your git account. 
+- You would then find the option to `Compare and Pull Request`. 
+- Please follow the instructions above on how to submit a pull request. 
+- Once the pull request is reviewed and approved by the team, they would be able to merge this with the main branch. 
 
 ## Authors
 
