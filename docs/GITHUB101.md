@@ -1,12 +1,15 @@
-This document is aimed at getting started with github if you never used it.
+This document is aimed at getting started with github for Western Health staff.
 
-If you're a developer there's more info at [README.md](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/blob/master/README.md).
+
+If you're a developer there's more info at [README.md](../README.md).
 
 # Quick links
 
-- [Issues assigned to Gregg](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app//issues?q=assignee%3Agreggmiller+is%3Aopen)
+- [Medic related issues](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aissue+is%3Aopen+label%3AMedic)
 
-- [Issues tagged with design](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app//labels/design) need designer's attention
+- [Design related issues](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app//labels/design) need designer's attention
+
+- [Ready for dev issues](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aissue+is%3Aopen+label%3A%22Ready+for+Dev%22) are already scrubbed for questions so devs can jump in and start coding. If it's your first attempt to contribute to this project look also at [Good first issue](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
 
 - To install github mobile app head to [Android mobile link](market://details?id=com.github.android&hl=en) (alternative [Laptop link for android app](https://play.google.com/store/apps/details?id=com.github.android&hl=en) or [Apple placeholder]() store. You can login or sign up from there, for free.
 
@@ -20,13 +23,15 @@ If you're a developer there's more info at [README.md](https://github.com/Wester
 
 # How can you help?
 
-Look into [issues assigned to Gregg](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=assignee%3Agreggmiller+is%3Aopen), then review them and see what it is the developers may be asking for. Most often this will be a further copy (written information) and content or a breakdown of an algorithm/ checklist. 
+Look into [Medic related issues](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aissue+is%3Aopen+label%3AMedic), then review them and see what it is the developers may be asking for. Most often this will be a further copy (written information) and content or a breakdown of an algorithm/ checklist. 
 
 If you think you can help you can add a comment with either a simple reply or follow up question. Developers are a friendly bunch and won't be critical if you don't provide what they are looking for. You'll need to be logged in in order to make comments.
+
+A good rule of thumb is that if you can succintly put all your thoughts into a couple paragraphs and don't expect a lot of back and forth, it's ok. If it's complicated, other ways of communication will be more efficient.
   
 You can always ask for clarification by contacting Gregg directly on the general channel on Slack GDG Melbourne.  A good way to get a feel for the process and how issues are resolved might be to look at previous issues with Gregg's name assigned and the type of answer he has given. Generally, if it doesn't answer the developer then they will have responded.
 
-A good rule of thumb is that if you can succintly put all your thoughts into a couple paragraphs and don't expect a lot of back and forth, it's ok. If it's complicated, other ways of communication will be more efficient.
+There's also a private slack channel `#covid-19-app`. If you're going to get commited to the project it's worth checking with Gregg how to get access to it.
 
 
 # What is Github?
@@ -57,7 +62,7 @@ Github helps its users communicate each other through `"issues"`. Think of it as
 We create `issues` for different purposes, such as features we want to have, or bugs that were found. It's very easy to create an issue, and good practice says that you'll need to:
 
 - search or browse for existing issues, so we don't report the same thing twice
-
+- make sure you're logged in
 After that, hit the green button 
 ![Create issue](docs/create_new_issue.png)
  
@@ -72,13 +77,15 @@ After that, hit the green button
 - The `source code` (computer instructions) produced as part of that work follows a set of procedures - like a medical protocol - that ends up in producing a new version of the app, that would be automatically updated into mobile's phones. This can happen very quickly or very slowly, depending on a number of factors such as urgency, developer's available time and technical hurdles.
 - After all work and procedures are wrapped up the `issue` is closed. 
 
+That's the gist of it. You can find more info on [README.md](../README.md) under the "Development process" section.
+
 ### Tips for creating and handling issues
 
 Good titles for new issues follow a common format such as 
 "As a user I'd like to":
 - see a video about doff
 - share a pdf over email
-- collapse and and uncollapse the text about 
+- collapse and and uncollapse the text about ...
 etc etc 
 
 
