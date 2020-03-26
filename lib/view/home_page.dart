@@ -1,69 +1,127 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../hard_data.dart';
 import '../style.dart';
+import '../utils/color.dart';
 import '../widget/card_container.dart';
 import 'info_view.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.appBackground,
-      body: CustomScrollView(
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  double _scrollPosition = 0;
+
+  Widget _renderBackgroundContainer(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    // Ensure that the image uses the full parent width
+    final Widget mainHeader = SvgPicture.asset(
+      'assets/images/main_header.svg',
+      width: size.width,
+    );
+    return Container(width: size.width, child: mainHeader);
+  }
+
+  /// Renders a stack with a single child node.
+  Widget _renderStack(
+    BuildContext context,
+    Widget child,
+  ) {
+    return Stack(
+      children: <Widget>[_renderBackgroundContainer(context), child],
+    );
+  }
+
+  Widget _renderList(BuildContext context) {
+    return SliverList(
+      delegate: SliverChildListDelegate([
+        Container(height: 12),
+        CardContainer(
+          title: 'Look After Yourself',
+          cards: staffWelfare,
+        ),
+        CardContainer(
+          title: 'Airway',
+          cards: intubation,
+        ),
+        CardContainer(
+          title: 'ICU',
+          cards: icu,
+        ),
+        // Make sure the bottom CardContainer has room to breathe.
+        const SizedBox(height: 12),
+      ]),
+    );
+  }
+
+  Widget _renderBody(BuildContext context) {
+    const appBarHeight = 70;
+    const logoHeight = 24;
+
+    final Widget mainLogo = SvgPicture.asset('assets/images/main_logo.svg',
+        height: logoHeight.toDouble());
+
+    final appBarBottom = appBarHeight.toDouble() - logoHeight.toDouble();
+
+    final scrollPos = _scrollPosition.round();
+
+    final percentage = scrollPos < appBarBottom
+        ? ((scrollPos) / appBarBottom.toDouble())
+        : 1.00;
+
+    return Builder(builder: (context) {
+      final _scrollController = PrimaryScrollController.of(context);
+
+      _scrollController.addListener(() {
+        setState(() {
+          _scrollPosition = _scrollController.position.pixels;
+        });
+      });
+
+      return CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
             automaticallyImplyLeading: false,
-            expandedHeight: 100,
+            expandedHeight: appBarHeight.toDouble(),
             bottom: PreferredSize(
-              preferredSize: const Size.fromHeight(50),
+              preferredSize: Size.fromHeight(appBarHeight.toDouble()),
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    const Text(
-                      'Western Health',
-                      style: AppStyles.appBarTextStyle,
-                    ),
+                    mainLogo,
                     IconButton(
-                      icon: Icon(
-                        Icons.info_outline,
-                        color: AppColors.appBarIcon,
-                      ),
+                      icon: Icon(Icons.info_outline,
+                          color: generateIconColor(AppColors.homeAppBarIcon,
+                              AppColors.appBarIcon, percentage)),
                       onPressed: () => InfoView.navigateTo(context),
                     )
                   ],
                 ),
               ),
             ),
-            backgroundColor: AppColors.appBarBackground,
+            backgroundColor: AppColors.dynamicAppBarBackground(percentage),
             iconTheme: AppStyles.appBarIconTheme,
             floating: true,
             pinned: true,
             snap: false,
           ),
-          SliverList(
-            delegate: SliverChildListDelegate([
-              Container(height: 24),
-              const CardContainer(
-                title: 'Look After Yourself',
-                cards: staffWelfare,
-              ),
-              CardContainer(
-                title: 'Airway',
-                cards: intubation,
-              ),
-              const CardContainer(
-                title: 'ICU',
-                cards: icu,
-              ),
-              // Make sure the bottom CardContainer has room to breathe.
-              const SizedBox(height: 16),
-            ]),
-          ),
+          _renderList(context)
         ],
-      ),
-    );
+      );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        // backgroundColor: AppColors.appBackground,
+        body: Builder(builder: (context) {
+      return _renderStack(context, _renderBody(context));
+    }));
   }
 }
