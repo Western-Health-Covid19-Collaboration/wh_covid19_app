@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../style.dart';
-import 'package:wh_covid19/widget/cards/reusable_card_base.dart';
+import '../widget/cards/reusable_card_base.dart';
 
 class ReusableCard extends StatelessWidget {
   /// Title of the card

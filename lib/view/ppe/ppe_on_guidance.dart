@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import 'package:wh_covid19/models/PPEStepInfo.dart';
-import 'package:wh_covid19/style.dart';
-import 'package:wh_covid19/widget/cards/ppe_step_card.dart';
+import '../../models/PPEStepInfo.dart';
+import '../../style.dart';
+import '../../widget/cards/ppe_step_card.dart';
 
 class PPEOnGuidance extends StatelessWidget {
   final title = 'Step By Step Guide';
