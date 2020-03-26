@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:wh_covid19/style.dart';
 
 class ReusableCardBase extends StatelessWidget {
-  /// Title of the card
-  final String title;
-
   /// Description of the card
   final String description;
 
@@ -25,43 +22,50 @@ class ReusableCardBase extends StatelessWidget {
   /// Fallback instead of route
   final Function fallback;
 
-  ReusableCardBase(
-      {@required this.title,
-      this.description,
-      this.color = Colors.white,
-      this.routeTo,
-      this.height = 84,
-      this.elevation = 4,
-      this.fallback,
-      this.child})
-      : assert(title != null, child.isNotEmpty);
+  /// Vertical Alignment
+  final MainAxisAlignment verticalAlignment;
+
+  /// Padding
+  final EdgeInsets padding;
+
+  /// Margin
+  final EdgeInsets margin;
+
+  /// Border Radius
+  final double borderRadius;
+
+  ReusableCardBase({
+    this.description,
+    this.color = Colors.white,
+    this.routeTo,
+    this.height,
+    this.elevation = 4,
+    this.borderRadius = 8.00,
+    this.padding = const EdgeInsets.all(12),
+    this.margin,
+    this.fallback,
+    this.child,
+    this.verticalAlignment = MainAxisAlignment.start,
+  }) : assert(child.isNotEmpty);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Card(
-        //margin: EdgeInsets.fromLTRB(12, 5, 12, 5),
+        margin: margin,
         color: color,
         elevation: elevation,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(8))),
+            borderRadius: BorderRadius.all(Radius.circular(borderRadius))),
         child: Padding(
-          padding: const EdgeInsets.all(12),
+          padding: padding,
           child: Container(
             height: height,
             child: Column(
-              mainAxisAlignment: description == null
-                  ? MainAxisAlignment.center
-                  : MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: verticalAlignment,
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Text(
-                  title,
-                  style: AppStyles.cardTitleTextStyle,
-                ),
-                ...child
-              ],
+              children: child,
             ),
           ),
         ),

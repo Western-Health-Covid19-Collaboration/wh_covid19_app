@@ -37,13 +37,19 @@ class ReusableCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ReusableCardBase(
-      title: title,
       color: color,
       routeTo: routeTo,
       height: height,
       elevation: elevation,
       fallback: fallback,
+      verticalAlignment: description == ''
+          ? MainAxisAlignment.center
+          : MainAxisAlignment.spaceBetween,
       child: <Widget>[
+        Text(
+          title,
+          style: AppStyles.cardTitleTextStyle,
+        ),
         description != null
             ? Text(
                 description,
