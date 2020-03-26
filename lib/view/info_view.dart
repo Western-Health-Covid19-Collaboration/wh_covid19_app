@@ -44,6 +44,7 @@ class InfoView extends StatelessWidget {
       color: _cardColor,
       height: _cardHeight,
       elevation: _cardElevation,
+      routeTo: Routes.disclaimer,
     )
   ];
 
