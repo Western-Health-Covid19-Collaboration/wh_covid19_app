@@ -10,6 +10,11 @@ class PPEOnGuidance extends StatelessWidget {
   final List<PPEStepInfo> steps = [
     PPEStepInfo(
         step: 'Step 1',
+        image: Image.asset('assets/images/steps/on_hand_hygiene.png'),
+        text: 'Hand Hygiene',
+        notes: ['Wash hands or use an alcohol-based hand sanitizer']),
+    PPEStepInfo(
+        step: 'Step 2',
         image: Image.asset('assets/images/steps/on_gown.png'),
         text: 'Gown',
         notes: [
@@ -17,7 +22,7 @@ class PPEOnGuidance extends StatelessWidget {
           'Fasten in back neck and waist'
         ]),
     PPEStepInfo(
-        step: 'Step 2',
+        step: 'Step 3',
         image: Image.asset('assets/images/steps/on_mask.png'),
         text: 'Mask or Respirator',
         notes: [
@@ -27,12 +32,17 @@ class PPEOnGuidance extends StatelessWidget {
           'Fit-check respirator'
         ]),
     PPEStepInfo(
-        step: 'Step 3',
+        step: 'Step 4',
         image: Image.asset('assets/images/steps/on_goggles.png'),
         text: 'Goggles or face shield',
         notes: ['Place over face and eyes', 'Adjust to fit']),
     PPEStepInfo(
-        step: 'Step 4',
+        step: 'Step 5',
+        image: Image.asset('assets/images/steps/on_hand_hygiene.png'),
+        text: 'Hand Hygiene',
+        notes: ['Wash hands or use an alcohol-based hand sanitizer']),
+    PPEStepInfo(
+        step: 'Step 6',
         image: Image.asset('assets/images/steps/on_gloves.png'),
         text: 'Gloves',
         notes: ['Extend to cover wrist of isolation gown'])
