@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:wh_covid19/intro_router.dart';
 import 'package:wh_covid19/routes.dart';
 import 'package:wh_covid19/hard_data.dart';
 import 'package:wh_covid19/style.dart';
+import 'package:wh_covid19/view/disclaimer_view.dart';
 import 'package:wh_covid19/view/home_page.dart';
 import 'package:wh_covid19/view/icu_non_intensivist/general_care_view.dart';
 import 'package:wh_covid19/view/icu_non_intensivist/tips_junior_staff_view.dart';
@@ -15,7 +17,6 @@ import 'package:wh_covid19/view/sbs_guide_view.dart';
 import 'package:wh_covid19/view/view_templates/html_text_card_view_template.dart';
 import 'package:wh_covid19/view/staff_welfare/your_welfare_view.dart';
 
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: AppColors.appBackground,
         fontFamily: 'Inter',
       ),
-      initialRoute: Routes.home,
+      initialRoute: Routes.introRouter,
       routes: {
         Routes.home: (context) => HomePage(),
         Routes.ppe: (context) => PPEView(),
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
             context, routeToScreenData[Routes.ventilationAdjuncts]),
         Routes.generalCare: (context) => GeneralCareView(),
         Routes.tipsJuniorStaff: (context) => TipsJuniorStaffView(),
+        Routes.introRouter: (context) => IntroRouter(),
       },
       onGenerateRoute: (settings) {
         // Use onGenerateRoute to set fullscreenDialog=true
@@ -65,6 +67,10 @@ class MyApp extends StatelessWidget {
               builder: (context) => IntubationChecklistPage(),
               fullscreenDialog: false,
             );
+          case Routes.disclaimer:
+            return MaterialPageRoute<DisclaimerView>(
+                builder: (context) => DisclaimerView(),
+                fullscreenDialog: false);
         }
         // Fallback, won't be called unless an unknown route is called
         return MaterialPageRoute<HomePage>(
