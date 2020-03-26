@@ -51,7 +51,7 @@ class HomePage extends StatelessWidget {
                 cards: staffWelfare,
               ),
               CardContainer(
-                title: 'Intubations',
+                title: 'Airway',
                 cards: intubation,
               ),
               CardContainer(
