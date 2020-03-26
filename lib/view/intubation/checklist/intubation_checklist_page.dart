@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:wh_covid19/widget/zoomable_widget.dart';
 
 import '../../../style.dart';
+import '../../../widget/zoomable_widget.dart';
 
 class IntubationChecklistPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Intubation Checklist'),
+        title: const Text('Intubation Checklist'),
       ),
       body: Flex(
         direction: Axis.vertical,

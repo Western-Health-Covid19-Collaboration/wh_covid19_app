@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:wh_covid19/style.dart';
-import 'package:wh_covid19/widget/reusable_card.dart';
+
+import '../style.dart';
+import 'reusable_card.dart';
 
 class CardContainer extends StatelessWidget {
   static const double _outerPadding = 16;
@@ -12,7 +13,7 @@ class CardContainer extends StatelessWidget {
   /// List of ReusableCard to be displayed
   final List<ReusableCard> cards;
 
-  CardContainer({this.title, this.cards});
+  const CardContainer({this.title, this.cards});
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +38,7 @@ class CardContainer extends StatelessWidget {
   // Allowed: 2 cards, 3 cards, 4 cards
   Widget cardsLayout() {
     // Transform the card to an expanded
-    var expandedCards = cards
-        .map((c) => Expanded(child: c))
-        .toList();
+    final expandedCards = cards.map((c) => Expanded(child: c)).toList();
 
     switch (cards.length) {
       case 2:

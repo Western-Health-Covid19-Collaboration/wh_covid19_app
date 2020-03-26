@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wh_covid19/style.dart';
+
+import '../style.dart';
 
 class ReusableCard extends StatelessWidget {
   /// Title of the card
@@ -23,9 +24,15 @@ class ReusableCard extends StatelessWidget {
   /// Fallback instead of route
   final Function fallback;
 
-  ReusableCard({@required this.title, this.description, this.color = Colors
-      .white, this.routeTo, this.height = 84, this.elevation = 4, this.fallback})
-      : assert(title != null);
+  const ReusableCard({
+    @required this.title,
+    this.description,
+    this.color = Colors.white,
+    this.routeTo,
+    this.height = 84,
+    this.elevation = 4,
+    this.fallback,
+  }) : assert(title != null, 'title required');
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +41,7 @@ class ReusableCard extends StatelessWidget {
         //margin: EdgeInsets.fromLTRB(12, 5, 12, 5),
         color: color,
         elevation: elevation,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(8))),
         child: Padding(
           padding: const EdgeInsets.all(12),
@@ -51,23 +58,23 @@ class ReusableCard extends StatelessWidget {
                   title,
                   style: AppStyles.cardTitleTextStyle,
                 ),
-                description != null ? Text(
-                  description,
-                  style: AppStyles.cardDescriptionTextStyle,
-                ) : Container(),
+                if (description != null)
+                  Text(
+                    description,
+                    style: AppStyles.cardDescriptionTextStyle,
+                  ),
               ],
             ),
           ),
         ),
       ),
       onTap: () {
-        if(routeTo != null) {
+        if (routeTo != null) {
           Navigator.pushNamed(context, routeTo);
         } else {
-          if(fallback != null){
+          if (fallback != null) {
             fallback();
           }
-      
         }
       },
     );

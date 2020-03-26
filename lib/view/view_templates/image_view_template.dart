@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:wh_covid19/widget/reusable_card.dart';
+
+import '../../widget/reusable_card.dart';
 
 class ImageViewTemplate extends StatelessWidget {
   final ReusableCard card;
   final String imagePath;
 
-  ImageViewTemplate({this.card, this.imagePath});
+  const ImageViewTemplate({this.card, this.imagePath});
 
   @override
   Widget build(BuildContext context) {
@@ -15,12 +16,12 @@ class ImageViewTemplate extends StatelessWidget {
         title: Text(card.title),
       ),
       body: Container(
-        padding: EdgeInsets.all(12),
+          padding: const EdgeInsets.all(12),
           child: Center(
               child: Image.asset(
-        imagePath,
-        fit: BoxFit.fill,
-      ))),
+            imagePath,
+            fit: BoxFit.fill,
+          ))),
     );
   }
 }
