@@ -12,6 +12,7 @@ import 'view/info_view.dart';
 import 'view/intubation/algorithm/intubation_algorithm_page.dart';
 import 'view/intubation/checklist/intubation_checklist_page.dart';
 import 'view/intubation/guidance/intubation_guidance_page.dart';
+import 'view/ppe/ppe_on_guidance.dart';
 import 'view/ppe/ppe_view.dart';
 import 'view/sbs_guide_view.dart';
 import 'view/staff_welfare/your_welfare_view.dart';
