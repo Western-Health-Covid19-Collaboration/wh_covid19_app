@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
           cards: staffWelfare,
         ),
         CardContainer(
-          title: 'Intubations',
+          title: 'Airway',
           cards: intubation,
         ),
         CardContainer(
