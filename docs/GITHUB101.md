@@ -63,8 +63,8 @@ We create `issues` for different purposes, such as features we want to have, or 
 
 - search or browse for existing issues, so we don't report the same thing twice
 - make sure you're logged in
-After that, hit the green button 
-![Create issue](docs/create_new_issue.png)
+- After that, hit the green button 
+![](create_new_issue.png)
  
 - create a short, easy to remember title for it
 - create the first comment, explaining as clear and concise as possible what the goal is
