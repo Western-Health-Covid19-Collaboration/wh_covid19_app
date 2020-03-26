@@ -23,13 +23,13 @@ class _PPEViewState extends State<PPEView> {
 
   final puttingOnCards = <Widget>[
     _buildVerticalSpacer(),
-    ReusableCard(
+    const ReusableCard(
       title: 'Step By Step Guide',
       color: AppColors.backgroundGreen,
       height: PPEView._cardHeight,
     ),
     _buildVerticalSpacer(),
-    ReusableCard(
+    const ReusableCard(
       title: 'Infographic',
       color: AppColors.backgroundGreen,
       height: PPEView._cardHeight,
@@ -39,13 +39,13 @@ class _PPEViewState extends State<PPEView> {
 
   final takingOffCards = <Widget>[
     _buildVerticalSpacer(),
-    ReusableCard(
+    const ReusableCard(
       title: 'Step By Step Guide',
       color: AppColors.backgroundBrown,
       height: PPEView._cardHeight,
     ),
     _buildVerticalSpacer(),
-    ReusableCard(
+    const ReusableCard(
       title: 'Infographic',
       color: AppColors.backgroundBrown,
       height: PPEView._cardHeight,

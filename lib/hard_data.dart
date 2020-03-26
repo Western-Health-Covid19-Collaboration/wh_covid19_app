@@ -24,19 +24,19 @@ const List<ReusableCard> staffWelfare = [
 
 // Intubation card list composition
 final List<ReusableCard> intubation = [
-  ReusableCard(
+  const ReusableCard(
     title: 'Step By Step Guidance',
     description: '12 steps',
     color: AppColors.backgroundGreen,
     routeTo: Routes.intubationGuidance,
   ),
-  ReusableCard(
+  const ReusableCard(
     title: 'Checklist',
     description: '12 steps',
     color: AppColors.backgroundGreen,
     routeTo: Routes.intubationChecklist,
   ),
-  ReusableCard(
+  const ReusableCard(
     title: 'Algorithm',
     description: '12 steps',
     color: AppColors.backgroundGreen,
