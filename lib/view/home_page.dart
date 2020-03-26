@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:wh_covid19/hard_data.dart';
-import 'package:wh_covid19/style.dart';
-import 'package:wh_covid19/view/info_view.dart';
-import 'package:wh_covid19/widget/card_container.dart';
+
 import 'package:wh_covid19/utils/color.dart';
+import '../hard_data.dart';
+import '../style.dart';
+import '../widget/card_container.dart';
+import 'info_view.dart';
 
 class HomePage extends StatefulWidget {
   @override
