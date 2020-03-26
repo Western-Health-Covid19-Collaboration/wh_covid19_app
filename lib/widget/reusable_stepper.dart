@@ -13,42 +13,10 @@ class _ReusableStepperState extends State<ReusableStepper> {
         state: StepState.indexed,
         content: Text('Clean your hands carefully...')),
     Step(
-        title: const Text('Gown'),
-        isActive: true,
-        state: StepState.indexed,
-        content: Image.asset(
-          'assets/images/gown_on.jpg',
-          fit: BoxFit.fill,
-        )),
-    Step(
-        title: const Text('Mask'),
-        isActive: true,
-        state: StepState.indexed,
-        content: Image.asset(
-          'assets/images/mask_on.jpg',
-          fit: BoxFit.fill,
-        )),
-    Step(
-        title: const Text('Eye Protection'),
-        isActive: true,
-        state: StepState.indexed,
-        content: Image.asset(
-          'assets/images/eye_protection_on.jpg',
-          fit: BoxFit.fill,
-        )),
-    const Step(
-        title: Text('Hand Hygene'),
+        title: const Text('Hand Hygene'),
         isActive: true,
         state: StepState.indexed,
         content: Text('Clean your hands carefully...')),
-    Step(
-        title: const Text('Gloves'),
-        isActive: true,
-        state: StepState.indexed,
-        content: Image.asset(
-          'assets/images/gloves_on.jpg',
-          fit: BoxFit.fill,
-        )),
   ];
 
   int currentStep = 0;
