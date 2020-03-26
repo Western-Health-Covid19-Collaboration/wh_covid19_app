@@ -36,6 +36,13 @@ class ReusableCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cardContent = description != null
+        ? Text(
+            description,
+            style: AppStyles.cardDescriptionTextStyle,
+          )
+        : Container();
+
     return ReusableCardBase(
       color: color,
       routeTo: routeTo,
@@ -50,12 +57,7 @@ class ReusableCard extends StatelessWidget {
           title,
           style: AppStyles.cardTitleTextStyle,
         ),
-        description != null
-            ? Text(
-                description,
-                style: AppStyles.cardDescriptionTextStyle,
-              )
-            : Container(),
+        cardContent,
       ],
     );
   }
