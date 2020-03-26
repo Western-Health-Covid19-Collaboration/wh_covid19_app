@@ -1,1 +1,30 @@
-Initial app version.
+---- Thursday 27th March, 2020 ----
+
+
+---- Wednesday 25th March, 2020 ----
+
+* Contact numbers now shows WH phonebook webpage
+* Added initial versions of ICU screens
+
+---- Tuesday 24th March, 2020 ----
+
+* Improved PPE screens including videos
+* Built out your welfare screen
+* Build out rough versions of intubation screens, including intubation steps infographic with pinch to zoom
+
+---- Monday 23rd March, 2020 ----
+
+* Initial PPE screens
+* Updated colours
+* Cleanup UI spacing and layout
+
+---- Sunday 22nd March, 2020 ----
+
+* Added simple info screen
+* Added Home screen.
+* Initial app version.
+
+---- Saturday 21st March, 2020 ----
+
+* Licensed under ASF 2.0
+* Imported code from Gregg
