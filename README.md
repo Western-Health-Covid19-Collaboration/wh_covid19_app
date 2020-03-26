@@ -173,6 +173,9 @@ Currently the project is being primarily co-ordinated via the GDG Melbourne slac
 
 This project is licensed under the Apache 2.0 - see the `LICENSE-2.0.txt` file for details.
 
+Western Health logos belong solely to Western Health may be subject to their copyrights and trademarks, and are not available under the same license as the rest of this application.
+
+
 ## Emergency contacts
 
 For any urgent requests relating to this app you can contact luke.sleeman@gmail.com - It will go to Luke's phone.  You can also DM Luke through [GDG Melbourne's slack](http://bit.ly/join_gdgslack) - DM `@luke.sleeman`.
