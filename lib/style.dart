@@ -11,9 +11,7 @@ abstract class AppColors {
   static final Color backgroundBrown = Color(0xffd3ca92);
   static final Color majorText = blackAlpha900;
   static final Color minorText = blackAlpha600;
-
-  // TODO: should come from color palette
-  static final Color appBarIcon = Color.fromRGBO(0, 122, 255, 1.0);
+  static final Color appBarIcon = blackAlpha900;
 
   // TODO: should come from color palette
   static final Color appBarBackground = Color(0xf0f9f9f9);
@@ -108,5 +106,11 @@ abstract class AppStyles {
       color: AppColors.minorText,
       fontWeight: FontWeight.w600, // semi-bold
       fontSize: 13.0,
+      fontFamily: fontFamily);
+
+  static final TextStyle textLegal = TextStyle(
+      color: AppColors.minorText,
+      fontWeight: FontWeight.normal,
+      fontSize: 12.0,
       fontFamily: fontFamily);
 }

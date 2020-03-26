@@ -18,19 +18,27 @@ Currently under development by a community of volunteers.
 
 Everything is co-ordinated through github issues.  The current development process is:
 
-👨‍⚕️👩‍⚕️ **Greg Miller** and other Western Health staff provide features, content and suggestions to the design team via GitHub issues.  Greg & Co can create new issues for features to add and either assign to Marc or label them `design`.
+👨‍⚕️👩‍⚕️ **Greg Miller** and other Western Health staff provide features, content and suggestions via GitHub issues.  Greg & Co can create new issues for features to add, things that need changing, etc.  
+
+If you need any help from the WH staff, you can label an issue as `Medic`.  [These issues currently need medic advice](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aopen+is%3Aissue+label%3AMedic). You can also `@` mention and assign issues to `@Western-Health-Covid19-Collaboration/medical` in a comment to notify the whole WH team.
+
+The WH staff can label issues as `#1 Priority`, `#2 Priority`, `#3 Priority`.  Everybody on the team should focus on #1 priority issues first, then #2 and so on.
+
+Once a issue has all the appropriate info it, it can be labeled `design` to hand over to the next step ...
 
 ⬇️
 
-👩‍🎨👨‍🎨 **Marc Edwards** and other designers help design and specify features.  They add design guidance, into the issues.  [These issues currently need design guidance.](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aopen+is%3Aissue+label%3Adesign).  Once they have done their ✨ magic ✨ the issue should be labeled as 'Ready for dev'
+👩‍🎨👨‍🎨 **Marc Edwards** and other designers help design and specify features.  They  upload designs to zeplin and add design guidance into the issues.  
+
+If you need any help from the design team, you can label an issue as `design`.  [These issues currently need design guidance](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aopen+is%3Aissue+label%3Adesign).   You can also `@` mention `@Western-Health-Covid19-Collaboration/designers` in a comment to notify the whole design team.
+
+Once they have done their ✨ magic ✨ the issue should be labeled as 'Ready for dev' ...
 
 ⬇️
  
- 👩‍💻👨‍💻 **Developers** pick up [ready for Dev issues](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aopen+is%3Aissue+label%3A%22Ready+for+Dev%22+) and submit PRs to the project when then get approved and merged.
+👩‍💻👨‍💻 **Developers** pick up [ready for Dev issues](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aopen+is%3Aissue+label%3A%22Ready+for+Dev%22+) and submit PRs to the project when then get approved and merged.  If you are working on developing an issue, be sure to assign yourself to it, or mention that you are working on it.
  
- Check out the full list [issues page](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues) to get an overview of everything that is happening.  Feel free to flag an issue with `design` at any time to summon a designer.
- 
- If your committing changes to the docs only add `[skip ci]` to your commit message to save build time.
+If your committing changes to the docs only add `[skip ci]` to your commit message to save build time.
  
 ⬇️
 
@@ -38,13 +46,31 @@ Everything is co-ordinated through github issues.  The current development proce
 
 ## The Plan
 
+We will rapidly build out functionality and screens. The plan is to ship early, and ship often, deploying new builds at least once a day via CI.
+
+Currently all data will be stored inside the app, with no CMS or web services. The app should have minimal logic, and instead just focuses on providing important information in a mobile friendly format.
+
+### Information architecture
+
 The app will have these screens and sections:
 
 ![App information architecture](docs/Flow-Diagram.png "The information architecture of the app")
 
-We will rapidly build out functionality and screens. The plan is to ship early, and ship often, deploying new builds at least once a day via CI.
+### Screenshots
 
-Currently all data will be stored inside the app, with no CMS or web services. The app should have minimal logic, and instead just focuses on providing important information in a mobile friendly format.
+The complete set of designs are in Zeplin, but this gives some indication of how the the app will look:
+
+
+<p align="center">
+  <img src="docs/Main.png" width="256">
+  <img src="docs/Yourself - Welfare.png" width="256">
+  <img src="docs/Yourself - PPE.png" width="256">
+</p>
+<p align="center">
+  <img src="docs/Yourself - PPE - Detail 01 - Step by Step.png" width="256">
+  <img src="docs/Yourself - PPE - Detail 03 - Method One.png" width="256">
+  <img src="docs/Yourself - PPE - Detail 04 - Method Two.png" width="256">
+</p>
 
 ## Getting Started & Development
 
@@ -112,10 +138,19 @@ Currently the project is being primarily co-ordinated via the GDG Melbourne slac
 
 ### Pull Request Process
 
+## Method 1 - If you are part of the team
 - Develop your work in a branch. Branch names should be prefixed with `feature`, `tech`, or `bugfix` depending on what is being done in them. eg: `feature\update-readme`
 - Open a pull request into master. Be sure to include a detailed description in your pull request. Other contributors will comment on your code or approve it
 - Please be sure to note the build status of your PR reported by the Codemagic CI
 - Once your pull request has been approved, please merge into master.
+
+## Method 2 - If you are not yet part of the team
+- If you are not a part of the team, you can still work on the code by clicking on the `Fork` option in this page.
+- Once you have forked to your own github account,  you will be able to check out the fork and work on it.
+- To create a pull request, you would have to push your local changes back to your git account. 
+- You would then find the option to `Compare and Pull Request`. 
+- Please follow the instructions above on how to submit a pull request. 
+- Once the pull request is reviewed and approved by the team, they would be able to merge this with the main branch. 
 
 ## Authors
 
