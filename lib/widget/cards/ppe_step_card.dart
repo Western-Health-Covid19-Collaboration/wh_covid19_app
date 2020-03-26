@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import 'package:wh_covid19/models/PPEStepInfo.dart';
-import 'package:wh_covid19/style.dart';
-import 'package:wh_covid19/widget/cards/reusable_card_base.dart';
+import '../../models/PPEStepInfo.dart';
+import '../../style.dart';
+import '../../widget/cards/reusable_card_base.dart';
 
 class PPECard extends StatelessWidget {
   final PPEStepInfo step;
@@ -36,7 +36,7 @@ class PPECard extends StatelessWidget {
       color: backgroundColor,
       child: <Widget>[
         Padding(
-          padding: EdgeInsets.fromLTRB(16, 0, 16, 12),
+          padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
           child: Text(
             step.step,
             style: AppStyles.textH3,
@@ -47,9 +47,9 @@ class PPECard extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
           child: Text(step.text, style: AppStyles.textH4),
         ),
-        Padding(
+        Container(
           padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
-          child: Expanded(child: getList(step.notes, context)),
+          child: getList(step.notes, context),
         )
       ],
     );

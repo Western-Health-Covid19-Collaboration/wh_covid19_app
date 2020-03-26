@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wh_covid19/style.dart';
 
 class ReusableCardBase extends StatelessWidget {
   /// Description of the card
@@ -44,9 +43,9 @@ class ReusableCardBase extends StatelessWidget {
     this.padding = const EdgeInsets.all(12),
     this.margin,
     this.fallback,
-    this.child,
+    @required this.child,
     this.verticalAlignment = MainAxisAlignment.start,
-  }) : assert(child.isNotEmpty);
+  }) : assert(child.isNotEmpty, 'Child component must be declared');
 
   @override
   Widget build(BuildContext context) {
