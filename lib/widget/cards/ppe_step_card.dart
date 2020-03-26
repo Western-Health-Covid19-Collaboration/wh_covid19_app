@@ -28,7 +28,7 @@ class PPECard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ReusableCardBase(
-      margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+      margin: EdgeInsets.fromLTRB(0, 12, 0, 12),
       borderRadius: 0,
       padding: EdgeInsets.fromLTRB(0, 12, 0, 12),
       color: backgroundColor,
@@ -42,11 +42,11 @@ class PPECard extends StatelessWidget {
         ),
         step.image,
         Padding(
-          padding: EdgeInsets.fromLTRB(16, 12, 16, 5),
+          padding: EdgeInsets.fromLTRB(16, 12, 16, 8),
           child: Text(step.text, style: AppStyles.textH4),
         ),
         Padding(
-          padding: EdgeInsets.fromLTRB(16, 5, 16, 12),
+          padding: EdgeInsets.fromLTRB(16, 8, 16, 12),
           child: Expanded(child: getList(step.notes, context)),
         )
       ],
