@@ -44,7 +44,7 @@ class _DisclaimerViewState extends State<DisclaimerView>
       padding: EdgeInsets.all(16),
       child: Text(
         'Scroll down to agree',
-        style: AppStyles.textP,
+        style: AppStyles.textLegal,
         textAlign: TextAlign.center,
       ),
     ),
@@ -82,7 +82,6 @@ class _DisclaimerViewState extends State<DisclaimerView>
 
   @override
   Widget build(BuildContext context) {
-
     // Bottom button to agree t&c
     final _agreeButton = Container(
       margin: EdgeInsets.only(left: 16, right: 16, bottom: 16),
@@ -118,29 +117,40 @@ class _DisclaimerViewState extends State<DisclaimerView>
                 style: AppStyles.textH5,
               ),
             ),
-            body: Theme(
-              data: ThemeData(accentColor: AppColors.green500),
-              child: Stack(
-                alignment: Alignment.bottomCenter,
-                children: [
-                  NotificationListener<ScrollUpdateNotification>(
-                    child: ListView(
-                      children: <Widget>[
-                        _content,
-                        !snapshot.data ? _agreeButton : _agreedText,
+            body: MediaQuery.of(context).size.height < 600
+                ? Theme(
+                    data: ThemeData(accentColor: AppColors.green500),
+                    child: Stack(
+                      alignment: Alignment.bottomCenter,
+                      children: [
+                        NotificationListener<ScrollUpdateNotification>(
+                          child: ListView(
+                            children: <Widget>[
+                              _content,
+                              !snapshot.data ? _agreeButton : _agreedText,
+                            ],
+                          ),
+                          onNotification: (scrollNotification) {
+                            _animationController.forward();
+                            return true;
+                          },
+                        ),
+                        FadeTransition(
+                            opacity: _animation,
+                            child: !snapshot.data
+                                ? _scrollDownToAgree
+                                : _scrollDown)
                       ],
                     ),
-                    onNotification: (scrollNotification) {
-                      _animationController.forward();
-                      return true;
-                    },
+                  )
+                : Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      _content,
+                      !snapshot.data ? _agreeButton : _agreedText,
+                    ],
                   ),
-                  FadeTransition(
-                      opacity: _animation,
-                      child: !snapshot.data ? _scrollDownToAgree : _scrollDown)
-                ],
-              ),
-            ),
           );
         });
   }
