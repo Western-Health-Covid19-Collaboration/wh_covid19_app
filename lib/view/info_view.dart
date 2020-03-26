@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:package_info/package_info.dart';
+import 'package:wh_covid19/contact_launcher.dart';
+import 'package:wh_covid19/hard_data.dart';
 import 'package:wh_covid19/routes.dart';
 import 'package:wh_covid19/style.dart';
 import 'package:wh_covid19/widget/reusable_card.dart';
@@ -20,6 +22,7 @@ class InfoView extends StatelessWidget {
       color: _cardColor,
       height: _cardHeight,
       elevation: _cardElevation,
+      fallback: () => ContactLauncher.launchWithBrowser(whURL),
     ),
     ReusableCard(
       title: 'Society & College Recommendations',

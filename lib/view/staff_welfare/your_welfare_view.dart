@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:wh_covid19/contact_launcher.dart';
+import 'package:wh_covid19/hard_data.dart';
 import 'package:wh_covid19/style.dart';
 import 'package:wh_covid19/widget/reusable_card.dart';
 
 class YourWelfareView extends StatelessWidget {
   final _title = 'Your Welfare';
-  static const _phoneNumber = '+61398000000';
 
-  final card =
-    ReusableCard(
-      title: 'Phases of Pandemic and suggestions for self-care',
-      description: '',
-      color: Colors.white,
-    );
+  final card = ReusableCard(
+    title: 'Phases of Pandemic and suggestions for self-care',
+    description: '',
+    color: Colors.white,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,7 @@ class YourWelfareView extends StatelessWidget {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.call),
-            onPressed: _makeCall,
+            onPressed: () => ContactLauncher.launchWithBrowser(whURL),
           ),
         ],
       ),
@@ -42,22 +41,31 @@ class YourWelfareView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   _buildSpacer(),
-                  Text('It''s okay to not be okay.', style: AppStyles.textH1),
+                  Text('It\'s okay to not be okay.', style: AppStyles.textH1),
                   _buildSpacer(),
                   Text('Please look after yourself.', style: AppStyles.textH2),
                   _buildSpacer(),
                   _buildSpacer(),
                   Text('Basic Tips', style: AppStyles.textH3),
-                  _buildIconTextRow('STOP, BREATHE then think'),
-                  _buildIconTextRow('Limit news intake'),
+                  _buildIconTextRow(Text('🛑'), 'STOP, BREATHE then think'),
+                  _buildIconTextRow(Text('🗞'), 'Limit news intake'),
                   _buildSpacer(),
                   Text('Take Care of Basic Needs', style: AppStyles.textH3),
-                  _buildIconTextRow('Rest'),
-                  _buildIconTextRow('Eat well'),
-                  _buildIconTextRow('Engage in physical activity'),
-                  _buildIconTextRow('Stay in contact with loved ones'),
-                  _buildIconTextRow('Avoid unhelpful coping strategies (Tobacco, alcohol or other drugs)'),
-                  _buildIconTextRow('Consider psychological energy levels. “Fill up” after “Emptying the tank'),
+                  _buildIconTextRow(Text('🛌'), 'Rest'),
+                  _buildIconTextRow(Text('🥦'), 'Eat well'),
+                  _buildIconTextRow(Text('🏃‍'), 'Engage in physical activity'),
+                  _buildIconTextRow(
+                    Text('🥰'),
+                    'Stay in contact with loved ones',
+                  ),
+                  _buildIconTextRow(
+                    Text('🧻'),
+                    'Avoid unhelpful coping strategies (Tobacco, alcohol or other drugs)',
+                  ),
+                  _buildIconTextRow(
+                    Text('🔋'),
+                    'Consider psychological energy levels. “Fill up” after “Emptying the tank”',
+                  ),
                 ],
               ),
             ),
@@ -71,7 +79,7 @@ class YourWelfareView extends StatelessWidget {
     );
   }
 
-  Widget _buildIconTextRow(String text) {
+  Widget _buildIconTextRow(Widget icon, String text) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
       child: Row(
@@ -79,21 +87,12 @@ class YourWelfareView extends StatelessWidget {
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.only(right: 16),
-            child: Icon(Icons.info),
+            child: icon,
           ),
-          Expanded(child: Text(text, style: AppStyles.textP,)),
+          Expanded(child: Text(text, style: AppStyles.textP)),
         ],
       ),
     );
-  }
-
-  Future<void> _makeCall() async {
-    const url = 'tel:$_phoneNumber';
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
   }
 
   Widget _buildSpacer({double height = 16}) => Container(height: height);
