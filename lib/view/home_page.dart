@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:wh_covid19/utils/color.dart';
 import '../hard_data.dart';
 import '../style.dart';
+import '../utils/color.dart';
 import '../widget/card_container.dart';
 import 'info_view.dart';
 
@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
   double _scrollPosition = 0;
 
   Widget _renderBackgroundContainer(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
     // Ensure that the image uses the full parent width
     final Widget mainHeader = SvgPicture.asset(
       'assets/images/main_header.svg',
@@ -25,9 +25,7 @@ class _HomePageState extends State<HomePage> {
     return Container(width: size.width, child: mainHeader);
   }
 
-  /**
-   * Renders a stack with a single child node.
-   */
+  /// Renders a stack with a single child node.
   Widget _renderStack(
     BuildContext context,
     Widget child,
@@ -54,14 +52,14 @@ class _HomePageState extends State<HomePage> {
           cards: icu,
         ),
         // Make sure the bottom CardContainer has room to breathe.
-        SizedBox(height: 12),
+        const SizedBox(height: 12),
       ]),
     );
   }
 
   Widget _renderBody(BuildContext context) {
-    final appBarHeight = 70;
-    final logoHeight = 24;
+    const appBarHeight = 70;
+    const logoHeight = 24;
 
     final Widget mainLogo = SvgPicture.asset('assets/images/main_logo.svg',
         height: logoHeight.toDouble());

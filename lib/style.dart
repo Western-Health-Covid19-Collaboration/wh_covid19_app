@@ -12,9 +12,9 @@ abstract class AppColors {
   static const Color backgroundBrown = Color(0xffd3ca92);
   static const Color majorText = blackAlpha900;
   static const Color minorText = blackAlpha600;
-  
+
   static const Color appBarIcon = blackAlpha900;
-  static final Color homeAppBarIcon = Colors.white;
+  static const Color homeAppBarIcon = Colors.white;
 
   // TODO: should come from color palette
   static const Color appBarBackground = Color(0xf0f9f9f9);
