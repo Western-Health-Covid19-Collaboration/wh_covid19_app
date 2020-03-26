@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import '../style.dart';
+import '../widget/cards/reusable_card_base.dart';
 
 class ReusableCard extends StatelessWidget {
   /// Title of the card
@@ -32,51 +32,33 @@ class ReusableCard extends StatelessWidget {
     this.height = 84,
     this.elevation = 4,
     this.fallback,
-  }) : assert(title != null, 'title required');
+  });
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      child: Card(
-        //margin: EdgeInsets.fromLTRB(12, 5, 12, 5),
-        color: color,
-        elevation: elevation,
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(8))),
-        child: Padding(
-          padding: const EdgeInsets.all(12),
-          child: Container(
-            height: height,
-            child: Column(
-              mainAxisAlignment: description == null
-                  ? MainAxisAlignment.center
-                  : MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Text(
-                  title,
-                  style: AppStyles.cardTitleTextStyle,
-                ),
-                if (description != null)
-                  Text(
-                    description,
-                    style: AppStyles.cardDescriptionTextStyle,
-                  ),
-              ],
-            ),
-          ),
+    final cardContent = description != null
+        ? Text(
+            description,
+            style: AppStyles.cardDescriptionTextStyle,
+          )
+        : Container();
+
+    return ReusableCardBase(
+      color: color,
+      routeTo: routeTo,
+      height: height,
+      elevation: elevation,
+      fallback: fallback,
+      verticalAlignment: description == ''
+          ? MainAxisAlignment.center
+          : MainAxisAlignment.spaceBetween,
+      child: <Widget>[
+        Text(
+          title,
+          style: AppStyles.cardTitleTextStyle,
         ),
-      ),
-      onTap: () {
-        if (routeTo != null) {
-          Navigator.pushNamed(context, routeTo);
-        } else {
-          if (fallback != null) {
-            fallback();
-          }
-        }
-      },
+        cardContent,
+      ],
     );
   }
 }

@@ -27,6 +27,7 @@ class _PPEViewState extends State<PPEView> {
       title: 'Step By Step Guide',
       color: AppColors.backgroundGreen,
       height: PPEView._cardHeight,
+      routeTo: '/ppe/on',
     ),
     _buildVerticalSpacer(),
     const ReusableCard(
