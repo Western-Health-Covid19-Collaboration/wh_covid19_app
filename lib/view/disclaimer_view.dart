@@ -37,12 +37,12 @@ class _DisclaimerViewState extends State<DisclaimerView>
   // Floating container indicating to scroll down to agree
   final _scrollDownToAgree = IgnorePointer(
     child: Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           color: AppColors.green50,
-          borderRadius: const BorderRadius.all(Radius.circular(50))),
+          borderRadius: BorderRadius.all(Radius.circular(50))),
       margin: const EdgeInsets.only(bottom: 16),
       padding: const EdgeInsets.all(16),
-      child: Text(
+      child: const Text(
         'Scroll down to agree',
         style: AppStyles.textLegal,
         textAlign: TextAlign.center,
@@ -53,9 +53,9 @@ class _DisclaimerViewState extends State<DisclaimerView>
   // Floating container indicating to scroll down
   final _scrollDown = IgnorePointer(
     child: Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           color: AppColors.green50,
-          borderRadius: const BorderRadius.all(Radius.circular(50))),
+          borderRadius: BorderRadius.all(Radius.circular(50))),
       margin: const EdgeInsets.only(bottom: 16),
       padding: const EdgeInsets.all(16),
       child: const Text(
