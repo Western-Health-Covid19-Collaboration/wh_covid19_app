@@ -50,67 +50,67 @@ abstract class AppStyles {
   // Named styles
 
   // App bar styles
-  static final TextStyle appBarTextStyle = AppStyles.textH2;
+  static const TextStyle appBarTextStyle = AppStyles.textH2;
   static const IconThemeData appBarIconTheme =
       IconThemeData(color: AppColors.appBarIcon);
 
   // Card styles
-  static final TextStyle cardContainerTextStyle = AppStyles.textH4;
-  static final TextStyle cardTitleTextStyle = AppStyles.textH5;
-  static final TextStyle cardDescriptionTextStyle = AppStyles.textFooter;
+  static const TextStyle cardContainerTextStyle = AppStyles.textH4;
+  static const TextStyle cardTitleTextStyle = AppStyles.textH5;
+  static const TextStyle cardDescriptionTextStyle = AppStyles.textFooter;
 
   static const fontFamily = 'Inter';
 
   // Core font styles
-  static final TextStyle textH1 = TextStyle(
+  static const TextStyle textH1 = TextStyle(
       color: AppColors.majorText,
       fontWeight: FontWeight.bold,
       fontSize: 28.0,
       fontFamily: fontFamily);
 
-  static final TextStyle textH2 = TextStyle(
+  static const TextStyle textH2 = TextStyle(
       color: AppColors.majorText,
       fontWeight: FontWeight.normal,
       fontSize: 28.0,
       fontFamily: fontFamily);
 
-  static final TextStyle textH3 = TextStyle(
+  static const TextStyle textH3 = TextStyle(
       color: AppColors.majorText,
       fontWeight: FontWeight.bold,
       fontSize: 22.0,
       fontFamily: fontFamily);
 
-  static final TextStyle textH4 = TextStyle(
+  static const TextStyle textH4 = TextStyle(
       color: AppColors.majorText,
       fontWeight: FontWeight.normal,
       fontSize: 22.0,
       fontFamily: fontFamily);
 
-  static final TextStyle textH5 = TextStyle(
+  static const TextStyle textH5 = TextStyle(
       color: AppColors.majorText,
       fontWeight: FontWeight.w600, // semi-bold
       fontSize: 17.0,
       fontFamily: fontFamily);
 
-  static final TextStyle textP = TextStyle(
+  static const TextStyle textP = TextStyle(
       color: AppColors.minorText,
       fontWeight: FontWeight.normal,
       fontSize: 17.0,
       fontFamily: fontFamily);
 
-  static final TextStyle textFooter = TextStyle(
+  static const TextStyle textFooter = TextStyle(
       color: AppColors.minorText,
       fontWeight: FontWeight.normal,
       fontSize: 13.0,
       fontFamily: fontFamily);
 
-  static final TextStyle textCaption = TextStyle(
+  static const TextStyle textCaption = TextStyle(
       color: AppColors.minorText,
       fontWeight: FontWeight.w600, // semi-bold
       fontSize: 13.0,
       fontFamily: fontFamily);
 
-  static final TextStyle textLegal = TextStyle(
+  static const TextStyle textLegal = TextStyle(
       color: AppColors.minorText,
       fontWeight: FontWeight.normal,
       fontSize: 12.0,
