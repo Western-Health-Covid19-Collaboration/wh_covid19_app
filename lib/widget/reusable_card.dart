@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wh_covid19/style.dart';
+import '../style.dart';
 import 'package:wh_covid19/widget/cards/reusable_card_base.dart';
 
 class ReusableCard extends StatelessWidget {
@@ -24,7 +24,7 @@ class ReusableCard extends StatelessWidget {
   /// Fallback instead of route
   final Function fallback;
 
-  ReusableCard({
+  const ReusableCard({
     @required this.title,
     this.description,
     this.color = Colors.white,
