@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'hard_data.dart';
+import 'intro_router.dart';
 import 'routes.dart';
 import 'style.dart';
+import 'view/disclaimer_view.dart';
 import 'view/home_page.dart';
 import 'view/icu_non_intensivist/general_care_view.dart';
 import 'view/icu_non_intensivist/tips_junior_staff_view.dart';
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: AppColors.appBackground,
         fontFamily: 'Inter',
       ),
-      initialRoute: Routes.home,
+      initialRoute: Routes.introRouter,
       routes: {
         Routes.home: (context) => HomePage(),
         Routes.ppe: (context) => PPEView(),
@@ -40,6 +42,7 @@ class MyApp extends StatelessWidget {
             context, routeToScreenData[Routes.ventilationAdjuncts]),
         Routes.generalCare: (context) => GeneralCareView(),
         Routes.tipsJuniorStaff: (context) => TipsJuniorStaffView(),
+        Routes.introRouter: (context) => IntroRouter(),
       },
       onGenerateRoute: (settings) {
         // Use onGenerateRoute to set fullscreenDialog=true
@@ -64,6 +67,10 @@ class MyApp extends StatelessWidget {
               builder: (context) => IntubationChecklistPage(),
               fullscreenDialog: false,
             );
+          case Routes.disclaimer:
+            return MaterialPageRoute<DisclaimerView>(
+                builder: (context) => DisclaimerView(),
+                fullscreenDialog: false);
         }
         // Fallback, won't be called unless an unknown route is called
         return MaterialPageRoute<HomePage>(

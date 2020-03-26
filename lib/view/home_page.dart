@@ -54,7 +54,7 @@ class HomePage extends StatelessWidget {
                 title: 'Airway',
                 cards: intubation,
               ),
-              CardContainer(
+              const CardContainer(
                 title: 'ICU',
                 cards: icu,
               ),
