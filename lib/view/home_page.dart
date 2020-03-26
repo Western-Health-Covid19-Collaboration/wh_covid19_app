@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:wh_covid19/hard_data.dart';
-import 'package:wh_covid19/style.dart';
-import 'package:wh_covid19/view/info_view.dart';
-import 'package:wh_covid19/widget/card_container.dart';
+
+import '../hard_data.dart';
+import '../style.dart';
+import '../widget/card_container.dart';
+import 'info_view.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -15,13 +16,13 @@ class HomePage extends StatelessWidget {
             automaticallyImplyLeading: false,
             expandedHeight: 100,
             bottom: PreferredSize(
-              preferredSize: Size.fromHeight(50),
+              preferredSize: const Size.fromHeight(50),
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text(
+                    const Text(
                       'Western Health',
                       style: AppStyles.appBarTextStyle,
                     ),
@@ -45,20 +46,20 @@ class HomePage extends StatelessWidget {
           SliverList(
             delegate: SliverChildListDelegate([
               Container(height: 24),
-              CardContainer(
+              const CardContainer(
                 title: 'Look After Yourself',
                 cards: staffWelfare,
               ),
               CardContainer(
-                title: 'Intubations',
+                title: 'Airway',
                 cards: intubation,
               ),
-              CardContainer(
+              const CardContainer(
                 title: 'ICU',
                 cards: icu,
               ),
               // Make sure the bottom CardContainer has room to breathe.
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
             ]),
           ),
         ],

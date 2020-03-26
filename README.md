@@ -12,6 +12,8 @@ A tool to safeguard the welfare of Western Health anaesthetists during COVID-19 
 
 Currently under development by a community of volunteers.
 
+If you've never used Github here's a [Github101.md](docs/GITHUB101.md) to get you started with the basics.
+
 [![Codemagic build status](https://api.codemagic.io/apps/5e75f4bfdd1d6d000a198e90/5e75f4bfdd1d6d000a198e8f/status_badge.svg)](https://codemagic.io/apps/5e75f4bfdd1d6d000a198e90/5e75f4bfdd1d6d000a198e8f/latest_build)
 
 ## Development process
@@ -161,10 +163,9 @@ Currently the project is being primarily co-ordinated via the GDG Melbourne slac
 * Alessandro Favero - Flutter Dev
 * Maksim Lin - Flutter dev & CI
 * Mike Hughes - Flutter dev & CI
+* Adam Koch - Flutter dev
 * Brett Morgan - Flutter dev
-* Adam Koch - Flutter dev
 * Eric Jiang - Flutter dev, and QA
-* Adam Koch - Flutter dev
 * Dylan Lange - Flutter dev
 
 
