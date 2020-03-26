@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text(
+                    const Text(
                       'Western Health',
                       style: AppStyles.appBarTextStyle,
                     ),
@@ -46,7 +46,7 @@ class HomePage extends StatelessWidget {
           SliverList(
             delegate: SliverChildListDelegate([
               Container(height: 24),
-              CardContainer(
+              const CardContainer(
                 title: 'Look After Yourself',
                 cards: staffWelfare,
               ),
