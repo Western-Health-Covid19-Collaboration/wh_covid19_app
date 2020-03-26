@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wh_covid19/intro_router..dart';
+import 'package:wh_covid19/intro_router.dart';
 import 'package:wh_covid19/routes.dart';
 import 'package:wh_covid19/hard_data.dart';
 import 'package:wh_covid19/style.dart';
