@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:wh_covid19/routes.dart';
+import 'routes.dart';
 
 class IntroRouter extends StatefulWidget {
   @override
