@@ -15,7 +15,7 @@ Specifically:
     - Behavior that could be perceived as sexual attention.
     - Advocating for or encouraging any of the above behaviors.
 
-Should you experience anything that makes you feel unwelcome or uncomfortable, please contact luke.sleeman@gmail.com or You can also DM Luke through [GDG Melbourne's slack] - DM `@luke.sleeman`.
+Should you experience anything that makes you feel unwelcome or uncomfortable, please contact luke.sleeman@gmail.com or You can also DM Luke through [GDG Melbourne's slack](http://bit.ly/join_gdgslack) - DM `@luke.sleeman`.
 
 # Conflict Resolution
 
@@ -29,5 +29,5 @@ This is usually sufficient to resolve issues. If you cannot come to an agreement
 
 Asking questions is completely okay! If you have any questions, you can always post it on the issues page of github. To know more about the development process, you can have a look at this link here.
 
-If it’s something urgent, you can always reach out to the GDG Melbourne’s slack. You can use the #flutter channel for any dev questions you may have. You could use the #general for any other questions or reach out to Luke Sleeman ( @luke.sleeman) 
+If it’s something urgent, you can always reach out to the [GDG Melbourne’s slack](http://bit.ly/join_gdgslack). You can use the #flutter channel for any dev questions you may have. You could use the #general for any other questions or reach out to Luke Sleeman ( @luke.sleeman) 
 
