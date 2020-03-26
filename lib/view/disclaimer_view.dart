@@ -18,7 +18,7 @@ class _DisclaimerViewState extends State<DisclaimerView>
     padding: EdgeInsets.all(16),
     child: Text(
       disclaimerBody,
-      style: AppStyles.textP,
+      style: AppStyles.textLegal,
       //textAlign: TextAlign.justify,
     ),
   );
