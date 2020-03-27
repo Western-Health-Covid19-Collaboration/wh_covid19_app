@@ -1,10 +1,9 @@
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-import 'package:wh_covid19/hard_data.dart';
-import 'package:wh_covid19/routes.dart';
-import 'package:wh_covid19/widget/card_container.dart';
 
+import '../../hard_data.dart';
+import '../../routes.dart';
 import '../../style.dart';
 import '../../widget/reusable_card.dart';
 
