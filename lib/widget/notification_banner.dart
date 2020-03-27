@@ -8,17 +8,10 @@ class NotificationBanner extends StatelessWidget {
   final Color backgroundColor;
 
   const NotificationBanner(
-      {this.icon, this.message, this.backgroundColor = Colors.white});
+      {this.icon, @required this.message, this.backgroundColor = Colors.white});
 
   @override
   Widget build(BuildContext context) {
-    final notificationHeading = message != null
-        ? Text(
-            message,
-            style: AppStyles.textSemiBold,
-          )
-        : Container();
-
     return Container(
       color: backgroundColor,
       child: Padding(
@@ -33,7 +26,10 @@ class NotificationBanner extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   const Padding(padding: EdgeInsets.symmetric(vertical: 2.0)),
-                  notificationHeading
+                  Text(
+                    message,
+                    style: AppStyles.textSemiBold,
+                  )
                 ],
               ),
             )),
