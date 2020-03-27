@@ -22,7 +22,7 @@ class NotificationBanner extends StatelessWidget {
     return Container(
       color: backgroundColor,
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 20, 16, 20),
+        padding: const EdgeInsets.fromLTRB(12, 16, 12, 16),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
