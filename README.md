@@ -20,7 +20,7 @@ If you've never used Github here's a [Github101.md](docs/GITHUB101.md) to get yo
 
 Everything is co-ordinated through github issues.  The current development process is:
 
-👨‍⚕️👩‍⚕️ **Gregg Miller** and other Western Health staff provide features, content and suggestions via GitHub issues.  Greg & Co can create new issues for features to add, things that need changing, etc.  
+👨‍⚕️👩‍⚕️ **Gregg Miller** and other Western Health staff provide features, content and suggestions via GitHub issues.  Gregg & Co can create new issues for features to add, things that need changing, etc.  
 
 If you need any help from the WH staff, you can label an issue as `Medic`.  [These issues currently need medic advice](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aopen+is%3Aissue+label%3AMedic). You can also `@` mention and assign issues to `@Western-Health-Covid19-Collaboration/medical` in a comment to notify the whole WH team.
 
