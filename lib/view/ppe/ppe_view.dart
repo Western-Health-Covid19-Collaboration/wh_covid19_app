@@ -41,6 +41,9 @@ class _PPEViewState extends State<PPEView> {
     _buildVerticalSpacer(),
   ];
 
+  static int method1Steps = ppeOffMethod1Steps.length;
+  static int method2Steps = ppeOffMethod2Steps.length;
+
   final takingOffCards = <Widget>[
     _buildVerticalSpacer(),
     Row(
@@ -48,7 +51,7 @@ class _PPEViewState extends State<PPEView> {
         Expanded(
             child: ReusableCard(
           title: 'Method 1',
-          description: '8 Steps',
+          description: '$method1Steps Steps',
           height: 40,
           routeTo: Routes.ppeOffGuidance1,
           color: AppColors.backgroundBrown,
@@ -56,7 +59,7 @@ class _PPEViewState extends State<PPEView> {
         Expanded(
             child: ReusableCard(
           title: 'Method 2',
-          description: '6 Steps',
+          description: '$method2Steps Steps',
           height: 40,
           routeTo: Routes.ppeOffGuidance2,
           color: AppColors.backgroundBrown,
