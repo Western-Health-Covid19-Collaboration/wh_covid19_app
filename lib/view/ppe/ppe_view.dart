@@ -52,7 +52,7 @@ class _PPEViewState extends State<PPEView> {
           title: 'Method 1',
           description: '$method1Steps Steps',
           height: 40,
-          routeTo: Routes.ppeOffGuidance1,
+          routeTo: Routes.ppeOffGuidanceMethod1,
           color: AppColors.backgroundBrown,
         )),
         Expanded(
@@ -60,7 +60,7 @@ class _PPEViewState extends State<PPEView> {
           title: 'Method 2',
           description: '$method2Steps Steps',
           height: 40,
-          routeTo: Routes.ppeOffGuidance2,
+          routeTo: Routes.ppeOffGuidanceMethod2,
           color: AppColors.backgroundBrown,
         ))
       ],
