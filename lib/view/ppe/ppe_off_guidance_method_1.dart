@@ -7,7 +7,7 @@ import '../../style.dart';
 import '../../widget/cards/ppe_step_card.dart';
 import '../../widget/notification_banner.dart';
 
-class PPEOffGuidance1 extends StatelessWidget {
+class PPEOffGuidanceMethod1 extends StatelessWidget {
   final title = 'Method 1';
 
   @override
