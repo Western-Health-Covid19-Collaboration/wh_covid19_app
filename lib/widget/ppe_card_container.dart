@@ -6,8 +6,10 @@ import '../widget/cards/ppe_step_card.dart';
 
 class PPECardContainer extends StatelessWidget {
   final List<PPEStepInfo> steps;
+  final Color backgroundColor;
 
-  const PPECardContainer({@required this.steps});
+  const PPECardContainer(
+      {@required this.steps, this.backgroundColor = AppColors.grey50});
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +19,12 @@ class PPECardContainer extends StatelessWidget {
             .asMap()
             .entries
             .map((entry) => PPECard(
-                  step: PPEStepInfo(
+                  step: PPEStepInfoCardModel(
                       image: entry.value.image,
                       notes: entry.value.notes,
                       step: entry.key + 1,
                       text: entry.value.text),
-                  backgroundColor: AppColors.purple50,
+                  backgroundColor: backgroundColor,
                 ))
             .toList()
       ],

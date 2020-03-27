@@ -30,7 +30,10 @@ class PPEOffGuidanceMethod2 extends StatelessWidget {
             ),
             message: ppeOffWarning,
           ),
-          PPECardContainer(steps: ppeOffMethod2Steps)
+          PPECardContainer(
+            steps: ppeOffMethod2Steps,
+            backgroundColor: AppColors.purple50,
+          )
         ]));
   }
 }

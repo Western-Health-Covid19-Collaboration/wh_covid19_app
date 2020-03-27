@@ -32,6 +32,7 @@ class PPEOffGuidanceMethod1 extends StatelessWidget {
           ),
           PPECardContainer(
             steps: ppeOffMethod1Steps,
+            backgroundColor: AppColors.purple50,
           )
         ]));
   }
