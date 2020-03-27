@@ -12,6 +12,8 @@ A tool to safeguard the welfare of Western Health anaesthetists during COVID-19 
 
 Currently under development by a community of volunteers.
 
+If you've never used Github here's a [Github101.md](docs/GITHUB101.md) to get you started with the basics.
+
 [![Codemagic build status](https://api.codemagic.io/apps/5e75f4bfdd1d6d000a198e90/5e75f4bfdd1d6d000a198e8f/status_badge.svg)](https://codemagic.io/apps/5e75f4bfdd1d6d000a198e90/5e75f4bfdd1d6d000a198e8f/latest_build)
 
 ## Development process
@@ -171,6 +173,9 @@ Currently the project is being primarily co-ordinated via the GDG Melbourne slac
 ## License
 
 This project is licensed under the Apache 2.0 - see the `LICENSE-2.0.txt` file for details.
+
+Western Health logos belong solely to Western Health may be subject to their copyrights and trademarks, and are not available under the same license as the rest of this application.
+
 
 ## Emergency contacts
 

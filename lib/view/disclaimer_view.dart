@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:wh_covid19/hard_data.dart';
-import 'package:wh_covid19/routes.dart';
-import 'package:wh_covid19/style.dart';
+import '../hard_data.dart';
+import '../routes.dart';
+import '../style.dart';
 
 class DisclaimerView extends StatefulWidget {
   @override
@@ -15,7 +15,7 @@ class _DisclaimerViewState extends State<DisclaimerView>
 
   // Content of the page
   final _content = Container(
-    padding: EdgeInsets.all(16),
+    padding: const EdgeInsets.all(16),
     child: Text(
       disclaimerBody,
       style: AppStyles.textLegal,
@@ -26,8 +26,8 @@ class _DisclaimerViewState extends State<DisclaimerView>
   // Content to show at the bottom instead of [_agreedButton]
   final _agreedText = Container(
     height: 44,
-    padding: EdgeInsets.only(left: 16, right: 16, bottom: 16),
-    child: Text(
+    padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+    child: const Text(
       'You have already agreed 👍',
       style: AppStyles.textH5,
       textAlign: TextAlign.center,
@@ -37,12 +37,12 @@ class _DisclaimerViewState extends State<DisclaimerView>
   // Floating container indicating to scroll down to agree
   final _scrollDownToAgree = IgnorePointer(
     child: Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           color: AppColors.green50,
           borderRadius: BorderRadius.all(Radius.circular(50))),
-      margin: EdgeInsets.only(bottom: 16),
-      padding: EdgeInsets.all(16),
-      child: Text(
+      margin: const EdgeInsets.only(bottom: 16),
+      padding: const EdgeInsets.all(16),
+      child: const Text(
         'Scroll down to agree',
         style: AppStyles.textLegal,
         textAlign: TextAlign.center,
@@ -53,12 +53,12 @@ class _DisclaimerViewState extends State<DisclaimerView>
   // Floating container indicating to scroll down
   final _scrollDown = IgnorePointer(
     child: Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           color: AppColors.green50,
           borderRadius: BorderRadius.all(Radius.circular(50))),
-      margin: EdgeInsets.only(bottom: 16),
-      padding: EdgeInsets.all(16),
-      child: Text(
+      margin: const EdgeInsets.only(bottom: 16),
+      padding: const EdgeInsets.all(16),
+      child: const Text(
         'Scroll down',
         style: AppStyles.textP,
         textAlign: TextAlign.center,
@@ -74,7 +74,7 @@ class _DisclaimerViewState extends State<DisclaimerView>
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 500),
     );
     _animation =
         Tween<double>(begin: 1.0, end: 0.0).animate(_animationController);
@@ -84,15 +84,15 @@ class _DisclaimerViewState extends State<DisclaimerView>
   Widget build(BuildContext context) {
     // Bottom button to agree t&c
     final _agreeButton = Container(
-      margin: EdgeInsets.only(left: 16, right: 16, bottom: 16),
+      margin: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
       height: 44.0,
       child: RaisedButton(
-        child: Text(
+        child: const Text(
           'I Agree',
           style: AppStyles.textH5,
         ),
         color: AppColors.green500,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(8)),
         ),
         onPressed: () {
@@ -130,7 +130,7 @@ class _DisclaimerViewState extends State<DisclaimerView>
                           child: ListView(
                             children: <Widget>[
                               _content,
-                              !snapshot.data ? _agreeButton : _agreedText,
+                              if (!snapshot.data) _agreeButton else _agreedText,
                             ],
                           ),
                           onNotification: (scrollNotification) {
@@ -151,7 +151,7 @@ class _DisclaimerViewState extends State<DisclaimerView>
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                       _content,
-                      !snapshot.data ? _agreeButton : _agreedText,
+                      if (!snapshot.data) _agreeButton else _agreedText,
                     ],
                   ),
           );
