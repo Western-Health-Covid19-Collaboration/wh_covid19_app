@@ -6,7 +6,7 @@ import '../../style.dart';
 import '../../widget/cards/reusable_card_base.dart';
 
 class PPECard extends StatelessWidget {
-  final PPEStepInfo step;
+  final PPEStepInfoCardModel step;
   final Color backgroundColor;
 
   const PPECard({@required this.step, this.backgroundColor});
