@@ -24,6 +24,7 @@ class PPEOffGuidance1 extends StatelessWidget {
         ),
         body: ListView(children: <Widget>[
           NotificationBanner(
+            backgroundColor: AppColors.grey50,
             icon: SvgPicture.asset(
               'assets/images/icon/SVG/icon_warning.svg',
             ),

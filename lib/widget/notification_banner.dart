@@ -5,8 +5,10 @@ import '../style.dart';
 class NotificationBanner extends StatelessWidget {
   final SvgPicture icon;
   final String message;
+  final Color backgroundColor;
 
-  const NotificationBanner({this.icon, this.message});
+  const NotificationBanner(
+      {this.icon, this.message, this.backgroundColor = Colors.white});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class NotificationBanner extends StatelessWidget {
         : Container();
 
     return Container(
-      color: Colors.white,
+      color: backgroundColor,
       child: Padding(
         padding: const EdgeInsets.fromLTRB(16, 20, 16, 20),
         child: Row(
