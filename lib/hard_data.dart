@@ -1,8 +1,8 @@
 // A list of two cards
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:wh_covid19/models/PPEStepInfo.dart';
 
+import 'models/PPEStepInfo.dart';
 import 'routes.dart';
 import 'style.dart';
 import 'widget/reusable_card.dart';

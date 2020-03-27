@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wh_covid19/view/ppe/ppe_off_guidance_1.dart';
-import 'package:wh_covid19/view/ppe/ppe_off_guidance_2.dart';
 import 'hard_data.dart';
 import 'intro_router.dart';
 import 'routes.dart';
@@ -14,6 +12,8 @@ import 'view/info_view.dart';
 import 'view/intubation/algorithm/intubation_algorithm_page.dart';
 import 'view/intubation/checklist/intubation_checklist_page.dart';
 import 'view/intubation/guidance/intubation_guidance_page.dart';
+import 'view/ppe/ppe_off_guidance_1.dart';
+import 'view/ppe/ppe_off_guidance_2.dart';
 import 'view/ppe/ppe_on_guidance.dart';
 import 'view/ppe/ppe_view.dart';
 import 'view/sbs_guide_view.dart';
