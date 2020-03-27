@@ -12,8 +12,8 @@ class _ReusableStepperState extends State<ReusableStepper> {
         isActive: true,
         state: StepState.indexed,
         content: Text('Clean your hands carefully...')),
-    Step(
-        title: const Text('Hand Hygene'),
+    const Step(
+        title: Text('Hand Hygene'),
         isActive: true,
         state: StepState.indexed,
         content: Text('Clean your hands carefully...')),
