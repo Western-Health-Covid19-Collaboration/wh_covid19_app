@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:wh_covid19/models/PPEStepInfo.dart';
 
 import '../../hard_data.dart';
+import '../../models/PPEStepInfo.dart';
 import '../../style.dart';
 import '../../widget/cards/ppe_step_card.dart';
 import '../../widget/notification_banner.dart';
