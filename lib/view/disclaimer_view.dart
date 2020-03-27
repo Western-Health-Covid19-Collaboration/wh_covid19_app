@@ -105,13 +105,16 @@ class _DisclaimerViewState extends State<DisclaimerView>
     return FutureBuilder<bool>(
         future: _checkAgreed(),
         builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return CircularProgressIndicator();
+          }
           return Scaffold(
             backgroundColor: Colors.white,
             appBar: AppBar(
               backgroundColor: Colors.white,
               elevation: 0.0,
               iconTheme: AppStyles.appBarIconTheme,
-              automaticallyImplyLeading: snapshot.data,
+              automaticallyImplyLeading: snapshot.data ?? false,
               title: Text(
                 _title,
                 style: AppStyles.textH5,
