@@ -7,10 +7,9 @@ import '../../widget/cards/reusable_card_base.dart';
 
 class PPECard extends StatelessWidget {
   final PPEStepInfo step;
-  final int index;
   final Color backgroundColor;
 
-  const PPECard({this.index, this.step, this.backgroundColor});
+  const PPECard({@required this.step, this.backgroundColor});
 
   Widget getList(List<String> notes, BuildContext context) {
     return Padding(
@@ -29,6 +28,8 @@ class PPECard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const coreMargin = EdgeInsets.fromLTRB(0, 12, 0, 12);
+
+    final index = step.step;
 
     return ReusableCardBase(
       margin: coreMargin,

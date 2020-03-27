@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:wh_covid19/models/PPEStepInfo.dart';
 
 import '../../hard_data.dart';
 import '../../style.dart';
@@ -25,8 +26,11 @@ class PPEOnGuidance extends StatelessWidget {
                 .asMap()
                 .entries
                 .map((entry) => PPECard(
-                      index: entry.key + 1,
-                      step: entry.value,
+                      step: PPEStepInfo(
+                          image: entry.value.image,
+                          notes: entry.value.notes,
+                          step: entry.key + 1,
+                          text: entry.value.text),
                       backgroundColor: AppColors.green50,
                     ))
                 .toList()));
