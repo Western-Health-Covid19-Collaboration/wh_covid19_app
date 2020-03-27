@@ -48,14 +48,16 @@ class _PPEViewState extends State<PPEView> {
         Expanded(
             child: ReusableCard(
           title: 'Method 1',
-          height: 34,
+          description: '8 Steps',
+          height: 40,
           routeTo: Routes.ppeOffGuidance1,
           color: AppColors.backgroundBrown,
         )),
         Expanded(
             child: ReusableCard(
           title: 'Method 2',
-          height: 34,
+          description: '6 Steps',
+          height: 40,
           routeTo: Routes.ppeOffGuidance1,
           color: AppColors.backgroundBrown,
         ))

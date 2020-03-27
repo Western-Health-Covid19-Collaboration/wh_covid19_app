@@ -8,7 +8,7 @@ import '../../widget/cards/ppe_step_card.dart';
 import '../../widget/notification_banner.dart';
 
 class PPEOffGuidance1 extends StatelessWidget {
-  final title = 'Method 1';
+  final title = 'Method 2';
 
   @override
   Widget build(BuildContext context) {

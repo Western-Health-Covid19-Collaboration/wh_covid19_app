@@ -7,9 +7,10 @@ import '../../widget/cards/reusable_card_base.dart';
 
 class PPECard extends StatelessWidget {
   final PPEStepInfo step;
+  final int index;
   final Color backgroundColor;
 
-  const PPECard({this.step, this.backgroundColor});
+  const PPECard({this.index, this.step, this.backgroundColor});
 
   Widget getList(List<String> notes, BuildContext context) {
     return Padding(
@@ -38,11 +39,11 @@ class PPECard extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
           child: Text(
-            step.step,
+            'Step $index',
             style: AppStyles.textH3,
           ),
         ),
-        step.image,
+        Image.asset(step.image),
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
           child: Text(step.text, style: AppStyles.textH4),

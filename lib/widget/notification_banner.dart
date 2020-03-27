@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:wh_covid19/hard_data.dart';
-import 'package:wh_covid19/style.dart';
+import '../style.dart';
 
 class NotificationBanner extends StatelessWidget {
   final SvgPicture icon;
@@ -13,7 +12,7 @@ class NotificationBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     final notificationHeading = message != null
         ? Text(
-            ppeOffWarning,
+            message,
             style: AppStyles.textSemiBold,
           )
         : Container();
