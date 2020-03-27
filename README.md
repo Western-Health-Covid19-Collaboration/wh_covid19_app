@@ -20,7 +20,7 @@ If you've never used Github here's a [Github101.md](docs/GITHUB101.md) to get yo
 
 Everything is co-ordinated through github issues.  The current development process is:
 
-👨‍⚕️👩‍⚕️ **Greg Miller** and other Western Health staff provide features, content and suggestions via GitHub issues.  Greg & Co can create new issues for features to add, things that need changing, etc.  
+👨‍⚕️👩‍⚕️ **Gregg Miller** and other Western Health staff provide features, content and suggestions via GitHub issues.  Greg & Co can create new issues for features to add, things that need changing, etc.  
 
 If you need any help from the WH staff, you can label an issue as `Medic`.  [These issues currently need medic advice](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aopen+is%3Aissue+label%3AMedic). You can also `@` mention and assign issues to `@Western-Health-Covid19-Collaboration/medical` in a comment to notify the whole WH team.
 
@@ -167,6 +167,11 @@ Currently the project is being primarily co-ordinated via the GDG Melbourne slac
 * Brett Morgan - Flutter dev
 * Eric Jiang - Flutter dev, and QA
 * Dylan Lange - Flutter dev
+* Jonathan Galtieri - Anaesthetist
+* Ben Blackman - Anaesthetic registrar
+* Fabien Dade - ICU registrar
+* Alice Gynther - Anaesthetist
+
 
 
 
@@ -183,6 +188,6 @@ For any urgent requests relating to this app you can contact luke.sleeman@gmail.
 
 ## Acknowledgments
 
-🎩 Huge hat tip to everybody providing advice, helping out, etc including: Gregg Miller, Matt Kelsh, Mike Hughes,  Alessandro Favero, Maksim Lin, Brett Morgan, Adam Koch, Eric Jiang, Hsiu-Mei Huang, Sean Woodhouse, Matt Delves, Kim Nguyen, Martin from CM, Itty Bitty Apps, Bramley
+🎩 Huge hat tip to everybody providing advice, helping out, etc including: Luke Sleeman, Gregg Miller, Matt Kelsh, Mike Hughes,  Alessandro Favero, Maksim Lin, Brett Morgan, Adam Koch, Eric Jiang, Hsiu-Mei Huang, Sean Woodhouse, Matt Delves, Kim Nguyen, Martin from CM, Itty Bitty Apps, Bramley, Jonathan Galtieri, Ben Blackman, Fabien Dade, Alice Gynther, Raffy Halim and Josh Case.
 
 I've probably forgotten a bunch of people, so if you have done something and we have missed out on you; I'm deeply sorry, and appreciate your contribution ❤️. Message Luke Sleeman and he will make sure you get added.
