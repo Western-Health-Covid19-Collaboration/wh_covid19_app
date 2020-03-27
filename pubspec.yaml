@@ -30,6 +30,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/icon/
+    - assets/images/icon/SVG/
     - assets/images/steps/
     - assets/text/
     - assets/videos/

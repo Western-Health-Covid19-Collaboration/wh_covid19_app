@@ -1,6 +1,9 @@
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+import 'package:wh_covid19/hard_data.dart';
+import 'package:wh_covid19/routes.dart';
+import 'package:wh_covid19/widget/card_container.dart';
 
 import '../../style.dart';
 import '../../widget/reusable_card.dart';
@@ -40,12 +43,24 @@ class _PPEViewState extends State<PPEView> {
 
   final takingOffCards = <Widget>[
     _buildVerticalSpacer(),
-    const ReusableCard(
-      title: 'Step By Step Guide',
-      color: AppColors.backgroundBrown,
-      height: PPEView._cardHeight,
+    Row(
+      children: <Widget>[
+        Expanded(
+            child: ReusableCard(
+          title: 'Method 1',
+          height: 34,
+          routeTo: Routes.ppeOffGuidance1,
+          color: AppColors.backgroundBrown,
+        )),
+        Expanded(
+            child: ReusableCard(
+          title: 'Method 2',
+          height: 34,
+          routeTo: Routes.ppeOffGuidance1,
+          color: AppColors.backgroundBrown,
+        ))
+      ],
     ),
-    _buildVerticalSpacer(),
     const ReusableCard(
       title: 'Infographic',
       color: AppColors.backgroundBrown,

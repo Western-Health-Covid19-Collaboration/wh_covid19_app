@@ -126,3 +126,8 @@ The Western Health trademark and app cannot be copied, modified, reproduced, pub
 
 You must agree to accept these terms and conditions before proceeding to use the app.
 ''';
+
+const String ppeOffWarning = '''
+Outside of PPE is contaminated!
+If your hands get contaminated during PPE removal, immediately wash your hands or use an alcohol-based hand sanitizer.
+''';

@@ -3,6 +3,8 @@ class Routes {
 
   static const ppe = '/ppe';
   static const ppeOnGuidance = '/ppe/on';
+  static const ppeOffGuidance1 = '/ppe/off/1';
+  static const ppeOffGuidance2 = '/ppe/off/2';
 
   static const staffWelfare = '/staff_welfare';
   static const sbsGuidance = '/sbs_guidance';
