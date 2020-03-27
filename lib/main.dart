@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wh_covid19/view/ppe/ppe_off_guidance_1.dart';
+import 'package:wh_covid19/view/ppe/ppe_off_guidance_2.dart';
 import 'hard_data.dart';
 import 'intro_router.dart';
 import 'routes.dart';
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
         Routes.ppe: (context) => PPEView(),
         Routes.ppeOnGuidance: (context) => PPEOnGuidance(),
         Routes.ppeOffGuidance1: (context) => PPEOffGuidance1(),
+        Routes.ppeOffGuidance2: (context) => PPEOffGuidance2(),
         Routes.staffWelfare: (context) => YourWelfareView(),
         Routes.sbsGuidance: (context) => SBSGuideView(),
         Routes.ventilation: (context) => VentilationView(),

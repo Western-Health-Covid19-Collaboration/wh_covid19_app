@@ -175,7 +175,7 @@ const PPEStepInfo handHygieneStep = PPEStepInfo(
 const List<PPEStepInfo> ppeOffMethod1Steps = [
   PPEStepInfo(
       image: 'assets/images/steps/off_gloves.png',
-      text: 'Gown and Gloves',
+      text: 'Gloves',
       notes: [
         'Using a gloved hand, grasp the palm area of the other gloved hand and peel off first glove',
         'Hold removed glove in gloved hand',
@@ -189,6 +189,34 @@ const List<PPEStepInfo> ppeOffMethod1Steps = [
     'Turn gown inside out',
     'Fold or roll into a bundle and discard in a waste container'
   ]),
+  handHygieneStep,
+  PPEStepInfo(
+      image: 'assets/images/steps/off_mask.png',
+      text: 'Mask or Respirator',
+      notes: [
+        'Grasp bottom ties or elastics of the mask/respirator, then the ones at the top, and remove without touching the front',
+        'Discard in a waste container'
+      ]),
+  handHygieneStep,
+];
+
+const List<PPEStepInfo> ppeOffMethod2Steps = [
+  PPEStepInfo(
+      image: 'assets/images/steps/off_gownandgloves.png',
+      text: 'Gown and Gloves',
+      notes: [
+        'Grasp the gown in the front and pull away from your body so that the ties break, touching outside of gown only with gloved hands',
+        'While removing the gown, fold or roll the gown inside-out into a bundle',
+        'As you are removing the gown, peel off your gloves at the same time, only touching the inside of the gloves and gown with your bare hands. Place the gown and gloves into a waste container'
+      ]),
+  handHygieneStep,
+  PPEStepInfo(
+      image: 'assets/images/steps/off_goggles.png',
+      text: 'Goggles or Face Shield',
+      notes: [
+        'Remove goggles or faceshield from the back by lifting head band or ear pieces',
+        'If the item is reusable, place in designated receptacle for reprocesing. Otherwise, discard in a waste container.'
+      ]),
   handHygieneStep,
   PPEStepInfo(
       image: 'assets/images/steps/off_mask.png',

@@ -7,7 +7,7 @@ import '../../style.dart';
 import '../../widget/cards/ppe_step_card.dart';
 import '../../widget/notification_banner.dart';
 
-class PPEOffGuidance1 extends StatelessWidget {
+class PPEOffGuidance2 extends StatelessWidget {
   final title = 'Method 2';
 
   @override
@@ -29,7 +29,7 @@ class PPEOffGuidance1 extends StatelessWidget {
             ),
             message: ppeOffWarning,
           ),
-          ...ppeOffMethod1Steps
+          ...ppeOffMethod2Steps
               .asMap()
               .entries
               .map((entry) => PPECard(

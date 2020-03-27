@@ -58,7 +58,7 @@ class _PPEViewState extends State<PPEView> {
           title: 'Method 2',
           description: '6 Steps',
           height: 40,
-          routeTo: Routes.ppeOffGuidance1,
+          routeTo: Routes.ppeOffGuidance2,
           color: AppColors.backgroundBrown,
         ))
       ],
