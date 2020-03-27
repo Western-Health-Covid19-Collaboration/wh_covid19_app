@@ -191,6 +191,14 @@ const List<PPEStepInfo> ppeOffMethod1Steps = [
   ]),
   handHygieneStep,
   PPEStepInfo(
+      image: 'assets/images/steps/off_goggles.png',
+      text: 'Goggles or Face Shield',
+      notes: [
+        'Remove goggles or faceshield from the back by lifting head band or ear pieces',
+        'If the item is reusable, place in designated receptacle for reprocesing. Otherwise, discard in a waste container.'
+      ]),
+  handHygieneStep,
+  PPEStepInfo(
       image: 'assets/images/steps/off_mask.png',
       text: 'Mask or Respirator',
       notes: [
