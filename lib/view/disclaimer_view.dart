@@ -97,7 +97,7 @@ class _DisclaimerViewState extends State<DisclaimerView>
         ),
         onPressed: () {
           _setAgreed();
-          Navigator.pushNamed(context, Routes.home);
+          Navigator.pushReplacementNamed(context, Routes.home);
         },
       ),
     );
