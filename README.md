@@ -80,7 +80,7 @@ You will need to install and setup Flutter to develop this application. You can 
 
 **Tip!**: If you are using Visual Studio Code as your IDE (Code Editor), the [Flutter extension](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter) is really useful and helpful to perform multiple actions such as:
 
-- the installation of depencies
+- the installation of dependencies
 - running the application
 
 ### Installing dependencies
