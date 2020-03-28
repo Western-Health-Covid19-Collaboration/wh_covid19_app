@@ -133,7 +133,7 @@ class _DisclaimerViewState extends State<DisclaimerView>
                             child: ListView(
                               children: <Widget>[
                                 _content,
-                                if (!snapshot.data) _agreeButton else _scrollDown,
+                                if (!snapshot.data) _agreeButton else _agreedText,
                               ],
                             ),
                             onNotification: (scrollNotification) {
@@ -154,7 +154,7 @@ class _DisclaimerViewState extends State<DisclaimerView>
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
                         _content,
-                        if (!snapshot.data) _agreeButton else _scrollDown,
+                        if (!snapshot.data) _agreeButton else _agreedText,
                       ],
                     ),
             ),
