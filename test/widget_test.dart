@@ -28,8 +28,6 @@ void main() {
 
     await tester.pumpAndSettle(const Duration(seconds: 2));
 
-    // debugDumpApp();
-
     expect(find.text('Look After Yourself'), findsOneWidget);
     expect(find.text('Airway'), findsOneWidget);
   });
