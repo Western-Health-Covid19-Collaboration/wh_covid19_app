@@ -17,16 +17,20 @@ class CardContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final containerHeading = title != null
+        ? Text(
+            title,
+            style: AppStyles.cardContainerTextStyle,
+          )
+        : Container();
+
     return Padding(
       padding: const EdgeInsets.all(_outerPadding),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          Text(
-            title,
-            style: AppStyles.cardContainerTextStyle,
-          ),
+          containerHeading,
           _buildVerticalSpacer(),
           cardsLayout(),
         ],
