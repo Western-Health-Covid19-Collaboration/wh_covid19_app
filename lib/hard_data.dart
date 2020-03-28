@@ -126,3 +126,6 @@ The Western Health trademark and app cannot be copied, modified, reproduced, pub
 
 You must agree to accept these terms and conditions before proceeding to use the app.
 ''';
+
+// Feedback form
+const String feedbackFormUrl = 'https://forms.gle/zQtfhvswrKmjJjNV7';
