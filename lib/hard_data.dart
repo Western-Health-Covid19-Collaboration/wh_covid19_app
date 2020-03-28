@@ -113,6 +113,9 @@ class HtmlTextScreenData {
 // Contacts web url
 const String whURL = 'http://wh.cyphix.net/';
 
+// WH Novel Coronavirus information url
+const String whCoronavirusInfoURL = 'https://coronavirus.wh.org.au/#';
+
 // Disclaimer text
 const String disclaimerBody = '''
 This app is designed to be used by Anaesthetic and Critical Care doctors at Western Health who are caring for patients during the COVID-19 Pandemic. The guidelines, protocols and advice within this app are designed to educate staff and suggest recommended management of patients with COVID-19. The recommendations within this application do not indicate an exclusive course of action as the results must be contextualised to the patient at hand and variations may be appropriate.

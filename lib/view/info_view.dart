@@ -6,6 +6,7 @@ import '../hard_data.dart';
 import '../routes.dart';
 import '../style.dart';
 import '../widget/reusable_card.dart';
+import '../coronavirusInfo_launcher.dart';
 
 class InfoView extends StatelessWidget {
   final title = 'Information';
@@ -47,6 +48,19 @@ class InfoView extends StatelessWidget {
       height: _cardHeight,
       elevation: _cardElevation,
       routeTo: Routes.disclaimer,
+    ),
+    const ReusableCard(
+      title: 'Acknowledgements and references',
+      color: _cardColor,
+      height: _cardHeight,
+      elevation: _cardElevation,
+    ),
+    ReusableCard(
+      title: 'WH Novel Coronavirus information',
+      color: _cardColor,
+      height: _cardHeight,
+      elevation: _cardElevation,
+      fallback: () => CoronavirusInfoLauncher.launchWithBrowser(whCoronavirusInfoURL),
     )
   ];
 

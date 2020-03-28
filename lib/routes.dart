@@ -11,6 +11,7 @@ class Routes {
   static const info = '/info';
   static const disclaimer = '/disclaimer';
   static const introRouter = '/intro_router';
+  static const coronavirusInfo = '/coronavirusInfo';
 
   static const _icuNonIntensivist = '/icu_non_intensivist';
   static const ventilation = '$_icuNonIntensivist/ventilation';
