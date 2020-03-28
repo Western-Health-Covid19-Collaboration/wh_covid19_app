@@ -28,6 +28,9 @@ void main() {
 
     await tester.pumpAndSettle(const Duration(seconds: 2));
 
-    expect(find.text('Western Health'), findsOneWidget);
+    // debugDumpApp();
+
+    expect(find.text('Look After Yourself'), findsOneWidget);
+    expect(find.text('Airway'), findsOneWidget);
   });
 }
