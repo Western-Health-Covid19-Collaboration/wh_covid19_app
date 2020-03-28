@@ -105,52 +105,57 @@ class _DisclaimerViewState extends State<DisclaimerView>
     return FutureBuilder<bool>(
         future: _checkAgreed(),
         builder: (context, snapshot) {
-          return Scaffold(
-            backgroundColor: Colors.white,
-            appBar: AppBar(
+          if (!snapshot.hasData) return Container();
+          return WillPopScope(
+            // Prevent back button exiting disclaimer on Android
+            onWillPop: () async => false,
+            child: Scaffold(
               backgroundColor: Colors.white,
-              elevation: 0.0,
-              iconTheme: AppStyles.appBarIconTheme,
-              automaticallyImplyLeading: snapshot.data,
-              title: Text(
-                _title,
-                style: AppStyles.textH5,
+              appBar: AppBar(
+                backgroundColor: Colors.white,
+                elevation: 0.0,
+                iconTheme: AppStyles.appBarIconTheme,
+                automaticallyImplyLeading: snapshot.data ?? true,
+                title: Text(
+                  _title,
+                  style: AppStyles.textH5,
+                ),
               ),
-            ),
-            body: MediaQuery.of(context).size.height < 600
-                ? Theme(
-                    data: ThemeData(accentColor: AppColors.green500),
-                    child: Stack(
-                      alignment: Alignment.bottomCenter,
-                      children: [
-                        NotificationListener<ScrollUpdateNotification>(
-                          child: ListView(
-                            children: <Widget>[
-                              _content,
-                              if (!snapshot.data) _agreeButton else _agreedText,
-                            ],
+              body: MediaQuery.of(context).size.height < 1000
+                  ? Theme(
+                      data: ThemeData(accentColor: AppColors.green500),
+                      child: Stack(
+                        alignment: Alignment.bottomCenter,
+                        children: [
+                          NotificationListener<ScrollUpdateNotification>(
+                            child: ListView(
+                              children: <Widget>[
+                                _content,
+                                if (!snapshot.data) _agreeButton else _scrollDown,
+                              ],
+                            ),
+                            onNotification: (scrollNotification) {
+                              _animationController.forward();
+                              return true;
+                            },
                           ),
-                          onNotification: (scrollNotification) {
-                            _animationController.forward();
-                            return true;
-                          },
-                        ),
-                        FadeTransition(
-                            opacity: _animation,
-                            child: !snapshot.data
-                                ? _scrollDownToAgree
-                                : _scrollDown)
+                          FadeTransition(
+                              opacity: _animation,
+                              child: !snapshot.data
+                                  ? _scrollDownToAgree
+                                  : _scrollDown)
+                        ],
+                      ),
+                    )
+                  : Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: <Widget>[
+                        _content,
+                        if (!snapshot.data) _agreeButton else _scrollDown,
                       ],
                     ),
-                  )
-                : Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: <Widget>[
-                      _content,
-                      if (!snapshot.data) _agreeButton else _agreedText,
-                    ],
-                  ),
+            ),
           );
         });
   }
