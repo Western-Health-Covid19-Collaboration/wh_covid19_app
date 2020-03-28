@@ -1,5 +1,5 @@
----- Thursday 27th March, 2020 ----
-
+---- Saturday 28th March, 2020 ----
+* Open External Browser to Feedback form when user taps on App Feedback in Information view
 
 ---- Wednesday 25th March, 2020 ----
 
