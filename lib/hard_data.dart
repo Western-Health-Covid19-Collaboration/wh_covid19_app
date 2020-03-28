@@ -38,7 +38,7 @@ final List<ReusableCard> intubation = [
     routeTo: Routes.intubationChecklist,
   ),
   const ReusableCard(
-    title: 'Algorithm',
+    title: 'Infographics',
     description: '12 steps',
     color: AppColors.backgroundGreen,
     routeTo: Routes.intubationAlgorithm,
@@ -54,13 +54,13 @@ const List<ReusableCard> icu = [
     routeTo: Routes.ventilation,
   ),
   ReusableCard(
-    title: 'General Care',
+    title: 'Daily Round',
     description: '',
     color: AppColors.backgroundBlue,
     routeTo: Routes.generalCare,
   ),
   ReusableCard(
-    title: 'Tips for Junior Staffers',
+    title: 'Tips for Cross-skilling',
     description: '',
     color: AppColors.backgroundBlue,
     routeTo: Routes.tipsJuniorStaff,

@@ -23,7 +23,7 @@ If you're a developer there's more info at [README.md](../README.md).
 
 # How can you help?
 
-Look into [Medic related issues](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aissue+is%3Aopen+label%3AMedic), then review them and see what it is the developers may be asking for. Most often this will be a further copy (written information) and content or a breakdown of an algorithm/ checklist. 
+Look into [Medic related issues](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aissue+is%3Aopen+label%3AMedic), then review them and see what it is the developers may be asking for. Most often this will be a further copy (written information) and content or a breakdown of an infographics/ checklist. 
 
 If you think you can help you can add a comment with either a simple reply or follow up question. Developers are a friendly bunch and won't be critical if you don't provide what they are looking for. You'll need to be logged in in order to make comments.
 

@@ -8,7 +8,7 @@ class IntubationAlgorithmPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Intubation Algorithm'),
+        title: const Text('Intubation Infographics'),
       ),
       body: Container(
         color: AppColors.backgroundGreen,
