@@ -1,13 +1,13 @@
-# Western Health COVID-19 app
+# Western Health COVID-19 app - WHAC19
 
-A tool to safeguard the welfare of Western Health anaesthetists during COVID-19 and provide instant access to the most up-to-date information for time-critical procedures to ensure optimal patient care.  This app will contain information for frontline medical staff on subjects such as:
+The WHAC19 app is a tool to safeguard the welfare of Western Health anaesthetists during COVID-19 and provide instant access to the most up-to-date information for time-critical procedures to ensure optimal patient care.  This app will contain information for frontline medical staff on subjects such as:
 
 - Putting on and taking off PPE (Personal Protective Equipment)
 - Taking care of your own welfare
-- Intubation checklists and steps
+- Intubation and Extubation checklists and steps
 - Ventilation suggested initial actions and adjuncts
 - ICU General Care
-- ICU Tips for junior staffers
+- ICU Tips your daily round and cross skilling
 - Contact details and newsfeeds
 
 Currently under development by a community of volunteers.
