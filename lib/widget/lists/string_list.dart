@@ -11,7 +11,8 @@ class StringList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return Container(
+        margin: const EdgeInsets.fromLTRB(0, 4, 0, 0),
         child: Padding(
             padding: padding,
             child: Column(
