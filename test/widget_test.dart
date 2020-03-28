@@ -14,7 +14,7 @@ void main() {
     SharedPreferences.setMockInitialValues(<String, dynamic>{});
     await tester.pumpWidget(MyApp());
 
-    await tester.pumpAndSettle(Duration(seconds: 2));
+    await tester.pumpAndSettle(const Duration(seconds: 2));
 
     expect(find.text('Disclaimer and conditions of use'), findsOneWidget);
   });
@@ -26,7 +26,7 @@ void main() {
 
     await tester.pumpWidget(MyApp());
 
-    await tester.pumpAndSettle(Duration(seconds: 2));
+    await tester.pumpAndSettle(const Duration(seconds: 2));
 
     expect(find.text('Western Health'), findsOneWidget);
   });
