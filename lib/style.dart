@@ -105,6 +105,12 @@ abstract class AppStyles {
       fontSize: 17.0,
       fontFamily: fontFamily);
 
+  static const TextStyle textSemiBold = TextStyle(
+      color: AppColors.minorText,
+      fontWeight: FontWeight.bold,
+      fontSize: 17.0,
+      fontFamily: fontFamily);
+
   static const TextStyle textFooter = TextStyle(
       color: AppColors.minorText,
       fontWeight: FontWeight.normal,
