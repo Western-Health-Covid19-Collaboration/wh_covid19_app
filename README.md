@@ -154,26 +154,31 @@ Currently the project is being primarily co-ordinated via the GDG Melbourne slac
 - Please follow the instructions above on how to submit a pull request. 
 - Once the pull request is reviewed and approved by the team, they would be able to merge this with the main branch. 
 
-## Authors
+## Contributors
+In no particular order, the following people have contributed to building the project:
 
 * Gregg Miller - Initial Development and ideas
 * Matt Kelsh - Design
-* Marc Edwards - Design and management
-* Luke Sleeman - Organising people and general dogsbody 😁
+* Marc Edwards - Design
+* Luke Sleeman - Project organiser
 * Alessandro Favero - Flutter Dev
 * Maksim Lin - Flutter dev & CI
 * Mike Hughes - Flutter dev & CI
 * Adam Koch - Flutter dev
 * Brett Morgan - Flutter dev
-* Eric Jiang - Flutter dev, and QA
+* Eric Jiang - Flutter dev
 * Dylan Lange - Flutter dev
 * Jonathan Galtieri - Anaesthetist
 * Ben Blackman - Anaesthetic registrar
 * Fabien Dade - ICU registrar
 * Alice Gynther - Anaesthetist
-
-
-
+* Kim Nguyen - Flutter dev
+* Bramly - Flutter dev
+* Suesi Tran - Flutter dev
+* June Chen - Flutter dev
+* Joshua Case - Flutter dev
+* Poornima Sivakumar - Documentation
+* Fabio - Documentation
 
 ## License
 
@@ -188,6 +193,18 @@ For any urgent requests relating to this app you can contact luke.sleeman@gmail.
 
 ## Acknowledgments
 
-🎩 Huge hat tip to everybody providing advice, helping out, etc including: Luke Sleeman, Gregg Miller, Matt Kelsh, Mike Hughes,  Alessandro Favero, Maksim Lin, Brett Morgan, Adam Koch, Eric Jiang, Hsiu-Mei Huang, Sean Woodhouse, Matt Delves, Kim Nguyen, Martin from CM, Itty Bitty Apps, Bramley, Jonathan Galtieri, Ben Blackman, Fabien Dade, Alice Gynther, Raffy Halim and Josh Case.
+So many people have worked together to make this project happen, and helped out in so many ways 🥰
 
-I've probably forgotten a bunch of people, so if you have done something and we have missed out on you; I'm deeply sorry, and appreciate your contribution ❤️. Message Luke Sleeman and he will make sure you get added.
+Firstly a huge thanks to [all our contributors](#Contributors); Our designers, developers and all the medical staff.  Your work is what is making this project happen.
+
+The entire [GDG Melbourne](https://www.gdgmelbourne.com) community for pulling together on this.
+
+Several companies who have provided support and employee time, including Itty Bitty apps, and Art Processors. 
+
+Code Magic for additional build minutes and support.
+
+Slack for upgrading our workspace free of charge.
+
+Apple and Google for help with expedited app reviews and listings.
+
+I've probably forgotten a bunch of people, so if you have done something and we have missed out on you; I'm deeply sorry, and appreciate your contribution.  Message Luke Sleeman and I will make sure you get added ❤️❤️❤️
