@@ -16,7 +16,7 @@ class _DisclaimerViewState extends State<DisclaimerView>
   // Content of the page
   final _content = Container(
     padding: const EdgeInsets.all(16),
-    child: Text(
+    child: const Text(
       disclaimerBody,
       style: AppStyles.textLegal,
       //textAlign: TextAlign.justify,
@@ -105,7 +105,9 @@ class _DisclaimerViewState extends State<DisclaimerView>
     return FutureBuilder<bool>(
         future: _checkAgreed(),
         builder: (context, snapshot) {
-          if (!snapshot.hasData) return Container();
+          if (!snapshot.hasData) {
+            return const CircularProgressIndicator();
+          }
           return WillPopScope(
             // Prevent back button exiting disclaimer on Android
             onWillPop: () async => false,
