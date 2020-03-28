@@ -16,7 +16,7 @@ class _DisclaimerViewState extends State<DisclaimerView>
   // Content of the page
   final _content = Container(
     padding: const EdgeInsets.all(16),
-    child: Text(
+    child: const Text(
       disclaimerBody,
       style: AppStyles.textLegal,
       //textAlign: TextAlign.justify,
@@ -105,13 +105,16 @@ class _DisclaimerViewState extends State<DisclaimerView>
     return FutureBuilder<bool>(
         future: _checkAgreed(),
         builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return const CircularProgressIndicator();
+          }
           return Scaffold(
             backgroundColor: Colors.white,
             appBar: AppBar(
               backgroundColor: Colors.white,
               elevation: 0.0,
               iconTheme: AppStyles.appBarIconTheme,
-              automaticallyImplyLeading: snapshot.data,
+              automaticallyImplyLeading: snapshot.data ?? false,
               title: Text(
                 _title,
                 style: AppStyles.textH5,
