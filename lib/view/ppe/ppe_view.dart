@@ -53,7 +53,7 @@ class _PPEViewState extends State<PPEView> {
           description: '$method1Steps Steps',
           height: 40,
           routeTo: Routes.ppeOffGuidanceMethod1,
-          color: AppColors.backgroundBrown,
+          color: AppColors.purple50,
         )),
         Expanded(
             child: ReusableCard(
@@ -61,13 +61,13 @@ class _PPEViewState extends State<PPEView> {
           description: '$method2Steps Steps',
           height: 40,
           routeTo: Routes.ppeOffGuidanceMethod2,
-          color: AppColors.backgroundBrown,
+          color: AppColors.purple50,
         ))
       ],
     ),
     const ReusableCard(
       title: 'Infographic',
-      color: AppColors.backgroundBrown,
+      color: AppColors.purple50,
       height: PPEView._cardHeight,
     ),
     _buildVerticalSpacer(),
