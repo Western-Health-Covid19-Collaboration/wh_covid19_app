@@ -20,6 +20,13 @@ class InfoView extends StatelessWidget {
 
   final topCards = <Widget>[
     ReusableCard(
+      title: 'WH Novel Coronavirus information',
+      color: _cardColor,
+      height: _cardHeight,
+      elevation: _cardElevation,
+      fallback: () => CoronavirusInfoLauncher.launchWithBrowser(whCoronavirusInfoURL),
+    ),
+    ReusableCard(
       title: 'Contact Numbers',
       color: _cardColor,
       height: _cardHeight,
@@ -55,13 +62,6 @@ class InfoView extends StatelessWidget {
       height: _cardHeight,
       elevation: _cardElevation,
     ),
-    ReusableCard(
-      title: 'WH Novel Coronavirus information',
-      color: _cardColor,
-      height: _cardHeight,
-      elevation: _cardElevation,
-      fallback: () => CoronavirusInfoLauncher.launchWithBrowser(whCoronavirusInfoURL),
-    )
   ];
 
   @override
