@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../hard_data.dart';
@@ -110,7 +112,9 @@ class _DisclaimerViewState extends State<DisclaimerView>
           }
           return WillPopScope(
             // Prevent back button exiting disclaimer on Android
-            onWillPop: () async => false,
+            onWillPop: () async {
+              return _closeDisclaimerOrCloseApp(context, snapshot.data);
+            },
             child: Scaffold(
               backgroundColor: Colors.white,
               appBar: AppBar(
@@ -123,7 +127,7 @@ class _DisclaimerViewState extends State<DisclaimerView>
                   style: AppStyles.textH5,
                 ),
               ),
-              body: MediaQuery.of(context).size.height < 600
+              body: MediaQuery.of(context).size.height < 1000
                   ? Theme(
                       data: ThemeData(accentColor: AppColors.green500),
                       child: Stack(
@@ -163,8 +167,29 @@ class _DisclaimerViewState extends State<DisclaimerView>
   }
 
   Future<bool> _checkAgreed() async {
+    return false;
     final prefs = await SharedPreferences.getInstance();
     return prefs.getBool('disclaimer_agreed') ?? false;
+  }
+
+  // Close the app or close the disclaimer based on whether the user has
+  // agreed to the terms or not
+  bool _closeDisclaimerOrCloseApp(BuildContext context, bool _hasAgreedToTerms) {
+    if (_hasAgreedToTerms) {
+      return _closeDisclaimer(context);
+    }
+    else { exit(0); return false; } // Close App
+  }
+
+  bool _closeDisclaimer(BuildContext context) {
+    if (Navigator.canPop(context)) {
+      // Pop the disclaimer if we are not in the top route
+      return true;
+    } else {
+      // Replace with home if we are in the top route
+      Navigator.pushReplacementNamed(context, Routes.home);
+      return false;
+    }
   }
 
   Future<void> _setAgreed() async {
