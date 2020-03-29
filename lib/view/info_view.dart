@@ -34,11 +34,12 @@ class InfoView extends StatelessWidget {
   ];
 
   final bottomCards = <Widget>[
-    const ReusableCard(
+    ReusableCard(
       title: 'App Feedback',
       color: _cardColor,
       height: _cardHeight,
       elevation: _cardElevation,
+      fallback: () => ContactLauncher.launchWithBrowser(feedbackFormUrl),
     ),
     const ReusableCard(
       title: 'Disclaimer & Conditions of Use',

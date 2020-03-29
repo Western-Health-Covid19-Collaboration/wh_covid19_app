@@ -235,3 +235,6 @@ const List<PPEStepInfo> ppeOffMethod2Steps = [
       ]),
   handHygieneStep,
 ];
+
+// Feedback form
+const String feedbackFormUrl = 'https://forms.gle/zQtfhvswrKmjJjNV7';
