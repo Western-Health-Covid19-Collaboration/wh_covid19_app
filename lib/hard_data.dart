@@ -296,6 +296,8 @@ const List<IntubationChecklist> intubationChecklist = [
     IntubationChecklistItem(title: 'Suction working'),
     IntubationChecklistItem(title: 'Facemask with viral filter connected'),
     IntubationChecklistItem(title: 'ECTO2 trace'),
+
+    /// TODO: Make this a superscript
     IntubationChecklistItem(title: 'O2 running at 15L.min^-1'),
     IntubationChecklistItem(title: 'Oropharyngeal/nasal airways'),
     IntubationChecklistItem(title: 'Airway plans:', notes: [
