@@ -297,8 +297,8 @@ const List<IntubationChecklist> intubationChecklist = [
     IntubationChecklistItem(title: 'Facemask with viral filter connected'),
     IntubationChecklistItem(title: 'ECTO2 trace'),
 
-    /// TODO: Make this a superscript
-    IntubationChecklistItem(title: 'O2 running at 15L.min^-1'),
+    /// Note: \u{207B}\u{00B9} is unicode representation for ^-1
+    IntubationChecklistItem(title: 'O2 running at 15L. min\u{207B}\u{00B9}'),
     IntubationChecklistItem(title: 'Oropharyngeal/nasal airways'),
     IntubationChecklistItem(title: 'Airway plans:', notes: [
       'Plan A: Videolaryngoscopy with bougie/stylet',
