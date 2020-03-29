@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../../hard_data.dart';
+import '../../../style.dart';
 import '../../../widget/containers/intubation_checklist_container.dart';
 
 class IntubationChecklistPage extends StatelessWidget {
@@ -27,8 +28,16 @@ class IntubationChecklistPage extends StatelessWidget {
       length: intubationChecklist.length,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Intubation Checklist'),
+          iconTheme: AppStyles.appBarIconTheme,
+          backgroundColor: AppColors.green50,
+          title: const Text(
+            'Intubation Checklist',
+            style: AppStyles.textSemiBold,
+          ),
           bottom: TabBar(
+            unselectedLabelColor: AppColors.grey600,
+            indicatorColor: AppColors.blackAlpha800,
+            labelColor: AppColors.blackAlpha800,
             isScrollable: true,
             tabs: getChecklistTitles(),
           ),
