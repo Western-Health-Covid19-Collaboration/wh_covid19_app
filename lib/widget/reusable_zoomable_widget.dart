@@ -5,8 +5,9 @@ class ZoomablePhoto extends StatelessWidget {
   // Image url for the graph
   final String imageUrl;
   final Color backgroundColor;
+  final double margin;
 
-  const ZoomablePhoto({this.imageUrl, this.backgroundColor});
+  const ZoomablePhoto({this.imageUrl, this.backgroundColor, this.margin = 40});
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +20,12 @@ class ZoomablePhoto extends StatelessWidget {
                   backgroundDecoration: BoxDecoration(
                     color: backgroundColor
                   ),
-                  imageProvider: AssetImage(imageUrl),
+                  imageProvider: AssetImage(imageUrl),                  
+                  customSize: Size(MediaQuery.of(context).size.width - margin, MediaQuery.of(context).size.height - margin),
+                  ),
                 ),
-              ),
-            )
-          ]
-        );
-  }
+              )
+            ]
+          );
+    }
 }
