@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
+import 'models/PPEStepInfo.dart';
 import 'routes.dart';
 import 'style.dart';
 import 'widget/reusable_card.dart';
@@ -126,6 +127,114 @@ The Western Health trademark and app cannot be copied, modified, reproduced, pub
 
 You must agree to accept these terms and conditions before proceeding to use the app.
 ''';
+
+const String ppeOffWarning = '''
+Outside of PPE is contaminated!
+If your hands get contaminated during PPE removal, immediately wash your hands or use an alcohol-based hand sanitizer.
+''';
+
+const List<PPEStepInfo> ppeOnSteps = [
+  PPEStepInfo(
+      image: 'assets/images/steps/on_hand_hygiene.png',
+      text: 'Hand Hygiene',
+      notes: ['Wash hands or use an alcohol-based hand sanitizer']),
+  PPEStepInfo(image: 'assets/images/steps/on_gown.png', text: 'Gown', notes: [
+    'Fully cover torso from neck to knees, arms to end of wrists, and wrap around the back.',
+    'Fasten in back neck and waist'
+  ]),
+  PPEStepInfo(
+      image: 'assets/images/steps/on_mask.png',
+      text: 'Mask or Respirator',
+      notes: [
+        'Secure ties or elastic bands at middle of head and neck',
+        'Fit flexible band to nose bridge',
+        'Fit snug to face and below chin',
+        'Fit-check respirator'
+      ]),
+  PPEStepInfo(
+      image: 'assets/images/steps/on_goggles.png',
+      text: 'Goggles or face shield',
+      notes: ['Place over face and eyes', 'Adjust to fit']),
+  PPEStepInfo(
+      image: 'assets/images/steps/on_hand_hygiene.png',
+      text: 'Hand Hygiene',
+      notes: ['Wash hands or use an alcohol-based hand sanitizer']),
+  PPEStepInfo(
+      image: 'assets/images/steps/on_gloves.png',
+      text: 'Gloves',
+      notes: ['Extend to cover wrist of isolation gown'])
+];
+
+const PPEStepInfo handHygieneStep = PPEStepInfo(
+    image: 'assets/images/steps/off_hand_hygiene.png',
+    text: 'Hand Hygiene',
+    notes: [
+      'Wash hands or use an alcohol-based hand sanitizer immediately after removing PPE'
+    ]);
+
+const List<PPEStepInfo> ppeOffMethod1Steps = [
+  PPEStepInfo(
+      image: 'assets/images/steps/off_gloves.png',
+      text: 'Gloves',
+      notes: [
+        'Using a gloved hand, grasp the palm area of the other gloved hand and peel off first glove',
+        'Hold removed glove in gloved hand',
+        'Slide fingers of ungloved hand under remaining glove at wrist and peel off second glove over first glove',
+        'Discard gloves in a waste container'
+      ]),
+  handHygieneStep,
+  PPEStepInfo(image: 'assets/images/steps/off_gown.png', text: 'Gown', notes: [
+    "Unfasten gown ties, taking care that sleeves don't contact your body when reaching for ties",
+    'Pull gown away from neck and shoulders, touching inside of gown only',
+    'Turn gown inside out',
+    'Fold or roll into a bundle and discard in a waste container'
+  ]),
+  handHygieneStep,
+  PPEStepInfo(
+      image: 'assets/images/steps/off_goggles.png',
+      text: 'Goggles or Face Shield',
+      notes: [
+        'Remove goggles or faceshield from the back by lifting head band or ear pieces',
+        'If the item is reusable, place in designated receptacle for reprocessing. Otherwise, discard in a waste container.'
+      ]),
+  handHygieneStep,
+  PPEStepInfo(
+      image: 'assets/images/steps/off_mask.png',
+      text: 'Mask or Respirator',
+      notes: [
+        'Grasp bottom ties or elastics of the mask/respirator, then the ones at the top, and remove without touching the front',
+        'Discard in a waste container'
+      ]),
+  handHygieneStep,
+];
+
+const List<PPEStepInfo> ppeOffMethod2Steps = [
+  PPEStepInfo(
+      image: 'assets/images/steps/off_gownandgloves.png',
+      text: 'Gown and Gloves',
+      notes: [
+        'Grasp the gown in the front and pull away from your body so that the ties break, touching outside of gown only with gloved hands',
+        'While removing the gown, fold or roll the gown inside-out into a bundle',
+        'As you are removing the gown, peel off your gloves at the same time, only touching the inside of the gloves and gown with your bare hands. Place the gown and gloves into a waste container'
+      ]),
+  handHygieneStep,
+  PPEStepInfo(
+      image: 'assets/images/steps/off_goggles.png',
+      text: 'Goggles or Face Shield',
+      notes: [
+        'Remove goggles or faceshield from the back by lifting head band or ear pieces',
+        'If the item is reusable, place in designated receptacle for reprocessing. Otherwise, discard in a waste container.'
+      ]),
+  handHygieneStep,
+  PPEStepInfo(
+      image: 'assets/images/steps/off_mask.png',
+      text: 'Mask or Respirator',
+      notes: [
+        'Grasp bottom ties or elastics of the mask/respirator, then the ones at the top, and remove without touching the front',
+        'Discard in a waste container'
+      ]),
+  handHygieneStep,
+];
 
 // Feedback form
 const String feedbackFormUrl = 'https://forms.gle/zQtfhvswrKmjJjNV7';

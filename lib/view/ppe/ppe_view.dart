@@ -2,6 +2,8 @@ import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
+import '../../hard_data.dart';
+import '../../routes.dart';
 import '../../style.dart';
 import '../../widget/reusable_card.dart';
 
@@ -38,17 +40,34 @@ class _PPEViewState extends State<PPEView> {
     _buildVerticalSpacer(),
   ];
 
+  static int method1Steps = ppeOffMethod1Steps.length;
+  static int method2Steps = ppeOffMethod2Steps.length;
+
   final takingOffCards = <Widget>[
     _buildVerticalSpacer(),
-    const ReusableCard(
-      title: 'Step By Step Guide',
-      color: AppColors.backgroundBrown,
-      height: PPEView._cardHeight,
+    Row(
+      children: <Widget>[
+        Expanded(
+            child: ReusableCard(
+          title: 'Method 1',
+          description: '$method1Steps Steps',
+          height: 40,
+          routeTo: Routes.ppeOffGuidanceMethod1,
+          color: AppColors.purple50,
+        )),
+        Expanded(
+            child: ReusableCard(
+          title: 'Method 2',
+          description: '$method2Steps Steps',
+          height: 40,
+          routeTo: Routes.ppeOffGuidanceMethod2,
+          color: AppColors.purple50,
+        ))
+      ],
     ),
-    _buildVerticalSpacer(),
     const ReusableCard(
       title: 'Infographic',
-      color: AppColors.backgroundBrown,
+      color: AppColors.purple50,
       height: PPEView._cardHeight,
     ),
     _buildVerticalSpacer(),

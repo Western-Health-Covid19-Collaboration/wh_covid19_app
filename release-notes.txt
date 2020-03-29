@@ -1,6 +1,13 @@
 ---- Saturday 28th March, 2020 ----
 * Open External Browser to Feedback form when user taps on App Feedback in Information view
 
+---- Friday 27th March, 2020 ----
+* Added Screen for PPE Removal
+* Added Screen for putting on PPE
+* Branded Home Screen
+
+---- Thursday 26th March, 2020 ----
+
 ---- Wednesday 25th March, 2020 ----
 
 * Contact numbers now shows WH phonebook webpage
