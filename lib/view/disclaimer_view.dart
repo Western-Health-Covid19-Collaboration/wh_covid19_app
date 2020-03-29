@@ -167,7 +167,6 @@ class _DisclaimerViewState extends State<DisclaimerView>
   }
 
   Future<bool> _checkAgreed() async {
-    return false;
     final prefs = await SharedPreferences.getInstance();
     return prefs.getBool('disclaimer_agreed') ?? false;
   }
