@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-
 import '../../../style.dart';
+import '../../../widget/reusable_Infographic.dart';
 
 class IntubationAlgorithmPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.backgroundGreen,
       appBar: AppBar(
         title: const Text('Extubation Infographic'),
       ),
-      body: Container(
-        color: AppColors.backgroundGreen,
-        child: const Center(
-          child: Text('TODO'),
-        ),
-      ),
+      body: 
+        const ReusableInfographic(imageUrl: 'assets/images/intubation_checklist.png', backgroundColor: AppColors.backgroundGreen)
     );
   }
 }
