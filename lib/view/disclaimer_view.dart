@@ -127,7 +127,7 @@ class _DisclaimerViewState extends State<DisclaimerView>
                   style: AppStyles.textH5,
                 ),
               ),
-              body: MediaQuery.of(context).size.height < 1000
+              body: MediaQuery.of(context).size.height < 600
                   ? Theme(
                       data: ThemeData(accentColor: AppColors.green500),
                       child: Stack(
