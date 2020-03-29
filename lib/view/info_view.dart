@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:package_info/package_info.dart';
 
 import '../contact_launcher.dart';
-import '../coronavirusInfo_launcher.dart';
 import '../hard_data.dart';
 import '../routes.dart';
 import '../style.dart';
+import '../url_launcher.dart';
 import '../widget/reusable_card.dart';
 
 class InfoView extends StatelessWidget {
@@ -24,7 +24,7 @@ class InfoView extends StatelessWidget {
       color: _cardColor,
       height: _cardHeight,
       elevation: _cardElevation,
-      fallback: () => CoronavirusInfoLauncher.launchWithBrowser(whCoronavirusInfoURL),
+      fallback: () => BaseUrlLauncher.launchWithBrowser(whCoronavirusInfoURL),
     ),
     ReusableCard(
       title: 'Contact Numbers',
