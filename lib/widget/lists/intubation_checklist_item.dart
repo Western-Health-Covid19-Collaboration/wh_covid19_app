@@ -33,6 +33,7 @@ class _IntubationChecklistItemWidgetState
   @override
   Widget build(BuildContext context) {
     return ReusableCardBase(
+      elevation: 0,
       fallback: () {
         setState(() {
           _checked = !_checked;
