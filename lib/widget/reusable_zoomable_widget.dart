@@ -15,10 +15,15 @@ class ZoomablePhoto extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Expanded(
-              child: ClipRect(
-                child: PhotoView(
-                  backgroundDecoration: BoxDecoration(
-                    color: backgroundColor
+              child: ListView(
+                children: <Widget>[
+                  ClipRect(
+                    child: PhotoView(
+                      backgroundDecoration: BoxDecoration(
+                        color: backgroundColor
+                      ),
+                      imageProvider: AssetImage(imageUrl),
+                    ),
                   ),
                   imageProvider: AssetImage(imageUrl),                  
                   customSize: Size(MediaQuery.of(context).size.width - margin, MediaQuery.of(context).size.height - margin),
