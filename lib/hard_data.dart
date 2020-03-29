@@ -55,13 +55,11 @@ const List<ReusableCard> icu = [
   ),
   ReusableCard(
     title: 'General Care',
-    description: '',
     color: AppColors.backgroundBlue,
     routeTo: Routes.generalCare,
   ),
   ReusableCard(
     title: 'Tips for Junior Staffers',
-    description: '',
     color: AppColors.backgroundBlue,
     routeTo: Routes.tipsJuniorStaff,
   ),
