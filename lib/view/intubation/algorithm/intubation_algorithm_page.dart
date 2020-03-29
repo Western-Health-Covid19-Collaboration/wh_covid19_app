@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../style.dart';
-import '../../../widget/reusable_Infographic.dart';
+import '../../../widget/reusable_zoomable_widget.dart';
 
 class IntubationAlgorithmPage extends StatelessWidget {
   @override
@@ -11,7 +11,7 @@ class IntubationAlgorithmPage extends StatelessWidget {
         title: const Text('Extubation Infographic'),
       ),
       body: 
-        const ReusableInfographic(imageUrl: 'assets/images/intubation_checklist.png', backgroundColor: AppColors.backgroundGreen)
+        const ZoomablePhoto(imageUrl: 'assets/images/intubation_checklist.png', backgroundColor: AppColors.backgroundGreen)
     );
   }
 }
