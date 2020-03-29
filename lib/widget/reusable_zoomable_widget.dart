@@ -11,7 +11,9 @@ class ZoomablePhoto extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Padding (
+      padding: const EdgeInsets.only(top: 20.0),
+      child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Expanded(
@@ -22,10 +24,12 @@ class ZoomablePhoto extends StatelessWidget {
                   ),
                   imageProvider: AssetImage(imageUrl),
                   customSize: Size(MediaQuery.of(context).size.width - margin, MediaQuery.of(context).size.height - margin),
+                  basePosition: Alignment.topCenter,
                 ),
               ),
             )
           ]
-        );
-    }
+        ),
+    );
+  }
 }
