@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:package_info/package_info.dart';
 
 import '../contact_launcher.dart';
+import '../coronavirusInfo_launcher.dart';
 import '../hard_data.dart';
 import '../routes.dart';
 import '../style.dart';
 import '../widget/reusable_card.dart';
-import '../coronavirusInfo_launcher.dart';
 
 class InfoView extends StatelessWidget {
   final title = 'Information';
