@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
 
 class ZoomablePhoto extends StatelessWidget {
-  /// Title for the container
+  // Image url for the graph
   final String imageUrl;
   final Color backgroundColor;
 
