@@ -98,4 +98,7 @@ More:
 - If you'd like to get the attention to a specific person that may be oblivious to the conversation you can use that person's handle just like in Twitter. For example: "We should check with @greggmiller how to handle this problem". This is quite handy because  people tend to get involved in several issues, each one to a different degree, until they're closed. So if you notice that there's something without progress for an abnormal amount of time it's a good way to nudge it in motion again.
 
 # FAQ
+
+# Troubleshooting
+
  
