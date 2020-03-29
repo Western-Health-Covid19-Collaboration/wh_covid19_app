@@ -7,7 +7,7 @@ class ZoomablePhoto extends StatelessWidget {
   final Color backgroundColor;
   final double margin;
 
-  const ZoomablePhoto({this.imageUrl, this.backgroundColor, this.margin = 40});
+  const ZoomablePhoto({this.imageUrl, this.backgroundColor, this.margin = 20});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class ZoomablePhoto extends StatelessWidget {
                     color: backgroundColor
                   ),
                   imageProvider: AssetImage(imageUrl),
-                  customSize: Size(MediaQuery.of(context).size.width - margin, MediaQuery.of(context).size.height - margin),
+                  customSize: Size(MediaQuery.of(context).size.width - margin * 2, MediaQuery.of(context).size.height - margin * 2),
                   basePosition: Alignment.topCenter,
                 ),
               ),
