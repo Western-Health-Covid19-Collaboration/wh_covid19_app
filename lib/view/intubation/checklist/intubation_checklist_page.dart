@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:wh_covid19/hard_data.dart';
 
-import '../../../models/IntubationChecklist.dart';
+import '../../../hard_data.dart';
 import '../../../widget/containers/intubation_checklist_container.dart';
 
 class IntubationChecklistPage extends StatelessWidget {

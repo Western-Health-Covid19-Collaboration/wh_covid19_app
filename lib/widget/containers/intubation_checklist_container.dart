@@ -24,9 +24,13 @@ class IntubationChecklistContainer extends StatelessWidget {
     return Container(
         color: AppColors.green500,
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 24, 16, 24),
-          child: Column(
-            children: renderList(),
+          padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+          child: ListView(
+            children: [
+              Container(padding: const EdgeInsetsDirectional.only(top: 10)),
+              ...renderList(),
+              Container(padding: const EdgeInsetsDirectional.only(bottom: 10)),
+            ],
           ),
         ));
   }
