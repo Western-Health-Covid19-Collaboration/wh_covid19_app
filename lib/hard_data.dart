@@ -288,6 +288,21 @@ const List<IntubationChecklist> intubationChecklist = [
     IntubationChecklistItem(title: 'ETCO2'),
     IntubationChecklistItem(title: 'Viral filter'),
   ]),
-  // IntubationChecklist(title: 'Equipment', checklist: []),
-  // IntubationChecklist(title: 'Final', checklist: [])
+  IntubationChecklist(title: 'Final', checklist: [
+    IntubationChecklistItem(title: 'Patient position optimal'),
+    IntubationChecklistItem(
+      title: 'Fluid runs easily',
+    ),
+    IntubationChecklistItem(title: 'Suction working'),
+    IntubationChecklistItem(title: 'Facemask with viral filter connected'),
+    IntubationChecklistItem(title: 'ECTO2 trace'),
+    IntubationChecklistItem(title: 'O2 running at 15L.min^-1'),
+    IntubationChecklistItem(title: 'Oropharyngeal/nasal airways'),
+    IntubationChecklistItem(title: 'Airway plans:', notes: [
+      'Plan A: Videolaryngoscopy with bougie/stylet',
+      'Plan B: Supraglottic airway',
+      'Plan C: Vice grip, 2-person +/- Guedel/NPA',
+      'Plan D: Scalpel/bougie/tube'
+    ]),
+  ]),
 ];
