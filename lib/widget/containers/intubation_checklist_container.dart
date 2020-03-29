@@ -4,29 +4,29 @@ import '../../models/IntubationChecklist.dart';
 import '../../style.dart';
 import '../lists/intubation_checklist_item.dart';
 
-class IntubationChecklistContainer extends StatefulWidget {
+class IntubationChecklistContainer extends StatelessWidget {
   final List<IntubationChecklistItem> checklist;
 
-  const IntubationChecklistContainer({Key key, this.checklist})
-      : super(key: key);
+  const IntubationChecklistContainer({this.checklist});
 
-  @override
-  _IntubationChecklistContainerState createState() =>
-      _IntubationChecklistContainerState();
-}
+  List<Widget> renderList() {
+    return checklist
+        .map((e) => IntubationChecklistItemWidget(
+              listItem: e,
+              backgroundColor: AppColors.appBackground,
+              selectedBackgroundColor: AppColors.green50,
+            ))
+        .toList();
+  }
 
-class _IntubationChecklistContainerState
-    extends State<IntubationChecklistContainer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: AppColors.appBackground,
+        color: AppColors.green500,
         child: Padding(
-          padding: EdgeInsets.fromLTRB(16, 24, 16, 24),
+          padding: const EdgeInsets.fromLTRB(16, 24, 16, 24),
           child: Column(
-            children: <Widget>[
-              IntubationChecklistItemWidget(listItem: widget.checklist[0])
-            ],
+            children: renderList(),
           ),
         ));
   }

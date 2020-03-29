@@ -8,10 +8,12 @@ import '../../style.dart';
 class IntubationChecklistItemWidget extends StatefulWidget {
   final IntubationChecklistItem listItem;
   final Color backgroundColor;
+  final Color selectedBackgroundColor;
 
   const IntubationChecklistItemWidget(
       {@required this.listItem,
-      this.backgroundColor = AppColors.appBackground});
+      this.backgroundColor = AppColors.grey50,
+      this.selectedBackgroundColor = AppColors.grey600});
   @override
   _IntubationChecklistItemWidgetState createState() =>
       _IntubationChecklistItemWidgetState();
@@ -22,7 +24,7 @@ class _IntubationChecklistItemWidgetState
   var _checked = false;
 
   Widget getList() {
-    if (widget.listItem.notes.isNotEmpty) {
+    if (widget.listItem.notes != null && widget.listItem.notes.isNotEmpty) {
       return StringList(items: widget.listItem.notes);
     }
     return Container();
@@ -37,6 +39,7 @@ class _IntubationChecklistItemWidgetState
         });
       },
       padding: const EdgeInsets.all(16),
+      color: _checked ? widget.selectedBackgroundColor : widget.backgroundColor,
       child: <Widget>[
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,7 +63,7 @@ class _IntubationChecklistItemWidgetState
                       widget.listItem.title,
                       style: AppStyles.textH4,
                     ),
-                    // getList()
+                    getList()
                   ],
                 ),
               ),
