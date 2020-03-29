@@ -1,4 +1,4 @@
-# Why use Flutter?
+# Use Flutter
 
 ## Status
 
