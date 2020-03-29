@@ -98,4 +98,36 @@ More:
 - If you'd like to get the attention to a specific person that may be oblivious to the conversation you can use that person's handle just like in Twitter. For example: "We should check with @greggmiller how to handle this problem". This is quite handy because  people tend to get involved in several issues, each one to a different degree, until they're closed. So if you notice that there's something without progress for an abnormal amount of time it's a good way to nudge it in motion again.
 
 # FAQ
+
+
+# Troubleshooting
+
+#### I'm not able to push to the repo if I checkout using https
+
+```remote: Permission to Western-Health-Covid19-Collaboration/wh_covid19_app.git denied to USERNAME.
+fatal: unable to access 'https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app.git/': The requested URL returned error: 403
+```
+
+If you're able to clone the repository successfully, the most likely cause of this issue is due to your GitHub account having [2FA enabled](https://help.github.com/en/github/authenticating-to-github/accessing-github-using-two-factor-authentication).
+
+There are two options to fix this.
+
+**Option 1 - Switch remote URL to using ssh**
+
+If you have ssh set up, you can swap to it by changing the configs without needing to re-clone the repo
+
+`git remote set-url origin ssh://git@github.com/Western-Health-Covid19-Collaboration/wh_covid19_app.git`
+
+To check if the URL is configured correctly, run `git remote -v`
+You should see something like this
+```
+origin  ssh://git@github.com/Western-Health-Covid19-Collaboration/wh_covid19_app.git (fetch)
+origin  ssh://git@github.com/Western-Health-Covid19-Collaboration/wh_covid19_app.git (push)
+```
+
+**Option 2 - Create access token to use https**
+
+To continue using https, set up an [access token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line).
+
+
  

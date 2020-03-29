@@ -210,4 +210,4 @@ Apple and Google for help with expedited app reviews and listings.
 
 Those who have given helpful and timely advice, including Byron Teu.
 
-I've probably forgotten a bunch of people, so if you have done something and we have missed out on you; I'm deeply sorry, and appreciate your contribution.  Message Luke Sleeman and I will make sure you get added ❤️❤️❤️
+I've probably forgotten a bunch of people, so if you have done something and we have missed out on you; I'm deeply sorry, and appreciate your contribution.  Message Luke Sleeman and I will make sure you get added ❤️❤️❤️.
