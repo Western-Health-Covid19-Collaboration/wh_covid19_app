@@ -1,32 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'routes.dart';
+import 'package:wh_covid19/view/disclaimer_view.dart';
+import 'package:wh_covid19/view/home_page.dart';
 
-class IntroRouter extends StatefulWidget {
-  @override
-  _IntroRouterState createState() => _IntroRouterState();
-}
-
-class _IntroRouterState extends State<IntroRouter> {
-  @override
-  void initState() {
-    super.initState();
-    _checkDisclaimerFirstView();
-  }
-
+class IntroRouter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
-  }
-
-  Future<void> _checkDisclaimerFirstView() async {
-    final prefs = await SharedPreferences.getInstance();
-    final disclaimerFirstView = prefs.getBool('disclaimer_first_view') ?? false;
-
-    if (disclaimerFirstView) {
-      await Navigator.of(context).pushReplacementNamed(Routes.home);
-    } else {
-      await Navigator.of(context).pushReplacementNamed(Routes.disclaimer);
-    }
+    return FutureBuilder<SharedPreferences>(
+      future: SharedPreferences.getInstance(),
+      builder: (context, snapshot) {
+        bool disclaimerFirstView;
+        if (snapshot.data != null) {
+          disclaimerFirstView =
+              snapshot.data.getBool("disclaimer_first_view") ?? false;
+        }
+        if (disclaimerFirstView == null) {
+          return Container();
+        } else if (disclaimerFirstView) {
+          return HomePage();
+        } else {
+          return DisclaimerView();
+        }
+      },
+    );
   }
 }
