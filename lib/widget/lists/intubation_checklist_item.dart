@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:wh_covid19/widget/cards/reusable_card_base.dart';
-import 'package:wh_covid19/widget/lists/string_list.dart';
 
 import '../../models/IntubationChecklist.dart';
 import '../../style.dart';
+import '../../widget/cards/reusable_card_base.dart';
+import '../../widget/lists/string_list.dart';
 
 class IntubationChecklistItemWidget extends StatefulWidget {
   final IntubationChecklistItem listItem;
