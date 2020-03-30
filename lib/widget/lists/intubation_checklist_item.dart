@@ -26,7 +26,9 @@ class _IntubationChecklistItemWidgetState
 
   Widget getList() {
     if (widget.listItem.notes != null && widget.listItem.notes.isNotEmpty) {
-      return StringList(items: widget.listItem.notes);
+      return StringList(
+          items: widget.listItem.notes,
+          padding: const EdgeInsets.fromLTRB(8, 0, 0, 0));
     }
     return Container();
   }
