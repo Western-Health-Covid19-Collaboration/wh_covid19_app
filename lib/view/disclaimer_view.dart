@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../hard_data.dart';
@@ -87,18 +89,18 @@ class _DisclaimerViewState extends State<DisclaimerView>
       margin: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
       height: 44.0,
       child: RaisedButton(
-        child: const Text(
-          'I Agree',
-          style: AppStyles.textH5,
-        ),
         color: AppColors.green500,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(8)),
         ),
         onPressed: () {
           _setAgreed();
-          Navigator.pushNamed(context, Routes.home);
+          Navigator.pushReplacementNamed(context, Routes.home);
         },
+        child: const Text(
+          'I Agree',
+          style: AppStyles.textH5,
+        ),
       ),
     );
 
@@ -108,52 +110,61 @@ class _DisclaimerViewState extends State<DisclaimerView>
           if (!snapshot.hasData) {
             return const CircularProgressIndicator();
           }
-          return Scaffold(
-            backgroundColor: Colors.white,
-            appBar: AppBar(
+          return WillPopScope(
+            // Prevent back button exiting disclaimer on Android
+            onWillPop: () async {
+              return _closeDisclaimerOrCloseApp(context, snapshot.data);
+            },
+            child: Scaffold(
               backgroundColor: Colors.white,
-              elevation: 0.0,
-              iconTheme: AppStyles.appBarIconTheme,
-              automaticallyImplyLeading: snapshot.data ?? false,
-              title: Text(
-                _title,
-                style: AppStyles.textH5,
+              appBar: AppBar(
+                backgroundColor: Colors.white,
+                elevation: 0.0,
+                iconTheme: AppStyles.appBarIconTheme,
+                automaticallyImplyLeading: snapshot.data ?? true,
+                title: Text(
+                  _title,
+                  style: AppStyles.textH5,
+                ),
               ),
-            ),
-            body: MediaQuery.of(context).size.height < 600
-                ? Theme(
-                    data: ThemeData(accentColor: AppColors.green500),
-                    child: Stack(
-                      alignment: Alignment.bottomCenter,
-                      children: [
-                        NotificationListener<ScrollUpdateNotification>(
-                          child: ListView(
-                            children: <Widget>[
-                              _content,
-                              if (!snapshot.data) _agreeButton else _agreedText,
-                            ],
+              body: MediaQuery.of(context).size.height < 600
+                  ? Theme(
+                      data: ThemeData(accentColor: AppColors.green500),
+                      child: Stack(
+                        alignment: Alignment.bottomCenter,
+                        children: [
+                          NotificationListener<ScrollUpdateNotification>(
+                            onNotification: (scrollNotification) {
+                              _animationController.forward();
+                              return true;
+                            },
+                            child: ListView(
+                              children: <Widget>[
+                                _content,
+                                if (!snapshot.data)
+                                  _agreeButton
+                                else
+                                  _agreedText,
+                              ],
+                            ),
                           ),
-                          onNotification: (scrollNotification) {
-                            _animationController.forward();
-                            return true;
-                          },
-                        ),
-                        FadeTransition(
-                            opacity: _animation,
-                            child: !snapshot.data
-                                ? _scrollDownToAgree
-                                : _scrollDown)
+                          FadeTransition(
+                              opacity: _animation,
+                              child: !snapshot.data
+                                  ? _scrollDownToAgree
+                                  : _scrollDown)
+                        ],
+                      ),
+                    )
+                  : Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: <Widget>[
+                        _content,
+                        if (!snapshot.data) _agreeButton else _agreedText,
                       ],
                     ),
-                  )
-                : Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: <Widget>[
-                      _content,
-                      if (!snapshot.data) _agreeButton else _agreedText,
-                    ],
-                  ),
+            ),
           );
         });
   }
@@ -161,6 +172,30 @@ class _DisclaimerViewState extends State<DisclaimerView>
   Future<bool> _checkAgreed() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getBool('disclaimer_agreed') ?? false;
+  }
+
+  // Close the app or close the disclaimer based on whether the user has
+  // agreed to the terms or not
+  bool _closeDisclaimerOrCloseApp(
+      BuildContext context, bool _hasAgreedToTerms) {
+    if (_hasAgreedToTerms) {
+      return _closeDisclaimer(context);
+    } else {
+      // Close App
+      exit(0);
+      return false;
+    }
+  }
+
+  bool _closeDisclaimer(BuildContext context) {
+    if (Navigator.canPop(context)) {
+      // Pop the disclaimer if we are not in the top route
+      return true;
+    } else {
+      // Replace with home if we are in the top route
+      Navigator.pushReplacementNamed(context, Routes.home);
+      return false;
+    }
   }
 
   Future<void> _setAgreed() async {

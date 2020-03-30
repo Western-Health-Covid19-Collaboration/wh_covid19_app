@@ -27,20 +27,20 @@ const List<ReusableCard> staffWelfare = [
 // Intubation card list composition
 final List<ReusableCard> intubation = [
   const ReusableCard(
-    title: 'Step By Step Guidance',
-    description: '12 steps',
+    title: 'Intubation Guide',
+    description: 'Step by step guide',
     color: AppColors.backgroundGreen,
     routeTo: Routes.intubationGuidance,
   ),
   const ReusableCard(
-    title: 'Checklist',
-    description: '12 steps',
+    title: 'Intubation Checklist',
+    description: 'Checklist',
     color: AppColors.backgroundGreen,
     routeTo: Routes.intubationChecklist,
   ),
   const ReusableCard(
-    title: 'Algorithm',
-    description: '12 steps',
+    title: 'Extubation',
+    description: 'Infographic',
     color: AppColors.backgroundGreen,
     routeTo: Routes.intubationAlgorithm,
   )
@@ -55,13 +55,13 @@ const List<ReusableCard> icu = [
     routeTo: Routes.ventilation,
   ),
   ReusableCard(
-    title: 'General Care',
+    title: 'Daily Round',
     description: '',
     color: AppColors.backgroundBlue,
     routeTo: Routes.generalCare,
   ),
   ReusableCard(
-    title: 'Tips for Junior Staffers',
+    title: 'Tips for Cross-skilling',
     description: '',
     color: AppColors.backgroundBlue,
     routeTo: Routes.tipsJuniorStaff,
@@ -114,6 +114,9 @@ class HtmlTextScreenData {
 // Contacts web url
 const String whURL = 'http://wh.cyphix.net/';
 
+// WH Novel Coronavirus information url
+const String whCoronavirusInfoURL = 'https://coronavirus.wh.org.au/#';
+
 // Disclaimer text
 const String disclaimerBody = '''
 This app is designed to be used by Anaesthetic and Critical Care doctors at Western Health who are caring for patients during the COVID-19 Pandemic. The guidelines, protocols and advice within this app are designed to educate staff and suggest recommended management of patients with COVID-19. The recommendations within this application do not indicate an exclusive course of action as the results must be contextualised to the patient at hand and variations may be appropriate.
@@ -122,7 +125,7 @@ The authors of this app have made efforts to ensure the information is up to dat
 
 The authors accept no responsibility for any information perceived as misleading or the success of any treatment regimen detailed in the guidelines.
 
-The app is made available on the understanding that Western Health and its employees shall have no liability (including liability by reason of negligence) to the users for any loss, damage, cost or expense incurred or arising by reason of any person using or relying on the information and whether caused by reason of any error, negligent act, omission or misinterpretation in the app or otherwise.
+The app is made available on the understanding that Western Health, Western Health employees, the designers, developers, testers, reviewers, organisers and all other contributors to the project have have no liability (including liability by reason of negligence) to the users for any loss, damage, cost or expense incurred or arising by reason of any person using or relying on the information and whether caused by reason of any error, negligent act, omission or misinterpretation in the app or otherwise.
 
 The Western Health trademark and app cannot be copied, modified, reproduced, published, uploaded, distributed or posted without the prior written consent of Western Health.
 
@@ -308,3 +311,5 @@ const List<IntubationChecklist> intubationChecklist = [
     ]),
   ]),
 ];
+// Feedback form
+const String feedbackFormUrl = 'https://forms.gle/zQtfhvswrKmjJjNV7';

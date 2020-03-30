@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _renderBody(BuildContext context) {
     const appBarHeight = 70;
-    const logoHeight = 24;
+    const logoHeight = 42;
 
     final Widget mainLogo = SvgPicture.asset('assets/images/main_logo.svg',
         height: logoHeight.toDouble());

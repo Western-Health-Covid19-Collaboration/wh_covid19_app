@@ -50,6 +50,15 @@ class ReusableCardBase extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: () {
+        if (routeTo != null) {
+          Navigator.pushNamed(context, routeTo);
+        } else {
+          if (fallback != null) {
+            fallback();
+          }
+        }
+      },
       child: Card(
         margin: margin,
         color: color,
@@ -69,15 +78,6 @@ class ReusableCardBase extends StatelessWidget {
           ),
         ),
       ),
-      onTap: () {
-        if (routeTo != null) {
-          Navigator.pushNamed(context, routeTo);
-        } else {
-          if (fallback != null) {
-            fallback();
-          }
-        }
-      },
     );
   }
 }

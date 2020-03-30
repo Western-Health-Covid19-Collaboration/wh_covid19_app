@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../contact_launcher.dart';
 import '../../hard_data.dart';
 import '../../style.dart';
+import '../../utils/url_utils.dart';
 import '../../widget/reusable_card.dart';
 
 class YourWelfareView extends StatelessWidget {
@@ -28,7 +28,7 @@ class YourWelfareView extends StatelessWidget {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.call),
-            onPressed: () => ContactLauncher.launchWithBrowser(whURL),
+            onPressed: () => UrlUtils.launchWithBrowser(whURL),
           ),
         ],
       ),
