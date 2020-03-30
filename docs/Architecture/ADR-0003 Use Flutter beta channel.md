@@ -6,7 +6,7 @@ Accepted
 
 ## Context
 
-There are 3 different versions of flutter that you can build out against: Stable, Beta and Dev.  Each comes with different trade offs.
+There are three different versions of flutter that you can build out: Stable, Beta and Dev. Each version will come with various trade-offs.
 
 Currently there has been a missed stable release, and Beta is required to build iOS correctly.
 
