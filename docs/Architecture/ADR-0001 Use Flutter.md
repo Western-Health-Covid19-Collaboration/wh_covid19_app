@@ -6,7 +6,7 @@ Accepted
 
 ## Context
 
-Flutter is a framework for building apps provided by google.  Google describe it as a:
+Flutter is a framework for building apps provided by Google.  Google describes it as a:
 > ... UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.
 
 It places an emphasis on fast development, expressive and flexible ui, and native performance.
