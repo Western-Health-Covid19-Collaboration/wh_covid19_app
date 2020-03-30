@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'url_launcher.dart';
+import 'utils/url_launcher.dart';
 
 class ContactLauncher extends BaseUrlLauncher {
   /// Open a [url] with the default device browser

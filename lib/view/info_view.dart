@@ -5,7 +5,7 @@ import '../contact_launcher.dart';
 import '../hard_data.dart';
 import '../routes.dart';
 import '../style.dart';
-import '../url_launcher.dart';
+import '../utils/url_launcher.dart';
 import '../widget/reusable_card.dart';
 
 class InfoView extends StatelessWidget {
