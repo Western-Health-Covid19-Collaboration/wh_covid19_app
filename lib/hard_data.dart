@@ -4,7 +4,7 @@ import 'package:flutter/services.dart' show rootBundle;
 
 import 'models/PPEStepInfo.dart';
 import 'routes.dart';
-import 'style.dart';
+import 'styles.dart';
 import 'widget/reusable_card.dart';
 
 // Staff Welfare card list composition
