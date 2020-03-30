@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../models/PPEStepInfo.dart';
-import '../../style.dart';
+import '../../styles.dart';
 import '../../widget/cards/reusable_card_base.dart';
 
 class PPECard extends StatelessWidget {
@@ -20,7 +20,7 @@ class PPECard extends StatelessWidget {
                 .map((item) => Text(
                       '\u2022 $item',
                       softWrap: true,
-                      style: AppStyles.textP,
+                      style: Styles.textP,
                     ))
                 .toList()));
   }
@@ -41,13 +41,13 @@ class PPECard extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
           child: Text(
             'Step $index',
-            style: AppStyles.textH3,
+            style: Styles.textH3,
           ),
         ),
         Image.asset(step.image),
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
-          child: Text(step.text, style: AppStyles.textH4),
+          child: Text(step.text, style: Styles.textH4),
         ),
         Container(
           padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),

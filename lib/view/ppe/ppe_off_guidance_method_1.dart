@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../hard_data.dart';
-import '../../style.dart';
+import '../../styles.dart';
 import '../../widget/notification_banner.dart';
 import '../../widget/ppe_card_container.dart';
 
@@ -16,10 +16,10 @@ class PPEOffGuidanceMethod1 extends StatelessWidget {
         backgroundColor: AppColors.grey50,
         appBar: AppBar(
           backgroundColor: AppColors.appBarBackground,
-          iconTheme: AppStyles.appBarIconTheme,
+          iconTheme: Styles.appBarIconTheme,
           title: Text(
             title,
-            style: AppStyles.textH5,
+            style: Styles.textH5,
           ),
         ),
         body: ListView(children: <Widget>[

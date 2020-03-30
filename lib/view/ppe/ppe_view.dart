@@ -4,7 +4,7 @@ import 'package:video_player/video_player.dart';
 
 import '../../hard_data.dart';
 import '../../routes.dart';
-import '../../style.dart';
+import '../../styles.dart';
 import '../../widget/reusable_card.dart';
 
 class PPEView extends StatefulWidget {
@@ -113,10 +113,10 @@ class _PPEViewState extends State<PPEView> {
       backgroundColor: AppColors.appBackground,
       appBar: AppBar(
         backgroundColor: AppColors.appBarBackground,
-        iconTheme: AppStyles.appBarIconTheme,
+        iconTheme: Styles.appBarIconTheme,
         title: Text(
           title,
-          style: AppStyles.appBarTextStyle,
+          style: Styles.appBarTextStyle,
         ),
       ),
       body: Container(
@@ -154,7 +154,7 @@ class _PPEViewState extends State<PPEView> {
       padding: const EdgeInsets.all(8.0),
       child: Padding(
         padding: const EdgeInsets.only(top: 24, bottom: 4),
-        child: Text(text, style: AppStyles.cardContainerTextStyle),
+        child: Text(text, style: Styles.cardContainerTextStyle),
       ),
     );
   }

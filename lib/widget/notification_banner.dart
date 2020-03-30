@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../style.dart';
+import '../styles.dart';
 
 class NotificationBanner extends StatelessWidget {
   final SvgPicture icon;
@@ -28,7 +28,7 @@ class NotificationBanner extends StatelessWidget {
                   const Padding(padding: EdgeInsets.symmetric(vertical: 2.0)),
                   Text(
                     message,
-                    style: AppStyles.textSemiBold,
+                    style: Styles.textSemiBold,
                   )
                 ],
               ),

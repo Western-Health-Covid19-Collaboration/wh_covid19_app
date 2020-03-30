@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../../../style.dart';
+import '../../../styles.dart';
 
 class IntubationGuidancePage extends StatelessWidget {
   @override

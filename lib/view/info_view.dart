@@ -4,7 +4,7 @@ import 'package:package_info/package_info.dart';
 import '../contact_launcher.dart';
 import '../hard_data.dart';
 import '../routes.dart';
-import '../style.dart';
+import '../styles.dart';
 import '../widget/reusable_card.dart';
 
 class InfoView extends StatelessWidget {
@@ -55,10 +55,10 @@ class InfoView extends StatelessWidget {
       backgroundColor: AppColors.appBackground,
       appBar: AppBar(
         backgroundColor: AppColors.appBarBackground,
-        iconTheme: AppStyles.appBarIconTheme,
+        iconTheme: Styles.appBarIconTheme,
         title: Text(
           title,
-          style: AppStyles.appBarTextStyle,
+          style: Styles.appBarTextStyle,
         ),
       ),
       body: Padding(

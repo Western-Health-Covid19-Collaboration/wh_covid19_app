@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../hard_data.dart';
-import '../../style.dart';
+import '../../styles.dart';
 import '../../widget/ppe_card_container.dart';
 
 class PPEOnGuidance extends StatelessWidget {
@@ -14,10 +14,10 @@ class PPEOnGuidance extends StatelessWidget {
         backgroundColor: AppColors.green500,
         appBar: AppBar(
           backgroundColor: AppColors.appBarBackground,
-          iconTheme: AppStyles.appBarIconTheme,
+          iconTheme: Styles.appBarIconTheme,
           title: Text(
             title,
-            style: AppStyles.textH5,
+            style: Styles.textH5,
           ),
         ),
         body: ListView(

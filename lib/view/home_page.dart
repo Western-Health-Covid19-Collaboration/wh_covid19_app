@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../hard_data.dart';
-import '../style.dart';
+import '../styles.dart';
 import '../utils/color.dart';
 import '../widget/card_container.dart';
 import 'info_view.dart';
@@ -61,16 +61,13 @@ class _HomePageState extends State<HomePage> {
     const appBarHeight = 70;
     const logoHeight = 24;
 
-    final Widget mainLogo = SvgPicture.asset('assets/images/main_logo.svg',
-        height: logoHeight.toDouble());
+    final Widget mainLogo = SvgPicture.asset('assets/images/main_logo.svg', height: logoHeight.toDouble());
 
     final appBarBottom = appBarHeight.toDouble() - logoHeight.toDouble();
 
     final scrollPos = _scrollPosition.round();
 
-    final percentage = scrollPos < appBarBottom
-        ? ((scrollPos) / appBarBottom.toDouble())
-        : 1.00;
+    final percentage = scrollPos < appBarBottom ? ((scrollPos) / appBarBottom.toDouble()) : 1.00;
 
     return Builder(builder: (context) {
       final _scrollController = PrimaryScrollController.of(context);
@@ -96,8 +93,7 @@ class _HomePageState extends State<HomePage> {
                     mainLogo,
                     IconButton(
                       icon: Icon(Icons.info_outline,
-                          color: generateIconColor(AppColors.homeAppBarIcon,
-                              AppColors.appBarIcon, percentage)),
+                          color: generateIconColor(AppColors.homeAppBarIcon, AppColors.appBarIcon, percentage)),
                       onPressed: () => InfoView.navigateTo(context),
                     )
                   ],
@@ -105,7 +101,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             backgroundColor: AppColors.dynamicAppBarBackground(percentage),
-            iconTheme: AppStyles.appBarIconTheme,
+            iconTheme: Styles.appBarIconTheme,
             floating: true,
             pinned: true,
             snap: false,

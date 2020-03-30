@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'hard_data.dart';
 import 'intro_router.dart';
 import 'routes.dart';
-import 'style.dart';
+import 'styles.dart';
 import 'view/disclaimer_view.dart';
 import 'view/home_page.dart';
 import 'view/icu_non_intensivist/general_care_view.dart';
@@ -20,9 +20,12 @@ import 'view/sbs_guide_view.dart';
 import 'view/staff_welfare/your_welfare_view.dart';
 import 'view/view_templates/html_text_card_view_template.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,7 +35,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: AppColors.appBackground,
         fontFamily: 'Inter',
       ),
-      initialRoute: Routes.introRouter,
+      home: IntroRouter(),
       routes: {
         Routes.home: (context) => HomePage(),
         Routes.ppe: (context) => PPEView(),
@@ -42,17 +45,22 @@ class MyApp extends StatelessWidget {
         Routes.staffWelfare: (context) => YourWelfareView(),
         Routes.sbsGuidance: (context) => SBSGuideView(),
         Routes.ventilation: (context) => VentilationView(),
-        Routes.ventilationInitialActions: (context) => _navigateScreenData(
-            context, routeToScreenData[Routes.ventilationInitialActions]),
-        Routes.ventilationAdjuncts: (context) => _navigateScreenData(
-            context, routeToScreenData[Routes.ventilationAdjuncts]),
+        Routes.ventilationInitialActions: (context) =>
+            _navigateScreenData(context, routeToScreenData[Routes.ventilationInitialActions]),
+        Routes.ventilationAdjuncts: (context) =>
+            _navigateScreenData(context, routeToScreenData[Routes.ventilationAdjuncts]),
         Routes.generalCare: (context) => GeneralCareView(),
         Routes.tipsJuniorStaff: (context) => TipsJuniorStaffView(),
-        Routes.introRouter: (context) => IntroRouter(),
+        //Routes.introRouter: (context) => IntroRouter(),
       },
       onGenerateRoute: (settings) {
         // Use onGenerateRoute to set fullscreenDialog=true
         switch (settings.name) {
+          case Routes.home:
+            return MaterialPageRoute<InfoView>(
+              builder: (context) => HomePage(),
+              fullscreenDialog: true,
+            );
           case Routes.info:
             return MaterialPageRoute<InfoView>(
               builder: (context) => InfoView(),
@@ -74,9 +82,7 @@ class MyApp extends StatelessWidget {
               fullscreenDialog: false,
             );
           case Routes.disclaimer:
-            return MaterialPageRoute<DisclaimerView>(
-                builder: (context) => DisclaimerView(),
-                fullscreenDialog: false);
+            return MaterialPageRoute<DisclaimerView>(builder: (context) => DisclaimerView(), fullscreenDialog: false);
         }
         // Fallback, won't be called unless an unknown route is called
         return MaterialPageRoute<HomePage>(
@@ -92,15 +98,14 @@ class MyApp extends StatelessWidget {
       future: data.readFile(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return HtmlTextCardViewTemplate(
-              title: data.title, bgColor: data.bgColor, html: '');
+          return HtmlTextCardViewTemplate(title: data.title, bgColor: data.bgColor, html: '');
         } else if (snapshot.hasError) {
           return Text('Error: ${snapshot.error}');
         } else {
-          return HtmlTextCardViewTemplate(
-              title: data.title, bgColor: data.bgColor, html: snapshot.data);
+          return HtmlTextCardViewTemplate(title: data.title, bgColor: data.bgColor, html: snapshot.data);
         }
       },
     );
   }
+
 }

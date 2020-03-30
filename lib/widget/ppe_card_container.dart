@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/PPEStepInfo.dart';
-import '../style.dart';
+import '../styles.dart';
 import '../widget/cards/ppe_step_card.dart';
 
 class PPECardContainer extends StatelessWidget {

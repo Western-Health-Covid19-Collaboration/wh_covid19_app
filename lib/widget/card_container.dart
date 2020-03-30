@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../style.dart';
+import '../styles.dart';
 import 'reusable_card.dart';
 
 class CardContainer extends StatelessWidget {
@@ -20,7 +20,7 @@ class CardContainer extends StatelessWidget {
     final containerHeading = title != null
         ? Text(
             title,
-            style: AppStyles.cardContainerTextStyle,
+            style: Styles.cardContainerTextStyle,
           )
         : Container();
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../../routes.dart';
-import '../../../style.dart';
+import '../../../styles.dart';
 import '../../../widget/reusable_card.dart';
 
 class VentilationView extends StatelessWidget {
@@ -25,8 +25,8 @@ class VentilationView extends StatelessWidget {
       backgroundColor: AppColors.appBackground,
       appBar: AppBar(
           backgroundColor: AppColors.appBarBackground,
-          iconTheme: AppStyles.appBarIconTheme,
-          title: Text(title, style: AppStyles.appBarTextStyle)),
+          iconTheme: Styles.appBarIconTheme,
+          title: Text(title, style: Styles.appBarTextStyle)),
       body: Container(
         color: AppColors.backgroundBlue,
         padding: const EdgeInsets.all(12),
