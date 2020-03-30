@@ -9,7 +9,7 @@ Accepted
 Flutter is a framework for building apps provided by Google.  Google describes it as a:
 > ... UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.
 
-It places an emphasis on fast development, expressive and flexible ui, and native performance.
+It emphasizes fast development, expressive and flexible UI, and native performance.
 
 Gregg Miller, who is a Senior Anesthesiologist at Western Health hospitals reached out to us with a mobile app he had been developing to provide COVID-19 information to frontline medical staff.  The app had been developed in Flutter.  Gregg wanted to know what help we could provide in getting it across the finish line.  Time was extremely short - we needed to put together and ship an app to the hospital before the crisis swamped the staff, which at that time as predicted to occur in about 2 weeks.
 
