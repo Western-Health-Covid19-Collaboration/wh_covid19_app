@@ -2,7 +2,7 @@
 
 Provide a more detailed summary of the changes in this PR here.  What does it do?
 
-[ ] `release-notes.txt` has been updated.
+- [ ] `release-notes.txt` has been updated.
 (👆 delete this line if your changes have no user facing features)
 
 ## Changes

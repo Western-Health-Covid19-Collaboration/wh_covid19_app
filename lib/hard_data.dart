@@ -26,20 +26,20 @@ const List<ReusableCard> staffWelfare = [
 // Intubation card list composition
 final List<ReusableCard> intubation = [
   const ReusableCard(
-    title: 'Step By Step Guidance',
-    description: '12 steps',
+    title: 'Intubation Guide',
+    description: 'Step by step guide',
     color: AppColors.backgroundGreen,
     routeTo: Routes.intubationGuidance,
   ),
   const ReusableCard(
-    title: 'Checklist',
-    description: '12 steps',
+    title: 'Intubation Checklist',
+    description: 'Checklist',
     color: AppColors.backgroundGreen,
     routeTo: Routes.intubationChecklist,
   ),
   const ReusableCard(
-    title: 'Algorithm',
-    description: '12 steps',
+    title: 'Extubation',
+    description: 'Infographic',
     color: AppColors.backgroundGreen,
     routeTo: Routes.intubationAlgorithm,
   )
@@ -54,12 +54,12 @@ const List<ReusableCard> icu = [
     routeTo: Routes.ventilation,
   ),
   ReusableCard(
-    title: 'General Care',
+    title: 'Daily Round',
     color: AppColors.backgroundBlue,
     routeTo: Routes.generalCare,
   ),
   ReusableCard(
-    title: 'Tips for Junior Staffers',
+    title: 'Tips for Cross-skilling',
     color: AppColors.backgroundBlue,
     routeTo: Routes.tipsJuniorStaff,
   ),
@@ -110,6 +110,9 @@ class HtmlTextScreenData {
 
 // Contacts web url
 const String whURL = 'http://wh.cyphix.net/';
+
+// WH Novel Coronavirus information url
+const String whCoronavirusInfoURL = 'https://coronavirus.wh.org.au/#';
 
 // Disclaimer text
 const String disclaimerBody = '''
