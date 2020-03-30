@@ -27,7 +27,7 @@ Subsequently, a new version of the app needs to be released to update the inform
 
 For the initial versions of the application, we will embed the content in the app.
 
-Later once the situation stablises and we need to support more hospitals, we  can re-visit the decision and decide if we want to download content.
+Once the situation stabilises, and we can provide support to more hospitals, we can re-visit the decision and decide if we want to download content.
 
 ## Consequences
 
