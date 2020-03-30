@@ -135,9 +135,13 @@ Check our [issues page](https://github.com/Western-Health-Covid19-Collaboration/
 When contributing to this repository, please first discuss the change you wish to make via slack, issue, or email or any other method with the owners of this repository before making a change.
 
 **Pro tips**
+
 🔥 If your committing changes to the docs add `[skip ci]` to your commit message to save build time.  We are currently burning build minutes 😬
+
 📱 Pick a device with a low resolution to test on and make sure there is no overflow errors.
+
 🎨 Check against the designs in Zeplin.
+
 ☑️ Only open up a PR once you feel you are finished.  You can request a review from `Flutter devs` get reviews
 
 
