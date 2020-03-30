@@ -24,7 +24,7 @@ class InfoView extends StatelessWidget {
       color: _cardColor,
       height: _cardHeight,
       elevation: _cardElevation,
-      fallback: () => BaseUrlLauncher.launchWithBrowser(whCoronavirusInfoURL),
+      fallback: () => UrlLauncher.launchWithBrowser(whCoronavirusInfoURL),
     ),
     ReusableCard(
       title: 'Contact Numbers',

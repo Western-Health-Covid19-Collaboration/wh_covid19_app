@@ -1,6 +1,6 @@
 import 'package:url_launcher/url_launcher.dart';
 
-class BaseUrlLauncher {
+class UrlLauncher {
   /// Open a [url] with the default device browser
   /// Works with web
   static Future<void> launchWithBrowser(String url) async {
