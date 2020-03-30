@@ -21,7 +21,8 @@ class UrlUtils {
       );
     }
   }
-    /// Make a phone call to the provided [number] using device dial
+
+  /// Make a phone call to the provided [number] using device dial
   /// If web, open [fallbackUrl] in a new browser window
   static Future<void> makeCall(String number, String fallbackUrl) async {
     if (kIsWeb) {

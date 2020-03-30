@@ -47,7 +47,7 @@ class ReusableCardBase extends StatelessWidget {
     this.verticalAlignment = MainAxisAlignment.start,
   }) : assert(child.isNotEmpty, 'Child component must be declared');
 
-  @override
+ @override
   Widget build(BuildContext context) {
     final col = Column(
       mainAxisAlignment: verticalAlignment,

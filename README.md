@@ -136,7 +136,9 @@ Check our [issues page](https://github.com/Western-Health-Covid19-Collaboration/
 
 When contributing to this repository, please first discuss the change you wish to make via slack, issue, or email or any other method with the owners of this repository before making a change.
 
-Currently the project is being primarily co-ordinated via the GDG Melbourne slack group. You can join GDG Melbourne's slack via [this invite](http://bit.ly/join_gdgslack). DM `@luke.sleeman` on GDG Melbourne slack to be invited to the channel being used for co-ordination.
+Currently, the project is being primarily co-ordinated via the GDG Melbourne slack group. You can join GDG Melbourne's slack via [this invite](http://bit.ly/join_gdgslack). DM `@luke.sleeman` on GDG Melbourne slack to be invited to the channel being used for co-ordination.
+
+If you have any questions about why things are done a certain way in the app, check out the [Architecture Decision Records](docs/Architecture) - they should be able to provide some background on why things are done a specific way.
 
 ### Pull Request Process
 
