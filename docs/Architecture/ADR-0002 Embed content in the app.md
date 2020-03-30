@@ -17,7 +17,7 @@ It also could mean that if the internet connection goes down to a hospital in  a
 
 
 ### Embed the content in the app
-An alternative is to embed all the information in the app, so its all included when the installs the app.
+The alternative method is to embed all of the information in the app so that all of the information is included, after downloading the app.
 
 This is architecturally much simpler and means all the content will be available offline if the internet should go down.
 
