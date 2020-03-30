@@ -1,25 +1,31 @@
-import 'package:flutter/foundation.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'utils/url_launcher.dart';
+import 'package:flutter/foundation.dart';
 
-class ContactLauncher extends UrlLauncher {
+class UrlUtils {
   /// Open a [url] with the default device browser
   /// Works with web
   static Future<void> launchWithBrowser(String url) async {
-    await UrlLauncher.launchWithBrowser(url);
+    if (await canLaunch(url)) {
+      await launch(url);
+    }
   }
 
   /// Open a [url] in a WebView (Android) or SafariViewController (iOS)
   /// Works with web
   static Future<void> launchWithView(String url) async {
-    await UrlLauncher.launchWithView(url);
+    if (await canLaunch(url)) {
+      await launch(
+        url,
+        forceWebView: true,
+        forceSafariVC: true,
+      );
+    }
   }
-
-  /// Make a phone call to the provided [number] using device dial
+    /// Make a phone call to the provided [number] using device dial
   /// If web, open [fallbackUrl] in a new browser window
   static Future<void> makeCall(String number, String fallbackUrl) async {
     if (kIsWeb) {
-      await UrlLauncher.launchWithBrowser(fallbackUrl);
+      await UrlUtils.launchWithBrowser(fallbackUrl);
     }
 
     final url = 'tel:$number';
