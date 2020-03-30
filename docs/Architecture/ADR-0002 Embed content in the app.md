@@ -21,7 +21,7 @@ The alternative method is to embed all of the information in the app so that all
 
 This is architecturally much simpler and means all the content will be available offline if the internet should go down.
 
-It does mean that to update the information a new version of the app needs to be released.
+Subsequently, a new version of the app needs to be released to update the information.
 
 ## Decision
 
