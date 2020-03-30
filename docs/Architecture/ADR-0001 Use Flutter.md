@@ -11,7 +11,7 @@ Flutter is a framework for building apps provided by Google.  Google describes i
 
 It emphasizes fast development, expressive and flexible UI, and native performance.
 
-Gregg Miller, who is a Senior Anesthesiologist at Western Health hospitals reached out to us with a mobile app he had been developing to provide COVID-19 information to frontline medical staff.  The app had been developed in Flutter.  Gregg wanted to know what help we could provide in getting it across the finish line.  Time was extremely short - we needed to put together and ship an app to the hospital before the crisis swamped the staff, which at that time as predicted to occur in about 2 weeks.
+Gregg Miller, a Senior Anesthesiologist at Western Health hospitals, reached out to us with a mobile app he had been developing to provide COVID-19 information to frontline medical staff.  The app that Gregg had developed in was with Flutter.  Gregg sought assistance and guidance from the GDG community to help him complete the app.  Considering time constraints, we needed to put together and ship an app to the hospital before the crisis swamped the staff, which at that time as predicted to occur in about two weeks.
 
 Luke immediately put out the call and assembled a team of Flutter developers from the GDG community.  We performed an initial evaluation on the codebase and decided that it would be best to perform a re-write rather than building on the existing codebase.
 
