@@ -1,4 +1,4 @@
-# USe Flutter beta Channel
+# Use Flutter beta Channel
 
 ## Status
 
