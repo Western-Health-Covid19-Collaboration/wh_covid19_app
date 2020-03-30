@@ -13,7 +13,7 @@ It emphasizes fast development, expressive and flexible UI, and native performan
 
 Gregg Miller, a Senior Anesthesiologist at Western Health hospitals, reached out to us with a mobile app he had been developing to provide COVID-19 information to frontline medical staff.  The app that Gregg had developed in was with Flutter.  Gregg sought assistance and guidance from the GDG community to help him complete the app.  Considering time constraints, we needed to put together and ship an app to the hospital before the crisis swamped the staff, which at that time as predicted to occur in about two weeks.
 
-Luke immediately put out the call and assembled a team of Flutter developers from the GDG community.  We performed an initial evaluation on the codebase and decided that it would be best to perform a re-write rather than building on the existing codebase.
+Luke immediately put out the call and assembled a team of Flutter developers from the GDG community.  We performed an initial evaluation on the codebase and decided that it would be best to deliver a re-write rather than building on the existing codebase.
 
 At this stage it would have been possible to drop Flutter and build out native applications, or built the app using some other cross platform toolkit such as react native.
 
