@@ -1,7 +1,7 @@
-import 'package:flutter/foundation.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/foundation.dart';
 
-class ContactLauncher {
+class UrlUtils {
   /// Open a [url] with the default device browser
   /// Works with web
   static Future<void> launchWithBrowser(String url) async {
@@ -21,12 +21,11 @@ class ContactLauncher {
       );
     }
   }
-
-  /// Make a phone call to the provided [number] using device dial
+    /// Make a phone call to the provided [number] using device dial
   /// If web, open [fallbackUrl] in a new browser window
   static Future<void> makeCall(String number, String fallbackUrl) async {
     if (kIsWeb) {
-      await launchWithBrowser(fallbackUrl);
+      await UrlUtils.launchWithBrowser(fallbackUrl);
     }
 
     final url = 'tel:$number';
