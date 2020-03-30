@@ -49,12 +49,18 @@ class ReusableCardBase extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var col = Column(
+    final col = Column(
       mainAxisAlignment: verticalAlignment,
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: child,
     );
+    void Function() onTap;
+    if (routeTo != null) {
+      onTap = () => Navigator.pushNamed(context, routeTo);
+    } else if (fallback != null) {
+      onTap = () => fallback();
+    }
     return Card(
         margin: margin,
         color: color,
@@ -71,49 +77,7 @@ class ReusableCardBase extends StatelessWidget {
                     child: col,
                   ),
           ),
-          onTap: () {
-            if (routeTo != null) {
-              Navigator.pushNamed(context, routeTo);
-            } else {
-              if (fallback != null) {
-                fallback();
-              }
-            }
-          },
+          onTap: onTap,
         ));
-  }
-
-  @override
-  Widget build3(BuildContext context) {
-    return GestureDetector(
-      child: Card(
-        margin: margin,
-        color: color,
-        elevation: elevation,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(borderRadius))),
-        child: Padding(
-          padding: padding,
-          child: Container(
-            height: null,
-            child: Column(
-              mainAxisAlignment: verticalAlignment,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: child,
-            ),
-          ),
-        ),
-      ),
-      onTap: () {
-        if (routeTo != null) {
-          Navigator.pushNamed(context, routeTo);
-        } else {
-          if (fallback != null) {
-            fallback();
-          }
-        }
-      },
-    );
   }
 }
