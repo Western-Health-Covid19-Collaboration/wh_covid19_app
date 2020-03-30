@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../models/IntubationChecklist.dart';
 import '../../style.dart';
 import '../../widget/cards/reusable_card_base.dart';
+import '../../widget/checkbox.dart';
 import '../../widget/lists/string_list.dart';
 
 class IntubationChecklistItemWidget extends StatefulWidget {
@@ -45,11 +46,11 @@ class _IntubationChecklistItemWidgetState
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Checkbox(
-                value: _checked,
-                onChanged: (newValue) {
+            ChecklistCheckbox(
+                checked: _checked,
+                onChecked: () {
                   setState(() {
-                    _checked = newValue;
+                    _checked = !_checked;
                   });
                 }),
             Expanded(
