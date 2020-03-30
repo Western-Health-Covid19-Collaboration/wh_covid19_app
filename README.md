@@ -173,12 +173,13 @@ In no particular order, the following people have contributed to building the pr
 * Fabien Dade - ICU registrar
 * Alice Gynther - Anaesthetist
 * Kim Nguyen - Flutter dev
-* Bramly - Flutter dev
+* Bramley - Flutter dev
 * Suesi Tran - Flutter dev
 * June Chen - Flutter dev
 * Joshua Case - Flutter dev
 * Poornima Sivakumar - Documentation
 * Fabio - Documentation
+* Sally Chung - Testing and general support
 
 ## License
 
@@ -207,4 +208,6 @@ Slack for upgrading our workspace free of charge.
 
 Apple and Google for help with expedited app reviews and listings.
 
-I've probably forgotten a bunch of people, so if you have done something and we have missed out on you; I'm deeply sorry, and appreciate your contribution.  Message Luke Sleeman and I will make sure you get added ❤️❤️❤️
+Those who have given helpful and timely advice, including Byron Teu.
+
+I've probably forgotten a bunch of people, so if you have done something and we have missed out on you; I'm deeply sorry, and appreciate your contribution.  Message Luke Sleeman and I will make sure you get added ❤️❤️❤️.
