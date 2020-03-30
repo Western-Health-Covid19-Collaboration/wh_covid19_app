@@ -144,6 +144,8 @@ When contributing to this repository, please first discuss the change you wish t
 
 ☑️ Only open up a PR once you feel you are finished.  You can request a review from `Flutter devs` get reviews
 
+🤗 If your unsure about sommething ask for help.  We are really friendly!
+
 
 Currently the project is being primarily co-ordinated via the GDG Melbourne slack group. You can join GDG Melbourne's slack via [this invite](http://bit.ly/join_gdgslack). DM `@luke.sleeman` on GDG Melbourne slack to be invited to the channel being used for co-ordination.
 
