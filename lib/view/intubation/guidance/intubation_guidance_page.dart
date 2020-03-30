@@ -8,7 +8,7 @@ class IntubationGuidancePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Intubation Steps'),
+        title: const Text('Intubation Guide'),
       ),
       body: Container(
         color: AppColors.backgroundGreen,
