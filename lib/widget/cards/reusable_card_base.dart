@@ -47,7 +47,7 @@ class ReusableCardBase extends StatelessWidget {
     this.verticalAlignment = MainAxisAlignment.start,
   }) : assert(child.isNotEmpty, 'Child component must be declared');
 
- @override
+  @override
   Widget build(BuildContext context) {
     final col = Column(
       mainAxisAlignment: verticalAlignment,
@@ -68,6 +68,7 @@ class ReusableCardBase extends StatelessWidget {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(borderRadius))),
         child: InkWell(
+          onTap: onTap,
           child: Ink(
             padding: padding,
             child: boxConstraints == null
@@ -77,7 +78,6 @@ class ReusableCardBase extends StatelessWidget {
                     child: col,
                   ),
           ),
-          onTap: onTap,
         ));
   }
 }
