@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 import 'models/PPEStepInfo.dart';
+import 'models/intubation_guide.dart';
 import 'routes.dart';
 import 'style.dart';
 import 'widget/reusable_card.dart';
@@ -55,13 +56,11 @@ const List<ReusableCard> icu = [
   ),
   ReusableCard(
     title: 'Daily Round',
-    description: '',
     color: AppColors.backgroundBlue,
     routeTo: Routes.generalCare,
   ),
   ReusableCard(
     title: 'Tips for Cross-skilling',
-    description: '',
     color: AppColors.backgroundBlue,
     routeTo: Routes.tipsJuniorStaff,
   ),
@@ -237,6 +236,81 @@ const List<PPEStepInfo> ppeOffMethod2Steps = [
         'Discard in a waste container'
       ]),
   handHygieneStep,
+];
+
+const List<IntubationContent> intubationGuide = [
+  IntubationContent('Planning', [
+    IntubationSection(items: [
+      IntubationItem('Intervene Early'),
+      IntubationItem('Negative pressure room', subtitle: 'If possible'),
+      IntubationItem('Meticulous airway assessment'),
+      IntubationItem('Discuss ventilation plan',
+          subtitle: 'Protective lung ventilation', icon: '💬'),
+    ])
+  ]),
+  IntubationContent('Prepare', [
+    IntubationSection(items: [
+      IntubationItem('Assemble airway team', subtitle: 'See checklist'),
+      IntubationItem('Allocate roles & Share airway',
+          subtitle: 'See checklist'),
+      IntubationItem('Use COVID-19 Intubation tray', subtitle: 'See checklist'),
+      IntubationItem('Ensure Viral filter and etCO2 in ventilation circuit'),
+    ])
+  ]),
+  IntubationContent('PPE', [
+    IntubationSection(items: [
+      IntubationItem('As per WH guidelines',
+          subtitle: 'See step-by-step guide'),
+      // ignore: prefer_single_quotes
+      IntubationItem("“Buddy system” - use a Spotter", icon: '😊'),
+      IntubationItem('Airway operator, Assistant, Team Leader'),
+      IntubationItem('Airway operator consider double gloves'),
+    ])
+  ]),
+  IntubationContent('Pre-oxygenation', [
+    IntubationSection(items: [
+      IntubationItem('45-degree head-up position'),
+      IntubationItem(
+          'Stop high flow O2 via HFNP, NP, facemark or non-rebreather',
+          icon: '❌'),
+      IntubationItem('Use Best-fitting Face mask'),
+      IntubationItem(
+          'Attached to manual ventilation device or Anaesthetic machine'),
+      IntubationItem('2-handed vice grip'),
+      IntubationItem('Ensure square etCO2 waveform'),
+      IntubationItem('Avoid manual bagging unless rescue oxygenation',
+          icon: '❌'),
+    ])
+  ]),
+  IntubationContent('Perform', [
+    IntubationSection(name: 'Induction', items: [
+      IntubationItem('Modified RSI technique'),
+      IntubationItem('Generous dosing of NMBA',
+          subtitle:
+              '• Rocuronium >1.5mg/kg IBW or\n• Suxamethonium 1.5mg/kg IBW'),
+      IntubationItem('Minimise apnoea time while minimising risk of cough',
+          icon: '⚖'),
+      IntubationItem('Avoid ventilation unless rescue oxygenation', icon: '❌'),
+    ]),
+    IntubationSection(name: 'Intubation', items: [
+      IntubationItem('Use Videolaryngoscope CMAC'),
+      IntubationItem('Indirect view'),
+      IntubationItem('Tube to correct depth 1st time',
+          subtitle: 'Cuff manometry not required'),
+      IntubationItem('Inflate cuff before ventilation', icon: '🛑'),
+      IntubationItem('Generously inflate cuff'),
+    ])
+  ]),
+  IntubationContent('Post-ETT', [
+    IntubationSection(items: [
+      IntubationItem('Consider placing NG tube'),
+      IntubationItem(
+          'Remove outer gloves, dispose of airway equipment in sealed bag',
+          icon: '🛑'),
+      IntubationItem('PPE removed as per WH guidelines', icon: '🛑'),
+      IntubationItem('Debrief and share lessons', icon: '💬'),
+    ])
+  ])
 ];
 
 // Feedback form
