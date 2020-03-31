@@ -263,6 +263,7 @@ const List<IntubationContent> intubationGuide = [
     IntubationSection(items: [
       IntubationItem('As per WH guidelines',
           subtitle: 'See step-by-step guide'),
+      // ignore: prefer_single_quotes
       IntubationItem("“Buddy system” - use a Spotter", icon: '😊'),
       IntubationItem('Airway operator, Assistant, Team Leader'),
       IntubationItem('Airway operator consider double gloves'),
