@@ -38,7 +38,7 @@ Once they have done their ✨ magic ✨ the issue should be labeled as 'Ready fo
 
 ⬇️
  
-👩‍💻👨‍💻 **Developers** pick up [ready for Dev issues](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aopen+is%3Aissue+label%3A%22Ready+for+Dev%22+) and submit PRs to the project when then get approved and merged.  If you are working on developing an issue, be sure to assign yourself to it.  If you wwant to work on an issue and someone already is, ask if they want help.  If they agree add yourself to the assignment.
+👩‍💻👨‍💻 **Developers** pick up [ready for Dev issues](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aopen+is%3Aissue+label%3A%22Ready+for+Dev%22+) and submit PRs to the project when then get approved and merged.  If you are working on developing an issue, be sure to assign yourself to it.  If you want to work on an issue and someone already is, ask if they want help.  If they agree add yourself to the assignment.
  
 ⬇️
 
@@ -131,6 +131,15 @@ flutter run adb
 ## Contributing
 
 Check our [issues page](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aopen+is%3Aissue+label%3A%22Ready+for+Dev%22) `ready for dev` issues to work on.  Look for issues that are not assigned to somebody.  If you are working on an issue assign yourself to it.  To work on something you must be assigned on the issue. If someone already is, ask if they want help and if they agree add yourself to the assignment. Nobody no in the assignment list should be working on an issue.
+
+Before you submit a PR, please ENSURE that you have run the following commands locally and all the steps pass:
+
+```
+flutter clean
+flutter format
+flutter analyze
+flutter test
+```
 
 When contributing to this repository, please first discuss the change you wish to make via slack, issue, or email or any other method with the owners of this repository before making a change.
 
