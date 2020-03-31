@@ -19,7 +19,7 @@ class IntubationGuidancePage extends StatelessWidget {
           bottom: TabBar(
             labelColor: AppColors.blackAlpha800,
             labelStyle: AppStyles.textSemiBold,
-            unselectedLabelColor: AppColors.blackAlpha800.withOpacity(0.32),
+            unselectedLabelColor: AppColors.tabBarDeselectedText,
             indicatorColor: AppColors.green900,
             tabs: intubationGuide.map((e) => Tab(text: e.name)).toList(),
             isScrollable: true,

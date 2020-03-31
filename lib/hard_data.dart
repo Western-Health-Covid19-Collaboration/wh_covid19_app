@@ -279,8 +279,7 @@ const List<IntubationContent> intubationGuide = [
           'Attached to manual ventilation device or Anaesthetic machine'),
       IntubationItem('2-handed vice grip'),
       IntubationItem('Ensure square etCO2 waveform'),
-      IntubationItem(
-          'Attached to manual ventilation device or Anaesthetic machine',
+      IntubationItem('Avoid manual bagging unless rescue oxygenation',
           icon: '❌'),
     ])
   ]),

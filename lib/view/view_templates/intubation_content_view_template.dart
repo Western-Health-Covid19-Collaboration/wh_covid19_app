@@ -58,7 +58,7 @@ class IntubationContentViewTemplate extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(16, 24, 16, 0),
                 child: Text(item.name, style: AppStyles.textH4));
           } else {
-            throw 'Invalid IntubationContent item type $item';
+            throw Exception('Invalid IntubationContent item type $item');
           }
         },
       ),
