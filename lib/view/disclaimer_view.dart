@@ -89,10 +89,6 @@ class _DisclaimerViewState extends State<DisclaimerView>
       margin: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
       height: 44.0,
       child: RaisedButton(
-        child: const Text(
-          'I Agree',
-          style: AppStyles.textH5,
-        ),
         color: AppColors.green500,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(8)),
@@ -101,6 +97,10 @@ class _DisclaimerViewState extends State<DisclaimerView>
           _setAgreed();
           Navigator.pushReplacementNamed(context, Routes.home);
         },
+        child: const Text(
+          'I Agree',
+          style: AppStyles.textH5,
+        ),
       ),
     );
 
@@ -134,16 +134,19 @@ class _DisclaimerViewState extends State<DisclaimerView>
                         alignment: Alignment.bottomCenter,
                         children: [
                           NotificationListener<ScrollUpdateNotification>(
-                            child: ListView(
-                              children: <Widget>[
-                                _content,
-                                if (!snapshot.data) _agreeButton else _agreedText,
-                              ],
-                            ),
                             onNotification: (scrollNotification) {
                               _animationController.forward();
                               return true;
                             },
+                            child: ListView(
+                              children: <Widget>[
+                                _content,
+                                if (!snapshot.data)
+                                  _agreeButton
+                                else
+                                  _agreedText,
+                              ],
+                            ),
                           ),
                           FadeTransition(
                               opacity: _animation,
@@ -173,11 +176,15 @@ class _DisclaimerViewState extends State<DisclaimerView>
 
   // Close the app or close the disclaimer based on whether the user has
   // agreed to the terms or not
-  bool _closeDisclaimerOrCloseApp(BuildContext context, bool _hasAgreedToTerms) {
+  bool _closeDisclaimerOrCloseApp(
+      BuildContext context, bool _hasAgreedToTerms) {
     if (_hasAgreedToTerms) {
       return _closeDisclaimer(context);
+    } else {
+      // Close App
+      exit(0);
+      return false;
     }
-    else { exit(0); return false; } // Close App
   }
 
   bool _closeDisclaimer(BuildContext context) {

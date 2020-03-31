@@ -37,8 +37,8 @@ class _HomePageState extends State<HomePage> {
 
   Widget _renderList(BuildContext context) {
     return SliverList(
-      delegate: SliverChildListDelegate([
-        Container(height: 12),
+      delegate: SliverChildListDelegate(const [
+        SizedBox(height: 12),
         CardContainer(
           title: 'Look After Yourself',
           cards: staffWelfare,
@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
           cards: icu,
         ),
         // Make sure the bottom CardContainer has room to breathe.
-        const SizedBox(height: 12),
+        SizedBox(height: 12),
       ]),
     );
   }
