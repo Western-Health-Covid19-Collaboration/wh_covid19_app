@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:wh_covid19/style.dart';
+
+import '../style.dart';
 
 class ChecklistCheckbox extends StatelessWidget {
   final Function onChecked;
@@ -20,7 +21,7 @@ class ChecklistCheckbox extends StatelessWidget {
 
     const borderRadius = BorderRadius.all(Radius.circular(8));
 
-    final background =
+    const background =
         BoxDecoration(color: AppColors.grey600, borderRadius: borderRadius);
 
     return InkWell(
