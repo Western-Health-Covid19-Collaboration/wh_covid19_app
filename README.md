@@ -204,7 +204,7 @@ The entire [GDG Melbourne](https://www.gdgmelbourne.com) community for pulling t
 
 Several companies who have provided support and employee time, including Itty Bitty apps, and Art Processors. 
 
-Code Magic for additional build minutes and support.
+Code Magic for additional build minutes and support and Manichord for additional build minutes.
 
 Slack for upgrading our workspace free of charge.
 
