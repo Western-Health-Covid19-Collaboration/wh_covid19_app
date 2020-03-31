@@ -5,9 +5,9 @@ class ZoomablePhoto extends StatelessWidget {
   // Image url for the graph
   final String imageUrl;
   final Color backgroundColor;
-  final double margin;
+  final double padding;
 
-  const ZoomablePhoto({this.imageUrl, this.backgroundColor, this.margin = 20});
+  const ZoomablePhoto({this.imageUrl, this.backgroundColor, this.padding = 20});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class ZoomablePhoto extends StatelessWidget {
                     color: backgroundColor
                   ),
                   imageProvider: AssetImage(imageUrl),
-                  customSize: Size(MediaQuery.of(context).size.width - margin * 2, MediaQuery.of(context).size.height - margin * 2),
+                  customSize: _getInitialZoomableImageSize(context, padding),
                   basePosition: Alignment.topCenter,
                 ),
               ),
@@ -31,5 +31,10 @@ class ZoomablePhoto extends StatelessWidget {
           ]
         ),
     );
+  }
+
+  ////Get the context size minus padding
+  static Size _getInitialZoomableImageSize(BuildContext context, double padding) {
+    return Size(MediaQuery.of(context).size.width - padding * 2, MediaQuery.of(context).size.height - padding * 2);
   }
 }
