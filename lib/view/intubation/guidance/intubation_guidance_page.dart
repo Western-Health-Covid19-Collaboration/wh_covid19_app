@@ -15,7 +15,7 @@ class IntubationGuidancePage extends StatelessWidget {
           backgroundColor: AppColors.green50,
           title: const Text('Intubation Guide'),
           textTheme: Theme.of(context).textTheme,
-          iconTheme: IconThemeData(color: AppColors.appBarIcon),
+          iconTheme: AppStyles.appBarIconTheme,
           bottom: TabBar(
             labelColor: AppColors.blackAlpha800,
             labelStyle: AppStyles.textSemiBold,
