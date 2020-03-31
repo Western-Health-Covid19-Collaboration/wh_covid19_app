@@ -24,7 +24,7 @@ class InfographicPage extends StatelessWidget {
           ),
         actions: <Widget>[
           IconButton(
-            icon: const PlatformIcon(iconPath: PlatformIcon.shareIconPath)
+            icon: PlatformIcon(iconPath: IconPaths.sharePath)
           ),
         ],
         leading: IconButton(
