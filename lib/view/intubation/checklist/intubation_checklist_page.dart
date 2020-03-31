@@ -35,9 +35,10 @@ class IntubationChecklistPage extends StatelessWidget {
             style: AppStyles.textSemiBold,
           ),
           bottom: TabBar(
-            unselectedLabelColor: AppColors.grey600,
-            indicatorColor: AppColors.blackAlpha800,
             labelColor: AppColors.blackAlpha800,
+            labelStyle: AppStyles.textSemiBold,
+            unselectedLabelColor: AppColors.tabBarDeselectedText,
+            indicatorColor: AppColors.green900,
             isScrollable: true,
             tabs: getChecklistTitles(),
           ),
