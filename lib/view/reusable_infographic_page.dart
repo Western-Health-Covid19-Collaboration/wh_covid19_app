@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../style.dart';
-import '../widget/platform_icon.dart';
 import '../widget/reusable_zoomable_widget.dart';
 
 class InfographicPage extends StatelessWidget {
@@ -22,11 +21,6 @@ class InfographicPage extends StatelessWidget {
           title,
           style: AppStyles.appBarTextStyle,
           ),
-        actions: <Widget>[
-          IconButton(
-            icon: PlatformIcon(iconPath: IconPaths.sharePath)
-          ),
-        ],
         leading: IconButton(
           icon: Icon(Icons.close),
           onPressed: () => Navigator.of(context).pop(null),
