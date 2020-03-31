@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
-import 'models/intubation_guide.dart';
 import 'models/PPEStepInfo.dart';
+import 'models/intubation_guide.dart';
 import 'routes.dart';
 import 'style.dart';
 import 'widget/reusable_card.dart';
