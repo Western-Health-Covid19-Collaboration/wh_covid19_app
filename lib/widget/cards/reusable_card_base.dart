@@ -10,8 +10,8 @@ class ReusableCardBase extends StatelessWidget {
   /// Route to view
   final String routeTo;
 
-  /// Height of card
-  final double height;
+  /// Constrain size of card
+  final BoxConstraints boxConstraints;
 
   final List<Widget> child;
 
@@ -37,11 +37,11 @@ class ReusableCardBase extends StatelessWidget {
     this.description,
     this.color = Colors.white,
     this.routeTo,
-    this.height,
+    this.boxConstraints,
     this.elevation = 4,
     this.borderRadius = 8.00,
     this.padding = const EdgeInsets.all(12),
-    this.margin,
+    this.margin = const EdgeInsets.all(4.0),
     this.fallback,
     @required this.child,
     this.verticalAlignment = MainAxisAlignment.start,
@@ -49,35 +49,35 @@ class ReusableCardBase extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      child: Card(
+    final col = Column(
+      mainAxisAlignment: verticalAlignment,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: child,
+    );
+    void Function() onTap;
+    if (routeTo != null) {
+      onTap = () => Navigator.pushNamed(context, routeTo);
+    } else if (fallback != null) {
+      onTap = () => fallback();
+    }
+    return Card(
         margin: margin,
         color: color,
         elevation: elevation,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(borderRadius))),
-        child: Padding(
-          padding: padding,
-          child: Container(
-            height: height,
-            child: Column(
-              mainAxisAlignment: verticalAlignment,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: child,
-            ),
+        child: InkWell(
+          onTap: onTap,
+          child: Ink(
+            padding: padding,
+            child: boxConstraints == null
+                ? col
+                : ConstrainedBox(
+                    constraints: boxConstraints,
+                    child: col,
+                  ),
           ),
-        ),
-      ),
-      onTap: () {
-        if (routeTo != null) {
-          Navigator.pushNamed(context, routeTo);
-        } else {
-          if (fallback != null) {
-            fallback();
-          }
-        }
-      },
-    );
+        ));
   }
 }

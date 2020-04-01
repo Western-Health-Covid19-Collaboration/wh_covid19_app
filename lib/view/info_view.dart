@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:package_info/package_info.dart';
 
-import '../contact_launcher.dart';
 import '../hard_data.dart';
 import '../routes.dart';
 import '../style.dart';
+import '../utils/url_utils.dart';
 import '../widget/reusable_card.dart';
 
 class InfoView extends StatelessWidget {
@@ -19,11 +19,18 @@ class InfoView extends StatelessWidget {
 
   final topCards = <Widget>[
     ReusableCard(
+      title: 'WH Novel Coronavirus information',
+      color: _cardColor,
+      height: _cardHeight,
+      elevation: _cardElevation,
+      fallback: () => UrlUtils.launchWithBrowser(whCoronavirusInfoURL),
+    ),
+    ReusableCard(
       title: 'Contact Numbers',
       color: _cardColor,
       height: _cardHeight,
       elevation: _cardElevation,
-      fallback: () => ContactLauncher.launchWithBrowser(whURL),
+      fallback: () => UrlUtils.launchWithBrowser(whURL),
     ),
     const ReusableCard(
       title: 'Society & College Recommendations',
@@ -39,7 +46,7 @@ class InfoView extends StatelessWidget {
       color: _cardColor,
       height: _cardHeight,
       elevation: _cardElevation,
-      fallback: () => ContactLauncher.launchWithBrowser(feedbackFormUrl),
+      fallback: () => UrlUtils.launchWithBrowser(feedbackFormUrl),
     ),
     const ReusableCard(
       title: 'Disclaimer & Conditions of Use',
@@ -47,7 +54,13 @@ class InfoView extends StatelessWidget {
       height: _cardHeight,
       elevation: _cardElevation,
       routeTo: Routes.disclaimer,
-    )
+    ),
+    const ReusableCard(
+      title: 'Acknowledgements and references',
+      color: _cardColor,
+      height: _cardHeight,
+      elevation: _cardElevation,
+    ),
   ];
 
   @override

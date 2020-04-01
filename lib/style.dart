@@ -12,6 +12,7 @@ abstract class AppColors {
   static const Color backgroundBrown = Color(0xffd3ca92);
   static const Color majorText = blackAlpha900;
   static const Color minorText = blackAlpha600;
+  static const Color tabBarDeselectedText = Color.fromRGBO(0, 0, 0, 0.32);
 
   static const Color appBarIcon = blackAlpha900;
   static const Color homeAppBarIcon = Colors.white;

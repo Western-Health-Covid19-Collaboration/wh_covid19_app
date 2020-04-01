@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 import 'models/PPEStepInfo.dart';
+import 'models/intubation_guide.dart';
 import 'routes.dart';
 import 'style.dart';
 import 'widget/reusable_card.dart';
@@ -24,22 +25,22 @@ const List<ReusableCard> staffWelfare = [
 ];
 
 // Intubation card list composition
-final List<ReusableCard> intubation = [
-  const ReusableCard(
-    title: 'Step By Step Guidance',
-    description: '12 steps',
+const List<ReusableCard> intubation = [
+  ReusableCard(
+    title: 'Intubation Guide',
+    description: 'Step by step guide',
     color: AppColors.backgroundGreen,
     routeTo: Routes.intubationGuidance,
   ),
-  const ReusableCard(
-    title: 'Checklist',
-    description: '12 steps',
+  ReusableCard(
+    title: 'Intubation Checklist',
+    description: 'Checklist',
     color: AppColors.backgroundGreen,
     routeTo: Routes.intubationChecklist,
   ),
-  const ReusableCard(
-    title: 'Algorithm',
-    description: '12 steps',
+  ReusableCard(
+    title: 'Extubation',
+    description: 'Infographic',
     color: AppColors.backgroundGreen,
     routeTo: Routes.intubationAlgorithm,
   )
@@ -54,14 +55,12 @@ const List<ReusableCard> icu = [
     routeTo: Routes.ventilation,
   ),
   ReusableCard(
-    title: 'General Care',
-    description: '',
+    title: 'Daily Round',
     color: AppColors.backgroundBlue,
     routeTo: Routes.generalCare,
   ),
   ReusableCard(
-    title: 'Tips for Junior Staffers',
-    description: '',
+    title: 'Tips for Cross-skilling',
     color: AppColors.backgroundBlue,
     routeTo: Routes.tipsJuniorStaff,
   ),
@@ -87,7 +86,7 @@ const List<ReusableCard> info = [
 ///For simple data screens that can be represented with eg a title
 ///and html text body in a card, there's no need to create separate
 ///*_view.dart files for each one. Instead, represent the screen as data
-final Map<String, HtmlTextScreenData> routeToScreenData = {
+const Map<String, HtmlTextScreenData> routeToScreenData = {
   Routes.ventilationInitialActions: HtmlTextScreenData(
       'Suggested initial actions',
       'assets/text/icu_ventilation_initial_actions_content.html',
@@ -104,7 +103,7 @@ class HtmlTextScreenData {
   final String title;
   final String htmlFile;
   final Color bgColor;
-  HtmlTextScreenData(this.title, this.htmlFile, this.bgColor);
+  const HtmlTextScreenData(this.title, this.htmlFile, this.bgColor);
   Future<String> readFile() async {
     return await rootBundle.loadString(htmlFile);
   }
@@ -112,6 +111,9 @@ class HtmlTextScreenData {
 
 // Contacts web url
 const String whURL = 'http://wh.cyphix.net/';
+
+// WH Novel Coronavirus information url
+const String whCoronavirusInfoURL = 'https://coronavirus.wh.org.au/#';
 
 // Disclaimer text
 const String disclaimerBody = '''
@@ -121,7 +123,7 @@ The authors of this app have made efforts to ensure the information is up to dat
 
 The authors accept no responsibility for any information perceived as misleading or the success of any treatment regimen detailed in the guidelines.
 
-The app is made available on the understanding that Western Health and its employees shall have no liability (including liability by reason of negligence) to the users for any loss, damage, cost or expense incurred or arising by reason of any person using or relying on the information and whether caused by reason of any error, negligent act, omission or misinterpretation in the app or otherwise.
+The app is made available on the understanding that Western Health, Western Health employees, the designers, developers, testers, reviewers, organisers and all other contributors to the project have have no liability (including liability by reason of negligence) to the users for any loss, damage, cost or expense incurred or arising by reason of any person using or relying on the information and whether caused by reason of any error, negligent act, omission or misinterpretation in the app or otherwise.
 
 The Western Health trademark and app cannot be copied, modified, reproduced, published, uploaded, distributed or posted without the prior written consent of Western Health.
 
@@ -234,6 +236,81 @@ const List<PPEStepInfo> ppeOffMethod2Steps = [
         'Discard in a waste container'
       ]),
   handHygieneStep,
+];
+
+const List<IntubationContent> intubationGuide = [
+  IntubationContent('Planning', [
+    IntubationSection(items: [
+      IntubationItem('Intervene Early'),
+      IntubationItem('Negative pressure room', subtitle: 'If possible'),
+      IntubationItem('Meticulous airway assessment'),
+      IntubationItem('Discuss ventilation plan',
+          subtitle: 'Protective lung ventilation', icon: '💬'),
+    ])
+  ]),
+  IntubationContent('Prepare', [
+    IntubationSection(items: [
+      IntubationItem('Assemble airway team', subtitle: 'See checklist'),
+      IntubationItem('Allocate roles & Share airway',
+          subtitle: 'See checklist'),
+      IntubationItem('Use COVID-19 Intubation tray', subtitle: 'See checklist'),
+      IntubationItem('Ensure Viral filter and etCO2 in ventilation circuit'),
+    ])
+  ]),
+  IntubationContent('PPE', [
+    IntubationSection(items: [
+      IntubationItem('As per WH guidelines',
+          subtitle: 'See step-by-step guide'),
+      // ignore: prefer_single_quotes
+      IntubationItem("“Buddy system” - use a Spotter", icon: '😊'),
+      IntubationItem('Airway operator, Assistant, Team Leader'),
+      IntubationItem('Airway operator consider double gloves'),
+    ])
+  ]),
+  IntubationContent('Pre-oxygenation', [
+    IntubationSection(items: [
+      IntubationItem('45-degree head-up position'),
+      IntubationItem(
+          'Stop high flow O2 via HFNP, NP, facemark or non-rebreather',
+          icon: '❌'),
+      IntubationItem('Use Best-fitting Face mask'),
+      IntubationItem(
+          'Attached to manual ventilation device or Anaesthetic machine'),
+      IntubationItem('2-handed vice grip'),
+      IntubationItem('Ensure square etCO2 waveform'),
+      IntubationItem('Avoid manual bagging unless rescue oxygenation',
+          icon: '❌'),
+    ])
+  ]),
+  IntubationContent('Perform', [
+    IntubationSection(name: 'Induction', items: [
+      IntubationItem('Modified RSI technique'),
+      IntubationItem('Generous dosing of NMBA',
+          subtitle:
+              '• Rocuronium >1.5mg/kg IBW or\n• Suxamethonium 1.5mg/kg IBW'),
+      IntubationItem('Minimise apnoea time while minimising risk of cough',
+          icon: '⚖'),
+      IntubationItem('Avoid ventilation unless rescue oxygenation', icon: '❌'),
+    ]),
+    IntubationSection(name: 'Intubation', items: [
+      IntubationItem('Use Videolaryngoscope CMAC'),
+      IntubationItem('Indirect view'),
+      IntubationItem('Tube to correct depth 1st time',
+          subtitle: 'Cuff manometry not required'),
+      IntubationItem('Inflate cuff before ventilation', icon: '🛑'),
+      IntubationItem('Generously inflate cuff'),
+    ])
+  ]),
+  IntubationContent('Post-ETT', [
+    IntubationSection(items: [
+      IntubationItem('Consider placing NG tube'),
+      IntubationItem(
+          'Remove outer gloves, dispose of airway equipment in sealed bag',
+          icon: '🛑'),
+      IntubationItem('PPE removed as per WH guidelines', icon: '🛑'),
+      IntubationItem('Debrief and share lessons', icon: '💬'),
+    ])
+  ])
 ];
 
 // Feedback form

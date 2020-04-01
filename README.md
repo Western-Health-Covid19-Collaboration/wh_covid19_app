@@ -38,9 +38,7 @@ Once they have done their ✨ magic ✨ the issue should be labeled as 'Ready fo
 
 ⬇️
  
-👩‍💻👨‍💻 **Developers** pick up [ready for Dev issues](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aopen+is%3Aissue+label%3A%22Ready+for+Dev%22+) and submit PRs to the project when then get approved and merged.  If you are working on developing an issue, be sure to assign yourself to it, or mention that you are working on it.
- 
-If your committing changes to the docs only add `[skip ci]` to your commit message to save build time.
+👩‍💻👨‍💻 **Developers** pick up [ready for Dev issues](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aopen+is%3Aissue+label%3A%22Ready+for+Dev%22+) and submit PRs to the project when then get approved and merged.  If you are working on developing an issue, be sure to assign yourself to it.  If you want to work on an issue and someone already is, ask if they want help.  If they agree add yourself to the assignment.
  
 ⬇️
 
@@ -70,8 +68,8 @@ The complete set of designs are in Zeplin, but this gives some indication of how
 </p>
 <p align="center">
   <img src="docs/Yourself - PPE - Detail 01 - Step by Step.png" width="256">
-  <img src="docs/Yourself - PPE - Detail 03 - Method One.png" width="256">
-  <img src="docs/Yourself - PPE - Detail 04 - Method Two.png" width="256">
+  <img src="docs/Intubation - Checklist - 01 Team.png" width="256">
+  <img src="docs/Intubation - Guide - 01 Planning.png" width="256">
 </p>
 
 ## Getting Started & Development
@@ -132,11 +130,35 @@ flutter run adb
 
 ## Contributing
 
-Check our [issues page](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues) for tasks to work on.
+Check our [issues page](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aopen+is%3Aissue+label%3A%22Ready+for+Dev%22) `ready for dev` issues to work on.  Look for issues that are not assigned to somebody.  If you are working on an issue assign yourself to it.  To work on something you must be assigned on the issue. If someone already is, ask if they want help and if they agree add yourself to the assignment. Nobody no in the assignment list should be working on an issue.
+
+Before you submit a PR, please ENSURE that you have run the following commands locally and all the steps pass:
+
+```
+flutter clean
+flutter format
+flutter analyze
+flutter test
+```
 
 When contributing to this repository, please first discuss the change you wish to make via slack, issue, or email or any other method with the owners of this repository before making a change.
 
+**Pro tips**
+
+🔥 If your committing changes to the docs add `[skip ci]` to your commit message to save build time.  We are currently burning build minutes 😬
+
+📱 Pick a device with a low resolution to test on and make sure there is no overflow errors.
+
+🎨 Check against the designs in Zeplin.
+
+☑️ Only open up a PR once you feel you are finished.  You can request a review from `Flutter devs` get reviews
+
+🤗 If your unsure about sommething ask for help.  We are really friendly!
+
+
 Currently the project is being primarily co-ordinated via the GDG Melbourne slack group. You can join GDG Melbourne's slack via [this invite](http://bit.ly/join_gdgslack). DM `@luke.sleeman` on GDG Melbourne slack to be invited to the channel being used for co-ordination.
+
+If you have any questions about why things are done a certain way in the app, check out the [Architecture Decision Records](docs/Architecture) - they should be able to provide some background on why things are done a specific way.
 
 ### Pull Request Process
 
@@ -173,12 +195,13 @@ In no particular order, the following people have contributed to building the pr
 * Fabien Dade - ICU registrar
 * Alice Gynther - Anaesthetist
 * Kim Nguyen - Flutter dev
-* Bramly - Flutter dev
+* Bramley - Flutter dev
 * Suesi Tran - Flutter dev
 * June Chen - Flutter dev
 * Joshua Case - Flutter dev
 * Poornima Sivakumar - Documentation
 * Fabio - Documentation
+* Sally Chung - Testing and general support
 
 ## License
 
@@ -207,4 +230,6 @@ Slack for upgrading our workspace free of charge.
 
 Apple and Google for help with expedited app reviews and listings.
 
-I've probably forgotten a bunch of people, so if you have done something and we have missed out on you; I'm deeply sorry, and appreciate your contribution.  Message Luke Sleeman and I will make sure you get added ❤️❤️❤️
+Those who have given helpful and timely advice, including Byron Teu.
+
+I've probably forgotten a bunch of people, so if you have done something and we have missed out on you; I'm deeply sorry, and appreciate your contribution.  Message Luke Sleeman and I will make sure you get added ❤️❤️❤️.

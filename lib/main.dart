@@ -20,9 +20,10 @@ import 'view/sbs_guide_view.dart';
 import 'view/staff_welfare/your_welfare_view.dart';
 import 'view/view_templates/html_text_card_view_template.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
