@@ -50,6 +50,7 @@ class MyApp extends StatelessWidget {
         Routes.generalCare: (context) => GeneralCareView(),
         Routes.tipsJuniorStaff: (context) => TipsJuniorStaffView(),
         Routes.introRouter: (context) => IntroRouter(),
+        Routes.disclaimer: (context) => DisclaimerView(),
       },
       onGenerateRoute: (settings) {
         // Use onGenerateRoute to set fullscreenDialog=true
@@ -74,10 +75,6 @@ class MyApp extends StatelessWidget {
               builder: (context) => IntubationChecklistPage(),
               fullscreenDialog: false,
             );
-          case Routes.disclaimer:
-            return MaterialPageRoute<DisclaimerView>(
-                builder: (context) => DisclaimerView(),
-                fullscreenDialog: false);
         }
         // Fallback, won't be called unless an unknown route is called
         return MaterialPageRoute<HomePage>(

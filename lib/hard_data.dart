@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
+import 'models/IntubationChecklist.dart';
 import 'models/PPEStepInfo.dart';
 import 'models/intubation_guide.dart';
 import 'routes.dart';
@@ -238,6 +239,77 @@ const List<PPEStepInfo> ppeOffMethod2Steps = [
   handHygieneStep,
 ];
 
+const List<IntubationChecklist> intubationChecklist = [
+  IntubationChecklist(title: 'Team', checklist: [
+    IntubationChecklistItem(
+      title: 'Anaesthesia contacted if difficulty anticipated',
+    ),
+    IntubationChecklistItem(title: 'Team Introduced:', notes: [
+      'Airway Operator',
+      'Airway Assistant',
+      'Team Leader/Drugs',
+      'In-room Runner: (optional)',
+      'Door Runner',
+      'Outside room Runner'
+    ]),
+    IntubationChecklistItem(
+      title: 'Problems Anticipated?',
+    ),
+  ]),
+  IntubationChecklist(title: 'Patient', checklist: [
+    IntubationChecklistItem(
+      title: 'ECG, BP, Sats',
+    ),
+    IntubationChecklistItem(
+        title: 'Pre-oxygenation', notes: ['FIO2 100%', 'Sitting position 45°']),
+    IntubationChecklistItem(
+      title: 'IV access x 2', notes: ['1L fluid on pump set']
+    ),
+    IntubationChecklistItem(
+        title: 'Haemodynamics optimised', notes: ['Fluid bolus', 'Pressor']),
+  ]),
+  IntubationChecklist(title: 'Drugs', checklist: [
+    IntubationChecklistItem(title: 'RSI drugs drawn up, doses chosen'),
+    IntubationChecklistItem(
+        title: 'Rescue drugs', notes: ['Metaraminol', 'Sugammadex']),
+    IntubationChecklistItem(title: 'Post intubation sedation plan'),
+    IntubationChecklistItem(title: 'Drug C/I or allergies?'),
+  ]),
+  IntubationChecklist(title: 'Equipment', checklist: [
+    IntubationChecklistItem(title: '2 Laryngoscopes (tested)'),
+    IntubationChecklistItem(
+      title: 'Tube chosen; cuff tested',
+    ),
+    IntubationChecklistItem(title: 'Bougie/stylet'),
+    IntubationChecklistItem(title: '10ml syringe'),
+    IntubationChecklistItem(title: 'Tube tie'),
+    IntubationChecklistItem(title: 'Lubricant'),
+    IntubationChecklistItem(title: 'Supraglottic airway sized to pt'),
+    IntubationChecklistItem(title: 'Scalpel + bougie CICO kit'),
+    IntubationChecklistItem(title: 'Airway trolley/bronchoscope outside room'),
+    IntubationChecklistItem(title: 'ETCO2'),
+    IntubationChecklistItem(title: 'Viral filter'),
+  ]),
+  IntubationChecklist(title: 'Final', checklist: [
+    IntubationChecklistItem(title: 'Patient position optimal'),
+    IntubationChecklistItem(
+      title: 'Fluid runs easily',
+    ),
+    IntubationChecklistItem(title: 'Suction working'),
+    IntubationChecklistItem(title: 'Facemask with viral filter connected'),
+    IntubationChecklistItem(title: 'ECTO2 trace'),
+
+    /// Note: \u{207B}\u{00B9} is unicode representation for ^-1
+    IntubationChecklistItem(title: 'O2 running at 15L. min\u{207B}\u{00B9}'),
+    IntubationChecklistItem(title: 'Oropharyngeal/nasal airways'),
+    IntubationChecklistItem(title: 'Airway plans:', notes: [
+      'Plan A: Videolaryngoscopy with bougie/stylet',
+      'Plan B: Supraglottic airway',
+      'Plan C: Vice grip, 2-person +/- Guedel/NPA',
+      'Plan D: Scalpel/bougie/tube'
+    ]),
+  ]),
+];
 const List<IntubationContent> intubationGuide = [
   IntubationContent('Planning', [
     IntubationSection(items: [
