@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:wh_covid19/view/disclaimer_view.dart';
-import 'package:wh_covid19/view/home_page.dart';
+import 'view/disclaimer_view.dart';
+import 'view/home_page.dart';
 
 class IntroRouter extends StatelessWidget {
   @override
@@ -12,7 +12,7 @@ class IntroRouter extends StatelessWidget {
         bool disclaimerFirstView;
         if (snapshot.data != null) {
           disclaimerFirstView =
-              snapshot.data.getBool("disclaimer_first_view") ?? false;
+              snapshot.data.getBool('disclaimer_first_view') ?? false;
         }
         if (disclaimerFirstView == null) {
           return Container();
