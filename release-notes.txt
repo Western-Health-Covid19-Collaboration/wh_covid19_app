@@ -1,3 +1,8 @@
+---- Wednesday 1st April, 2020 ----
+* Minor tweaks to text on main screen
+* Added intubations checklist screen
+* Bugfixes around disclaimer and navigation
+
 ---- Monday 31st March, 2020 ----
 * Added intubation guide
 * Minified images to reduce app size
