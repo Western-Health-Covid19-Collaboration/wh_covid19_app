@@ -263,7 +263,7 @@ const List<IntubationChecklist> intubationChecklist = [
     IntubationChecklistItem(
         title: 'Pre-oxygenation', notes: ['FIO2 100%', 'Sitting position 45°']),
     IntubationChecklistItem(
-      title: 'IV access x 2',
+      title: 'IV access x 2', notes: ['1L fluid on pump set']
     ),
     IntubationChecklistItem(
         title: 'Haemodynamics optimised', notes: ['Fluid bolus', 'Pressor']),
