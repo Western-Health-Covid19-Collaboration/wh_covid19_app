@@ -3,6 +3,9 @@
 * Minified images to reduce app size
 
 
+---- Sunday 29th March, 2020 ----
+* Applied Infographics Reusable Screen to Algorithm Screen
+
 ---- Saturday 28th March, 2020 ----
 * Open External Browser to Feedback form when user taps on App Feedback in Information view
 
