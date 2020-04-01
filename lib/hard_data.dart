@@ -39,8 +39,8 @@ const List<ReusableCard> intubation = [
     routeTo: Routes.intubationChecklist,
   ),
   ReusableCard(
-    title: 'Extubation',
-    description: 'Infographic',
+    title: 'Extubation Guide',
+    description: 'Step by step guide',
     color: AppColors.backgroundGreen,
     routeTo: Routes.intubationAlgorithm,
   )
