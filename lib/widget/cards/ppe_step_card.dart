@@ -4,26 +4,13 @@ import 'package:flutter/widgets.dart';
 import '../../models/PPEStepInfo.dart';
 import '../../style.dart';
 import '../../widget/cards/reusable_card_base.dart';
+import '../../widget/lists/string_list.dart';
 
 class PPECard extends StatelessWidget {
   final PPEStepInfoCardModel step;
   final Color backgroundColor;
 
   const PPECard({@required this.step, this.backgroundColor});
-
-  Widget getList(List<String> notes, BuildContext context) {
-    return Padding(
-        padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-        child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: notes
-                .map((item) => Text(
-                      '\u2022 $item',
-                      softWrap: true,
-                      style: AppStyles.textP,
-                    ))
-                .toList()));
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +38,7 @@ class PPECard extends StatelessWidget {
         ),
         Container(
           padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
-          child: getList(step.notes, context),
+          child: StringList(items: step.notes),
         )
       ],
     );
