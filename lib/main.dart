@@ -14,8 +14,11 @@ import 'view/intubation/algorithm/intubation_algorithm_page.dart';
 import 'view/intubation/checklist/intubation_checklist_page.dart';
 import 'view/intubation/guidance/intubation_guidance_page.dart';
 import 'view/ppe/ppe_off_guidance_method_1.dart';
+import 'view/ppe/ppe_off_guidance_method_1_infographic.dart';
 import 'view/ppe/ppe_off_guidance_method_2.dart';
+import 'view/ppe/ppe_off_guidance_method_2_infographic.dart';
 import 'view/ppe/ppe_on_guidance.dart';
+import 'view/ppe/ppe_on_infographic_page.dart';
 import 'view/ppe/ppe_view.dart';
 import 'view/sbs_guide_view.dart';
 import 'view/staff_welfare/your_welfare_view.dart';
@@ -77,6 +80,21 @@ class MyApp extends StatelessWidget {
             return MaterialPageRoute<IntubationChecklistPage>(
               builder: (context) => IntubationChecklistPage(),
               fullscreenDialog: false,
+            );
+          case Routes.ppeOnInfographic:
+            return MaterialPageRoute<InfoView>(
+              builder: (context) => PPEOnInfographicPage(),
+              fullscreenDialog: true,
+            );
+          case Routes.ppeOffGuidanceMethod1Infographic:
+            return MaterialPageRoute<InfoView>(
+              builder: (context) => PPEOffMethod1InfographicPage(),
+              fullscreenDialog: true,
+            );
+          case Routes.ppeOffGuidanceMethod2Infographic:
+            return MaterialPageRoute<InfoView>(
+              builder: (context) => PPEOffMethod2InfographicPage(),
+              fullscreenDialog: true,
             );
         }
         // Fallback, won't be called unless an unknown route is called

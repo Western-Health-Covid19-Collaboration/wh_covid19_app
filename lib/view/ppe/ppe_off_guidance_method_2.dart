@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../hard_data.dart';
+import '../../routes.dart';
 import '../../style.dart';
 import '../../widget/notification_banner.dart';
 import '../../widget/ppe_card_container.dart';
@@ -21,6 +22,15 @@ class PPEOffGuidanceMethod2 extends StatelessWidget {
           title,
           style: Styles.textH5,
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: SvgPicture.asset(
+              'assets/images/icon/SVG/icon_infographic.svg',
+            ),
+            onPressed:
+              () => Navigator.pushNamed(context, Routes.ppeOffGuidanceMethod2Infographic),
+          )
+        ]
       ),
       body: ListView(
         children: <Widget>[
