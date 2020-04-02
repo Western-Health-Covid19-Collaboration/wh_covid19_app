@@ -5,6 +5,9 @@
 ---- Friday 3rd April, 2020 ----
 * Disclaimer screen on first run of the app, updated, fixes and supports versioning of the disclaimer
 
+---- Thursday 2nd April, 2020 ----
+* Added infographics screens for PPE ON, Method One, Method Two, Intubation Guide, Intubation Checklist and Extubation.
+
 ---- Wednesday 1st April, 2020 ----
 * Minor tweaks to text on main screen
 * Added intubations checklist screen
@@ -13,7 +16,6 @@
 ---- Monday 31st March, 2020 ----
 * Added intubation guide
 * Minified images to reduce app size
-
 
 ---- Sunday 29th March, 2020 ----
 * Applied Infographics Reusable Screen to Algorithm Screen
