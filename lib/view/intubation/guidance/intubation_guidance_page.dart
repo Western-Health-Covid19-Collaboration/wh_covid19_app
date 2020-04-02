@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import '../../../hard_data.dart';
-import '../../../style.dart';
+import '../../../styles.dart';
 import '../../view_templates/intubation_content_view_template.dart';
 
 class IntubationGuidancePage extends StatelessWidget {
@@ -14,10 +14,10 @@ class IntubationGuidancePage extends StatelessWidget {
           backgroundColor: AppColors.green50,
           title: const Text('Intubation Guide'),
           textTheme: Theme.of(context).textTheme,
-          iconTheme: AppStyles.appBarIconTheme,
+          iconTheme: Styles.appBarIconTheme,
           bottom: TabBar(
             labelColor: AppColors.blackAlpha800,
-            labelStyle: AppStyles.textSemiBold,
+            labelStyle: Styles.textSemiBold,
             unselectedLabelColor: AppColors.tabBarDeselectedText,
             indicatorColor: AppColors.green900,
             tabs: intubationGuide.map((e) => Tab(text: e.name)).toList(),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import '../../models/intubation_guide.dart';
-import '../../style.dart';
+import '../../styles.dart';
 
 ///
 /// Renders a IntubationContent item, which is a data structure
@@ -35,7 +35,7 @@ class IntubationContentViewTemplate extends StatelessWidget {
                       children: <Widget>[
                         Text(
                           item.icon,
-                          style: AppStyles.textH4,
+                          style: Styles.textH4,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 40),
@@ -43,7 +43,7 @@ class IntubationContentViewTemplate extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(item.title, style: AppStyles.textH4),
+                              Text(item.title, style: Styles.textH4),
                               if (item.subtitle != null) ...[
                                 const SizedBox(height: 4),
                                 Text(item.subtitle)
@@ -56,7 +56,7 @@ class IntubationContentViewTemplate extends StatelessWidget {
           } else if (item is IntubationSection) {
             return Padding(
                 padding: const EdgeInsets.fromLTRB(16, 24, 16, 0),
-                child: Text(item.name, style: AppStyles.textH4));
+                child: Text(item.name, style: Styles.textH4));
           } else {
             throw Exception('Invalid IntubationContent item type $item');
           }

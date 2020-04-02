@@ -5,14 +5,14 @@ import 'package:wh_covid19/main.dart';
 
 void main() {
   testWidgets('show IntroRouter on app start', (tester) async {
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(MyApp());
     expect(find.byType(IntroRouter), findsOneWidget);
   });
 
   testWidgets('show disclaimer if user has not previously accepted it',
       (tester) async {
     SharedPreferences.setMockInitialValues(<String, dynamic>{});
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(MyApp());
 
     await tester.pumpAndSettle(const Duration(seconds: 2));
 
@@ -24,7 +24,7 @@ void main() {
     SharedPreferences.setMockInitialValues(
         <String, dynamic>{'flutter.disclaimer_first_view': true});
 
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(MyApp());
 
     await tester.pumpAndSettle(const Duration(seconds: 2));
 

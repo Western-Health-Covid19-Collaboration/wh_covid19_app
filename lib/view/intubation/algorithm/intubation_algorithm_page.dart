@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../style.dart';
+import '../../../styles.dart';
 import '../../reusable_infographic_page.dart';
 
 class IntubationAlgorithmPage extends StatelessWidget {

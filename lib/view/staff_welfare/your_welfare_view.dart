@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../contact_launcher.dart';
 import '../../hard_data.dart';
 import '../../styles.dart';
+import '../../utils/url_utils.dart';
 import '../../widget/reusable_card.dart';
 
 class YourWelfareView extends StatelessWidget {
