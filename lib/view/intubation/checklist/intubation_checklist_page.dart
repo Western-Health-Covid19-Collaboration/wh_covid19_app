@@ -1,28 +1,49 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../../../styles.dart';
-import '../../../widget/zoomable_widget.dart';
+import '../../../hard_data.dart';
+import '../../../style.dart';
+import '../../../widget/containers/intubation_checklist_container.dart';
 
 class IntubationChecklistPage extends StatelessWidget {
+  List<Widget> getChecklistTitles() {
+    return intubationChecklist
+        .map(
+          (item) => Padding(
+              padding: const EdgeInsets.fromLTRB(18, 12, 18, 12),
+              child: Text(item.title)),
+        )
+        .toList();
+  }
+
+  List<Widget> renderBody() {
+    return intubationChecklist
+        .map((item) => IntubationChecklistContainer(checklist: item.checklist))
+        .toList();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Intubation Checklist'),
-      ),
-      body: Flex(
-        direction: Axis.vertical,
-        children: <Widget>[
-          Expanded(
-            child: Container(
-              color: AppColors.backgroundGreen,
-              child: ZoomableWidget(
-                child: Image.asset('assets/images/intubation_checklist.png'),
-              ),
-            ),
+    return DefaultTabController(
+      length: intubationChecklist.length,
+      child: Scaffold(
+        appBar: AppBar(
+          iconTheme: AppStyles.appBarIconTheme,
+          backgroundColor: AppColors.green50,
+          title: const Text(
+            'Intubation Checklist',
+            style: AppStyles.textSemiBold,
           ),
-        ],
+          bottom: TabBar(
+            labelColor: AppColors.blackAlpha800,
+            labelStyle: AppStyles.textSemiBold,
+            unselectedLabelColor: AppColors.tabBarDeselectedText,
+            indicatorColor: AppColors.green900,
+            isScrollable: true,
+            tabs: getChecklistTitles(),
+          ),
+        ),
+        body: TabBarView(children: renderBody()),
       ),
     );
   }

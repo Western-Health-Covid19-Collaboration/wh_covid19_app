@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import '../../styles.dart';
 
 class GeneralCareView extends StatelessWidget {
-  final title = 'General Care';
+  final title = 'Daily Round';
 
   @override
   Widget build(BuildContext context) {

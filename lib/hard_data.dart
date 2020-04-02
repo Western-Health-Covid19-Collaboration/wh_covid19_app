@@ -2,7 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
+import 'models/IntubationChecklist.dart';
 import 'models/PPEStepInfo.dart';
+import 'models/intubation_guide.dart';
 import 'routes.dart';
 import 'styles.dart';
 import 'widget/reusable_card.dart';
@@ -24,22 +26,22 @@ const List<ReusableCard> staffWelfare = [
 ];
 
 // Intubation card list composition
-final List<ReusableCard> intubation = [
-  const ReusableCard(
-    title: 'Step By Step Guidance',
-    description: '12 steps',
+const List<ReusableCard> intubation = [
+  ReusableCard(
+    title: 'Intubation Guide',
+    description: 'Step by step guide',
     color: AppColors.backgroundGreen,
     routeTo: Routes.intubationGuidance,
   ),
-  const ReusableCard(
-    title: 'Checklist',
-    description: '12 steps',
+  ReusableCard(
+    title: 'Intubation Checklist',
+    description: 'Checklist',
     color: AppColors.backgroundGreen,
     routeTo: Routes.intubationChecklist,
   ),
-  const ReusableCard(
-    title: 'Algorithm',
-    description: '12 steps',
+  ReusableCard(
+    title: 'Extubation Guide',
+    description: 'Step by step guide',
     color: AppColors.backgroundGreen,
     routeTo: Routes.intubationAlgorithm,
   )
@@ -54,14 +56,12 @@ const List<ReusableCard> icu = [
     routeTo: Routes.ventilation,
   ),
   ReusableCard(
-    title: 'General Care',
-    description: '',
+    title: 'Daily Round',
     color: AppColors.backgroundBlue,
     routeTo: Routes.generalCare,
   ),
   ReusableCard(
-    title: 'Tips for Junior Staffers',
-    description: '',
+    title: 'Tips for Cross-skilling',
     color: AppColors.backgroundBlue,
     routeTo: Routes.tipsJuniorStaff,
   ),
@@ -87,7 +87,7 @@ const List<ReusableCard> info = [
 ///For simple data screens that can be represented with eg a title
 ///and html text body in a card, there's no need to create separate
 ///*_view.dart files for each one. Instead, represent the screen as data
-final Map<String, HtmlTextScreenData> routeToScreenData = {
+const Map<String, HtmlTextScreenData> routeToScreenData = {
   Routes.ventilationInitialActions: HtmlTextScreenData(
       'Suggested initial actions',
       'assets/text/icu_ventilation_initial_actions_content.html',
@@ -104,7 +104,7 @@ class HtmlTextScreenData {
   final String title;
   final String htmlFile;
   final Color bgColor;
-  HtmlTextScreenData(this.title, this.htmlFile, this.bgColor);
+  const HtmlTextScreenData(this.title, this.htmlFile, this.bgColor);
   Future<String> readFile() async {
     return await rootBundle.loadString(htmlFile);
   }
@@ -112,6 +112,9 @@ class HtmlTextScreenData {
 
 // Contacts web url
 const String whURL = 'http://wh.cyphix.net/';
+
+// WH Novel Coronavirus information url
+const String whCoronavirusInfoURL = 'https://coronavirus.wh.org.au/#';
 
 // Disclaimer text
 const String disclaimerBody = '''
@@ -235,3 +238,152 @@ const List<PPEStepInfo> ppeOffMethod2Steps = [
       ]),
   handHygieneStep,
 ];
+
+const List<IntubationChecklist> intubationChecklist = [
+  IntubationChecklist(title: 'Team', checklist: [
+    IntubationChecklistItem(
+      title: 'Anaesthesia contacted if difficulty anticipated',
+    ),
+    IntubationChecklistItem(title: 'Team Introduced:', notes: [
+      'Airway Operator',
+      'Airway Assistant',
+      'Team Leader/Drugs',
+      'In-room Runner: (optional)',
+      'Door Runner',
+      'Outside room Runner'
+    ]),
+    IntubationChecklistItem(
+      title: 'Problems Anticipated?',
+    ),
+  ]),
+  IntubationChecklist(title: 'Patient', checklist: [
+    IntubationChecklistItem(
+      title: 'ECG, BP, Sats',
+    ),
+    IntubationChecklistItem(
+        title: 'Pre-oxygenation', notes: ['FIO2 100%', 'Sitting position 45°']),
+    IntubationChecklistItem(
+      title: 'IV access x 2', notes: ['1L fluid on pump set']
+    ),
+    IntubationChecklistItem(
+        title: 'Haemodynamics optimised', notes: ['Fluid bolus', 'Pressor']),
+  ]),
+  IntubationChecklist(title: 'Drugs', checklist: [
+    IntubationChecklistItem(title: 'RSI drugs drawn up, doses chosen'),
+    IntubationChecklistItem(
+        title: 'Rescue drugs', notes: ['Metaraminol', 'Sugammadex']),
+    IntubationChecklistItem(title: 'Post intubation sedation plan'),
+    IntubationChecklistItem(title: 'Drug C/I or allergies?'),
+  ]),
+  IntubationChecklist(title: 'Equipment', checklist: [
+    IntubationChecklistItem(title: '2 Laryngoscopes (tested)'),
+    IntubationChecklistItem(
+      title: 'Tube chosen; cuff tested',
+    ),
+    IntubationChecklistItem(title: 'Bougie/stylet'),
+    IntubationChecklistItem(title: '10ml syringe'),
+    IntubationChecklistItem(title: 'Tube tie'),
+    IntubationChecklistItem(title: 'Lubricant'),
+    IntubationChecklistItem(title: 'Supraglottic airway sized to pt'),
+    IntubationChecklistItem(title: 'Scalpel + bougie CICO kit'),
+    IntubationChecklistItem(title: 'Airway trolley/bronchoscope outside room'),
+    IntubationChecklistItem(title: 'ETCO2'),
+    IntubationChecklistItem(title: 'Viral filter'),
+  ]),
+  IntubationChecklist(title: 'Final', checklist: [
+    IntubationChecklistItem(title: 'Patient position optimal'),
+    IntubationChecklistItem(
+      title: 'Fluid runs easily',
+    ),
+    IntubationChecklistItem(title: 'Suction working'),
+    IntubationChecklistItem(title: 'Facemask with viral filter connected'),
+    IntubationChecklistItem(title: 'ECTO2 trace'),
+
+    /// Note: \u{207B}\u{00B9} is unicode representation for ^-1
+    IntubationChecklistItem(title: 'O2 running at 15L. min\u{207B}\u{00B9}'),
+    IntubationChecklistItem(title: 'Oropharyngeal/nasal airways'),
+    IntubationChecklistItem(title: 'Airway plans:', notes: [
+      'Plan A: Videolaryngoscopy with bougie/stylet',
+      'Plan B: Supraglottic airway',
+      'Plan C: Vice grip, 2-person +/- Guedel/NPA',
+      'Plan D: Scalpel/bougie/tube'
+    ]),
+  ]),
+];
+const List<IntubationContent> intubationGuide = [
+  IntubationContent('Planning', [
+    IntubationSection(items: [
+      IntubationItem('Intervene Early'),
+      IntubationItem('Negative pressure room', subtitle: 'If possible'),
+      IntubationItem('Meticulous airway assessment'),
+      IntubationItem('Discuss ventilation plan',
+          subtitle: 'Protective lung ventilation', icon: '💬'),
+    ])
+  ]),
+  IntubationContent('Prepare', [
+    IntubationSection(items: [
+      IntubationItem('Assemble airway team', subtitle: 'See checklist'),
+      IntubationItem('Allocate roles & Share airway',
+          subtitle: 'See checklist'),
+      IntubationItem('Use COVID-19 Intubation tray', subtitle: 'See checklist'),
+      IntubationItem('Ensure Viral filter and etCO2 in ventilation circuit'),
+    ])
+  ]),
+  IntubationContent('PPE', [
+    IntubationSection(items: [
+      IntubationItem('As per WH guidelines',
+          subtitle: 'See step-by-step guide'),
+      // ignore: prefer_single_quotes
+      IntubationItem("“Buddy system” - use a Spotter", icon: '😊'),
+      IntubationItem('Airway operator, Assistant, Team Leader'),
+      IntubationItem('Airway operator consider double gloves'),
+    ])
+  ]),
+  IntubationContent('Pre-oxygenation', [
+    IntubationSection(items: [
+      IntubationItem('45-degree head-up position'),
+      IntubationItem(
+          'Stop high flow O2 via HFNP, NP, facemark or non-rebreather',
+          icon: '❌'),
+      IntubationItem('Use Best-fitting Face mask'),
+      IntubationItem(
+          'Attached to manual ventilation device or Anaesthetic machine'),
+      IntubationItem('2-handed vice grip'),
+      IntubationItem('Ensure square etCO2 waveform'),
+      IntubationItem('Avoid manual bagging unless rescue oxygenation',
+          icon: '❌'),
+    ])
+  ]),
+  IntubationContent('Perform', [
+    IntubationSection(name: 'Induction', items: [
+      IntubationItem('Modified RSI technique'),
+      IntubationItem('Generous dosing of NMBA',
+          subtitle:
+              '• Rocuronium >1.5mg/kg IBW or\n• Suxamethonium 1.5mg/kg IBW'),
+      IntubationItem('Minimise apnoea time while minimising risk of cough',
+          icon: '⚖'),
+      IntubationItem('Avoid ventilation unless rescue oxygenation', icon: '❌'),
+    ]),
+    IntubationSection(name: 'Intubation', items: [
+      IntubationItem('Use Videolaryngoscope CMAC'),
+      IntubationItem('Indirect view'),
+      IntubationItem('Tube to correct depth 1st time',
+          subtitle: 'Cuff manometry not required'),
+      IntubationItem('Inflate cuff before ventilation', icon: '🛑'),
+      IntubationItem('Generously inflate cuff'),
+    ])
+  ]),
+  IntubationContent('Post-ETT', [
+    IntubationSection(items: [
+      IntubationItem('Consider placing NG tube'),
+      IntubationItem(
+          'Remove outer gloves, dispose of airway equipment in sealed bag',
+          icon: '🛑'),
+      IntubationItem('PPE removed as per WH guidelines', icon: '🛑'),
+      IntubationItem('Debrief and share lessons', icon: '💬'),
+    ])
+  ])
+];
+
+// Feedback form
+const String feedbackFormUrl = 'https://forms.gle/zQtfhvswrKmjJjNV7';

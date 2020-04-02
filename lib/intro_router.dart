@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'view/disclaimer_view.dart';
+import 'view/home_page.dart';
 import 'routes.dart';
 import 'strings.dart';
 

@@ -37,8 +37,8 @@ class _HomePageState extends State<HomePage> {
 
   Widget _renderList(BuildContext context) {
     return SliverList(
-      delegate: SliverChildListDelegate([
-        Container(height: 12),
+      delegate: SliverChildListDelegate(const [
+        SizedBox(height: 12),
         CardContainer(
           title: 'Look After Yourself',
           cards: staffWelfare,
@@ -52,14 +52,14 @@ class _HomePageState extends State<HomePage> {
           cards: icu,
         ),
         // Make sure the bottom CardContainer has room to breathe.
-        const SizedBox(height: 12),
+        SizedBox(height: 12),
       ]),
     );
   }
 
   Widget _renderBody(BuildContext context) {
     const appBarHeight = 70;
-    const logoHeight = 24;
+    const logoHeight = 42;
 
     final Widget mainLogo = SvgPicture.asset('assets/images/main_logo.svg', height: logoHeight.toDouble());
 

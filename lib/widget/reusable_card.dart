@@ -15,7 +15,7 @@ class ReusableCard extends StatelessWidget {
   /// Route to view
   final String routeTo;
 
-  /// Height of card
+  /// Min height of card (default 84)
   final double height;
 
   /// Elevation of card
@@ -46,7 +46,7 @@ class ReusableCard extends StatelessWidget {
     return ReusableCardBase(
       color: color,
       routeTo: routeTo,
-      height: height,
+      boxConstraints: BoxConstraints(minHeight: height),
       elevation: elevation,
       fallback: fallback,
       verticalAlignment: description == ''

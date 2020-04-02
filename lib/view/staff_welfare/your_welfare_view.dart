@@ -28,7 +28,7 @@ class YourWelfareView extends StatelessWidget {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.call),
-            onPressed: () => ContactLauncher.launchWithBrowser(whURL),
+            onPressed: () => UrlUtils.launchWithBrowser(whURL),
           ),
         ],
       ),

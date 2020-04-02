@@ -21,7 +21,7 @@ class PPEOnGuidance extends StatelessWidget {
           ),
         ),
         body: ListView(
-          children: <Widget>[
+          children: const <Widget>[
             PPECardContainer(
                 steps: ppeOnSteps, backgroundColor: AppColors.green50)
           ],

@@ -25,7 +25,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -35,7 +34,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: AppColors.appBackground,
         fontFamily: 'Inter',
       ),
-      home: IntroRouter(),
+      initialRoute: Routes.introRouter,
       routes: {
         Routes.home: (context) => HomePage(),
         Routes.ppe: (context) => PPEView(),
@@ -45,22 +44,18 @@ class MyApp extends StatelessWidget {
         Routes.staffWelfare: (context) => YourWelfareView(),
         Routes.sbsGuidance: (context) => SBSGuideView(),
         Routes.ventilation: (context) => VentilationView(),
-        Routes.ventilationInitialActions: (context) =>
-            _navigateScreenData(context, routeToScreenData[Routes.ventilationInitialActions]),
-        Routes.ventilationAdjuncts: (context) =>
-            _navigateScreenData(context, routeToScreenData[Routes.ventilationAdjuncts]),
+        Routes.ventilationInitialActions: (context) => _navigateScreenData(
+            context, routeToScreenData[Routes.ventilationInitialActions]),
+        Routes.ventilationAdjuncts: (context) => _navigateScreenData(
+            context, routeToScreenData[Routes.ventilationAdjuncts]),
         Routes.generalCare: (context) => GeneralCareView(),
         Routes.tipsJuniorStaff: (context) => TipsJuniorStaffView(),
-        //Routes.introRouter: (context) => IntroRouter(),
+        Routes.introRouter: (context) => IntroRouter(),
+        Routes.disclaimer: (context) => DisclaimerView(),
       },
       onGenerateRoute: (settings) {
         // Use onGenerateRoute to set fullscreenDialog=true
         switch (settings.name) {
-          case Routes.home:
-            return MaterialPageRoute<InfoView>(
-              builder: (context) => HomePage(),
-              fullscreenDialog: true,
-            );
           case Routes.info:
             return MaterialPageRoute<InfoView>(
               builder: (context) => InfoView(),
@@ -81,8 +76,6 @@ class MyApp extends StatelessWidget {
               builder: (context) => IntubationChecklistPage(),
               fullscreenDialog: false,
             );
-          case Routes.disclaimer:
-            return MaterialPageRoute<DisclaimerView>(builder: (context) => DisclaimerView(), fullscreenDialog: false);
         }
         // Fallback, won't be called unless an unknown route is called
         return MaterialPageRoute<HomePage>(

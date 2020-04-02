@@ -1,5 +1,4 @@
 class Routes {
-  // MaterialApp widget is using home property so home route cannot be '/'
   static const home = '/home';
 
   static const ppe = '/ppe';
@@ -11,7 +10,7 @@ class Routes {
   static const sbsGuidance = '/sbs_guidance';
   static const info = '/info';
   static const disclaimer = '/disclaimer';
-  static const introRouter = '/intro_router';
+  static const introRouter = '/';
 
   static const _icuNonIntensivist = '/icu_non_intensivist';
   static const ventilation = '$_icuNonIntensivist/ventilation';
