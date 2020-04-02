@@ -22,7 +22,7 @@ void main() {
   testWidgets('show homescreen if user has previously accepted disclaimer',
       (tester) async {
     SharedPreferences.setMockInitialValues(
-        <String, dynamic>{'flutter.disclaimer_first_view': true});
+        <String, dynamic>{'flutter.disclaimer_agreed': true});
 
     await tester.pumpWidget(MyApp());
 
