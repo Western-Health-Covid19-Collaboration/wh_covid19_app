@@ -7,9 +7,9 @@ class PPEOnInfographicPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const InfographicPage(
-      title: 'PPE ON infographic', 
+      title: 'PPE ON Infographic', 
       imageUrl: 'assets/images/infographics/putting_on_ppe.png',
       backgroundColor: AppColors.backgroundGreen,
-      toolBarColor: AppColors.grey50);
+      toolBarColor: AppColors.green50);
   }
 }

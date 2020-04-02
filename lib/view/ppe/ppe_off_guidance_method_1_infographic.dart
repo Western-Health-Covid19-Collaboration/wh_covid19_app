@@ -7,9 +7,9 @@ class PPEOffMethod1InfographicPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const InfographicPage(
-      title: 'Method One infographic', 
+      title: 'Method One Infographic', 
       imageUrl: 'assets/images/infographics/taking_off_ppe_1.png',
-      backgroundColor: AppColors.grey50,
+      backgroundColor: AppColors.appBackground,
       toolBarColor: AppColors.purple50);
   }
 }

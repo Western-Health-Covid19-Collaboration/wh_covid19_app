@@ -22,7 +22,9 @@ class Routes {
   static const generalCare = '$_icuNonIntensivist/general_care';
   static const tipsJuniorStaff = '$_icuNonIntensivist/tips_junior_staff';
 
-  static const intubationGuidance = '/intubation/guidance';
-  static const intubationChecklist = '/intubation/checklist';
-  static const intubationAlgorithm = '/intubation/algorithm';
+  static const intubationGuidance = '/airway/guidance';
+  static const intubationGuidanceInfographic = '/airway/guidance/infographic';
+  static const intubationChecklist = '/airway/checklist';
+  static const intubationChecklistInfographic = '/airway/checklist/infographic';
+  static const extubation = '/airway/extubation';
 }

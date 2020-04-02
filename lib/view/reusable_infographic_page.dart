@@ -21,7 +21,7 @@ class InfographicPage extends StatelessWidget {
         iconTheme: Styles.appBarIconTheme,
         title: Text(
           title,
-          style: Styles.appBarTextStyle,
+          style: Styles.textH5,
           ),
         leading: IconButton(
           icon: Icon(Icons.close),
