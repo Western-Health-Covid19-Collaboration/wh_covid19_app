@@ -8,7 +8,7 @@ class IntubationChecklistInfographicPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const InfographicPage(
       title: 'Intubation Checklist Infographic', 
-      imageUrl: 'assets/images/intubation_checklist.png',
+      imageUrl: 'assets/images/infographics/intubation_checklist.png',
       backgroundColor: AppColors.backgroundGreen,
       toolBarColor: AppColors.green50);
   }
