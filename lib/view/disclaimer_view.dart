@@ -1,6 +1,4 @@
 import 'package:intl/intl.dart';
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/disclaimer_model.dart';
@@ -36,7 +34,7 @@ class _DisclaimerViewState extends State<DisclaimerView> {
   // Check persisted values for disclaimer agreement if they exist
   Future<DisclaimerDetails> _getAgreed() async {
     final prefs = await SharedPreferences.getInstance();
-    DisclaimerDetails disclaimerValues = new DisclaimerDetails();
+    final disclaimerValues = DisclaimerDetails();
 
     disclaimerValues.agreed = prefs.getBool(Strings.settingDisclaimerAgreed) ?? false;
     disclaimerValues.version = prefs.getString(Strings.settingDisclaimerVersion) ?? '0';
@@ -168,7 +166,7 @@ class _DisclaimerViewState extends State<DisclaimerView> {
         ),
         body: FutureBuilder<DisclaimerDetails>(
           future: _getAgreed(),
-          builder: (BuildContext context, AsyncSnapshot<DisclaimerDetails> snapshot) {
+          builder: (context, snapshot) {
             if (snapshot.hasData) {
               return Stack(
                 children: <Widget>[
@@ -186,9 +184,7 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
-                          (snapshot.data.agreed == false)
-                              ? _agreeButton
-                              : _agreedMessage(snapshot.data.version, snapshot.data.dateStamp),
+                          if (snapshot.data.agreed == false) _agreeButton else _agreedMessage(snapshot.data.version, snapshot.data.dateStamp),
                         ],
                       ),
                     ),
