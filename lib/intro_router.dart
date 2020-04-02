@@ -23,8 +23,8 @@ class _IntroRouterState extends State<IntroRouter> {
   // Check any persisted values for the disclaimer if present
   Future<void> _checkDisclaimerFirstView() async {
     final prefs = await SharedPreferences.getInstance();
-    final disclaimerAgreed = prefs.getBool('$Strings.settingDisclaimerAgreed') ?? false;
-    final disclaimerVersion = prefs.getString('$Strings.settingDisclaimerVersion') ?? '0';
+    final disclaimerAgreed = prefs.getBool(Strings.settingDisclaimerAgreed) ?? false;
+    final disclaimerVersion = prefs.getString(Strings.settingDisclaimerVersion) ?? '0';
 
     // Disclaimer should be shown (not the Home screen) if the user has not previously agreed to the disclaimer, or
     // the version of the disclaimer the user agreed to is not the latest version of the disclaimer.
