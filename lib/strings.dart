@@ -19,7 +19,12 @@ This app is designed to be used by Anaesthetic and Critical Care doctors at West
   // *** WARNING ***
   // Increment by one when the disclaimerBody changes. This will force users to accept/re-accept the disclaimer again
   // if they have previously accepted it. If the disclaimer has changed then users need to re-accept it.
-  static const String disclaimerVersion = '1';
+  static const String disclaimerCurrentVersion = '1';
   static const String disclaimerButtonAgreeText = 'I Agree';
   static const String disclaimerHaveAgreedText = 'You have agreed to the disclaimer';
+
+  /// Home strings
+  static const String homeHeading1 = 'Look After Yourself';
+  static const String homeHeading2 = 'Airway';
+  static const String homeHeading3 = 'ICU';
 }
