@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../styles.dart';
+import '../../style.dart';
 
 class StringList extends StatelessWidget {
   final List<String> items;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../models/IntubationChecklist.dart';
-import '../../styles.dart';
+import '../../style.dart';
 import '../../widget/cards/reusable_card_base.dart';
 import '../../widget/checkbox.dart';
 import '../../widget/lists/string_list.dart';

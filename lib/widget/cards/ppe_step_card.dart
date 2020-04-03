@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../models/PPEStepInfo.dart';
-import '../../styles.dart';
+import '../../style.dart';
 import '../../widget/cards/reusable_card_base.dart';
 import '../../widget/lists/string_list.dart';
 

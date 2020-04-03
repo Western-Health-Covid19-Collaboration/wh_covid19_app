@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../../styles.dart';
+import '../../style.dart';
 
 class TipsJuniorStaffView extends StatelessWidget {
   final title = 'Tips for cross-skilling';

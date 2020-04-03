@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../../routes.dart';
-import '../../../styles.dart';
+import '../../../style.dart';
 import '../../../widget/reusable_card.dart';
 
 class VentilationView extends StatelessWidget {

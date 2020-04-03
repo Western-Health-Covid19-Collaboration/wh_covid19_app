@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../../styles.dart';
+import '../../style.dart';
 
 class GeneralCareView extends StatelessWidget {
   final title = 'Daily Round';

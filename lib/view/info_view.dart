@@ -3,7 +3,7 @@ import 'package:package_info/package_info.dart';
 
 import '../hard_data.dart';
 import '../routes.dart';
-import '../styles.dart';
+import '../style.dart';
 import '../utils/url_utils.dart';
 import '../widget/reusable_card.dart';
 

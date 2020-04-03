@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../../hard_data.dart';
-import '../../../styles.dart';
+import '../../../style.dart';
 import '../../../widget/containers/intubation_checklist_container.dart';
 
 class IntubationChecklistPage extends StatelessWidget {

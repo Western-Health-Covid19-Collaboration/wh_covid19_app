@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../styles.dart';
+import '../style.dart';
 import '../widget/cards/reusable_card_base.dart';
 
 class ReusableCard extends StatelessWidget {

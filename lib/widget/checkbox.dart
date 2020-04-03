@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../styles.dart';
+import '../style.dart';
 
 class ChecklistCheckbox extends StatelessWidget {
   final Function onChecked;

@@ -6,7 +6,7 @@ import 'models/IntubationChecklist.dart';
 import 'models/PPEStepInfo.dart';
 import 'models/intubation_guide.dart';
 import 'routes.dart';
-import 'styles.dart';
+import 'style.dart';
 import 'widget/reusable_card.dart';
 
 // Staff Welfare card list composition

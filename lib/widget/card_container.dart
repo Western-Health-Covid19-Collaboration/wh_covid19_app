@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../styles.dart';
+import '../style.dart';
 import 'reusable_card.dart';
 
 class CardContainer extends StatelessWidget {

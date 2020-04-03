@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+
 import 'hard_data.dart';
 import 'intro_router.dart';
 import 'routes.dart';
-import 'styles.dart';
+import 'style.dart';
 import 'view/disclaimer_view.dart';
 import 'view/home_page.dart';
 import 'view/icu_non_intensivist/general_care_view.dart';
@@ -21,10 +22,11 @@ import 'view/staff_welfare/your_welfare_view.dart';
 import 'view/view_templates/html_text_card_view_template.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,10 +46,10 @@ class MyApp extends StatelessWidget {
         Routes.staffWelfare: (context) => YourWelfareView(),
         Routes.sbsGuidance: (context) => SBSGuideView(),
         Routes.ventilation: (context) => VentilationView(),
-        Routes.ventilationInitialActions: (context) => _navigateScreenData(
-            context, routeToScreenData[Routes.ventilationInitialActions]),
-        Routes.ventilationAdjuncts: (context) => _navigateScreenData(
-            context, routeToScreenData[Routes.ventilationAdjuncts]),
+        Routes.ventilationInitialActions: (context) =>
+            _navigateScreenData(context, routeToScreenData[Routes.ventilationInitialActions]),
+        Routes.ventilationAdjuncts: (context) =>
+            _navigateScreenData(context, routeToScreenData[Routes.ventilationAdjuncts]),
         Routes.generalCare: (context) => GeneralCareView(),
         Routes.tipsJuniorStaff: (context) => TipsJuniorStaffView(),
         Routes.introRouter: (context) => IntroRouter(),
@@ -100,5 +102,4 @@ class MyApp extends StatelessWidget {
       },
     );
   }
-
 }

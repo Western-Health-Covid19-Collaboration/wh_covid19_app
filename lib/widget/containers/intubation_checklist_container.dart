@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../models/IntubationChecklist.dart';
-import '../../styles.dart';
+import '../../style.dart';
 import '../lists/intubation_checklist_item.dart';
 
 class IntubationChecklistContainer extends StatelessWidget {

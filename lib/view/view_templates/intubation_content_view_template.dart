@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import '../../models/intubation_guide.dart';
-import '../../styles.dart';
+import '../../style.dart';
 
 ///
 /// Renders a IntubationContent item, which is a data structure

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../hard_data.dart';
-import '../../styles.dart';
+import '../../style.dart';
 import '../../widget/ppe_card_container.dart';
 
 class PPEOnGuidance extends StatelessWidget {

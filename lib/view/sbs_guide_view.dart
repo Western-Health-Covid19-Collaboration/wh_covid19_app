@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../styles.dart';
+import '../style.dart';
 import '../widget/reusable_stepper.dart';
 
 class SBSGuideView extends StatelessWidget {

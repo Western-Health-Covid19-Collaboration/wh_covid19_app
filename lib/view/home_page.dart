@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../hard_data.dart';
-import '../styles.dart';
+import '../style.dart';
 import '../utils/color.dart';
 import '../widget/card_container.dart';
 import 'info_view.dart';

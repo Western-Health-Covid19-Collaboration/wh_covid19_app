@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../styles.dart';
+import '../style.dart';
 import '../widget/reusable_zoomable_widget.dart';
 
 class InfographicPage extends StatelessWidget {

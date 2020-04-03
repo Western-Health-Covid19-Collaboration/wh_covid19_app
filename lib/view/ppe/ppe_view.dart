@@ -4,7 +4,7 @@ import 'package:video_player/video_player.dart';
 
 import '../../hard_data.dart';
 import '../../routes.dart';
-import '../../styles.dart';
+import '../../style.dart';
 import '../../widget/reusable_card.dart';
 
 class PPEView extends StatefulWidget {
