@@ -16,14 +16,14 @@ class HtmlTextCardViewTemplate extends StatelessWidget {
         backgroundColor: bgColor ?? AppColors.backgroundBlue,
         appBar: AppBar(
             backgroundColor: AppColors.appBarBackground,
-            iconTheme: AppStyles.appBarIconTheme,
-            title: Text(title, style: AppStyles.appBarTextStyle)),
+            iconTheme: Styles.appBarIconTheme,
+            title: Text(title, style: Styles.appBarTextStyle)),
         body: SingleChildScrollView(
             child: Padding(
                 padding: const EdgeInsets.all(12),
                 child: Card(
                     child: HtmlWidget(html,
-                        textStyle: AppStyles.cardDescriptionTextStyle,
+                        textStyle: Styles.cardDescriptionTextStyle,
                         bodyPadding: const EdgeInsets.all(6))))));
   }
 }

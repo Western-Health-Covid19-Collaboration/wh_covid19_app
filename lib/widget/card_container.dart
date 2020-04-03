@@ -20,7 +20,7 @@ class CardContainer extends StatelessWidget {
     final containerHeading = title != null
         ? Text(
             title,
-            style: AppStyles.cardContainerTextStyle,
+            style: Styles.cardContainerTextStyle,
           )
         : Container();
 

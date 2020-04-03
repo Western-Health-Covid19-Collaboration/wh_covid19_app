@@ -14,10 +14,10 @@ class PPEOnGuidance extends StatelessWidget {
         backgroundColor: AppColors.green500,
         appBar: AppBar(
           backgroundColor: AppColors.appBarBackground,
-          iconTheme: AppStyles.appBarIconTheme,
+          iconTheme: Styles.appBarIconTheme,
           title: Text(
             title,
-            style: AppStyles.textH5,
+            style: Styles.textH5,
           ),
         ),
         body: ListView(

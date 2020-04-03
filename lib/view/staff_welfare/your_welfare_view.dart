@@ -20,10 +20,10 @@ class YourWelfareView extends StatelessWidget {
       backgroundColor: AppColors.appBackground,
       appBar: AppBar(
         backgroundColor: AppColors.appBarBackground,
-        iconTheme: AppStyles.appBarIconTheme,
+        iconTheme: Styles.appBarIconTheme,
         title: Text(
           _title,
-          style: AppStyles.appBarTextStyle,
+          style: Styles.appBarTextStyle,
         ),
         actions: <Widget>[
           IconButton(
@@ -43,19 +43,19 @@ class YourWelfareView extends StatelessWidget {
                 children: <Widget>[
                   _buildSpacer(),
                   const Text("It's okay to not be okay.",
-                      style: AppStyles.textH1),
+                      style: Styles.textH1),
                   _buildSpacer(),
                   const Text('Please look after yourself.',
-                      style: AppStyles.textH2),
+                      style: Styles.textH2),
                   _buildSpacer(),
                   _buildSpacer(),
-                  const Text('Basic Tips', style: AppStyles.textH3),
+                  const Text('Basic Tips', style: Styles.textH3),
                   _buildIconTextRow(
                       const Text('🛑'), 'STOP, BREATHE then think'),
                   _buildIconTextRow(const Text('🗞'), 'Limit news intake'),
                   _buildSpacer(),
                   const Text('Take Care of Basic Needs',
-                      style: AppStyles.textH3),
+                      style: Styles.textH3),
                   _buildIconTextRow(const Text('🛌'), 'Rest'),
                   _buildIconTextRow(const Text('🥦'), 'Eat well'),
                   _buildIconTextRow(
@@ -95,7 +95,7 @@ class YourWelfareView extends StatelessWidget {
             padding: const EdgeInsets.only(right: 16),
             child: icon,
           ),
-          Expanded(child: Text(text, style: AppStyles.textP)),
+          Expanded(child: Text(text, style: Styles.textP)),
         ],
       ),
     );

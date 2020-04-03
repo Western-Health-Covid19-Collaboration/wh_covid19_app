@@ -14,10 +14,10 @@ class IntubationGuidancePage extends StatelessWidget {
           backgroundColor: AppColors.green50,
           title: const Text('Intubation Guide'),
           textTheme: Theme.of(context).textTheme,
-          iconTheme: AppStyles.appBarIconTheme,
+          iconTheme: Styles.appBarIconTheme,
           bottom: TabBar(
             labelColor: AppColors.blackAlpha800,
-            labelStyle: AppStyles.textSemiBold,
+            labelStyle: Styles.textSemiBold,
             unselectedLabelColor: AppColors.tabBarDeselectedText,
             indicatorColor: AppColors.green900,
             tabs: intubationGuide.map((e) => Tab(text: e.name)).toList(),

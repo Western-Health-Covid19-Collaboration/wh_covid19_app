@@ -16,10 +16,10 @@ class InfographicPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
-        iconTheme: AppStyles.appBarIconTheme,
+        iconTheme: Styles.appBarIconTheme,
         title: Text(
           title,
-          style: AppStyles.appBarTextStyle,
+          style: Styles.appBarTextStyle,
           ),
         leading: IconButton(
           icon: Icon(Icons.close),

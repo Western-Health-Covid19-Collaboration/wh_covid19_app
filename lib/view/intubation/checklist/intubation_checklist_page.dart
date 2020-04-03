@@ -28,15 +28,15 @@ class IntubationChecklistPage extends StatelessWidget {
       length: intubationChecklist.length,
       child: Scaffold(
         appBar: AppBar(
-          iconTheme: AppStyles.appBarIconTheme,
+          iconTheme: Styles.appBarIconTheme,
           backgroundColor: AppColors.green50,
           title: const Text(
             'Intubation Checklist',
-            style: AppStyles.textSemiBold,
+            style: Styles.textSemiBold,
           ),
           bottom: TabBar(
             labelColor: AppColors.blackAlpha800,
-            labelStyle: AppStyles.textSemiBold,
+            labelStyle: Styles.textSemiBold,
             unselectedLabelColor: AppColors.tabBarDeselectedText,
             indicatorColor: AppColors.green900,
             isScrollable: true,
