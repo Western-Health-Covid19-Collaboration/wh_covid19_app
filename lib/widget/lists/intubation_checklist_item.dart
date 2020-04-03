@@ -65,7 +65,7 @@ class _IntubationChecklistItemWidgetState
                   children: <Widget>[
                     Text(
                       widget.listItem.title,
-                      style: AppStyles.textH4,
+                      style: Styles.textH4,
                     ),
                     getList()
                   ],

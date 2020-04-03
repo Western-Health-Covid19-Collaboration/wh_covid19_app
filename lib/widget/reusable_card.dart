@@ -39,7 +39,7 @@ class ReusableCard extends StatelessWidget {
     final cardContent = description != null
         ? Text(
             description,
-            style: AppStyles.cardDescriptionTextStyle,
+            style: Styles.cardDescriptionTextStyle,
           )
         : Container();
 
@@ -55,7 +55,7 @@ class ReusableCard extends StatelessWidget {
       child: <Widget>[
         Text(
           title,
-          style: AppStyles.cardTitleTextStyle,
+          style: Styles.cardTitleTextStyle,
         ),
         cardContent,
       ],

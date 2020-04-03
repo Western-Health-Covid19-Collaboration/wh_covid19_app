@@ -28,7 +28,7 @@ class NotificationBanner extends StatelessWidget {
                   const Padding(padding: EdgeInsets.symmetric(vertical: 2.0)),
                   Text(
                     message,
-                    style: AppStyles.textSemiBold,
+                    style: Styles.textSemiBold,
                   )
                 ],
               ),

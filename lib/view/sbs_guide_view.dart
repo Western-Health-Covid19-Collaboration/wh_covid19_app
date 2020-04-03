@@ -13,10 +13,10 @@ class SBSGuideView extends StatelessWidget {
       backgroundColor: AppColors.appBarBackground,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        iconTheme: AppStyles.appBarIconTheme,
+        iconTheme: Styles.appBarIconTheme,
         title: Text(
           title,
-          style: AppStyles.appBarTextStyle,
+          style: Styles.appBarTextStyle,
         ),
       ),
       body: Container(
