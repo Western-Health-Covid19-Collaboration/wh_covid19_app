@@ -5,6 +5,8 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'models/IntubationChecklist.dart';
 import 'models/PPEStepInfo.dart';
 import 'models/intubation_guide.dart';
+import 'models/ventilation_guide.dart';
+
 import 'routes.dart';
 import 'style.dart';
 import 'widget/reusable_card.dart';
@@ -263,8 +265,7 @@ const List<IntubationChecklist> intubationChecklist = [
     IntubationChecklistItem(
         title: 'Pre-oxygenation', notes: ['FIO2 100%', 'Sitting position 45°']),
     IntubationChecklistItem(
-      title: 'IV access x 2', notes: ['1L fluid on pump set']
-    ),
+        title: 'IV access x 2', notes: ['1L fluid on pump set']),
     IntubationChecklistItem(
         title: 'Haemodynamics optimised', notes: ['Fluid bolus', 'Pressor']),
   ]),
@@ -383,6 +384,24 @@ const List<IntubationContent> intubationGuide = [
       IntubationItem('Debrief and share lessons', icon: '💬'),
     ])
   ])
+];
+
+const List<VentilationGuideItem> ventilationGuide = [
+  VentilationGuideItem('Principles', guideList: [
+    VentiliationGuideSection(list: [
+      VentilationGuideItemListItem(
+          title: 'Do the simple things well!', icon: '✅'),
+      VentilationGuideItemListItem(
+          title: 'Follow a stepwise approach!', icon: '👟'),
+      VentilationGuideItemListItem(
+          title: 'Balance the risks of organ support', icon: '⚖️'),
+      VentilationGuideItemListItem(
+          title: 'Minimise the risks of  cross-infection (see PPE)',
+          icon: '😷'),
+    ])
+  ]),
+  VentilationGuideItem('Initial Steps', guideList: []),
+  VentilationGuideItem('Adjuncts', guideList: []),
 ];
 
 // Feedback form

@@ -5,7 +5,7 @@ import '../../style.dart';
 import '../../widget/lists/ventilation_guide_card.dart';
 
 class VentilationGuideContainer extends StatelessWidget {
-  final List<VentilationGuideItemListItem> guide;
+  final List<VentiliationGuideSection> guide;
 
   const VentilationGuideContainer({this.guide});
 

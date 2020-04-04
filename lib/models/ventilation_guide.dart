@@ -1,8 +1,15 @@
 class VentilationGuideItem {
   final String heading;
-  final List<VentilationGuideItemListItem> guideList;
+  final List<VentiliationGuideSection> guideList;
 
   const VentilationGuideItem(this.heading, {this.guideList});
+}
+
+class VentiliationGuideSection {
+  final String heading;
+  final List<VentilationGuideItemListItem> list;
+
+  const VentiliationGuideSection({this.heading, this.list});
 }
 
 class VentilationGuideItemListItem {
