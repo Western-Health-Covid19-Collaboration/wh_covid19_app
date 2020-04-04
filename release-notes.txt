@@ -1,5 +1,5 @@
 ---- Friday 3rd April, 2020 ----
-* Updates and bugfix to disclaimer screen
+* Disclaimer screen on first run of the app, updated, fixes and supports versioning of the disclaimer
 
 ---- Wednesday 1st April, 2020 ----
 * Minor tweaks to text on main screen
