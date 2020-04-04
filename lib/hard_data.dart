@@ -414,7 +414,7 @@ const List<VentilationGuideItem> ventilationGuide = [
     VentiliationGuideSection(heading: 'Aims', list: [
       VentilationGuideItemListItem(title: 'SpO2 88-92%', icon: '😅'),
       VentilationGuideItemListItem(title: 'PaO2 55-70mmHg', icon: '😬'),
-      VentilationGuideItemListItem(title: 'Pplat <30', icon: '⚖🙃'),
+      VentilationGuideItemListItem(title: 'Pplat <30', icon: '🙃'),
       VentilationGuideItemListItem(
           title: 'Ph>7.2 (Permissive hypercapnia is ok)', icon: '🤔'),
     ]),
