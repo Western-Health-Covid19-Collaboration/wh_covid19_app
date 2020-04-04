@@ -6,6 +6,7 @@ class TabViewTemplate extends StatelessWidget {
   final String title;
   final List<String> tabs;
   final List<Widget> children;
+  final List<Widget> actions;
 
   final Color color;
   final Color indicatorColor;
@@ -14,6 +15,7 @@ class TabViewTemplate extends StatelessWidget {
       {@required this.tabs,
       @required this.children,
       this.color = AppColors.green50,
+      this.actions,
       this.indicatorColor});
 
   List<Widget> getChecklistTitles() {
@@ -33,15 +35,16 @@ class TabViewTemplate extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: color,
-          iconTheme: AppStyles.appBarIconTheme,
+          iconTheme: Styles.appBarIconTheme,
           textTheme: Theme.of(context).textTheme,
           title: Text(
             title,
-            style: AppStyles.textSemiBold,
+            style: Styles.textSemiBold,
           ),
+          actions: actions,
           bottom: TabBar(
             labelColor: AppColors.blackAlpha800,
-            labelStyle: AppStyles.textSemiBold,
+            labelStyle: Styles.textSemiBold,
             unselectedLabelColor: AppColors.tabBarDeselectedText,
             indicatorColor: indicatorColor,
             isScrollable: true,

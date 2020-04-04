@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../hard_data.dart';
+import '../strings.dart';
 import '../style.dart';
 import '../utils/color.dart';
 import '../widget/card_container.dart';
@@ -16,13 +17,19 @@ class _HomePageState extends State<HomePage> {
   double _scrollPosition = 0;
 
   Widget _renderBackgroundContainer(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     // Ensure that the image uses the full parent width
+    final width = MediaQuery.of(context).size.width;
+
     final Widget mainHeader = SvgPicture.asset(
       'assets/images/main_header.svg',
-      width: size.width,
+      width: width,
+      fit: BoxFit.fill,
     );
-    return Container(width: size.width, child: mainHeader);
+    
+    return Container(
+      width: width,
+      child: mainHeader,
+    );
   }
 
   /// Renders a stack with a single child node.
@@ -40,16 +47,19 @@ class _HomePageState extends State<HomePage> {
       delegate: SliverChildListDelegate(const [
         SizedBox(height: 12),
         CardContainer(
-          title: 'Look After Yourself',
+          title: Strings.homeHeading1,
           cards: staffWelfare,
+          containerLayout: CardsLayout.twoRow,
         ),
         CardContainer(
-          title: 'Airway',
-          cards: intubation,
+          title: Strings.homeHeading2,
+          cards: airway,
+          containerLayout: CardsLayout.threeColumn,
         ),
         CardContainer(
-          title: 'ICU',
+          title: Strings.homeHeading3,
           cards: icu,
+          containerLayout: CardsLayout.threeDoubleRowBigTop,
         ),
         // Make sure the bottom CardContainer has room to breathe.
         SizedBox(height: 12),
@@ -105,7 +115,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             backgroundColor: AppColors.dynamicAppBarBackground(percentage),
-            iconTheme: AppStyles.appBarIconTheme,
+            iconTheme: Styles.appBarIconTheme,
             floating: true,
             pinned: true,
             snap: false,

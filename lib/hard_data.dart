@@ -8,13 +8,14 @@ import 'models/intubation_guide.dart';
 import 'models/ventilation_guide.dart';
 
 import 'routes.dart';
+import 'strings.dart';
 import 'style.dart';
 import 'widget/reusable_card.dart';
 
 // Staff Welfare card list composition
 const List<ReusableCard> staffWelfare = [
   ReusableCard(
-    title: 'PPE Technique',
+    title: Strings.ppeTitle,
     description: '3 guides',
     color: Colors.white,
     routeTo: Routes.ppe,
@@ -27,8 +28,8 @@ const List<ReusableCard> staffWelfare = [
   )
 ];
 
-// Intubation card list composition
-const List<ReusableCard> intubation = [
+// Airway card list composition
+const List<ReusableCard> airway = [
   ReusableCard(
     title: 'Intubation Guide',
     description: 'Step by step guide',
@@ -45,7 +46,7 @@ const List<ReusableCard> intubation = [
     title: 'Extubation Guide',
     description: 'Step by step guide',
     color: AppColors.backgroundGreen,
-    routeTo: Routes.intubationAlgorithm,
+    routeTo: Routes.extubation,
   )
 ];
 
@@ -126,7 +127,7 @@ The authors of this app have made efforts to ensure the information is up to dat
 
 The authors accept no responsibility for any information perceived as misleading or the success of any treatment regimen detailed in the guidelines.
 
-The app is made available on the understanding that Western Health, Western Health employees, the designers, developers, testers, reviewers, organisers and all other contributors to the project have have no liability (including liability by reason of negligence) to the users for any loss, damage, cost or expense incurred or arising by reason of any person using or relying on the information and whether caused by reason of any error, negligent act, omission or misinterpretation in the app or otherwise.
+The app is made available on the understanding that Western Health and its employees shall have no liability (including liability by reason of negligence) to the users for any loss, damage, cost or expense incurred or arising by reason of any person using or relying on the information and whether caused by reason of any error, negligent act, omission or misinterpretation in the app or otherwise.
 
 The Western Health trademark and app cannot be copied, modified, reproduced, published, uploaded, distributed or posted without the prior written consent of Western Health.
 
@@ -347,8 +348,6 @@ const List<IntubationContent> intubationGuide = [
           'Stop high flow O2 via HFNP, NP, facemark or non-rebreather',
           icon: '❌'),
       IntubationItem('Use Best-fitting Face mask'),
-      IntubationItem(
-          'Attached to manual ventilation device or Anaesthetic machine'),
       IntubationItem('2-handed vice grip'),
       IntubationItem('Ensure square etCO2 waveform'),
       IntubationItem('Avoid manual bagging unless rescue oxygenation',

@@ -21,7 +21,7 @@ class StringList extends StatelessWidget {
                     .map((item) => Text(
                           '\u2022 $item',
                           softWrap: true,
-                          style: AppStyles.textP,
+                          style: Styles.textP,
                         ))
                     .toList())));
   }

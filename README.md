@@ -184,8 +184,8 @@ In no particular order, the following people have contributed to building the pr
 * Marc Edwards - Design
 * Luke Sleeman - Project organiser
 * Alessandro Favero - Flutter Dev
-* Maksim Lin - Flutter dev & CI
-* Mike Hughes - Flutter dev & CI
+* Maksim Lin - Senior Flutter dev, CI
+* Mike Hughes - Lead Flutter dev, CI & CD
 * Adam Koch - Flutter dev
 * Brett Morgan - Flutter dev
 * Eric Jiang - Flutter dev

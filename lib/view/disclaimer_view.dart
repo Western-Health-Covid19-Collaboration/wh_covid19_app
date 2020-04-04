@@ -1,92 +1,118 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../hard_data.dart';
+
+import '../models/disclaimer_model.dart';
 import '../routes.dart';
+import '../strings.dart';
 import '../style.dart';
 
+/// Disclaimer screen presented on app startup until the user agrees to the disclaimer
 class DisclaimerView extends StatefulWidget {
   @override
   _DisclaimerViewState createState() => _DisclaimerViewState();
 }
 
-class _DisclaimerViewState extends State<DisclaimerView>
-    with SingleTickerProviderStateMixin {
-  final String _title = 'Disclaimer and conditions of use';
-
-  // Content of the page
-  final _content = Container(
-    padding: const EdgeInsets.all(16),
-    child: const Text(
-      disclaimerBody,
-      style: AppStyles.textLegal,
-      //textAlign: TextAlign.justify,
-    ),
-  );
-
-  // Content to show at the bottom instead of [_agreedButton]
-  final _agreedText = Container(
-    height: 44,
-    padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
-    child: const Text(
-      'You have already agreed 👍',
-      style: AppStyles.textH5,
-      textAlign: TextAlign.center,
-    ),
-  );
-
-  // Floating container indicating to scroll down to agree
-  final _scrollDownToAgree = IgnorePointer(
-    child: Container(
-      decoration: const BoxDecoration(
-          color: AppColors.green50,
-          borderRadius: BorderRadius.all(Radius.circular(50))),
-      margin: const EdgeInsets.only(bottom: 16),
-      padding: const EdgeInsets.all(16),
-      child: const Text(
-        'Scroll down to agree',
-        style: AppStyles.textLegal,
-        textAlign: TextAlign.center,
-      ),
-    ),
-  );
-
-  // Floating container indicating to scroll down
-  final _scrollDown = IgnorePointer(
-    child: Container(
-      decoration: const BoxDecoration(
-          color: AppColors.green50,
-          borderRadius: BorderRadius.all(Radius.circular(50))),
-      margin: const EdgeInsets.only(bottom: 16),
-      padding: const EdgeInsets.all(16),
-      child: const Text(
-        'Scroll down',
-        style: AppStyles.textP,
-        textAlign: TextAlign.center,
-      ),
-    ),
-  );
-
-  AnimationController _animationController;
-  Animation<double> _animation;
-
-  @override
-  void initState() {
-    super.initState();
-    _animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 500),
-    );
-    _animation =
-        Tween<double>(begin: 1.0, end: 0.0).animate(_animationController);
+class _DisclaimerViewState extends State<DisclaimerView> {
+  // When user agrees to disclaimer, persist values for that agreement, version of disclaimer and date/time to storage
+  Future<void> _setAgreed() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(Strings.settingDisclaimerAgreed, true);
+    await prefs.setString(Strings.settingDisclaimerVersion, Strings.disclaimerCurrentVersion);
+    await prefs.setString(Strings.settingDisclaimerAgreedDateTime, DateTime.now().toString());
   }
 
-  @override
-  Widget build(BuildContext context) {
-    // Bottom button to agree t&c
-    final _agreeButton = Container(
-      margin: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+  // Check persisted values for disclaimer agreement if they exist
+  Future<DisclaimerDetails> _getAgreed() async {
+    final prefs = await SharedPreferences.getInstance();
+    final disclaimerValues = DisclaimerDetails();
+
+    disclaimerValues.agreed = prefs.getBool(Strings.settingDisclaimerAgreed) ?? false;
+    // Disclaimer version flag starts at '1' normally
+    disclaimerValues.version = prefs.getString(Strings.settingDisclaimerVersion) ?? '0';
+
+    final dateStamp = prefs.getString(Strings.settingDisclaimerAgreedDateTime) ?? '';
+    if (dateStamp != '') {
+      disclaimerValues.dateStamp = DateFormat.yMMMd().add_jm().format(DateTime.parse(dateStamp));
+    }
+
+    return disclaimerValues;
+  }
+
+  /// Disclaimer text content section of the screen that scrolls regardless of screen height/density
+  Widget _disclaimerScrollingContent(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, viewportConstraints) {
+        // Prevent overscroll indicator showing when scroll to bottom of disclaimer
+        // Workaround currently to color the bottom container to hide the overscroll
+        // TODO - Flutter open issue so not working: https://github.com/flutter/flutter/issues/49038
+        return GlowingOverscrollIndicator(
+          color: AppColors.green500,
+          axisDirection: AxisDirection.down,
+          showLeading: true,
+          showTrailing: false,
+          child: Scrollbar(
+            child: SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  minHeight: viewportConstraints.maxHeight,
+                ),
+                child: IntrinsicHeight(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const <Widget>[
+                        Center(
+                          child: Text(
+                            '🛑 ✋\n',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontSize: 35.0),
+                          ),
+                        ),
+                        Text('This app is for Clinician and hospital staff use ONLY\n', style: Styles.textH3),
+                        Text(
+                          'WHAC19 is an educational tool and interactive cognitive aid for Western Health '
+                          'Anaesthetists and ICU doctors 👩‍⚕ 👨‍⚕ who are managing patients with COVID-19 🤒 .'
+                          '\n\nWe want to protect our staff from infection risk 🌡 and ensure excellent patient '
+                          'care 🏥. WHAC19 aims to provide a really quick, usable means to access the core information ℹ️ for this.\n',
+                          style: TextStyle(fontSize: 14.0),
+                        ),
+                        Text('✋ Please keep in mind\n', style: Styles.textH3),
+                        Text(
+                          'This is not a comprehensive source nor can we guarantee it is completely up to date at '
+                          'the time of use 📱.\n\nIt is created using Western Health guidelines, informally '
+                          'peer-reviewed and adapted, with permission, from College/Society guidelines.\n\n',
+                          style: TextStyle(fontSize: 14.0),
+                        ),
+                        Text('🛑 WHAC19 does not constitute official advice\n', style: Styles.textH3),
+                        Text(
+                          'It is your responsibility to ensure your practice is up to date, contextualised for the '
+                          'patient and in accordance with your institution\'s practice 🤓.\n\n',
+                          style: TextStyle(fontSize: 14.0),
+                        ),
+                        Text('Full Disclaimer\n', style: Styles.textH3),
+                        Text(
+                          Strings.disclaimerBody,
+                          //style: Styles.textLegal,
+                          style: TextStyle(fontSize: 14.0),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  /// Agree button - only at app startup button a user taps to agree to the disclaimer
+  Widget _agreeButton(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(left: 16, right: 16, bottom: 8, top: 8),
       height: 44.0,
       child: RaisedButton(
         color: AppColors.green500,
@@ -94,113 +120,83 @@ class _DisclaimerViewState extends State<DisclaimerView>
           borderRadius: BorderRadius.all(Radius.circular(8)),
         ),
         onPressed: () {
+          // Write agreement of disclaimer to device storage to persist this decision
           _setAgreed();
+          // Make sure user cannot press back to return to the disclaimer once accepted
           Navigator.pushReplacementNamed(context, Routes.home);
         },
         child: const Text(
-          'I Agree',
-          style: AppStyles.textH5,
+          Strings.disclaimerButtonAgreeText,
+          style: Styles.textH5,
         ),
       ),
     );
+  }
 
-    return FutureBuilder<bool>(
-        future: _checkAgreed(),
+  /// Agree message - only viewed from Information page, shows has agreed to disclaimer, version and date/time agreed
+  Widget _agreedMessage(BuildContext context, dynamic version, dynamic dateStampString) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      child: Text(
+        '${Strings.disclaimerHaveAgreedText} \nVersion: $version \nDate & time: $dateStampString',
+        style: Styles.textLegal,
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      bottom: true,
+      top: true,
+      child: FutureBuilder<DisclaimerDetails>(
+        future: _getAgreed(),
         builder: (context, snapshot) {
-          if (!snapshot.hasData) {
-            return const CircularProgressIndicator();
-          }
-          return WillPopScope(
-            // Prevent back button exiting disclaimer on Android
-            onWillPop: () async {
-              return _closeDisclaimerOrCloseApp(context, snapshot.data);
-            },
-            child: Scaffold(
-              backgroundColor: Colors.white,
+          if (snapshot.hasData) {
+            return Scaffold(
               appBar: AppBar(
                 backgroundColor: Colors.white,
-                elevation: 0.0,
-                iconTheme: AppStyles.appBarIconTheme,
-                automaticallyImplyLeading: snapshot.data ?? true,
-                title: Text(
-                  _title,
-                  style: AppStyles.textH5,
+                elevation: 4.0,
+                iconTheme: Styles.appBarIconTheme,
+                automaticallyImplyLeading: snapshot.data.agreed,
+                title: const Text(
+                  Strings.disclaimerTitle,
+                  style: Styles.textH5,
                 ),
               ),
-              body: MediaQuery.of(context).size.height < 600
-                  ? Theme(
-                      data: ThemeData(accentColor: AppColors.green500),
-                      child: Stack(
-                        alignment: Alignment.bottomCenter,
-                        children: [
-                          NotificationListener<ScrollUpdateNotification>(
-                            onNotification: (scrollNotification) {
-                              _animationController.forward();
-                              return true;
-                            },
-                            child: ListView(
-                              children: <Widget>[
-                                _content,
-                                if (!snapshot.data)
-                                  _agreeButton
-                                else
-                                  _agreedText,
-                              ],
-                            ),
-                          ),
-                          FadeTransition(
-                              opacity: _animation,
-                              child: !snapshot.data
-                                  ? _scrollDownToAgree
-                                  : _scrollDown)
+              body: Stack(
+                children: <Widget>[
+                  // Widget to hold content of the right size, with white space for tall height screens and yet scrolls for
+                  // short height screens
+                  _disclaimerScrollingContent(context),
+                  Positioned(
+                    bottom: 0.0,
+                    left: 0.0,
+                    right: 0.0,
+                    child: Container(
+                      padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16, top: 16),
+                      color: Colors.white,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: <Widget>[
+                          if (snapshot.data.agreed == false ||
+                              snapshot.data.version != Strings.disclaimerCurrentVersion)
+                            _agreeButton(context)
+                          else
+                            _agreedMessage(context, snapshot.data.version, snapshot.data.dateStamp),
                         ],
                       ),
-                    )
-                  : Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: <Widget>[
-                        _content,
-                        if (!snapshot.data) _agreeButton else _agreedText,
-                      ],
                     ),
-            ),
-          );
-        });
-  }
-
-  Future<bool> _checkAgreed() async {
-    final prefs = await SharedPreferences.getInstance();
-    return prefs.getBool('disclaimer_agreed') ?? false;
-  }
-
-  // Close the app or close the disclaimer based on whether the user has
-  // agreed to the terms or not
-  bool _closeDisclaimerOrCloseApp(
-      BuildContext context, bool _hasAgreedToTerms) {
-    if (_hasAgreedToTerms) {
-      return _closeDisclaimer(context);
-    } else {
-      // Close App
-      exit(0);
-      return false;
-    }
-  }
-
-  bool _closeDisclaimer(BuildContext context) {
-    if (Navigator.canPop(context)) {
-      // Pop the disclaimer if we are not in the top route
-      return true;
-    } else {
-      // Replace with home if we are in the top route
-      Navigator.pushReplacementNamed(context, Routes.home);
-      return false;
-    }
-  }
-
-  Future<void> _setAgreed() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('disclaimer_agreed', true);
-    await prefs.setBool('disclaimer_first_view', true);
-  }
+                  )
+                ],
+              ),
+            );
+          } else {
+            return const CircularProgressIndicator();
+          }
+        }, // builder
+      ),
+    );
+  } // build
 }

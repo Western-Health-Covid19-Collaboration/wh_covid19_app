@@ -18,6 +18,7 @@ dependencies:
   url_launcher: ^5.4.2
   flutter_svg: ^0.17.3+1
   shared_preferences: ^0.5.6+3
+  intl: ^0.16.0
   photo_view: ^0.9.2
 
 dev_dependencies:
@@ -30,6 +31,7 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/infographics/
     - assets/images/icon/
     - assets/images/icon/SVG/
     - assets/images/steps/

@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import '../style.dart';
 import 'reusable_card.dart';
 
+enum CardsLayout { twoRow, threeColumn, threeDoubleRowBigTop, fourDoubleRow }
+
 class CardContainer extends StatelessWidget {
   static const double _outerPadding = 16;
   static const double _innerPadding = 8;
+  static const double _headerPadding = 4;
 
   /// Title for the container
   final String title;
@@ -13,14 +16,21 @@ class CardContainer extends StatelessWidget {
   /// List of ReusableCard to be displayed
   final List<ReusableCard> cards;
 
-  const CardContainer({this.title, this.cards});
+  /// Cards layout
+  final CardsLayout containerLayout;
+
+  const CardContainer(
+      {this.title, @required this.cards, @required this.containerLayout});
 
   @override
   Widget build(BuildContext context) {
     final containerHeading = title != null
-        ? Text(
-            title,
-            style: AppStyles.cardContainerTextStyle,
+        ? Padding(
+            padding: const EdgeInsets.only(left: _headerPadding),
+            child: Text(
+              title,
+              style: Styles.cardContainerTextStyle,
+            ),
           )
         : Container();
 
@@ -32,67 +42,96 @@ class CardContainer extends StatelessWidget {
         children: <Widget>[
           containerHeading,
           _buildVerticalSpacer(),
-          cardsLayout(),
+          _cardsLayout(containerLayout),
         ],
       ),
     );
   }
 
-  // Generate the layout of the cards based on the qty of cards
-  // Allowed: 2 cards, 3 cards, 4 cards
-  Widget cardsLayout() {
-    // Transform the card to an expanded
-    final expandedCards = cards.map((c) => Expanded(child: c)).toList();
+  // Generate the layout of the cards based on the layout type
+  Widget _cardsLayout(CardsLayout layout) {
+    switch (layout) {
+      case CardsLayout.twoRow:
+        if (cards.length == 2) {
+          return Row(
+            children: <Widget>[
+              Expanded(child: cards[0]),
+              _buildHorizontalSpacer(),
+              Expanded(child: cards[1]),
+            ],
+          );
+        } else {
+          return _wrongCardsNumber();
+        }
+        break;
 
-    switch (cards.length) {
-      case 2:
-        return Row(
-          children: <Widget>[
-            expandedCards[0],
-            _buildHorizontalSpacer(),
-            expandedCards[1],
-          ],
-        );
+      case CardsLayout.threeColumn:
+        if (cards.length == 3) {
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              cards[0],
+              _buildVerticalSpacer(),
+              cards[1],
+              _buildVerticalSpacer(),
+              cards[2]
+            ],
+          );
+        } else {
+          return _wrongCardsNumber();
+        }
         break;
-      case 3:
-        return Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Row(children: <Widget>[
-              expandedCards[0],
-            ]),
-            _buildVerticalSpacer(),
-            Row(
-              children: <Widget>[
-                expandedCards[1],
-                _buildHorizontalSpacer(),
-                expandedCards[2],
-              ],
-            )
-          ],
-        );
+
+      case CardsLayout.threeDoubleRowBigTop:
+        if (cards.length == 3) {
+          return Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Row(children: <Widget>[
+                Expanded(child: cards[0]),
+              ]),
+              _buildVerticalSpacer(),
+              Row(
+                children: <Widget>[
+                  Expanded(child: cards[1]),
+                  _buildHorizontalSpacer(),
+                  Expanded(child: cards[2]),
+                ],
+              )
+            ],
+          );
+        } else {
+          return _wrongCardsNumber();
+        }
         break;
-      case 4:
-        return Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Row(
-              children: <Widget>[
-                expandedCards[0],
-                _buildHorizontalSpacer(),
-                expandedCards[1],
-              ],
-            ),
-            Row(
-              children: <Widget>[
-                expandedCards[2],
-                _buildHorizontalSpacer(),
-                expandedCards[3],
-              ],
-            )
-          ],
-        );
+
+      case CardsLayout.fourDoubleRow:
+        if (cards.length == 4) {
+          return Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  Expanded(child: cards[0]),
+                  _buildHorizontalSpacer(),
+                  Expanded(child: cards[1]),
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  Expanded(child: cards[2]),
+                  _buildHorizontalSpacer(),
+                  Expanded(child: cards[3]),
+                ],
+              )
+            ],
+          );
+        } else {
+          return _wrongCardsNumber();
+        }
         break;
+
       default:
         return Container();
     }
@@ -101,4 +140,11 @@ class CardContainer extends StatelessWidget {
   Widget _buildHorizontalSpacer() => Container(width: _innerPadding);
 
   Widget _buildVerticalSpacer() => Container(height: _innerPadding);
+
+  Widget _wrongCardsNumber() => const Center(
+        child: Text(
+          'Wrong number of cards buddy 😅',
+          style: Styles.textH4,
+        ),
+      );
 }

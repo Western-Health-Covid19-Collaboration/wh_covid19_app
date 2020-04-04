@@ -8,18 +8,20 @@ class InfographicPage extends StatelessWidget {
   final String title;
   final String imageUrl;
   final Color backgroundColor;
+  final Color toolBarColor;
   
-  const InfographicPage({this.title, this.imageUrl, this.backgroundColor});
+  const InfographicPage({this.title, this.imageUrl, this.backgroundColor, this.toolBarColor});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
-        iconTheme: AppStyles.appBarIconTheme,
+        backgroundColor: toolBarColor,
+        iconTheme: Styles.appBarIconTheme,
         title: Text(
           title,
-          style: AppStyles.appBarTextStyle,
+          style: Styles.textH5,
           ),
         leading: IconButton(
           icon: Icon(Icons.close),
