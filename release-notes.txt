@@ -1,6 +1,7 @@
 ---- Saturday 4th April, 2020 ----
 * Fixed background on device rotation
 * Fixed padding for the header of the CardContainer
+* Fixed CardContainer to match home page design
 
 ---- Friday 3rd April, 2020 ----
 * Disclaimer screen on first run of the app, updated, fixes and supports versioning of the disclaimer
