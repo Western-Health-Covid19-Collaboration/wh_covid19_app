@@ -106,7 +106,7 @@ class InfoView extends StatelessWidget {
       const Padding(
         padding: EdgeInsets.all(8.0),
         child: Text(
-            'About this app. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus gravida quis blandit turpis cursus in hac habitasse platea. In vitae turpis massa sed elementum tempus. Pulvinar neque laoreet suspendisse interdum consectetur libero.'),
+            'This app aims to help safeguard the welfare of Western Health anaesthetists working amidst the COVID-19 pandemic by providing the most up-to-date information for time-critical procedures to ensure optimal patient care.'),
       ),
     ];
   }
