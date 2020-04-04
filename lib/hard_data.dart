@@ -410,10 +410,41 @@ const List<VentilationGuideItem> ventilationGuide = [
       VentilationGuideItemListItem(
           title: 'Minimise the risks of  cross-infection (see PPE)',
           icon: '😷'),
+    ]),
+    VentiliationGuideSection(heading: 'Aims', list: [
+      VentilationGuideItemListItem(title: 'SpO2 88-92%', icon: '😅'),
+      VentilationGuideItemListItem(title: 'PaO2 55-70mmHg', icon: '😬'),
+      VentilationGuideItemListItem(title: 'Pplat <30', icon: '⚖🙃'),
+      VentilationGuideItemListItem(
+          title: 'Ph>7.2 (Permissive hypercapnia is ok)', icon: '🤔'),
+    ]),
+    VentiliationGuideSection(heading: 'If deteriorating ', list: [
+      VentilationGuideItemListItem(title: 'ICU consultant review!', icon: '🚨'),
+      VentilationGuideItemListItem(
+          title: 'Proceed to Adjuncts page', icon: '👉'),
     ])
   ]),
-  VentilationGuideItem('Adjuncts', guideList: []),
+  VentilationGuideItem('Adjuncts', guideList: [
+    VentiliationGuideSection(
+        heading: 'If initial stepwise approach fails try',
+        list: [
+          VentilationGuideItemListItem(title: 'Deep sedation', icon: '🛌'),
+          VentilationGuideItemListItem(
+              title: 'Restrictive fluid regime',
+              icon: '💧',
+              notes: ['Aim for Negative fluid balance']),
+          VentilationGuideItemListItem(
+              title: 'Ensure senior ICU review', icon: '👉'),
+          VentilationGuideItemListItem(
+              title: 'Neuromuscular blockade',
+              icon: '💪',
+              notes: [
+                'NOT first-line management',
+                'Consider infusion of cisatracurium in a patient with refractory hypoxia'
+              ]),
+          VentilationGuideItemListItem(title: 'Try prone position', icon: '↪️'),
+        ]),
+  ]),
 ];
-
 // Feedback form
 const String feedbackFormUrl = 'https://forms.gle/zQtfhvswrKmjJjNV7';
