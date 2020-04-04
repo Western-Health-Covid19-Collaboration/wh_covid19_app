@@ -6,13 +6,14 @@ import 'models/IntubationChecklist.dart';
 import 'models/PPEStepInfo.dart';
 import 'models/intubation_guide.dart';
 import 'routes.dart';
+import 'strings.dart';
 import 'style.dart';
 import 'widget/reusable_card.dart';
 
 // Staff Welfare card list composition
 const List<ReusableCard> staffWelfare = [
   ReusableCard(
-    title: 'PPE Technique',
+    title: Strings.ppeTitle,
     description: '3 guides',
     color: Colors.white,
     routeTo: Routes.ppe,

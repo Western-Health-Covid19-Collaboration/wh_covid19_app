@@ -4,6 +4,7 @@ import 'package:video_player/video_player.dart';
 
 import '../../hard_data.dart';
 import '../../routes.dart';
+import '../../strings.dart';
 import '../../style.dart';
 import '../../widget/reusable_card.dart';
 
@@ -15,7 +16,7 @@ class PPEView extends StatefulWidget {
 }
 
 class _PPEViewState extends State<PPEView> {
-  final title = 'PPE Techniques';
+  final title = Strings.ppeTitle;
 
   VideoPlayerController _videoController1;
   ChewieController _chewieController1;
