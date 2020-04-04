@@ -19,10 +19,12 @@ class VentilationGuideCard extends StatelessWidget {
 
   Widget getHeading() {
     if (sectionItem.heading != null) {
-      return getPaddedItem(Text(
-        sectionItem.heading,
-        style: AppStyles.textH4,
-      ));
+      return getPaddedItem(
+          Text(
+            sectionItem.heading,
+            style: Styles.textH4,
+          ),
+          const EdgeInsets.fromLTRB(16, 24, 16, 16));
     }
     return Container();
   }
@@ -44,22 +46,23 @@ class VentilationGuideCard extends StatelessWidget {
           getHeading(),
           ...sectionItem.list
               .map((item) => Padding(
-                  padding: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
                         item.icon,
-                        style: AppStyles.textH4,
+                        style: Styles.textH4,
                       ),
                       Expanded(
-                        child: getPaddedItem(
-                          Column(
+                        child: Container(
+                          margin: const EdgeInsets.fromLTRB(16, 0, 0, 0),
+                          child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
-                              Text(item.title, style: AppStyles.textH4),
+                              Text(item.title, style: Styles.textH4),
                               getList(item.notes)
                             ],
                           ),
