@@ -1,7 +1,7 @@
 ---- Saturday 4th April, 2020 ----
 * Fixed background on device rotation
 * Fixed padding for the header of the CardContainer
-* Fixed CardContainer to match home page design
+* Added infographics screens for PPE ON, Method One, Method Two, Intubation Guide, Intubation Checklist and Extubation.
 
 ---- Friday 3rd April, 2020 ----
 * Disclaimer screen on first run of the app, updated, fixes and supports versioning of the disclaimer
@@ -14,7 +14,6 @@
 ---- Monday 31st March, 2020 ----
 * Added intubation guide
 * Minified images to reduce app size
-
 
 ---- Sunday 29th March, 2020 ----
 * Applied Infographics Reusable Screen to Algorithm Screen

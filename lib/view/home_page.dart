@@ -53,8 +53,7 @@ class _HomePageState extends State<HomePage> {
         ),
         CardContainer(
           title: Strings.homeHeading2,
-          cards: intubation,
-          containerLayout: CardsLayout.threeColumn,
+          cards: airway,
         ),
         CardContainer(
           title: Strings.homeHeading3,
