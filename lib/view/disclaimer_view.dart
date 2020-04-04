@@ -18,7 +18,7 @@ class _DisclaimerViewState extends State<DisclaimerView> {
   Future<void> _setAgreed() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool(Strings.settingDisclaimerAgreed, true);
-    await prefs.setString(Strings.settingDisclaimerVersion, Strings.disclaimerVersion);
+    await prefs.setString(Strings.settingDisclaimerVersion, Strings.disclaimerCurrentVersion);
     await prefs.setString(Strings.settingDisclaimerAgreedDateTime, DateTime.now().toString());
   }
 
@@ -180,7 +180,8 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
-                          if (snapshot.data.agreed == false || snapshot.data.version != Strings.disclaimerVersion)
+                          if (snapshot.data.agreed == false ||
+                              snapshot.data.version != Strings.disclaimerCurrentVersion)
                             _agreeButton(context)
                           else
                             _agreedMessage(context, snapshot.data.version, snapshot.data.dateStamp),

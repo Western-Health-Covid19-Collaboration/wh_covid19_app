@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../hard_data.dart';
+import '../strings.dart';
 import '../style.dart';
 import '../utils/color.dart';
 import '../widget/card_container.dart';
@@ -40,15 +41,15 @@ class _HomePageState extends State<HomePage> {
       delegate: SliverChildListDelegate(const [
         SizedBox(height: 12),
         CardContainer(
-          title: 'Look After Yourself',
+          title: Strings.homeHeading1,
           cards: staffWelfare,
         ),
         CardContainer(
-          title: 'Airway',
+          title: Strings.homeHeading2,
           cards: intubation,
         ),
         CardContainer(
-          title: 'ICU',
+          title: Strings.homeHeading3,
           cards: icu,
         ),
         // Make sure the bottom CardContainer has room to breathe.
