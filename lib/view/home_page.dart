@@ -17,13 +17,19 @@ class _HomePageState extends State<HomePage> {
   double _scrollPosition = 0;
 
   Widget _renderBackgroundContainer(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     // Ensure that the image uses the full parent width
+    final width = MediaQuery.of(context).size.width;
+
     final Widget mainHeader = SvgPicture.asset(
       'assets/images/main_header.svg',
-      width: size.width,
+      width: width,
+      fit: BoxFit.fill,
+      alignment: Alignment.topCenter,
     );
-    return Container(width: size.width, child: mainHeader);
+    return Container(
+      width: width,
+      child: mainHeader,
+    );
   }
 
   /// Renders a stack with a single child node.
@@ -62,13 +68,16 @@ class _HomePageState extends State<HomePage> {
     const appBarHeight = 70;
     const logoHeight = 42;
 
-    final Widget mainLogo = SvgPicture.asset('assets/images/main_logo.svg', height: logoHeight.toDouble());
+    final Widget mainLogo = SvgPicture.asset('assets/images/main_logo.svg',
+        height: logoHeight.toDouble());
 
     final appBarBottom = appBarHeight.toDouble() - logoHeight.toDouble();
 
     final scrollPos = _scrollPosition.round();
 
-    final percentage = scrollPos < appBarBottom ? ((scrollPos) / appBarBottom.toDouble()) : 1.00;
+    final percentage = scrollPos < appBarBottom
+        ? ((scrollPos) / appBarBottom.toDouble())
+        : 1.00;
 
     return Builder(builder: (context) {
       final _scrollController = PrimaryScrollController.of(context);
@@ -94,7 +103,8 @@ class _HomePageState extends State<HomePage> {
                     mainLogo,
                     IconButton(
                       icon: Icon(Icons.info_outline,
-                          color: generateIconColor(AppColors.homeAppBarIcon, AppColors.appBarIcon, percentage)),
+                          color: generateIconColor(AppColors.homeAppBarIcon,
+                              AppColors.appBarIcon, percentage)),
                       onPressed: () => InfoView.navigateTo(context),
                     )
                   ],
