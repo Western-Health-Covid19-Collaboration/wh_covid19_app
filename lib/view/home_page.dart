@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
         ),
         CardContainer(
           title: Strings.homeHeading2,
-          cards: intubation,
+          cards: airway,
         ),
         CardContainer(
           title: Strings.homeHeading3,

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../hard_data.dart';
+import '../../routes.dart';
 import '../../style.dart';
 import '../../widget/ppe_card_container.dart';
 
@@ -19,6 +21,15 @@ class PPEOnGuidance extends StatelessWidget {
             title,
             style: Styles.textH5,
           ),
+          actions: <Widget>[
+            IconButton(
+              icon: SvgPicture.asset(
+                'assets/images/icon/SVG/icon_infographic.svg',
+              ),
+              onPressed:
+                () => Navigator.pushNamed(context, Routes.ppeOnInfographic),
+            )
+          ],
         ),
         body: ListView(
           children: const <Widget>[

@@ -6,13 +6,14 @@ import 'models/IntubationChecklist.dart';
 import 'models/PPEStepInfo.dart';
 import 'models/intubation_guide.dart';
 import 'routes.dart';
+import 'strings.dart';
 import 'style.dart';
 import 'widget/reusable_card.dart';
 
 // Staff Welfare card list composition
 const List<ReusableCard> staffWelfare = [
   ReusableCard(
-    title: 'PPE Technique',
+    title: Strings.ppeTitle,
     description: '3 guides',
     color: Colors.white,
     routeTo: Routes.ppe,
@@ -25,8 +26,8 @@ const List<ReusableCard> staffWelfare = [
   )
 ];
 
-// Intubation card list composition
-const List<ReusableCard> intubation = [
+// Airway card list composition
+const List<ReusableCard> airway = [
   ReusableCard(
     title: 'Intubation Guide',
     description: 'Step by step guide',
@@ -43,7 +44,7 @@ const List<ReusableCard> intubation = [
     title: 'Extubation Guide',
     description: 'Step by step guide',
     color: AppColors.backgroundGreen,
-    routeTo: Routes.intubationAlgorithm,
+    routeTo: Routes.extubation,
   )
 ];
 

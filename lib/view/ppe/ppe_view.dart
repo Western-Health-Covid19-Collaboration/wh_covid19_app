@@ -4,6 +4,7 @@ import 'package:video_player/video_player.dart';
 
 import '../../hard_data.dart';
 import '../../routes.dart';
+import '../../strings.dart';
 import '../../style.dart';
 import '../../widget/reusable_card.dart';
 
@@ -15,7 +16,7 @@ class PPEView extends StatefulWidget {
 }
 
 class _PPEViewState extends State<PPEView> {
-  final title = 'PPE';
+  final title = Strings.ppeTitle;
 
   VideoPlayerController _videoController1;
   ChewieController _chewieController1;
@@ -30,12 +31,6 @@ class _PPEViewState extends State<PPEView> {
       color: AppColors.backgroundGreen,
       height: PPEView._cardHeight,
       routeTo: '/ppe/on',
-    ),
-    _buildVerticalSpacer(),
-    const ReusableCard(
-      title: 'Infographic',
-      color: AppColors.backgroundGreen,
-      height: PPEView._cardHeight,
     ),
     _buildVerticalSpacer(),
   ];
@@ -64,11 +59,6 @@ class _PPEViewState extends State<PPEView> {
           color: AppColors.purple50,
         ))
       ],
-    ),
-    const ReusableCard(
-      title: 'Infographic',
-      color: AppColors.purple50,
-      height: PPEView._cardHeight,
     ),
     _buildVerticalSpacer(),
   ];
@@ -116,7 +106,7 @@ class _PPEViewState extends State<PPEView> {
         iconTheme: Styles.appBarIconTheme,
         title: Text(
           title,
-          style: Styles.appBarTextStyle,
+          style: Styles.textH5,
         ),
       ),
       body: Container(
