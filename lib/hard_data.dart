@@ -347,8 +347,6 @@ const List<IntubationContent> intubationGuide = [
           'Stop high flow O2 via HFNP, NP, facemark or non-rebreather',
           icon: '❌'),
       IntubationItem('Use Best-fitting Face mask'),
-      IntubationItem(
-          'Attached to manual ventilation device or Anaesthetic machine'),
       IntubationItem('2-handed vice grip'),
       IntubationItem('Ensure square etCO2 waveform'),
       IntubationItem('Avoid manual bagging unless rescue oxygenation',
