@@ -24,8 +24,8 @@ class _HomePageState extends State<HomePage> {
       'assets/images/main_header.svg',
       width: width,
       fit: BoxFit.fill,
-      alignment: Alignment.topCenter,
     );
+    
     return Container(
       width: width,
       child: mainHeader,
