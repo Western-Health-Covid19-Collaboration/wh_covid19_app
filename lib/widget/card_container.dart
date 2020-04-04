@@ -6,6 +6,7 @@ import 'reusable_card.dart';
 class CardContainer extends StatelessWidget {
   static const double _outerPadding = 16;
   static const double _innerPadding = 8;
+  static const double _headerPadding = 4;
 
   /// Title for the container
   final String title;
@@ -18,10 +19,13 @@ class CardContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final containerHeading = title != null
-        ? Text(
-            title,
-            style: Styles.cardContainerTextStyle,
-          )
+        ? Padding(
+          padding: const EdgeInsets.only(left: _headerPadding),
+          child: Text(
+              title,
+              style: Styles.cardContainerTextStyle,
+            ),
+        )
         : Container();
 
     return Padding(
