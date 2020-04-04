@@ -400,7 +400,19 @@ const List<VentilationGuideItem> ventilationGuide = [
           icon: '😷'),
     ])
   ]),
-  VentilationGuideItem('Initial Steps', guideList: []),
+  VentilationGuideItem('Initial Steps', guideList: [
+    VentiliationGuideSection(heading: 'Lung Protection', list: [
+      VentilationGuideItemListItem(
+          title: 'Do the simple things well!', icon: '✅'),
+      VentilationGuideItemListItem(
+          title: 'Follow a stepwise approach!', icon: '👟'),
+      VentilationGuideItemListItem(
+          title: 'Balance the risks of organ support', icon: '⚖️'),
+      VentilationGuideItemListItem(
+          title: 'Minimise the risks of  cross-infection (see PPE)',
+          icon: '😷'),
+    ])
+  ]),
   VentilationGuideItem('Adjuncts', guideList: []),
 ];
 

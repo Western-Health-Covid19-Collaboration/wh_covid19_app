@@ -12,7 +12,7 @@ class VentilationGuideContainer extends StatelessWidget {
   List<Widget> renderList() {
     return guide
         .map((e) => VentilationGuideCard(
-              listItem: e,
+              sectionItem: e,
               backgroundColor: AppColors.appBackground,
             ))
         .toList();

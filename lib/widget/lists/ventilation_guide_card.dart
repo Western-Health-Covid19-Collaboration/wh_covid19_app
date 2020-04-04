@@ -6,7 +6,7 @@ import '../../widget/cards/reusable_card_base.dart';
 import '../../widget/lists/string_list.dart';
 
 class VentilationGuideCard extends StatelessWidget {
-  final VentiliationGuideSection listItem;
+  final VentiliationGuideSection sectionItem;
   final Color backgroundColor;
 
   Widget getList(List<String> notes) {
@@ -17,14 +17,14 @@ class VentilationGuideCard extends StatelessWidget {
     return Container();
   }
 
-  const VentilationGuideCard({this.listItem, this.backgroundColor});
+  const VentilationGuideCard({this.sectionItem, this.backgroundColor});
 
   @override
   Widget build(BuildContext context) {
     return ReusableCardBase(
       elevation: 0,
       color: backgroundColor,
-      child: listItem.list
+      child: sectionItem.list
           .map((item) => Padding(
               padding: const EdgeInsets.all(8),
               child: Row(

@@ -21,7 +21,7 @@ class TabViewTemplate extends StatelessWidget {
         .map(
           (item) => Padding(
               padding: const EdgeInsets.fromLTRB(18, 12, 18, 12),
-              child: Text(title)),
+              child: Text(item)),
         )
         .toList();
   }
