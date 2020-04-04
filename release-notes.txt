@@ -1,3 +1,6 @@
+---- Friday 3rd April, 2020 ----
+* Updates and bugfix to disclaimer screen
+
 ---- Wednesday 1st April, 2020 ----
 * Minor tweaks to text on main screen
 * Added intubations checklist screen
