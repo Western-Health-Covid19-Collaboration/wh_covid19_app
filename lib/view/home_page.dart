@@ -49,14 +49,17 @@ class _HomePageState extends State<HomePage> {
         CardContainer(
           title: Strings.homeHeading1,
           cards: staffWelfare,
+          containerLayout: CardsLayout.twoRow,
         ),
         CardContainer(
           title: Strings.homeHeading2,
           cards: airway,
+          containerLayout: CardsLayout.threeColumn,
         ),
         CardContainer(
           title: Strings.homeHeading3,
           cards: icu,
+          containerLayout: CardsLayout.threeDoubleRowBigTop,
         ),
         // Make sure the bottom CardContainer has room to breathe.
         SizedBox(height: 12),
