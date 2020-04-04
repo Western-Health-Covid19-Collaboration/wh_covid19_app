@@ -1,0 +1,8 @@
+# Codeowners file, which will make sure we have some good defaults for who gets assigned to PRs.  
+
+# Mike, Maks and Bramley get everything by default
+*   @workerbee22 @maks @rockgecko-development  
+
+# For docs, Kim and I also get added to the list
+/docs/   @workerbee22 @maks @rockgecko-development @lukesleeman @kimngyn 
+
