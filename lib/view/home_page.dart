@@ -54,6 +54,7 @@ class _HomePageState extends State<HomePage> {
         CardContainer(
           title: Strings.homeHeading2,
           cards: airway,
+          containerLayout: CardsLayout.threeColumn,
         ),
         CardContainer(
           title: Strings.homeHeading3,
