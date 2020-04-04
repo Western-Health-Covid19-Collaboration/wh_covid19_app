@@ -27,4 +27,7 @@ This app is designed to be used by Anaesthetic and Critical Care doctors at West
   static const String homeHeading1 = 'Look After Yourself';
   static const String homeHeading2 = 'Airway';
   static const String homeHeading3 = 'ICU';
+
+  /// PPE
+  static const String ppeTitle = 'PPE Technique';
 }
