@@ -30,4 +30,6 @@ This app is designed to be used by Anaesthetic and Critical Care doctors at West
 
   /// PPE
   static const String ppeTitle = 'PPE Technique';
+  static const String ppeDonningTitle = 'Donning Personal Protective Equipment';
+  static const String ppeDoffingTitle = 'Doffing Personal Protective Equipment';
 }

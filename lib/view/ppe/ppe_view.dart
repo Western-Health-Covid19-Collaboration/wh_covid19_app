@@ -114,13 +114,13 @@ class _PPEViewState extends State<PPEView> {
         padding: const EdgeInsets.all(16),
         child: ListView(
           children: [
-            _buildHeader('Putting on Personal Protective Equipment'),
+            _buildHeader(Strings.ppeDonningTitle),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 4.0),
               child: Chewie(controller: _chewieController1),
             ),
             ...puttingOnCards,
-            _buildHeader('Taking off Personal Protective Equipment'),
+            _buildHeader(Strings.ppeDoffingTitle),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 4.0),
               child: Chewie(controller: _chewieController2),
