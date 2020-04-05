@@ -56,7 +56,9 @@ flutter run adb
 
 ## Contributing as a developer
 
-Check our [issues page](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aopen+is%3Aissue+label%3A%22Ready+for+Dev%22) `ready for dev` issues to work on.  Look for issues that are not assigned to somebody.  If you are working on an issue assign yourself to it.  To work on something you must be assigned on the issue. If someone already is, ask if they want help and if they agree add yourself to the assignment. Nobody no in the assignment list should be working on an issue.
+Check our [issues page](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aopen+is%3Aissue+label%3A%22Ready+for+Dev%22) `ready for dev` issues to work on.  
+
+Look for issues that have not been assigned to anyone.  If you are working on a particular issue, please assign yourself to it. If an assignee is currently working on an issue that you are interested in, ask if they want help. If they agree, then add yourself to the assignment. Other than the assignees on the assignment list, nobody else should be working on the same issue.
 
 Before you submit a PR, please ENSURE that you have run the following terminal commands locally in the root of the Flutter project and all the steps pass:
 
