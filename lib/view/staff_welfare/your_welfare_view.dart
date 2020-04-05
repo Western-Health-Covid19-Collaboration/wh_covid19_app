@@ -107,7 +107,7 @@ class YourWelfareView extends StatelessWidget {
           Expanded(
               child: Text(text,
                   style:
-                      Styles.textP.copyWith(color: AppColors.blackAlpha900))),
+                      Styles.textP.copyWith(color: AppColors.blackAlpha900)))
         ],
       ),
     );
