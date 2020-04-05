@@ -74,7 +74,7 @@ When contributing to this repository, please first discuss the change you wish t
 
 **Pro tips**
 
-🔥 If your committing changes to the docs ***ONLY*** add `[skip ci]` to **all** of your commit messages to save build time as we are currently burning build minutes 😬. Also prefix your PR title with `Docs: ` so that its obvious to the project team what the PR is.
+🔥 If you are committing changes to the docs ***ONLY*** add `[skip ci]` to **all** of your commit messages to save build time as we are currently burning build minutes 😬. Also prefix your PR title with `Docs: ` so that its obvious to the project team what the PR is.
 
 📱 Pick a device with a low resolution to test on and make sure there is no overflow errors.
 
