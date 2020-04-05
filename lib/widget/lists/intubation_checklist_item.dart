@@ -8,7 +8,7 @@ import '../../widget/cards/reusable_card_base.dart';
 import '../../widget/checkbox.dart';
 import '../../widget/lists/string_list.dart';
 
-class IntubationChecklistItemWidget extends StatefulWidget {
+class IntubationChecklistItemWidget extends StatelessWidget {
   final IntubationChecklistItem listItem;
   final Color backgroundColor;
   final Color selectedBackgroundColor;
@@ -17,19 +17,11 @@ class IntubationChecklistItemWidget extends StatefulWidget {
       {@required this.listItem,
       this.backgroundColor = AppColors.grey50,
       this.selectedBackgroundColor = AppColors.grey600});
-  @override
-  _IntubationChecklistItemWidgetState createState() =>
-      _IntubationChecklistItemWidgetState();
-}
-
-class _IntubationChecklistItemWidgetState
-    extends State<IntubationChecklistItemWidget> {
-  //var _checked = false;
 
   Widget getList() {
-    if (widget.listItem.notes != null && widget.listItem.notes.isNotEmpty) {
+    if (listItem.notes != null && listItem.notes.isNotEmpty) {
       return StringList(
-          items: widget.listItem.notes,
+          items: listItem.notes,
           padding: const EdgeInsets.fromLTRB(8, 0, 0, 0));
     }
     return Container();
@@ -39,16 +31,15 @@ class _IntubationChecklistItemWidgetState
   Widget build(BuildContext context) {
     final selectionState =
         Provider.of<IntubationChecklistSelectionProvider>(context);
-    final isChecked = selectionState.isChecked(widget.listItem);
+    final isChecked = selectionState.isChecked(listItem);
     return ReusableCardBase(
       elevation: 0,
       fallback: () {
         // setState not needed, because Provider takes care of rebuilding.
-        selectionState.setChecked(widget.listItem, checked: !isChecked);
+        selectionState.setChecked(listItem, checked: !isChecked);
       },
       padding: const EdgeInsets.all(16),
-      color:
-          isChecked ? widget.selectedBackgroundColor : widget.backgroundColor,
+      color: isChecked ? selectedBackgroundColor : backgroundColor,
       child: <Widget>[
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,8 +47,7 @@ class _IntubationChecklistItemWidgetState
             ChecklistCheckbox(
                 checked: isChecked,
                 onChecked: () {
-                  selectionState.setChecked(widget.listItem,
-                      checked: !isChecked);
+                  selectionState.setChecked(listItem, checked: !isChecked);
                 }),
             Expanded(
               child: Padding(
@@ -68,7 +58,7 @@ class _IntubationChecklistItemWidgetState
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     Text(
-                      widget.listItem.title,
+                      listItem.title,
                       style: Styles.textH4,
                     ),
                     getList()
