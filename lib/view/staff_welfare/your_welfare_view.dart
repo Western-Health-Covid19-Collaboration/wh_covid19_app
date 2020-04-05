@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../hard_data.dart';
@@ -27,7 +28,17 @@ class YourWelfareView extends StatelessWidget {
         ),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.call),
+            icon: Stack(
+              children: <Widget>[
+                Align(alignment: Alignment.center, child: Icon(Icons.call)),
+                Align(
+                    alignment: Alignment.topRight,
+                    child: Icon(
+                      Icons.call_made,
+                      size: 20,
+                    ))
+              ],
+            ),
             onPressed: () => UrlUtils.launchWithBrowser(whURL),
           ),
         ],
