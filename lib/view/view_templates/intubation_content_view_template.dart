@@ -50,7 +50,10 @@ class IntubationContentViewTemplate extends StatelessWidget {
                               Text(item.title, style: Styles.textH4),
                               if (item.subtitle != null) ...[
                                 const SizedBox(height: 4),
-                                Text(item.subtitle)
+                                Text(
+                                  item.subtitle,
+                                  style: Styles.textP,
+                                )
                               ],
                             ],
                           ),
