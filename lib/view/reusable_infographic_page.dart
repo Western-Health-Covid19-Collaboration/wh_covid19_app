@@ -16,11 +16,11 @@ class InfographicPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // Warning brightness interacts with SystemUiOverlayStyle
-        // See system_bars.dart comments
-        brightness: Brightness.light,
         backgroundColor: backgroundColor,
         appBar: AppBar(
+          // Warning brightness interacts with SystemUiOverlayStyle
+          // See system_bars.dart comments
+          brightness: Brightness.light,
           backgroundColor: toolBarColor,
           iconTheme: Styles.appBarIconTheme,
           title: Text(
