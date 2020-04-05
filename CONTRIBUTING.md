@@ -106,7 +106,6 @@ If you have any questions about why things are done a certain way in the app, ch
 - Please follow the instructions above on how to submit a pull request. 
 - Once the pull request is reviewed and approved by the team, they would be able to merge this with the main branch. 
 
-⬇️
 
 ## The Development process
 
