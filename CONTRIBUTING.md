@@ -27,7 +27,7 @@ To install dependencies, simply run `flutter pub get` in your terminal.
 
 #### iOS
 
-Initialise an instance of an iOS Simulator or connect physical iOS device, navigate to the cloned repo and run from root:
+For iOS Flutter development you will need to have Xcode v13.3 installed. Then initialise an instance of an iOS Simulator or connect physical iOS device, navigate to the cloned repo and run from root:
 
 ```sh
 # from terminal
