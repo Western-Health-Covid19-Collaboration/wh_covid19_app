@@ -26,8 +26,8 @@ class PPEOnGuidance extends StatelessWidget {
               icon: SvgPicture.asset(
                 'assets/images/icon/SVG/icon_infographic.svg',
               ),
-              onPressed:
-                () => Navigator.pushNamed(context, Routes.ppeOnInfographic),
+              onPressed: () =>
+                  Navigator.pushNamed(context, Routes.ppeOnInfographic),
             )
           ],
         ),

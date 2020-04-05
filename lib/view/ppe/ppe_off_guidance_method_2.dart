@@ -16,22 +16,21 @@ class PPEOffGuidanceMethod2 extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.grey50,
       appBar: AppBar(
-        backgroundColor: AppColors.appBarBackground,
-        iconTheme: Styles.appBarIconTheme,
-        title: Text(
-          title,
-          style: Styles.textH5,
-        ),
-        actions: <Widget>[
-          IconButton(
-            icon: SvgPicture.asset(
-              'assets/images/icon/SVG/icon_infographic.svg',
-            ),
-            onPressed:
-              () => Navigator.pushNamed(context, Routes.ppeOffGuidanceMethod2Infographic),
-          )
-        ]
-      ),
+          backgroundColor: AppColors.appBarBackground,
+          iconTheme: Styles.appBarIconTheme,
+          title: Text(
+            title,
+            style: Styles.textH5,
+          ),
+          actions: <Widget>[
+            IconButton(
+              icon: SvgPicture.asset(
+                'assets/images/icon/SVG/icon_infographic.svg',
+              ),
+              onPressed: () => Navigator.pushNamed(
+                  context, Routes.ppeOffGuidanceMethod2Infographic),
+            )
+          ]),
       body: ListView(
         children: <Widget>[
           NotificationBanner(

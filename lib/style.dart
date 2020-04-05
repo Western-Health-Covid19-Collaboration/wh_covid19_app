@@ -21,7 +21,8 @@ abstract class AppColors {
   static const Color appBarBackground = Color(0xf0f9f9f9);
 
   static Color dynamicAppBarBackground(double transparency) {
-    return Color.fromRGBO(appBarBackground.red, appBarBackground.green, appBarBackground.blue, transparency);
+    return Color.fromRGBO(appBarBackground.red, appBarBackground.green,
+        appBarBackground.blue, transparency);
   }
 
   // Color palette
@@ -58,7 +59,8 @@ abstract class Styles {
 
   // App bar styles
   static const TextStyle appBarTextStyle = Styles.textH2;
-  static const IconThemeData appBarIconTheme = IconThemeData(color: AppColors.appBarIcon);
+  static const IconThemeData appBarIconTheme =
+      IconThemeData(color: AppColors.appBarIcon);
 
   // Card styles
   static const TextStyle cardContainerTextStyle = Styles.textH4;

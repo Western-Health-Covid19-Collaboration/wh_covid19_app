@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
       width: width,
       fit: BoxFit.fill,
     );
-    
+
     return Container(
       width: width,
       child: mainHeader,
