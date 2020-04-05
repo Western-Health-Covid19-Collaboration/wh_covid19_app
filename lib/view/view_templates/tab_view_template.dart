@@ -11,12 +11,14 @@ class TabViewTemplate extends StatelessWidget {
   final Color color;
   final Color indicatorColor;
 
-  const TabViewTemplate(this.title,
-      {@required this.tabs,
-      @required this.children,
-      this.color = AppColors.green50,
-      this.actions,
-      this.indicatorColor});
+  const TabViewTemplate(
+    this.title, {
+    @required this.tabs,
+    @required this.children,
+    this.color = AppColors.green50,
+    this.actions,
+    this.indicatorColor,
+  });
 
   List<Widget> getChecklistTitles() {
     return tabs
