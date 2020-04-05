@@ -78,7 +78,7 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                           ),
                         ),
                         Text(
-                            'This app is for Clinician and hospital staff use ONLY\n',
+                            'This app is for clinician and hospital staff use ONLY\n',
                             style: Styles.textH3),
                         Text(
                           'WHAC19 is an educational tool and interactive cognitive aid for Western Health '
