@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:wh_covid19/routes.dart';
 
 import '../../../hard_data.dart';
 import '../../../style.dart';
