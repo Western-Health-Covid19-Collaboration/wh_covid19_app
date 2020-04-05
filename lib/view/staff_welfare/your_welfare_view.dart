@@ -24,7 +24,7 @@ class YourWelfareView extends StatelessWidget {
         iconTheme: Styles.appBarIconTheme,
         title: Text(
           _title,
-          style: Styles.appBarTextStyle,
+          style: Styles.textSemiBold.copyWith(color: AppColors.blackAlpha800),
         ),
         actions: <Widget>[
           IconButton(
