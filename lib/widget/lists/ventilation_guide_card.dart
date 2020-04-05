@@ -35,6 +35,37 @@ class VentilationGuideCard extends StatelessWidget {
         child: child);
   }
 
+  Widget _renderVentilationGuideListItem(
+      VentilationGuideItemListItem ventilationGuideItemListItem) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            ventilationGuideItemListItem.icon,
+            style: Styles.textH4,
+          ),
+          Expanded(
+            child: Container(
+              margin: const EdgeInsets.fromLTRB(16, 0, 0, 0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  Text(ventilationGuideItemListItem.title,
+                      style: Styles.textH4),
+                  _getList(ventilationGuideItemListItem.notes)
+                ],
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
   const VentilationGuideCard({this.sectionItem, this.backgroundColor});
 
   @override
@@ -46,32 +77,7 @@ class VentilationGuideCard extends StatelessWidget {
         _getHeading(),
         ...sectionItem.list
             .map(
-              (item) => Padding(
-                padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      item.icon,
-                      style: Styles.textH4,
-                    ),
-                    Expanded(
-                      child: Container(
-                        margin: const EdgeInsets.fromLTRB(16, 0, 0, 0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            Text(item.title, style: Styles.textH4),
-                            _getList(item.notes)
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
+              (item) => _renderVentilationGuideListItem(item),
             )
             .toList(),
       ],
