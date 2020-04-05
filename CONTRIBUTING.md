@@ -68,7 +68,9 @@ flutter format .
 flutter analyze
 flutter test
 ```
-It's ***strongly*** recommended that you enabled "format on save" in your preferred IDE for Flutter (dart) code files.
+It's ***strongly*** recommended that you enabled "format on save" in your preferred IDE for Flutter (dart) code files as follows:
+- Android Studio - Select Preferences (or Settings) / Languages & Frameworks / Flutter and tick 'Format code on save'
+- VS Code - TBC
 
 When contributing to this repository, please first discuss the change you wish to make via slack, issue, or email or any other method with the owners of this repository before making a change.
 
