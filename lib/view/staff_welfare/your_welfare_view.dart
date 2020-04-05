@@ -104,7 +104,10 @@ class YourWelfareView extends StatelessWidget {
             padding: const EdgeInsets.only(right: 16),
             child: icon,
           ),
-          Expanded(child: Text(text, style: Styles.textP)),
+          Expanded(
+              child: Text(text,
+                  style:
+                      Styles.textP.copyWith(color: AppColors.blackAlpha900))),
         ],
       ),
     );
