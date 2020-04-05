@@ -48,10 +48,10 @@ class MyApp extends StatelessWidget {
         Routes.staffWelfare: (context) => YourWelfareView(),
         Routes.sbsGuidance: (context) => SBSGuideView(),
         Routes.ventilation: (context) => VentilationView(),
-        Routes.ventilationInitialActions: (context) =>
-            _navigateScreenData(context, routeToScreenData[Routes.ventilationInitialActions]),
-        Routes.ventilationAdjuncts: (context) =>
-            _navigateScreenData(context, routeToScreenData[Routes.ventilationAdjuncts]),
+        Routes.ventilationInitialActions: (context) => _navigateScreenData(
+            context, routeToScreenData[Routes.ventilationInitialActions]),
+        Routes.ventilationAdjuncts: (context) => _navigateScreenData(
+            context, routeToScreenData[Routes.ventilationAdjuncts]),
         Routes.generalCare: (context) => GeneralCareView(),
         Routes.tipsJuniorStaff: (context) => TipsJuniorStaffView(),
         Routes.introRouter: (context) => IntroRouter(),
@@ -120,11 +120,13 @@ class MyApp extends StatelessWidget {
       future: data.readFile(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return HtmlTextCardViewTemplate(title: data.title, bgColor: data.bgColor, html: '');
+          return HtmlTextCardViewTemplate(
+              title: data.title, bgColor: data.bgColor, html: '');
         } else if (snapshot.hasError) {
           return Text('Error: ${snapshot.error}');
         } else {
-          return HtmlTextCardViewTemplate(title: data.title, bgColor: data.bgColor, html: snapshot.data);
+          return HtmlTextCardViewTemplate(
+              title: data.title, bgColor: data.bgColor, html: snapshot.data);
         }
       },
     );

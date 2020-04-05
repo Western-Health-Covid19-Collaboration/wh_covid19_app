@@ -1,42 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/svg.dart';
 
-import '../../../routes.dart';
+import '../../../hard_data.dart';
 import '../../../style.dart';
-import '../../../widget/reusable_card.dart';
+import '../../../widget/containers/ventilation_guide_container.dart';
+
+import '../../view_templates/tab_view_template.dart';
 
 class VentilationView extends StatelessWidget {
   final title = 'Ventilation';
-  static const cards = <ReusableCard>[
-    ReusableCard(
-      title: 'Suggested initial actions',
-      color: Colors.white,
-      routeTo: Routes.ventilationInitialActions,
-    ),
-    ReusableCard(
-      title: 'Adjuncts',
-      color: Colors.white,
-      routeTo: Routes.ventilationAdjuncts,
-    ),
-  ];
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.appBackground,
-      appBar: AppBar(
-        // Warning brightness interacts with SystemUiOverlayStyle
-        // See system_bars.dart comments
-        brightness: Brightness.light,
-        backgroundColor: AppColors.appBarBackground,
-        iconTheme: Styles.appBarIconTheme,
-        title: Text(title, style: Styles.appBarTextStyle),
-      ),
-      body: Container(
-        color: AppColors.backgroundBlue,
-        padding: const EdgeInsets.all(12),
-        child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch, children: cards),
-      ),
+
+    final tabs = ventilationGuide.map((e) => e.heading).toList();
+
+    return TabViewTemplate(
+      title,
+      color: AppColors.blue50,
+      tabs: tabs,
+      actions: <Widget>[
+        //TODO: link to infographic page
+        IconButton(
+          icon: SvgPicture.asset(
+            'assets/images/icon/SVG/icon_infographic.svg',
+          ),
+          onPressed: () {},
+        )
+      ],
+      children: ventilationGuide
+          .map((e) => VentilationGuideContainer(guideSections: e.guideList))
+          .toList(),
     );
   }
 }

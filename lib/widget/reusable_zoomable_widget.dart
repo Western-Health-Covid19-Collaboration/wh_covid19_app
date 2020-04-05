@@ -11,19 +11,16 @@ class ZoomablePhoto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: <Widget>[
-        Expanded(
-          child: PhotoView(
-            backgroundDecoration: BoxDecoration(
-              color: backgroundColor
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Expanded(
+            child: PhotoView(
+              backgroundDecoration: BoxDecoration(color: backgroundColor),
+              imageProvider: AssetImage(imageUrl),
+              initialScale: PhotoViewComputedScale.contained * 0.9,
+              basePosition: Alignment.topCenter * 0.9,
             ),
-            imageProvider: AssetImage(imageUrl),
-            initialScale: PhotoViewComputedScale.contained * 0.9,
-            basePosition: Alignment.topCenter * 0.9,
-          ),
-        )
-      ]
-    );
+          )
+        ]);
   }
 }

@@ -16,23 +16,23 @@ class InfographicPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
-      appBar: AppBar(
         // Warning brightness interacts with SystemUiOverlayStyle
         // See system_bars.dart comments
         brightness: Brightness.light,
-        backgroundColor: toolBarColor,
-        iconTheme: Styles.appBarIconTheme,
-        title: Text(
-          title,
-          style: Styles.textH5,
+        backgroundColor: backgroundColor,
+        appBar: AppBar(
+          backgroundColor: toolBarColor,
+          iconTheme: Styles.appBarIconTheme,
+          title: Text(
+            title,
+            style: Styles.textH5,
+          ),
+          leading: IconButton(
+            icon: Icon(Icons.close),
+            onPressed: () => Navigator.of(context).pop(null),
+          ),
         ),
-        leading: IconButton(
-          icon: Icon(Icons.close),
-          onPressed: () => Navigator.of(context).pop(null),
-        ),
-      ),
-      body: ZoomablePhoto(imageUrl: imageUrl, backgroundColor: backgroundColor),
-    );
+        body: ZoomablePhoto(
+            imageUrl: imageUrl, backgroundColor: backgroundColor));
   }
 }

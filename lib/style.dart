@@ -69,7 +69,6 @@ abstract class Styles {
 
   // App bar styles
   static const TextStyle appBarTextStyle = Styles.textH2;
-  // TODO - Code changes to remove local widget theme defined here and move this into above Theme for the whole app
   static const IconThemeData appBarIconTheme =
       IconThemeData(color: AppColors.appBarIcon);
 
