@@ -402,14 +402,13 @@ const List<VentilationGuideItem> ventilationGuide = [
   VentilationGuideItem('Initial Steps', guideList: [
     VentiliationGuideSection(heading: 'Lung Protection', list: [
       VentilationGuideItemListItem(
-          title: 'Do the simple things well!', icon: '✅'),
+          title: 'Ventilator setting: SIMV/VC', icon: '🔈'),
       VentilationGuideItemListItem(
-          title: 'Follow a stepwise approach!', icon: '👟'),
+          title: 'Low tidal Volume commence with 6ml/kg body weight',
+          icon: '🌊'),
+      VentilationGuideItemListItem(title: 'RR 20', icon: '🎚'),
       VentilationGuideItemListItem(
-          title: 'Balance the risks of organ support', icon: '⚖️'),
-      VentilationGuideItemListItem(
-          title: 'Minimise the risks of  cross-infection (see PPE)',
-          icon: '😷'),
+          title: 'PEEP: aim high, start 10cmH20, see table!', icon: '👀'),
     ]),
     VentiliationGuideSection(heading: 'Aims', list: [
       VentilationGuideItemListItem(title: 'SpO2 88-92%', icon: '😅'),
