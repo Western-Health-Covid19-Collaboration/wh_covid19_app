@@ -1,3 +1,6 @@
+---- Sunday 5th April, 2020 ----
+* Added Ventilation Guide screen
+
 ---- Saturday 4th April, 2020 ----
 * Fixed background on device rotation
 * Fixed padding for the header of the CardContainer

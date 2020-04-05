@@ -9,8 +9,12 @@ import '../../style.dart';
 /// then list of sections containing icon, title and subtitle.
 class IntubationContentViewTemplate extends StatelessWidget {
   final List<Object> flatItems;
+  final Color color;
 
-  IntubationContentViewTemplate({Key key, IntubationContent content})
+  IntubationContentViewTemplate(
+      {Key key,
+      IntubationContent content,
+      this.color = AppColors.backgroundGreen})
       : flatItems = content.sections
             .expand((e) => [if (e.name != null) e, ...e.items])
             .toList(),
@@ -19,7 +23,7 @@ class IntubationContentViewTemplate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppColors.backgroundGreen,
+      color: color,
       child: ListView.builder(
         itemCount: flatItems.length,
         itemBuilder: (context, index) {

@@ -5,6 +5,8 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'models/IntubationChecklist.dart';
 import 'models/PPEStepInfo.dart';
 import 'models/intubation_guide.dart';
+import 'models/ventilation_guide.dart';
+
 import 'routes.dart';
 import 'strings.dart';
 import 'style.dart';
@@ -263,8 +265,7 @@ const List<IntubationChecklist> intubationChecklist = [
     IntubationChecklistItem(
         title: 'Pre-oxygenation', notes: ['FIO2 100%', 'Sitting position 45°']),
     IntubationChecklistItem(
-      title: 'IV access x 2', notes: ['1L fluid on pump set']
-    ),
+        title: 'IV access x 2', notes: ['1L fluid on pump set']),
     IntubationChecklistItem(
         title: 'Haemodynamics optimised', notes: ['Fluid bolus', 'Pressor']),
   ]),
@@ -383,5 +384,65 @@ const List<IntubationContent> intubationGuide = [
   ])
 ];
 
+const List<VentilationGuideItem> ventilationGuide = [
+  VentilationGuideItem('Principles', guideList: [
+    VentiliationGuideSection(list: [
+      VentilationGuideItemListItem(
+          title: 'Do the simple things well!', icon: '✅'),
+      VentilationGuideItemListItem(
+          title: 'Follow a stepwise approach!', icon: '👟'),
+      VentilationGuideItemListItem(
+          title: 'Balance the risks of organ support', icon: '⚖️'),
+      VentilationGuideItemListItem(
+          title: 'Minimise the risks of  cross-infection (see PPE)',
+          icon: '😷'),
+    ])
+  ]),
+  VentilationGuideItem('Initial Steps', guideList: [
+    VentiliationGuideSection(heading: 'Lung Protection', list: [
+      VentilationGuideItemListItem(
+          title: 'Ventilator setting: SIMV/VC', icon: '🔈'),
+      VentilationGuideItemListItem(
+          title: 'Low tidal Volume commence with 6ml/kg body weight',
+          icon: '🌊'),
+      VentilationGuideItemListItem(title: 'RR 20', icon: '🎚'),
+      VentilationGuideItemListItem(
+          title: 'PEEP: aim high, start 10cmH20, see table!', icon: '👀'),
+    ]),
+    VentiliationGuideSection(heading: 'Aims', list: [
+      VentilationGuideItemListItem(title: 'SpO2 88-92%', icon: '😅'),
+      VentilationGuideItemListItem(title: 'PaO2 55-70mmHg', icon: '😬'),
+      VentilationGuideItemListItem(title: 'Pplat <30', icon: '🙃'),
+      VentilationGuideItemListItem(
+          title: 'Ph>7.2 (Permissive hypercapnia is ok)', icon: '🤔'),
+    ]),
+    VentiliationGuideSection(heading: 'If deteriorating ', list: [
+      VentilationGuideItemListItem(title: 'ICU consultant review!', icon: '🚨'),
+      VentilationGuideItemListItem(
+          title: 'Proceed to Adjuncts page', icon: '👉'),
+    ])
+  ]),
+  VentilationGuideItem('Adjuncts', guideList: [
+    VentiliationGuideSection(
+        heading: 'If initial stepwise approach fails try',
+        list: [
+          VentilationGuideItemListItem(title: 'Deep sedation', icon: '🛌'),
+          VentilationGuideItemListItem(
+              title: 'Restrictive fluid regime',
+              icon: '💧',
+              notes: ['Aim for Negative fluid balance']),
+          VentilationGuideItemListItem(
+              title: 'Ensure senior ICU review', icon: '👉'),
+          VentilationGuideItemListItem(
+              title: 'Neuromuscular blockade',
+              icon: '💪',
+              notes: [
+                'NOT first-line management',
+                'Consider infusion of cisatracurium in a patient with refractory hypoxia'
+              ]),
+          VentilationGuideItemListItem(title: 'Try prone position', icon: '↪️'),
+        ]),
+  ]),
+];
 // Feedback form
 const String feedbackFormUrl = 'https://forms.gle/zQtfhvswrKmjJjNV7';
