@@ -7,7 +7,7 @@ The WHAC19 app is a tool to safeguard the welfare of Western Health anaesthetist
 - Intubation and Extubation checklists and steps
 - Ventilation suggested initial actions and adjuncts
 - ICU General Care
-- ICU Tips your daily round and cross skilling
+- ICU Tips your daily round and cross-skilling
 - Contact details and newsfeeds
 
 Currently under development by a community of volunteers.
@@ -15,6 +15,10 @@ Currently under development by a community of volunteers.
 If you've never used Github here's a [Github101.md](docs/GITHUB101.md) to get you started with the basics.
 
 [![Codemagic build status](https://api.codemagic.io/apps/5e75f4bfdd1d6d000a198e90/5e75f4bfdd1d6d000a198e8f/status_badge.svg)](https://codemagic.io/apps/5e75f4bfdd1d6d000a198e90/5e75f4bfdd1d6d000a198e8f/latest_build)
+
+## Contributing
+
+If you would like to contribute to the development of the app, please read [the contribution documentation](contributing.md).
 
 
 ## The Plan

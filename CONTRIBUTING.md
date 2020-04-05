@@ -1,4 +1,4 @@
-# Contributing to WHAC
+# Contributing to WHAC19 App
 
 
 ## Getting Started & Development
@@ -9,6 +9,15 @@ You will need to install and setup Flutter to develop this application. You can 
 
 - the installation of dependencies
 - running the application
+
+### **BETA CHANNEL USAGE**
+
+We are currently using the Flutter beta channel for app development, so once you have the Flutter SDK set-up and working please change to the beta channel using on the command line:
+
+```
+flutter channel beta
+flutter upgrade
+```
 
 ### Installing dependencies
 
@@ -25,23 +34,11 @@ Initialise an instance of an iOS Simulator or connect physical iOS device, navig
 
 open -a simulator
 
-cd desktop/muhnee-app
+cd <your-workspace>/wh_covid19_app
 flutter run -d "iPhone"
 ```
 
 #### Android
-
-##### Keychain Certificate Setup
-
-1. Download the `google-services.json` configuration file from the Firebase Project and move it to the directory `<PROJECT-ROOT>/android/app`
-2. Get the Android Keychain by:
-
-   ```
-   keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass a
-   ndroid
-   ```
-
-3. Copy either the SHA1 or the SHA256 certificate fingerprint onto the Android App on [Firebase Console]()
 
 ##### Development
 
@@ -57,7 +54,7 @@ Otherwise if you have setup [Android Studio](https://developer.android.com/studi
 flutter run adb
 ```
 
-## Contributing
+## Contributing as a developer
 
 Check our [issues page](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues?q=is%3Aopen+is%3Aissue+label%3A%22Ready+for+Dev%22) `ready for dev` issues to work on.  Look for issues that are not assigned to somebody.  If you are working on an issue assign yourself to it.  To work on something you must be assigned on the issue. If someone already is, ask if they want help and if they agree add yourself to the assignment. Nobody no in the assignment list should be working on an issue.
 
@@ -69,12 +66,13 @@ flutter format .
 flutter analyze
 flutter test
 ```
+It's ***strongly*** recommended that you enabled "format on save" in your preferred IDE for Flutter (dart) code files.
 
 When contributing to this repository, please first discuss the change you wish to make via slack, issue, or email or any other method with the owners of this repository before making a change.
 
 **Pro tips**
 
-🔥 If your committing changes to the docs add `[skip ci]` to your commit message to save build time.  We are currently burning build minutes 😬
+🔥 If your committing changes to the docs ***ONLY*** add `[skip ci]` to **all** of your commit messages to save build time as we are currently burning build minutes 😬. Also prefix your PR title with `Docs: ` so that its obvious to the project team what the PR is.
 
 📱 Pick a device with a low resolution to test on and make sure there is no overflow errors.
 
@@ -82,7 +80,7 @@ When contributing to this repository, please first discuss the change you wish t
 
 ☑️ Only open up a PR once you feel you are finished.  You can request a review from `Flutter devs` get reviews
 
-🤗 If your unsure about sommething ask for help.  We are really friendly!
+🤗 If your unsure about something ask for help.  We are really friendly!
 
 
 Currently the project is being primarily co-ordinated via the GDG Melbourne slack group. You can join GDG Melbourne's slack via [this invite](http://bit.ly/join_gdgslack). DM `@luke.sleeman` on GDG Melbourne slack to be invited to the channel being used for co-ordination.
@@ -92,15 +90,16 @@ If you have any questions about why things are done a certain way in the app, ch
 ### Pull Request Process
 
 ## Method 1 - If you are part of the team
-- Develop your work in a branch. Branch names should be prefixed with `feature`, `tech`, `doc` or `bugfix` depending on what is being done in them. eg: `feature\update-readme`
-- Open a pull request into master. Be sure to include a detailed description in your pull request. Other contributors will comment on your code or approve it
+- Please make sure the work you are doing is described in an existing Github issue.
+- Develop your work in a branch. Branch names should be prefixed with `feature`, `tech`, `docs` or `bugfix` depending on what is being done in them AND should contain the number of the matching Github issue. eg: `feature/142-update-homescreen`
+- Open a pull request onto master. Be sure to include a detailed description in your pull request per the PR template. Other contributors will comment on your code or approve it
 - Please be sure to note the build status of your PR reported by the Codemagic CI
 - Once your pull request has been approved, please merge into master.
 
 ## Method 2 - If you are not yet part of the team
 - If you are not a part of the team, you can still work on the code by clicking on the `Fork` option in this page.
 - Once you have forked to your own github account,  you will be able to check out the fork and work on it.
-- To create a pull request, you would have to push your local changes back to your git account. 
+- To create a pull request, you would have to push your local changes back to your git accounts fork. 
 - You would then find the option to `Compare and Pull Request`. 
 - Please follow the instructions above on how to submit a pull request. 
 - Once the pull request is reviewed and approved by the team, they would be able to merge this with the main branch. 
@@ -109,7 +108,7 @@ If you have any questions about why things are done a certain way in the app, ch
 
 ## The Development process
 
-Everything is coordinated through github issues.  The current development process is:
+Everything is coordinated through Github issues.  The current development process is:
 
 👨‍⚕️👩‍⚕️ **Gregg Miller** and other Western Health staff provide features, content and suggestions via GitHub issues.  Gregg & Co can create new issues for features to add, things that need changing, etc.  
 
@@ -133,3 +132,7 @@ Once they have done their ✨ magic ✨ the issue should be labeled as 'Ready fo
 ⬇️
 
 🖥 **CI** builds the app and deploys to phones via firebase app distribution.
+
+## Code of Conduct
+
+This project and everyone participating in it is governed by our [Code of Conduct](Code-of-conduct.md). By participating, you are expected to uphold this code. Please report unacceptable behaviour to the project team.
