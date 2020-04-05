@@ -4,6 +4,7 @@
 
 ---- Sunday 5th April, 2020 ----
 * Added Ventilation Guide screen
+* Minor disclaimer text changes
 
 ---- Saturday 4th April, 2020 ----
 * Fixed background on device rotation
