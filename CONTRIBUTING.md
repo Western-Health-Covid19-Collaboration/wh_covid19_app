@@ -102,7 +102,7 @@ If you have any questions about why things are done a certain way in the app, ch
 - If you are not a part of the team, you can still work on the code by clicking on the `Fork` option in this page.
 - Once you have forked to your own github account,  you will be able to check out the fork and work on it.
 - To create a pull request, you would have to push your local changes back to your git accounts fork. 
-- You would then find the option to `Compare and Pull Request`. 
+- You will find the option to `Compare and Pull Request`. 
 - Please follow the instructions above on how to submit a pull request. 
 - Once the pull request is reviewed and approved by the team, they would be able to merge this with the main branch. 
 
