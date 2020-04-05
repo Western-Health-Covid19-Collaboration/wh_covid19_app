@@ -12,7 +12,7 @@ You will need to install and setup Flutter to develop this application. You can 
 
 ### **BETA CHANNEL USAGE**
 
-We are currently using the Flutter beta channel for app development, so once you have the Flutter SDK set-up and working please change to the beta channel using on the command line:
+We are currently using the Flutter v1.15.17 (the current beta channel version) for app development, so once you have the Flutter SDK set-up and working please change to the beta channel using on the command line:
 
 ```
 flutter channel beta
