@@ -13,7 +13,6 @@ class VentilationView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final tabs = ventilationGuide.map((e) => e.heading).toList();
 
     return TabViewTemplate(

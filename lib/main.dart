@@ -115,6 +115,7 @@ class MyApp extends StatelessWidget {
     );
   }
 
+  // TO DO - This can be optimised probably to remove html views.
   Widget _navigateScreenData(BuildContext context, HtmlTextScreenData data) {
     return FutureBuilder<String>(
       future: data.readFile(),

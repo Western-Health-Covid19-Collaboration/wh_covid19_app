@@ -18,7 +18,7 @@ class PPEOffGuidanceMethod2 extends StatelessWidget {
       appBar: AppBar(
           // Warning brightness interacts with SystemUiOverlayStyle
           // See system_bars.dart comments
-          brightness: Brightness.light,    
+          brightness: Brightness.light,
           backgroundColor: AppColors.appBarBackground,
           iconTheme: Styles.appBarIconTheme,
           title: Text(
