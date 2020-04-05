@@ -146,13 +146,13 @@ const List<PPEStepInfo> ppeOnSteps = [
       notes: ['Wash hands or use an alcohol-based hand sanitizer']),
   PPEStepInfo(image: 'assets/images/steps/on_gown.png', text: 'Gown', notes: [
     'Fully cover torso from neck to knees, arms to end of wrists, and wrap around the back.',
-    'Fasten in back neck and waist'
+    'Fasten at the neck and waist'
   ]),
   PPEStepInfo(
       image: 'assets/images/steps/on_mask.png',
       text: 'Mask or Respirator',
       notes: [
-        'Secure ties or elastic bands at middle of head and neck',
+        'Secure ties or elastic bands at crown of head and neck',
         'Fit flexible band to nose bridge',
         'Fit snug to face and below chin',
         'Fit-check respirator'
@@ -190,7 +190,6 @@ const List<PPEStepInfo> ppeOffMethod1Steps = [
       ]),
   handHygieneStep,
   PPEStepInfo(image: 'assets/images/steps/off_gown.png', text: 'Gown', notes: [
-    "Unfasten gown ties, taking care that sleeves don't contact your body when reaching for ties",
     'Pull gown away from neck and shoulders, touching inside of gown only',
     'Turn gown inside out',
     'Fold or roll into a bundle and discard in a waste container'
