@@ -41,7 +41,6 @@ class MyApp extends StatelessWidget {
         backgroundColor: AppColors.appBackground,
         fontFamily: 'Inter',
       ),
-      debugShowCheckedModeBanner: false,
       initialRoute: Routes.introRouter,
       routes: {
         Routes.home: (context) => HomePage(),
