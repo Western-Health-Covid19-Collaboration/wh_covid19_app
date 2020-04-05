@@ -15,6 +15,9 @@ class PPEOnGuidance extends StatelessWidget {
     return Scaffold(
         backgroundColor: AppColors.green500,
         appBar: AppBar(
+          // Warning brightness interacts with SystemUiOverlayStyle
+          // See system_bars.dart comments
+          brightness: Brightness.light,
           backgroundColor: AppColors.appBarBackground,
           iconTheme: Styles.appBarIconTheme,
           title: Text(
@@ -26,8 +29,8 @@ class PPEOnGuidance extends StatelessWidget {
               icon: SvgPicture.asset(
                 'assets/images/icon/SVG/icon_infographic.svg',
               ),
-              onPressed:
-                () => Navigator.pushNamed(context, Routes.ppeOnInfographic),
+              onPressed: () =>
+                  Navigator.pushNamed(context, Routes.ppeOnInfographic),
             )
           ],
         ),

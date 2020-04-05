@@ -6,6 +6,7 @@ import '../models/disclaimer_model.dart';
 import '../routes.dart';
 import '../strings.dart';
 import '../style.dart';
+import '../utils/system_bars.dart';
 
 /// Disclaimer screen presented on app startup until the user agrees to the disclaimer
 class DisclaimerView extends StatefulWidget {
@@ -18,8 +19,10 @@ class _DisclaimerViewState extends State<DisclaimerView> {
   Future<void> _setAgreed() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool(Strings.settingDisclaimerAgreed, true);
-    await prefs.setString(Strings.settingDisclaimerVersion, Strings.disclaimerCurrentVersion);
-    await prefs.setString(Strings.settingDisclaimerAgreedDateTime, DateTime.now().toString());
+    await prefs.setString(
+        Strings.settingDisclaimerVersion, Strings.disclaimerCurrentVersion);
+    await prefs.setString(
+        Strings.settingDisclaimerAgreedDateTime, DateTime.now().toString());
   }
 
   // Check persisted values for disclaimer agreement if they exist
@@ -27,13 +30,17 @@ class _DisclaimerViewState extends State<DisclaimerView> {
     final prefs = await SharedPreferences.getInstance();
     final disclaimerValues = DisclaimerDetails();
 
-    disclaimerValues.agreed = prefs.getBool(Strings.settingDisclaimerAgreed) ?? false;
+    disclaimerValues.agreed =
+        prefs.getBool(Strings.settingDisclaimerAgreed) ?? false;
     // Disclaimer version flag starts at '1' normally
-    disclaimerValues.version = prefs.getString(Strings.settingDisclaimerVersion) ?? '0';
+    disclaimerValues.version =
+        prefs.getString(Strings.settingDisclaimerVersion) ?? '0';
 
-    final dateStamp = prefs.getString(Strings.settingDisclaimerAgreedDateTime) ?? '';
+    final dateStamp =
+        prefs.getString(Strings.settingDisclaimerAgreedDateTime) ?? '';
     if (dateStamp != '') {
-      disclaimerValues.dateStamp = DateFormat.yMMMd().add_jm().format(DateTime.parse(dateStamp));
+      disclaimerValues.dateStamp =
+          DateFormat.yMMMd().add_jm().format(DateTime.parse(dateStamp));
     }
 
     return disclaimerValues;
@@ -70,7 +77,9 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                             style: TextStyle(fontSize: 35.0),
                           ),
                         ),
-                        Text('This app is for Clinician and hospital staff use ONLY\n', style: Styles.textH3),
+                        Text(
+                            'This app is for Clinician and hospital staff use ONLY\n',
+                            style: Styles.textH3),
                         Text(
                           'WHAC19 is an educational tool and interactive cognitive aid for Western Health '
                           'Anaesthetists and ICU doctors 👩‍⚕ 👨‍⚕ who are managing patients with COVID-19 🤒 .'
@@ -85,7 +94,8 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                           'peer-reviewed and adapted, with permission, from College/Society guidelines.\n\n',
                           style: TextStyle(fontSize: 14.0),
                         ),
-                        Text('🛑 WHAC19 does not constitute official advice\n', style: Styles.textH3),
+                        Text('🛑 WHAC19 does not constitute official advice\n',
+                            style: Styles.textH3),
                         Text(
                           'It is your responsibility to ensure your practice is up to date, contextualised for the '
                           'patient and in accordance with your institution\'s practice 🤓.\n\n',
@@ -134,7 +144,8 @@ class _DisclaimerViewState extends State<DisclaimerView> {
   }
 
   /// Agree message - only viewed from Information page, shows has agreed to disclaimer, version and date/time agreed
-  Widget _agreedMessage(BuildContext context, dynamic version, dynamic dateStampString) {
+  Widget _agreedMessage(
+      BuildContext context, dynamic version, dynamic dateStampString) {
     return Container(
       padding: const EdgeInsets.all(16),
       child: Text(
@@ -146,18 +157,20 @@ class _DisclaimerViewState extends State<DisclaimerView> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      bottom: true,
-      top: true,
-      child: FutureBuilder<DisclaimerDetails>(
-        future: _getAgreed(),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return Scaffold(
+    return FutureBuilder<DisclaimerDetails>(
+      future: _getAgreed(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          // AnnotatedRegion set the system bar styles
+          return AnnotatedRegion(
+            value: systemBarStyle(context),
+            sized: false,
+            child: Scaffold(
               appBar: AppBar(
-                backgroundColor: Colors.white,
+                // Warning brightness interacts with SystemUiOverlayStyle
+                // See system_bars.dart comments
+                brightness: Brightness.light,
                 elevation: 4.0,
-                iconTheme: Styles.appBarIconTheme,
                 automaticallyImplyLeading: snapshot.data.agreed,
                 title: const Text(
                   Strings.disclaimerTitle,
@@ -174,29 +187,32 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                     left: 0.0,
                     right: 0.0,
                     child: Container(
-                      padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16, top: 16),
+                      padding: const EdgeInsets.only(
+                          left: 16, right: 16, bottom: 16, top: 16),
                       color: Colors.white,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
                           if (snapshot.data.agreed == false ||
-                              snapshot.data.version != Strings.disclaimerCurrentVersion)
+                              snapshot.data.version !=
+                                  Strings.disclaimerCurrentVersion)
                             _agreeButton(context)
                           else
-                            _agreedMessage(context, snapshot.data.version, snapshot.data.dateStamp),
+                            _agreedMessage(context, snapshot.data.version,
+                                snapshot.data.dateStamp),
                         ],
                       ),
                     ),
                   )
                 ],
               ),
-            );
-          } else {
-            return const CircularProgressIndicator();
-          }
-        }, // builder
-      ),
+            ),
+          );
+        } else {
+          return const CircularProgressIndicator();
+        }
+      }, // builder
     );
   } // build
 }

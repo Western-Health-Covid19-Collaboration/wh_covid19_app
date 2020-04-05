@@ -16,6 +16,9 @@ class PPEOffGuidanceMethod2 extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.grey50,
       appBar: AppBar(
+        // Warning brightness interacts with SystemUiOverlayStyle
+        // See system_bars.dart comments
+        brightness: Brightness.light,
         backgroundColor: AppColors.appBarBackground,
         iconTheme: Styles.appBarIconTheme,
         title: Text(
@@ -27,10 +30,10 @@ class PPEOffGuidanceMethod2 extends StatelessWidget {
             icon: SvgPicture.asset(
               'assets/images/icon/SVG/icon_infographic.svg',
             ),
-            onPressed:
-              () => Navigator.pushNamed(context, Routes.ppeOffGuidanceMethod2Infographic),
+            onPressed: () => Navigator.pushNamed(
+                context, Routes.ppeOffGuidanceMethod2Infographic),
           )
-        ]
+        ],
       ),
       body: ListView(
         children: <Widget>[

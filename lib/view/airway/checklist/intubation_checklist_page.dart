@@ -30,6 +30,9 @@ class IntubationChecklistPage extends StatelessWidget {
       length: intubationChecklist.length,
       child: Scaffold(
         appBar: AppBar(
+          // Warning brightness interacts with SystemUiOverlayStyle
+          // See system_bars.dart comments
+          brightness: Brightness.light,
           iconTheme: Styles.appBarIconTheme,
           backgroundColor: AppColors.green50,
           title: const Text(
@@ -41,8 +44,8 @@ class IntubationChecklistPage extends StatelessWidget {
               icon: SvgPicture.asset(
                 'assets/images/icon/SVG/icon_infographic.svg',
               ),
-              onPressed:
-                () => Navigator.pushNamed(context, Routes.intubationChecklistInfographic),
+              onPressed: () => Navigator.pushNamed(
+                  context, Routes.intubationChecklistInfographic),
             )
           ],
           bottom: TabBar(

@@ -5,6 +5,7 @@ import '../hard_data.dart';
 import '../strings.dart';
 import '../style.dart';
 import '../utils/color.dart';
+import '../utils/system_bars.dart';
 import '../widget/card_container.dart';
 import 'info_view.dart';
 
@@ -25,7 +26,7 @@ class _HomePageState extends State<HomePage> {
       width: width,
       fit: BoxFit.fill,
     );
-    
+
     return Container(
       width: width,
       child: mainHeader,
@@ -94,6 +95,9 @@ class _HomePageState extends State<HomePage> {
       return CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
+            // Warning brightness interacts with SystemUiOverlayStyle
+            // See system_bars.dart comments
+            brightness: Brightness.light,
             automaticallyImplyLeading: false,
             expandedHeight: appBarHeight.toDouble(),
             bottom: PreferredSize(
@@ -128,10 +132,17 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        // backgroundColor: AppColors.appBackground,
-        body: Builder(builder: (context) {
-      return _renderStack(context, _renderBody(context));
-    }));
+    // AnnotatedRegion set the system bar styles
+    return AnnotatedRegion(
+      value: systemBarStyle(context),
+      sized: false,
+      child: Scaffold(
+        body: Builder(
+          builder: (context) {
+            return _renderStack(context, _renderBody(context));
+          },
+        ),
+      ),
+    );
   }
 }

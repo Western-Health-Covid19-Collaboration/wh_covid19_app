@@ -24,9 +24,13 @@ class VentilationView extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.appBackground,
       appBar: AppBar(
-          backgroundColor: AppColors.appBarBackground,
-          iconTheme: Styles.appBarIconTheme,
-          title: Text(title, style: Styles.appBarTextStyle)),
+        // Warning brightness interacts with SystemUiOverlayStyle
+        // See system_bars.dart comments
+        brightness: Brightness.light,
+        backgroundColor: AppColors.appBarBackground,
+        iconTheme: Styles.appBarIconTheme,
+        title: Text(title, style: Styles.appBarTextStyle),
+      ),
       body: Container(
         color: AppColors.backgroundBlue,
         padding: const EdgeInsets.all(12),

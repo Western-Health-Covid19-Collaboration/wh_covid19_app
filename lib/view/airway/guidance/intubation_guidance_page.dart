@@ -14,6 +14,9 @@ class IntubationGuidancePage extends StatelessWidget {
       length: intubationGuide.length,
       child: Scaffold(
         appBar: AppBar(
+          // Warning brightness interacts with SystemUiOverlayStyle
+          // See system_bars.dart comments
+          brightness: Brightness.light,
           backgroundColor: AppColors.green50,
           title: const Text('Intubation Guide'),
           actions: <Widget>[
@@ -21,8 +24,8 @@ class IntubationGuidancePage extends StatelessWidget {
               icon: SvgPicture.asset(
                 'assets/images/icon/SVG/icon_infographic.svg',
               ),
-              onPressed:
-                () => Navigator.pushNamed(context, Routes.intubationGuidanceInfographic),
+              onPressed: () => Navigator.pushNamed(
+                  context, Routes.intubationGuidanceInfographic),
             )
           ],
           textTheme: Theme.of(context).textTheme,
