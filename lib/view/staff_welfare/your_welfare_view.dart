@@ -42,8 +42,7 @@ class YourWelfareView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   _buildSpacer(),
-                  const Text("It's okay to not be okay.",
-                      style: Styles.textH1),
+                  const Text("It's okay to not be okay.", style: Styles.textH1),
                   _buildSpacer(),
                   const Text('Please look after yourself.',
                       style: Styles.textH2),
@@ -54,8 +53,7 @@ class YourWelfareView extends StatelessWidget {
                       const Text('🛑'), 'STOP, BREATHE then think'),
                   _buildIconTextRow(const Text('🗞'), 'Limit news intake'),
                   _buildSpacer(),
-                  const Text('Take Care of Basic Needs',
-                      style: Styles.textH3),
+                  const Text('Take Care of Basic Needs', style: Styles.textH3),
                   _buildIconTextRow(const Text('🛌'), 'Rest'),
                   _buildIconTextRow(const Text('🥦'), 'Eat well'),
                   _buildIconTextRow(

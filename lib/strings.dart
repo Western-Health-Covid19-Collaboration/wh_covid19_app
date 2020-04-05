@@ -3,7 +3,8 @@ class Strings {
   /// Persistent storage strings used to persist data between app sessions
   static const String settingDisclaimerAgreed = 'disclaimer_agreed';
   static const String settingDisclaimerVersion = 'disclaimer_version';
-  static const String settingDisclaimerAgreedDateTime = 'disclaimer_agreed_date_time';
+  static const String settingDisclaimerAgreedDateTime =
+      'disclaimer_agreed_date_time';
 
   /// Disclaimer strings
   static const String disclaimerTitle = 'Disclaimer and conditions of use';
@@ -21,7 +22,8 @@ This app is designed to be used by Anaesthetic and Critical Care doctors at West
   // if they have previously accepted it. If the disclaimer has changed then users need to re-accept it.
   static const String disclaimerCurrentVersion = '1';
   static const String disclaimerButtonAgreeText = 'I Agree';
-  static const String disclaimerHaveAgreedText = 'You have agreed to the disclaimer';
+  static const String disclaimerHaveAgreedText =
+      'You have agreed to the disclaimer';
 
   /// Home strings
   static const String homeHeading1 = 'Look After Yourself';
