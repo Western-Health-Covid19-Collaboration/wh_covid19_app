@@ -29,7 +29,7 @@ class VentilationView extends StatelessWidget {
         )
       ],
       children: ventilationGuide
-          .map((e) => VentilationGuideContainer(guide: e.guideList))
+          .map((e) => VentilationGuideContainer(guideSections: e.guideList))
           .toList(),
     );
   }

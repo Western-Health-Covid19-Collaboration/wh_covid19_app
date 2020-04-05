@@ -5,12 +5,12 @@ import '../../style.dart';
 import '../../widget/lists/ventilation_guide_card.dart';
 
 class VentilationGuideContainer extends StatelessWidget {
-  final List<VentiliationGuideSection> guide;
+  final List<VentiliationGuideSection> guideSections;
 
-  const VentilationGuideContainer({this.guide});
+  const VentilationGuideContainer({this.guideSections});
 
   List<Widget> renderList() {
-    return guide
+    return guideSections
         .map((e) => VentilationGuideCard(
               sectionItem: e,
               backgroundColor: AppColors.appBackground,
