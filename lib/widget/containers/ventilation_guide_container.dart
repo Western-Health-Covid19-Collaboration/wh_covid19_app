@@ -9,7 +9,7 @@ class VentilationGuideContainer extends StatelessWidget {
 
   const VentilationGuideContainer({this.guideSections});
 
-  List<Widget> renderList() {
+  List<Widget> _renderList() {
     return guideSections
         .map((e) => VentilationGuideCard(
               sectionItem: e,
@@ -27,7 +27,7 @@ class VentilationGuideContainer extends StatelessWidget {
           child: ListView(
             children: [
               Container(padding: const EdgeInsetsDirectional.only(top: 10)),
-              ...renderList(),
+              ..._renderList(),
               Container(padding: const EdgeInsetsDirectional.only(bottom: 10)),
             ],
           ),
