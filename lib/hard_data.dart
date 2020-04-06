@@ -117,7 +117,10 @@ class HtmlTextScreenData {
 const String whURL = 'http://wh.cyphix.net/';
 
 // WH Novel Coronavirus information url
-const String whCoronavirusInfoURL = 'https://coronavirus.wh.org.au/#';
+const String whCoronavirusInfoURL = 'https://coronavirus.wh.org.au/';
+const String whAnaestheticMicrositeURL =
+    'https://whcovid19.wixsite.com/covid19';
+const String whIcuMicrositeURL = 'https://whicu2020.wixsite.com/icuquickguide';
 
 // Disclaimer text
 const String disclaimerBody = '''
