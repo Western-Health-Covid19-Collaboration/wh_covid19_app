@@ -13,14 +13,24 @@ SystemUiOverlayStyle systemBarStyle(BuildContext context) {
   // Copy the default style and then modify key values
   final lightStyle1 = SystemUiOverlayStyle.dark.copyWith(
     // Status bar - iOS and Android
-    statusBarBrightness: Brightness.light, // iOS only
-    statusBarColor: Colors.transparent, // Android v6 and above
-    statusBarIconBrightness: Brightness.dark, // Android v6 and above
+    // statusBarBrightness - Only honored in iOS
+    statusBarBrightness: Brightness.light,
+    // statusBarColor - Only honored in Android version M (API 23) and greater
+    statusBarColor: Colors.transparent,
+    // statusBarIconBrightness - Only honored in Android version M (API 23)
+    // and greater
+    statusBarIconBrightness: Brightness.dark,
 
     // Navigation bar - All Android only
-    systemNavigationBarColor: Colors.transparent, // Android v8 and above
-    systemNavigationBarDividerColor: Colors.transparent, // Android v9 and above
-    systemNavigationBarIconBrightness: Brightness.dark, // Android v8 and above
+    // systemNavigationBarColor - Only honored in Android versions O (API 26)
+    // and greater
+    systemNavigationBarColor: Colors.transparent,
+    // systemNavigationBarDividerColor - Only honored in Android versions P
+    // (API 28) and greater.
+    systemNavigationBarDividerColor: Colors.transparent,
+    // systemNavigationBarIconBrightness - Only honored in Android versions O
+    // (API 26) and greater
+    systemNavigationBarIconBrightness: Brightness.dark,
   );
 
   return lightStyle1;

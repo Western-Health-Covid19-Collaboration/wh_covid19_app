@@ -54,7 +54,6 @@ abstract class AppColors {
 }
 
 // TODO: Convert members to top level finals/consts or functions.
-// ignore: avoid_classes_with_only_static_members
 abstract class Styles {
   // Themes
   static final ThemeData appThemeLight = ThemeData.light().copyWith(
