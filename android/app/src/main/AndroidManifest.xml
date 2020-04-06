@@ -7,7 +7,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="wh_covid19"
+        android:label="WHAC19"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

@@ -12,6 +12,9 @@ class SBSGuideView extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.appBarBackground,
       appBar: AppBar(
+        // Warning brightness interacts with SystemUiOverlayStyle
+        // See system_bars.dart comments
+        brightness: Brightness.light,
         backgroundColor: Colors.white,
         iconTheme: Styles.appBarIconTheme,
         title: Text(

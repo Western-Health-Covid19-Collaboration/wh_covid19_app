@@ -15,6 +15,9 @@ class PPEOnGuidance extends StatelessWidget {
     return Scaffold(
         backgroundColor: AppColors.green500,
         appBar: AppBar(
+          // Warning brightness interacts with SystemUiOverlayStyle
+          // See system_bars.dart comments
+          brightness: Brightness.light,
           backgroundColor: AppColors.appBarBackground,
           iconTheme: Styles.appBarIconTheme,
           title: Text(
