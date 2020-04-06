@@ -13,6 +13,9 @@ class ImageViewTemplate extends StatelessWidget {
     return Scaffold(
       backgroundColor: card.color,
       appBar: AppBar(
+        // Warning brightness interacts with SystemUiOverlayStyle
+        // See system_bars.dart comments
+        brightness: Brightness.light,
         title: Text(card.title),
       ),
       body: Container(

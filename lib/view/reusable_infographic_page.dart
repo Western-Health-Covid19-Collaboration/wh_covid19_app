@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../style.dart';
 import '../widget/reusable_zoomable_widget.dart';
 
@@ -17,6 +18,9 @@ class InfographicPage extends StatelessWidget {
     return Scaffold(
         backgroundColor: backgroundColor,
         appBar: AppBar(
+          // Warning brightness interacts with SystemUiOverlayStyle
+          // See system_bars.dart comments
+          brightness: Brightness.light,
           backgroundColor: toolBarColor,
           iconTheme: Styles.appBarIconTheme,
           title: Text(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+
 import '../../models/intubation_guide.dart';
 import '../../style.dart';
 
-///
 /// Renders a IntubationContent item, which is a data structure
 /// consisting of a section title,
 /// then list of sections containing icon, title and subtitle.

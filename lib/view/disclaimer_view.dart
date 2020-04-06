@@ -6,6 +6,7 @@ import '../models/disclaimer_model.dart';
 import '../routes.dart';
 import '../strings.dart';
 import '../style.dart';
+import '../utils/system_bars.dart';
 
 /// Disclaimer screen presented on app startup until the user agrees to the disclaimer
 class DisclaimerView extends StatefulWidget {
@@ -156,18 +157,20 @@ class _DisclaimerViewState extends State<DisclaimerView> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      bottom: true,
-      top: true,
-      child: FutureBuilder<DisclaimerDetails>(
-        future: _getAgreed(),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return Scaffold(
+    return FutureBuilder<DisclaimerDetails>(
+      future: _getAgreed(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          // AnnotatedRegion set the system bar styles
+          return AnnotatedRegion(
+            value: systemBarStyle(context),
+            sized: false,
+            child: Scaffold(
               appBar: AppBar(
-                backgroundColor: Colors.white,
+                // Warning brightness interacts with SystemUiOverlayStyle
+                // See system_bars.dart comments
+                brightness: Brightness.light,
                 elevation: 4.0,
-                iconTheme: Styles.appBarIconTheme,
                 automaticallyImplyLeading: snapshot.data.agreed,
                 title: const Text(
                   Strings.disclaimerTitle,
@@ -204,12 +207,12 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                   )
                 ],
               ),
-            );
-          } else {
-            return const CircularProgressIndicator();
-          }
-        }, // builder
-      ),
+            ),
+          );
+        } else {
+          return const CircularProgressIndicator();
+        }
+      }, // builder
     );
   } // build
 }

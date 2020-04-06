@@ -14,6 +14,9 @@ class ListViewTemplate extends StatelessWidget {
     return Scaffold(
       backgroundColor: color,
       appBar: AppBar(
+        // Warning brightness interacts with SystemUiOverlayStyle
+        // See system_bars.dart comments
+        brightness: Brightness.light,
         title: Text(title),
       ),
       body: Container(

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'hard_data.dart';
 import 'intro_router.dart';
 import 'routes.dart';
+import 'strings.dart';
 import 'style.dart';
 import 'view/airway/checklist/intubation_checklist_infographic_page.dart';
 import 'view/airway/checklist/intubation_checklist_page.dart';
@@ -36,12 +37,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'EGBA',
-      theme: ThemeData(
-        primaryColor: Colors.green,
-        backgroundColor: AppColors.appBackground,
-        fontFamily: 'Inter',
-      ),
+      title: Strings.appName,
+      theme: Styles.appThemeLight,
       initialRoute: Routes.introRouter,
       routes: {
         Routes.home: (context) => HomePage(),

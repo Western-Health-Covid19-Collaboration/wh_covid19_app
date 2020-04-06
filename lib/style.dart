@@ -55,7 +55,16 @@ abstract class AppColors {
 
 // TODO: Convert members to top level finals/consts or functions.
 abstract class Styles {
-  // Named styles
+  // Themes
+  static final ThemeData appThemeLight = ThemeData.light().copyWith(
+    brightness: Brightness.light,
+    primaryColor: Colors.white,
+    backgroundColor: AppColors.appBackground,
+    // Icon themes
+    iconTheme: ThemeData.light().iconTheme.copyWith(
+          color: AppColors.appBarIcon,
+        ),
+  );
 
   // App bar styles
   static const TextStyle appBarTextStyle = Styles.textH2;
