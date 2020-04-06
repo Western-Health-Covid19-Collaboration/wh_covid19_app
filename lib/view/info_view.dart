@@ -61,6 +61,12 @@ class InfoView extends StatelessWidget {
       height: _cardHeight,
       elevation: _cardElevation,
     ),
+    ReusableCard(
+        title: 'Third-Party Licenses',
+        color: _cardColor,
+        height: _cardHeight,
+        elevation: _cardElevation,
+        routeTo: Routes.licenses),
   ];
 
   @override
@@ -75,7 +81,7 @@ class InfoView extends StatelessWidget {
         iconTheme: Styles.appBarIconTheme,
         title: Text(
           title,
-          style: Styles.appBarTextStyle,
+          style: Styles.textH5,
         ),
       ),
       body: Padding(

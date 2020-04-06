@@ -37,4 +37,8 @@ This app is designed to be used by Anaesthetic and Critical Care doctors at West
   static const String ppeTitle = 'PPE Technique';
   static const String ppeDonningTitle = 'Donning Personal Protective Equipment';
   static const String ppeDoffingTitle = 'Doffing Personal Protective Equipment';
+
+  static const String licencesTitle = 'Third-Party Licenses';
+  static const String licencesMsg =
+      'WHAC19 is built using open source software';
 }

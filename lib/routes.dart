@@ -15,6 +15,7 @@ class Routes {
   static const sbsGuidance = '/sbs_guidance';
   static const info = '/info';
   static const disclaimer = '/disclaimer';
+  static const licenses = '/licenses';
   static const introRouter = '/';
 
   static const _icuNonIntensivist = '/icu_non_intensivist';
