@@ -36,6 +36,9 @@ class TabViewTemplate extends StatelessWidget {
       length: tabs.length,
       child: Scaffold(
         appBar: AppBar(
+          // Warning brightness interacts with SystemUiOverlayStyle
+          // See system_bars.dart comments
+          brightness: Brightness.light,
           backgroundColor: color,
           iconTheme: Styles.appBarIconTheme,
           textTheme: Theme.of(context).textTheme,

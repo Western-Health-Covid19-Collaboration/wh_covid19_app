@@ -1,3 +1,7 @@
+---- Monday 6th April, 2020 ----
+* Changed app icon name to WHAC19
+* Fixed status bar and navigation bar styling
+
 ---- Sunday 5th April, 2020 ----
 * Added Ventilation Guide screen
 

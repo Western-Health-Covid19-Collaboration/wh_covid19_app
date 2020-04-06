@@ -16,6 +16,9 @@ class PPEOffGuidanceMethod1 extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.grey50,
       appBar: AppBar(
+          // Warning brightness interacts with SystemUiOverlayStyle
+          // See system_bars.dart comments
+          brightness: Brightness.light,
           backgroundColor: AppColors.appBarBackground,
           iconTheme: Styles.appBarIconTheme,
           title: Text(

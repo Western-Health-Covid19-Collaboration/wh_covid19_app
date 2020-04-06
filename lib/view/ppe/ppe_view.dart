@@ -102,6 +102,9 @@ class _PPEViewState extends State<PPEView> {
     return Scaffold(
       backgroundColor: AppColors.appBackground,
       appBar: AppBar(
+        // Warning brightness interacts with SystemUiOverlayStyle
+        // See system_bars.dart comments
+        brightness: Brightness.light,
         backgroundColor: AppColors.appBarBackground,
         iconTheme: Styles.appBarIconTheme,
         title: Text(
