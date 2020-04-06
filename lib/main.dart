@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'hard_data.dart';
 import 'intro_router.dart';
 import 'routes.dart';
+import 'strings.dart';
 import 'style.dart';
 import 'view/airway/checklist/intubation_checklist_infographic_page.dart';
 import 'view/airway/checklist/intubation_checklist_page.dart';
@@ -35,12 +36,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'EGBA',
-      theme: ThemeData(
-        primaryColor: Colors.green,
-        backgroundColor: AppColors.appBackground,
-        fontFamily: 'Inter',
-      ),
+      title: Strings.appName,
+      theme: Styles.appThemeLight,
       initialRoute: Routes.introRouter,
       routes: {
         Routes.home: (context) => HomePage(),
@@ -51,10 +48,10 @@ class MyApp extends StatelessWidget {
         Routes.staffWelfare: (context) => YourWelfareView(),
         Routes.sbsGuidance: (context) => SBSGuideView(),
         Routes.ventilation: (context) => VentilationView(),
-        Routes.ventilationInitialActions: (context) =>
-            _navigateScreenData(context, routeToScreenData[Routes.ventilationInitialActions]),
-        Routes.ventilationAdjuncts: (context) =>
-            _navigateScreenData(context, routeToScreenData[Routes.ventilationAdjuncts]),
+        Routes.ventilationInitialActions: (context) => _navigateScreenData(
+            context, routeToScreenData[Routes.ventilationInitialActions]),
+        Routes.ventilationAdjuncts: (context) => _navigateScreenData(
+            context, routeToScreenData[Routes.ventilationAdjuncts]),
         Routes.generalCare: (context) => GeneralCareView(),
         Routes.tipsJuniorStaff: (context) => TipsJuniorStaffView(),
         Routes.introRouter: (context) => IntroRouter(),
@@ -123,11 +120,13 @@ class MyApp extends StatelessWidget {
       future: data.readFile(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return HtmlTextCardViewTemplate(title: data.title, bgColor: data.bgColor, html: '');
+          return HtmlTextCardViewTemplate(
+              title: data.title, bgColor: data.bgColor, html: '');
         } else if (snapshot.hasError) {
           return Text('Error: ${snapshot.error}');
         } else {
-          return HtmlTextCardViewTemplate(title: data.title, bgColor: data.bgColor, html: snapshot.data);
+          return HtmlTextCardViewTemplate(
+              title: data.title, bgColor: data.bgColor, html: snapshot.data);
         }
       },
     );

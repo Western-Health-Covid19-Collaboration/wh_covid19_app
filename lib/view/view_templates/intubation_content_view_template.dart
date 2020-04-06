@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+
 import '../../models/intubation_guide.dart';
 import '../../style.dart';
 
-///
 /// Renders a IntubationContent item, which is a data structure
 /// consisting of a section title,
 /// then list of sections containing icon, title and subtitle.
 class IntubationContentViewTemplate extends StatelessWidget {
   final List<Object> flatItems;
+  final Color color;
 
-  IntubationContentViewTemplate({Key key, IntubationContent content})
+  IntubationContentViewTemplate(
+      {Key key,
+      IntubationContent content,
+      this.color = AppColors.backgroundGreen})
       : flatItems = content.sections
             .expand((e) => [if (e.name != null) e, ...e.items])
             .toList(),
@@ -19,7 +23,7 @@ class IntubationContentViewTemplate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppColors.backgroundGreen,
+      color: color,
       child: ListView.builder(
         itemCount: flatItems.length,
         itemBuilder: (context, index) {
@@ -46,7 +50,10 @@ class IntubationContentViewTemplate extends StatelessWidget {
                               Text(item.title, style: Styles.textH4),
                               if (item.subtitle != null) ...[
                                 const SizedBox(height: 4),
-                                Text(item.subtitle)
+                                Text(
+                                  item.subtitle,
+                                  style: Styles.textP,
+                                )
                               ],
                             ],
                           ),

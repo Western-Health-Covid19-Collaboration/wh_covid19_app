@@ -1,19 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
+import 'package:provider/provider.dart';
 import '../../../hard_data.dart';
+import '../../../models/IntubationChecklist.dart';
 import '../../../routes.dart';
 import '../../../style.dart';
 import '../../../widget/containers/intubation_checklist_container.dart';
+import '../../view_templates/tab_view_template.dart';
+
+/// Maintains the selected state of every checklist item.
+/// Created by the IntubationChecklistPage screen, so that all checklists
+/// are reset when screen is destroyed.
+class IntubationChecklistSelectionProvider extends ChangeNotifier {
+  final Set<IntubationChecklistItem> _checkedState = {};
+
+  bool isChecked(IntubationChecklistItem item) {
+    return _checkedState.contains(item);
+  }
+
+  void setChecked(IntubationChecklistItem item, {bool checked = true}) {
+    if (checked) {
+      _checkedState.add(item);
+    } else {
+      _checkedState.remove(item);
+    }
+    notifyListeners();
+  }
+}
 
 class IntubationChecklistPage extends StatelessWidget {
-  List<Widget> getChecklistTitles() {
+  List<String> getChecklistTitles() {
     return intubationChecklist
         .map(
-          (item) => Padding(
-              padding: const EdgeInsets.fromLTRB(18, 12, 18, 12),
-              child: Text(item.title)),
+          (item) => item.title,
         )
         .toList();
   }
@@ -26,36 +46,23 @@ class IntubationChecklistPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: intubationChecklist.length,
-      child: Scaffold(
-        appBar: AppBar(
-          iconTheme: Styles.appBarIconTheme,
-          backgroundColor: AppColors.green50,
-          title: const Text(
-            'Intubation Checklist',
-            style: Styles.textSemiBold,
-          ),
+    return ChangeNotifierProvider(
+        create: (context) => IntubationChecklistSelectionProvider(),
+        child: TabViewTemplate(
+          'Intubation Checklist',
+          tabs: getChecklistTitles(),
+          color: AppColors.green50,
+          indicatorColor: AppColors.green900,
           actions: <Widget>[
             IconButton(
               icon: SvgPicture.asset(
                 'assets/images/icon/SVG/icon_infographic.svg',
               ),
-              onPressed:
-                () => Navigator.pushNamed(context, Routes.intubationChecklistInfographic),
+              onPressed: () => Navigator.pushNamed(
+                  context, Routes.intubationChecklistInfographic),
             )
           ],
-          bottom: TabBar(
-            labelColor: AppColors.blackAlpha800,
-            labelStyle: Styles.textSemiBold,
-            unselectedLabelColor: AppColors.tabBarDeselectedText,
-            indicatorColor: AppColors.green900,
-            isScrollable: true,
-            tabs: getChecklistTitles(),
-          ),
-        ),
-        body: TabBarView(children: renderBody()),
-      ),
-    );
+          children: renderBody(),
+        ));
   }
 }

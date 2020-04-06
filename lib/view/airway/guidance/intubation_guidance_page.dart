@@ -6,42 +6,28 @@ import '../../../hard_data.dart';
 import '../../../routes.dart';
 import '../../../style.dart';
 import '../../view_templates/intubation_content_view_template.dart';
+import '../../view_templates/tab_view_template.dart';
 
 class IntubationGuidancePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: intubationGuide.length,
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: AppColors.green50,
-          title: const Text('Intubation Guide'),
-          actions: <Widget>[
-            IconButton(
-              icon: SvgPicture.asset(
-                'assets/images/icon/SVG/icon_infographic.svg',
-              ),
-              onPressed:
-                () => Navigator.pushNamed(context, Routes.intubationGuidanceInfographic),
-            )
-          ],
-          textTheme: Theme.of(context).textTheme,
-          iconTheme: Styles.appBarIconTheme,
-          bottom: TabBar(
-            labelColor: AppColors.blackAlpha800,
-            labelStyle: Styles.textSemiBold,
-            unselectedLabelColor: AppColors.tabBarDeselectedText,
-            indicatorColor: AppColors.green900,
-            tabs: intubationGuide.map((e) => Tab(text: e.name)).toList(),
-            isScrollable: true,
+    return TabViewTemplate(
+      'Intubation Guide',
+      tabs: intubationGuide.map((e) => e.name).toList(),
+      color: AppColors.green50,
+      indicatorColor: AppColors.green900,
+      actions: <Widget>[
+        IconButton(
+          icon: SvgPicture.asset(
+            'assets/images/icon/SVG/icon_infographic.svg',
           ),
-        ),
-        body: TabBarView(
-          children: intubationGuide
-              .map((e) => IntubationContentViewTemplate(content: e))
-              .toList(),
-        ),
-      ),
+          onPressed: () => Navigator.pushNamed(
+              context, Routes.intubationGuidanceInfographic),
+        )
+      ],
+      children: intubationGuide
+          .map((e) => IntubationContentViewTemplate(content: e))
+          .toList(),
     );
   }
 }
