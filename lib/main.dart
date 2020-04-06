@@ -7,6 +7,7 @@ import 'strings.dart';
 import 'style.dart';
 import 'view/airway/checklist/intubation_checklist_infographic_page.dart';
 import 'view/airway/checklist/intubation_checklist_page.dart';
+import 'view/airway/extubation/extubation_guidance_page.dart';
 import 'view/airway/extubation/extubation_infographic_page.dart';
 import 'view/airway/guidance/intubation_guidance_infographic_page.dart';
 import 'view/airway/guidance/intubation_guidance_page.dart';
@@ -70,8 +71,13 @@ class MyApp extends StatelessWidget {
               builder: (context) => IntubationGuidancePage(),
               fullscreenDialog: false,
             );
-          case Routes.extubation:
-            return MaterialPageRoute<ExtubationInfographicPage>(
+          case Routes.extubationGuidance:
+            return MaterialPageRoute<void>(
+              builder: (context) => ExtubationGuidancePage(),
+              fullscreenDialog: false,
+            );
+          case Routes.extubationGuidanceInfographic:
+            return MaterialPageRoute<void>(
               builder: (context) => ExtubationInfographicPage(),
               fullscreenDialog: false,
             );

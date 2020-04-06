@@ -46,7 +46,7 @@ const List<ReusableCard> airway = [
     title: 'Extubation Guide',
     description: 'Step by step guide',
     color: AppColors.backgroundGreen,
-    routeTo: Routes.extubation,
+    routeTo: Routes.extubationGuidance,
   )
 ];
 
@@ -382,6 +382,67 @@ const List<IntubationContent> intubationGuide = [
       IntubationItem('Debrief and share lessons', icon: '💬'),
     ])
   ])
+];
+
+const List<IntubationContent> extubationGuide = [
+  IntubationContent('Planning', [
+    IntubationSection(items: [
+      IntubationItem('Is patient clinically stable to extubate now?'),
+      IntubationItem('Assemble team',
+          subtitle: 'Anaesthetists and anaesthetic nurse ONLY'),
+      IntubationItem('Discuss extubation plan', icon: '💬'),
+      IntubationItem(
+          'Consider strategies to reduce coughing if you are familiar with them',
+          subtitle: '• Lignocaine\n'
+              '• Remifentanil\n'
+              '• Spont breathing deep extubation\n'
+              '• Dexmedetomidine\n'
+              '• LMA exchange',
+          icon: '🤔'),
+    ])
+  ]),
+  IntubationContent('Prepare', [
+    IntubationSection(items: [
+      IntubationItem('Have equipment available for reintubation', icon: '⚙'),
+      IntubationItem('Have a runner in the anaesthetic bay', icon: '🏃'),
+      IntubationItem(
+          'Ensure viral filter and etCO2 ready to be connected to disposable mask following extubation',
+          icon: '🦠'),
+    ])
+  ]),
+  IntubationContent('PPE', [
+    IntubationSection(items: [
+      IntubationItem('All staff in the room must wear FULL PPE',
+          subtitle: 'Including N95 mask and eye protection'),
+      IntubationItem(
+          'Buddy check each other PPE prior to performing extubation',
+          icon: '😊'),
+    ])
+  ]),
+  IntubationContent('Perform', [
+    IntubationSection(items: [
+      IntubationItem('Extubate patient with cuff down and APL fully open',
+          subtitle: 'NO positive pressure'),
+      IntubationItem('Carefully discard ETT into clinical waste bin',
+          icon: '🚮'),
+      IntubationItem('Immediately apply face mask to patient with 2 hand grip',
+          subtitle: 'Over nasal prongs if present'),
+      IntubationItem(
+          'Continue to apply face mask until able to protect their own airway'),
+      IntubationItem(
+          'Switch to surgical mask with hudson or nasal prongs over the top'),
+    ])
+  ]),
+  IntubationContent('Post-ETT', [
+    IntubationSection(items: [
+      IntubationItem(
+          'Carefully discard face mask and other disposable equipment into clinical waste',
+          icon: '🚮'),
+      IntubationItem('Patient must wear surgical mask on transfer back to ward',
+          icon: '😷'),
+      IntubationItem('Doff PPE with buddy check', icon: '😊'),
+    ])
+  ]),
 ];
 
 const List<VentilationGuideItem> ventilationGuide = [
