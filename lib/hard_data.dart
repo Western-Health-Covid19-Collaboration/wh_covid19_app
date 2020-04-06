@@ -4,6 +4,7 @@ import 'package:flutter/services.dart' show rootBundle;
 
 import 'models/IntubationChecklist.dart';
 import 'models/PPEStepInfo.dart';
+import 'models/icu_dailyRound_steps.dart';
 import 'models/intubation_guide.dart';
 import 'models/ventilation_guide.dart';
 import 'routes.dart';
@@ -550,7 +551,7 @@ const List<VentilationGuideItem> ventilationGuide = [
           VentilationGuideItemListItem(
               title: 'Balance the risks of organ support', icon: '⚖️'),
           VentilationGuideItemListItem(
-              title: 'Minimise the risks of  cross-infection (see PPE)',
+              title: 'Minimise the risks of cross-infection (see PPE)',
               icon: '😷'),
         ],
       )
@@ -619,4 +620,15 @@ const List<VentilationGuideItem> ventilationGuide = [
       ),
     ],
   ),
+];
+
+List<ICUDailyRoundSteps> icuDailyRoundSteps = [
+  const ICUDailyRoundSteps(heading: 'A - Airway', sectionList: [
+    ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
+      ICUDailyRoundStepSubsection(heading: 'ETT (Endotracheal Tube)', notice: '', list: [
+        ICUDailyRoundItem(icon: '👉', title: 'Size?'),
+        ICUDailyRoundItem(icon: '👉', title: 'Position?'),
+      ])
+    ])
+  ])
 ];
