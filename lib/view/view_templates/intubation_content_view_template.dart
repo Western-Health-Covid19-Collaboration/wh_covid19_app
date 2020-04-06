@@ -30,35 +30,36 @@ class IntubationContentViewTemplate extends StatelessWidget {
           final item = flatItems[index];
           if (item is IntubationItem) {
             return Card(
-              margin: const EdgeInsets.fromLTRB(16, 8, 16, 0),
-              shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(8))),
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Stack(
-                  children: <Widget>[
-                    Text(
-                      item.icon,
-                      style: Styles.textH4,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 40),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(item.title, style: Styles.textH4),
-                          if (item.subtitle != null) ...[
-                            const SizedBox(height: 4),
-                            Text(item.subtitle)
-                          ],
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            );
+                margin: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+                shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(8))),
+                child: Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Stack(
+                      children: <Widget>[
+                        Text(
+                          item.icon,
+                          style: Styles.textH4,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 40),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(item.title, style: Styles.textH4),
+                              if (item.subtitle != null) ...[
+                                const SizedBox(height: 4),
+                                Text(
+                                  item.subtitle,
+                                  style: Styles.textP,
+                                )
+                              ],
+                            ],
+                          ),
+                        )
+                      ],
+                    )));
           } else if (item is IntubationSection) {
             return Padding(
                 padding: const EdgeInsets.fromLTRB(16, 24, 16, 0),
