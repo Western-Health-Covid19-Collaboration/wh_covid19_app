@@ -15,7 +15,9 @@ class ReusableCard extends StatelessWidget {
   /// Route to view
   final String routeTo;
 
-  /// Min height of card (default 84)
+  /// Min height of card _content_ (default 84).
+  /// Note: Add the ReusableCardBase's padding (12*2=24) to determine the total
+  /// height
   final double height;
 
   /// Elevation of card

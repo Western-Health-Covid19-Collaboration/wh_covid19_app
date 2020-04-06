@@ -9,7 +9,7 @@ import '../widget/reusable_card.dart';
 
 class InfoView extends StatelessWidget {
   final title = 'Information';
-  static const _cardHeight = 34.0;
+  static const _cardHeight = 40.0;
   static const _cardColor = AppColors.purple50;
   static const _cardElevation = 1.0;
 
@@ -110,11 +110,17 @@ class InfoView extends StatelessWidget {
 
   List<Widget> _buildAbout() {
     return [
-      Image.asset(
-        'assets/images/icon/high_res_icon.png',
-        height: 84,
-        width: 84,
-      ),
+      Center(
+          child: Container(
+              decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 12, 16, 62),
+                  borderRadius: BorderRadius.circular(6)),
+              padding: const EdgeInsets.all(4),
+              child: Image.asset(
+                'assets/images/icon/high_res_icon.png',
+                height: 50,
+                width: 50,
+              ))),
       _buildSpacer(height: 8),
       Center(child: _buildVersionTextWidget()),
       _buildSpacer(height: 8),
