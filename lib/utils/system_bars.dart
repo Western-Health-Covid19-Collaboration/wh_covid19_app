@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 /// System bars styling is set
-// The AppBar & SliverAppBar widgets will automatically set the status bar
-// brightness when they are rendered. If there is no Nav/AppBar on the first
-// page, then you can get a similar effect using the AnnotatedRegion widget
-//
-// If you have an AppBar or SliverAppBar then it will interfere with your
-// calls to SystemChrome.setSystemUIOverlayStyle and you can instead just
-// change the brightness property on your AppBar.
+/// The AppBar & SliverAppBar widgets will automatically set the status bar
+/// brightness when they are rendered. If there is no Nav/AppBar on the first
+/// page, then you can get a similar effect using the AnnotatedRegion widget
+///
+/// If you have an AppBar or SliverAppBar then it will interfere with your
+/// calls to SystemChrome.setSystemUIOverlayStyle and you can instead just
+/// change the brightness property on your AppBar.
 SystemUiOverlayStyle systemBarStyle(BuildContext context) {
   // Copy the default style and then modify key values
   final lightStyle1 = SystemUiOverlayStyle.dark.copyWith(
