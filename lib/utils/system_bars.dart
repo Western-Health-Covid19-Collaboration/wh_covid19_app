@@ -10,7 +10,8 @@ import 'package:flutter/services.dart';
 /// calls to SystemChrome.setSystemUIOverlayStyle and you can instead just
 /// change the brightness property on your AppBar.
 SystemUiOverlayStyle systemBarStyle(BuildContext context) {
-  // Copy the default style and then modify key values
+  // dark - System overlays should be drawn with a dark color. Intended for
+  // applications with a light background.
   final lightStyle1 = SystemUiOverlayStyle.dark.copyWith(
     // Status bar - iOS and Android
     // statusBarBrightness - Only honored in iOS
