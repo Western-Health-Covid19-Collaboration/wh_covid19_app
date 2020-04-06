@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../hard_data.dart';
@@ -23,11 +24,21 @@ class YourWelfareView extends StatelessWidget {
         iconTheme: Styles.appBarIconTheme,
         title: Text(
           _title,
-          style: Styles.appBarTextStyle,
+          style: Styles.textSemiBold.copyWith(color: AppColors.blackAlpha800),
         ),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.call),
+            icon: Stack(
+              children: <Widget>[
+                Align(alignment: Alignment.center, child: Icon(Icons.call)),
+                Align(
+                    alignment: Alignment.topRight,
+                    child: Icon(
+                      Icons.call_made,
+                      size: 20,
+                    ))
+              ],
+            ),
             onPressed: () => UrlUtils.launchWithBrowser(whURL),
           ),
         ],
@@ -93,7 +104,10 @@ class YourWelfareView extends StatelessWidget {
             padding: const EdgeInsets.only(right: 16),
             child: icon,
           ),
-          Expanded(child: Text(text, style: Styles.textP)),
+          Expanded(
+              child: Text(text,
+                  style:
+                      Styles.textP.copyWith(color: AppColors.blackAlpha900))),
         ],
       ),
     );
