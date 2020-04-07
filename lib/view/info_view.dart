@@ -69,7 +69,7 @@ class InfoView extends StatelessWidget {
       height: _cardHeight,
       elevation: _cardElevation,
     ),
-    ReusableCard(
+    const ReusableCard(
         title: 'Third-Party Licenses',
         height: _cardHeight,
         elevation: _cardElevation,
