@@ -37,7 +37,7 @@ class ICUDailyRoundStepsContainer extends StatelessWidget {
 
   const ICUDailyRoundStepsContainer({this.sections});
 
-  List<Widget> __renderList() {
+  List<Widget> _renderList() {
     return sections
         .map((e) => ICUDailyRoundStepsCard(section: e))
         .toList();
@@ -45,7 +45,7 @@ class ICUDailyRoundStepsContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ICUDailyRoundContainer(list: __renderList());
+    return ICUDailyRoundContainer(list: _renderList());
   }
 }
 
@@ -55,7 +55,7 @@ class ICUDailyRoundChecklistContainer extends StatelessWidget {
 
   const ICUDailyRoundChecklistContainer({this.sectionList});
 
-  List<Widget> __renderList() {
+  List<Widget> _renderList() {
     return sectionList
         .map((e) => ChecklistItemWidget<ICUDailyRoundChecklistSection>(
               item: e,
@@ -68,6 +68,6 @@ class ICUDailyRoundChecklistContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ICUDailyRoundContainer(list: __renderList());
+    return ICUDailyRoundContainer(list: _renderList());
   }
 }
