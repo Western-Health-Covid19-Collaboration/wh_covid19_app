@@ -5,8 +5,8 @@ import 'package:provider/provider.dart';
 import '../../../hard_data.dart';
 import '../../../models/icu_daily_round_checklist.dart';
 import '../../../style.dart';
-import '../../../view/airway/checklist/intubation_checklist_page.dart';
 import '../../../widget/containers/icu_daily_round_container.dart';
+import '../../../widget/lists/checklist_card.dart';
 import '../../view_templates/tab_view_template.dart';
 
 class ICUDailyRoundView extends StatelessWidget {
