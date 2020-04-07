@@ -4,6 +4,7 @@ import '../../models/icu_daily_round_checklist.dart';
 import '../../models/icu_daily_round_steps.dart';
 import '../../style.dart';
 import '../../widget/lists/checklist_card.dart';
+import '../../widget/lists/icu_daily_round_checklist_card.dart';
 import '../../widget/lists/icu_daily_round_steps_card.dart';
 
 // Base Container
@@ -57,32 +58,11 @@ class ICUDailyRoundChecklistContainer extends StatelessWidget {
   List<Widget> __renderList() {
     return sectionList
         .map((e) => ChecklistItemWidget(
-              content: __renderContent(e),
+              content: ICUDailyRoundChecklistCard(item: e),
               backgroundColor: AppColors.appBackground,
               selectedBackgroundColor: AppColors.blue50,
             ))
         .toList();
-  }
-
-  Widget __renderContent(ICUDailyRoundChecklistSection item) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 0, 0, 0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          Text(
-            item.heading,
-            style: Styles.textH4,
-          ),
-          Text(
-            item.comment,
-            style: Styles.textP,
-          )
-        ],
-      ),
-    );
   }
 
   @override

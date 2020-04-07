@@ -756,15 +756,39 @@ List<ICUDailyRoundSteps> icuDailyRoundSteps = [
 const List<ICUDailyRoundChecklist> icuDailyRoundChecklist = [
   ICUDailyRoundChecklist(heading: 'Final Check', sectionList: [
     ICUDailyRoundChecklistSection(
-      heading: 'Anaesthesia contacted if difficulty anticipated',
-      comment: 'hehehehe'
+      heading: 'Resuscitation status',
+      comment: 'Goals of care determined?'
     ),
     ICUDailyRoundChecklistSection(
-      heading: 'Team Introduced:',
-      comment: 'ehheheheheheh'),
+      heading: 'Feeds',
+      comment: 'Charted and considered?'),
     ICUDailyRoundChecklistSection(
-      heading: 'Problems Anticipated?',
-      comment: 'ooooooooooo'
+      heading: 'Lines',
+      comment: 'Can they be removed?'
+    ),
+    ICUDailyRoundChecklistSection(
+      heading: 'Aperients',
+      comment: 'When were bowels last open? Regular laxatives and early insertion of faecal containment device'
+    ),
+    ICUDailyRoundChecklistSection(
+      heading: 'Thromboprophylaxis',
+      comment: 'In general enoxaparin 40mg/d (20mg/d with severe renal failure)'
+    ),
+    ICUDailyRoundChecklistSection(
+      heading: 'Communication / Family',
+      comment: 'Is patient aware of what is happening? Is family aware of what is happening?'
+    ),
+    ICUDailyRoundChecklistSection(
+      heading: 'Head up',
+      comment: 'Head of the bead elevated to 30 degrees in the intubated patient'
+    ),
+    ICUDailyRoundChecklistSection(
+      heading: 'Ulcer prophylaxis',
+      comment: 'Esomeprazole 20mg iv d in the intubated patient'
+    ),
+    ICUDailyRoundChecklistSection(
+      heading: 'Glucose target',
+      comment: '6 – 12 (start actrapid if 2 X BSL > 12, titrate to BSL)'
     ),
   ])
 ];
