@@ -28,9 +28,10 @@ class IntubationContentViewTemplate extends StatelessWidget {
         itemCount: flatItems.length,
         itemBuilder: (context, index) {
           final item = flatItems[index];
+          final last = index == flatItems.length - 1;
           if (item is IntubationItem) {
             return Card(
-                margin: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+                margin: EdgeInsets.fromLTRB(16, 8, 16, last ? 24 : 0),
                 shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(8))),
                 child: Padding(

@@ -29,5 +29,7 @@ class Routes {
   static const intubationGuidanceInfographic = '/airway/guidance/infographic';
   static const intubationChecklist = '/airway/checklist';
   static const intubationChecklistInfographic = '/airway/checklist/infographic';
-  static const extubation = '/airway/extubation';
+  static const extubationGuidance = '/extubation/guidance';
+  static const extubationGuidanceInfographic =
+      '/extubation/guidance/infographic';
 }
