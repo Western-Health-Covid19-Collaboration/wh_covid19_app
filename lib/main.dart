@@ -17,6 +17,7 @@ import 'view/icu_non_intensivist/general_care_view.dart';
 import 'view/icu_non_intensivist/tips_junior_staff_view.dart';
 import 'view/icu_non_intensivist/ventilation/ventilation_view.dart';
 import 'view/info_view.dart';
+import 'view/license_view.dart';
 import 'view/ppe/ppe_off_guidance_method_1.dart';
 import 'view/ppe/ppe_off_guidance_method_1_infographic.dart';
 import 'view/ppe/ppe_off_guidance_method_2.dart';
@@ -57,6 +58,7 @@ class MyApp extends StatelessWidget {
         Routes.tipsJuniorStaff: (context) => TipsJuniorStaffView(),
         Routes.introRouter: (context) => IntroRouter(),
         Routes.disclaimer: (context) => DisclaimerView(),
+        Routes.licenses: (context) => LicenseView(),
       },
       onGenerateRoute: (settings) {
         // Use onGenerateRoute to set fullscreenDialog=true
