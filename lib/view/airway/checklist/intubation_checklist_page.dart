@@ -14,14 +14,14 @@ import '../../view_templates/tab_view_template.dart';
 /// Maintains the selected state of every checklist item.
 /// Created by the IntubationChecklistPage screen, so that all checklists
 /// are reset when screen is destroyed.
-class IntubationChecklistSelectionProvider extends ChangeNotifier {
-  final Set<IntubationChecklistItem> _checkedState = {};
+class ChecklistSelectionProvider<T> extends ChangeNotifier {
+  final Set<T> _checkedState = {};
 
-  bool isChecked(IntubationChecklistItem item) {
+  bool isChecked(T item) {
     return _checkedState.contains(item);
   }
 
-  void setChecked(IntubationChecklistItem item, {bool checked = true}) {
+  void setChecked(T item, {bool checked = true}) {
     if (checked) {
       _checkedState.add(item);
     } else {
@@ -45,7 +45,7 @@ class IntubationChecklistPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => IntubationChecklistSelectionProvider(),
+      create: (context) => ChecklistSelectionProvider<IntubationChecklistItem>(),
       child: TabViewTemplate(
         Strings.intubationChecklistTitle,
         tabs: getChecklistTitles(),
@@ -61,7 +61,7 @@ class IntubationChecklistPage extends StatelessWidget {
           )
         ],
         children: renderBody(),
-      ),
-    );
+      )
+   );
   }
 }

@@ -12,7 +12,8 @@ class IntubationChecklistContainer extends StatelessWidget {
 
   List<Widget> __renderList() {
   return checklist
-      .map((e) => ChecklistItemWidget(
+      .map((e) => ChecklistItemWidget<IntubationChecklistItem>(
+            item: e,
             content: IntubationChecklistItemWidget(listItem: e),
             backgroundColor: AppColors.appBackground,
             selectedBackgroundColor: AppColors.green50,
