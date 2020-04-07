@@ -1,6 +1,11 @@
 ---- Monday 6th April, 2020 ----
+* Added Extubation screen
 * Changed app icon name to WHAC19
 * Fixed status bar and navigation bar styling
+* Ui tweaks and polish
+* Updated info section to provide more resources
+* Added Licenses screen
+* Fixed bug with tickboxes resetting when swiping between checklist pages
 
 ---- Sunday 5th April, 2020 ----
 * Added Ventilation Guide screen
