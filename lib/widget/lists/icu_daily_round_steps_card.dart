@@ -21,7 +21,10 @@ class ICUDailyRoundStepsCard extends StatelessWidget {
             style: Styles.textH4
           ),
           Expanded(
-            child: Padding(padding: const EdgeInsets.fromLTRB(16, 0, 0, 0), child: Text(item.title, style: Styles.textH4)),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 0, 0), 
+              child: Text(item.title, style: Styles.textH4)
+            ),
           )
         ],
       ),
@@ -40,9 +43,9 @@ class ICUDailyRoundStepsCard extends StatelessWidget {
       return Container();
     }
 
-    Widget _renderFoot() {
-      if (subsection.notice != null && subsection.notice.isNotEmpty) {
-        return Text(subsection.notice, style: Styles.textFooter);
+    Widget _renderFooter() {
+      if (subsection.footer != null && subsection.footer.isNotEmpty) {
+        return Text(subsection.footer, style: Styles.textFooter);
       }
       return Container();
     }
@@ -53,20 +56,16 @@ class ICUDailyRoundStepsCard extends StatelessWidget {
       child: <Widget>[
         _renderHeading(),
         ...subsection.list
-          .map(
-            (item) => _renderItems(item)
-          )
+          .map((item) => _renderItems(item))
           .toList(),
-        _renderFoot()
+        _renderFooter()
       ]
     );
   }
 
   List<Widget> _getContent(List<ICUDailyRoundStepSubsection> subsections) {
     return subsections
-      .map(
-        (e) => _renderSubsection(e)
-      )
+      .map((e) => _renderSubsection(e))
       .toList();
   }
 
@@ -77,8 +76,9 @@ class ICUDailyRoundStepsCard extends StatelessWidget {
       children: <Widget>[
           Padding(
               padding: const EdgeInsets.fromLTRB(4, 14, 0, 0),
-              child: Text(section.heading, style: Styles.textH4)),
-        ... _getContent(section.subsections)
+              child: Text(section.heading, style: Styles.textH4)
+          ),
+          ..._getContent(section.subsections)
       ],
     );
   }

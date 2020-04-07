@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
 import '../../models/IntubationChecklist.dart';
 import '../../style.dart';
 import '../../widget/lists/string_list.dart';
 
-class IntubationChecklistCard extends StatelessWidget {
+class IntubationChecklistItemWidget extends StatelessWidget {
   final IntubationChecklistItem listItem;
 
-  const IntubationChecklistCard({this.listItem});
+  const IntubationChecklistItemWidget({this.listItem});
 
   Widget getList() {
     if (listItem.notes != null && listItem.notes.isNotEmpty) {

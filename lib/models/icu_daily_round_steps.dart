@@ -14,10 +14,10 @@ class ICUDailyRoundStepSection {
 
 class ICUDailyRoundStepSubsection {
   final String heading;
-  final String notice;
+  final String footer;
   final List<ICUDailyRoundItem> list;
 
-  const ICUDailyRoundStepSubsection({this.notice, this.heading, this.list});
+  const ICUDailyRoundStepSubsection({this.footer, this.heading, this.list});
 }
 
 class ICUDailyRoundItem {
