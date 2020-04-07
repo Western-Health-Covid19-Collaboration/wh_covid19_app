@@ -1,48 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../style.dart';
 
+import '../../view/airway/checklist/intubation_checklist_page.dart';
 import '../../widget/cards/reusable_card_base.dart';
 import '../../widget/checkbox.dart';
 
-class ChecklistItemWidget extends StatefulWidget {
+class ChecklistItemWidget<T> extends StatefulWidget {
   final Color backgroundColor;
   final Color selectedBackgroundColor;
   final Widget content;
+  final T item;
 
   const ChecklistItemWidget({
       @required this.content,
+      @required this.item,
       this.backgroundColor = AppColors.grey50,
       this.selectedBackgroundColor = AppColors.grey600
   });
 
   @override
-  _ChecklistItemWidget createState() => _ChecklistItemWidget();
+  _ChecklistItemWidget<T> createState() => _ChecklistItemWidget<T>();
 }
 
-class _ChecklistItemWidget extends State<ChecklistItemWidget> {
-  var _checked = false;
-
+class _ChecklistItemWidget<T> extends State<ChecklistItemWidget<T>> {
   @override
   Widget build(BuildContext context) {
+    final selectionState =
+        Provider.of<ChecklistSelectionProvider<T>>(context);
+    final isChecked = selectionState.isChecked(widget.item);
+
     return ReusableCardBase(
       elevation: 0,
       fallback: () {
-        setState(() {
-          _checked = !_checked;
-        });
+        // setState not needed, because Provider takes care of rebuilding.
+        selectionState.setChecked(widget.item, checked: !isChecked);
       },
       padding: const EdgeInsets.all(16),
-      color: _checked ? widget.selectedBackgroundColor : widget.backgroundColor,
+      color: isChecked ? widget.selectedBackgroundColor : widget.backgroundColor,
       child: <Widget>[
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             ChecklistCheckbox(
-                checked: _checked,
-                onChecked: () {
-                  setState(() {
-                    _checked = !_checked;
-                  });
+                checked: isChecked,
+                 onChecked: () {
+                  selectionState.setChecked(widget.item, checked: !isChecked);
                 }),
             Expanded(
               child: widget.content

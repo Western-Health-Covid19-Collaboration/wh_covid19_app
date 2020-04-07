@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:provider/provider.dart';
 
 import '../../../hard_data.dart';
+import '../../../models/icu_daily_round_checklist.dart';
 import '../../../style.dart';
+import '../../../view/airway/checklist/intubation_checklist_page.dart';
 import '../../../widget/containers/icu_daily_round_container.dart';
 import '../../view_templates/tab_view_template.dart';
 
@@ -24,11 +27,14 @@ class ICUDailyRoundView extends StatelessWidget {
     _children.addAll(_stepContainer);
     _children.addAll(_checklistContainer);
 
-    return TabViewTemplate(
-      title,
-      color: AppColors.blue50,
-      tabs: _stepTabs + _checklistTabs,
-      children: _children,
-    );
+    return ChangeNotifierProvider(
+        create: (context) => ChecklistSelectionProvider<ICUDailyRoundChecklistSection>(),
+        child: TabViewTemplate(
+          title,
+          color: AppColors.blue50,
+          tabs: _stepTabs + _checklistTabs,
+          children: _children,
+        )
+      );
   }
 }
