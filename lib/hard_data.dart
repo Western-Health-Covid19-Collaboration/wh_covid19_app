@@ -4,7 +4,8 @@ import 'package:flutter/services.dart' show rootBundle;
 
 import 'models/IntubationChecklist.dart';
 import 'models/PPEStepInfo.dart';
-import 'models/icu_dailyRound_steps.dart';
+import 'models/icu_daily_round_checklist.dart';
+import 'models/icu_daily_round_steps.dart';
 import 'models/intubation_guide.dart';
 import 'models/ventilation_guide.dart';
 import 'routes.dart';
@@ -623,12 +624,147 @@ const List<VentilationGuideItem> ventilationGuide = [
 ];
 
 List<ICUDailyRoundSteps> icuDailyRoundSteps = [
-  const ICUDailyRoundSteps(heading: 'A - Airway', sectionList: [
+  const ICUDailyRoundSteps(heading: 'A - Airway', sections: [
     ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
       ICUDailyRoundStepSubsection(heading: 'ETT (Endotracheal Tube)', notice: '', list: [
-        ICUDailyRoundItem(icon: '👉', title: 'Size?'),
-        ICUDailyRoundItem(icon: '👉', title: 'Position?'),
+        ICUDailyRoundItem(icon: '👀', title: 'Size?'),
+        ICUDailyRoundItem(icon: '📍', title: 'Position?'),
+        ICUDailyRoundItem(icon: '🔍', title: 'Confirmed with CXR?'),
+        ICUDailyRoundItem(icon: '🔒', title: 'Are all connections secured with sleek?'),
+      ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Plan', subsections: [
+      ICUDailyRoundStepSubsection(heading: 'If planned for extubation:', notice: '', list: [
+        ICUDailyRoundItem(icon: '⏰', title: 'When?'),
+        ICUDailyRoundItem(icon: '📍', title: 'Where?'),
+        ICUDailyRoundItem(icon: '💨', title: 'How? (see airway resources)'),
+        ICUDailyRoundItem(icon: '😮', title: 'Does ETT need advancing / withdrawing?'),
       ])
     ])
+  ]),
+  const ICUDailyRoundSteps(heading: 'B - Breathing', sections: [
+    ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
+      ICUDailyRoundStepSubsection(heading: '', notice: '', list: [
+        ICUDailyRoundItem(icon: '💨', title: 'SpO₂?'),
+        ICUDailyRoundItem(icon: '🩸', title: 'PAO₂?'),
+        ICUDailyRoundItem(icon: '🔍', title: 'CXR reviewed?'),
+        ICUDailyRoundItem(icon: '🅰️', title: 'ABG reviewed?'),
+        ICUDailyRoundItem(icon: '🌬', title: 'Current ventilator settings reviewed?'),
+      ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Plan', subsections: [
+      ICUDailyRoundStepSubsection(heading: 'Standard Targets', notice: '', list: [
+        ICUDailyRoundItem(icon: '🎯', title: 'PAO₂ > 55-60\nSaO₂ > 88-92'),
+        ICUDailyRoundItem(icon: '🎯', title: 'pH > 7.20\nif pH normal, CO₂ 35-45'),
+        ICUDailyRoundItem(icon: '🎯', title: 'VTe 4-8 ml/kg\nwith PPlat < 30'),
+        ICUDailyRoundItem(icon: '🎯', title: 'PEEP: According to PEEP Table\nAlso check ETT lines NG ICC'),
+      ]),
+      ICUDailyRoundStepSubsection(heading: 'If FiO₂ > 0.6 and PEEP > 15', notice: '', list: [
+        ICUDailyRoundItem(icon: '🕵️‍♀️', title: 'Specialist review and see resources'),
+      ])
+    ])
+  ]),
+  const ICUDailyRoundSteps(heading: 'C - Circulation', sections: [
+    ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
+      ICUDailyRoundStepSubsection(heading: '', notice: '', list: [
+        ICUDailyRoundItem(icon: '❤️', title: 'HR / rhythm / MAP?'),
+        ICUDailyRoundItem(icon: '📈', title: 'ECG / Echocardigram?'),
+        ICUDailyRoundItem(icon: '🩸', title: 'Lactate? (Signs of end organ perfusion: mottled / cool peripheries / cap refill time?)'),
+      ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Plan', subsections: [
+      ICUDailyRoundStepSubsection(heading: 'Aims', notice: '', list: [
+        ICUDailyRoundItem(icon: '🎯', title: 'MAP > 65'),
+        ICUDailyRoundItem(icon: '🎯', title: '[Hb] > 70'),
+      ]),
+      ICUDailyRoundStepSubsection(heading: 'If haemodyamically unstable / MAP < 65', notice: '', list: [
+        ICUDailyRoundItem(icon: '💉', title: 'Commence noradrenaline, see resources / echocardiogram'),
+      ])
+    ])
+  ]),
+  const ICUDailyRoundSteps(heading: 'D - Neurological', sections: [
+    ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
+      ICUDailyRoundStepSubsection(heading: '', notice: '', list: [
+        ICUDailyRoundItem(icon: '😣', title: 'Riker score & pain assessment?'),
+        ICUDailyRoundItem(icon: '😴', title: 'Current sedation / analgesic infusions?'),
+        ICUDailyRoundItem(icon: '💪', title: 'Neuromuscular blockers?'),
+      ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Plan', subsections: [
+      ICUDailyRoundStepSubsection(heading: '', notice: '', list: [
+        ICUDailyRoundItem(icon: '🎯', title: 'Analgesia / sedation plan and target (see resources)'),
+        ICUDailyRoundItem(icon: '✋', title: 'Consider sedation break (see resources) / cessation of neuromuscular blocker'),
+      ])
+    ])
+  ]),
+  const ICUDailyRoundSteps(heading: 'E - Infection/Exposure', sections: [
+    ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
+      ICUDailyRoundStepSubsection(heading: '', notice: '', list: [
+        ICUDailyRoundItem(icon: '🤒', title: 'Temperature?'),
+        ICUDailyRoundItem(icon: '🧫', title: 'Culture results?'),
+        ICUDailyRoundItem(icon: '💊', title: 'Current antibiotics?'),
+        ICUDailyRoundItem(icon: '⚔️', title: 'Invasive lines?'),
+        ICUDailyRoundItem(icon: '🤕', title: 'Pressure areas / wounds / cellulitis'),
+      ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Plan', subsections: [
+      ICUDailyRoundStepSubsection(heading: '', notice: '', list: [
+        ICUDailyRoundItem(icon: '🦠', title: 'Antimicrobials (see resources)'),
+        ICUDailyRoundItem(icon: '😷', title: 'If patient deteriorating / septic workup (see resources)'),
+        ICUDailyRoundItem(icon: '🔍', title: 'Can lines be removed?'),
+      ])
+    ])
+  ]),
+  const ICUDailyRoundSteps(heading: 'F - Renal', sections: [
+    ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
+      ICUDailyRoundStepSubsection(heading: '', notice: '', list: [
+        ICUDailyRoundItem(icon: '🚽', title: 'Current urine output?'),
+        ICUDailyRoundItem(icon: '💧', title: 'Fluid balance last 24 hours?'),
+        ICUDailyRoundItem(icon: '⚡️', title: 'Electrolytes?'),
+        ICUDailyRoundItem(icon: '⚖️', title: 'Acid-Base status?'),
+      ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Plan', subsections: [
+      ICUDailyRoundStepSubsection(heading: 'Fluid Balance', notice: 'Target for next 24 hours + diuretics', list: [
+        ICUDailyRoundItem(icon: '🎯', title: 'Aim for negative fluid balance around 1L/d stable'),
+      ]),
+      ICUDailyRoundStepSubsection(heading: '', notice: '', list: [
+        ICUDailyRoundItem(icon: '🔋', title: 'Electrolyte supplementation / goals'),
+      ])
+    ])
+  ]),
+  const ICUDailyRoundSteps(heading: 'G - Git', sections: [
+    ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
+      ICUDailyRoundStepSubsection(heading: '', notice: '', list: [
+        ICUDailyRoundItem(icon: '📍', title: 'NGT confirmed correctly positioned?'),
+        ICUDailyRoundItem(icon: '👀', title: 'Abdominal examination?'),
+        ICUDailyRoundItem(icon: '🔍', title: 'LFTs checked?'),
+        ICUDailyRoundItem(icon: '🥣', title: 'Absorbing feeds?'),
+      ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Plan', subsections: [
+      ICUDailyRoundStepSubsection(heading: '', notice: '', list: [
+        ICUDailyRoundItem(icon: '🍎', title: 'Nutrition (resources)'),
+        ICUDailyRoundItem(icon: '🤕', title: 'Any surgical issues?'),
+        ICUDailyRoundItem(icon: '🔍', title: 'Any liver issues?'),
+        ICUDailyRoundItem(icon: '💊', title: 'Change meds\n(NG → IV or vice versa)'),
+      ]),
+    ])
+  ])
+];
+
+const List<ICUDailyRoundChecklist> icuDailyRoundChecklist = [
+  ICUDailyRoundChecklist(heading: 'Final Check', sectionList: [
+    ICUDailyRoundChecklistSection(
+      heading: 'Anaesthesia contacted if difficulty anticipated',
+      comment: 'hehehehe'
+    ),
+    ICUDailyRoundChecklistSection(
+      heading: 'Team Introduced:',
+      comment: 'ehheheheheheh'),
+    ICUDailyRoundChecklistSection(
+      heading: 'Problems Anticipated?',
+      comment: 'ooooooooooo'
+    ),
   ])
 ];
