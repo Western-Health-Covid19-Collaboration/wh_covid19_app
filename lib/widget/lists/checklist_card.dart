@@ -9,15 +9,14 @@ class ChecklistItemWidget extends StatefulWidget {
   final Color selectedBackgroundColor;
   final Widget content;
 
-  const ChecklistItemWidget(
-      {
+  const ChecklistItemWidget({
       @required this.content,
       this.backgroundColor = AppColors.grey50,
-      this.selectedBackgroundColor = AppColors.grey600});
+      this.selectedBackgroundColor = AppColors.grey600
+  });
 
   @override
-  _ChecklistItemWidget createState() =>
-  _ChecklistItemWidget();
+  _ChecklistItemWidget createState() => _ChecklistItemWidget();
 }
 
 class _ChecklistItemWidget extends State<ChecklistItemWidget> {
