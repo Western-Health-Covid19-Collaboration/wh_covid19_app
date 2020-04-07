@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wh_covid19/view/icu_non_intensivist/daily_round/daily_round_view.dart';
 
 import 'hard_data.dart';
 import 'intro_router.dart';
@@ -14,7 +13,7 @@ import 'view/airway/guidance/intubation_guidance_infographic_page.dart';
 import 'view/airway/guidance/intubation_guidance_page.dart';
 import 'view/disclaimer_view.dart';
 import 'view/home_page.dart';
-import 'view/icu_non_intensivist/general_care_view.dart';
+import 'view/icu_non_intensivist/daily_round/daily_round_view.dart';
 import 'view/icu_non_intensivist/tips_junior_staff_view.dart';
 import 'view/icu_non_intensivist/ventilation/ventilation_view.dart';
 import 'view/info_view.dart';
