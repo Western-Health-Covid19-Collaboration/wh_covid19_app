@@ -19,7 +19,7 @@ class PPEOnGuidance extends StatelessWidget {
         brightness: Brightness.light,
         backgroundColor: AppColors.appBarBackground,
         iconTheme: Styles.appBarIconTheme,
-        title: Text(
+        title: const Text(
           Strings.ppeStepByStepTitle,
           style: Styles.textH5,
         ),
