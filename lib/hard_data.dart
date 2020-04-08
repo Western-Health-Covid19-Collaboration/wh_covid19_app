@@ -552,7 +552,7 @@ const List<VentilationGuideItem> ventilationGuide = [
           VentilationGuideItemListItem(
               title: 'Balance the risks of organ support', icon: '⚖️'),
           VentilationGuideItemListItem(
-              title: 'Minimise the risks of cross-infection (see PPE)',
+              title: 'Minimise the risks of �cross-infection (see PPE)',
               icon: '😷'),
         ],
       )
