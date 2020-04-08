@@ -11,17 +11,15 @@ class ChecklistItemWidget<T> extends StatelessWidget {
   final Widget content;
   final T item;
 
-  const ChecklistItemWidget({
-      @required this.content,
+  const ChecklistItemWidget(
+      {@required this.content,
       @required this.item,
       this.backgroundColor = AppColors.grey50,
-      this.selectedBackgroundColor = AppColors.grey600
-  });
+      this.selectedBackgroundColor = AppColors.grey600});
 
   @override
   Widget build(BuildContext context) {
-    final selectionState =
-        Provider.of<ChecklistSelectionProvider<T>>(context);
+    final selectionState = Provider.of<ChecklistSelectionProvider<T>>(context);
     final isChecked = selectionState.isChecked(item);
 
     return ReusableCardBase(
@@ -38,12 +36,10 @@ class ChecklistItemWidget<T> extends StatelessWidget {
           children: <Widget>[
             ChecklistCheckbox(
                 checked: isChecked,
-                 onChecked: () {
+                onChecked: () {
                   selectionState.setChecked(item, checked: !isChecked);
                 }),
-            Expanded(
-              child: content
-            )
+            Expanded(child: content)
           ],
         )
       ],

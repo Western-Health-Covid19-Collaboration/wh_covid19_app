@@ -26,23 +26,23 @@ class IntubationChecklistPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => ChecklistSelectionProvider<IntubationChecklistItem>(),
-      child: TabViewTemplate(
-        Strings.intubationChecklistTitle,
-        tabs: getChecklistTitles(),
-        color: AppColors.green50,
-        indicatorColor: AppColors.green900,
-        actions: <Widget>[
-          IconButton(
-            icon: SvgPicture.asset(
-              'assets/images/icon/SVG/icon_infographic.svg',
-            ),
-            onPressed: () => Navigator.pushNamed(
-                context, Routes.intubationChecklistInfographic),
-          )
-        ],
-        children: renderBody(),
-      )
-   );
+        create: (context) =>
+            ChecklistSelectionProvider<IntubationChecklistItem>(),
+        child: TabViewTemplate(
+          Strings.intubationChecklistTitle,
+          tabs: getChecklistTitles(),
+          color: AppColors.green50,
+          indicatorColor: AppColors.green900,
+          actions: <Widget>[
+            IconButton(
+              icon: SvgPicture.asset(
+                'assets/images/icon/SVG/icon_infographic.svg',
+              ),
+              onPressed: () => Navigator.pushNamed(
+                  context, Routes.intubationChecklistInfographic),
+            )
+          ],
+          children: renderBody(),
+        ));
   }
 }

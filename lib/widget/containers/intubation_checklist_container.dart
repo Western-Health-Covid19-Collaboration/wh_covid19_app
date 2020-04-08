@@ -11,14 +11,14 @@ class IntubationChecklistContainer extends StatelessWidget {
   const IntubationChecklistContainer({this.checklist});
 
   List<Widget> _renderList() {
-  return checklist
-      .map((e) => ChecklistItemWidget<IntubationChecklistItem>(
-            item: e,
-            content: IntubationChecklistItemWidget(listItem: e),
-            backgroundColor: AppColors.appBackground,
-            selectedBackgroundColor: AppColors.green50,
-          ))
-      .toList();
+    return checklist
+        .map((e) => ChecklistItemWidget<IntubationChecklistItem>(
+              item: e,
+              content: IntubationChecklistItemWidget(listItem: e),
+              backgroundColor: AppColors.appBackground,
+              selectedBackgroundColor: AppColors.green50,
+            ))
+        .toList();
   }
 
   @override

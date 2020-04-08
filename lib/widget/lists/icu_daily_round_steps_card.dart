@@ -10,21 +10,16 @@ class ICUDailyRoundStepsCard extends StatelessWidget {
   const ICUDailyRoundStepsCard({this.section});
 
   Widget _renderItems(ICUDailyRoundItem item) {
-
     return Padding(
       padding: const EdgeInsets.fromLTRB(4, 9, 16, 9),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(
-            item.icon,
-            style: Styles.textH4
-          ),
+          Text(item.icon, style: Styles.textH4),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(16, 0, 0, 0), 
-              child: Text(item.title, style: Styles.textH4)
-            ),
+                padding: const EdgeInsets.fromLTRB(16, 0, 0, 0),
+                child: Text(item.title, style: Styles.textH4)),
           )
         ],
       ),
@@ -32,7 +27,6 @@ class ICUDailyRoundStepsCard extends StatelessWidget {
   }
 
   Widget _renderSubsection(ICUDailyRoundStepSubsection subsection) {
-
     Widget _renderHeading() {
       if (subsection.heading != null && subsection.heading.isNotEmpty) {
         return Padding(
@@ -51,22 +45,17 @@ class ICUDailyRoundStepsCard extends StatelessWidget {
     }
 
     return ReusableCardBase(
-      color: AppColors.appBackground,
-      elevation: 0,
-      child: <Widget>[
-        _renderHeading(),
-        ...subsection.list
-          .map((item) => _renderItems(item))
-          .toList(),
-        _renderFooter()
-      ]
-    );
+        color: AppColors.appBackground,
+        elevation: 0,
+        child: <Widget>[
+          _renderHeading(),
+          ...subsection.list.map((item) => _renderItems(item)).toList(),
+          _renderFooter()
+        ]);
   }
 
   List<Widget> _getContent(List<ICUDailyRoundStepSubsection> subsections) {
-    return subsections
-      .map((e) => _renderSubsection(e))
-      .toList();
+    return subsections.map((e) => _renderSubsection(e)).toList();
   }
 
   @override
@@ -74,13 +63,11 @@ class ICUDailyRoundStepsCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-          Padding(
-              padding: const EdgeInsets.fromLTRB(4, 14, 0, 0),
-              child: Text(section.heading, style: Styles.textH4)
-          ),
-          ..._getContent(section.subsections)
+        Padding(
+            padding: const EdgeInsets.fromLTRB(4, 14, 0, 0),
+            child: Text(section.heading, style: Styles.textH4)),
+        ..._getContent(section.subsections)
       ],
     );
   }
-
 }
