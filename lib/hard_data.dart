@@ -38,7 +38,7 @@ const List<ReusableCard> staffWelfare = [
 // Airway card list composition
 const List<ReusableCard> airway = [
   ReusableCard(
-    title: 'Strings.intubationGuideTitle',
+    title: Strings.intubationGuideTitle,
     description: 'Step by step guide',
     color: AppColors.backgroundGreen,
     routeTo: Routes.intubationGuidance,
