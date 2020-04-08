@@ -55,6 +55,7 @@ This app is designed to be used by the anaesthetist and critical care doctors at
 
   /// Ventilation
   static const String ventilationTitle = 'Ventilation';
+  static const String ventilationInfographicTitle = 'Ventilation Infographic';
 
   /// Daily Round
   static const String dailyRoundTitle = 'Daily Round';
