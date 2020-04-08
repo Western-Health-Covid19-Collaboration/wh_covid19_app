@@ -327,7 +327,7 @@ const List<IntubationChecklist> intubationChecklist = [
       ),
       IntubationChecklistItem(title: 'Suction working'),
       IntubationChecklistItem(title: 'Facemask with viral filter connected'),
-      IntubationChecklistItem(title: 'ECTO2 trace'),
+      IntubationChecklistItem(title: 'etCO2 trace'),
 
       /// Note: \u{207B}\u{00B9} is unicode representation for ^-1
       IntubationChecklistItem(title: 'O2 running at 15L. min\u{207B}\u{00B9}'),
