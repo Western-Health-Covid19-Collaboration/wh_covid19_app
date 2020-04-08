@@ -10,7 +10,7 @@ class IntubationChecklistContainer extends StatelessWidget {
 
   const IntubationChecklistContainer({this.checklist});
 
-  List<Widget> __renderList() {
+  List<Widget> _renderList() {
   return checklist
       .map((e) => ChecklistItemWidget<IntubationChecklistItem>(
             item: e,
@@ -30,7 +30,7 @@ class IntubationChecklistContainer extends StatelessWidget {
           child: ListView(
             children: [
               Container(padding: const EdgeInsetsDirectional.only(top: 10)),
-              ...__renderList(),
+              ..._renderList(),
               Container(padding: const EdgeInsetsDirectional.only(bottom: 10)),
             ],
           ),
