@@ -77,6 +77,7 @@ In no particular order, the following people have contributed to building the pr
 * Fabio - Documentation
 * Sally Chung - Testing and general support
 * Carlos Melegrito - Design
+* Jinju Jang - Design
 
 ## License
 

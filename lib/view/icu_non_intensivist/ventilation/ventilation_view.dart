@@ -19,7 +19,6 @@ class VentilationView extends StatelessWidget {
       color: AppColors.blue50,
       tabs: tabs,
       actions: <Widget>[
-        // TODO: link to infographic page
         IconButton(
           icon: SvgPicture.asset(
             'assets/images/icon/SVG/icon_infographic.svg',
