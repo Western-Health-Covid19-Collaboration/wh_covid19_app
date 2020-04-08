@@ -102,7 +102,9 @@ class HtmlTextScreenData {
   final String title;
   final String htmlFile;
   final Color bgColor;
+
   const HtmlTextScreenData(this.title, this.htmlFile, this.bgColor);
+
   Future<String> readFile() async {
     return await rootBundle.loadString(htmlFile);
   }
@@ -241,9 +243,6 @@ const List<IntubationChecklist> intubationChecklist = [
     title: 'Team',
     checklist: [
       IntubationChecklistItem(
-        title: 'Anaesthesia contacted if difficulty anticipated',
-      ),
-      IntubationChecklistItem(
         title: 'Team Introduced:',
         notes: [
           'Airway Operator',
@@ -255,7 +254,7 @@ const List<IntubationChecklist> intubationChecklist = [
         ],
       ),
       IntubationChecklistItem(
-        title: 'Problems Anticipated?',
+        title: 'Problems anticipated?',
       ),
     ],
   ),
@@ -274,8 +273,8 @@ const List<IntubationChecklist> intubationChecklist = [
         ],
       ),
       IntubationChecklistItem(
-        title: 'IV access x 2',
-        notes: ['1L fluid on pump set'],
+        title: 'IV access working',
+        notes: ['Fluid running'],
       ),
       IntubationChecklistItem(
         title: 'Haemodynamics optimised',
@@ -289,7 +288,7 @@ const List<IntubationChecklist> intubationChecklist = [
       IntubationChecklistItem(title: 'RSI drugs drawn up, doses chosen'),
       IntubationChecklistItem(
         title: 'Rescue drugs',
-        notes: ['Metaraminol', 'Sugammadex'],
+        notes: ['Metaraminol'],
       ),
       IntubationChecklistItem(title: 'Post intubation sedation plan'),
       IntubationChecklistItem(title: 'Drug C/I or allergies?'),
@@ -298,7 +297,12 @@ const List<IntubationChecklist> intubationChecklist = [
   IntubationChecklist(
     title: 'Equipment',
     checklist: [
-      IntubationChecklistItem(title: '2 Laryngoscopes (tested)'),
+      IntubationChecklistItem(
+          title: 'Videolaryngoscope',
+          notes: [
+            'Blade available',
+            'Back-up laryngoscope available'],
+      ),
       IntubationChecklistItem(
         title: 'Tube chosen; cuff tested',
       ),
@@ -309,8 +313,8 @@ const List<IntubationChecklist> intubationChecklist = [
       IntubationChecklistItem(title: 'Supraglottic airway sized to pt'),
       IntubationChecklistItem(title: 'Scalpel + bougie CICO kit'),
       IntubationChecklistItem(
-          title: 'Airway trolley/bronchoscope outside room'),
-      IntubationChecklistItem(title: 'ETCO2'),
+          title: 'Difficult airway trolley available'),
+      IntubationChecklistItem(title: 'etCO2'),
       IntubationChecklistItem(title: 'Viral filter'),
     ],
   ),
@@ -346,7 +350,7 @@ const List<IntubationContent> intubationGuide = [
     [
       IntubationSection(
         items: [
-          IntubationItem('Intervene Early'),
+          IntubationItem('Intervene early'),
           IntubationItem('Negative pressure room', subtitle: 'If possible'),
           IntubationItem('Meticulous airway assessment'),
           IntubationItem('Discuss ventilation plan',
@@ -361,12 +365,12 @@ const List<IntubationContent> intubationGuide = [
       IntubationSection(
         items: [
           IntubationItem('Assemble airway team', subtitle: 'See checklist'),
-          IntubationItem('Allocate roles & Share airway',
+          IntubationItem('Allocate roles and share airway plan',
               subtitle: 'See checklist'),
           IntubationItem('Use COVID-19 Intubation tray',
               subtitle: 'See checklist'),
           IntubationItem(
-              'Ensure Viral filter and etCO2 in ventilation circuit'),
+              'Ensure viral filter and etCO2 in ventilation circuit'),
         ],
       )
     ],
@@ -393,9 +397,9 @@ const List<IntubationContent> intubationGuide = [
         items: [
           IntubationItem('45-degree head-up position'),
           IntubationItem(
-              'Stop high flow O2 via HFNP, NP, facemark or non-rebreather',
+              'Stop high flow O2 via HFNP, NP, face mask or non-rebreather',
               icon: '❌'),
-          IntubationItem('Use Best-fitting Face mask'),
+          IntubationItem('Use best-fitting face mask'),
           IntubationItem('2-handed vice grip'),
           IntubationItem('Ensure square etCO2 waveform'),
           IntubationItem('Avoid manual bagging unless rescue oxygenation',
@@ -427,8 +431,10 @@ const List<IntubationContent> intubationGuide = [
           IntubationItem('Indirect view'),
           IntubationItem('Tube to correct depth 1st time',
               subtitle: 'Cuff manometry not required'),
-          IntubationItem('Inflate cuff before ventilation', icon: '🛑'),
-          IntubationItem('Generously inflate cuff'),
+          IntubationItem(
+              'Inflate cuff generously before ventilation',
+              subtitle: '10mls of air',
+              icon: '🛑'),
         ],
       )
     ],
@@ -438,7 +444,7 @@ const List<IntubationContent> intubationGuide = [
     [
       IntubationSection(
         items: [
-          IntubationItem('Consider placing NG tube'),
+          IntubationItem('Consider NG tube and in-line suction'),
           IntubationItem(
               'Remove outer gloves, dispose of airway equipment in sealed bag',
               icon: '🛑'),
