@@ -11,27 +11,30 @@ class IntubationChecklistContainer extends StatelessWidget {
 
   List<Widget> renderList() {
     return checklist
-        .map((e) => IntubationChecklistItemWidget(
-              listItem: e,
-              backgroundColor: AppColors.appBackground,
-              selectedBackgroundColor: AppColors.green50,
-            ))
+        .map(
+          (e) => IntubationChecklistItemWidget(
+            listItem: e,
+            backgroundColor: AppColors.appBackground,
+            selectedBackgroundColor: AppColors.green50,
+          ),
+        )
         .toList();
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: AppColors.green500,
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
-          child: ListView(
-            children: [
-              Container(padding: const EdgeInsetsDirectional.only(top: 10)),
-              ...renderList(),
-              Container(padding: const EdgeInsetsDirectional.only(bottom: 10)),
-            ],
-          ),
-        ));
+      color: AppColors.green500,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+        child: ListView(
+          children: [
+            Container(padding: const EdgeInsetsDirectional.only(top: 10)),
+            ...renderList(),
+            Container(padding: const EdgeInsetsDirectional.only(bottom: 10)),
+          ],
+        ),
+      ),
+    );
   }
 }

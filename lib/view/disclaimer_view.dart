@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../constants.dart';
 import '../models/disclaimer_model.dart';
 import '../routes.dart';
 import '../strings.dart';
@@ -18,11 +19,11 @@ class _DisclaimerViewState extends State<DisclaimerView> {
   // When user agrees to disclaimer, persist values for that agreement, version of disclaimer and date/time to storage
   Future<void> _setAgreed() async {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool(Strings.settingDisclaimerAgreed, true);
+    await prefs.setBool(Constants.settingDisclaimerAgreed, true);
     await prefs.setString(
-        Strings.settingDisclaimerVersion, Strings.disclaimerCurrentVersion);
+        Constants.settingDisclaimerVersion, Strings.disclaimerCurrentVersion);
     await prefs.setString(
-        Strings.settingDisclaimerAgreedDateTime, DateTime.now().toString());
+        Constants.settingDisclaimerAgreedDateTime, DateTime.now().toString());
   }
 
   // Check persisted values for disclaimer agreement if they exist
@@ -31,13 +32,13 @@ class _DisclaimerViewState extends State<DisclaimerView> {
     final disclaimerValues = DisclaimerDetails();
 
     disclaimerValues.agreed =
-        prefs.getBool(Strings.settingDisclaimerAgreed) ?? false;
+        prefs.getBool(Constants.settingDisclaimerAgreed) ?? false;
     // Disclaimer version flag starts at '1' normally
     disclaimerValues.version =
-        prefs.getString(Strings.settingDisclaimerVersion) ?? '0';
+        prefs.getString(Constants.settingDisclaimerVersion) ?? '0';
 
     final dateStamp =
-        prefs.getString(Strings.settingDisclaimerAgreedDateTime) ?? '';
+        prefs.getString(Constants.settingDisclaimerAgreedDateTime) ?? '';
     if (dateStamp != '') {
       disclaimerValues.dateStamp =
           DateFormat.yMMMd().add_jm().format(DateTime.parse(dateStamp));

@@ -39,32 +39,37 @@ class _HomePageState extends State<HomePage> {
     Widget child,
   ) {
     return Stack(
-      children: <Widget>[_renderBackgroundContainer(context), child],
+      children: <Widget>[
+        _renderBackgroundContainer(context),
+        child,
+      ],
     );
   }
 
   Widget _renderList(BuildContext context) {
     return SliverList(
-      delegate: SliverChildListDelegate(const [
-        SizedBox(height: 12),
-        CardContainer(
-          title: Strings.homeHeading1,
-          cards: staffWelfare,
-          containerLayout: CardsLayout.twoRow,
-        ),
-        CardContainer(
-          title: Strings.homeHeading2,
-          cards: airway,
-          containerLayout: CardsLayout.threeColumn,
-        ),
-        CardContainer(
-          title: Strings.homeHeading3,
-          cards: icu,
-          containerLayout: CardsLayout.threeDoubleRowBigTop,
-        ),
-        // Make sure the bottom CardContainer has room to breathe.
-        SizedBox(height: 12),
-      ]),
+      delegate: SliverChildListDelegate(
+        const [
+          SizedBox(height: 12),
+          CardContainer(
+            title: Strings.homeHeading1,
+            cards: staffWelfare,
+            containerLayout: CardsLayout.twoRow,
+          ),
+          CardContainer(
+            title: Strings.homeHeading2,
+            cards: airway,
+            containerLayout: CardsLayout.threeColumn,
+          ),
+          CardContainer(
+            title: Strings.homeHeading3,
+            cards: icu,
+            containerLayout: CardsLayout.threeDoubleRowBigTop,
+          ),
+          // Make sure the bottom CardContainer has room to breathe.
+          SizedBox(height: 12),
+        ],
+      ),
     );
   }
 
@@ -74,11 +79,8 @@ class _HomePageState extends State<HomePage> {
 
     final Widget mainLogo = SvgPicture.asset('assets/images/main_logo.svg',
         height: logoHeight.toDouble());
-
     final appBarBottom = appBarHeight.toDouble() - logoHeight.toDouble();
-
     final scrollPos = _scrollPosition.round();
-
     final percentage = scrollPos < appBarBottom
         ? ((scrollPos) / appBarBottom.toDouble())
         : 1.00;
@@ -109,9 +111,11 @@ class _HomePageState extends State<HomePage> {
                   children: <Widget>[
                     mainLogo,
                     IconButton(
-                      icon: Icon(Icons.info_outline,
-                          color: generateIconColor(AppColors.homeAppBarIcon,
-                              AppColors.appBarIcon, percentage)),
+                      icon: Icon(
+                        Icons.info_outline,
+                        color: generateIconColor(AppColors.homeAppBarIcon,
+                            AppColors.appBarIcon, percentage),
+                      ),
                       onPressed: () => InfoView.navigateTo(context),
                     )
                   ],

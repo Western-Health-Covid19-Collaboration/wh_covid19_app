@@ -8,21 +8,26 @@ class PPECardContainer extends StatelessWidget {
   final List<PPEStepInfo> steps;
   final Color backgroundColor;
 
-  const PPECardContainer(
-      {@required this.steps, this.backgroundColor = AppColors.grey50});
+  const PPECardContainer({
+    @required this.steps,
+    this.backgroundColor = AppColors.grey50,
+  });
 
   /// Generates a List of PPECard Steps
   Iterable<PPECard> getStepsList() {
-    return steps.asMap().entries.map((entry) => PPECard(
-          /// entry.key: index
-          /// entry.value: the actual step data
-          step: PPEStepInfoCardModel(
+    return steps.asMap().entries.map(
+          (entry) => PPECard(
+            /// entry.key: index
+            /// entry.value: the actual step data
+            step: PPEStepInfoCardModel(
               image: entry.value.image,
               notes: entry.value.notes,
               step: entry.key + 1,
-              text: entry.value.text),
-          backgroundColor: backgroundColor,
-        ));
+              text: entry.value.text,
+            ),
+            backgroundColor: backgroundColor,
+          ),
+        );
   }
 
   @override

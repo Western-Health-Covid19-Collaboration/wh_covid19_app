@@ -10,11 +10,12 @@ class LicenseView extends StatelessWidget {
     // it's not customizable.
     // Pretty tricky to render licenses from scratch, so just draw our own
     // app bar over the top for now.
-    return Stack(children: [
-      const LicensePage(
-        applicationLegalese: Strings.licencesMsg,
-      ),
-      SizedBox(
+    return Stack(
+      children: [
+        const LicensePage(
+          applicationLegalese: Strings.licencesMsg,
+        ),
+        SizedBox(
           height: 80,
           child: Scaffold(
             backgroundColor: AppColors.appBackground,
@@ -30,7 +31,9 @@ class LicenseView extends StatelessWidget {
               ),
             ),
             body: Container(),
-          ))
-    ]);
+          ),
+        )
+      ],
+    );
   }
 }

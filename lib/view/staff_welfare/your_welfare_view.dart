@@ -2,15 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../hard_data.dart';
+import '../../strings.dart';
 import '../../style.dart';
 import '../../utils/url_utils.dart';
 import '../../widget/reusable_card.dart';
 
 class YourWelfareView extends StatelessWidget {
-  final _title = 'Your Welfare';
-
   final card = const ReusableCard(
-    title: 'Phases of Pandemic and suggestions for self-care',
+    title: Strings.yourWelfarePhasesTitle,
     description: '',
     color: Colors.white,
   );
@@ -26,20 +25,26 @@ class YourWelfareView extends StatelessWidget {
         backgroundColor: AppColors.appBarBackground,
         iconTheme: Styles.appBarIconTheme,
         title: Text(
-          _title,
-          style: Styles.textSemiBold.copyWith(color: AppColors.blackAlpha800),
+          Strings.yourWelfareTitle,
+          style: Styles.textSemiBold.copyWith(
+            color: AppColors.blackAlpha800,
+          ),
         ),
         actions: <Widget>[
           IconButton(
             icon: Stack(
               children: <Widget>[
-                Align(alignment: Alignment.center, child: Icon(Icons.call)),
                 Align(
-                    alignment: Alignment.topRight,
-                    child: Icon(
-                      Icons.call_made,
-                      size: 20,
-                    ))
+                  alignment: Alignment.center,
+                  child: Icon(Icons.call),
+                ),
+                Align(
+                  alignment: Alignment.topRight,
+                  child: Icon(
+                    Icons.call_made,
+                    size: 20,
+                  ),
+                )
               ],
             ),
             onPressed: () => UrlUtils.launchWithBrowser(whURL),
@@ -56,22 +61,46 @@ class YourWelfareView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   _buildSpacer(),
-                  const Text("It's okay to not be okay.", style: Styles.textH1),
+                  const Text(
+                    "It's okay to not be okay.",
+                    style: Styles.textH1,
+                  ),
                   _buildSpacer(),
-                  const Text('Please look after yourself.',
-                      style: Styles.textH2),
+                  const Text(
+                    'Please look after yourself.',
+                    style: Styles.textH2,
+                  ),
                   _buildSpacer(),
                   _buildSpacer(),
-                  const Text('Basic Tips', style: Styles.textH3),
+                  const Text(
+                    'Basic Tips',
+                    style: Styles.textH3,
+                  ),
                   _buildIconTextRow(
-                      const Text('🛑'), 'STOP, BREATHE then think'),
-                  _buildIconTextRow(const Text('🗞'), 'Limit news intake'),
-                  _buildSpacer(),
-                  const Text('Take Care of Basic Needs', style: Styles.textH3),
-                  _buildIconTextRow(const Text('🛌'), 'Rest'),
-                  _buildIconTextRow(const Text('🥦'), 'Eat well'),
+                    const Text('🛑'),
+                    'STOP, BREATHE then think',
+                  ),
                   _buildIconTextRow(
-                      const Text('🏃‍'), 'Engage in physical activity'),
+                    const Text('🗞'),
+                    'Limit news intake',
+                  ),
+                  _buildSpacer(),
+                  const Text(
+                    'Take Care of Basic Needs',
+                    style: Styles.textH3,
+                  ),
+                  _buildIconTextRow(
+                    const Text('🛌'),
+                    'Rest',
+                  ),
+                  _buildIconTextRow(
+                    const Text('🥦'),
+                    'Eat well',
+                  ),
+                  _buildIconTextRow(
+                    const Text('🏃‍'),
+                    'Engage in physical activity',
+                  ),
                   _buildIconTextRow(
                     const Text('🥰'),
                     'Stay in contact with loved ones',
@@ -99,7 +128,10 @@ class YourWelfareView extends StatelessWidget {
 
   Widget _buildIconTextRow(Widget icon, String text) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 16,
+        vertical: 4,
+      ),
       child: Row(
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
@@ -108,9 +140,11 @@ class YourWelfareView extends StatelessWidget {
             child: icon,
           ),
           Expanded(
-              child: Text(text,
-                  style:
-                      Styles.textP.copyWith(color: AppColors.blackAlpha900))),
+            child: Text(
+              text,
+              style: Styles.textP.copyWith(color: AppColors.blackAlpha900),
+            ),
+          ),
         ],
       ),
     );

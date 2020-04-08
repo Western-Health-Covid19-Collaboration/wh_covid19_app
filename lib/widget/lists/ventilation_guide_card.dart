@@ -12,7 +12,9 @@ class VentilationGuideCard extends StatelessWidget {
   Widget _getList(List<String> notes) {
     if (notes != null && notes.isNotEmpty) {
       return StringList(
-          items: notes, padding: const EdgeInsets.fromLTRB(8, 0, 0, 0));
+        items: notes,
+        padding: const EdgeInsets.fromLTRB(8, 0, 0, 0),
+      );
     }
     return Container();
   }
@@ -20,19 +22,21 @@ class VentilationGuideCard extends StatelessWidget {
   Widget _getHeading() {
     if (sectionItem.heading != null) {
       return _getPaddedItem(
-          Text(
-            sectionItem.heading,
-            style: Styles.textH4,
-          ),
-          const EdgeInsets.fromLTRB(16, 24, 16, 16));
+        Text(
+          sectionItem.heading,
+          style: Styles.textH4,
+        ),
+        const EdgeInsets.fromLTRB(16, 24, 16, 16),
+      );
     }
     return Container();
   }
 
   Widget _getPaddedItem(Widget child, EdgeInsets padding) {
     return Padding(
-        padding: padding ?? const EdgeInsets.fromLTRB(8, 2, 4, 2),
-        child: child);
+      padding: padding ?? const EdgeInsets.fromLTRB(8, 2, 4, 2),
+      child: child,
+    );
   }
 
   Widget _renderVentilationGuideListItem(
@@ -54,9 +58,13 @@ class VentilationGuideCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  Text(ventilationGuideItemListItem.title,
-                      style: Styles.textH4),
-                  _getList(ventilationGuideItemListItem.notes)
+                  Text(
+                    ventilationGuideItemListItem.title,
+                    style: Styles.textH4,
+                  ),
+                  _getList(
+                    ventilationGuideItemListItem.notes,
+                  )
                 ],
               ),
             ),

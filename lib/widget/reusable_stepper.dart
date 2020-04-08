@@ -8,15 +8,17 @@ class ReusableStepper extends StatefulWidget {
 class _ReusableStepperState extends State<ReusableStepper> {
   List<Step> steps = [
     const Step(
-        title: Text('Hand Hygene'),
-        isActive: true,
-        state: StepState.indexed,
-        content: Text('Clean your hands carefully...')),
+      title: Text('Hand Hygene'),
+      isActive: true,
+      state: StepState.indexed,
+      content: Text('Clean your hands carefully...'),
+    ),
     const Step(
-        title: Text('Hand Hygene'),
-        isActive: true,
-        state: StepState.indexed,
-        content: Text('Clean your hands carefully...')),
+      title: Text('Hand Hygene'),
+      isActive: true,
+      state: StepState.indexed,
+      content: Text('Clean your hands carefully...'),
+    ),
   ];
 
   int currentStep = 0;

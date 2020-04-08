@@ -3,12 +3,12 @@ import 'package:package_info/package_info.dart';
 
 import '../hard_data.dart';
 import '../routes.dart';
+import '../strings.dart';
 import '../style.dart';
 import '../utils/url_utils.dart';
 import '../widget/reusable_card.dart';
 
 class InfoView extends StatelessWidget {
-  final title = 'Information';
   static const _cardHeight = 40.0;
   static const _cardColor = AppColors.purple50;
   static const _cardElevation = 1.0;
@@ -19,21 +19,21 @@ class InfoView extends StatelessWidget {
 
   final cards = <Widget>[
     ReusableCard(
-      title: 'WH Novel Coronavirus Website',
+      title: Strings.informationWhCoronaTitle,
       color: _cardColor,
       height: _cardHeight,
       elevation: _cardElevation,
       fallback: () => UrlUtils.launchWithBrowser(whCoronavirusInfoURL),
     ),
     ReusableCard(
-      title: 'WH Anaesthetic Microsite',
+      title: Strings.informationWhAnaestheticTitle,
       color: _cardColor,
       height: _cardHeight,
       elevation: _cardElevation,
       fallback: () => UrlUtils.launchWithBrowser(whAnaestheticMicrositeURL),
     ),
     ReusableCard(
-      title: 'WH ICU Microsite',
+      title: Strings.informationWhIcuTitle,
       color: _cardColor,
       height: _cardHeight,
       elevation: _cardElevation,
@@ -41,39 +41,40 @@ class InfoView extends StatelessWidget {
     ),
     _buildSpacer(),
     ReusableCard(
-      title: 'Contact Numbers',
+      title: Strings.informationWhContactsTitle,
       height: _cardHeight,
       elevation: _cardElevation,
       fallback: () => UrlUtils.launchWithBrowser(whURL),
     ),
     const ReusableCard(
-      title: 'Society & College Recommendations',
+      title: Strings.informationRecommendTitle,
       height: _cardHeight,
       elevation: _cardElevation,
     ),
     _buildSpacer(),
     ReusableCard(
-      title: 'App Feedback',
+      title: Strings.informationAppFeedbackTitle,
       height: _cardHeight,
       elevation: _cardElevation,
       fallback: () => UrlUtils.launchWithBrowser(feedbackFormUrl),
     ),
     const ReusableCard(
-      title: 'Disclaimer & Conditions of Use',
+      title: Strings.disclaimerTitle,
       height: _cardHeight,
       elevation: _cardElevation,
       routeTo: Routes.disclaimer,
     ),
     const ReusableCard(
-      title: 'Acknowledgements and references',
+      title: Strings.informationAppAckRefTitle,
       height: _cardHeight,
       elevation: _cardElevation,
     ),
     const ReusableCard(
-        title: 'Third-Party Licenses',
-        height: _cardHeight,
-        elevation: _cardElevation,
-        routeTo: Routes.licenses),
+      title: Strings.informationAppThirdPartyTitle,
+      height: _cardHeight,
+      elevation: _cardElevation,
+      routeTo: Routes.licenses,
+    ),
   ];
 
   @override
@@ -87,7 +88,7 @@ class InfoView extends StatelessWidget {
         backgroundColor: AppColors.appBarBackground,
         iconTheme: Styles.appBarIconTheme,
         title: Text(
-          title,
+          Strings.informationTitle,
           style: Styles.textH5,
         ),
       ),
@@ -111,23 +112,26 @@ class InfoView extends StatelessWidget {
   List<Widget> _buildAbout() {
     return [
       Center(
-          child: Container(
-              decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 12, 16, 62),
-                  borderRadius: BorderRadius.circular(6)),
-              padding: const EdgeInsets.all(4),
-              child: Image.asset(
-                'assets/images/icon/high_res_icon.png',
-                height: 50,
-                width: 50,
-              ))),
+        child: Container(
+          decoration: BoxDecoration(
+            color: const Color.fromARGB(255, 12, 16, 62),
+            borderRadius: BorderRadius.circular(6),
+          ),
+          padding: const EdgeInsets.all(4),
+          child: Image.asset(
+            'assets/images/icon/high_res_icon.png',
+            height: 50,
+            width: 50,
+          ),
+        ),
+      ),
       _buildSpacer(height: 8),
       Center(child: _buildVersionTextWidget()),
       _buildSpacer(height: 8),
       const Padding(
         padding: EdgeInsets.all(8.0),
         child: Text(
-          'Built with ❤️ by a band of volunteers',
+          Strings.informationFooter,
           textAlign: TextAlign.center,
           style: Styles.textFooter,
         ),

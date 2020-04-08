@@ -16,18 +16,17 @@ class PPEView extends StatefulWidget {
 }
 
 class _PPEViewState extends State<PPEView> {
-  final title = Strings.ppeTitle;
-
   VideoPlayerController _videoController1;
   ChewieController _chewieController1;
-
   VideoPlayerController _videoController2;
   ChewieController _chewieController2;
+  static int method1Steps = ppeOffMethod1Steps.length;
+  static int method2Steps = ppeOffMethod2Steps.length;
 
   final puttingOnCards = <Widget>[
     _buildVerticalSpacer(),
     const ReusableCard(
-      title: 'Step By Step Guide',
+      title: Strings.ppeStepByStepTitle,
       color: AppColors.backgroundGreen,
       height: PPEView._cardHeight,
       routeTo: '/ppe/on',
@@ -35,29 +34,28 @@ class _PPEViewState extends State<PPEView> {
     _buildVerticalSpacer(),
   ];
 
-  static int method1Steps = ppeOffMethod1Steps.length;
-  static int method2Steps = ppeOffMethod2Steps.length;
-
   final takingOffCards = <Widget>[
     _buildVerticalSpacer(),
     Row(
       children: <Widget>[
         Expanded(
-            child: ReusableCard(
-          title: 'Method 1',
-          description: '$method1Steps Steps',
-          height: 40,
-          routeTo: Routes.ppeOffGuidanceMethod1,
-          color: AppColors.purple50,
-        )),
+          child: ReusableCard(
+            title: Strings.ppeMethod1Title,
+            description: '$method1Steps Steps',
+            height: 40,
+            routeTo: Routes.ppeOffGuidanceMethod1,
+            color: AppColors.purple50,
+          ),
+        ),
         Expanded(
-            child: ReusableCard(
-          title: 'Method 2',
-          description: '$method2Steps Steps',
-          height: 40,
-          routeTo: Routes.ppeOffGuidanceMethod2,
-          color: AppColors.purple50,
-        ))
+          child: ReusableCard(
+            title: Strings.ppeMethod2Title,
+            description: '$method2Steps Steps',
+            height: 40,
+            routeTo: Routes.ppeOffGuidanceMethod2,
+            color: AppColors.purple50,
+          ),
+        )
       ],
     ),
     _buildVerticalSpacer(),
@@ -69,7 +67,9 @@ class _PPEViewState extends State<PPEView> {
     return Container(
       decoration: BoxDecoration(
         color: Colors.black,
-        borderRadius: const BorderRadius.all(Radius.circular(8)),
+        borderRadius: const BorderRadius.all(
+          Radius.circular(8),
+        ),
       ),
     );
   }
@@ -108,7 +108,7 @@ class _PPEViewState extends State<PPEView> {
         backgroundColor: AppColors.appBarBackground,
         iconTheme: Styles.appBarIconTheme,
         title: Text(
-          title,
+          Strings.ppeTitle,
           style: Styles.textH5,
         ),
       ),
@@ -147,7 +147,10 @@ class _PPEViewState extends State<PPEView> {
       padding: const EdgeInsets.all(8.0),
       child: Padding(
         padding: const EdgeInsets.only(top: 24, bottom: 4),
-        child: Text(text, style: Styles.cardContainerTextStyle),
+        child: Text(
+          text,
+          style: Styles.cardContainerTextStyle,
+        ),
       ),
     );
   }

@@ -62,22 +62,26 @@ class ReusableCardBase extends StatelessWidget {
       onTap = () => fallback();
     }
     return Card(
-        margin: margin,
-        color: color,
-        elevation: elevation,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(borderRadius))),
-        child: InkWell(
-          onTap: onTap,
-          child: Ink(
-            padding: padding,
-            child: boxConstraints == null
-                ? col
-                : ConstrainedBox(
-                    constraints: boxConstraints,
-                    child: col,
-                  ),
-          ),
-        ));
+      margin: margin,
+      color: color,
+      elevation: elevation,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(borderRadius),
+        ),
+      ),
+      child: InkWell(
+        onTap: onTap,
+        child: Ink(
+          padding: padding,
+          child: boxConstraints == null
+              ? col
+              : ConstrainedBox(
+                  constraints: boxConstraints,
+                  child: col,
+                ),
+        ),
+      ),
+    );
   }
 }

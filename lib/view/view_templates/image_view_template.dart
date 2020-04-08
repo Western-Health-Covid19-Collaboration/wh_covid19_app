@@ -6,7 +6,10 @@ class ImageViewTemplate extends StatelessWidget {
   final ReusableCard card;
   final String imagePath;
 
-  const ImageViewTemplate({this.card, this.imagePath});
+  const ImageViewTemplate({
+    this.card,
+    this.imagePath,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +22,14 @@ class ImageViewTemplate extends StatelessWidget {
         title: Text(card.title),
       ),
       body: Container(
-          padding: const EdgeInsets.all(12),
-          child: Center(
-              child: Image.asset(
+        padding: const EdgeInsets.all(12),
+        child: Center(
+          child: Image.asset(
             imagePath,
             fit: BoxFit.fill,
-          ))),
+          ),
+        ),
+      ),
     );
   }
 }

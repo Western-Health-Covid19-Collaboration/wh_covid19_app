@@ -56,7 +56,9 @@ class TabViewTemplate extends StatelessWidget {
             tabs: getChecklistTitles(),
           ),
         ),
-        body: TabBarView(children: children),
+        body: TabBarView(
+          children: children,
+        ),
       ),
     );
   }

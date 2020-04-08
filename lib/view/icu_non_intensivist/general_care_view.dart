@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../strings.dart';
 import '../../style.dart';
 
 class GeneralCareView extends StatelessWidget {
-  final title = 'Daily Round';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,9 +15,16 @@ class GeneralCareView extends StatelessWidget {
         brightness: Brightness.light,
         backgroundColor: AppColors.appBarBackground,
         iconTheme: Styles.appBarIconTheme,
-        title: Text(title, style: Styles.appBarTextStyle),
+        title: Text(
+          Strings.dailyRoundTitle,
+          style: Styles.appBarTextStyle,
+        ),
       ),
-      body: const Center(child: Text('TODO')),
+      body: const Center(
+        child: Text(
+          Strings.toDo,
+        ),
+      ),
     );
   }
 }
