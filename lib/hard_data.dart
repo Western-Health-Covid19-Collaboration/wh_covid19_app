@@ -626,20 +626,28 @@ const List<VentilationGuideItem> ventilationGuide = [
 List<ICUDailyRoundSteps> icuDailyRoundSteps = [
   const ICUDailyRoundSteps(heading: 'A - Airway', sections: [
     ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
-      ICUDailyRoundStepSubsection(heading: 'ETT (Endotracheal Tube)', footer: '', list: [
-        ICUDailyRoundItem(icon: '👀', title: 'Size?'),
-        ICUDailyRoundItem(icon: '📍', title: 'Position?'),
-        ICUDailyRoundItem(icon: '🔍', title: 'Confirmed with CXR?'),
-        ICUDailyRoundItem(icon: '🔒', title: 'Are all connections secured with sleek?'),
-      ])
+      ICUDailyRoundStepSubsection(
+          heading: 'ETT (Endotracheal Tube)',
+          footer: '',
+          list: [
+            ICUDailyRoundItem(icon: '👀', title: 'Size?'),
+            ICUDailyRoundItem(icon: '📍', title: 'Position?'),
+            ICUDailyRoundItem(icon: '🔍', title: 'Confirmed with CXR?'),
+            ICUDailyRoundItem(
+                icon: '🔒', title: 'Are all connections secured with sleek?'),
+          ])
     ]),
     ICUDailyRoundStepSection(heading: 'Plan', subsections: [
-      ICUDailyRoundStepSubsection(heading: 'If planned for extubation:', footer: '', list: [
-        ICUDailyRoundItem(icon: '⏰', title: 'When?'),
-        ICUDailyRoundItem(icon: '📍', title: 'Where?'),
-        ICUDailyRoundItem(icon: '💨', title: 'How? (see airway resources)'),
-        ICUDailyRoundItem(icon: '😮', title: 'Does ETT need advancing / withdrawing?'),
-      ])
+      ICUDailyRoundStepSubsection(
+          heading: 'If planned for extubation:',
+          footer: '',
+          list: [
+            ICUDailyRoundItem(icon: '⏰', title: 'When?'),
+            ICUDailyRoundItem(icon: '📍', title: 'Where?'),
+            ICUDailyRoundItem(icon: '💨', title: 'How? (see airway resources)'),
+            ICUDailyRoundItem(
+                icon: '😮', title: 'Does ETT need advancing / withdrawing?'),
+          ])
     ])
   ]),
   const ICUDailyRoundSteps(heading: 'B - Breathing', sections: [
@@ -649,19 +657,32 @@ List<ICUDailyRoundSteps> icuDailyRoundSteps = [
         ICUDailyRoundItem(icon: '🩸', title: 'PAO₂?'),
         ICUDailyRoundItem(icon: '🔍', title: 'CXR reviewed?'),
         ICUDailyRoundItem(icon: '🅰️', title: 'ABG reviewed?'),
-        ICUDailyRoundItem(icon: '🌬', title: 'Current ventilator settings reviewed?'),
+        ICUDailyRoundItem(
+            icon: '🌬', title: 'Current ventilator settings reviewed?'),
       ])
     ]),
     ICUDailyRoundStepSection(heading: 'Plan', subsections: [
-      ICUDailyRoundStepSubsection(heading: 'Standard Targets', footer: '', list: [
-        ICUDailyRoundItem(icon: '🎯', title: 'PAO₂ > 55-60\nSaO₂ > 88-92'),
-        ICUDailyRoundItem(icon: '🎯', title: 'pH > 7.20\nif pH normal, CO₂ 35-45'),
-        ICUDailyRoundItem(icon: '🎯', title: 'VTe 4-8 ml/kg\nwith PPlat < 30'),
-        ICUDailyRoundItem(icon: '🎯', title: 'PEEP: According to PEEP Table\nAlso check ETT lines NG ICC'),
-      ]),
-      ICUDailyRoundStepSubsection(heading: 'If FiO₂ > 0.6 and PEEP > 15', footer: '', list: [
-        ICUDailyRoundItem(icon: '🕵️‍♀️', title: 'Specialist review and see resources'),
-      ])
+      ICUDailyRoundStepSubsection(
+          heading: 'Standard Targets',
+          footer: '',
+          list: [
+            ICUDailyRoundItem(icon: '🎯', title: 'PAO₂ > 55-60\nSaO₂ > 88-92'),
+            ICUDailyRoundItem(
+                icon: '🎯', title: 'pH > 7.20\nif pH normal, CO₂ 35-45'),
+            ICUDailyRoundItem(
+                icon: '🎯', title: 'VTe 4-8 ml/kg\nwith PPlat < 30'),
+            ICUDailyRoundItem(
+                icon: '🎯',
+                title:
+                    'PEEP: According to PEEP Table\nAlso check ETT lines NG ICC'),
+          ]),
+      ICUDailyRoundStepSubsection(
+          heading: 'If FiO₂ > 0.6 and PEEP > 15',
+          footer: '',
+          list: [
+            ICUDailyRoundItem(
+                icon: '🕵️‍♀️', title: 'Specialist review and see resources'),
+          ])
     ])
   ]),
   const ICUDailyRoundSteps(heading: 'C - Circulation', sections: [
@@ -669,7 +690,10 @@ List<ICUDailyRoundSteps> icuDailyRoundSteps = [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(icon: '❤️', title: 'HR / rhythm / MAP?'),
         ICUDailyRoundItem(icon: '📈', title: 'ECG / Echocardigram?'),
-        ICUDailyRoundItem(icon: '🩸', title: 'Lactate? (Signs of end organ perfusion: mottled / cool peripheries / cap refill time?)'),
+        ICUDailyRoundItem(
+            icon: '🩸',
+            title:
+                'Lactate? (Signs of end organ perfusion: mottled / cool peripheries / cap refill time?)'),
       ])
     ]),
     ICUDailyRoundStepSection(heading: 'Plan', subsections: [
@@ -677,23 +701,35 @@ List<ICUDailyRoundSteps> icuDailyRoundSteps = [
         ICUDailyRoundItem(icon: '🎯', title: 'MAP > 65'),
         ICUDailyRoundItem(icon: '🎯', title: '[Hb] > 70'),
       ]),
-      ICUDailyRoundStepSubsection(heading: 'If haemodyamically unstable / MAP < 65', footer: '', list: [
-        ICUDailyRoundItem(icon: '💉', title: 'Commence noradrenaline, see resources / echocardiogram'),
-      ])
+      ICUDailyRoundStepSubsection(
+          heading: 'If haemodyamically unstable / MAP < 65',
+          footer: '',
+          list: [
+            ICUDailyRoundItem(
+                icon: '💉',
+                title:
+                    'Commence noradrenaline, see resources / echocardiogram'),
+          ])
     ])
   ]),
   const ICUDailyRoundSteps(heading: 'D - Neurological', sections: [
     ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(icon: '😣', title: 'Riker score & pain assessment?'),
-        ICUDailyRoundItem(icon: '😴', title: 'Current sedation / analgesic infusions?'),
+        ICUDailyRoundItem(
+            icon: '😴', title: 'Current sedation / analgesic infusions?'),
         ICUDailyRoundItem(icon: '💪', title: 'Neuromuscular blockers?'),
       ])
     ]),
     ICUDailyRoundStepSection(heading: 'Plan', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
-        ICUDailyRoundItem(icon: '🎯', title: 'Analgesia / sedation plan and target (see resources)'),
-        ICUDailyRoundItem(icon: '✋', title: 'Consider sedation break (see resources) / cessation of neuromuscular blocker'),
+        ICUDailyRoundItem(
+            icon: '🎯',
+            title: 'Analgesia / sedation plan and target (see resources)'),
+        ICUDailyRoundItem(
+            icon: '✋',
+            title:
+                'Consider sedation break (see resources) / cessation of neuromuscular blocker'),
       ])
     ])
   ]),
@@ -704,13 +740,16 @@ List<ICUDailyRoundSteps> icuDailyRoundSteps = [
         ICUDailyRoundItem(icon: '🧫', title: 'Culture results?'),
         ICUDailyRoundItem(icon: '💊', title: 'Current antibiotics?'),
         ICUDailyRoundItem(icon: '⚔️', title: 'Invasive lines?'),
-        ICUDailyRoundItem(icon: '🤕', title: 'Pressure areas / wounds / cellulitis'),
+        ICUDailyRoundItem(
+            icon: '🤕', title: 'Pressure areas / wounds / cellulitis'),
       ])
     ]),
     ICUDailyRoundStepSection(heading: 'Plan', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(icon: '🦠', title: 'Antimicrobials (see resources)'),
-        ICUDailyRoundItem(icon: '😷', title: 'If patient deteriorating / septic workup (see resources)'),
+        ICUDailyRoundItem(
+            icon: '😷',
+            title: 'If patient deteriorating / septic workup (see resources)'),
         ICUDailyRoundItem(icon: '🔍', title: 'Can lines be removed?'),
       ])
     ])
@@ -725,18 +764,25 @@ List<ICUDailyRoundSteps> icuDailyRoundSteps = [
       ])
     ]),
     ICUDailyRoundStepSection(heading: 'Plan', subsections: [
-      ICUDailyRoundStepSubsection(heading: 'Fluid Balance', footer: 'Target for next 24 hours + diuretics', list: [
-        ICUDailyRoundItem(icon: '🎯', title: 'Aim for negative fluid balance around 1L/d stable'),
-      ]),
+      ICUDailyRoundStepSubsection(
+          heading: 'Fluid Balance',
+          footer: 'Target for next 24 hours + diuretics',
+          list: [
+            ICUDailyRoundItem(
+                icon: '🎯',
+                title: 'Aim for negative fluid balance around 1L/d stable'),
+          ]),
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
-        ICUDailyRoundItem(icon: '🔋', title: 'Electrolyte supplementation / goals'),
+        ICUDailyRoundItem(
+            icon: '🔋', title: 'Electrolyte supplementation / goals'),
       ])
     ])
   ]),
   const ICUDailyRoundSteps(heading: 'G - Git', sections: [
     ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
-        ICUDailyRoundItem(icon: '📍', title: 'NGT confirmed correctly positioned?'),
+        ICUDailyRoundItem(
+            icon: '📍', title: 'NGT confirmed correctly positioned?'),
         ICUDailyRoundItem(icon: '👀', title: 'Abdominal examination?'),
         ICUDailyRoundItem(icon: '🔍', title: 'LFTs checked?'),
         ICUDailyRoundItem(icon: '🥣', title: 'Absorbing feeds?'),
@@ -747,7 +793,8 @@ List<ICUDailyRoundSteps> icuDailyRoundSteps = [
         ICUDailyRoundItem(icon: '🍎', title: 'Nutrition (resources)'),
         ICUDailyRoundItem(icon: '🤕', title: 'Any surgical issues?'),
         ICUDailyRoundItem(icon: '🔍', title: 'Any liver issues?'),
-        ICUDailyRoundItem(icon: '💊', title: 'Change meds\n(NG → IV or vice versa)'),
+        ICUDailyRoundItem(
+            icon: '💊', title: 'Change meds\n(NG → IV or vice versa)'),
       ]),
     ])
   ])
@@ -756,39 +803,32 @@ List<ICUDailyRoundSteps> icuDailyRoundSteps = [
 const List<ICUDailyRoundChecklist> icuDailyRoundChecklist = [
   ICUDailyRoundChecklist(heading: 'Final Check', sectionList: [
     ICUDailyRoundChecklistSection(
-      heading: 'Resuscitation status',
-      comment: 'Goals of care determined?'
-    ),
+        heading: 'Resuscitation status', comment: 'Goals of care determined?'),
     ICUDailyRoundChecklistSection(
-      heading: 'Feeds',
-      comment: 'Charted and considered?'),
+        heading: 'Feeds', comment: 'Charted and considered?'),
     ICUDailyRoundChecklistSection(
-      heading: 'Lines',
-      comment: 'Can they be removed?'
-    ),
+        heading: 'Lines', comment: 'Can they be removed?'),
     ICUDailyRoundChecklistSection(
-      heading: 'Aperients',
-      comment: 'When were bowels last open? Regular laxatives and early insertion of faecal containment device'
-    ),
+        heading: 'Aperients',
+        comment:
+            'When were bowels last open? Regular laxatives and early insertion of faecal containment device'),
     ICUDailyRoundChecklistSection(
-      heading: 'Thromboprophylaxis',
-      comment: 'In general enoxaparin 40mg/d (20mg/d with severe renal failure)'
-    ),
+        heading: 'Thromboprophylaxis',
+        comment:
+            'In general enoxaparin 40mg/d (20mg/d with severe renal failure)'),
     ICUDailyRoundChecklistSection(
-      heading: 'Communication / Family',
-      comment: 'Is patient aware of what is happening? Is family aware of what is happening?'
-    ),
+        heading: 'Communication / Family',
+        comment:
+            'Is patient aware of what is happening? Is family aware of what is happening?'),
     ICUDailyRoundChecklistSection(
-      heading: 'Head up',
-      comment: 'Head of the bead elevated to 30 degrees in the intubated patient'
-    ),
+        heading: 'Head up',
+        comment:
+            'Head of the bead elevated to 30 degrees in the intubated patient'),
     ICUDailyRoundChecklistSection(
-      heading: 'Ulcer prophylaxis',
-      comment: 'Esomeprazole 20mg iv d in the intubated patient'
-    ),
+        heading: 'Ulcer prophylaxis',
+        comment: 'Esomeprazole 20mg iv d in the intubated patient'),
     ICUDailyRoundChecklistSection(
-      heading: 'Glucose target',
-      comment: '6 – 12 (start actrapid if 2 X BSL > 12, titrate to BSL)'
-    ),
+        heading: 'Glucose target',
+        comment: '6 – 12 (start actrapid if 2 X BSL > 12, titrate to BSL)'),
   ])
 ];

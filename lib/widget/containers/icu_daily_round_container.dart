@@ -9,7 +9,6 @@ import '../../widget/lists/icu_daily_round_steps_card.dart';
 
 // Base Container
 class ICUDailyRoundContainer extends StatelessWidget {
-
   final List<Widget> list;
 
   const ICUDailyRoundContainer({this.list});
@@ -38,9 +37,7 @@ class ICUDailyRoundStepsContainer extends StatelessWidget {
   const ICUDailyRoundStepsContainer({this.sections});
 
   List<Widget> _renderList() {
-    return sections
-        .map((e) => ICUDailyRoundStepsCard(section: e))
-        .toList();
+    return sections.map((e) => ICUDailyRoundStepsCard(section: e)).toList();
   }
 
   @override
