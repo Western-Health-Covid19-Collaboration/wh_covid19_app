@@ -1,3 +1,6 @@
+---- Tuesday 7th April, 2020 ----
+* Added ICU Daily Round screen
+
 ---- Monday 6th April, 2020 ----
 * Added Extubation screen
 * Changed app icon name to WHAC19
