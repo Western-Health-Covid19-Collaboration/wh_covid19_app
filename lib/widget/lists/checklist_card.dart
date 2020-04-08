@@ -5,7 +5,7 @@ import '../../style.dart';
 import '../../widget/cards/reusable_card_base.dart';
 import '../../widget/checkbox.dart';
 
-class ChecklistItemWidget<T> extends StatefulWidget {
+class ChecklistItemWidget<T> extends StatelessWidget {
   final Color backgroundColor;
   final Color selectedBackgroundColor;
   final Widget content;
@@ -19,24 +19,19 @@ class ChecklistItemWidget<T> extends StatefulWidget {
   });
 
   @override
-  _ChecklistItemWidget<T> createState() => _ChecklistItemWidget<T>();
-}
-
-class _ChecklistItemWidget<T> extends State<ChecklistItemWidget<T>> {
-  @override
   Widget build(BuildContext context) {
     final selectionState =
         Provider.of<ChecklistSelectionProvider<T>>(context);
-    final isChecked = selectionState.isChecked(widget.item);
+    final isChecked = selectionState.isChecked(item);
 
     return ReusableCardBase(
       elevation: 0,
       fallback: () {
         // setState not needed, because Provider takes care of rebuilding.
-        selectionState.setChecked(widget.item, checked: !isChecked);
+        selectionState.setChecked(item, checked: !isChecked);
       },
       padding: const EdgeInsets.all(16),
-      color: isChecked ? widget.selectedBackgroundColor : widget.backgroundColor,
+      color: isChecked ? selectedBackgroundColor : backgroundColor,
       child: <Widget>[
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,10 +39,10 @@ class _ChecklistItemWidget<T> extends State<ChecklistItemWidget<T>> {
             ChecklistCheckbox(
                 checked: isChecked,
                  onChecked: () {
-                  selectionState.setChecked(widget.item, checked: !isChecked);
+                  selectionState.setChecked(item, checked: !isChecked);
                 }),
             Expanded(
-              child: widget.content
+              child: content
             )
           ],
         )
