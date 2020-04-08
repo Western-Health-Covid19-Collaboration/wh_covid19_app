@@ -17,7 +17,7 @@ class SBSGuideView extends StatelessWidget {
         brightness: Brightness.light,
         backgroundColor: Colors.white,
         iconTheme: Styles.appBarIconTheme,
-        title: Text(
+        title: const Text(
           Strings.ppeStepByStepTitle,
           style: Styles.appBarTextStyle,
         ),

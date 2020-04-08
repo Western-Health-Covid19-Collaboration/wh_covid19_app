@@ -20,7 +20,7 @@ class PPEOffGuidanceMethod2 extends StatelessWidget {
         brightness: Brightness.light,
         backgroundColor: AppColors.appBarBackground,
         iconTheme: Styles.appBarIconTheme,
-        title: Text(
+        title: const Text(
           Strings.ppeMethod2Title,
           style: Styles.textH5,
         ),

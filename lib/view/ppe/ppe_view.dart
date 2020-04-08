@@ -107,7 +107,7 @@ class _PPEViewState extends State<PPEView> {
         brightness: Brightness.light,
         backgroundColor: AppColors.appBarBackground,
         iconTheme: Styles.appBarIconTheme,
-        title: Text(
+        title: const Text(
           Strings.ppeTitle,
           style: Styles.textH5,
         ),

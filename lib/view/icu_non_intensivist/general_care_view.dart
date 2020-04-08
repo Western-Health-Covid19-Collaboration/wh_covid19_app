@@ -15,7 +15,7 @@ class GeneralCareView extends StatelessWidget {
         brightness: Brightness.light,
         backgroundColor: AppColors.appBarBackground,
         iconTheme: Styles.appBarIconTheme,
-        title: Text(
+        title: const Text(
           Strings.dailyRoundTitle,
           style: Styles.appBarTextStyle,
         ),
