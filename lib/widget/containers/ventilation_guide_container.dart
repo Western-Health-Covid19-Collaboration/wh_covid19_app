@@ -21,16 +21,17 @@ class VentilationGuideContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: AppColors.blue500,
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
-          child: ListView(
-            children: [
-              Container(padding: const EdgeInsetsDirectional.only(top: 10)),
-              ..._renderList(),
-              Container(padding: const EdgeInsetsDirectional.only(bottom: 10)),
-            ],
-          ),
-        ));
+      color: AppColors.blue500,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+        child: ListView(
+          children: [
+            Container(padding: const EdgeInsetsDirectional.only(top: 10)),
+            ..._renderList(),
+            Container(padding: const EdgeInsetsDirectional.only(bottom: 10)),
+          ],
+        ),
+      ),
+    );
   }
 }

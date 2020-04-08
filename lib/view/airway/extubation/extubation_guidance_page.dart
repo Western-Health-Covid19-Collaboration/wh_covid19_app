@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../hard_data.dart';
 import '../../../routes.dart';
+import '../../../strings.dart';
 import '../../../style.dart';
 import '../../view_templates/intubation_content_view_template.dart';
 import '../../view_templates/tab_view_template.dart';
@@ -12,7 +13,7 @@ class ExtubationGuidancePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TabViewTemplate(
-      'Extubation Guide',
+      Strings.extubationGuideTitle,
       tabs: extubationGuide.map((e) => e.name).toList(),
       color: AppColors.green50,
       indicatorColor: AppColors.green900,

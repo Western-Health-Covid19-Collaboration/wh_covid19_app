@@ -10,8 +10,11 @@ class ChecklistCheckbox extends StatelessWidget {
   /// the height and width of the checkbox (default: 24)
   final double dimensions;
 
-  const ChecklistCheckbox(
-      {@required this.checked, @required this.onChecked, this.dimensions = 24});
+  const ChecklistCheckbox({
+    @required this.checked,
+    @required this.onChecked,
+    this.dimensions = 24,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +24,10 @@ class ChecklistCheckbox extends StatelessWidget {
 
     const borderRadius = BorderRadius.all(Radius.circular(8));
 
-    const background =
-        BoxDecoration(color: AppColors.grey600, borderRadius: borderRadius);
+    const background = BoxDecoration(
+      color: AppColors.grey600,
+      borderRadius: borderRadius,
+    );
 
     return InkWell(
       onTap: () {

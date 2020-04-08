@@ -19,8 +19,11 @@ class CardContainer extends StatelessWidget {
   /// Cards layout
   final CardsLayout containerLayout;
 
-  const CardContainer(
-      {this.title, @required this.cards, @required this.containerLayout});
+  const CardContainer({
+    this.title,
+    @required this.cards,
+    @required this.containerLayout,
+  });
 
   @override
   Widget build(BuildContext context) {

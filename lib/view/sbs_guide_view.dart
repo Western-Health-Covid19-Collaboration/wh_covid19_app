@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../strings.dart';
 import '../style.dart';
 import '../widget/reusable_stepper.dart';
 
 class SBSGuideView extends StatelessWidget {
-  final title = 'Step By Step Guidance';
   final color = const Color.fromRGBO(146, 211, 183, 1);
 
   @override
@@ -18,14 +18,15 @@ class SBSGuideView extends StatelessWidget {
         backgroundColor: Colors.white,
         iconTheme: Styles.appBarIconTheme,
         title: Text(
-          title,
+          Strings.ppeStepByStepTitle,
           style: Styles.appBarTextStyle,
         ),
       ),
       body: Container(
-          width: double.infinity,
-          padding: const EdgeInsets.all(12),
-          child: ReusableStepper()),
+        width: double.infinity,
+        padding: const EdgeInsets.all(12),
+        child: ReusableStepper(),
+      ),
     );
   }
 }

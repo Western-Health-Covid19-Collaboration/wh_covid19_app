@@ -2,12 +2,7 @@
 class Strings {
   /// General strings
   static const String appName = 'WHAC19';
-
-  /// Persistent storage strings used to persist data between app sessions
-  static const String settingDisclaimerAgreed = 'disclaimer_agreed';
-  static const String settingDisclaimerVersion = 'disclaimer_version';
-  static const String settingDisclaimerAgreedDateTime =
-      'disclaimer_agreed_date_time';
+  static const String toDo = 'TO DO';
 
   /// Disclaimer strings
   static const String disclaimerTitle = 'Disclaimer and conditions of use';
@@ -28,7 +23,7 @@ This app is designed to be used by the anaesthetist and critical care doctors at
   static const String disclaimerHaveAgreedText =
       'You have agreed to the disclaimer';
 
-  /// Home strings
+  /// Home screen strings
   static const String homeHeading1 = 'Look After Yourself';
   static const String homeHeading2 = 'Airway';
   static const String homeHeading3 = 'ICU';
@@ -37,8 +32,54 @@ This app is designed to be used by the anaesthetist and critical care doctors at
   static const String ppeTitle = 'PPE Technique';
   static const String ppeDonningTitle = 'Donning Personal Protective Equipment';
   static const String ppeDoffingTitle = 'Doffing Personal Protective Equipment';
+  static const String ppeMethod1Title = 'Method 1';
+  static const String ppeMethod2Title = 'Method 2';
+  static const String ppeMethod1InfographicTitle = 'Method One Infographic';
+  static const String ppeMethod2InfographicTitle = 'Method Two Infographic';
+  static const String ppeStepByStepTitle = 'Step By Step Guide';
+  static const String ppeDonningInfographicTitle = 'PPE ON Infographic';
 
+  /// Licencing
   static const String licencesTitle = 'Third-Party Licenses';
   static const String licencesMsg =
       'WHAC19 is built using open source software';
+
+  /// Intubation screens
+  static const String intubationChecklistTitle = 'Intubation Checklist';
+  static const String intubationInfographicTitle = 'Intubation Infographic';
+  static const String intubationGuideTitle = 'Intubation Guide';
+
+  /// Extubation
+  static const String extubationGuideTitle = 'Extubation Guide';
+  static const String extubationInfographicTitle = 'Extubation Infographic';
+
+  /// Ventilation
+  static const String ventilationTitle = 'Ventilation';
+
+  /// Daily Round
+  static const String dailyRoundTitle = 'Daily Round';
+
+  /// Tips for Cross skilling
+  static const String tipsForCrossSkillingTitle = 'Tips for Cross-skilling';
+
+  /// Your Welfare
+  static const String yourWelfareTitle = 'Your Welfare';
+  static const String yourWelfarePhasesTitle = 'Phases of Pandemic and '
+      'suggestions ';
+
+  /// Information
+  static const String informationTitle = 'Information';
+  static const String informationWhCoronaTitle = 'WH Novel Coronavirus Website';
+  static const String informationWhAnaestheticTitle =
+      'WH Anaesthetic Microsite';
+  static const String informationWhIcuTitle = 'WH ICU Microsite';
+  static const String informationWhContactsTitle = 'Contact Numbers';
+  static const String informationRecommendTitle =
+      'Society & College Recommendations';
+  static const String informationAppFeedbackTitle = 'App Feedback';
+  static const String informationAppAckRefTitle =
+      'Acknowledgements and references';
+  static const String informationAppThirdPartyTitle = 'Third-Party Licenses';
+  static const String informationFooter = 'Built with ❤️ by a band of '
+      'volunteers';
 }

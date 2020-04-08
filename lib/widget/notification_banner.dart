@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
 import '../style.dart';
 
 class NotificationBanner extends StatelessWidget {
@@ -7,8 +8,11 @@ class NotificationBanner extends StatelessWidget {
   final String message;
   final Color backgroundColor;
 
-  const NotificationBanner(
-      {this.icon, @required this.message, this.backgroundColor = Colors.white});
+  const NotificationBanner({
+    this.icon,
+    @required this.message,
+    this.backgroundColor = Colors.white,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,18 +25,19 @@ class NotificationBanner extends StatelessWidget {
           children: <Widget>[
             icon,
             Expanded(
-                child: Padding(
-              padding: const EdgeInsets.fromLTRB(12.0, 0.0, 0.0, 0.0),
-              child: Column(
-                children: <Widget>[
-                  const Padding(padding: EdgeInsets.symmetric(vertical: 2.0)),
-                  Text(
-                    message,
-                    style: Styles.textSemiBold,
-                  )
-                ],
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(12.0, 0.0, 0.0, 0.0),
+                child: Column(
+                  children: <Widget>[
+                    const Padding(padding: EdgeInsets.symmetric(vertical: 2.0)),
+                    Text(
+                      message,
+                      style: Styles.textSemiBold,
+                    )
+                  ],
+                ),
               ),
-            )),
+            ),
           ],
         ),
       ),

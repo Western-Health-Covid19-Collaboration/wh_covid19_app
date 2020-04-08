@@ -34,11 +34,16 @@ class PPECard extends StatelessWidget {
         Image.asset(step.image),
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
-          child: Text(step.text, style: Styles.textH4),
+          child: Text(
+            step.text,
+            style: Styles.textH4,
+          ),
         ),
         Container(
           padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
-          child: StringList(items: step.notes),
+          child: StringList(
+            items: step.notes,
+          ),
         )
       ],
     );

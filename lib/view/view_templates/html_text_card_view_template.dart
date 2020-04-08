@@ -8,19 +8,24 @@ class HtmlTextCardViewTemplate extends StatelessWidget {
   final String title;
   final String html;
   final Color bgColor;
-  const HtmlTextCardViewTemplate({this.title, this.bgColor, this.html});
+  const HtmlTextCardViewTemplate({
+    this.title,
+    this.bgColor,
+    this.html,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bgColor ?? AppColors.backgroundBlue,
       appBar: AppBar(
-          // Warning brightness interacts with SystemUiOverlayStyle
-          // See system_bars.dart comments
-          brightness: Brightness.light,
-          backgroundColor: AppColors.appBarBackground,
-          iconTheme: Styles.appBarIconTheme,
-          title: Text(title, style: Styles.appBarTextStyle)),
+        // Warning brightness interacts with SystemUiOverlayStyle
+        // See system_bars.dart comments
+        brightness: Brightness.light,
+        backgroundColor: AppColors.appBarBackground,
+        iconTheme: Styles.appBarIconTheme,
+        title: Text(title, style: Styles.appBarTextStyle),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(12),

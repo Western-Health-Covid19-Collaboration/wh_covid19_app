@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../models/IntubationChecklist.dart';
 
+import '../../models/IntubationChecklist.dart';
 import '../../style.dart';
 import '../../view/airway/checklist/intubation_checklist_page.dart';
 import '../../widget/cards/reusable_card_base.dart';
@@ -13,16 +13,18 @@ class IntubationChecklistItemWidget extends StatelessWidget {
   final Color backgroundColor;
   final Color selectedBackgroundColor;
 
-  const IntubationChecklistItemWidget(
-      {@required this.listItem,
-      this.backgroundColor = AppColors.grey50,
-      this.selectedBackgroundColor = AppColors.grey600});
+  const IntubationChecklistItemWidget({
+    @required this.listItem,
+    this.backgroundColor = AppColors.grey50,
+    this.selectedBackgroundColor = AppColors.grey600,
+  });
 
   Widget getList() {
     if (listItem.notes != null && listItem.notes.isNotEmpty) {
       return StringList(
-          items: listItem.notes,
-          padding: const EdgeInsets.fromLTRB(8, 0, 0, 0));
+        items: listItem.notes,
+        padding: const EdgeInsets.fromLTRB(8, 0, 0, 0),
+      );
     }
     return Container();
   }
@@ -36,7 +38,10 @@ class IntubationChecklistItemWidget extends StatelessWidget {
       elevation: 0,
       fallback: () {
         // setState not needed, because Provider takes care of rebuilding.
-        selectionState.setChecked(listItem, checked: !isChecked);
+        selectionState.setChecked(
+          listItem,
+          checked: !isChecked,
+        );
       },
       padding: const EdgeInsets.all(16),
       color: isChecked ? selectedBackgroundColor : backgroundColor,
@@ -45,10 +50,11 @@ class IntubationChecklistItemWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             ChecklistCheckbox(
-                checked: isChecked,
-                onChecked: () {
-                  selectionState.setChecked(listItem, checked: !isChecked);
-                }),
+              checked: isChecked,
+              onChecked: () {
+                selectionState.setChecked(listItem, checked: !isChecked);
+              },
+            ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(16, 0, 0, 0),

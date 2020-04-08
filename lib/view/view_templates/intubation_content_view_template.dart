@@ -11,11 +11,11 @@ class IntubationContentViewTemplate extends StatelessWidget {
   final List<Object> flatItems;
   final Color color;
 
-  IntubationContentViewTemplate(
-      {Key key,
-      IntubationContent content,
-      this.color = AppColors.backgroundGreen})
-      : flatItems = content.sections
+  IntubationContentViewTemplate({
+    Key key,
+    IntubationContent content,
+    this.color = AppColors.backgroundGreen,
+  })  : flatItems = content.sections
             .expand((e) => [if (e.name != null) e, ...e.items])
             .toList(),
         super(key: key);
@@ -31,40 +31,49 @@ class IntubationContentViewTemplate extends StatelessWidget {
           final last = index == flatItems.length - 1;
           if (item is IntubationItem) {
             return Card(
-                margin: EdgeInsets.fromLTRB(16, 8, 16, last ? 24 : 0),
-                shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(8))),
-                child: Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: Stack(
-                      children: <Widget>[
-                        Text(
-                          item.icon,
-                          style: Styles.textH4,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 40),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(item.title, style: Styles.textH4),
-                              if (item.subtitle != null) ...[
-                                const SizedBox(height: 4),
-                                Text(
-                                  item.subtitle,
-                                  style: Styles.textP,
-                                )
-                              ],
-                            ],
-                          ),
-                        )
-                      ],
-                    )));
+              margin: EdgeInsets.fromLTRB(16, 8, 16, last ? 24 : 0),
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(8),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Stack(
+                  children: <Widget>[
+                    Text(
+                      item.icon,
+                      style: Styles.textH4,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 40),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(item.title, style: Styles.textH4),
+                          if (item.subtitle != null) ...[
+                            const SizedBox(height: 4),
+                            Text(
+                              item.subtitle,
+                              style: Styles.textP,
+                            )
+                          ],
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            );
           } else if (item is IntubationSection) {
             return Padding(
-                padding: const EdgeInsets.fromLTRB(16, 24, 16, 0),
-                child: Text(item.name, style: Styles.textH4));
+              padding: const EdgeInsets.fromLTRB(16, 24, 16, 0),
+              child: Text(
+                item.name,
+                style: Styles.textH4,
+              ),
+            );
           } else {
             throw Exception('Invalid IntubationContent item type $item');
           }
