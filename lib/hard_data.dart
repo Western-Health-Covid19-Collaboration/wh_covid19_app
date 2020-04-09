@@ -298,10 +298,8 @@ const List<IntubationChecklist> intubationChecklist = [
     title: 'Equipment',
     checklist: [
       IntubationChecklistItem(
-          title: 'Videolaryngoscope',
-          notes: [
-            'Blade available',
-            'Back-up laryngoscope available'],
+        title: 'Videolaryngoscope',
+        notes: ['Blade available', 'Back-up laryngoscope available'],
       ),
       IntubationChecklistItem(
         title: 'Tube chosen; cuff tested',
@@ -312,8 +310,7 @@ const List<IntubationChecklist> intubationChecklist = [
       IntubationChecklistItem(title: 'Lubricant'),
       IntubationChecklistItem(title: 'Supraglottic airway sized to pt'),
       IntubationChecklistItem(title: 'Scalpel + bougie CICO kit'),
-      IntubationChecklistItem(
-          title: 'Difficult airway trolley available'),
+      IntubationChecklistItem(title: 'Difficult airway trolley available'),
       IntubationChecklistItem(title: 'etCO2'),
       IntubationChecklistItem(title: 'Viral filter'),
     ],
@@ -431,10 +428,8 @@ const List<IntubationContent> intubationGuide = [
           IntubationItem('Indirect view'),
           IntubationItem('Tube to correct depth 1st time',
               subtitle: 'Cuff manometry not required'),
-          IntubationItem(
-              'Inflate cuff generously before ventilation',
-              subtitle: '10mls of air',
-              icon: '🛑'),
+          IntubationItem('Inflate cuff generously before ventilation',
+              subtitle: '10mls of air', icon: '🛑'),
         ],
       )
     ],
