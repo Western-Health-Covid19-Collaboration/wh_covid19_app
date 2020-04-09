@@ -253,6 +253,7 @@ const List<IntubationChecklist> intubationChecklist = [
           'Outside room Runner'
         ],
       ),
+      IntubationChecklistItem(title: 'Communication device checked'),
       IntubationChecklistItem(
         title: 'Problems anticipated?',
       ),
@@ -267,7 +268,7 @@ const List<IntubationChecklist> intubationChecklist = [
       IntubationChecklistItem(
         title: 'Pre-oxygenation',
         notes: [
-          'FIO2 100%',
+          'FiO2 100%',
           'Sitting position '
               '45°'
         ],
@@ -278,17 +279,17 @@ const List<IntubationChecklist> intubationChecklist = [
       ),
       IntubationChecklistItem(
         title: 'Haemodynamics optimised',
-        notes: ['Fluid bolus', 'Pressor'],
+        notes: ['Fluid bolus?', 'Pressor infusion?'],
       ),
     ],
   ),
   IntubationChecklist(
     title: 'Drugs',
     checklist: [
-      IntubationChecklistItem(title: 'RSI drugs drawn up, doses chosen'),
+      IntubationChecklistItem(title: 'RSI drugs prepared & doses chosen'),
       IntubationChecklistItem(
         title: 'Rescue drugs',
-        notes: ['Metaraminol'],
+        notes: ['Metaraminol', 'Adrenaline'],
       ),
       IntubationChecklistItem(title: 'Post intubation sedation plan'),
       IntubationChecklistItem(title: 'Drug C/I or allergies?'),
@@ -298,7 +299,7 @@ const List<IntubationChecklist> intubationChecklist = [
     title: 'Equipment',
     checklist: [
       IntubationChecklistItem(
-        title: 'Videolaryngoscope',
+        title: '2 Laryngoscopes (1 VL, 1 Mac)',
         notes: ['Blade available', 'Back-up laryngoscope available'],
       ),
       IntubationChecklistItem(
@@ -307,10 +308,10 @@ const List<IntubationChecklist> intubationChecklist = [
       IntubationChecklistItem(title: 'Bougie/stylet'),
       IntubationChecklistItem(title: '10ml syringe'),
       IntubationChecklistItem(title: 'Tube tie'),
-      IntubationChecklistItem(title: 'Lubricant'),
       IntubationChecklistItem(title: 'Supraglottic airway sized to pt'),
       IntubationChecklistItem(title: 'Scalpel + bougie CICO kit'),
-      IntubationChecklistItem(title: 'Difficult airway trolley available'),
+      IntubationChecklistItem(
+          title: 'Airway trolley with 3 backup boxes (LMA, Facemask, CICO)'),
       IntubationChecklistItem(title: 'etCO2'),
       IntubationChecklistItem(title: 'Viral filter'),
     ],
@@ -323,12 +324,13 @@ const List<IntubationChecklist> intubationChecklist = [
         title: 'Fluid runs easily',
       ),
       IntubationChecklistItem(title: 'Suction working'),
+      IntubationChecklistItem(title: 'Tube tie under neck'),
+      IntubationChecklistItem(title: 'Ventilator +/- BVM functional'),
       IntubationChecklistItem(title: 'Facemask with viral filter connected'),
       IntubationChecklistItem(title: 'etCO2 trace'),
-
-      /// Note: \u{207B}\u{00B9} is unicode representation for ^-1
-      IntubationChecklistItem(title: 'O2 running at 15L. min\u{207B}\u{00B9}'),
-      IntubationChecklistItem(title: 'Oropharyngeal/nasal airways'),
+      IntubationChecklistItem(title: 'O2 at 6l/min'),
+      IntubationChecklistItem(
+          title: 'Clinical waste bin & Mayo table/dirty tray'),
       IntubationChecklistItem(
         title: 'Airway plans:',
         notes: [
