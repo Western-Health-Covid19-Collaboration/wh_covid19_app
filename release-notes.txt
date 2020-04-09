@@ -1,5 +1,8 @@
 ---- Thursday 9th April, 2020 ----
 * Minor intubation text changes
+* New app icon for Android
+* Disclaimer formatting changes and back button fix
+* Information screen updates
 
 ---- Tuesday 7th April, 2020 ----
 * Added ICU Daily Round screen
