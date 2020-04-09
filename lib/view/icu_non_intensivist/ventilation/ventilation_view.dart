@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../hard_data.dart';
+import '../../../routes.dart';
 import '../../../strings.dart';
 import '../../../style.dart';
 import '../../../widget/containers/ventilation_guide_container.dart';
@@ -22,7 +23,8 @@ class VentilationView extends StatelessWidget {
           icon: SvgPicture.asset(
             'assets/images/icon/SVG/icon_infographic.svg',
           ),
-          onPressed: () {},
+          onPressed: () =>
+              Navigator.of(context).pushNamed(Routes.ventilationInfographic),
         )
       ],
       children: ventilationGuide

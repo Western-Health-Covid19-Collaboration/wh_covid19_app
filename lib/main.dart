@@ -15,6 +15,7 @@ import 'view/disclaimer_view.dart';
 import 'view/home_page.dart';
 import 'view/icu_non_intensivist/daily_round/daily_round_view.dart';
 import 'view/icu_non_intensivist/tips_junior_staff_view.dart';
+import 'view/icu_non_intensivist/ventilation/ventilation_infographic_page.dart';
 import 'view/icu_non_intensivist/ventilation/ventilation_view.dart';
 import 'view/info_view.dart';
 import 'view/license_view.dart';
@@ -111,6 +112,11 @@ class MyApp extends StatelessWidget {
           case Routes.intubationChecklistInfographic:
             return MaterialPageRoute<InfoView>(
               builder: (context) => IntubationChecklistInfographicPage(),
+              fullscreenDialog: true,
+            );
+          case Routes.ventilationInfographic:
+            return MaterialPageRoute<void>(
+              builder: (context) => VentilationInfographicPage(),
               fullscreenDialog: true,
             );
         }
