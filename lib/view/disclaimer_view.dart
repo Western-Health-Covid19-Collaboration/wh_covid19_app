@@ -88,7 +88,7 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                         ),
                         const Text(
                           'WHAC19 is an educational tool and interactive cognitive aid for Western Health '
-                          'Anaesthetists and ICU doctors 👩‍⚕ 👨‍⚕ who are managing patients with COVID-19 🤒 .'
+                          'anaesthetists and ICU doctors 👩‍⚕ 👨‍⚕ who are managing patients with COVID-19 🤒 .'
                           '\n\nWe want to protect our staff from infection risk 🌡 and ensure excellent patient '
                           'care 🏥. WHAC19 aims to provide a really quick, '
                           'usable means to access the core information ℹ️'
