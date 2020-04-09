@@ -113,8 +113,8 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                             ),
                           ],
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 42.0),
+                        const Padding(
+                          padding: EdgeInsets.only(left: 42.0),
                           child: Text(
                             'This is not a comprehensive source nor can we guarantee it is completely up to date at '
                             'the time of use 📱.\n\nIt is created using Western Health guidelines, informally '
@@ -141,8 +141,8 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                             ),
                           ],
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 42.0),
+                        const Padding(
+                          padding: EdgeInsets.only(left: 42.0),
                           child: Text(
                             'It is your responsibility to ensure your practice is up to date, contextualised for the '
                             'patient and in accordance with your institution\'s practice 🤓.\n\n',
@@ -154,7 +154,7 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                           'Full Disclaimer\n',
                           style: Styles.textH3,
                         ),
-                        Text(
+                        const Text(
                           Strings.disclaimerBody,
                           style: Styles.textP,
                         ),
