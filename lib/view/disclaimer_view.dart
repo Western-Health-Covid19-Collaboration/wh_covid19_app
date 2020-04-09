@@ -70,43 +70,93 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
-                        Center(
-                          child: Text(
-                            '🛑 ✋\n',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 35.0),
+                      children: <Widget>[
+                        const Center(
+                          child: Padding(
+                            padding: EdgeInsets.only(top: 15.0, bottom: 30.0),
+                            child: Text(
+                              '🛑 ✋',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontSize: 44.0),
+                            ),
                           ),
                         ),
-                        Text(
-                            'This app is for clinicians and hospital staff use ONLY\n',
-                            style: Styles.textH3),
-                        Text(
+                        const Text(
+                          'This app is for clinicians and hospital staff use'
+                          ' ONLY\n',
+                          style: Styles.textH3,
+                        ),
+                        const Text(
                           'WHAC19 is an educational tool and interactive cognitive aid for Western Health '
-                          'Anaesthetists and ICU doctors 👩‍⚕ 👨‍⚕ who are managing patients with COVID-19 🤒 .'
+                          'anaesthetists and ICU doctors 👩‍⚕ 👨‍⚕ who are managing patients with COVID-19 🤒 .'
                           '\n\nWe want to protect our staff from infection risk 🌡 and ensure excellent patient '
-                          'care 🏥. WHAC19 aims to provide a really quick, usable means to access the core information ℹ️ for this.\n',
-                          style: TextStyle(fontSize: 14.0),
+                          'care 🏥. WHAC19 aims to provide a really quick, '
+                          'usable means to access the core information ℹ️'
+                          ' for this.\n\n',
+                          style: Styles.textH5,
                         ),
-                        Text('✋ Please keep in mind\n', style: Styles.textH3),
-                        Text(
-                          'This is not a comprehensive source nor can we guarantee it is completely up to date at '
-                          'the time of use 📱.\n\nIt is created using Western Health guidelines, informally '
-                          'peer-reviewed and adapted, with permission, from College/Society guidelines.\n\n',
-                          style: TextStyle(fontSize: 14.0),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Container(
+                              width: 42.0,
+                              child: const Text(
+                                '✋',
+                                style: Styles.textH3,
+                              ),
+                            ),
+                            const Expanded(
+                              child: Text(
+                                'Please keep in mind\n',
+                                style: Styles.textH3,
+                              ),
+                            ),
+                          ],
                         ),
-                        Text('🛑 WHAC19 does not constitute official advice\n',
-                            style: Styles.textH3),
-                        Text(
-                          'It is your responsibility to ensure your practice is up to date, contextualised for the '
-                          'patient and in accordance with your institution\'s practice 🤓.\n\n',
-                          style: TextStyle(fontSize: 14.0),
+                        const Padding(
+                          padding: EdgeInsets.only(left: 42.0),
+                          child: Text(
+                            'This is not a comprehensive source nor can we guarantee it is completely up to date at '
+                            'the time of use 📱.\n\nIt is created using Western Health guidelines, informally '
+                            'peer-reviewed and adapted, with permission, from College/Society guidelines.\n\n',
+                            style: Styles.textP,
+                          ),
                         ),
-                        Text('Full Disclaimer\n', style: Styles.textH3),
-                        Text(
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Container(
+                              width: 42.0,
+                              child: const Text(
+                                '🛑',
+                                style: Styles.textH3,
+                              ),
+                            ),
+                            const Expanded(
+                              child: Text(
+                                'WHAC19 does not constitute official advice\n',
+                                style: Styles.textH3,
+                                softWrap: true,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.only(left: 42.0),
+                          child: Text(
+                            'It is your responsibility to ensure your practice is up to date, contextualised for the '
+                            'patient and in accordance with your institution\'s practice 🤓.\n\n',
+                            //style: TextStyle(fontSize: 14.0),
+                            style: Styles.textP,
+                          ),
+                        ),
+                        const Text(
+                          'Full Disclaimer\n',
+                          style: Styles.textH3,
+                        ),
+                        const Text(
                           Strings.disclaimerBody,
-                          //style: Styles.textLegal,
-                          style: TextStyle(fontSize: 14.0),
+                          style: Styles.textP,
                         ),
                       ],
                     ),
@@ -128,7 +178,9 @@ class _DisclaimerViewState extends State<DisclaimerView> {
       child: RaisedButton(
         color: AppColors.green500,
         shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(8)),
+          borderRadius: BorderRadius.all(
+            Radius.circular(8),
+          ),
         ),
         onPressed: () {
           // Write agreement of disclaimer to device storage to persist this decision
@@ -149,9 +201,10 @@ class _DisclaimerViewState extends State<DisclaimerView> {
       BuildContext context, dynamic version, dynamic dateStampString) {
     return Container(
       padding: const EdgeInsets.all(16),
+      color: Colors.white,
       child: Text(
         '${Strings.disclaimerHaveAgreedText} \nVersion: $version \nDate & time: $dateStampString',
-        style: Styles.textLegal,
+        style: Styles.textFooter,
       ),
     );
   }
@@ -171,6 +224,8 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                 // Warning brightness interacts with SystemUiOverlayStyle
                 // See system_bars.dart comments
                 brightness: Brightness.light,
+                backgroundColor: AppColors.appBarBackground,
+                iconTheme: Styles.appBarIconTheme,
                 elevation: 4.0,
                 automaticallyImplyLeading: snapshot.data.agreed,
                 title: const Text(
