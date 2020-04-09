@@ -5,7 +5,7 @@ class Strings {
   static const String toDo = 'TO DO';
 
   /// Disclaimer strings
-  static const String disclaimerTitle = 'Disclaimer and conditions of use';
+  static const String disclaimerTitle = 'Disclaimer & Conditions of Use';
   // *** WARNING ***
   // When disclaimerBody changes in any way, increment disclaimerVersion by one
   static const String disclaimerBody = '''
@@ -79,7 +79,7 @@ This app is designed to be used by the anaesthetist and critical care doctors at
       'Society & College Recommendations';
   static const String informationAppFeedbackTitle = 'App Feedback';
   static const String informationAppAckRefTitle =
-      'Acknowledgements and references';
+      'Acknowledgements and References';
   static const String informationAppThirdPartyTitle = 'Third-Party Licenses';
   static const String informationFooter = 'Built with ❤️ by a band of '
       'volunteers';
