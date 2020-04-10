@@ -28,12 +28,14 @@ const List<ReusableCard> staffWelfare = [
     description: '3 guides',
     color: Colors.white,
     routeTo: Routes.ppe,
+    margin: EdgeInsets.all(0.0),
   ),
   ReusableCard(
     title: Strings.yourWelfareTitle,
     description: 'Vital info & contacts',
     color: Colors.white,
     routeTo: Routes.staffWelfare,
+    margin: EdgeInsets.all(0.0),
   )
 ];
 
@@ -44,18 +46,24 @@ const List<ReusableCard> airway = [
     description: 'Step by step guide',
     color: AppColors.backgroundGreen,
     routeTo: Routes.intubationGuidance,
+    height: 70,
+    margin: EdgeInsets.all(0.0),
   ),
   ReusableCard(
     title: Strings.intubationChecklistTitle,
     description: 'Checklist',
     color: AppColors.backgroundGreen,
     routeTo: Routes.intubationChecklist,
+    height: 70,
+    margin: EdgeInsets.all(0.0),
   ),
   ReusableCard(
     title: Strings.extubationGuideTitle,
     description: 'Step by step guide',
     color: AppColors.backgroundGreen,
     routeTo: Routes.extubationGuidance,
+    height: 70,
+    margin: EdgeInsets.all(0.0),
   )
 ];
 
@@ -66,16 +74,19 @@ const List<ReusableCard> icu = [
     description: 'Description',
     color: AppColors.backgroundBlue,
     routeTo: Routes.ventilation,
+    margin: EdgeInsets.all(0.0),
   ),
   ReusableCard(
     title: Strings.dailyRoundTitle,
     color: AppColors.backgroundBlue,
     routeTo: Routes.generalCare,
+    margin: EdgeInsets.all(0.0),
   ),
   ReusableCard(
     title: Strings.tipsForCrossSkillingTitle,
     color: AppColors.backgroundBlue,
     routeTo: Routes.tipsJuniorStaff,
+    margin: EdgeInsets.all(0.0),
   ),
 ];
 

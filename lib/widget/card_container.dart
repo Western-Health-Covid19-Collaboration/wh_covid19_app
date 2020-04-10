@@ -8,7 +8,7 @@ enum CardsLayout { twoRow, threeColumn, threeDoubleRowBigTop, fourDoubleRow }
 class CardContainer extends StatelessWidget {
   static const double _outerPadding = 16;
   static const double _innerPadding = 8;
-  static const double _headerPadding = 4;
+  static const double _headerPadding = 0;
 
   /// Title for the container
   final String title;
