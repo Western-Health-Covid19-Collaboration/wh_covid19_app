@@ -84,6 +84,7 @@ class _HomePageState extends State<HomePage> {
     final percentage = scrollPos < appBarBottom
         ? ((scrollPos) / appBarBottom.toDouble())
         : 1.00;
+    final elevation = percentage < 1.00 ? 0.00 : 4.00;
 
     return Builder(builder: (context) {
       final _scrollController = PrimaryScrollController.of(context);
@@ -127,6 +128,7 @@ class _HomePageState extends State<HomePage> {
             floating: true,
             pinned: true,
             snap: false,
+            elevation: elevation,
           ),
           _renderList(context)
         ],
