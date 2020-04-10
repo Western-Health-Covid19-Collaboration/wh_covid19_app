@@ -1,8 +1,11 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../constants.dart';
+import '../hard_data.dart';
 import '../models/disclaimer_model.dart';
 import '../routes.dart';
 import '../strings.dart';
@@ -87,14 +90,33 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                           style: Styles.textH3,
                         ),
                         const Text(
-                          'WHAC19 is an educational tool and interactive cognitive aid for Western Health '
+                          'Western Health Anaesthesia COVID-19 (WHAC19) is an educational tool and interactive cognitive aid for Western Health '
                           'anaesthetists and ICU doctors 👩‍⚕ 👨‍⚕ who are managing patients with COVID-19 🤒 .'
                           '\n\nWe want to protect our staff from infection risk 🌡 and ensure excellent patient '
                           'care 🏥. WHAC19 aims to provide a really quick, '
                           'usable means to access the core information ℹ️'
-                          ' for this.\n\n',
+                          ' for this.',
                           style: Styles.textH5,
                         ),
+                        RichText(
+                            text: TextSpan(children: [
+                          const TextSpan(
+                            text: '\n\nPlease refer to ',
+                            style: Styles.textH5,
+                          ),
+                          TextSpan(
+                              text: whCoronavirusInfoURL,
+                              style: Styles.textH5Hyperlink,
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  launch(whCoronavirusInfoURL);
+                                }),
+                          const TextSpan(
+                            text:
+                                ' to ensure you have the latest up-to-date information on Western Health\'s Coronavirus guidelines.\n\n',
+                            style: Styles.textH5,
+                          ),
+                        ])),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
