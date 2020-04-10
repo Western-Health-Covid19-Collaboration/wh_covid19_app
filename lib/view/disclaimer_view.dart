@@ -12,6 +12,8 @@ import '../strings.dart';
 import '../style.dart';
 import '../utils/system_bars.dart';
 
+// *** WARNING ***
+// When disclaimerBody changes in any way, increment disclaimerVersion by one
 /// Disclaimer screen presented on app startup until the user agrees to the disclaimer
 class DisclaimerView extends StatefulWidget {
   @override
