@@ -1,3 +1,5 @@
+// *** WARNING ***
+// When disclaimerBody changes in any way, increment disclaimerVersion by one
 class DisclaimerDetails {
   bool agreed;
   String version;
