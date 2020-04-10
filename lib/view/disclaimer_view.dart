@@ -142,7 +142,8 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                           child: Text(
                             'This is not a comprehensive source nor can we guarantee it is completely up to date at '
                             'the time of use 📱.\n\nIt is created using Western Health guidelines, informally '
-                            'peer-reviewed and adapted, with permission, from College/Society guidelines.\n\n',
+                            'peer-reviewed and adapted, with permission, from College/Society guidelines.\n\n'
+                            'WHAC19 gathers analytics and crash data which is used to improve the app.\n\n',
                             style: Styles.textP,
                           ),
                         ),
