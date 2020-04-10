@@ -26,6 +26,9 @@ class ReusableCard extends StatelessWidget {
   /// Fallback instead of route
   final Function fallback;
 
+  /// Different margin
+  final EdgeInsets margin;
+
   const ReusableCard({
     @required this.title,
     this.description,
@@ -34,6 +37,7 @@ class ReusableCard extends StatelessWidget {
     this.height = 84,
     this.elevation = 4,
     this.fallback,
+    this.margin = const EdgeInsets.all(4.0),
   });
 
   @override
@@ -51,6 +55,7 @@ class ReusableCard extends StatelessWidget {
       boxConstraints: BoxConstraints(minHeight: height),
       elevation: elevation,
       fallback: fallback,
+      margin: margin,
       verticalAlignment: description == ''
           ? MainAxisAlignment.center
           : MainAxisAlignment.spaceBetween,
@@ -61,6 +66,7 @@ class ReusableCard extends StatelessWidget {
         ),
         cardContent,
       ],
+      
     );
   }
 }
