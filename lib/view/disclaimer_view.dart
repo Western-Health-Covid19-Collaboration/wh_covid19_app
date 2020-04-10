@@ -21,7 +21,7 @@ class _DisclaimerViewState extends State<DisclaimerView> {
   void initState() {
     super.initState();
     // Analytics set screen name, stays until another screen changes it
-    Analytics().analyticsScreen(Constants.analyticsDisclaimerScreen);
+    Analytics.analyticsScreen(Constants.analyticsDisclaimerScreen);
   }
 
   // When user agrees to disclaimer, persist values for that agreement, version of disclaimer and date/time to storage

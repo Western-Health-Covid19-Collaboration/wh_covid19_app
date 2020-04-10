@@ -28,7 +28,7 @@ class IntubationChecklistPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Analytics set screen name, stays until another screen changes it
-    Analytics().analyticsScreen(Constants.analyticsIntubationChecklistScreen);
+    Analytics.analyticsScreen(Constants.analyticsIntubationChecklistScreen);
 
     return ChangeNotifierProvider(
         create: (context) =>

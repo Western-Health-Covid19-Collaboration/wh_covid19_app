@@ -82,7 +82,7 @@ class InfoView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Analytics set screen name, stays until another screen changes it
-    Analytics().analyticsScreen(Constants.analyticsInformationScreen);
+    Analytics.analyticsScreen(Constants.analyticsInformationScreen);
 
     return Scaffold(
       backgroundColor: AppColors.appBackground,

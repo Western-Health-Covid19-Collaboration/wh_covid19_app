@@ -16,7 +16,7 @@ class ICUDailyRoundView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Analytics set screen name, stays until another screen changes it
-    Analytics().analyticsScreen(Constants.analyticsDailyRoundScreen);
+    Analytics.analyticsScreen(Constants.analyticsDailyRoundScreen);
 
     final _stepTabs = icuDailyRoundSteps.map((e) => e.heading).toList();
     final _checklistTabs =

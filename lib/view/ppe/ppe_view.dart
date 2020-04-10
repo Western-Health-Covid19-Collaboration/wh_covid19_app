@@ -80,7 +80,7 @@ class _PPEViewState extends State<PPEView> {
   void initState() {
     super.initState();
     // Analytics set screen name, stays until another screen changes it
-    Analytics().analyticsScreen(Constants.analyticsPPEScreen);
+    Analytics.analyticsScreen(Constants.analyticsPPEScreen);
 
     _videoController1 =
         VideoPlayerController.asset('assets/videos/wh_icu_donning.mp4');

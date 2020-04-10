@@ -10,7 +10,7 @@ class PPEOffMethod2InfographicPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Analytics set screen name, stays until another screen changes it
-    Analytics().analyticsScreen(Constants.analyticsPPEOffMethod2Infographic);
+    Analytics.analyticsScreen(Constants.analyticsPPEOffMethod2Infographic);
 
     return const InfographicPage(
       title: Strings.ppeMethod2InfographicTitle,

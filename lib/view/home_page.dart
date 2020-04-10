@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     // Analytics set screen name, stays until another screen changes it
-    Analytics().analyticsScreen(Constants.analyticsHomeScreen);
+    Analytics.analyticsScreen(Constants.analyticsHomeScreen);
   }
 
   Widget _renderBackgroundContainer(BuildContext context) {

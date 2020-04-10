@@ -14,7 +14,7 @@ class PPEOnGuidance extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Analytics set screen name, stays until another screen changes it
-    Analytics().analyticsScreen(Constants.analyticsPPEOnScreen);
+    Analytics.analyticsScreen(Constants.analyticsPPEOnScreen);
 
     return Scaffold(
       backgroundColor: AppColors.green500,

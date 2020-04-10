@@ -10,7 +10,7 @@ class TipsJuniorStaffView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Analytics set screen name, stays until another screen changes it
-    Analytics().analyticsScreen(Constants.analyticsCrossSkillingScreen);
+    Analytics.analyticsScreen(Constants.analyticsCrossSkillingScreen);
 
     return Scaffold(
       backgroundColor: AppColors.backgroundBlue,

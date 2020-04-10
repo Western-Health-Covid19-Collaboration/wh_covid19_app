@@ -15,7 +15,7 @@ class PPEOffGuidanceMethod2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Analytics set screen name, stays until another screen changes it
-    Analytics().analyticsScreen(Constants.analyticsPPEOffMethod2Screen);
+    Analytics.analyticsScreen(Constants.analyticsPPEOffMethod2Screen);
 
     return Scaffold(
       backgroundColor: AppColors.grey50,

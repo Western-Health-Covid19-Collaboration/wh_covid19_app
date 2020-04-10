@@ -9,8 +9,8 @@ class IntubationChecklistInfographicPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Analytics set screen name, stays until another screen changes it
-    Analytics()
-        .analyticsScreen(Constants.analyticsIntubationChecklistInfographic);
+    Analytics.analyticsScreen(
+        Constants.analyticsIntubationChecklistInfographic);
 
     return const InfographicPage(
       title: 'Intubation Checklist Infographic',

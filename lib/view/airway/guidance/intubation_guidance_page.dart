@@ -15,7 +15,7 @@ class IntubationGuidancePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Analytics set screen name, stays until another screen changes it
-    Analytics().analyticsScreen(Constants.analyticsIntubationGuideScreen);
+    Analytics.analyticsScreen(Constants.analyticsIntubationGuideScreen);
 
     return TabViewTemplate(
       Strings.intubationGuideTitle,

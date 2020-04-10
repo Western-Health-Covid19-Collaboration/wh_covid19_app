@@ -15,7 +15,7 @@ class VentilationView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Analytics set screen name, stays until another screen changes it
-    Analytics().analyticsScreen(Constants.analyticsVentilationScreen);
+    Analytics.analyticsScreen(Constants.analyticsVentilationScreen);
 
     final tabs = ventilationGuide.map((e) => e.heading).toList();
 

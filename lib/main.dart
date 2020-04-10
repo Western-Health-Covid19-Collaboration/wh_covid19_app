@@ -40,7 +40,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Crash Reporting configured for not reporting whilst doing Dev mode builds
-  CrashReporting();
+  crashReporting();
 
   // Run Zoned to allow for catching Dart errors
   runZoned(() {

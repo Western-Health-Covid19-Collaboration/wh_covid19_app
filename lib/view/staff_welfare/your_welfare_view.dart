@@ -19,7 +19,7 @@ class YourWelfareView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Analytics set screen name, stays until another screen changes it
-    Analytics().analyticsScreen(Constants.analyticsWelfareScreen);
+    Analytics.analyticsScreen(Constants.analyticsWelfareScreen);
 
     return Scaffold(
       backgroundColor: AppColors.appBackground,

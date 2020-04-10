@@ -10,7 +10,7 @@ class PPEOnInfographicPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Analytics set screen name, stays until another screen changes it
-    Analytics().analyticsScreen(Constants.analyticsPPEOnInfographic);
+    Analytics.analyticsScreen(Constants.analyticsPPEOnInfographic);
 
     return const InfographicPage(
       title: Strings.ppeDonningInfographicTitle,
