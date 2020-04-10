@@ -10,6 +10,7 @@ import '../models/disclaimer_model.dart';
 import '../routes.dart';
 import '../strings.dart';
 import '../style.dart';
+import '../utils/firebase.dart';
 import '../utils/system_bars.dart';
 
 // *** WARNING ***
@@ -21,6 +22,13 @@ class DisclaimerView extends StatefulWidget {
 }
 
 class _DisclaimerViewState extends State<DisclaimerView> {
+  @override
+  void initState() {
+    super.initState();
+    // Analytics set screen name, stays until another screen changes it
+    Analytics.analyticsScreen(Constants.analyticsDisclaimerScreen);
+  }
+
   // When user agrees to disclaimer, persist values for that agreement, version of disclaimer and date/time to storage
   Future<void> _setAgreed() async {
     final prefs = await SharedPreferences.getInstance();

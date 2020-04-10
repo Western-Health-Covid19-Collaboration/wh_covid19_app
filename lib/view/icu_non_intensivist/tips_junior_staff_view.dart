@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../constants.dart';
 import '../../strings.dart';
 import '../../style.dart';
+import '../../utils/firebase.dart';
 
 class TipsJuniorStaffView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // Analytics set screen name, stays until another screen changes it
+    Analytics.analyticsScreen(Constants.analyticsCrossSkillingScreen);
+
     return Scaffold(
       backgroundColor: AppColors.backgroundBlue,
       appBar: AppBar(

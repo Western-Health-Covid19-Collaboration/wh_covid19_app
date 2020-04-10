@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../constants.dart';
 import '../../hard_data.dart';
 import '../../strings.dart';
 import '../../style.dart';
+import '../../utils/firebase.dart';
 import '../../utils/url_utils.dart';
 import '../../widget/reusable_card.dart';
 
@@ -16,6 +18,9 @@ class YourWelfareView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Analytics set screen name, stays until another screen changes it
+    Analytics.analyticsScreen(Constants.analyticsWelfareScreen);
+
     return Scaffold(
       backgroundColor: AppColors.appBackground,
       appBar: AppBar(
