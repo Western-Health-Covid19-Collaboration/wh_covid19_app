@@ -11,6 +11,9 @@ import 'models/ventilation_guide.dart';
 import 'routes.dart';
 import 'strings.dart';
 import 'style.dart';
+import 'widget/cards/home_blue_card.dart';
+import 'widget/cards/home_green_card.dart';
+import 'widget/cards/home_white_card.dart';
 import 'widget/reusable_card.dart';
 
 /// Web urls
@@ -23,70 +26,51 @@ const String feedbackFormUrl = 'https://forms.gle/zQtfhvswrKmjJjNV7';
 
 // Staff Welfare card list composition
 const List<ReusableCard> staffWelfare = [
-  ReusableCard(
+  HomeWhiteCard(
     title: Strings.ppeTitle,
     description: '3 guides',
-    color: Colors.white,
     routeTo: Routes.ppe,
-    margin: EdgeInsets.all(0.0),
   ),
-  ReusableCard(
+  HomeWhiteCard(
     title: Strings.yourWelfareTitle,
     description: 'Vital info & contacts',
-    color: Colors.white,
     routeTo: Routes.staffWelfare,
-    margin: EdgeInsets.all(0.0),
-  )
+  ),
 ];
 
 // Airway card list composition
 const List<ReusableCard> airway = [
-  ReusableCard(
+  HomeGreenCard(
     title: Strings.intubationGuideTitle,
     description: 'Step by step guide',
-    color: AppColors.backgroundGreen,
     routeTo: Routes.intubationGuidance,
-    height: 70,
-    margin: EdgeInsets.all(0.0),
   ),
-  ReusableCard(
+  HomeGreenCard(
     title: Strings.intubationChecklistTitle,
     description: 'Checklist',
-    color: AppColors.backgroundGreen,
     routeTo: Routes.intubationChecklist,
-    height: 70,
-    margin: EdgeInsets.all(0.0),
   ),
-  ReusableCard(
+  HomeGreenCard(
     title: Strings.extubationGuideTitle,
     description: 'Step by step guide',
-    color: AppColors.backgroundGreen,
     routeTo: Routes.extubationGuidance,
-    height: 70,
-    margin: EdgeInsets.all(0.0),
-  )
+  ),
 ];
 
 // ICU card list composition
 const List<ReusableCard> icu = [
-  ReusableCard(
+  HomeBlueCard(
     title: Strings.ventilationTitle,
     description: 'Description',
-    color: AppColors.backgroundBlue,
     routeTo: Routes.ventilation,
-    margin: EdgeInsets.all(0.0),
   ),
-  ReusableCard(
+  HomeBlueCard(
     title: Strings.dailyRoundTitle,
-    color: AppColors.backgroundBlue,
     routeTo: Routes.generalCare,
-    margin: EdgeInsets.all(0.0),
   ),
-  ReusableCard(
+  HomeBlueCard(
     title: Strings.tipsForCrossSkillingTitle,
-    color: AppColors.backgroundBlue,
     routeTo: Routes.tipsJuniorStaff,
-    margin: EdgeInsets.all(0.0),
   ),
 ];
 
