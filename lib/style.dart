@@ -114,6 +114,13 @@ abstract class Styles {
     fontFamily: fontFamily,
   );
 
+  static const TextStyle textH5Hyperlink = TextStyle(
+    color: Colors.blue,
+    fontWeight: FontWeight.w600,
+    fontSize: 17.0,
+    fontFamily: fontFamily,
+  );
+
   static const TextStyle textP = TextStyle(
     color: AppColors.minorText,
     fontWeight: FontWeight.normal,
