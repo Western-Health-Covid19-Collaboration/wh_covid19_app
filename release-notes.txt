@@ -1,5 +1,6 @@
 ---- Friday 10th April, 2020 ----
 * Disclaimer updates, including a link to https://coronavirus.wh.org.au/
+* Fixed Home Page
 
 ---- Thursday 9th April, 2020 ----
 * Minor intubation text changes
