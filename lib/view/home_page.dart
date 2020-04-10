@@ -105,18 +105,20 @@ class _HomePageState extends State<HomePage> {
             bottom: PreferredSize(
               preferredSize: Size.fromHeight(appBarHeight.toDouble()),
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
+                padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     mainLogo,
-                    IconButton(
-                      icon: Icon(
+                    GestureDetector(
+                      onTap: () => InfoView.navigateTo(context),
+                      child: Icon(
                         Icons.info_outline,
+                        size: 24,
                         color: generateIconColor(AppColors.homeAppBarIcon,
                             AppColors.appBarIcon, percentage),
                       ),
-                      onPressed: () => InfoView.navigateTo(context),
                     )
                   ],
                 ),
