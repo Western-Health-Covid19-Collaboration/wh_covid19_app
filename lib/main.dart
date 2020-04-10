@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 
 import 'hard_data.dart';
@@ -5,6 +8,7 @@ import 'intro_router.dart';
 import 'routes.dart';
 import 'strings.dart';
 import 'style.dart';
+import 'utils/firebase.dart';
 import 'view/airway/checklist/intubation_checklist_infographic_page.dart';
 import 'view/airway/checklist/intubation_checklist_page.dart';
 import 'view/airway/extubation/extubation_guidance_page.dart';
@@ -31,7 +35,17 @@ import 'view/staff_welfare/your_welfare_view.dart';
 import 'view/view_templates/html_text_card_view_template.dart';
 
 void main() {
-  runApp(const MyApp());
+  // Add this, and it should be the first line in main method to ensure no crashes before runApp()
+  // Currently Crashlytics and SharedPreferences packages below use platform channels so need this before runApp()
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Crash Reporting configured for not reporting whilst doing Dev mode builds
+  CrashReporting();
+
+  // Run Zoned to allow for catching Dart errors
+  runZoned(() {
+    runApp(const MyApp());
+  }, onError: Crashlytics.instance.recordError);
 }
 
 class MyApp extends StatelessWidget {
@@ -61,6 +75,8 @@ class MyApp extends StatelessWidget {
         Routes.disclaimer: (context) => DisclaimerView(),
         Routes.licenses: (context) => LicenseView(),
       },
+      // Analytics route observer to track PageRoute transitions
+      navigatorObservers: <NavigatorObserver>[Analytics.observer],
       onGenerateRoute: (settings) {
         // Use onGenerateRoute to set fullscreenDialog=true
         switch (settings.name) {
@@ -135,12 +151,18 @@ class MyApp extends StatelessWidget {
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return HtmlTextCardViewTemplate(
-              title: data.title, bgColor: data.bgColor, html: '');
+            title: data.title,
+            bgColor: data.bgColor,
+            html: '',
+          );
         } else if (snapshot.hasError) {
           return Text('Error: ${snapshot.error}');
         } else {
           return HtmlTextCardViewTemplate(
-              title: data.title, bgColor: data.bgColor, html: snapshot.data);
+            title: data.title,
+            bgColor: data.bgColor,
+            html: snapshot.data,
+          );
         }
       },
     );

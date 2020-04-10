@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../constants.dart';
 import '../hard_data.dart';
 import '../strings.dart';
 import '../style.dart';
 import '../utils/color.dart';
+import '../utils/firebase.dart';
 import '../utils/system_bars.dart';
 import '../widget/card_container.dart';
 import 'info_view.dart';
@@ -16,6 +18,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   double _scrollPosition = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    // Analytics set screen name, stays until another screen changes it
+    Analytics().analyticsScreen(Constants.analyticsHomeScreen);
+  }
 
   Widget _renderBackgroundContainer(BuildContext context) {
     // Ensure that the image uses the full parent width

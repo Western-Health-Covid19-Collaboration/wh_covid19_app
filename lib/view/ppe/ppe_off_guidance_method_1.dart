@@ -2,16 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../constants.dart';
 import '../../hard_data.dart';
 import '../../routes.dart';
 import '../../strings.dart';
 import '../../style.dart';
+import '../../utils/firebase.dart';
 import '../../widget/notification_banner.dart';
 import '../../widget/ppe_card_container.dart';
 
 class PPEOffGuidanceMethod1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // Analytics set screen name, stays until another screen changes it
+    Analytics().analyticsScreen(Constants.analyticsPPEOffMethod1Screen);
+
     return Scaffold(
       backgroundColor: AppColors.grey50,
       appBar: AppBar(
