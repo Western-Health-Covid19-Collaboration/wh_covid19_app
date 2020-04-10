@@ -1,3 +1,6 @@
+---- Friday 19th April, 2020 ----
+* Fixes at the home page
+
 ---- Thursday 9th April, 2020 ----
 * Minor intubation text changes
 * New app icon for Android
