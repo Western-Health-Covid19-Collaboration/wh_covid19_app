@@ -576,12 +576,12 @@ const List<VentilationGuideItem> ventilationGuide = [
     'Initial Steps',
     guideList: [
       VentiliationGuideSection(
-        heading: 'Lung Protection',
+        heading: 'Lung protection',
         list: [
           VentilationGuideItemListItem(
               title: 'Ventilator setting: SIMV/VC', icon: '🔈'),
           VentilationGuideItemListItem(
-              title: 'Low tidal Volume commence with 6ml/kg body weight',
+              title: 'Low tidal volume commence with 6ml/kg body weight',
               icon: '🌊'),
           VentilationGuideItemListItem(title: 'RR 20', icon: '🎚'),
           VentilationGuideItemListItem(
@@ -591,11 +591,11 @@ const List<VentilationGuideItem> ventilationGuide = [
       VentiliationGuideSection(
         heading: 'Aims',
         list: [
-          VentilationGuideItemListItem(title: 'SpO2 88-92%', icon: '😅'),
+          VentilationGuideItemListItem(title: 'SaO2 88-92%', icon: '😅'),
           VentilationGuideItemListItem(title: 'PaO2 55-70mmHg', icon: '😬'),
-          VentilationGuideItemListItem(title: 'Pplat <30', icon: '🙃'),
+          VentilationGuideItemListItem(title: 'Pplat < 30', icon: '🙃'),
           VentilationGuideItemListItem(
-              title: 'Ph>7.2 (Permissive hypercapnia is ok)', icon: '🤔'),
+              title: 'pH > 7.20 (Permissive hypercapnia is ok)', icon: '🤔'),
         ],
       ),
       VentiliationGuideSection(
