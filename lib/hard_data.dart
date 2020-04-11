@@ -1,4 +1,4 @@
-// A list of two cards
+﻿// A list of two cards
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
@@ -637,8 +637,8 @@ const List<VentilationGuideItem> ventilationGuide = [
   ),
 ];
 
-List<ICUDailyRoundSteps> icuDailyRoundSteps = [
-  const ICUDailyRoundSteps(heading: 'A - Airway', sections: [
+const List<ICUDailyRoundSteps> icuDailyRoundSteps = [
+  ICUDailyRoundSteps(heading: 'A - Airway', sections: [
     ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
       ICUDailyRoundStepSubsection(
           heading: 'ETT (Endotracheal Tube)',
@@ -664,7 +664,7 @@ List<ICUDailyRoundSteps> icuDailyRoundSteps = [
           ])
     ])
   ]),
-  const ICUDailyRoundSteps(heading: 'B - Breathing', sections: [
+  ICUDailyRoundSteps(heading: 'B - Breathing', sections: [
     ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(icon: '💨', title: 'SpO₂?'),
@@ -699,7 +699,7 @@ List<ICUDailyRoundSteps> icuDailyRoundSteps = [
           ])
     ])
   ]),
-  const ICUDailyRoundSteps(heading: 'C - Circulation', sections: [
+  ICUDailyRoundSteps(heading: 'C - Circulation', sections: [
     ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(icon: '❤️', title: 'HR / rhythm / MAP?'),
@@ -726,7 +726,7 @@ List<ICUDailyRoundSteps> icuDailyRoundSteps = [
           ])
     ])
   ]),
-  const ICUDailyRoundSteps(heading: 'D - Neurological', sections: [
+  ICUDailyRoundSteps(heading: 'D - Neurological', sections: [
     ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(icon: '😣', title: 'Riker score & pain assessment?'),
@@ -747,7 +747,7 @@ List<ICUDailyRoundSteps> icuDailyRoundSteps = [
       ])
     ])
   ]),
-  const ICUDailyRoundSteps(heading: 'E - Infection/Exposure', sections: [
+  ICUDailyRoundSteps(heading: 'E - Infection/Exposure', sections: [
     ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(icon: '🤒', title: 'Temperature?'),
@@ -768,7 +768,7 @@ List<ICUDailyRoundSteps> icuDailyRoundSteps = [
       ])
     ])
   ]),
-  const ICUDailyRoundSteps(heading: 'F - Renal', sections: [
+  ICUDailyRoundSteps(heading: 'F - Renal', sections: [
     ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(icon: '🚽', title: 'Current urine output?'),
@@ -792,7 +792,7 @@ List<ICUDailyRoundSteps> icuDailyRoundSteps = [
       ])
     ])
   ]),
-  const ICUDailyRoundSteps(heading: 'G - Git', sections: [
+  ICUDailyRoundSteps(heading: 'G - Git', sections: [
     ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(
@@ -844,5 +844,172 @@ const List<ICUDailyRoundChecklist> icuDailyRoundChecklist = [
     ICUDailyRoundChecklistSection(
         heading: 'Glucose target',
         comment: '6 – 12 (start actrapid if 2 X BSL > 12, titrate to BSL)'),
+  ])
+];
+const yourWelfareSteps = [
+  ICUDailyRoundSteps(
+      heading: 'The basics',
+      subHeading: "It's okay to not be okay.\nPlease look after yourself.",
+      sections: [
+        ICUDailyRoundStepSection(
+          heading: 'Basic tips',
+          subsections: [
+            ICUDailyRoundStepSubsection(list: [
+              ICUDailyRoundItem(icon: '🛑', title: 'STOP, BREATHE then think'),
+              ICUDailyRoundItem(icon: '🗞', title: 'Limit news intake'),
+            ])
+          ],
+        ),
+        ICUDailyRoundStepSection(
+            heading: 'Take care of basic needs ',
+            subsections: [
+              ICUDailyRoundStepSubsection(list: [
+                ICUDailyRoundItem(icon: '🛌', title: 'Rest'),
+                ICUDailyRoundItem(icon: '🥦', title: 'Eat well'),
+                ICUDailyRoundItem(
+                    icon: '🏃‍♀️', title: 'Engage in physical activity'),
+                ICUDailyRoundItem(
+                    icon: '🥰', title: 'Stay in contact with loved ones'),
+                ICUDailyRoundItem(
+                    icon: '🧻',
+                    title:
+                        'Avoid unhelpful coping strategies (Tobacco, alcohol or other drugs)'),
+                ICUDailyRoundItem(
+                    icon: '🔋',
+                    title:
+                        'Consider psychological energy levels. “Fill up” after “Emptying the tank”')
+              ])
+            ])
+      ]),
+  ICUDailyRoundSteps(heading: 'Pre-phase', sections: [
+    ICUDailyRoundStepSection(
+      heading: 'Pre-phase',
+      subsections: [
+        ICUDailyRoundStepSubsection(heading: 'Number of cases: 0', list: [
+          ICUDailyRoundItem(
+              icon: '😟',
+              title: 'Anticipatory anxiety about what’s on its way.'),
+          ICUDailyRoundItem(
+              icon: '🤪',
+              title:
+                  'Inability to think clearly, feeling overwhelmed, planning.'),
+          ICUDailyRoundItem(icon: '🤷‍♂️', title: 'Communication errors.'),
+          ICUDailyRoundItem(
+              icon: '😤', title: 'Tension in working relationships.'),
+          ICUDailyRoundItem(icon: '🔥', title: '“Readiness” burnout.'),
+        ])
+      ],
+    ),
+    ICUDailyRoundStepSection(heading: 'How to self-care', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '👫', title: 'Reassure colleagues'),
+        ICUDailyRoundItem(icon: '💪', title: 'Family and personal planning'),
+        ICUDailyRoundItem(icon: '💡', title: 'Communication updates'),
+        ICUDailyRoundItem(icon: '🙋‍♀️', title: 'Employee wellbeing officer'),
+      ])
+    ])
+  ]),
+  ICUDailyRoundSteps(heading: 'Initial phase', sections: [
+    ICUDailyRoundStepSection(
+      heading: 'Initial phase',
+      subsections: [
+        ICUDailyRoundStepSubsection(heading: 'Number of case: 1', list: [
+          ICUDailyRoundItem(
+              icon: '🤮',
+              title:
+                  'Starting to get going, lots of trying out, lost time, repetition and frustration.'),
+          ICUDailyRoundItem(icon: '😰', title: 'Further anticipatory anxiety'),
+        ])
+      ],
+    ),
+    ICUDailyRoundStepSection(heading: 'How to self-care', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '👫', title: 'Battlefield central plan'),
+        ICUDailyRoundItem(icon: '📢', title: 'Centralised communication'),
+        ICUDailyRoundItem(icon: '🗣', title: 'It’s OK to say you’re not OK!'),
+        ICUDailyRoundItem(icon: '💬', title: 'Pre-brief and debrief each day'),
+        ICUDailyRoundItem(icon: '🛀', title: 'Sleep hygiene!'),
+      ])
+    ])
+  ]),
+  ICUDailyRoundSteps(heading: 'Core phase', sections: [
+    ICUDailyRoundStepSection(
+      heading: 'Core phase',
+      subsections: [
+        ICUDailyRoundStepSubsection(
+            heading: 'Number of case: Full scale - Multiple',
+            list: [
+              ICUDailyRoundItem(
+                  icon: '🚨', title: 'Greatest risk period psychologically'),
+              ICUDailyRoundItem(
+                  icon: '😨',
+                  title: 'Fear infection and implications for families'),
+              ICUDailyRoundItem(icon: '😩', title: 'Overwhelming workload'),
+              ICUDailyRoundItem(icon: '🤖', title: 'Adrenaline and auto-pilot'),
+              ICUDailyRoundItem(icon: '🥵', title: 'Exhaustion'),
+              ICUDailyRoundItem(icon: '😵', title: 'Distress'),
+            ])
+      ],
+    ),
+    ICUDailyRoundStepSection(heading: 'How to self-care', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '👥', title: 'Promote peer support'),
+        ICUDailyRoundItem(
+            icon: '✋', title: 'Management are visible and available'),
+        ICUDailyRoundItem(icon: '📝', title: 'Regular communication bulletins'),
+        ICUDailyRoundItem(icon: '💬', title: 'Small pre-brief and debrief'),
+        ICUDailyRoundItem(icon: '🧸', title: 'Psychological first-aid'),
+        ICUDailyRoundItem(
+            icon: '💤', title: 'Ensure the basics (as per previous page)'),
+      ])
+    ])
+  ]),
+  ICUDailyRoundSteps(heading: 'End phase', sections: [
+    ICUDailyRoundStepSection(
+      heading: 'End phase',
+      subsections: [
+        ICUDailyRoundStepSubsection(heading: 'Number of case: Few', list: [
+          ICUDailyRoundItem(icon: '👀', title: 'Lookout for each other!'),
+          ICUDailyRoundItem(icon: '🥵', title: 'Exhaustion'),
+          ICUDailyRoundItem(icon: '🤬', title: 'Stress'),
+          ICUDailyRoundItem(icon: '😖', title: 'Post-traumatic stress'),
+        ])
+      ],
+    ),
+    ICUDailyRoundStepSection(heading: 'How to self-care', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '👫', title: 'Staff and 1:1 group sessions'),
+        ICUDailyRoundItem(
+            icon: '👏', title: 'Gratitude and thanks to all our colleagues'),
+      ])
+    ])
+  ]),
+  ICUDailyRoundSteps(heading: 'Long term', sections: [
+    ICUDailyRoundStepSection(
+      heading: 'Long term',
+      subsections: [
+        ICUDailyRoundStepSubsection(
+            heading: 'Number of case: 0 (or very low)',
+            list: [
+              ICUDailyRoundItem(icon: '👀', title: 'Lookout for each other!'),
+              ICUDailyRoundItem(icon: '🧐', title: 'Reflection and learning'),
+              ICUDailyRoundItem(icon: '😖', title: 'Post-traumatic stress'),
+            ])
+      ],
+    ),
+    ICUDailyRoundStepSection(heading: 'How to self-care', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(
+            icon: '💬', title: 'Debriefing (Staff and 1:1 group sessions)'),
+        ICUDailyRoundItem(
+            icon: '‼️',
+            title: 'Look out for signs of PTSD:',
+            subtitle: '• Edgy\n• Poor sleep\n• Avoid reminders'),
+        ICUDailyRoundItem(
+            icon: '📖', title: 'Learning and preparing for future'),
+        ICUDailyRoundItem(
+            icon: '👏', title: 'Gratitude and thanks to all our colleagues'),
+      ])
+    ])
   ])
 ];

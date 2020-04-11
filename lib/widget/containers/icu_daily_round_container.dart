@@ -32,12 +32,19 @@ class ICUDailyRoundContainer extends StatelessWidget {
 
 // Steps Container
 class ICUDailyRoundStepsContainer extends StatelessWidget {
-  final List<ICUDailyRoundStepSection> sections;
+  final ICUDailyRoundSteps steps;
 
-  const ICUDailyRoundStepsContainer({this.sections});
+  const ICUDailyRoundStepsContainer({this.steps});
 
   List<Widget> _renderList() {
-    return sections.map((e) => ICUDailyRoundStepsCard(section: e)).toList();
+    return [
+      if (steps.subHeading != null)
+        Text(
+          steps.subHeading,
+          style: Styles.textH1,
+        ),
+      ...steps.sections.map((e) => ICUDailyRoundStepsCard(section: e))
+    ];
   }
 
   @override

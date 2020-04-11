@@ -7,153 +7,44 @@ import '../../strings.dart';
 import '../../style.dart';
 import '../../utils/firebase.dart';
 import '../../utils/url_utils.dart';
-import '../../widget/reusable_card.dart';
+import '../../view/view_templates/tab_view_template.dart';
+import '../../widget/containers/icu_daily_round_container.dart';
 
 class YourWelfareView extends StatelessWidget {
-  final card = const ReusableCard(
-    title: Strings.yourWelfarePhasesTitle,
-    description: '',
-    color: Colors.white,
-  );
-
   @override
   Widget build(BuildContext context) {
     // Analytics set screen name, stays until another screen changes it
     Analytics.analyticsScreen(Constants.analyticsWelfareScreen);
 
-    return Scaffold(
-      backgroundColor: AppColors.appBackground,
-      appBar: AppBar(
-        // Warning brightness interacts with SystemUiOverlayStyle
-        // See system_bars.dart comments
-        brightness: Brightness.light,
-        backgroundColor: AppColors.appBarBackground,
-        iconTheme: Styles.appBarIconTheme,
-        title: Text(
-          Strings.yourWelfareTitle,
-          style: Styles.textSemiBold.copyWith(
-            color: AppColors.blackAlpha800,
-          ),
-        ),
-        actions: <Widget>[
-          IconButton(
-            icon: Stack(
-              children: <Widget>[
-                Align(
-                  alignment: Alignment.center,
-                  child: Icon(Icons.call),
-                ),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: Icon(
-                    Icons.call_made,
-                    size: 20,
-                  ),
-                )
-              ],
-            ),
-            onPressed: () => UrlUtils.launchWithBrowser(whURL),
-          ),
-        ],
-      ),
-      body: ListView(
-        children: <Widget>[
-          Container(
-            color: AppColors.grey50,
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  _buildSpacer(),
-                  const Text(
-                    "It's okay to not be okay.",
-                    style: Styles.textH1,
-                  ),
-                  _buildSpacer(),
-                  const Text(
-                    'Please look after yourself.',
-                    style: Styles.textH2,
-                  ),
-                  _buildSpacer(),
-                  _buildSpacer(),
-                  const Text(
-                    'Basic Tips',
-                    style: Styles.textH3,
-                  ),
-                  _buildIconTextRow(
-                    const Text('🛑'),
-                    'STOP, BREATHE then think',
-                  ),
-                  _buildIconTextRow(
-                    const Text('🗞'),
-                    'Limit news intake',
-                  ),
-                  _buildSpacer(),
-                  const Text(
-                    'Take Care of Basic Needs',
-                    style: Styles.textH3,
-                  ),
-                  _buildIconTextRow(
-                    const Text('🛌'),
-                    'Rest',
-                  ),
-                  _buildIconTextRow(
-                    const Text('🥦'),
-                    'Eat well',
-                  ),
-                  _buildIconTextRow(
-                    const Text('🏃‍'),
-                    'Engage in physical activity',
-                  ),
-                  _buildIconTextRow(
-                    const Text('🥰'),
-                    'Stay in contact with loved ones',
-                  ),
-                  _buildIconTextRow(
-                    const Text('🧻'),
-                    'Avoid unhelpful coping strategies (Tobacco, alcohol or other drugs)',
-                  ),
-                  _buildIconTextRow(
-                    const Text('🔋'),
-                    'Consider psychological energy levels. “Fill up” after “Emptying the tank”',
-                  ),
-                ],
+    return TabViewTemplate(
+      Strings.yourWelfareTitle,
+      color: AppColors.grey50,
+      actions: [
+        IconButton(
+          icon: Stack(
+            children: <Widget>[
+              Align(
+                alignment: Alignment.center,
+                child: Icon(Icons.call),
               ),
-            ),
+              Align(
+                alignment: Alignment.topRight,
+                child: Icon(
+                  Icons.call_made,
+                  size: 20,
+                ),
+              )
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: card,
-          ),
-        ],
-      ),
+          onPressed: () => UrlUtils.launchWithBrowser(whURL),
+        ),
+      ],
+      tabs: yourWelfareSteps.map((s) => s.heading).toList(),
+      children: yourWelfareSteps
+          .map((e) => ICUDailyRoundStepsContainer(
+                steps: e,
+              ))
+          .toList(),
     );
   }
-
-  Widget _buildIconTextRow(Widget icon, String text) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 16,
-        vertical: 4,
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(right: 16),
-            child: icon,
-          ),
-          Expanded(
-            child: Text(
-              text,
-              style: Styles.textP.copyWith(color: AppColors.blackAlpha900),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildSpacer({double height = 16}) => Container(height: height);
 }
