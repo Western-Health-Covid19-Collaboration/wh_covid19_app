@@ -1,14 +1,20 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../constants.dart';
+import '../hard_data.dart';
 import '../models/disclaimer_model.dart';
 import '../routes.dart';
 import '../strings.dart';
 import '../style.dart';
+import '../utils/firebase.dart';
 import '../utils/system_bars.dart';
 
+// *** WARNING ***
+// When disclaimerBody changes in any way, increment disclaimerVersion by one
 /// Disclaimer screen presented on app startup until the user agrees to the disclaimer
 class DisclaimerView extends StatefulWidget {
   @override
@@ -16,6 +22,13 @@ class DisclaimerView extends StatefulWidget {
 }
 
 class _DisclaimerViewState extends State<DisclaimerView> {
+  @override
+  void initState() {
+    super.initState();
+    // Analytics set screen name, stays until another screen changes it
+    Analytics.analyticsScreen(Constants.analyticsDisclaimerScreen);
+  }
+
   // When user agrees to disclaimer, persist values for that agreement, version of disclaimer and date/time to storage
   Future<void> _setAgreed() async {
     final prefs = await SharedPreferences.getInstance();
@@ -87,14 +100,33 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                           style: Styles.textH3,
                         ),
                         const Text(
-                          'WHAC19 is an educational tool and interactive cognitive aid for Western Health '
+                          'Western Health Anaesthesia COVID-19 (WHAC19) is an educational tool and interactive cognitive aid for Western Health '
                           'anaesthetists and ICU doctors 👩‍⚕ 👨‍⚕ who are managing patients with COVID-19 🤒 .'
                           '\n\nWe want to protect our staff from infection risk 🌡 and ensure excellent patient '
                           'care 🏥. WHAC19 aims to provide a really quick, '
                           'usable means to access the core information ℹ️'
-                          ' for this.\n\n',
+                          ' for this.',
                           style: Styles.textH5,
                         ),
+                        RichText(
+                            text: TextSpan(children: [
+                          const TextSpan(
+                            text: '\n\nPlease refer to ',
+                            style: Styles.textH5,
+                          ),
+                          TextSpan(
+                              text: whCoronavirusInfoURL,
+                              style: Styles.textH5Hyperlink,
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  launch(whCoronavirusInfoURL);
+                                }),
+                          const TextSpan(
+                            text:
+                                ' to ensure you have the latest up-to-date information on Western Health\'s Coronavirus guidelines.\n\n',
+                            style: Styles.textH5,
+                          ),
+                        ])),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
@@ -118,7 +150,8 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                           child: Text(
                             'This is not a comprehensive source nor can we guarantee it is completely up to date at '
                             'the time of use 📱.\n\nIt is created using Western Health guidelines, informally '
-                            'peer-reviewed and adapted, with permission, from College/Society guidelines.\n\n',
+                            'peer-reviewed and adapted, with permission, from College/Society guidelines.\n\n'
+                            'WHAC19 gathers analytics and crash data which is used to improve the app.\n\n',
                             style: Styles.textP,
                           ),
                         ),

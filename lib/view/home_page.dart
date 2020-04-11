@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../constants.dart';
 import '../hard_data.dart';
 import '../strings.dart';
 import '../style.dart';
 import '../utils/color.dart';
+import '../utils/firebase.dart';
 import '../utils/system_bars.dart';
 import '../widget/card_container.dart';
 import 'info_view.dart';
@@ -16,6 +18,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   double _scrollPosition = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    // Analytics set screen name, stays until another screen changes it
+    Analytics.analyticsScreen(Constants.analyticsHomeScreen);
+  }
 
   Widget _renderBackgroundContainer(BuildContext context) {
     // Ensure that the image uses the full parent width
@@ -105,18 +114,20 @@ class _HomePageState extends State<HomePage> {
             bottom: PreferredSize(
               preferredSize: Size.fromHeight(appBarHeight.toDouble()),
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
+                padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     mainLogo,
-                    IconButton(
-                      icon: Icon(
+                    GestureDetector(
+                      onTap: () => InfoView.navigateTo(context),
+                      child: Icon(
                         Icons.info_outline,
+                        size: 24,
                         color: generateIconColor(AppColors.homeAppBarIcon,
                             AppColors.appBarIcon, percentage),
                       ),
-                      onPressed: () => InfoView.navigateTo(context),
                     )
                   ],
                 ),
