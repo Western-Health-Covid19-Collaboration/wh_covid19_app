@@ -10,13 +10,13 @@ import '../../widget/lists/icu_daily_round_steps_card.dart';
 // Base Container
 class ICUDailyRoundContainer extends StatelessWidget {
   final List<Widget> list;
-
-  const ICUDailyRoundContainer({this.list});
+  final Color backgroundColor;
+  const ICUDailyRoundContainer({this.list, this.backgroundColor});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: AppColors.blue500,
+        color: backgroundColor,
         child: Padding(
           padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
           child: ListView(
@@ -33,8 +33,10 @@ class ICUDailyRoundContainer extends StatelessWidget {
 // Steps Container
 class ICUDailyRoundStepsContainer extends StatelessWidget {
   final ICUDailyRoundSteps steps;
+  final Color backgroundColor;
 
-  const ICUDailyRoundStepsContainer({this.steps});
+  const ICUDailyRoundStepsContainer(
+      {this.steps, this.backgroundColor = AppColors.blue500});
 
   List<Widget> _renderList() {
     return [
@@ -49,7 +51,10 @@ class ICUDailyRoundStepsContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ICUDailyRoundContainer(list: _renderList());
+    return ICUDailyRoundContainer(
+      list: _renderList(),
+      backgroundColor: backgroundColor,
+    );
   }
 }
 

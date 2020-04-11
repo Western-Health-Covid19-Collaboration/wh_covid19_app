@@ -43,6 +43,7 @@ class YourWelfareView extends StatelessWidget {
       children: yourWelfareSteps
           .map((e) => ICUDailyRoundStepsContainer(
                 steps: e,
+                backgroundColor: AppColors.grey500,
               ))
           .toList(),
     );
