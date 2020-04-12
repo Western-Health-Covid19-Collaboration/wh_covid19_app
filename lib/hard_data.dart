@@ -968,7 +968,7 @@ const yourWelfareSteps = [
     ICUDailyRoundStepSection(
       heading: 'End phase',
       subsections: [
-        ICUDailyRoundStepSubsection(heading: 'Number of case: Few', list: [
+        ICUDailyRoundStepSubsection(heading: 'Number of cases: Few', list: [
           ICUDailyRoundItem(icon: '👀', title: 'Lookout for each other!'),
           ICUDailyRoundItem(icon: '🥵', title: 'Exhaustion'),
           ICUDailyRoundItem(icon: '🤬', title: 'Stress'),
