@@ -989,7 +989,7 @@ const yourWelfareSteps = [
       heading: 'Long term',
       subsections: [
         ICUDailyRoundStepSubsection(
-            heading: 'Number of case: 0 (or very low)',
+            heading: 'Number of cases: 0 (or very low)',
             list: [
               ICUDailyRoundItem(icon: '👀', title: 'Lookout for each other!'),
               ICUDailyRoundItem(icon: '🧐', title: 'Reflection and learning'),
