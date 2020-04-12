@@ -20,7 +20,6 @@ class Routes {
 
   static const _icuNonIntensivist = '/icu_non_intensivist';
   static const ventilation = '$_icuNonIntensivist/ventilation';
-  static const ventilationInitialActions = '$ventilation/initial_actions';
   static const ventilationAdjuncts = '$ventilation/adjuncts';
   static const ventilationInfographic = '$ventilation/infographic';
   static const generalCare = '$_icuNonIntensivist/general_care';
