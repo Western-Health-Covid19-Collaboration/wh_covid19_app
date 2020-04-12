@@ -593,7 +593,7 @@ const List<VentilationGuideItem> ventilationGuide = [
         list: [
           VentilationGuideItemListItem(title: 'SpO2 88-92%', icon: '😅'),
           VentilationGuideItemListItem(title: 'PaO2 55-70mmHg', icon: '😬'),
-          VentilationGuideItemListItem(title: 'Pplat <30', icon: '🙃'),
+          VentilationGuideItemListItem(title: 'Pplat < 30', icon: '🙃'),
           VentilationGuideItemListItem(
               title: 'Ph>7.2 (Permissive hypercapnia is ok)', icon: '🤔'),
         ],
@@ -668,7 +668,7 @@ List<ICUDailyRoundSteps> icuDailyRoundSteps = [
     ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(icon: '💨', title: 'SpO₂?'),
-        ICUDailyRoundItem(icon: '🩸', title: 'PAO₂?'),
+        ICUDailyRoundItem(icon: '🩸', title: 'PaO₂?'),
         ICUDailyRoundItem(icon: '🔍', title: 'CXR reviewed?'),
         ICUDailyRoundItem(icon: '🅰️', title: 'ABG reviewed?'),
         ICUDailyRoundItem(
@@ -680,11 +680,12 @@ List<ICUDailyRoundSteps> icuDailyRoundSteps = [
           heading: 'Standard Targets',
           footer: '',
           list: [
-            ICUDailyRoundItem(icon: '🎯', title: 'PAO₂ > 55-60\nSaO₂ > 88-92'),
+            ICUDailyRoundItem(
+                icon: '🎯', title: 'PaO₂ > 55-60mmHg\nSaO₂ > 88-92%'),
             ICUDailyRoundItem(
                 icon: '🎯', title: 'pH > 7.20\nif pH normal, CO₂ 35-45'),
             ICUDailyRoundItem(
-                icon: '🎯', title: 'VTe 4-8 ml/kg\nwith PPlat < 30'),
+                icon: '🎯', title: 'VTe 4-8 ml/kg\nwith Pplat < 30'),
             ICUDailyRoundItem(
                 icon: '🎯',
                 title:
@@ -792,7 +793,7 @@ List<ICUDailyRoundSteps> icuDailyRoundSteps = [
       ])
     ])
   ]),
-  const ICUDailyRoundSteps(heading: 'G - Git', sections: [
+  const ICUDailyRoundSteps(heading: 'G - GIT', sections: [
     ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(
