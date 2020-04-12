@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 import 'models/IntubationChecklist.dart';
@@ -10,7 +10,6 @@ import 'models/intubation_guide.dart';
 import 'models/ventilation_guide.dart';
 import 'routes.dart';
 import 'strings.dart';
-import 'style.dart';
 
 /// Web urls
 const String whURL = 'http://wh.cyphix.net/';
@@ -77,12 +76,10 @@ const Map<String, HtmlTextScreenData> routeToScreenData = {
   Routes.ventilationInitialActions: HtmlTextScreenData(
     'Suggested initial actions',
     'assets/text/icu_ventilation_initial_actions_content.html',
-    AppColors.backgroundBlue,
   ),
   Routes.ventilationAdjuncts: HtmlTextScreenData(
     'Adjuncts',
     'assets/text/icu_ventilation_adjuncts_content.html',
-    AppColors.backgroundBlue,
   ),
 };
 
@@ -91,9 +88,8 @@ const Map<String, HtmlTextScreenData> routeToScreenData = {
 class HtmlTextScreenData {
   final String title;
   final String htmlFile;
-  final Color bgColor;
 
-  const HtmlTextScreenData(this.title, this.htmlFile, this.bgColor);
+  const HtmlTextScreenData(this.title, this.htmlFile);
 
   Future<String> readFile() async {
     return await rootBundle.loadString(htmlFile);
