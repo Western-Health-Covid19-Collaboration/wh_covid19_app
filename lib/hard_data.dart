@@ -913,7 +913,7 @@ const yourWelfareSteps = [
     ICUDailyRoundStepSection(
       heading: 'Initial phase',
       subsections: [
-        ICUDailyRoundStepSubsection(heading: 'Number of case: 1', list: [
+        ICUDailyRoundStepSubsection(heading: 'Number of cases: 1', list: [
           ICUDailyRoundItem(
               icon: '🤮',
               title:
