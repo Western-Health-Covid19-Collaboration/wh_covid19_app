@@ -937,7 +937,7 @@ const yourWelfareSteps = [
       heading: 'Core phase',
       subsections: [
         ICUDailyRoundStepSubsection(
-            heading: 'Number of case: Full scale - Multiple',
+            heading: 'Number of cases: Full scale - Multiple',
             list: [
               ICUDailyRoundItem(
                   icon: '🚨', title: 'Greatest risk period psychologically'),
