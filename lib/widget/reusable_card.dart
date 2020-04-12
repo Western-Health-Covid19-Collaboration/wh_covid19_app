@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import '../models/home_card.dart';
 import '../style.dart';
 import '../widget/cards/reusable_card_base.dart';
 
@@ -39,6 +41,15 @@ class ReusableCard extends StatelessWidget {
     this.fallback,
     this.margin = const EdgeInsets.all(4.0),
   });
+
+  ReusableCard.fromData({HomeCard card, Color color, EdgeInsets margin})
+      : this(
+          title: card.title,
+          description: card.description,
+          routeTo: card.route,
+          color: color,
+          margin: margin,
+        );
 
   @override
   Widget build(BuildContext context) {

@@ -1,9 +1,9 @@
-// A list of two cards
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 import 'models/IntubationChecklist.dart';
 import 'models/PPEStepInfo.dart';
+import 'models/home_card.dart';
 import 'models/icu_daily_round_checklist.dart';
 import 'models/icu_daily_round_steps.dart';
 import 'models/intubation_guide.dart';
@@ -21,21 +21,17 @@ const String whAnaestheticMicrositeURL =
 const String whIcuMicrositeURL = 'https://whicu2020.wixsite.com/icuquickguide';
 const String feedbackFormUrl = 'https://forms.gle/zQtfhvswrKmjJjNV7';
 
-// Staff Welfare card list composition
-const List<ReusableCard> staffWelfare = [
-  ReusableCard(
+//Staff Welfare card list composition
+const List<HomeCard> staffWelfare = [
+  HomeCard(
     title: Strings.ppeTitle,
     description: '3 guides',
-    color: Colors.white,
-    routeTo: Routes.ppe,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.ppe,
   ),
-  ReusableCard(
+  HomeCard(
     title: Strings.yourWelfareTitle,
     description: 'Vital info & contacts',
-    color: Colors.white,
-    routeTo: Routes.staffWelfare,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.staffWelfare,
   )
 ];
 

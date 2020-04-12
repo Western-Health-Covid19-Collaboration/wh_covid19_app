@@ -9,6 +9,7 @@ import '../utils/color.dart';
 import '../utils/firebase.dart';
 import '../utils/system_bars.dart';
 import '../widget/card_container.dart';
+import '../widget/reusable_card.dart';
 import 'info_view.dart';
 
 class HomePage extends StatefulWidget {
@@ -58,25 +59,33 @@ class _HomePageState extends State<HomePage> {
   Widget _renderList(BuildContext context) {
     return SliverList(
       delegate: SliverChildListDelegate(
-        const [
-          SizedBox(height: 12),
+        [
+          const SizedBox(height: 12),
           CardContainer(
             title: Strings.homeHeading1,
-            cards: staffWelfare,
+            cards: staffWelfare
+                .map(
+                  (c) => ReusableCard.fromData(
+                    card: c,
+                    color: Colors.white,
+                    margin: const EdgeInsets.all(0.0),
+                  ),
+                )
+                .toList(),
             containerLayout: CardsLayout.twoRow,
           ),
-          CardContainer(
+          const CardContainer(
             title: Strings.homeHeading2,
             cards: airway,
             containerLayout: CardsLayout.threeColumn,
           ),
-          CardContainer(
+          const CardContainer(
             title: Strings.homeHeading3,
             cards: icu,
             containerLayout: CardsLayout.threeDoubleRowBigTop,
           ),
           // Make sure the bottom CardContainer has room to breathe.
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
         ],
       ),
     );
