@@ -11,7 +11,6 @@ import 'models/ventilation_guide.dart';
 import 'routes.dart';
 import 'strings.dart';
 import 'style.dart';
-import 'widget/reusable_card.dart';
 
 /// Web urls
 const String whURL = 'http://wh.cyphix.net/';
@@ -35,54 +34,38 @@ const List<HomeCard> staffWelfare = [
   )
 ];
 
-// Airway card list composition
-const List<ReusableCard> airway = [
-  ReusableCard(
+const List<HomeCard> airway = [
+  HomeCard(
     title: Strings.intubationGuideTitle,
     description: 'Step by step guide',
-    color: AppColors.backgroundGreen,
-    routeTo: Routes.intubationGuidance,
-    height: 70,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.intubationGuidance,
   ),
-  ReusableCard(
+  HomeCard(
     title: Strings.intubationChecklistTitle,
     description: 'Checklist',
-    color: AppColors.backgroundGreen,
-    routeTo: Routes.intubationChecklist,
-    height: 70,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.intubationChecklist,
   ),
-  ReusableCard(
+  HomeCard(
     title: Strings.extubationGuideTitle,
     description: 'Step by step guide',
-    color: AppColors.backgroundGreen,
-    routeTo: Routes.extubationGuidance,
-    height: 70,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.extubationGuidance,
   )
 ];
 
 // ICU card list composition
-const List<ReusableCard> icu = [
-  ReusableCard(
+const List<HomeCard> icu = [
+  HomeCard(
     title: Strings.ventilationTitle,
     description: 'Description',
-    color: AppColors.backgroundBlue,
-    routeTo: Routes.ventilation,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.ventilation,
   ),
-  ReusableCard(
+  HomeCard(
     title: Strings.dailyRoundTitle,
-    color: AppColors.backgroundBlue,
-    routeTo: Routes.generalCare,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.generalCare,
   ),
-  ReusableCard(
+  HomeCard(
     title: Strings.tipsForCrossSkillingTitle,
-    color: AppColors.backgroundBlue,
-    routeTo: Routes.tipsJuniorStaff,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.tipsJuniorStaff,
   ),
 ];
 

@@ -5,6 +5,8 @@ import '../style.dart';
 import '../widget/cards/reusable_card_base.dart';
 
 class ReusableCard extends StatelessWidget {
+  static const double _defaultHeight = 84;
+
   /// Title of the card
   final String title;
 
@@ -36,19 +38,24 @@ class ReusableCard extends StatelessWidget {
     this.description,
     this.color = Colors.white,
     this.routeTo,
-    this.height = 84,
+    this.height = _defaultHeight,
     this.elevation = 4,
     this.fallback,
     this.margin = const EdgeInsets.all(4.0),
   });
 
-  ReusableCard.fromData({HomeCard card, Color color, EdgeInsets margin})
-      : this(
+  ReusableCard.fromData({
+    HomeCard card,
+    Color color,
+    EdgeInsets margin,
+    double height,
+  }) : this(
           title: card.title,
           description: card.description,
           routeTo: card.route,
           color: color,
           margin: margin,
+          height: height ?? _defaultHeight,
         );
 
   @override

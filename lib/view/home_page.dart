@@ -74,14 +74,30 @@ class _HomePageState extends State<HomePage> {
                 .toList(),
             containerLayout: CardsLayout.twoRow,
           ),
-          const CardContainer(
+          CardContainer(
             title: Strings.homeHeading2,
-            cards: airway,
+            cards: airway
+                .map(
+                  (c) => ReusableCard.fromData(
+                    card: c,
+                    color: AppColors.backgroundGreen,
+                    margin: const EdgeInsets.all(0.0),
+                    height: 70,
+                  ),
+                )
+                .toList(),
             containerLayout: CardsLayout.threeColumn,
           ),
-          const CardContainer(
+          CardContainer(
             title: Strings.homeHeading3,
-            cards: icu,
+            cards: icu
+                .map(
+                  (c) => ReusableCard.fromData(
+                    card: c,
+                    color: AppColors.backgroundBlue,
+                  ),
+                )
+                .toList(),
             containerLayout: CardsLayout.threeDoubleRowBigTop,
           ),
           // Make sure the bottom CardContainer has room to breathe.
