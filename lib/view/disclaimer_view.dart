@@ -108,8 +108,7 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                           ' for this.',
                           style: Styles.textH5,
                         ),
-                        RichText(
-                            text: TextSpan(children: [
+                        Text.rich(TextSpan(children: [
                           const TextSpan(
                             text: '\n\nPlease refer to ',
                             style: Styles.textH5,
