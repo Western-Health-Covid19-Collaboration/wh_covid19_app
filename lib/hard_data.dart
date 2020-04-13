@@ -1,17 +1,15 @@
-// A list of two cards
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 import 'models/IntubationChecklist.dart';
 import 'models/PPEStepInfo.dart';
+import 'models/home_card.dart';
 import 'models/icu_daily_round_checklist.dart';
 import 'models/icu_daily_round_steps.dart';
 import 'models/intubation_guide.dart';
 import 'models/ventilation_guide.dart';
 import 'routes.dart';
 import 'strings.dart';
-import 'style.dart';
-import 'widget/reusable_card.dart';
 
 /// Web urls
 const String whURL = 'http://wh.cyphix.net/';
@@ -21,72 +19,52 @@ const String whAnaestheticMicrositeURL =
 const String whIcuMicrositeURL = 'https://whicu2020.wixsite.com/icuquickguide';
 const String feedbackFormUrl = 'https://forms.gle/zQtfhvswrKmjJjNV7';
 
-// Staff Welfare card list composition
-const List<ReusableCard> staffWelfare = [
-  ReusableCard(
+//Staff Welfare card list composition
+const List<HomeCard> staffWelfare = [
+  HomeCard(
     title: Strings.ppeTitle,
     description: '3 guides',
-    color: Colors.white,
-    routeTo: Routes.ppe,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.ppe,
   ),
-  ReusableCard(
+  HomeCard(
     title: Strings.yourWelfareTitle,
     description: 'Vital info & contacts',
-    color: Colors.white,
-    routeTo: Routes.staffWelfare,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.staffWelfare,
   )
 ];
 
-// Airway card list composition
-const List<ReusableCard> airway = [
-  ReusableCard(
+const List<HomeCard> airway = [
+  HomeCard(
     title: Strings.intubationGuideTitle,
     description: 'Step by step guide',
-    color: AppColors.backgroundGreen,
-    routeTo: Routes.intubationGuidance,
-    height: 70,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.intubationGuidance,
   ),
-  ReusableCard(
+  HomeCard(
     title: Strings.intubationChecklistTitle,
     description: 'Checklist',
-    color: AppColors.backgroundGreen,
-    routeTo: Routes.intubationChecklist,
-    height: 70,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.intubationChecklist,
   ),
-  ReusableCard(
+  HomeCard(
     title: Strings.extubationGuideTitle,
     description: 'Step by step guide',
-    color: AppColors.backgroundGreen,
-    routeTo: Routes.extubationGuidance,
-    height: 70,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.extubationGuidance,
   )
 ];
 
 // ICU card list composition
-const List<ReusableCard> icu = [
-  ReusableCard(
+const List<HomeCard> icu = [
+  HomeCard(
     title: Strings.ventilationTitle,
     description: 'Description',
-    color: AppColors.backgroundBlue,
-    routeTo: Routes.ventilation,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.ventilation,
   ),
-  ReusableCard(
+  HomeCard(
     title: Strings.dailyRoundTitle,
-    color: AppColors.backgroundBlue,
-    routeTo: Routes.generalCare,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.generalCare,
   ),
-  ReusableCard(
+  HomeCard(
     title: Strings.tipsForCrossSkillingTitle,
-    color: AppColors.backgroundBlue,
-    routeTo: Routes.tipsJuniorStaff,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.tipsJuniorStaff,
   ),
 ];
 
@@ -98,12 +76,10 @@ const Map<String, HtmlTextScreenData> routeToScreenData = {
   Routes.ventilationInitialActions: HtmlTextScreenData(
     'Suggested initial actions',
     'assets/text/icu_ventilation_initial_actions_content.html',
-    AppColors.backgroundBlue,
   ),
   Routes.ventilationAdjuncts: HtmlTextScreenData(
     'Adjuncts',
     'assets/text/icu_ventilation_adjuncts_content.html',
-    AppColors.backgroundBlue,
   ),
 };
 
@@ -112,9 +88,8 @@ const Map<String, HtmlTextScreenData> routeToScreenData = {
 class HtmlTextScreenData {
   final String title;
   final String htmlFile;
-  final Color bgColor;
 
-  const HtmlTextScreenData(this.title, this.htmlFile, this.bgColor);
+  const HtmlTextScreenData(this.title, this.htmlFile);
 
   Future<String> readFile() async {
     return await rootBundle.loadString(htmlFile);

@@ -152,7 +152,7 @@ class MyApp extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return HtmlTextCardViewTemplate(
             title: data.title,
-            bgColor: data.bgColor,
+            bgColor: AppColors.backgroundBlue,
             html: '',
           );
         } else if (snapshot.hasError) {
@@ -160,7 +160,7 @@ class MyApp extends StatelessWidget {
         } else {
           return HtmlTextCardViewTemplate(
             title: data.title,
-            bgColor: data.bgColor,
+            bgColor: AppColors.backgroundBlue,
             html: snapshot.data,
           );
         }
