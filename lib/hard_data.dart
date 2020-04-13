@@ -7,7 +7,6 @@ import 'models/home_card.dart';
 import 'models/icu_daily_round_checklist.dart';
 import 'models/icu_daily_round_steps.dart';
 import 'models/intubation_guide.dart';
-import 'models/ventilation_guide.dart';
 import 'routes.dart';
 import 'strings.dart';
 
@@ -528,88 +527,89 @@ const List<IntubationContent> extubationGuide = [
   ),
 ];
 
-const List<VentilationGuideItem> ventilationGuide = [
-  VentilationGuideItem(
+const List<IntubationContent> ventilationGuideA = [
+  IntubationContent(
     'Principles',
-    guideList: [
-      VentiliationGuideSection(
-        list: [
-          VentilationGuideItemListItem(
-              title: 'Do the simple things well!', icon: '✅'),
-          VentilationGuideItemListItem(
-              title: 'Follow a stepwise approach!', icon: '👟'),
-          VentilationGuideItemListItem(
-              title: 'Balance the risks of organ support', icon: '⚖️'),
-          VentilationGuideItemListItem(
-              title: 'Minimise the risks of �cross-infection (see PPE)',
+    [
+      IntubationSection(
+        items: [
+          IntubationItem('Do the simple things well!', icon: '✅'),
+          IntubationItem('Follow a stepwise approach!', icon: '👟'),
+          IntubationItem('Balance the risks of organ support', icon: '⚖️'),
+          IntubationItem('Minimise the risks of cross-infection (see PPE)',
               icon: '😷'),
         ],
       )
     ],
-  ),
-  VentilationGuideItem(
-    'Initial Steps',
-    guideList: [
-      VentiliationGuideSection(
-        heading: 'Lung protection',
+  )
+];
+const List<ICUDailyRoundSteps> ventilationGuideB = [
+  ICUDailyRoundSteps(heading: 'Initial Steps', sections: [
+    ICUDailyRoundStepSection(
+      heading: 'Lung Protective Ventilation',
+      subsections: [
+        ICUDailyRoundStepSubsection(
+          list: [
+            ICUDailyRoundItem(title: 'Ventilator setting: SIMV/VC', icon: '🔈'),
+            ICUDailyRoundItem(
+                title: 'Low tidal volume commence with 6ml/kg body weight',
+                icon: '🌊'),
+            ICUDailyRoundItem(title: 'RR 20', icon: '🎚'),
+            ICUDailyRoundItem(
+                title: 'PEEP: aim high, start 10cmH20, see table!', icon: '👀'),
+          ],
+        )
+      ],
+    ),
+    ICUDailyRoundStepSection(heading: 'Aims', subsections: [
+      ICUDailyRoundStepSubsection(
         list: [
-          VentilationGuideItemListItem(
-              title: 'Ventilator setting: SIMV/VC', icon: '🔈'),
-          VentilationGuideItemListItem(
-              title: 'Low tidal volume commence with 6ml/kg body weight',
-              icon: '🌊'),
-          VentilationGuideItemListItem(title: 'RR 20', icon: '🎚'),
-          VentilationGuideItemListItem(
-              title: 'PEEP: aim high, start 10cmH20, see table!', icon: '👀'),
-        ],
-      ),
-      VentiliationGuideSection(
-        heading: 'Aims',
-        list: [
-          VentilationGuideItemListItem(title: 'SaO2 88-92%', icon: '😅'),
-          VentilationGuideItemListItem(title: 'PaO2 55-70mmHg', icon: '😬'),
-          VentilationGuideItemListItem(title: 'Pplat < 30', icon: '🙃'),
-          VentilationGuideItemListItem(
-              title: 'pH > 7.20 (Permissive hypercapnia is ok)', icon: '🤔'),
-        ],
-      ),
-      VentiliationGuideSection(
-        heading: 'If deteriorating ',
-        list: [
-          VentilationGuideItemListItem(
-              title: 'ICU consultant review!', icon: '🚨'),
-          VentilationGuideItemListItem(
-              title: 'Proceed to Adjuncts page', icon: '👉'),
+          ICUDailyRoundItem(title: 'SaO₂ 88-92%', icon: '😅'),
+          ICUDailyRoundItem(title: 'PaO₂ 55-70mmHg', icon: '😬'),
+          ICUDailyRoundItem(title: 'Pplat <30', icon: '🙃'),
+          ICUDailyRoundItem(
+              title: 'Ph>7.20',
+              subtitle: '(Permissive hypercapnia is ok)',
+              icon: '🤔'),
         ],
       )
-    ],
-  ),
-  VentilationGuideItem(
-    'Adjuncts',
-    guideList: [
-      VentiliationGuideSection(
-        heading: 'If initial stepwise approach fails try',
-        list: [
-          VentilationGuideItemListItem(title: 'Deep sedation', icon: '🛌'),
-          VentilationGuideItemListItem(
-              title: 'Restrictive fluid regime',
-              icon: '💧',
-              notes: ['Aim for Negative fluid balance']),
-          VentilationGuideItemListItem(
-              title: 'Ensure senior ICU review', icon: '👉'),
-          VentilationGuideItemListItem(
-            title: 'Neuromuscular blockade',
-            icon: '💪',
-            notes: [
-              'NOT first-line management',
-              'Consider infusion of cisatracurium in a patient with refractory hypoxia'
-            ],
-          ),
-          VentilationGuideItemListItem(title: 'Try prone position', icon: '↪️'),
-        ],
-      ),
-    ],
-  ),
+    ]),
+    ICUDailyRoundStepSection(
+      heading: 'If Deteriorating',
+      subsections: [
+        ICUDailyRoundStepSubsection(
+          list: [
+            ICUDailyRoundItem(title: 'ICU consultant review!', icon: '🚨'),
+            ICUDailyRoundItem(title: 'Proceed to Adjuncts page', icon: '👉'),
+          ],
+        )
+      ],
+    )
+  ]),
+  ICUDailyRoundSteps(heading: 'Adjuncts', sections: [
+    ICUDailyRoundStepSection(
+      heading: 'If Initial Stepwise Approach Fails Try',
+      subsections: [
+        ICUDailyRoundStepSubsection(
+          list: [
+            ICUDailyRoundItem(title: 'Deep sedation', icon: '🛌'),
+            ICUDailyRoundItem(
+                title: 'Restrictive fluid regime',
+                icon: '💧',
+                subtitle: 'Aim for Negative fluid balance'),
+            ICUDailyRoundItem(title: 'Ensure senior ICU review', icon: '👉'),
+            ICUDailyRoundItem(
+              title: 'Neuromuscular blockade',
+              icon: '💪',
+              subtitle:
+                  'NOT first-line management - discuss with ICU consultant',
+            ),
+            ICUDailyRoundItem(title: 'Try prone position', icon: '🙇‍♀️'),
+          ],
+        ),
+      ],
+    )
+  ])
 ];
 
 const List<ICUDailyRoundSteps> icuDailyRoundSteps = [

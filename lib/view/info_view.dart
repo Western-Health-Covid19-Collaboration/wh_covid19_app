@@ -119,7 +119,7 @@ class InfoView extends StatelessWidget {
       Center(
         child: Container(
           decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 12, 16, 62),
+            color: const Color(0xff2E253D),
             borderRadius: BorderRadius.circular(6),
           ),
           padding: const EdgeInsets.all(4),
