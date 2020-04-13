@@ -4,6 +4,8 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../../constants.dart';
 import '../../../hard_data.dart';
+import '../../../models/icu_daily_round_steps.dart';
+import '../../../models/intubation_guide.dart';
 import '../../../routes.dart';
 import '../../../strings.dart';
 import '../../../style.dart';
@@ -18,11 +20,14 @@ class VentilationView extends StatelessWidget {
     // Analytics set screen name, stays until another screen changes it
     Analytics.analyticsScreen(Constants.analyticsVentilationScreen);
 
-    final tabs = [
-      ...ventilationGuideA.map((e) => e.heading),
-      ...ventilationGuideB.map((e) => e.heading)
-    ];
-
+    final tabs = ventilationGuide.map((e) {
+      if (e is IntubationContent) {
+        return e.heading;
+      } else if (e is ICUDailyRoundSteps) {
+        return e.heading;
+      }
+      return e.toString();
+    }).toList();
     return TabViewTemplate(Strings.ventilationTitle,
         color: AppColors.blue50,
         tabs: tabs,
@@ -35,13 +40,18 @@ class VentilationView extends StatelessWidget {
                 Navigator.of(context).pushNamed(Routes.ventilationInfographic),
           )
         ],
-        children: [
-          ...ventilationGuideA.map((e) => IntubationContentViewTemplate(
-                content: e,
-                color: AppColors.blue500,
-              )),
-          ...ventilationGuideB.map((e) => ICUDailyRoundStepsContainer(
-              steps: e, backgroundColor: AppColors.blue500))
-        ]);
+        children: ventilationGuide.map((e) {
+          if (e is IntubationContent) {
+            return IntubationContentViewTemplate(
+              content: e,
+              color: AppColors.blue500,
+            );
+          } else if (e is ICUDailyRoundSteps) {
+            return ICUDailyRoundStepsContainer(
+                steps: e, backgroundColor: AppColors.blue500);
+          } else {
+            throw Exception('Unknown model ${e.runtimeType}');
+          }
+        }).toList());
   }
 }
