@@ -768,7 +768,7 @@ const List<ICUDailyRoundSteps> icuDailyRoundSteps = [
       ])
     ])
   ]),
-  const ICUDailyRoundSteps(heading: 'G - GIT', sections: [
+  ICUDailyRoundSteps(heading: 'G - GIT', sections: [
     ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(
