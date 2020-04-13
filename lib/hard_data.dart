@@ -1,17 +1,15 @@
-// A list of two cards
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 import 'models/IntubationChecklist.dart';
 import 'models/PPEStepInfo.dart';
+import 'models/home_card.dart';
 import 'models/icu_daily_round_checklist.dart';
 import 'models/icu_daily_round_steps.dart';
 import 'models/intubation_guide.dart';
 import 'models/ventilation_guide.dart';
 import 'routes.dart';
 import 'strings.dart';
-import 'style.dart';
-import 'widget/reusable_card.dart';
 
 /// Web urls
 const String whURL = 'http://wh.cyphix.net/';
@@ -21,72 +19,52 @@ const String whAnaestheticMicrositeURL =
 const String whIcuMicrositeURL = 'https://whicu2020.wixsite.com/icuquickguide';
 const String feedbackFormUrl = 'https://forms.gle/zQtfhvswrKmjJjNV7';
 
-// Staff Welfare card list composition
-const List<ReusableCard> staffWelfare = [
-  ReusableCard(
+//Staff Welfare card list composition
+const List<HomeCard> staffWelfare = [
+  HomeCard(
     title: Strings.ppeTitle,
     description: '3 guides',
-    color: Colors.white,
-    routeTo: Routes.ppe,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.ppe,
   ),
-  ReusableCard(
+  HomeCard(
     title: Strings.yourWelfareTitle,
     description: 'Vital info & contacts',
-    color: Colors.white,
-    routeTo: Routes.staffWelfare,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.staffWelfare,
   )
 ];
 
-// Airway card list composition
-const List<ReusableCard> airway = [
-  ReusableCard(
+const List<HomeCard> airway = [
+  HomeCard(
     title: Strings.intubationGuideTitle,
     description: 'Step by step guide',
-    color: AppColors.backgroundGreen,
-    routeTo: Routes.intubationGuidance,
-    height: 70,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.intubationGuidance,
   ),
-  ReusableCard(
+  HomeCard(
     title: Strings.intubationChecklistTitle,
     description: 'Checklist',
-    color: AppColors.backgroundGreen,
-    routeTo: Routes.intubationChecklist,
-    height: 70,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.intubationChecklist,
   ),
-  ReusableCard(
+  HomeCard(
     title: Strings.extubationGuideTitle,
     description: 'Step by step guide',
-    color: AppColors.backgroundGreen,
-    routeTo: Routes.extubationGuidance,
-    height: 70,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.extubationGuidance,
   )
 ];
 
 // ICU card list composition
-const List<ReusableCard> icu = [
-  ReusableCard(
+const List<HomeCard> icu = [
+  HomeCard(
     title: Strings.ventilationTitle,
     description: 'Description',
-    color: AppColors.backgroundBlue,
-    routeTo: Routes.ventilation,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.ventilation,
   ),
-  ReusableCard(
+  HomeCard(
     title: Strings.dailyRoundTitle,
-    color: AppColors.backgroundBlue,
-    routeTo: Routes.generalCare,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.generalCare,
   ),
-  ReusableCard(
+  HomeCard(
     title: Strings.tipsForCrossSkillingTitle,
-    color: AppColors.backgroundBlue,
-    routeTo: Routes.tipsJuniorStaff,
-    margin: EdgeInsets.all(0.0),
+    route: Routes.tipsJuniorStaff,
   ),
 ];
 
@@ -98,12 +76,10 @@ const Map<String, HtmlTextScreenData> routeToScreenData = {
   Routes.ventilationInitialActions: HtmlTextScreenData(
     'Suggested initial actions',
     'assets/text/icu_ventilation_initial_actions_content.html',
-    AppColors.backgroundBlue,
   ),
   Routes.ventilationAdjuncts: HtmlTextScreenData(
     'Adjuncts',
     'assets/text/icu_ventilation_adjuncts_content.html',
-    AppColors.backgroundBlue,
   ),
 };
 
@@ -112,9 +88,8 @@ const Map<String, HtmlTextScreenData> routeToScreenData = {
 class HtmlTextScreenData {
   final String title;
   final String htmlFile;
-  final Color bgColor;
 
-  const HtmlTextScreenData(this.title, this.htmlFile, this.bgColor);
+  const HtmlTextScreenData(this.title, this.htmlFile);
 
   Future<String> readFile() async {
     return await rootBundle.loadString(htmlFile);
@@ -576,12 +551,12 @@ const List<VentilationGuideItem> ventilationGuide = [
     'Initial Steps',
     guideList: [
       VentiliationGuideSection(
-        heading: 'Lung Protection',
+        heading: 'Lung protection',
         list: [
           VentilationGuideItemListItem(
               title: 'Ventilator setting: SIMV/VC', icon: '🔈'),
           VentilationGuideItemListItem(
-              title: 'Low tidal Volume commence with 6ml/kg body weight',
+              title: 'Low tidal volume commence with 6ml/kg body weight',
               icon: '🌊'),
           VentilationGuideItemListItem(title: 'RR 20', icon: '🎚'),
           VentilationGuideItemListItem(
@@ -591,11 +566,11 @@ const List<VentilationGuideItem> ventilationGuide = [
       VentiliationGuideSection(
         heading: 'Aims',
         list: [
-          VentilationGuideItemListItem(title: 'SpO2 88-92%', icon: '😅'),
+          VentilationGuideItemListItem(title: 'SaO2 88-92%', icon: '😅'),
           VentilationGuideItemListItem(title: 'PaO2 55-70mmHg', icon: '😬'),
-          VentilationGuideItemListItem(title: 'Pplat <30', icon: '🙃'),
+          VentilationGuideItemListItem(title: 'Pplat < 30', icon: '🙃'),
           VentilationGuideItemListItem(
-              title: 'Ph>7.2 (Permissive hypercapnia is ok)', icon: '🤔'),
+              title: 'pH > 7.20 (Permissive hypercapnia is ok)', icon: '🤔'),
         ],
       ),
       VentiliationGuideSection(
@@ -668,7 +643,7 @@ List<ICUDailyRoundSteps> icuDailyRoundSteps = [
     ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(icon: '💨', title: 'SpO₂?'),
-        ICUDailyRoundItem(icon: '🩸', title: 'PAO₂?'),
+        ICUDailyRoundItem(icon: '🩸', title: 'PaO₂?'),
         ICUDailyRoundItem(icon: '🔍', title: 'CXR reviewed?'),
         ICUDailyRoundItem(icon: '🅰️', title: 'ABG reviewed?'),
         ICUDailyRoundItem(
@@ -680,11 +655,12 @@ List<ICUDailyRoundSteps> icuDailyRoundSteps = [
           heading: 'Standard Targets',
           footer: '',
           list: [
-            ICUDailyRoundItem(icon: '🎯', title: 'PAO₂ > 55-60\nSaO₂ > 88-92'),
+            ICUDailyRoundItem(
+                icon: '🎯', title: 'PaO₂ > 55-60mmHg\nSaO₂ > 88-92%'),
             ICUDailyRoundItem(
                 icon: '🎯', title: 'pH > 7.20\nif pH normal, CO₂ 35-45'),
             ICUDailyRoundItem(
-                icon: '🎯', title: 'VTe 4-8 ml/kg\nwith PPlat < 30'),
+                icon: '🎯', title: 'VTe 4-8 ml/kg\nwith Pplat < 30'),
             ICUDailyRoundItem(
                 icon: '🎯',
                 title:
@@ -792,7 +768,7 @@ List<ICUDailyRoundSteps> icuDailyRoundSteps = [
       ])
     ])
   ]),
-  const ICUDailyRoundSteps(heading: 'G - Git', sections: [
+  const ICUDailyRoundSteps(heading: 'G - GIT', sections: [
     ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(
