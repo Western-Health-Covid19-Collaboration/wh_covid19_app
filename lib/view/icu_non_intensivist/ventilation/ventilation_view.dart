@@ -31,6 +31,7 @@ class VentilationView extends StatelessWidget {
     return TabViewTemplate(Strings.ventilationTitle,
         color: AppColors.blue50,
         tabs: tabs,
+        indicatorColor: AppColors.blue900,
         actions: <Widget>[
           IconButton(
             icon: SvgPicture.asset(
