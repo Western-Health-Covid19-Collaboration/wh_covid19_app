@@ -42,9 +42,7 @@ class YourWelfareView extends StatelessWidget {
       tabs: yourWelfareSteps.map((s) => s.heading).toList(),
       children: yourWelfareSteps
           .map((e) => ICUDailyRoundStepsContainer(
-                steps: e,
-                backgroundColor: AppColors.grey500,
-              ))
+              steps: e, backgroundColor: AppColors.grey500))
           .toList(),
     );
   }

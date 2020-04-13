@@ -40,9 +40,9 @@ class ICUDailyRoundStepsContainer extends StatelessWidget {
 
   List<Widget> _renderList() {
     return [
-      if (steps.subHeading != null)
+      if (steps.subheading != null)
         Text(
-          steps.subHeading,
+          steps.subheading,
           style: Styles.textH1,
         ),
       ...steps.sections.map((e) => ICUDailyRoundStepsCard(section: e))
@@ -61,8 +61,10 @@ class ICUDailyRoundStepsContainer extends StatelessWidget {
 // Checklist Container
 class ICUDailyRoundChecklistContainer extends StatelessWidget {
   final List<ICUDailyRoundChecklistSection> sectionList;
+  final Color backgroundColor;
 
-  const ICUDailyRoundChecklistContainer({this.sectionList});
+  const ICUDailyRoundChecklistContainer(
+      {this.sectionList, this.backgroundColor = AppColors.blue500});
 
   List<Widget> _renderList() {
     return sectionList
@@ -77,6 +79,7 @@ class ICUDailyRoundChecklistContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ICUDailyRoundContainer(list: _renderList());
+    return ICUDailyRoundContainer(
+        list: _renderList(), backgroundColor: backgroundColor);
   }
 }

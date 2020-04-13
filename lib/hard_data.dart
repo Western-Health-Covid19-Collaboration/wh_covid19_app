@@ -849,7 +849,7 @@ const List<ICUDailyRoundChecklist> icuDailyRoundChecklist = [
 const yourWelfareSteps = [
   ICUDailyRoundSteps(
       heading: 'The basics',
-      subHeading: "It's okay to not be okay.\nPlease look after yourself.",
+      subheading: "It's okay to not be okay.\nPlease look after yourself.",
       sections: [
         ICUDailyRoundStepSection(
           heading: 'Basic tips',
@@ -937,7 +937,7 @@ const yourWelfareSteps = [
       heading: 'Core phase',
       subsections: [
         ICUDailyRoundStepSubsection(
-            heading: 'Number of cases: Full scale - Multiple',
+            heading: 'Number of cases: Full scale/Multiple',
             list: [
               ICUDailyRoundItem(
                   icon: '🚨', title: 'Greatest risk period psychologically'),

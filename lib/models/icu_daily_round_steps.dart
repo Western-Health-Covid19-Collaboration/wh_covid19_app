@@ -1,8 +1,8 @@
 class ICUDailyRoundSteps {
-  final String heading, subHeading;
+  final String heading, subheading;
   final List<ICUDailyRoundStepSection> sections;
 
-  const ICUDailyRoundSteps({this.heading, this.subHeading, this.sections});
+  const ICUDailyRoundSteps({this.heading, this.subheading, this.sections});
 }
 
 class ICUDailyRoundStepSection {
