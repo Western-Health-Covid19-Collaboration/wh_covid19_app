@@ -17,10 +17,18 @@ class ICUDailyRoundStepsCard extends StatelessWidget {
         children: <Widget>[
           Text(item.icon, style: Styles.textH4),
           Expanded(
-            child: Padding(
-                padding: const EdgeInsets.fromLTRB(16, 0, 0, 0),
-                child: Text(item.title, style: Styles.textH4)),
-          )
+              child: Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 0, 0),
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(item.title, style: Styles.textP),
+                        if (item.subtitle != null)
+                          Text(
+                            item.subtitle,
+                            style: Styles.textFooter,
+                          )
+                      ])))
         ],
       ),
     );
@@ -45,7 +53,7 @@ class ICUDailyRoundStepsCard extends StatelessWidget {
     }
 
     return ReusableCardBase(
-        color: AppColors.appBackground,
+        color: AppColors.grey50,
         elevation: 0,
         child: <Widget>[
           _renderHeading(),
