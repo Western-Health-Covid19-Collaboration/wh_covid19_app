@@ -23,7 +23,8 @@ class VentilationView extends StatelessWidget {
     final tabs = ventilationGuide.map((e) {
       if (e is IntubationContent) {
         return e.heading;
-      } else if (e is ICUDailyRoundSteps) {
+      }
+      if (e is ICUDailyRoundSteps) {
         return e.heading;
       }
       return e.toString();
@@ -44,15 +45,13 @@ class VentilationView extends StatelessWidget {
         children: ventilationGuide.map((e) {
           if (e is IntubationContent) {
             return IntubationContentViewTemplate(
-              content: e,
-              color: AppColors.blue500,
-            );
-          } else if (e is ICUDailyRoundSteps) {
+                content: e, color: AppColors.blue500);
+          }
+          if (e is ICUDailyRoundSteps) {
             return ICUDailyRoundStepsContainer(
                 steps: e, backgroundColor: AppColors.blue500);
-          } else {
-            throw Exception('Unknown model ${e.runtimeType}');
           }
+          throw Exception('Unknown model ${e.runtimeType}');
         }).toList());
   }
 }

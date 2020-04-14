@@ -528,10 +528,6 @@ const List<IntubationContent> extubationGuide = [
 ];
 
 const ventilationGuide = [
-  ..._ventilationGuideA,
-  ..._ventilationGuideB,
-];
-const List<IntubationContent> _ventilationGuideA = [
   IntubationContent(
     'Principles',
     [
@@ -545,9 +541,7 @@ const List<IntubationContent> _ventilationGuideA = [
         ],
       )
     ],
-  )
-];
-const List<ICUDailyRoundSteps> _ventilationGuideB = [
+  ),
   ICUDailyRoundSteps(heading: 'Initial Steps', sections: [
     ICUDailyRoundStepSection(
       heading: 'Lung Protective Ventilation',
