@@ -7,6 +7,7 @@ import 'models/home_card.dart';
 import 'models/icu_daily_round_checklist.dart';
 import 'models/icu_daily_round_steps.dart';
 import 'models/intubation_guide.dart';
+import 'models/prone_checklist.dart';
 import 'routes.dart';
 import 'strings.dart';
 
@@ -970,5 +971,81 @@ const yourWelfareSteps = [
             icon: '👏', title: 'Gratitude and thanks to all our colleagues'),
       ])
     ])
+  ])
+];
+
+const proningGuide = [
+  ICUDailyRoundSteps(heading: 'Indication', sections: [
+    ICUDailyRoundStepSection(heading: 'Indications', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '😓', title: 'Severe ARDS with hypoxia'),
+        ICUDailyRoundItem(icon: '🤕', title: 'Posterior wounds / skin flaps'),
+      ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Contraindications', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '😓', title: 'Lack of staff'),
+        ICUDailyRoundItem(icon: '❌', title: 'Untrained staff'),
+        ICUDailyRoundItem(icon: '⏰', title: 'Out of hours'),
+        ICUDailyRoundItem(icon: '🤲', title: 'Open abdomen'),
+        ICUDailyRoundItem(icon: '🛌', title: 'C spine precautions'),
+        ICUDailyRoundItem(icon: '🩸', title: 'Haemodynamic instability'),
+      ])
+    ]),
+  ]),
+  ICUDailyRoundSteps(heading: 'Staff Pre-Manoeuvre', sections: [
+    ICUDailyRoundStepSection(heading: 'Team', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '🤓', title: 'ICU consultant aware'),
+        ICUDailyRoundItem(icon: '', title: ''),
+      ])
+    ])
+  ]),
+  ICUDailyRoundSteps(heading: 'Patient Pre-Manoeuvre', sections: [
+    ICUDailyRoundStepSection(heading: 'General Considerations', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(
+            icon: '🔍', title: 'Review indications and contraindications'),
+        ICUDailyRoundItem(icon: '', title: ''),
+      ])
+    ])
+  ]),
+  ICUDailyRoundSteps(heading: 'Manoeuvre', sections: [
+    ICUDailyRoundStepSection(heading: 'Prepare', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(
+            icon: '👸',
+            title: 'Position team',
+            subtitle: 'Team leader at head of bed'),
+        ICUDailyRoundItem(icon: '', title: ''),
+      ])
+    ])
+  ]),
+  ProneChecklist(heading: 'Post-Manoeuvre', sections: [
+    ProneChecklistSection(title: 'Position', checklist: [
+      ProneChecklistItem(
+          title:
+              'One arm above head, other by side. Shoulder in neutral position.'),
+      ProneChecklistItem(title: 'Reposition patient in centre of bed'),
+      ProneChecklistItem(
+          title: 'Adjust position to ensure abdomen is hanging freely'),
+      ProneChecklistItem(
+          title:
+              'Postion head to reduce pressure on eyes and enable access to airway'),
+      ProneChecklistItem(
+          title: 'Readjust lines for comfort and NG on free drainage'),
+    ]),
+    ProneChecklistSection(title: 'Airway', checklist: [
+      ProneChecklistItem(
+          title: 'Check ETT lip level and ventilator circuit for kinks'),
+      ProneChecklistItem(title: 'Suction if indicated'),
+      ProneChecklistItem(title: 'Cuff pressure'),
+    ]),
+    ProneChecklistSection(
+        title: 'Breathing', checklist: [ProneChecklistItem(title: '')]),
+    ProneChecklistSection(
+        title: 'Circulation', checklist: [ProneChecklistItem(title: '')]),
+    ProneChecklistSection(
+        title: 'Pressure area care', checklist: [ProneChecklistItem(title: '')])
   ])
 ];
