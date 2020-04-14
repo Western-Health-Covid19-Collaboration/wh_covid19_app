@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:wh_covid19/models/home_card.dart';
-import 'package:wh_covid19/widget/reusable_card.dart';
-
 import '../../constants.dart';
+import '../../models/home_card.dart';
 import '../../routes.dart';
 import '../../strings.dart';
 import '../../style.dart';
 import '../../utils/firebase.dart';
+import '../../widget/reusable_card.dart';
 
 class TipsJuniorStaffView extends StatelessWidget {
   static const _cards = [
@@ -21,7 +20,10 @@ class TipsJuniorStaffView extends StatelessWidget {
         description: 'Video Demonstration',
         route: 'https://www.youtube.com/watch?v=YFrA1cCuDnY&feature=youtu.be'),
     'Circulation',
-    HomeCard(title: 'ALS/BLS Pandemic Modifications', description: 'Guide'),
+    HomeCard(
+        title: 'ALS/BLS Pandemic Modifications',
+        description: 'Guide',
+        route: Routes.alsBlsGuide),
   ];
   @override
   Widget build(BuildContext context) {

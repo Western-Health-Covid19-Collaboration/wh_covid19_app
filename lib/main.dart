@@ -16,6 +16,7 @@ import 'view/airway/guidance/intubation_guidance_infographic_page.dart';
 import 'view/airway/guidance/intubation_guidance_page.dart';
 import 'view/disclaimer_view.dart';
 import 'view/home_page.dart';
+import 'view/icu_non_intensivist/als_bls_guide_view.dart';
 import 'view/icu_non_intensivist/daily_round/daily_round_view.dart';
 import 'view/icu_non_intensivist/proning_guide_view.dart';
 import 'view/icu_non_intensivist/tips_junior_staff_view.dart';
@@ -67,6 +68,7 @@ class MyApp extends StatelessWidget {
         Routes.generalCare: (context) => ICUDailyRoundView(),
         Routes.tipsJuniorStaff: (context) => TipsJuniorStaffView(),
         Routes.proningGuide: (context) => ProningGuideView(),
+        Routes.alsBlsGuide: (context) => AlsBlsGuideView(),
         Routes.introRouter: (context) => IntroRouter(),
         Routes.disclaimer: (context) => DisclaimerView(),
         Routes.licenses: (context) => LicenseView(),

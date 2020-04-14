@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wh_covid19/utils/url_utils.dart';
+import '../../utils/url_utils.dart';
 
 class ReusableCardBase extends StatelessWidget {
   /// Description of the card

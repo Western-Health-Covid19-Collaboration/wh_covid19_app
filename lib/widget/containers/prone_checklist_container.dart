@@ -20,7 +20,7 @@ class ProneChecklistContainer extends StatelessWidget {
             selectedBackgroundColor: AppColors.blue50);
       } else if (e is ProneChecklistSection) {
         return Padding(
-            padding: EdgeInsets.fromLTRB(4, 16, 4, 4),
+            padding: const EdgeInsets.fromLTRB(4, 16, 4, 4),
             child: Text(e.title, style: Styles.textH4));
       }
       throw Exception('Unknown element type ${e.runtimeType}');

@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 
 import '../../constants.dart';
 import '../../hard_data.dart';
-import '../../models/icu_daily_round_checklist.dart';
 import '../../models/icu_daily_round_steps.dart';
 import '../../models/prone_checklist.dart';
 import '../../strings.dart';

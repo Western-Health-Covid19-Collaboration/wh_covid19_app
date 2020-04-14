@@ -1049,3 +1049,92 @@ const proningGuide = [
         title: 'Pressure area care', checklist: [ProneChecklistItem(title: '')])
   ])
 ];
+
+const alsBlsGuide = [
+  IntubationContent(
+    'Principles',
+    [
+      IntubationSection(
+        items: [
+          IntubationItem('CPR is an Aerosol Generating Procedure (AGP)!',
+              icon: '🌬'),
+          IntubationItem('Your safety is a priority', icon: '☝️'),
+          IntubationItem('', icon: ''),
+        ],
+      )
+    ],
+  ),
+  ICUDailyRoundSteps(heading: 'PPE', sections: [
+    ICUDailyRoundStepSection(
+      subsections: [
+        ICUDailyRoundStepSubsection(
+          heading: 'For COVID-19 proven, suspected or unknown patients',
+          list: [
+            ICUDailyRoundItem(title: 'Full PPE including N95 mask', icon: '☣️'),
+          ],
+        )
+      ],
+    ),
+    ICUDailyRoundStepSection(subsections: [
+      ICUDailyRoundStepSubsection(
+          heading: 'For non-COVID-19 patients',
+          list: [
+            ICUDailyRoundItem(
+                title: 'Please use universal precautions', icon: '😷'),
+          ],
+          footer: 'Surgical mask, eye protection and gloves')
+    ]),
+    ICUDailyRoundStepSection(
+      subsections: [
+        ICUDailyRoundStepSubsection(
+          heading: 'If you are unsure',
+          list: [
+            ICUDailyRoundItem(title: 'Full PPE', icon: '☣️'),
+          ],
+        )
+      ],
+    )
+  ]),
+  IntubationContent(
+    'BLS',
+    [
+      IntubationSection(
+        items: [
+          IntubationItem('COMPRESSION ONLY CPR', icon: '👐'),
+          IntubationItem('Do NOT use airway adjuncts or ventilate with BMV',
+              icon: '☝️'),
+          IntubationItem('Apply Hudson mask at 10L O₂.', icon: '🌬'),
+        ],
+      )
+    ],
+  ),
+  ICUDailyRoundSteps(heading: 'ALS', sections: [
+    ICUDailyRoundStepSection(
+      subsections: [
+        ICUDailyRoundStepSubsection(
+          heading: 'Early Intubation',
+          list: [
+            ICUDailyRoundItem(
+                title: 'The most experienced operator needs to be present',
+                icon: '👩‍⚕️'),
+            ICUDailyRoundItem(
+                title: 'Use video laryngoscope',
+                icon: '📺',
+                subtitle:
+                    '• McGrath on Code Blue response trolley\n• Intubating anaesthetist will attend where possible'),
+            ICUDailyRoundItem(
+                title:
+                    'The viral filter MUST be placed on circuit closest to the airway device',
+                icon: '🦠'),
+            ICUDailyRoundItem(
+                title:
+                    'Follow the airway strategy as per Safe Airway Society/WH guidelines',
+                icon: '🛩'),
+            ICUDailyRoundItem(
+                title: 'If BMV required: 2 handed vice-like grip', icon: '👐'),
+          ],
+        )
+      ],
+    ),
+  ]),
+];
