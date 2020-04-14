@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 
-import 'hard_data.dart';
 import 'intro_router.dart';
 import 'routes.dart';
 import 'strings.dart';
@@ -32,7 +31,6 @@ import 'view/ppe/ppe_on_infographic_page.dart';
 import 'view/ppe/ppe_view.dart';
 import 'view/sbs_guide_view.dart';
 import 'view/staff_welfare/your_welfare_view.dart';
-import 'view/view_templates/html_text_card_view_template.dart';
 
 void main() {
   // Add this, and it should be the first line in main method to ensure no crashes before runApp()
@@ -65,10 +63,6 @@ class MyApp extends StatelessWidget {
         Routes.staffWelfare: (context) => YourWelfareView(),
         Routes.sbsGuidance: (context) => SBSGuideView(),
         Routes.ventilation: (context) => VentilationView(),
-        Routes.ventilationInitialActions: (context) => _navigateScreenData(
-            context, routeToScreenData[Routes.ventilationInitialActions]),
-        Routes.ventilationAdjuncts: (context) => _navigateScreenData(
-            context, routeToScreenData[Routes.ventilationAdjuncts]),
         Routes.generalCare: (context) => ICUDailyRoundView(),
         Routes.tipsJuniorStaff: (context) => TipsJuniorStaffView(),
         Routes.introRouter: (context) => IntroRouter(),
@@ -141,29 +135,6 @@ class MyApp extends StatelessWidget {
           builder: (context) => HomePage(),
           fullscreenDialog: true,
         );
-      },
-    );
-  }
-
-  Widget _navigateScreenData(BuildContext context, HtmlTextScreenData data) {
-    return FutureBuilder<String>(
-      future: data.readFile(),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return HtmlTextCardViewTemplate(
-            title: data.title,
-            bgColor: AppColors.backgroundBlue,
-            html: '',
-          );
-        } else if (snapshot.hasError) {
-          return Text('Error: ${snapshot.error}');
-        } else {
-          return HtmlTextCardViewTemplate(
-            title: data.title,
-            bgColor: AppColors.backgroundBlue,
-            html: snapshot.data,
-          );
-        }
       },
     );
   }
