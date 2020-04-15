@@ -997,7 +997,31 @@ const proningGuide = [
     ICUDailyRoundStepSection(heading: 'Team', subsections: [
       ICUDailyRoundStepSubsection(list: [
         ICUDailyRoundItem(icon: '🤓', title: 'ICU consultant aware'),
-        ICUDailyRoundItem(icon: '', title: ''),
+        ICUDailyRoundItem(icon: '👩‍⚕️',
+        title: 'Specialised proning team on site?',
+        subtitle: '(Contact ICU physio)'),
+        ICUDailyRoundItem(icon: '👫', title: 'Adequate staffing on unit?'),
+        ICUDailyRountItem(icon: '👍', title: 'Staff trained in proving procedure'),
+        ICUDailyRoundItem(icon: '6️⃣', title: '6 x staff available for proning'),
+        ICUDailyRoundItem(icon: '☝️', 
+        title: 'Allocate roles',
+        notes: [
+           'Airway x 1',
+           'Trunk and libs x 4',
+           'Lines and equipment x1'
+                  ],
+          ICUDailyRoundSteps(icon: '😮', title: 'Able to reintubate?'),
+        ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Equipment and Preparation', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '🛒', title: 'Crash trolley'),
+        ICUDailyRoundItem(icon: '⚫', title: 'ECG dots'),
+        ICUDailyRoundItem(icon: '✨', title: 'Fresh sheet x 2'),
+        ICUDailyRoundItem(icon: '🛹', title: 'Slide sheet x 2'),
+        ICUDailyRoundItem(icon: '☁️', title: 'Foldable Pillows x 3'),
+        ICUDailyRoundItem(icon: '🛏️', title: 'Clear bed area'),
+        
       ])
     ])
   ]),
@@ -1006,7 +1030,58 @@ const proningGuide = [
       ICUDailyRoundStepSubsection(list: [
         ICUDailyRoundItem(
             icon: '🔍', title: 'Review indications and contraindications'),
-        ICUDailyRoundItem(icon: '', title: ''),
+        ICUDailyRoundItem(icon: '📐', title: 'Check ROM of neck - 90°'),
+        ICUDailyRoundItem(icon: '☝️', title: 'Explain procedure to patient/family'),
+      ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Airway', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '🕵️', 
+        title: 'Check ETT position on CXR'
+        subtitle: '(Document lip level)'),
+        ICUDailyRoundItem(icon: '🌬️', title: 'Check patient airway grade'),
+        ICUDailyRoundItem(icon: '🤐', title: 'Secure ETT'),
+        ICUDailyRoundItem(icon: '🔌', title: 'Sleek connections'),
+        ICUDailyRoundItem(icon: '🔍', title: 'Check for cuff leak'),
+        ICUDailyRoundItem(icon: '😤', title: 'Suction mouth and nasal passages'),
+          ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Breathing', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '💨', title: 'Pre-oxygenate'),
+        ICUDailyRoundItem(icon: '🎚️', title: 'Confirm ventilator settings'),
+        ICUDailyRoundItem(icon: '♨️', title: 'Check capnography'),
+        ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Circulation', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '❤️', title: 'Check adequate vascular access + secure'),
+        ICUDailyRoundItem(icon: '✅', title: 'Confirm haemodynamically stable'),
+        ICUDailyRoundItem(icon: '📉', title: 'Confirm plan if patient becomes unstable'),
+        ICUDailyRoundItem(icon: '💊', title: 'Identify drug access point and metaraminol accessible'),
+          ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Disability', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '😴', title: 'Sedated'),
+        ICUDailyRoundItem(icon: '💬', title: 'Plan for further sedation discussed'),
+        ])
+     ]),
+         ICUDailyRoundStepSection(heading: 'Equipment & Lines', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '🔐', title: 'Secure all tubes and lines'),
+        ICUDailyRoundItem(icon: '✂️', title: 'Consider disconnecting unnecessary infusions'),
+        ICUDailyRoundItem(icon: '🗑️', title: 'Remove unnecessary indwelling devices'),
+        ICUDailyRoundItem(icon: '🔌', title: 'Consider disconnecting RRT'),
+       ICUDailyRoundItem(icon: '🐽', title: 'NGT - aspirate and spigot'),
+         ])
+     ]),
+         ICUDailyRoundStepSection(heading: 'Other', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '🔍', title: 'Assess for device potential for pressure injury'),
+        ICUDailyRoundItem(icon: '🩹', title: 'Apply padding to bony prominences'),
+        ICUDailyRoundItem(icon: '👄', title: 'Mouth care'),
+        ICUDailyRoundItem(icon: '💃', title: 'Dress anterior wounds'),       
       ])
     ])
   ]),
@@ -1017,7 +1092,38 @@ const proningGuide = [
             icon: '👸',
             title: 'Position team',
             subtitle: 'Team leader at head of bed'),
-        ICUDailyRoundItem(icon: '', title: ''),
+        ICUDailyRoundItem(
+            icon: '📝', 
+            title: 'Brief team on steps',
+            subtitle: 'Turning direction'),
+        ICUDailyRoundItem(icon: '👇', title: 'Position ETT on opposite side'),
+        ICUDailyRoundItem(icon: '🛌', title: 'Remove patient pillow and set air mattress to firm'),
+             ])
+          ]),
+    ICUDailyRoundStepSection(heading: 'Horizontal Move', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '👉', title: 'Move patient to edge of bed'),
+        ICUDailyRoundItem(icon: '🏂', title: 'Tuck original sheet + new slide sheet under patient'),
+        ICUDailyRoundItem(icon: '👈', title: 'Tuck new sheet and slide sheet on side patient turning towards'),
+        ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Side Lying Position', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '🙋‍♀️', title: 'Tuck lower arm under buttock with palm up'),
+        ICUDailyRoundItem(icon: '👉', title: 'Turn patient into lateral position'),
+        ICUDailyRoundItem(icon: '🧶', title: 'Untangle lines and remove ECG leads to anterior thorax'),
+        ICUDailyRoundItem(icon: '📍', title: 'Place ECG leads on posterior thorax'),
+        ICUDailyRoundItem(icon: '🗑️', title: 'Remove old sheet'),
+        ICUDailyRoundItem(icon: '🏂', title: 'Pull new sheet + slide sheet through'),
+        ICUDailyRoundItem(icon: '👈', title: 'Slide patient to end of bed - away from ventilator'),
+        ICUDailyRoundItem(icon: '🛏️', title: 'Fold pillows by 1/3 and place under chest and pelvis'),
+          ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Complete Prone', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '👉', title: 'Turn patient onto stomach'),
+        ICUDailyRoundItem(icon: '🏊', title: 'Pull pillows through position in swimmer position'),
+        ICUDailyRoundItem(icon: '🦶', title: 'Place pillow under lower legs'),
       ])
     ])
   ]),
@@ -1042,11 +1148,24 @@ const proningGuide = [
       ProneChecklistItem(title: 'Cuff pressure'),
     ]),
     ProneChecklistSection(
-        title: 'Breathing', checklist: [ProneChecklistItem(title: '')]),
+        title: 'Breathing', checklist: [
+        ProneChecklistItem(title: 'Auscultate for bilateral breath sounds'),
+        ProneChecklistItem(title: 'Respiratory parameters'),
+        ProneChecklistItem(title: 'Check peak inspiratory pressures and minute ventilation'),
+        ]),
     ProneChecklistSection(
-        title: 'Circulation', checklist: [ProneChecklistItem(title: '')]),
+        title: 'Circulation', checklist: [
+        ProneChecklistItem(title: 'Check haemodynamics'),
+        ProneChecklistItem(title: 'ABG - 30 minute post proning'),
+        ]),
     ProneChecklistSection(
-        title: 'Pressure area care', checklist: [ProneChecklistItem(title: '')])
+        title: 'Pressure Area Care', checklist: [
+        ProneChecklistItem(title: 'Air mattress to usual setting - ensure functioning'),
+        ProneChecklistItem(title: 'Reposition head hourly - frequent eye toilets may be necessary'),
+        ProneChecklistItem(title: 'Ensure tongue in mouth'),
+        ProneChecklistItem(title: 'Document skin assessment'),
+        ProneChecklistItem(title: 'Lateral tilt patient 2 hourly'),
+        ])
   ])
 ];
 
