@@ -1059,7 +1059,13 @@ const alsBlsGuide = [
           IntubationItem('CPR is an Aerosol Generating Procedure (AGP)!',
               icon: '🌬'),
           IntubationItem('Your safety is a priority', icon: '☝️'),
-          IntubationItem('', icon: ''),
+          IntubationItem(
+              'Do NOT enter the bed space until appropriate PPE applied',
+              icon: '😷'),
+          IntubationItem('Limit number of responders to essential staff only',
+              icon: '👩‍⚕️'),
+          IntubationItem('Minimise interruptions to compressions', icon: '🤫'),
+          IntubationItem('Rhythm check at appropriate times', icon: '⏱'),
         ],
       )
     ],

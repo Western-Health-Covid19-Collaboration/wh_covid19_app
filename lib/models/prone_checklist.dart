@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'IntubationChecklist.dart';
 
-class ProneChecklistItem extends IntubationChecklistItem{
-  const ProneChecklistItem({@required String title, List<String> notes}):super(title:title, notes:notes);
+class ProneChecklistItem extends IntubationChecklistItem {
+  const ProneChecklistItem({@required String title, List<String> notes})
+      : super(title: title, notes: notes);
 }
 
 class ProneChecklistSection {
