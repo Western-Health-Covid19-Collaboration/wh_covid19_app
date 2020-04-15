@@ -19,7 +19,7 @@ class ExtubationGuidancePage extends StatelessWidget {
 
     return TabViewTemplate(
       Strings.extubationGuideTitle,
-      tabs: extubationGuide.map((e) => e.name).toList(),
+      tabs: extubationGuide.map((e) => e.heading).toList(),
       color: AppColors.green50,
       indicatorColor: AppColors.green900,
       actions: <Widget>[
