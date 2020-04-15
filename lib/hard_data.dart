@@ -18,6 +18,8 @@ const String whAnaestheticMicrositeURL =
     'https://whcovid19.wixsite.com/covid19';
 const String whIcuMicrositeURL = 'https://whicu2020.wixsite.com/icuquickguide';
 const String feedbackFormUrl = 'https://forms.gle/zQtfhvswrKmjJjNV7';
+const String proningTechniqueUrl =
+    'https://www.youtube.com/watch?v=YFrA1cCuDnY&feature=youtu.be';
 
 //Staff Welfare card list composition
 const List<HomeCard> staffWelfare = [

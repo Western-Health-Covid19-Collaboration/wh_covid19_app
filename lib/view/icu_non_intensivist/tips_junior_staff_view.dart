@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import '../../constants.dart';
+import '../../hard_data.dart';
 import '../../models/home_card.dart';
 import '../../routes.dart';
 import '../../strings.dart';
@@ -18,7 +19,7 @@ class TipsJuniorStaffView extends StatelessWidget {
     HomeCard(
         title: 'Proning Technique',
         description: 'Video Demonstration',
-        route: 'https://www.youtube.com/watch?v=YFrA1cCuDnY&feature=youtu.be'),
+        route: proningTechniqueUrl),
     'Circulation',
     HomeCard(
         title: 'ALS/BLS Pandemic Modifications',
