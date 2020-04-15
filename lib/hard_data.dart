@@ -549,9 +549,9 @@ const ventilationGuide = [
         list: [
           ICUDailyRoundItem(title: 'SaO₂ 88-92%', icon: '😅'),
           ICUDailyRoundItem(title: 'PaO₂ 55-70mmHg', icon: '😬'),
-          ICUDailyRoundItem(title: 'Pplat <30', icon: '🙃'),
+          ICUDailyRoundItem(title: 'Pplat < 30', icon: '🙃'),
           ICUDailyRoundItem(
-              title: 'Ph>7.20',
+              title: 'pH > 7.20',
               subtitle: '(Permissive hypercapnia is ok)',
               icon: '🤔'),
         ],
