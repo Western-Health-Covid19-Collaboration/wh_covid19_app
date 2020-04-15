@@ -490,7 +490,7 @@ const List<IntubationContent> extubationGuide = [
           IntubationItem(
               'Continue to apply face mask until able to protect their own airway'),
           IntubationItem(
-              'Switch to surgical mask with hudson or nasal prongs over the top'),
+              'Switch to Hudson or nasal prongs O2 with a surgical mask over the top'),
         ],
       )
     ],
@@ -550,9 +550,9 @@ const ventilationGuide = [
         list: [
           ICUDailyRoundItem(title: 'SaO₂ 88-92%', icon: '😅'),
           ICUDailyRoundItem(title: 'PaO₂ 55-70mmHg', icon: '😬'),
-          ICUDailyRoundItem(title: 'Pplat <30', icon: '🙃'),
+          ICUDailyRoundItem(title: 'Pplat < 30', icon: '🙃'),
           ICUDailyRoundItem(
-              title: 'Ph>7.20',
+              title: 'pH > 7.20',
               subtitle: '(Permissive hypercapnia is ok)',
               icon: '🤔'),
         ],
@@ -1003,7 +1003,7 @@ const proningGuide = [
         ICUDailyRoundItem(icon: '👫', title: 'Adequate staffing on unit?'),
         ICUDailyRountItem(icon: '👍', title: 'Staff trained in proving procedure'),
         ICUDailyRoundItem(icon: '6️⃣', title: '6 x staff available for proning'),
-        ICUDailyRoundItem(icon: '☝️', 
+        ICUDailyRoundItem(icon: '☝️',
         title: 'Allocate roles',
         notes: [
            'Airway x 1',
@@ -1021,7 +1021,7 @@ const proningGuide = [
         ICUDailyRoundItem(icon: '🛹', title: 'Slide sheet x 2'),
         ICUDailyRoundItem(icon: '☁️', title: 'Foldable Pillows x 3'),
         ICUDailyRoundItem(icon: '🛏️', title: 'Clear bed area'),
-        
+
       ])
     ])
   ]),
@@ -1036,7 +1036,7 @@ const proningGuide = [
     ]),
     ICUDailyRoundStepSection(heading: 'Airway', subsections: [
       ICUDailyRoundStepSubsection(list: [
-        ICUDailyRoundItem(icon: '🕵️', 
+        ICUDailyRoundItem(icon: '🕵️',
         title: 'Check ETT position on CXR'
         subtitle: '(Document lip level)'),
         ICUDailyRoundItem(icon: '🌬️', title: 'Check patient airway grade'),
@@ -1081,7 +1081,7 @@ const proningGuide = [
         ICUDailyRoundItem(icon: '🔍', title: 'Assess for device potential for pressure injury'),
         ICUDailyRoundItem(icon: '🩹', title: 'Apply padding to bony prominences'),
         ICUDailyRoundItem(icon: '👄', title: 'Mouth care'),
-        ICUDailyRoundItem(icon: '💃', title: 'Dress anterior wounds'),       
+        ICUDailyRoundItem(icon: '💃', title: 'Dress anterior wounds'),
       ])
     ])
   ]),
@@ -1093,7 +1093,7 @@ const proningGuide = [
             title: 'Position team',
             subtitle: 'Team leader at head of bed'),
         ICUDailyRoundItem(
-            icon: '📝', 
+            icon: '📝',
             title: 'Brief team on steps',
             subtitle: 'Turning direction'),
         ICUDailyRoundItem(icon: '👇', title: 'Position ETT on opposite side'),
