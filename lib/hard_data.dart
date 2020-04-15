@@ -490,7 +490,7 @@ const List<IntubationContent> extubationGuide = [
           IntubationItem(
               'Continue to apply face mask until able to protect their own airway'),
           IntubationItem(
-              'Switch to surgical mask with hudson or nasal prongs over the top'),
+              'Switch to Hudson or nasal prongs O2 with a surgical mask over the top'),
         ],
       )
     ],
