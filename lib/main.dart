@@ -1,6 +1,3 @@
-import 'dart:async';
-
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 
 import 'intro_router.dart';
@@ -34,16 +31,9 @@ import 'view/staff_welfare/your_welfare_view.dart';
 
 void main() {
   // Add this, and it should be the first line in main method to ensure no crashes before runApp()
-  // Currently Crashlytics and SharedPreferences packages below use platform channels so need this before runApp()
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Crash Reporting configured for not reporting whilst doing Dev mode builds
-  crashReporting();
-
-  // Run Zoned to allow for catching Dart errors
-  runZoned(() {
-    runApp(const MyApp());
-  }, onError: Crashlytics.instance.recordError);
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
