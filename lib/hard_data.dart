@@ -68,21 +68,6 @@ const List<HomeCard> icu = [
   ),
 ];
 
-/// Map of Route to ScreenData.
-/// For simple data screens that can be represented with eg a title
-/// and html text body in a card, there's no need to create separate
-/// *_view.dart files for each one. Instead, represent the screen as data
-const Map<String, HtmlTextScreenData> routeToScreenData = {
-  Routes.ventilationInitialActions: HtmlTextScreenData(
-    'Suggested initial actions',
-    'assets/text/icu_ventilation_initial_actions_content.html',
-  ),
-  Routes.ventilationAdjuncts: HtmlTextScreenData(
-    'Adjuncts',
-    'assets/text/icu_ventilation_adjuncts_content.html',
-  ),
-};
-
 /// Data for a screen that can be rendered with
 /// html_text_card_view_template.dart
 class HtmlTextScreenData {
@@ -505,7 +490,7 @@ const List<IntubationContent> extubationGuide = [
           IntubationItem(
               'Continue to apply face mask until able to protect their own airway'),
           IntubationItem(
-              'Switch to surgical mask with hudson or nasal prongs over the top'),
+              'Switch to Hudson or nasal prongs O2 with a surgical mask over the top'),
         ],
       )
     ],
