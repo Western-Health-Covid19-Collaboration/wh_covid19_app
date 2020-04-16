@@ -108,6 +108,7 @@ Those who have given helpful and timely advice, including Byron Teu.<br/>
                       child: [
                         HtmlWidget(
                           _thanksHtml,
+                          hyperlinkColor: Styles.textH5Hyperlink.color,
                           textStyle: Styles.textP,
                         )
                       ],
