@@ -14,7 +14,7 @@ Future<SentryClient> get _sentryClient async => SentryClient(
 
 Future<Event> get _environmentEvent async {
   final packageInfo = await PackageInfo.fromPlatform();
-  final deviceInfoPlugin = await DeviceInfoPlugin();
+  final deviceInfoPlugin = DeviceInfoPlugin();
   OperatingSystem os;
   Device device;
   if (Platform.isAndroid) {
