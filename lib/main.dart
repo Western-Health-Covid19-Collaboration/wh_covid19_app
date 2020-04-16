@@ -5,6 +5,7 @@ import 'routes.dart';
 import 'strings.dart';
 import 'style.dart';
 import 'utils/firebase.dart';
+import 'view/acknowledgements_view.dart';
 import 'view/airway/checklist/intubation_checklist_infographic_page.dart';
 import 'view/airway/checklist/intubation_checklist_page.dart';
 import 'view/airway/extubation/extubation_guidance_page.dart';
@@ -62,6 +63,7 @@ class MyApp extends StatelessWidget {
         Routes.introRouter: (context) => IntroRouter(),
         Routes.disclaimer: (context) => DisclaimerView(),
         Routes.licenses: (context) => LicenseView(),
+        Routes.acknowledgements: (context) => AcknowledgementsView(),
       },
       // Analytics route observer to track PageRoute transitions
       navigatorObservers: <NavigatorObserver>[Analytics.observer],
