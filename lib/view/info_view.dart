@@ -7,7 +7,6 @@ import '../routes.dart';
 import '../strings.dart';
 import '../style.dart';
 import '../utils/firebase.dart';
-import '../utils/url_utils.dart';
 import '../widget/reusable_card.dart';
 
 class InfoView extends StatelessWidget {
