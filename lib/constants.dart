@@ -37,4 +37,7 @@ class Constants {
   static const String analyticsDailyRoundScreen = 'dailyRound';
   static const String analyticsCrossSkillingScreen = 'crossSkilling';
   static const String analyticsLicensesScreen = 'licenses';
+
+  static const String analyticsProningGuideScreen = 'proning';
+  static const String analyticsAlsBlsGuideScreen = 'alsBls';
 }
