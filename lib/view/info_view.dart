@@ -70,6 +70,7 @@ class InfoView extends StatelessWidget {
       title: Strings.informationAppAckRefTitle,
       height: _cardHeight,
       elevation: _cardElevation,
+      routeTo: Routes.acknowledgements,
     ),
     const ReusableCard(
       title: Strings.informationAppThirdPartyTitle,

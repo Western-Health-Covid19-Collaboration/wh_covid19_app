@@ -71,9 +71,10 @@ class ICUDailyRoundStepsCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Padding(
-            padding: const EdgeInsets.fromLTRB(4, 14, 0, 0),
-            child: Text(section.heading, style: Styles.textH4)),
+        if (section.heading != null)
+          Padding(
+              padding: const EdgeInsets.fromLTRB(4, 14, 0, 0),
+              child: Text(section.heading, style: Styles.textH4)),
         ..._getContent(section.subsections)
       ],
     );

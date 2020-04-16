@@ -1,6 +1,3 @@
-import 'dart:async';
-
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 
 import 'intro_router.dart';
@@ -8,6 +5,7 @@ import 'routes.dart';
 import 'strings.dart';
 import 'style.dart';
 import 'utils/firebase.dart';
+import 'view/acknowledgements_view.dart';
 import 'view/airway/checklist/intubation_checklist_infographic_page.dart';
 import 'view/airway/checklist/intubation_checklist_page.dart';
 import 'view/airway/extubation/extubation_guidance_page.dart';
@@ -16,7 +14,9 @@ import 'view/airway/guidance/intubation_guidance_infographic_page.dart';
 import 'view/airway/guidance/intubation_guidance_page.dart';
 import 'view/disclaimer_view.dart';
 import 'view/home_page.dart';
+import 'view/icu_non_intensivist/als_bls_guide_view.dart';
 import 'view/icu_non_intensivist/daily_round/daily_round_view.dart';
+import 'view/icu_non_intensivist/proning_guide_view.dart';
 import 'view/icu_non_intensivist/tips_junior_staff_view.dart';
 import 'view/icu_non_intensivist/ventilation/ventilation_infographic_page.dart';
 import 'view/icu_non_intensivist/ventilation/ventilation_view.dart';
@@ -34,16 +34,9 @@ import 'view/staff_welfare/your_welfare_view.dart';
 
 void main() {
   // Add this, and it should be the first line in main method to ensure no crashes before runApp()
-  // Currently Crashlytics and SharedPreferences packages below use platform channels so need this before runApp()
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Crash Reporting configured for not reporting whilst doing Dev mode builds
-  crashReporting();
-
-  // Run Zoned to allow for catching Dart errors
-  runZoned(() {
-    runApp(const MyApp());
-  }, onError: Crashlytics.instance.recordError);
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -65,9 +58,12 @@ class MyApp extends StatelessWidget {
         Routes.ventilation: (context) => VentilationView(),
         Routes.generalCare: (context) => ICUDailyRoundView(),
         Routes.tipsJuniorStaff: (context) => TipsJuniorStaffView(),
+        Routes.proningGuide: (context) => ProningGuideView(),
+        Routes.alsBlsGuide: (context) => AlsBlsGuideView(),
         Routes.introRouter: (context) => IntroRouter(),
         Routes.disclaimer: (context) => DisclaimerView(),
         Routes.licenses: (context) => LicenseView(),
+        Routes.acknowledgements: (context) => AcknowledgementsView(),
       },
       // Analytics route observer to track PageRoute transitions
       navigatorObservers: <NavigatorObserver>[Analytics.observer],

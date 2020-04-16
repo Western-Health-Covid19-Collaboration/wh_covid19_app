@@ -7,7 +7,7 @@ import 'models/home_card.dart';
 import 'models/icu_daily_round_checklist.dart';
 import 'models/icu_daily_round_steps.dart';
 import 'models/intubation_guide.dart';
-import 'models/ventilation_guide.dart';
+import 'models/prone_checklist.dart';
 import 'routes.dart';
 import 'strings.dart';
 
@@ -18,6 +18,8 @@ const String whAnaestheticMicrositeURL =
     'https://whcovid19.wixsite.com/covid19';
 const String whIcuMicrositeURL = 'https://whicu2020.wixsite.com/icuquickguide';
 const String feedbackFormUrl = 'https://forms.gle/zQtfhvswrKmjJjNV7';
+const String proningTechniqueUrl =
+    'https://www.youtube.com/watch?v=YFrA1cCuDnY&feature=youtu.be';
 
 //Staff Welfare card list composition
 const List<HomeCard> staffWelfare = [
@@ -513,88 +515,87 @@ const List<IntubationContent> extubationGuide = [
   ),
 ];
 
-const List<VentilationGuideItem> ventilationGuide = [
-  VentilationGuideItem(
+const ventilationGuide = [
+  IntubationContent(
     'Principles',
-    guideList: [
-      VentiliationGuideSection(
-        list: [
-          VentilationGuideItemListItem(
-              title: 'Do the simple things well!', icon: '✅'),
-          VentilationGuideItemListItem(
-              title: 'Follow a stepwise approach!', icon: '👟'),
-          VentilationGuideItemListItem(
-              title: 'Balance the risks of organ support', icon: '⚖️'),
-          VentilationGuideItemListItem(
-              title: 'Minimise the risks of �cross-infection (see PPE)',
+    [
+      IntubationSection(
+        items: [
+          IntubationItem('Do the simple things well!', icon: '✅'),
+          IntubationItem('Follow a stepwise approach!', icon: '👟'),
+          IntubationItem('Balance the risks of organ support', icon: '⚖️'),
+          IntubationItem('Minimise the risks of cross-infection (see PPE)',
               icon: '😷'),
         ],
       )
     ],
   ),
-  VentilationGuideItem(
-    'Initial Steps',
-    guideList: [
-      VentiliationGuideSection(
-        heading: 'Lung protection',
+  ICUDailyRoundSteps(heading: 'Initial Steps', sections: [
+    ICUDailyRoundStepSection(
+      heading: 'Lung Protective Ventilation',
+      subsections: [
+        ICUDailyRoundStepSubsection(
+          list: [
+            ICUDailyRoundItem(title: 'Ventilator setting: SIMV/VC', icon: '🔈'),
+            ICUDailyRoundItem(
+                title: 'Low tidal volume commence with 6ml/kg body weight',
+                icon: '🌊'),
+            ICUDailyRoundItem(title: 'RR 20', icon: '🎚'),
+            ICUDailyRoundItem(
+                title: 'PEEP: aim high, start 10cmH20, see table!', icon: '👀'),
+          ],
+        )
+      ],
+    ),
+    ICUDailyRoundStepSection(heading: 'Aims', subsections: [
+      ICUDailyRoundStepSubsection(
         list: [
-          VentilationGuideItemListItem(
-              title: 'Ventilator setting: SIMV/VC', icon: '🔈'),
-          VentilationGuideItemListItem(
-              title: 'Low tidal volume commence with 6ml/kg body weight',
-              icon: '🌊'),
-          VentilationGuideItemListItem(title: 'RR 20', icon: '🎚'),
-          VentilationGuideItemListItem(
-              title: 'PEEP: aim high, start 10cmH20, see table!', icon: '👀'),
-        ],
-      ),
-      VentiliationGuideSection(
-        heading: 'Aims',
-        list: [
-          VentilationGuideItemListItem(title: 'SaO2 88-92%', icon: '😅'),
-          VentilationGuideItemListItem(title: 'PaO2 55-70mmHg', icon: '😬'),
-          VentilationGuideItemListItem(title: 'Pplat < 30', icon: '🙃'),
-          VentilationGuideItemListItem(
-              title: 'pH > 7.20 (Permissive hypercapnia is ok)', icon: '🤔'),
-        ],
-      ),
-      VentiliationGuideSection(
-        heading: 'If deteriorating ',
-        list: [
-          VentilationGuideItemListItem(
-              title: 'ICU consultant review!', icon: '🚨'),
-          VentilationGuideItemListItem(
-              title: 'Proceed to Adjuncts page', icon: '👉'),
+          ICUDailyRoundItem(title: 'SaO₂ 88-92%', icon: '😅'),
+          ICUDailyRoundItem(title: 'PaO₂ 55-70mmHg', icon: '😬'),
+          ICUDailyRoundItem(title: 'Pplat < 30', icon: '🙃'),
+          ICUDailyRoundItem(
+              title: 'pH > 7.20',
+              subtitle: '(Permissive hypercapnia is ok)',
+              icon: '🤔'),
         ],
       )
-    ],
-  ),
-  VentilationGuideItem(
-    'Adjuncts',
-    guideList: [
-      VentiliationGuideSection(
-        heading: 'If initial stepwise approach fails try',
-        list: [
-          VentilationGuideItemListItem(title: 'Deep sedation', icon: '🛌'),
-          VentilationGuideItemListItem(
-              title: 'Restrictive fluid regime',
-              icon: '💧',
-              notes: ['Aim for Negative fluid balance']),
-          VentilationGuideItemListItem(
-              title: 'Ensure senior ICU review', icon: '👉'),
-          VentilationGuideItemListItem(
-            title: 'Neuromuscular blockade',
-            icon: '💪',
-            notes: [
-              'NOT first-line management',
-              'Consider infusion of cisatracurium in a patient with refractory hypoxia'
-            ],
-          ),
-          VentilationGuideItemListItem(title: 'Try prone position', icon: '↪️'),
-        ],
-      ),
-    ],
-  ),
+    ]),
+    ICUDailyRoundStepSection(
+      heading: 'If Deteriorating',
+      subsections: [
+        ICUDailyRoundStepSubsection(
+          list: [
+            ICUDailyRoundItem(title: 'ICU consultant review!', icon: '🚨'),
+            ICUDailyRoundItem(title: 'Proceed to Adjuncts page', icon: '👉'),
+          ],
+        )
+      ],
+    )
+  ]),
+  ICUDailyRoundSteps(heading: 'Adjuncts', sections: [
+    ICUDailyRoundStepSection(
+      heading: 'If Initial Stepwise Approach Fails Try',
+      subsections: [
+        ICUDailyRoundStepSubsection(
+          list: [
+            ICUDailyRoundItem(title: 'Deep sedation', icon: '🛌'),
+            ICUDailyRoundItem(
+                title: 'Restrictive fluid regime',
+                icon: '💧',
+                subtitle: 'Aim for Negative fluid balance'),
+            ICUDailyRoundItem(title: 'Ensure senior ICU review', icon: '👉'),
+            ICUDailyRoundItem(
+              title: 'Neuromuscular blockade',
+              icon: '💪',
+              subtitle:
+                  'NOT first-line management - discuss with ICU consultant',
+            ),
+            ICUDailyRoundItem(title: 'Try prone position', icon: '🙇‍♀️'),
+          ],
+        ),
+      ],
+    )
+  ])
 ];
 
 const List<ICUDailyRoundSteps> icuDailyRoundSteps = [
@@ -973,4 +974,329 @@ const yourWelfareSteps = [
       ])
     ])
   ])
+];
+
+const proningGuide = [
+  ICUDailyRoundSteps(heading: 'Indication', sections: [
+    ICUDailyRoundStepSection(heading: 'Indications', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '😓', title: 'Severe ARDS with hypoxia'),
+        ICUDailyRoundItem(icon: '🤕', title: 'Posterior wounds / skin flaps'),
+      ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Contraindications', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '😓', title: 'Lack of staff'),
+        ICUDailyRoundItem(icon: '❌', title: 'Untrained staff'),
+        ICUDailyRoundItem(icon: '⏰', title: 'Out of hours'),
+        ICUDailyRoundItem(icon: '🤲', title: 'Open abdomen'),
+        ICUDailyRoundItem(icon: '🛌', title: 'C spine precautions'),
+        ICUDailyRoundItem(icon: '🩸', title: 'Haemodynamic instability'),
+      ])
+    ]),
+  ]),
+  ICUDailyRoundSteps(heading: 'Staff Pre-Manoeuvre', sections: [
+    ICUDailyRoundStepSection(heading: 'Team', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '🤓', title: 'ICU consultant aware'),
+        ICUDailyRoundItem(
+            icon: '👩‍⚕️',
+            title: 'Specialised proning team on site?',
+            subtitle: '(Contact ICU physio)'),
+        ICUDailyRoundItem(icon: '👫', title: 'Adequate staffing on unit?'),
+        ICUDailyRoundItem(
+            icon: '👍', title: 'Staff trained in proving procedure'),
+        ICUDailyRoundItem(
+            icon: '6️⃣', title: '6 x staff available for proning'),
+        ICUDailyRoundItem(
+            icon: '☝️',
+            title: 'Allocate roles',
+            subtitle:
+                '• Airway x 1\n• Trunk and libs x 4\n• Lines and equipment x1'),
+        ICUDailyRoundItem(icon: '😮', title: 'Able to reintubate?'),
+      ])
+    ]),
+    ICUDailyRoundStepSection(
+        heading: 'Equipment and Preparation',
+        subsections: [
+          ICUDailyRoundStepSubsection(list: [
+            ICUDailyRoundItem(icon: '🛒', title: 'Crash trolley'),
+            ICUDailyRoundItem(icon: '⚫', title: 'ECG dots'),
+            ICUDailyRoundItem(icon: '✨', title: 'Fresh sheet x 2'),
+            ICUDailyRoundItem(icon: '🛹', title: 'Slide sheet x 2'),
+            ICUDailyRoundItem(icon: '☁️', title: 'Foldable Pillows x 3'),
+            ICUDailyRoundItem(icon: '🛏️', title: 'Clear bed area'),
+          ])
+        ])
+  ]),
+  ICUDailyRoundSteps(heading: 'Patient Pre-Manoeuvre', sections: [
+    ICUDailyRoundStepSection(heading: 'General Considerations', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(
+            icon: '🔍', title: 'Review indications and contraindications'),
+        ICUDailyRoundItem(icon: '📐', title: 'Check ROM of neck - 90°'),
+        ICUDailyRoundItem(
+            icon: '☝️', title: 'Explain procedure to patient/family'),
+      ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Airway', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(
+            icon: '🕵️',
+            title: 'Check ETT position on CXR',
+            subtitle: '(Document lip level)'),
+        ICUDailyRoundItem(icon: '🌬️', title: 'Check patient airway grade'),
+        ICUDailyRoundItem(icon: '🤐', title: 'Secure ETT'),
+        ICUDailyRoundItem(icon: '🔌', title: 'Sleek connections'),
+        ICUDailyRoundItem(icon: '🔍', title: 'Check for cuff leak'),
+        ICUDailyRoundItem(
+            icon: '😤', title: 'Suction mouth and nasal passages'),
+      ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Breathing', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '💨', title: 'Pre-oxygenate'),
+        ICUDailyRoundItem(icon: '🎚️', title: 'Confirm ventilator settings'),
+        ICUDailyRoundItem(icon: '♨', title: 'Check capnography'),
+      ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Circulation', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(
+            icon: '❤️', title: 'Check adequate vascular access + secure'),
+        ICUDailyRoundItem(icon: '✅', title: 'Confirm haemodynamically stable'),
+        ICUDailyRoundItem(
+            icon: '📉', title: 'Confirm plan if patient becomes unstable'),
+        ICUDailyRoundItem(
+            icon: '💊',
+            title: 'Identify drug access point and metaraminol accessible'),
+      ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Disability', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '😴', title: 'Sedated'),
+        ICUDailyRoundItem(
+            icon: '💬', title: 'Plan for further sedation discussed'),
+      ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Equipment & Lines', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '🔐', title: 'Secure all tubes and lines'),
+        ICUDailyRoundItem(
+            icon: '✂️', title: 'Consider disconnecting unnecessary infusions'),
+        ICUDailyRoundItem(
+            icon: '🗑️', title: 'Remove unnecessary indwelling devices'),
+        ICUDailyRoundItem(icon: '🔌', title: 'Consider disconnecting RRT'),
+        ICUDailyRoundItem(icon: '🐽', title: 'NGT - aspirate and spigot'),
+      ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Other', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(
+            icon: '🔍',
+            title: 'Assess for device potential for pressure injury'),
+        ICUDailyRoundItem(
+            icon: '🩹', title: 'Apply padding to bony prominences'),
+        ICUDailyRoundItem(icon: '👄', title: 'Mouth care'),
+        ICUDailyRoundItem(icon: '💃', title: 'Dress anterior wounds'),
+      ])
+    ])
+  ]),
+  ICUDailyRoundSteps(heading: 'Manoeuvre', sections: [
+    ICUDailyRoundStepSection(heading: 'Prepare', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(
+            icon: '👸',
+            title: 'Position team',
+            subtitle: 'Team leader at head of bed'),
+        ICUDailyRoundItem(
+            icon: '📝',
+            title: 'Brief team on steps',
+            subtitle: 'Turning direction'),
+        ICUDailyRoundItem(icon: '👇', title: 'Position ETT on opposite side'),
+        ICUDailyRoundItem(
+            icon: '🛌',
+            title: 'Remove patient pillow and set air mattress to firm'),
+      ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Horizontal Move', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '👉', title: 'Move patient to edge of bed'),
+        ICUDailyRoundItem(
+            icon: '🏂',
+            title: 'Tuck original sheet + new slide sheet under patient'),
+        ICUDailyRoundItem(
+            icon: '👈',
+            title:
+                'Tuck new sheet and slide sheet on side patient turning towards'),
+      ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Side Lying Position', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(
+            icon: '🙋‍♀️', title: 'Tuck lower arm under buttock with palm up'),
+        ICUDailyRoundItem(
+            icon: '👉', title: 'Turn patient into lateral position'),
+        ICUDailyRoundItem(
+            icon: '🧶',
+            title: 'Untangle lines and remove ECG leads to anterior thorax'),
+        ICUDailyRoundItem(
+            icon: '📍', title: 'Place ECG leads on posterior thorax'),
+        ICUDailyRoundItem(icon: '🗑️', title: 'Remove old sheet'),
+        ICUDailyRoundItem(
+            icon: '🏂', title: 'Pull new sheet + slide sheet through'),
+        ICUDailyRoundItem(
+            icon: '👈',
+            title: 'Slide patient to end of bed - away from ventilator'),
+        ICUDailyRoundItem(
+            icon: '🛏️',
+            title: 'Fold pillows by 1/3 and place under chest and pelvis'),
+      ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Complete Prone', subsections: [
+      ICUDailyRoundStepSubsection(list: [
+        ICUDailyRoundItem(icon: '👉', title: 'Turn patient onto stomach'),
+        ICUDailyRoundItem(
+            icon: '🏊',
+            title: 'Pull pillows through position in swimmer position'),
+        ICUDailyRoundItem(icon: '🦶', title: 'Place pillow under lower legs'),
+      ])
+    ])
+  ]),
+  ProneChecklist(heading: 'Post-Manoeuvre', sections: [
+    ProneChecklistSection(title: 'Position', checklist: [
+      ProneChecklistItem(
+          title:
+              'One arm above head, other by side. Shoulder in neutral position.'),
+      ProneChecklistItem(title: 'Reposition patient in centre of bed'),
+      ProneChecklistItem(
+          title: 'Adjust position to ensure abdomen is hanging freely'),
+      ProneChecklistItem(
+          title:
+              'Postion head to reduce pressure on eyes and enable access to airway'),
+      ProneChecklistItem(
+          title: 'Readjust lines for comfort and NG on free drainage'),
+    ]),
+    ProneChecklistSection(title: 'Airway', checklist: [
+      ProneChecklistItem(
+          title: 'Check ETT lip level and ventilator circuit for kinks'),
+      ProneChecklistItem(title: 'Suction if indicated'),
+      ProneChecklistItem(title: 'Cuff pressure'),
+    ]),
+    ProneChecklistSection(title: 'Breathing', checklist: [
+      ProneChecklistItem(title: 'Auscultate for bilateral breath sounds'),
+      ProneChecklistItem(title: 'Respiratory parameters'),
+      ProneChecklistItem(
+          title: 'Check peak inspiratory pressures and minute ventilation'),
+    ]),
+    ProneChecklistSection(title: 'Circulation', checklist: [
+      ProneChecklistItem(title: 'Check haemodynamics'),
+      ProneChecklistItem(title: 'ABG - 30 minute post proning'),
+    ]),
+    ProneChecklistSection(title: 'Pressure Area Care', checklist: [
+      ProneChecklistItem(
+          title: 'Air mattress to usual setting - ensure functioning'),
+      ProneChecklistItem(
+          title:
+              'Reposition head hourly - frequent eye toilets may be necessary'),
+      ProneChecklistItem(title: 'Ensure tongue in mouth'),
+      ProneChecklistItem(title: 'Document skin assessment'),
+      ProneChecklistItem(title: 'Lateral tilt patient 2 hourly'),
+    ])
+  ])
+];
+
+const alsBlsGuide = [
+  IntubationContent(
+    'Principles',
+    [
+      IntubationSection(
+        items: [
+          IntubationItem('CPR is an Aerosol Generating Procedure (AGP)!',
+              icon: '🌬'),
+          IntubationItem('Your safety is a priority', icon: '☝️'),
+          IntubationItem(
+              'Do NOT enter the bed space until appropriate PPE applied',
+              icon: '😷'),
+          IntubationItem('Limit number of responders to essential staff only',
+              icon: '👩‍⚕️'),
+          IntubationItem('Minimise interruptions to compressions', icon: '🤫'),
+          IntubationItem('Rhythm check at appropriate times', icon: '⏱'),
+        ],
+      )
+    ],
+  ),
+  ICUDailyRoundSteps(heading: 'PPE', sections: [
+    ICUDailyRoundStepSection(
+      subsections: [
+        ICUDailyRoundStepSubsection(
+          heading: 'For COVID-19 proven, suspected or unknown patients',
+          list: [
+            ICUDailyRoundItem(title: 'Full PPE including N95 mask', icon: '☣️'),
+          ],
+        )
+      ],
+    ),
+    ICUDailyRoundStepSection(subsections: [
+      ICUDailyRoundStepSubsection(
+          heading: 'For non-COVID-19 patients',
+          list: [
+            ICUDailyRoundItem(
+                title: 'Please use universal precautions', icon: '😷'),
+          ],
+          footer: 'Surgical mask, eye protection and gloves')
+    ]),
+    ICUDailyRoundStepSection(
+      subsections: [
+        ICUDailyRoundStepSubsection(
+          heading: 'If you are unsure',
+          list: [
+            ICUDailyRoundItem(title: 'Full PPE', icon: '☣️'),
+          ],
+        )
+      ],
+    )
+  ]),
+  IntubationContent(
+    'BLS',
+    [
+      IntubationSection(
+        items: [
+          IntubationItem('COMPRESSION ONLY CPR', icon: '👐'),
+          IntubationItem('Do NOT use airway adjuncts or ventilate with BMV',
+              icon: '☝️'),
+          IntubationItem('Apply Hudson mask at 10L O₂.', icon: '🌬'),
+        ],
+      )
+    ],
+  ),
+  ICUDailyRoundSteps(heading: 'ALS', sections: [
+    ICUDailyRoundStepSection(
+      subsections: [
+        ICUDailyRoundStepSubsection(
+          heading: 'Early Intubation',
+          list: [
+            ICUDailyRoundItem(
+                title: 'The most experienced operator needs to be present',
+                icon: '👩‍⚕️'),
+            ICUDailyRoundItem(
+                title: 'Use video laryngoscope',
+                icon: '📺',
+                subtitle:
+                    '• McGrath on Code Blue response trolley\n• Intubating anaesthetist will attend where possible'),
+            ICUDailyRoundItem(
+                title:
+                    'The viral filter MUST be placed on circuit closest to the airway device',
+                icon: '🦠'),
+            ICUDailyRoundItem(
+                title:
+                    'Follow the airway strategy as per Safe Airway Society/WH guidelines',
+                icon: '🛩'),
+            ICUDailyRoundItem(
+                title: 'If BMV required: 2 handed vice-like grip', icon: '👐'),
+          ],
+        )
+      ],
+    ),
+  ]),
 ];

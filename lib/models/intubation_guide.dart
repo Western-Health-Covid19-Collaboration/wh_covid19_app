@@ -2,9 +2,9 @@
 /// then list of sections containing icon, title and subtitle.
 /// Used for intubation guide.
 class IntubationContent {
-  final String name;
+  final String heading;
   final List<IntubationSection> sections;
-  const IntubationContent(this.name, this.sections);
+  const IntubationContent(this.heading, this.sections);
 }
 
 class IntubationSection {
