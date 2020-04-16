@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../utils/url_utils.dart';
 
 class ReusableCardBase extends StatelessWidget {
   /// Description of the card
@@ -57,7 +58,13 @@ class ReusableCardBase extends StatelessWidget {
     );
     void Function() onTap;
     if (routeTo != null) {
-      onTap = () => Navigator.pushNamed(context, routeTo);
+      onTap = () {
+        if (routeTo.startsWith('http')) {
+          UrlUtils.launchWithBrowser(routeTo);
+        } else {
+          Navigator.pushNamed(context, routeTo);
+        }
+      };
     } else if (fallback != null) {
       onTap = () => fallback();
     }
