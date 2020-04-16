@@ -21,6 +21,7 @@ class Constants {
       'ethod2';
   static const String analyticsInformationScreen = 'information';
   static const String analyticsAcknowledgementsScreen = 'acknowledgements';
+  static const String analyticsAdditionalResourcesScreen = 'additionalResources';
   static const String analyticsWelfareScreen = 'welfare';
   static const String analyticsIntubationGuideScreen = 'intubationGuide';
   static const String analyticsIntubationGuideInfographic = 'intubationGuideInf'

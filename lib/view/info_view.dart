@@ -49,9 +49,10 @@ class InfoView extends StatelessWidget {
       fallback: () => UrlUtils.launchWithBrowser(whURL),
     ),
     const ReusableCard(
-      title: Strings.informationRecommendTitle,
+      title: Strings.additionalResourcesTitle,
       height: _cardHeight,
       elevation: _cardElevation,
+      routeTo: Routes.additionalResources,
     ),
     _buildSpacer(),
     ReusableCard(
