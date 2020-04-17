@@ -78,8 +78,7 @@ This app is designed to be used by the anaesthetist and critical care doctors at
       'WH Anaesthetic Microsite';
   static const String informationWhIcuTitle = 'WH ICU Microsite';
   static const String informationWhContactsTitle = 'Contact Numbers';
-  static const String informationRecommendTitle =
-      'Society & College Recommendations';
+  static const String additionalResourcesTitle = 'Additional Resources';
   static const String informationAppFeedbackTitle = 'App Feedback';
   static const String informationAppAckRefTitle =
       'Acknowledgements and References';
