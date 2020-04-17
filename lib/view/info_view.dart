@@ -7,7 +7,6 @@ import '../routes.dart';
 import '../strings.dart';
 import '../style.dart';
 import '../utils/firebase.dart';
-import '../utils/url_utils.dart';
 import '../widget/reusable_card.dart';
 
 class InfoView extends StatelessWidget {
@@ -25,40 +24,41 @@ class InfoView extends StatelessWidget {
       color: _cardColor,
       height: _cardHeight,
       elevation: _cardElevation,
-      fallback: () => UrlUtils.launchWithBrowser(whCoronavirusInfoURL),
+      routeTo: whCoronavirusInfoURL,
     ),
     ReusableCard(
       title: Strings.informationWhAnaestheticTitle,
       color: _cardColor,
       height: _cardHeight,
       elevation: _cardElevation,
-      fallback: () => UrlUtils.launchWithBrowser(whAnaestheticMicrositeURL),
+      routeTo: whAnaestheticMicrositeURL,
     ),
     ReusableCard(
       title: Strings.informationWhIcuTitle,
       color: _cardColor,
       height: _cardHeight,
       elevation: _cardElevation,
-      fallback: () => UrlUtils.launchWithBrowser(whIcuMicrositeURL),
+      routeTo: whIcuMicrositeURL,
     ),
     _buildSpacer(),
     ReusableCard(
       title: Strings.informationWhContactsTitle,
       height: _cardHeight,
       elevation: _cardElevation,
-      fallback: () => UrlUtils.launchWithBrowser(whURL),
+      routeTo: whURL,
     ),
     const ReusableCard(
-      title: Strings.informationRecommendTitle,
+      title: Strings.additionalResourcesTitle,
       height: _cardHeight,
       elevation: _cardElevation,
+      routeTo: Routes.additionalResources,
     ),
     _buildSpacer(),
     ReusableCard(
       title: Strings.informationAppFeedbackTitle,
       height: _cardHeight,
       elevation: _cardElevation,
-      fallback: () => UrlUtils.launchWithBrowser(feedbackFormUrl),
+      routeTo: feedbackFormUrl,
     ),
     const ReusableCard(
       title: Strings.disclaimerTitle,
