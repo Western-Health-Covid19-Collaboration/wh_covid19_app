@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wh_covid19/view/additional_resources_view.dart';
 import 'intro_router.dart';
 import 'routes.dart';
 import 'strings.dart';
@@ -57,6 +58,7 @@ class WHApp extends StatelessWidget {
         Routes.disclaimer: (context) => DisclaimerView(),
         Routes.licenses: (context) => LicenseView(),
         Routes.acknowledgements: (context) => AcknowledgementsView(),
+        Routes.additionalResources: (context) => AdditionalResourcesView(),
       },
       // Analytics route observer to track PageRoute transitions
       navigatorObservers: <NavigatorObserver>[Analytics.observer],
