@@ -8,18 +8,18 @@ import 'wh_app.dart';
 
 void main() {
   // Add this, and it should be the first line in main method to ensure no crashes before runApp()
-  //WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
 
   // This captures errors reported by the Flutter framework.
   FlutterError.onError = flutterOnErrorHandler;
 
   // Lets not show end users the red screen of death
-  // if (kReleaseMode) {
-  ErrorWidget.builder = (error) {
-    flutterOnErrorHandler(error);
-    return Container();
-  };
-  // }
+  if (kReleaseMode) {
+    ErrorWidget.builder = (error) {
+      flutterOnErrorHandler(error);
+      return Container();
+    };
+  }
 
   // This creates a [Zone] that contains the Flutter application and establishes
   // an error handler that captures errors.
