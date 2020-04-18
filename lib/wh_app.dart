@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wh_covid19/view/additional_resources_view.dart';
+
 import 'intro_router.dart';
 import 'routes.dart';
 import 'strings.dart';
@@ -7,6 +7,7 @@ import 'style.dart';
 import 'utils/firebase.dart';
 
 import 'view/acknowledgements_view.dart';
+import 'view/additional_resources_view.dart';
 import 'view/airway/checklist/intubation_checklist_infographic_page.dart';
 import 'view/airway/checklist/intubation_checklist_page.dart';
 import 'view/airway/extubation/extubation_guidance_page.dart';
