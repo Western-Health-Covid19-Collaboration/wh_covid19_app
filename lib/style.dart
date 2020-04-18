@@ -135,6 +135,13 @@ abstract class Styles {
     fontFamily: fontFamily,
   );
 
+  static const TextStyle textBody = TextStyle(
+    color: AppColors.majorText,
+    fontWeight: FontWeight.normal,
+    fontSize: 17.0,
+    fontFamily: fontFamily,
+  );
+
   static const TextStyle textFooter = TextStyle(
     color: AppColors.minorText,
     fontWeight: FontWeight.normal,

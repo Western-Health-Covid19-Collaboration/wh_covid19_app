@@ -43,6 +43,7 @@ class PPECard extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
           child: StringList(
             items: step.notes,
+            listTextStyle: Styles.textBody,
           ),
         )
       ],
