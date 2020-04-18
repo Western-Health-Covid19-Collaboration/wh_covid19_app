@@ -18,12 +18,12 @@ class PPEOffGuidanceMethod2 extends StatelessWidget {
     Analytics.analyticsScreen(Constants.analyticsPPEOffMethod2Screen);
 
     return Scaffold(
-      backgroundColor: AppColors.grey50,
+      backgroundColor: AppColors.appBackground,
       appBar: AppBar(
         // Warning brightness interacts with SystemUiOverlayStyle
         // See system_bars.dart comments
         brightness: Brightness.light,
-        backgroundColor: AppColors.appBarBackground,
+        backgroundColor: AppColors.purple50,
         iconTheme: Styles.appBarIconTheme,
         title: const Text(
           Strings.ppeMethod2Title,
@@ -42,7 +42,7 @@ class PPEOffGuidanceMethod2 extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           NotificationBanner(
-            backgroundColor: AppColors.grey50,
+            backgroundColor: AppColors.appBackground,
             icon: SvgPicture.asset(
               'assets/images/icon/SVG/icon_warning.svg',
             ),
