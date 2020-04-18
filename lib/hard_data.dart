@@ -86,8 +86,7 @@ class HtmlTextScreenData {
 /// PPE - all the PPE content
 const String ppeOffWarning = '''
 Outside of PPE is contaminated!
-If your hands get contaminated during PPE removal, immediately wash your hands or use an alcohol-based hand sanitizer.
-''';
+If your hands get contaminated during PPE removal, immediately wash your hands or use an alcohol-based hand sanitizer.''';
 
 const List<PPEStepInfo> ppeOnSteps = [
   PPEStepInfo(
