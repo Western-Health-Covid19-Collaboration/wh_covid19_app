@@ -113,6 +113,8 @@ When contributing to this repository, please first discuss the change you wish t
 
 🤗 If you are unsure about something please ask for help.  We are really friendly!
 
+⚠️ Some team members have had issues pushing to the repo using https.  See the troubleshooting section in our [GITHUB101](docs/GITHUB101.md) for more information.
+
 
 Currently the project is being primarily co-ordinated via the GDG Melbourne slack group. You can join GDG Melbourne's slack via [this invite](http://bit.ly/join_gdgslack). DM `@luke.sleeman` on GDG Melbourne slack to be invited to the channel being used for co-ordination.
 
@@ -135,7 +137,11 @@ If you have any questions about why things are done a certain way in the app, ch
 - Please follow the instructions above on how to submit a pull request. 
 - Once the pull request is reviewed and approved by the team, they would be able to merge this with the main branch. 
 
+## Stuck PRs
+All PRs should be built on codemagic.  Before a PR can be merged the build and all tests must pass.  Occasionally there will be an issue with github where the results of the build are not picked up and the PR is blocked from being merged, even though the build succeeded.  There are a few options for dealing with stuck PRs:
 
+1. Push through some kind of small commit which kicks off the CI again
+2. Project owners have the ability to merge a PR even when the CI hasn't completed.  You can message an owner either by tagging them on your PR or in the GDG slack.  The current owners are Maks, Mike, Luke and Sally.
 
 ## Code of Conduct
 
