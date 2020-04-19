@@ -1005,14 +1005,14 @@ const proningGuide = [
             subtitle: '(Contact ICU physio)'),
         ICUDailyRoundItem(icon: '👫', title: 'Adequate staffing on unit?'),
         ICUDailyRoundItem(
-            icon: '👍', title: 'Staff trained in proving procedure'),
+            icon: '👍', title: 'Staff trained in proning procedure'),
         ICUDailyRoundItem(
             icon: '6️⃣', title: '6 x staff available for proning'),
         ICUDailyRoundItem(
             icon: '☝️',
             title: 'Allocate roles',
             subtitle:
-                '• Airway x 1\n• Trunk and libs x 4\n• Lines and equipment x1'),
+                '• Airway x 1\n• Trunk and limbs x 4\n• Lines and equipment x1'),
         ICUDailyRoundItem(icon: '😮', title: 'Able to reintubate?'),
       ])
     ]),
@@ -1173,7 +1173,7 @@ const proningGuide = [
           title: 'Adjust position to ensure abdomen is hanging freely'),
       ProneChecklistItem(
           title:
-              'Postion head to reduce pressure on eyes and enable access to airway'),
+              'Position head to reduce pressure on eyes and enable access to airway'),
       ProneChecklistItem(
           title: 'Readjust lines for comfort and NG on free drainage'),
     ]),
