@@ -108,66 +108,78 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _renderBody(BuildContext context) {
-    const appBarHeight = 70;
-    const logoHeight = 42;
+    const appBarHeight = 70.0;
+    const logoHeight = 42.0;
 
-    final Widget mainLogo = SvgPicture.asset('assets/images/main_logo.svg',
-        height: logoHeight.toDouble());
-    final appBarBottom = appBarHeight.toDouble() - logoHeight.toDouble();
-    final scrollPos = _scrollPosition.round();
-    final percentage = scrollPos < appBarBottom
-        ? ((scrollPos) / appBarBottom.toDouble())
-        : 1.00;
+    final Widget mainLogo = SvgPicture.asset(
+      'assets/images/main_logo.svg',
+      height: logoHeight,
+    );
+    const appBarBottom = appBarHeight - logoHeight;
+    // On iOS scroll position can be negative due to over scroll
+    // So prevent negative scrollPos which results in a negative percentage
+    final scrollPos = _scrollPosition.isNegative ? 0.0 : _scrollPosition;
+    final percentage =
+        scrollPos < appBarBottom ? scrollPos / appBarBottom : 1.0;
 
-    return Builder(builder: (context) {
-      final _scrollController = PrimaryScrollController.of(context);
+    return Builder(
+      builder: (context) {
+        final _scrollController = PrimaryScrollController.of(context);
 
-      _scrollController.addListener(() {
-        setState(() {
-          _scrollPosition = _scrollController.position.pixels;
+        _scrollController.addListener(() {
+          setState(() {
+            _scrollPosition = _scrollController.position.pixels;
+          });
         });
-      });
 
-      return CustomScrollView(
-        slivers: <Widget>[
-          SliverAppBar(
-            // Warning brightness interacts with SystemUiOverlayStyle
-            // See system_bars.dart comments
-            brightness: Brightness.light,
-            automaticallyImplyLeading: false,
-            expandedHeight: appBarHeight.toDouble(),
-            bottom: PreferredSize(
-              preferredSize: Size.fromHeight(appBarHeight.toDouble()),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    mainLogo,
-                    GestureDetector(
-                      onTap: () => InfoView.navigateTo(context),
-                      child: Icon(
-                        Icons.info_outline,
-                        size: 24,
-                        color: generateIconColor(AppColors.homeAppBarIcon,
-                            AppColors.appBarIcon, percentage),
-                      ),
-                    )
-                  ],
+        return CustomScrollView(
+          slivers: <Widget>[
+            SliverAppBar(
+              // Warning brightness interacts with SystemUiOverlayStyle
+              // See system_bars.dart comments
+              brightness: Brightness.light,
+              primary: true,
+              automaticallyImplyLeading: false,
+              expandedHeight: appBarHeight,
+              centerTitle: false,
+              forceElevated: false,
+              elevation: 0.0,
+              backgroundColor: AppColors.dynamicAppBarBackground(percentage),
+              iconTheme: Styles.appBarIconTheme,
+              floating: true,
+              pinned: true,
+              snap: false,
+              bottom: PreferredSize(
+                preferredSize: const Size.fromHeight(appBarHeight),
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      mainLogo,
+                      GestureDetector(
+                        onTap: () => InfoView.navigateTo(context),
+                        child: Icon(
+                          Icons.info_outline,
+                          size: 24,
+                          color: generateIconColor(
+                            AppColors.homeAppBarIcon,
+                            AppColors.appBarIcon,
+                            percentage,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-            backgroundColor: AppColors.dynamicAppBarBackground(percentage),
-            iconTheme: Styles.appBarIconTheme,
-            floating: true,
-            pinned: true,
-            snap: false,
-          ),
-          _renderList(context)
-        ],
-      );
-    });
+            _renderList(context)
+          ],
+        );
+      },
+    );
   }
 
   @override

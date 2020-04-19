@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+
 import '../constants.dart';
 import '../models/home_card.dart';
 import '../strings.dart';
@@ -13,30 +14,36 @@ class AcknowledgementsView extends StatelessWidget {
   static const _cards = [
     'References',
     HomeCard(
-        title: 'Safe Airway Society',
-        description: 'Guidelines and Infographics',
-        route: 'https://www.safeairwaysociety.org/covid19/'),
+      title: 'Safe Airway Society',
+      description: 'Guidelines and Infographics',
+      route: 'https://www.safeairwaysociety.org/covid19/',
+    ),
     HomeCard(
-        title: 'Intensive Care Society',
-        description: 'Wellbeing Guidelines',
-        route:
-            'https://www.ics.ac.uk/ICS/Education/Wellbeing/ICS/Wellbeing.aspx'),
+      title: 'Intensive Care Society',
+      description: 'Wellbeing Guidelines',
+      route: 'https://www.ics.ac.uk/ICS/Education/Wellbeing/ICS/Wellbeing'
+          '.aspx',
+    ),
     HomeCard(
-        title: 'Australian New Zealand Intensive Care Society',
-        description: 'COVID-19 Guidelines',
-        route: 'https://www.anzics.com.au/coronavirus-guidelines/'),
+      title: 'Australian New Zealand Intensive Care Society',
+      description: 'COVID-19 Guidelines',
+      route: 'https://www.anzics.com.au/coronavirus-guidelines/',
+    ),
     HomeCard(
-        title: 'Western Health Department of Anaesthesia',
-        description: 'Policies and Procedures',
-        route: null),
+      title: 'Western Health Department of Anaesthesia',
+      description: 'Policies and procedures available on the microsite',
+      route: 'https://whcovid19.wixsite.com/covid19',
+    ),
     HomeCard(
-        title: 'Western Health Novel Coronavirus Information',
-        description: 'COVID-19 Information',
-        route: 'https://coronavirus.wh.org.au/'),
+      title: 'Western Health Novel Coronavirus Information',
+      description: 'COVID-19 Information',
+      route: 'https://coronavirus.wh.org.au/',
+    ),
     HomeCard(
-        title: 'RNS ASCAR (Royal North Shore)',
-        description: 'Cognitive Aids and Inforgraphics',
-        route: 'https://www.rnsascar.com/'),
+      title: 'RNS ASCAR (Royal North Shore)',
+      description: 'Cognitive Aids and Inforgraphics',
+      route: 'https://www.rnsascar.com/',
+    ),
     'Acknowledegements'
   ];
   static const _thanksHtml = '''
@@ -69,51 +76,55 @@ Those who have given helpful and timely advice, including Byron Teu.<br/>
     Analytics.analyticsScreen(Constants.analyticsAcknowledgementsScreen);
 
     return Scaffold(
-        backgroundColor: AppColors.appBackground,
-        appBar: AppBar(
-          // Warning brightness interacts with SystemUiOverlayStyle
-          // See system_bars.dart comments
-          brightness: Brightness.light,
-          backgroundColor: AppColors.appBarBackground,
-          iconTheme: Styles.appBarIconTheme,
-          title: const Text(
-            Strings.acknowledegementsTitle,
-            style: Styles.textH5,
+      backgroundColor: AppColors.appBackground,
+      appBar: AppBar(
+        // Warning brightness interacts with SystemUiOverlayStyle
+        // See system_bars.dart comments
+        brightness: Brightness.light,
+        backgroundColor: AppColors.appBarBackground,
+        iconTheme: Styles.appBarIconTheme,
+        title: const Text(
+          Strings.acknowledegementsTitle,
+          style: Styles.textH5,
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              ..._cards.map((e) {
+                if (e is HomeCard) {
+                  return ReusableCard.fromData(
+                    card: e,
+                    height: 48,
+                  );
+                }
+                return Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 24, 16, 0),
+                  child: Text(
+                    e.toString(),
+                    style: Styles.textH4,
+                  ),
+                );
+              }),
+              Padding(
+                padding: const EdgeInsets.only(top: 4),
+                child: ReusableCardBase(
+                  child: [
+                    HtmlWidget(
+                      _thanksHtml,
+                      hyperlinkColor: Styles.textH5Hyperlink.color,
+                      textStyle: Styles.textP,
+                    )
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
-        body: Padding(
-            padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-            child: SingleChildScrollView(
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                  ..._cards.map((e) {
-                    if (e is HomeCard) {
-                      return ReusableCard.fromData(
-                        card: e,
-                        height: 48,
-                      );
-                    }
-                    return Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 24, 16, 0),
-                      child: Text(
-                        e.toString(),
-                        style: Styles.textH4,
-                      ),
-                    );
-                  }),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 4),
-                    child: ReusableCardBase(
-                      child: [
-                        HtmlWidget(
-                          _thanksHtml,
-                          hyperlinkColor: Styles.textH5Hyperlink.color,
-                          textStyle: Styles.textP,
-                        )
-                      ],
-                    ),
-                  ),
-                ]))));
+      ),
+    );
   }
 }
