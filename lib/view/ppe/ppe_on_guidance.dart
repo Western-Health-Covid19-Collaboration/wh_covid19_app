@@ -22,7 +22,7 @@ class PPEOnGuidance extends StatelessWidget {
         // Warning brightness interacts with SystemUiOverlayStyle
         // See system_bars.dart comments
         brightness: Brightness.light,
-        backgroundColor: AppColors.appBarBackground,
+        backgroundColor: AppColors.green50,
         iconTheme: Styles.appBarIconTheme,
         title: const Text(
           Strings.ppeStepByStepTitle,
