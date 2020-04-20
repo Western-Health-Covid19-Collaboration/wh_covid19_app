@@ -5,11 +5,12 @@ import '../../style.dart';
 class StringList extends StatelessWidget {
   final List<String> items;
   final EdgeInsets padding;
+  final TextStyle listTextStyle;
 
-  const StringList({
-    @required this.items,
-    this.padding = const EdgeInsets.fromLTRB(20, 0, 20, 0),
-  });
+  const StringList(
+      {@required this.items,
+      this.padding = const EdgeInsets.fromLTRB(20, 0, 20, 0),
+      this.listTextStyle = Styles.textP});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class StringList extends StatelessWidget {
                 (item) => Text(
                   '\u2022 $item',
                   softWrap: true,
-                  style: Styles.textP,
+                  style: listTextStyle,
                 ),
               )
               .toList(),
