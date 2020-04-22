@@ -628,7 +628,7 @@ const List<ICUDailyRoundSteps> icuDailyRoundSteps = [
     ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(icon: '💨', title: 'SpO₂?'),
-        ICUDailyRoundItem(icon: '🩸', title: 'PaO₂?'),
+        ICUDailyRoundItem(icon: '💉', title: 'PaO₂?'),
         ICUDailyRoundItem(icon: '🔍', title: 'CXR reviewed?'),
         ICUDailyRoundItem(icon: '🅰️', title: 'ABG reviewed?'),
         ICUDailyRoundItem(
@@ -666,7 +666,7 @@ const List<ICUDailyRoundSteps> icuDailyRoundSteps = [
         ICUDailyRoundItem(icon: '❤️', title: 'HR / rhythm / MAP?'),
         ICUDailyRoundItem(icon: '📈', title: 'ECG / Echocardigram?'),
         ICUDailyRoundItem(
-            icon: '🩸',
+            icon: '💉',
             title:
                 'Lactate? (Signs of end organ perfusion: mottled / cool peripheries / cap refill time?)'),
       ])
@@ -990,7 +990,7 @@ const proningGuide = [
         ICUDailyRoundItem(icon: '⏰', title: 'Out of hours'),
         ICUDailyRoundItem(icon: '🤲', title: 'Open abdomen'),
         ICUDailyRoundItem(icon: '🛌', title: 'C spine precautions'),
-        ICUDailyRoundItem(icon: '🩸', title: 'Haemodynamic instability'),
+        ICUDailyRoundItem(icon: '⚖️', title: 'Haemodynamic instability'),
       ])
     ]),
   ]),
@@ -1005,8 +1005,7 @@ const proningGuide = [
         ICUDailyRoundItem(icon: '👫', title: 'Adequate staffing on unit?'),
         ICUDailyRoundItem(
             icon: '👍', title: 'Staff trained in proning procedure'),
-        ICUDailyRoundItem(
-            icon: '6️⃣', title: '6 x staff available for proning'),
+        ICUDailyRoundItem(icon: '6', title: '6 x staff available for proning'),
         ICUDailyRoundItem(
             icon: '☝️',
             title: 'Allocate roles',
@@ -1062,7 +1061,7 @@ const proningGuide = [
     ICUDailyRoundStepSection(heading: 'Circulation', subsections: [
       ICUDailyRoundStepSubsection(list: [
         ICUDailyRoundItem(
-            icon: '❤️', title: 'Check adequate vascular access + secure'),
+            icon: '💉️', title: 'Check adequate vascular access + secure'),
         ICUDailyRoundItem(icon: '✅', title: 'Confirm haemodynamically stable'),
         ICUDailyRoundItem(
             icon: '📉', title: 'Confirm plan if patient becomes unstable'),
@@ -1095,7 +1094,7 @@ const proningGuide = [
             icon: '🔍',
             title: 'Assess for device potential for pressure injury'),
         ICUDailyRoundItem(
-            icon: '🩹', title: 'Apply padding to bony prominences'),
+            icon: '🛏️', title: 'Apply padding to bony prominences'),
         ICUDailyRoundItem(icon: '👄', title: 'Mouth care'),
         ICUDailyRoundItem(icon: '💃', title: 'Dress anterior wounds'),
       ])
