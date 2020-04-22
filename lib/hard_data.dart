@@ -1005,8 +1005,7 @@ const proningGuide = [
         ICUDailyRoundItem(icon: '👫', title: 'Adequate staffing on unit?'),
         ICUDailyRoundItem(
             icon: '👍', title: 'Staff trained in proning procedure'),
-        ICUDailyRoundItem(
-            icon: '6', title: '6 x staff available for proning'),
+        ICUDailyRoundItem(icon: '6', title: '6 x staff available for proning'),
         ICUDailyRoundItem(
             icon: '☝️',
             title: 'Allocate roles',
