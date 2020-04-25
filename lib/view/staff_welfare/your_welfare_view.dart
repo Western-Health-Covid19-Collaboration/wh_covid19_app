@@ -1,11 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../constants.dart';
 import '../../hard_data.dart';
 import '../../strings.dart';
 import '../../style.dart';
-import '../../utils/firebase.dart';
 import '../../utils/url_utils.dart';
 import '../../view/view_templates/tab_view_template.dart';
 import '../../widget/containers/icu_daily_round_container.dart';
@@ -13,9 +11,6 @@ import '../../widget/containers/icu_daily_round_container.dart';
 class YourWelfareView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Analytics set screen name, stays until another screen changes it
-    Analytics.analyticsScreen(Constants.analyticsWelfareScreen);
-
     return TabViewTemplate(
       Strings.yourWelfareTitle,
       color: AppColors.grey50,

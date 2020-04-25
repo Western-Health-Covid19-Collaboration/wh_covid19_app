@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
 import '../strings.dart';
 import '../style.dart';
-import '../utils/firebase.dart';
 
 class LicenseView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Analytics set screen name, stays until another screen changes it
-    Analytics.analyticsScreen(Constants.analyticsLicensesScreen);
-
     // Using showLicensePage directly gives the wrong style for app bar, and
     // it's not customizable.
     // Pretty tricky to render licenses from scratch, so just draw our own

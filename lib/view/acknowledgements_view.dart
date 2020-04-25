@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 
-import '../constants.dart';
 import '../models/home_card.dart';
 import '../strings.dart';
 import '../style.dart';
-import '../utils/firebase.dart';
 import '../widget/cards/reusable_card_base.dart';
 import '../widget/reusable_card.dart';
 
@@ -72,9 +70,6 @@ Those who have given helpful and timely advice, including Byron Teu.<br/>
   ''';
   @override
   Widget build(BuildContext context) {
-    // Analytics set screen name, stays until another screen changes it
-    Analytics.analyticsScreen(Constants.analyticsAcknowledgementsScreen);
-
     return Scaffold(
       backgroundColor: AppColors.appBackground,
       appBar: AppBar(

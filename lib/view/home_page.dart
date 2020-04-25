@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../constants.dart';
 import '../hard_data.dart';
 import '../strings.dart';
 import '../style.dart';
@@ -23,8 +22,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    // Analytics set screen name, stays until another screen changes it
-    Analytics.analyticsScreen(Constants.analyticsHomeScreen);
+    Analytics.analyticsAppOpen();
   }
 
   Widget _renderBackgroundContainer(BuildContext context) {

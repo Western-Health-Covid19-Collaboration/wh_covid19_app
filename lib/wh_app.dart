@@ -5,7 +5,6 @@ import 'routes.dart';
 import 'strings.dart';
 import 'style.dart';
 import 'utils/firebase.dart';
-
 import 'view/acknowledgements_view.dart';
 import 'view/additional_resources_view.dart';
 import 'view/airway/checklist/intubation_checklist_infographic_page.dart';
@@ -42,6 +41,7 @@ class WHApp extends StatelessWidget {
       title: Strings.appName,
       theme: Styles.appThemeLight,
       initialRoute: Routes.introRouter,
+      // Routes should be in routes or onGenerateRoute not both
       routes: {
         Routes.home: (context) => HomePage(),
         Routes.ppe: (context) => PPEView(),
@@ -63,8 +63,8 @@ class WHApp extends StatelessWidget {
       },
       // Analytics route observer to track PageRoute transitions
       navigatorObservers: <NavigatorObserver>[Analytics.observer],
+      // Use onGenerateRoute to set fullscreenDialog=true for routes
       onGenerateRoute: (settings) {
-        // Use onGenerateRoute to set fullscreenDialog=true
         switch (settings.name) {
           case Routes.info:
             return MaterialPageRoute<InfoView>(
@@ -121,12 +121,13 @@ class WHApp extends StatelessWidget {
               builder: (context) => VentilationInfographicPage(),
               fullscreenDialog: true,
             );
+          // Fallback, won't be called unless an unknown route is called
+          default:
+            return MaterialPageRoute<HomePage>(
+              builder: (context) => HomePage(),
+              fullscreenDialog: true,
+            );
         }
-        // Fallback, won't be called unless an unknown route is called
-        return MaterialPageRoute<HomePage>(
-          builder: (context) => HomePage(),
-          fullscreenDialog: true,
-        );
       },
     );
   }
