@@ -32,7 +32,8 @@ class ExtubationGuidancePage extends StatelessWidget {
         )
       ],
       children: extubationGuide
-          .map((e) => IntubationContentViewTemplate(content: e))
+          .map((e) => IntubationContentViewTemplate(
+              key: PageStorageKey(e.heading), content: e))
           .toList(),
     );
   }

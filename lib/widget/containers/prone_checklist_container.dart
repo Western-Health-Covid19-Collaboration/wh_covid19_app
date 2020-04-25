@@ -8,7 +8,7 @@ import '../lists/intubation_checklist_item.dart';
 class ProneChecklistContainer extends StatelessWidget {
   final ProneChecklist checklist;
 
-  const ProneChecklistContainer({this.checklist});
+  const ProneChecklistContainer({Key key, this.checklist}) : super(key: key);
 
   List<Widget> _renderList() {
     return checklist.sections.expand((e) => [e, ...e.checklist]).map((e) {

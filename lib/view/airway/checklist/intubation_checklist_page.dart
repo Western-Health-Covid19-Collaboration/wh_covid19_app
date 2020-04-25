@@ -21,7 +21,8 @@ class IntubationChecklistPage extends StatelessWidget {
 
   List<Widget> renderBody() {
     return intubationChecklist
-        .map((item) => IntubationChecklistContainer(checklist: item.checklist))
+        .map((item) => IntubationChecklistContainer(
+            key: PageStorageKey(item.title), checklist: item.checklist))
         .toList();
   }
 

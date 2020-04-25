@@ -38,10 +38,12 @@ class ProningGuideView extends StatelessWidget {
         tabs: tabs,
         children: proningGuide.map((e) {
           if (e is ICUDailyRoundSteps) {
-            return ICUDailyRoundStepsContainer(steps: e);
+            return ICUDailyRoundStepsContainer(
+                key: PageStorageKey(e.heading), steps: e);
           }
           if (e is ProneChecklist) {
             return ProneChecklistContainer(
+              key: PageStorageKey(e.heading),
               checklist: e,
             );
           }
