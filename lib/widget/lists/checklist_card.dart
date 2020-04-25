@@ -14,7 +14,7 @@ class ChecklistItemWidget<T> extends StatelessWidget {
   const ChecklistItemWidget(
       {@required this.content,
       @required this.item,
-      this.backgroundColor = AppColors.grey50,
+      this.backgroundColor = Colors.white,
       this.selectedBackgroundColor = AppColors.grey600});
 
   @override

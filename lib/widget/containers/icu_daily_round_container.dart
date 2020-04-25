@@ -71,7 +71,6 @@ class ICUDailyRoundChecklistContainer extends StatelessWidget {
         .map((e) => ChecklistItemWidget<ICUDailyRoundChecklistSection>(
               item: e,
               content: ICUDailyRoundChecklistCard(item: e),
-              backgroundColor: AppColors.appBackground,
               selectedBackgroundColor: AppColors.blue50,
             ))
         .toList();

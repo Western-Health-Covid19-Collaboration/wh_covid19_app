@@ -16,7 +16,6 @@ class ProneChecklistContainer extends StatelessWidget {
         return ChecklistItemWidget<ProneChecklistItem>(
             item: e,
             content: IntubationChecklistItemWidget(listItem: e),
-            backgroundColor: AppColors.appBackground,
             selectedBackgroundColor: AppColors.blue50);
       } else if (e is ProneChecklistSection) {
         return Padding(
