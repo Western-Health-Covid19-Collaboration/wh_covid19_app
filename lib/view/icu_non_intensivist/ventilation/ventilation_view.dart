@@ -40,11 +40,15 @@ class VentilationView extends StatelessWidget {
         children: ventilationGuide.map((e) {
           if (e is IntubationContent) {
             return IntubationContentViewTemplate(
-                content: e, color: AppColors.blue500);
+                key: PageStorageKey(e.heading),
+                content: e,
+                color: AppColors.blue500);
           }
           if (e is ICUDailyRoundSteps) {
             return ICUDailyRoundStepsContainer(
-                steps: e, backgroundColor: AppColors.blue500);
+                key: PageStorageKey(e.heading),
+                steps: e,
+                backgroundColor: AppColors.blue500);
           }
           throw Exception('Unknown model ${e.runtimeType}');
         }).toList());

@@ -27,7 +27,8 @@ class IntubationGuidancePage extends StatelessWidget {
         )
       ],
       children: intubationGuide
-          .map((e) => IntubationContentViewTemplate(content: e))
+          .map((e) => IntubationContentViewTemplate(
+              key: PageStorageKey(e.heading), content: e))
           .toList(),
     );
   }

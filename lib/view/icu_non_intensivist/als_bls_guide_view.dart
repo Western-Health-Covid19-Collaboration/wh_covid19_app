@@ -39,7 +39,9 @@ class AlsBlsGuideView extends StatelessWidget {
         children: alsBlsGuide.map((e) {
           if (e is IntubationContent) {
             return IntubationContentViewTemplate(
-                content: e, color: AppColors.blue500);
+                key: PageStorageKey(e.heading),
+                content: e,
+                color: AppColors.blue500);
           }
           if (e is ICUDailyRoundSteps) {
             return ICUDailyRoundStepsContainer(
