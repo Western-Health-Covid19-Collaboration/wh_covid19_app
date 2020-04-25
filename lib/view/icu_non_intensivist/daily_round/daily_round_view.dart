@@ -22,10 +22,11 @@ class ICUDailyRoundView extends StatelessWidget {
     final _checklistTabs =
         icuDailyRoundChecklist.map((e) => e.heading).toList();
 
-    final _stepContainer =
-        icuDailyRoundSteps.map((e) => ICUDailyRoundStepsContainer(steps: e));
-    final _checklistContainer = icuDailyRoundChecklist.map(
-        (e) => ICUDailyRoundChecklistContainer(sectionList: e.sectionList));
+    final _stepContainer = icuDailyRoundSteps.map((e) =>
+        ICUDailyRoundStepsContainer(key: PageStorageKey(e.heading), steps: e));
+    final _checklistContainer = icuDailyRoundChecklist.map((e) =>
+        ICUDailyRoundChecklistContainer(
+            key: PageStorageKey(e.heading), sectionList: e.sectionList));
 
     final _children = <Widget>[];
     _children.addAll(_stepContainer);

@@ -8,7 +8,8 @@ import '../lists/intubation_checklist_item.dart';
 class IntubationChecklistContainer extends StatelessWidget {
   final List<IntubationChecklistItem> checklist;
 
-  const IntubationChecklistContainer({this.checklist});
+  const IntubationChecklistContainer({Key key, this.checklist})
+      : super(key: key);
 
   List<Widget> _renderList() {
     return checklist

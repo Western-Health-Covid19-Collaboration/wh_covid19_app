@@ -36,7 +36,8 @@ class ICUDailyRoundStepsContainer extends StatelessWidget {
   final Color backgroundColor;
 
   const ICUDailyRoundStepsContainer(
-      {this.steps, this.backgroundColor = AppColors.blue500});
+      {Key key, this.steps, this.backgroundColor = AppColors.blue500})
+      : super(key: key);
 
   List<Widget> _renderList() {
     return [
@@ -64,7 +65,8 @@ class ICUDailyRoundChecklistContainer extends StatelessWidget {
   final Color backgroundColor;
 
   const ICUDailyRoundChecklistContainer(
-      {this.sectionList, this.backgroundColor = AppColors.blue500});
+      {Key key, this.sectionList, this.backgroundColor = AppColors.blue500})
+      : super(key: key);
 
   List<Widget> _renderList() {
     return sectionList
