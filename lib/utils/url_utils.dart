@@ -1,5 +1,7 @@
-import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/foundation.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import '../utils/firebase.dart';
 
 class UrlUtils {
   /// Open a [url] with the default device browser
@@ -7,6 +9,7 @@ class UrlUtils {
   static Future<void> launchWithBrowser(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
+      await Analytics.analyticsEvent('urlBrowser', url);
     }
   }
 
@@ -32,6 +35,7 @@ class UrlUtils {
     final url = 'tel:$number';
     if (await canLaunch(url)) {
       await launch(url);
+      await Analytics.analyticsEvent('urlCall', url);
     }
   }
 
@@ -42,6 +46,8 @@ class UrlUtils {
     final url = 'mailto:$address?subject=$subject&body=content';
     if (await canLaunch(url)) {
       await launch(url);
+      // For privacy reasons only record the address via analytics
+      await Analytics.analyticsEvent('urlEmail', address);
     }
   }
 }

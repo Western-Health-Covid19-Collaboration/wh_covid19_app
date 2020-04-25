@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:package_info/package_info.dart';
 
-import '../constants.dart';
 import '../hard_data.dart';
 import '../routes.dart';
 import '../strings.dart';
 import '../style.dart';
-import '../utils/firebase.dart';
 import '../widget/reusable_card.dart';
 
 class InfoView extends StatelessWidget {
@@ -82,9 +80,6 @@ class InfoView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Analytics set screen name, stays until another screen changes it
-    Analytics.analyticsScreen(Constants.analyticsInformationScreen);
-
     return Scaffold(
       backgroundColor: AppColors.appBackground,
       appBar: AppBar(

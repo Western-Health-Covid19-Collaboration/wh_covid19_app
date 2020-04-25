@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../constants.dart';
 import '../../../hard_data.dart';
 import '../../../models/icu_daily_round_steps.dart';
 import '../../../models/intubation_guide.dart';
 import '../../../routes.dart';
 import '../../../strings.dart';
 import '../../../style.dart';
-import '../../../utils/firebase.dart';
 import '../../../widget/containers/icu_daily_round_container.dart';
 import '../../view_templates/intubation_content_view_template.dart';
 import '../../view_templates/tab_view_template.dart';
@@ -17,9 +15,6 @@ import '../../view_templates/tab_view_template.dart';
 class VentilationView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Analytics set screen name, stays until another screen changes it
-    Analytics.analyticsScreen(Constants.analyticsVentilationScreen);
-
     final tabs = ventilationGuide.map((e) {
       if (e is IntubationContent) {
         return e.heading;

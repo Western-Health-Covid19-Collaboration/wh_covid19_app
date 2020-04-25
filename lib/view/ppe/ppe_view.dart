@@ -2,12 +2,10 @@ import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-import '../../constants.dart';
 import '../../hard_data.dart';
 import '../../routes.dart';
 import '../../strings.dart';
 import '../../style.dart';
-import '../../utils/firebase.dart';
 import '../../widget/reusable_card.dart';
 
 class PPEView extends StatefulWidget {
@@ -79,9 +77,6 @@ class _PPEViewState extends State<PPEView> {
   @override
   void initState() {
     super.initState();
-    // Analytics set screen name, stays until another screen changes it
-    Analytics.analyticsScreen(Constants.analyticsPPEScreen);
-
     _videoController1 =
         VideoPlayerController.asset('assets/videos/wh_icu_donning.mp4');
     _chewieController1 = ChewieController(
@@ -144,6 +139,8 @@ class _PPEViewState extends State<PPEView> {
   void dispose() {
     _videoController1.dispose();
     _videoController2.dispose();
+    _chewieController1.dispose();
+    _chewieController2.dispose();
     super.dispose();
   }
 

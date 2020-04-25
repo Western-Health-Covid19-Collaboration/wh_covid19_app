@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import '../constants.dart';
+
 import '../models/home_card.dart';
 import '../strings.dart';
 import '../style.dart';
-import '../utils/firebase.dart';
 import '../widget/reusable_card.dart';
 
 class AdditionalResourcesView extends StatelessWidget {
@@ -45,9 +44,6 @@ class AdditionalResourcesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Analytics set screen name, stays until another screen changes it
-    Analytics.analyticsScreen(Constants.analyticsAdditionalResourcesScreen);
-
     return Scaffold(
         backgroundColor: AppColors.appBackground,
         appBar: AppBar(
