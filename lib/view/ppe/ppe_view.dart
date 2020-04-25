@@ -6,7 +6,6 @@ import '../../hard_data.dart';
 import '../../routes.dart';
 import '../../strings.dart';
 import '../../style.dart';
-import '../../utils/firebase.dart';
 import '../../widget/reusable_card.dart';
 
 class PPEView extends StatefulWidget {
@@ -17,12 +16,10 @@ class PPEView extends StatefulWidget {
 }
 
 class _PPEViewState extends State<PPEView> {
-  static String video1Path = 'assets/videos/wh_icu_donning.mp4';
-  static String video2Path = 'assets/videos/wh_icu_doffing.mp4';
-  static VideoPlayerController _videoController1;
-  static ChewieController _chewieController1;
-  static VideoPlayerController _videoController2;
-  static ChewieController _chewieController2;
+  VideoPlayerController _videoController1;
+  ChewieController _chewieController1;
+  VideoPlayerController _videoController2;
+  ChewieController _chewieController2;
   static int method1Steps = ppeOffMethod1Steps.length;
   static int method2Steps = ppeOffMethod2Steps.length;
 
@@ -80,15 +77,8 @@ class _PPEViewState extends State<PPEView> {
   @override
   void initState() {
     super.initState();
-    // Video 1 controllers
-    _videoController1 = VideoPlayerController.asset(video1Path);
-    _videoController1.addListener(() {
-      // Defined as played if watched to the end
-      if (_videoController1.value.position ==
-          _videoController1.value.duration) {
-        Analytics.analyticsEvent('videoPlay', video1Path);
-      }
-    });
+    _videoController1 =
+        VideoPlayerController.asset('assets/videos/wh_icu_donning.mp4');
     _chewieController1 = ChewieController(
       videoPlayerController: _videoController1,
       aspectRatio: 16 / 9,
@@ -96,16 +86,8 @@ class _PPEViewState extends State<PPEView> {
       autoInitialize: true,
       placeholder: _buildVideoPlaceholder(),
     );
-
-    // Video 2 controllers
-    _videoController2 = VideoPlayerController.asset(video2Path);
-    _videoController2.addListener(() {
-      // Defined as played if watched to the end
-      if (_videoController2.value.position ==
-          _videoController2.value.duration) {
-        Analytics.analyticsEvent('videoPlay', video2Path);
-      }
-    });
+    _videoController2 =
+        VideoPlayerController.asset('assets/videos/wh_icu_doffing.mp4');
     _chewieController2 = ChewieController(
       videoPlayerController: _videoController2,
       aspectRatio: 16 / 9,
@@ -157,6 +139,8 @@ class _PPEViewState extends State<PPEView> {
   void dispose() {
     _videoController1.dispose();
     _videoController2.dispose();
+    _chewieController1.dispose();
+    _chewieController2.dispose();
     super.dispose();
   }
 
