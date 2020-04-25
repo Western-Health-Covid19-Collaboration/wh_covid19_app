@@ -15,7 +15,6 @@ class IntubationChecklistContainer extends StatelessWidget {
         .map((e) => ChecklistItemWidget<IntubationChecklistItem>(
               item: e,
               content: IntubationChecklistItemWidget(listItem: e),
-              backgroundColor: AppColors.appBackground,
               selectedBackgroundColor: AppColors.green50,
             ))
         .toList();
