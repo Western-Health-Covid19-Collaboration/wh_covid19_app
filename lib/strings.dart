@@ -24,7 +24,7 @@ This app is designed to be used by the anaesthetist and critical care doctors at
       'You have agreed to the disclaimer';
 
   /// Home screen strings
-  static const String homeHeading1 = 'Look After Yourself';
+  static const String homeHeading1 = 'Staff Welfare';
   static const String homeHeading2 = 'Airway';
   static const String homeHeading3 = 'ICU';
 
@@ -58,7 +58,7 @@ This app is designed to be used by the anaesthetist and critical care doctors at
   static const String ventilationInfographicTitle = 'Ventilation Infographic';
 
   /// Daily Round
-  static const String dailyRoundTitle = 'Daily Round';
+  static const String dailyRoundTitle = 'Daily Ward Round';
 
   /// Tips for Cross skilling
   static const String tipsForCrossSkillingTitle = 'Cross-skilling';
