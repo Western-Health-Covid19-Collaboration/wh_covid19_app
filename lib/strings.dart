@@ -64,6 +64,8 @@ This app is designed to be used by the anaesthetist and critical care doctors at
   static const String tipsForCrossSkillingTitle = 'Cross-skilling';
   static const String proningGuideTitle = 'Proning';
   static const String alsBlsGuideTitle = 'ALS/BLS Modifications';
+  static const String alsBlsGuideInfographicTitle =
+      'ALS/BLS Modifications Infographic';
 
   /// Your Welfare
   static const String yourWelfareTitle = 'Your Welfare';
