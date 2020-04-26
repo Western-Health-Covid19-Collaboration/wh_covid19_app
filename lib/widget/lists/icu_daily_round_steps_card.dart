@@ -22,7 +22,7 @@ class ICUDailyRoundStepsCard extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(item.title, style: Styles.textBody),
+                        Text(item.title, style: Styles.textH4),
                         if (item.subtitle != null)
                           Text(
                             item.subtitle,
