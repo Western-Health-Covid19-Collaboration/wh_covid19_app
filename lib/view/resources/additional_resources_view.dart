@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../models/home_card.dart';
-import '../strings.dart';
-import '../style.dart';
-import '../widget/reusable_card.dart';
+import '../../models/home_card.dart';
+import '../../strings.dart';
+import '../../style.dart';
+import '../../widget/reusable_card.dart';
 
 class AdditionalResourcesView extends StatelessWidget {
   static const _cards = [
