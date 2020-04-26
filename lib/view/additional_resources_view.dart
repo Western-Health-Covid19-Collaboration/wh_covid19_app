@@ -45,12 +45,12 @@ class AdditionalResourcesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppColors.appBackground,
+        backgroundColor: AppColors.backgroundPurple,
         appBar: AppBar(
           // Warning brightness interacts with SystemUiOverlayStyle
           // See system_bars.dart comments
           brightness: Brightness.light,
-          backgroundColor: AppColors.appBarBackground,
+          backgroundColor: AppColors.purple50,
           iconTheme: Styles.appBarIconTheme,
           title: const Text(
             Strings.additionalResourcesTitle,
