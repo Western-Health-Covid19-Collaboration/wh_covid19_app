@@ -6,7 +6,6 @@ import 'strings.dart';
 import 'style.dart';
 import 'utils/firebase.dart';
 import 'view/acknowledgements_view.dart';
-import 'view/additional_resources_view.dart';
 import 'view/airway/checklist/intubation_checklist_infographic_page.dart';
 import 'view/airway/checklist/intubation_checklist_page.dart';
 import 'view/airway/extubation/extubation_guidance_page.dart';
@@ -31,6 +30,8 @@ import 'view/ppe/ppe_off_guidance_method_2_infographic.dart';
 import 'view/ppe/ppe_on_guidance.dart';
 import 'view/ppe/ppe_on_infographic_page.dart';
 import 'view/ppe/ppe_view.dart';
+import 'view/resources/additional_resources_view.dart';
+import 'view/resources/definitive_view.dart';
 import 'view/sbs_guide_view.dart';
 import 'view/staff_welfare/your_welfare_view.dart';
 
@@ -61,6 +62,7 @@ class WHApp extends StatelessWidget {
         Routes.licenses: (context) => LicenseView(),
         Routes.acknowledgements: (context) => AcknowledgementsView(),
         Routes.additionalResources: (context) => AdditionalResourcesView(),
+        Routes.definitiveResources: (context) => DefinitiveView()
       },
       // Analytics route observer to track PageRoute transitions
       navigatorObservers: <NavigatorObserver>[Analytics.observer],
