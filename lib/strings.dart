@@ -27,6 +27,7 @@ This app is designed to be used by the anaesthetist and critical care doctors at
   static const String homeHeading1 = 'Staff Welfare';
   static const String homeHeading2 = 'Airway';
   static const String homeHeading3 = 'ICU';
+  static const String homeHeading4 = 'Resources';
 
   /// PPE
   static const String ppeTitle = 'PPE Technique';
@@ -80,11 +81,14 @@ This app is designed to be used by the anaesthetist and critical care doctors at
       'WH Anaesthetic Microsite';
   static const String informationWhIcuTitle = 'WH ICU Microsite';
   static const String informationWhContactsTitle = 'Contact Numbers';
-  static const String additionalResourcesTitle = 'Additional Resources';
   static const String informationAppFeedbackTitle = 'App Feedback';
   static const String informationAppAckRefTitle =
       'Acknowledgements and References';
   static const String informationAppThirdPartyTitle = 'Third-Party Licenses';
   static const String informationFooter = 'Built with ❤️ by a band of '
       'volunteers';
+
+  /// Resources
+  static const String definitiveResourcesTitle = 'WH Definitive Resources';
+  static const String additionalResourcesTitle = 'Additional Resources';
 }
