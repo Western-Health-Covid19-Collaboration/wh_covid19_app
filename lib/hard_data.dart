@@ -76,11 +76,11 @@ const List<HomeCard> icu = [
 const List<HomeCard> resources = [
   HomeCard(
     title: Strings.definitiveResourcesTitle,
-    route: Routes.ventilation,
+    route: Routes.definitiveResources,
   ),
   HomeCard(
     title: Strings.additionalResourcesTitle,
-    route: Routes.generalCare,
+    route: Routes.additionalResources,
   ),
 ];
 

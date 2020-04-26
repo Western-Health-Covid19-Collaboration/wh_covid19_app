@@ -45,12 +45,6 @@ class InfoView extends StatelessWidget {
       elevation: _cardElevation,
       routeTo: whURL,
     ),
-    const ReusableCard(
-      title: Strings.additionalResourcesTitle,
-      height: _cardHeight,
-      elevation: _cardElevation,
-      routeTo: Routes.additionalResources,
-    ),
     _buildSpacer(),
     ReusableCard(
       title: Strings.informationAppFeedbackTitle,
