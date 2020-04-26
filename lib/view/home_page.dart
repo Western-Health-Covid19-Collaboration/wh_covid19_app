@@ -98,6 +98,18 @@ class _HomePageState extends State<HomePage> {
                 .toList(),
             containerLayout: CardsLayout.threeDoubleRowBigTop,
           ),
+          CardContainer(
+            title: Strings.homeHeading4,
+            cards: resources
+                .map(
+                  (c) => ReusableCard.fromData(
+                    card: c,
+                    color: AppColors.purple50,
+                  ),
+                )
+                .toList(),
+            containerLayout: CardsLayout.twoRow,
+          ),
           // Make sure the bottom CardContainer has room to breathe.
           const SizedBox(height: 12),
         ],
