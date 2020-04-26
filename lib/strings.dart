@@ -61,7 +61,7 @@ This app is designed to be used by the anaesthetist and critical care doctors at
   static const String dailyRoundTitle = 'Daily Ward Round';
 
   /// Tips for Cross skilling
-  static const String tipsForCrossSkillingTitle = 'Cross-skilling';
+  static const String tipsForCrossSkillingTitle = 'Quick ICU tips';
   static const String proningGuideTitle = 'Proning';
   static const String alsBlsGuideTitle = 'ALS/BLS Modifications';
 
