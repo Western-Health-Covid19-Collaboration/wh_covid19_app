@@ -1,3 +1,6 @@
+---- Sunday 26th April, 2020 ----
+* Add Infographic Page for ALS/BLS Modifications
+
 ---- Friday 10th April, 2020 ----
 * Disclaimer updates, including a link to https://coronavirus.wh.org.au/
 * Fixed Home Page

@@ -35,6 +35,8 @@ class Routes {
   static const tipsJuniorStaff = '$_icuNonIntensivist/tips_junior_staff';
   static const proningGuide = '$_icuNonIntensivist/proning';
   static const alsBlsGuide = '$_icuNonIntensivist/als_bls';
+  static const alsBlsGuideInfographic =
+      '$_icuNonIntensivist/als_bls/infographic';
 
   // Airway routes
   static const intubationGuidance = '/airway/guidance';
