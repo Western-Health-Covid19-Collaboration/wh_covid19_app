@@ -25,12 +25,12 @@ const String proningTechniqueUrl =
 const List<HomeCard> staffWelfare = [
   HomeCard(
     title: Strings.ppeTitle,
-    description: '3 guides',
+    description: 'Basic ICU technique',
     route: Routes.ppe,
   ),
   HomeCard(
     title: Strings.yourWelfareTitle,
-    description: 'Vital info & contacts',
+    description: 'Info for mental well-being',
     route: Routes.staffWelfare,
   )
 ];
@@ -38,17 +38,17 @@ const List<HomeCard> staffWelfare = [
 const List<HomeCard> airway = [
   HomeCard(
     title: Strings.intubationGuideTitle,
-    description: 'Step by step guide',
+    description: 'WH step by step guide v6',
     route: Routes.intubationGuidance,
   ),
   HomeCard(
     title: Strings.intubationChecklistTitle,
-    description: 'Checklist',
+    description: 'As per WH intubation team v6',
     route: Routes.intubationChecklist,
   ),
   HomeCard(
     title: Strings.extubationGuideTitle,
-    description: 'Step by step guide',
+    description: 'WH Step by step guide v1.1',
     route: Routes.extubationGuidance,
   )
 ];
@@ -57,15 +57,17 @@ const List<HomeCard> airway = [
 const List<HomeCard> icu = [
   HomeCard(
     title: Strings.ventilationTitle,
-    description: 'Description',
+    description: 'Basic ARDS strategy',
     route: Routes.ventilation,
   ),
   HomeCard(
     title: Strings.dailyRoundTitle,
+    description: 'Basic A-G template',
     route: Routes.generalCare,
   ),
   HomeCard(
     title: Strings.tipsForCrossSkillingTitle,
+    description: 'During COVID-19',
     route: Routes.tipsJuniorStaff,
   ),
 ];
@@ -215,19 +217,24 @@ const List<IntubationChecklist> intubationChecklist = [
     title: 'Team',
     checklist: [
       IntubationChecklistItem(
-        title: 'Team Introduced:',
+        title: 'Contact Anaesthesia',
         notes: [
-          'Airway Operator',
-          'Airway Assistant',
-          'Team Leader/Drugs',
-          'In-room Runner: (optional)',
-          'Door Runner',
-          'Outside room Runner'
+          'FH - 8345 6590',
+          'SH - 9055 3021',
         ],
       ),
-      IntubationChecklistItem(title: 'Communication device checked'),
       IntubationChecklistItem(
-        title: 'Problems anticipated?',
+        title: 'Allocate Roles',
+        notes: [
+          'Team Leader',
+          'Airway Doctor',
+          'Airway Nurse',
+          'Runner',
+          'Scribe',
+        ],
+      ),
+      IntubationChecklistItem(
+        title: 'Don PPE in Anteroom & Buddy Check',
       ),
     ],
   ),
@@ -235,83 +242,89 @@ const List<IntubationChecklist> intubationChecklist = [
     title: 'Patient',
     checklist: [
       IntubationChecklistItem(
-        title: 'ECG, BP, Sats',
-      ),
-      IntubationChecklistItem(
-        title: 'Pre-oxygenation',
+        title: 'Patient Assessment',
         notes: [
-          'FiO2 100%',
-          'Sitting position '
-              '45°'
+          'Airway',
+          'Allergies',
+          'Medication',
+          'Past History',
         ],
-      ),
-      IntubationChecklistItem(
-        title: 'IV access working',
-        notes: ['Fluid running'],
       ),
       IntubationChecklistItem(
         title: 'Haemodynamics optimised',
-        notes: ['Fluid bolus?', 'Pressor infusion?'],
+      ),
+      IntubationChecklistItem(
+        title: 'IV access',
+        notes: ['2 preferable'],
+      ),
+      IntubationChecklistItem(
+        title: 'Positioning',
+        notes: ['Head up 45°', 'Oxford Pillow/Ramp'],
       ),
     ],
   ),
-  IntubationChecklist(
-    title: 'Drugs',
-    checklist: [
-      IntubationChecklistItem(title: 'RSI drugs prepared & doses chosen'),
-      IntubationChecklistItem(
-        title: 'Rescue drugs',
-        notes: ['Metaraminol', 'Adrenaline'],
-      ),
-      IntubationChecklistItem(title: 'Post intubation sedation plan'),
-      IntubationChecklistItem(title: 'Drug C/I or allergies?'),
-    ],
-  ),
-  IntubationChecklist(
-    title: 'Equipment',
-    checklist: [
-      IntubationChecklistItem(
-        title: '2 Laryngoscopes (1 VL, 1 Mac)',
-        notes: ['Blade available', 'Back-up laryngoscope available'],
-      ),
-      IntubationChecklistItem(
-        title: 'Tube chosen; cuff tested',
-      ),
-      IntubationChecklistItem(title: 'Bougie/stylet'),
-      IntubationChecklistItem(title: '10ml syringe'),
-      IntubationChecklistItem(title: 'Tube tie'),
-      IntubationChecklistItem(title: 'Supraglottic airway sized to pt'),
-      IntubationChecklistItem(title: 'Scalpel + bougie CICO kit'),
-      IntubationChecklistItem(
-          title: 'Airway trolley with 3 backup boxes (LMA, Facemask, CICO)'),
-      IntubationChecklistItem(title: 'etCO2'),
-      IntubationChecklistItem(title: 'Viral filter'),
-    ],
-  ),
+  IntubationChecklist(title: 'Equipment', checklist: [
+    IntubationChecklistItem(
+      title: 'Set up airway trolley',
+      notes: ['Select CMAC blade'],
+    ),
+    IntubationChecklistItem(
+      title: 'Induction Drugs',
+      notes: [
+        'Ketamine(Pack A) OR',
+        'Propofol/Midazolam (Pack B)',
+        'Sux & Rocuronium in both packs',
+      ],
+    ),
+    IntubationChecklistItem(title: 'Vasopressor'),
+    IntubationChecklistItem(
+      title: 'Post-Intubation Planning',
+      notes: [
+        'Ventilator & Settings',
+        'Sedation',
+      ],
+    ),
+  ]),
+  IntubationChecklist(title: 'Plan', checklist: [
+    IntubationChecklistItem(
+      title: 'Induction Plan',
+      notes: ['Induction', 'Paralysis', 'Vasopressor'],
+    ),
+    IntubationChecklistItem(
+      title: 'Plan A - Intubation',
+      notes: [
+        'CMAC',
+        'Stylet/Bougie',
+      ],
+    ),
+    IntubationChecklistItem(title: 'Plan B - LMA(iGEL)'),
+    IntubationChecklistItem(
+      title: 'Plan C - Mask Ventilation',
+      notes: ['2 handed grip', '2 person technique', 'Consider OPA/NPA'],
+    ),
+    IntubationChecklistItem(
+      title: 'Plan D - Surgical Airway',
+      notes: ['Scalpel-Bougie-ETT'],
+    ),
+  ]),
   IntubationChecklist(
     title: 'Final',
     checklist: [
-      IntubationChecklistItem(title: 'Patient position optimal'),
+      IntubationChecklistItem(title: 'Patient Position Optimised'),
+      IntubationChecklistItem(title: 'Turn CMAC on'),
+      IntubationChecklistItem(title: 'Suction Working'),
       IntubationChecklistItem(
-        title: 'Fluid runs easily',
-      ),
-      IntubationChecklistItem(title: 'Suction working'),
-      IntubationChecklistItem(title: 'Tube tie under neck'),
-      IntubationChecklistItem(title: 'Ventilator +/- BVM functional'),
-      IntubationChecklistItem(title: 'Facemask with viral filter connected'),
-      IntubationChecklistItem(title: 'etCO2 trace'),
-      IntubationChecklistItem(title: 'O2 at 6l/min'),
+          title: 'Connect Monitoring', notes: ['BP (1 min cycle)']),
+      IntubationChecklistItem(title: 'Confirm etCO2 Trace'),
+      IntubationChecklistItem(title: 'Pre-oxygenation'),
       IntubationChecklistItem(
-          title: 'Clinical waste bin & Mayo table/dirty tray'),
-      IntubationChecklistItem(
-        title: 'Airway plans:',
-        notes: [
-          'Plan A: Videolaryngoscopy with bougie/stylet',
-          'Plan B: Supraglottic airway',
-          'Plan C: Vice grip, 2-person +/- Guedel/NPA',
-          'Plan D: Scalpel/bougie/tube'
-        ],
-      ),
+          title: 'Order of Placement:',
+          notes: ['Mask', 'Filter', 'ETCO2', 'PEEP', 'self-inflating bag']),
+      IntubationChecklistItem(title: 'Oxygen 15l/min'),
+      IntubationChecklistItem(title: 'Fluid running'),
+      IntubationChecklistItem(title: 'Induction Plan Clear'),
+      IntubationChecklistItem(title: 'Airway Plans Clear'),
+      IntubationChecklistItem(title: 'Everyone Ready')
     ],
   ),
 ];
