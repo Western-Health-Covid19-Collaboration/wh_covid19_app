@@ -68,6 +68,33 @@ Several companies who have provided support and employee time, including <a href
 <br/>
 Those who have given helpful and timely advice, including Byron Teu.<br/>
   ''';
+  static const _contributorsHtml = '''
+<b>Gregg Miller</b> - Initial Development &amp; Ideas<br/>
+<b>Matt Kelsh</b> - Design<br/>
+<b>Marc Edwards</b> - Design<br/>
+<b>Luke Sleeman</b> - Project Organiser<br/>
+<b>Alessandro Favero</b> - Flutter Dev<br/>
+<b>Maksim Lin</b> - Senior Flutter Dev, CI<br/>
+<b>Mike Hughes</b> - Lead Flutter Dev, CI &amp; CD<br/>
+<b>Adam Koch</b> - Flutter Dev<br/>
+<b>Brett Morgan</b> - Flutter Dev<br/>
+<b>Eric Jiang</b> - Flutter Dev<br/>
+<b>Dylan Lange</b> - Flutter Dev<br/>
+<b>Jonathan Galtieri</b> - Anaesthetist<br/>
+<b>Ben Blackman</b> - Anaesthetic Registrar<br/>
+<b>Fabien Dade</b> - ICU Registrar<br/>
+<b>Alice Gynther</b> - Anaesthetist<br/>
+<b>Kim Nguyen</b> - Flutter Dev<br/>
+<b>Bramley</b> - Flutter Dev<br/>
+<b>Suesi Tran</b> - Flutter Dev<br/>
+<b>June Chen</b> - Flutter Dev<br/>
+<b>Joshua Case</b> - Flutter Dev<br/>
+<b>Poornima Sivakumar</b> - Documentation<br/>
+<b>Fabio</b> - Documentation<br/>
+<b>Sally Chung</b> - Testing and General Support<br/>
+<b>Carlos Melegrito</b> - Design<br/>
+<b>Jinju Jang</b> - Design
+  ''';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,6 +137,25 @@ Those who have given helpful and timely advice, including Byron Teu.<br/>
                   child: [
                     HtmlWidget(
                       _thanksHtml,
+                      hyperlinkColor: Styles.textH5Hyperlink.color,
+                      textStyle: Styles.textP,
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 24, 16, 0),
+                child: Text(
+                  'Contributors',
+                  style: Styles.textH4,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 4),
+                child: ReusableCardBase(
+                  child: [
+                    HtmlWidget(
+                      _contributorsHtml,
                       hyperlinkColor: Styles.textH5Hyperlink.color,
                       textStyle: Styles.textP,
                     )

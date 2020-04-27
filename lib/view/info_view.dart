@@ -16,36 +16,7 @@ class InfoView extends StatelessWidget {
     Navigator.pushNamed(context, Routes.info);
   }
 
-  final cards = <Widget>[
-    ReusableCard(
-      title: Strings.informationWhCoronaTitle,
-      color: _cardColor,
-      height: _cardHeight,
-      elevation: _cardElevation,
-      routeTo: whCoronavirusInfoURL,
-    ),
-    ReusableCard(
-      title: Strings.informationWhAnaestheticTitle,
-      color: _cardColor,
-      height: _cardHeight,
-      elevation: _cardElevation,
-      routeTo: whAnaestheticMicrositeURL,
-    ),
-    ReusableCard(
-      title: Strings.informationWhIcuTitle,
-      color: _cardColor,
-      height: _cardHeight,
-      elevation: _cardElevation,
-      routeTo: whIcuMicrositeURL,
-    ),
-    _buildSpacer(),
-    ReusableCard(
-      title: Strings.informationWhContactsTitle,
-      height: _cardHeight,
-      elevation: _cardElevation,
-      routeTo: whURL,
-    ),
-    _buildSpacer(),
+  final cards = <Widget>[    
     ReusableCard(
       title: Strings.informationAppFeedbackTitle,
       height: _cardHeight,
