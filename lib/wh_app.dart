@@ -15,6 +15,7 @@ import 'view/airway/guidance/intubation_guidance_infographic_page.dart';
 import 'view/airway/guidance/intubation_guidance_page.dart';
 import 'view/disclaimer_view.dart';
 import 'view/home_page.dart';
+import 'view/icu_non_intensivist/als_bls_guide_infographic.dart';
 import 'view/icu_non_intensivist/als_bls_guide_view.dart';
 import 'view/icu_non_intensivist/daily_round/daily_round_view.dart';
 import 'view/icu_non_intensivist/proning_guide_view.dart';
@@ -119,6 +120,11 @@ class WHApp extends StatelessWidget {
           case Routes.ventilationInfographic:
             return MaterialPageRoute<void>(
               builder: (context) => VentilationInfographicPage(),
+              fullscreenDialog: true,
+            );
+          case Routes.alsBlsGuideInfographic:
+            return MaterialPageRoute<void>(
+              builder: (context) => ALSGuideInfographicPage(),
               fullscreenDialog: true,
             );
           // Fallback, won't be called unless an unknown route is called
