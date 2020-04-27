@@ -183,7 +183,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       const SizedBox(width: 16),
-                      CallButton(whURL, generateIconColor(
+                      CallButton(whURL, color: generateIconColor(
                             AppColors.homeAppBarIcon,
                             AppColors.appBarIcon,
                             percentage,
