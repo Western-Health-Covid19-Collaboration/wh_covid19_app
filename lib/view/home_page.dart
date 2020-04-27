@@ -7,6 +7,7 @@ import '../style.dart';
 import '../utils/color.dart';
 import '../utils/firebase.dart';
 import '../utils/system_bars.dart';
+import '../widget/call_button.dart';
 import '../widget/card_container.dart';
 import '../widget/reusable_card.dart';
 import 'info_view.dart';
@@ -168,6 +169,7 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       mainLogo,
+                      const Spacer(),
                       GestureDetector(
                         onTap: () => InfoView.navigateTo(context),
                         child: Icon(
@@ -179,7 +181,13 @@ class _HomePageState extends State<HomePage> {
                             percentage,
                           ),
                         ),
-                      )
+                      ),
+                      const SizedBox(width: 16),
+                      CallButton(whURL, generateIconColor(
+                            AppColors.homeAppBarIcon,
+                            AppColors.appBarIcon,
+                            percentage,
+                          )),
                     ],
                   ),
                 ),
