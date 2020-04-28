@@ -6,7 +6,7 @@ class CallButton extends StatelessWidget {
   final String _url;
   final Color _color;
 
-  const CallButton(this._url, {Color color}): _color = color;
+  const CallButton(this._url, {Color color}) : _color = color;
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +20,7 @@ class CallButton extends StatelessWidget {
           ),
           Align(
             alignment: Alignment.topRight,
-            child: Icon(
-              Icons.call_made,
-              size: 16,
-              color: _color
-            ),
+            child: Icon(Icons.call_made, size: 16, color: _color),
           )
         ],
       ),

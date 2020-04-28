@@ -9,14 +9,13 @@ import '../widget/reusable_card.dart';
 
 class InfoView extends StatelessWidget {
   static const _cardHeight = 40.0;
-  static const _cardColor = AppColors.purple50;
   static const _cardElevation = 1.0;
 
   static void navigateTo(BuildContext context) {
     Navigator.pushNamed(context, Routes.info);
   }
 
-  final cards = <Widget>[    
+  final cards = <Widget>[
     ReusableCard(
       title: Strings.informationAppFeedbackTitle,
       height: _cardHeight,

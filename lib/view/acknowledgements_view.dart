@@ -143,8 +143,8 @@ Those who have given helpful and timely advice, including Byron Teu.<br/>
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 24, 16, 0),
+              const Padding(
+                padding: EdgeInsets.fromLTRB(0, 24, 16, 0),
                 child: Text(
                   'Contributors',
                   style: Styles.textH4,
