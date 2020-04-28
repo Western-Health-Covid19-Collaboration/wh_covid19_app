@@ -12,6 +12,7 @@ class CallButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       constraints: const BoxConstraints.tightFor(width: 24, height: 24),
+      padding: const EdgeInsets.all(0),
       icon: Stack(
         children: <Widget>[
           Align(

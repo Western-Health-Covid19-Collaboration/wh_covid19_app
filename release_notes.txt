@@ -1,6 +1,12 @@
 ---- Sunday 26th April, 2020 ----
 * Add Infographic Page for ALS/BLS Modifications
 
+---- Tuesday 28th April, 2020 ----
+* Add resource section
+* Add Contributors
+* Move some of the sections from Info page to the new resource section
+* Add phone call button on the home page
+
 ---- Friday 10th April, 2020 ----
 * Disclaimer updates, including a link to https://coronavirus.wh.org.au/
 * Fixed Home Page
