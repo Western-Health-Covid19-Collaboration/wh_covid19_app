@@ -75,15 +75,14 @@ This app is designed to be used by the anaesthetist and critical care doctors at
 
   /// Information
   static const String informationTitle = 'Information';
-  static const String acknowledegementsTitle = 'Acknowledegements & References';
+  static const String acknowledegementsTitle = 'Acknowledegements';
+  static const String referencesTitle = 'References';
   static const String informationWhCoronaTitle = 'WH Novel Coronavirus Website';
   static const String informationWhAnaestheticTitle =
       'WH Anaesthetic Microsite';
   static const String informationWhIcuTitle = 'WH ICU Microsite';
   static const String informationWhContactsTitle = 'Contact Numbers';
   static const String informationAppFeedbackTitle = 'App Feedback';
-  static const String informationAppAckRefTitle =
-      'Acknowledgements and References';
   static const String informationAppThirdPartyTitle = 'Third-Party Licenses';
   static const String informationFooter = 'Built with ❤️ by a band of '
       'volunteers';

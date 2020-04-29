@@ -2,48 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 
-import '../models/home_card.dart';
 import '../strings.dart';
 import '../style.dart';
 import '../widget/cards/reusable_card_base.dart';
-import '../widget/reusable_card.dart';
 
 class AcknowledgementsView extends StatelessWidget {
-  static const _cards = [
-    'References',
-    HomeCard(
-      title: 'Safe Airway Society',
-      description: 'Guidelines and Infographics',
-      route: 'https://www.safeairwaysociety.org/covid19/',
-    ),
-    HomeCard(
-      title: 'Intensive Care Society',
-      description: 'Wellbeing Guidelines',
-      route: 'https://www.ics.ac.uk/ICS/Education/Wellbeing/ICS/Wellbeing'
-          '.aspx',
-    ),
-    HomeCard(
-      title: 'Australian New Zealand Intensive Care Society',
-      description: 'COVID-19 Guidelines',
-      route: 'https://www.anzics.com.au/coronavirus-guidelines/',
-    ),
-    HomeCard(
-      title: 'Western Health Department of Anaesthesia',
-      description: 'Policies and procedures available on the microsite',
-      route: 'https://whcovid19.wixsite.com/covid19',
-    ),
-    HomeCard(
-      title: 'Western Health Novel Coronavirus Information',
-      description: 'COVID-19 Information',
-      route: 'https://coronavirus.wh.org.au/',
-    ),
-    HomeCard(
-      title: 'RNS ASCAR (Royal North Shore)',
-      description: 'Cognitive Aids and Inforgraphics',
-      route: 'https://www.rnsascar.com/',
-    ),
-    'Acknowledegements'
-  ];
   static const _thanksHtml = '''
   So many people have worked together to make this project happen, and helped out in so many ways 🥰
 <br/>
@@ -95,6 +58,7 @@ Those who have given helpful and timely advice, including Byron Teu.<br/>
 <b>Carlos Melegrito</b> - Design<br/>
 <b>Jinju Jang</b> - Design
   ''';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -116,56 +80,49 @@ Those who have given helpful and timely advice, including Byron Teu.<br/>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              ..._cards.map((e) {
-                if (e is HomeCard) {
-                  return ReusableCard.fromData(
-                    card: e,
-                    height: 48,
-                  );
-                }
-                return Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 24, 16, 0),
-                  child: Text(
-                    e.toString(),
-                    style: Styles.textH4,
-                  ),
-                );
-              }),
-              Padding(
-                padding: const EdgeInsets.only(top: 4),
-                child: ReusableCardBase(
-                  child: [
-                    HtmlWidget(
-                      _thanksHtml,
-                      hyperlinkColor: Styles.textH5Hyperlink.color,
-                      textStyle: Styles.textP,
-                    )
-                  ],
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.fromLTRB(0, 24, 16, 0),
-                child: Text(
-                  'Contributors',
-                  style: Styles.textH4,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 4),
-                child: ReusableCardBase(
-                  child: [
-                    HtmlWidget(
-                      _contributorsHtml,
-                      hyperlinkColor: Styles.textH5Hyperlink.color,
-                      textStyle: Styles.textP,
-                    )
-                  ],
-                ),
-              ),
+              const HtmlSectionCard(
+                  title: 'Acknowledgements', html: _thanksHtml),
+              const HtmlSectionCard(
+                  title: 'Contributors', html: _contributorsHtml)
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class HtmlSectionCard extends StatelessWidget {
+  final String title;
+  final String html;
+
+  const HtmlSectionCard({@required this.title, @required this.html});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 24, 16, 0),
+          child: Text(
+            title,
+            style: Styles.textH4,
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 4),
+          child: ReusableCardBase(
+            child: [
+              HtmlWidget(
+                html,
+                hyperlinkColor: Styles.textH5Hyperlink.color,
+                textStyle: Styles.textP,
+              )
+            ],
+          ),
+        )
+      ],
     );
   }
 }

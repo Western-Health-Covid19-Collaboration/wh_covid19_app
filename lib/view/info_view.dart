@@ -29,10 +29,16 @@ class InfoView extends StatelessWidget {
       routeTo: Routes.disclaimer,
     ),
     const ReusableCard(
-      title: Strings.informationAppAckRefTitle,
+      title: Strings.acknowledegementsTitle,
       height: _cardHeight,
       elevation: _cardElevation,
       routeTo: Routes.acknowledgements,
+    ),
+    const ReusableCard(
+      title: Strings.referencesTitle,
+      height: _cardHeight,
+      elevation: _cardElevation,
+      routeTo: Routes.references,
     ),
     const ReusableCard(
       title: Strings.informationAppThirdPartyTitle,

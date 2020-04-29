@@ -30,6 +30,7 @@ import 'view/ppe/ppe_off_guidance_method_2_infographic.dart';
 import 'view/ppe/ppe_on_guidance.dart';
 import 'view/ppe/ppe_on_infographic_page.dart';
 import 'view/ppe/ppe_view.dart';
+import 'view/reference_view.dart';
 import 'view/resources/additional_resources_view.dart';
 import 'view/resources/definitive_view.dart';
 import 'view/sbs_guide_view.dart';
@@ -61,6 +62,7 @@ class WHApp extends StatelessWidget {
         Routes.disclaimer: (context) => DisclaimerView(),
         Routes.licenses: (context) => LicenseView(),
         Routes.acknowledgements: (context) => AcknowledgementsView(),
+        Routes.references: (context) => ReferenceView(),
         Routes.additionalResources: (context) => AdditionalResourcesView(),
         Routes.definitiveResources: (context) => DefinitiveView()
       },
