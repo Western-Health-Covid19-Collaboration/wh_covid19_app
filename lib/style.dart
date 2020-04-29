@@ -107,7 +107,8 @@ abstract class Styles {
     fontFamily: fontFamily,
   );
 
-  static TextStyle textH4Light = Styles.textH4.merge(const TextStyle(color: Colors.white));
+  static TextStyle textH4Light =
+      Styles.textH4.merge(const TextStyle(color: Colors.white));
 
   static const TextStyle textH5 = TextStyle(
     color: AppColors.majorText,
