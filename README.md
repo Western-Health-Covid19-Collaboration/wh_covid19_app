@@ -69,7 +69,7 @@ In no particular order, the following people have contributed to building the pr
 * Fabien Dade - ICU registrar
 * Alice Gynther - Anaesthetist
 * Kim Nguyen - Flutter dev
-* Bramley - Flutter dev
+* Bramley Turner-Jones - Flutter dev
 * Suesi Tran - Flutter dev
 * June Chen - Flutter dev
 * Joshua Case - Flutter dev
