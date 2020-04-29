@@ -79,10 +79,10 @@ Those who have given helpful and timely advice, including Byron Teu.<br/>
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              const HtmlSectionCard(
+            children: const [
+               HtmlSectionCard(
                   title: 'Acknowledgements', html: _thanksHtml),
-              const HtmlSectionCard(
+               HtmlSectionCard(
                   title: 'Contributors', html: _contributorsHtml)
             ],
           ),

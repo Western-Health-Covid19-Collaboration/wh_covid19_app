@@ -67,7 +67,7 @@ class ReferenceView extends StatelessWidget {
                     children: [
                   Padding(
                     padding: _titlePadding,
-                    child: Text('References', style: Styles.textH4),
+                    child: const Text('References', style: Styles.textH4),
                   ),
                   ..._sections.map((e) =>
                       ReusableCard.fromData(card: e, height: _sectionHeight))
