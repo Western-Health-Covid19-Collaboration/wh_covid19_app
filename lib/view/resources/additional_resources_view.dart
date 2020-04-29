@@ -73,7 +73,7 @@ class AdditionalResourcesView extends StatelessWidget {
                           padding: const EdgeInsets.fromLTRB(0, 24, 16, 0),
                           child: Text(
                             e.toString(),
-                            style: Styles.textH4,
+                            style: Styles.textH4Light,
                           ));
                     }).toList()))));
   }

@@ -88,6 +88,6 @@ This app is designed to be used by the anaesthetist and critical care doctors at
       'volunteers';
 
   /// Resources
-  static const String definitiveResourcesTitle = 'WH Definitive Resources';
+  static const String whResourcesTitle = 'WH Resources';
   static const String additionalResourcesTitle = 'Additional Resources';
 }
