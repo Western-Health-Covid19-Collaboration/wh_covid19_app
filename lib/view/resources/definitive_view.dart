@@ -43,7 +43,7 @@ class DefinitiveView extends StatelessWidget {
         backgroundColor: AppColors.purple50,
         iconTheme: Styles.appBarIconTheme,
         title: const Text(
-          Strings.definitiveResourcesTitle,
+          Strings.whResourcesTitle,
           style: Styles.textH5,
         ),
       ),
