@@ -23,6 +23,7 @@ class Routes {
 
   // Info routes
   static const acknowledgements = '/acknowledgements';
+  static const references = '/references';
   static const licenses = '/licenses';
 
   // ICU routes
