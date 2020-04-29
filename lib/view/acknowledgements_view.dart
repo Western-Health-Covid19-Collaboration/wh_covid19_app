@@ -48,7 +48,7 @@ Those who have given helpful and timely advice, including Byron Teu.<br/>
 <b>Fabien Dade</b> - ICU Registrar<br/>
 <b>Alice Gynther</b> - Anaesthetist<br/>
 <b>Kim Nguyen</b> - Flutter Dev<br/>
-<b>Bramley</b> - Flutter Dev<br/>
+<b>Bramley Turner-Jones</b> - Flutter Dev<br/>
 <b>Suesi Tran</b> - Flutter Dev<br/>
 <b>June Chen</b> - Flutter Dev<br/>
 <b>Joshua Case</b> - Flutter Dev<br/>
@@ -80,10 +80,8 @@ Those who have given helpful and timely advice, including Byron Teu.<br/>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: const [
-               HtmlSectionCard(
-                  title: 'Acknowledgements', html: _thanksHtml),
-               HtmlSectionCard(
-                  title: 'Contributors', html: _contributorsHtml)
+              HtmlSectionCard(title: 'Acknowledgements', html: _thanksHtml),
+              HtmlSectionCard(title: 'Contributors', html: _contributorsHtml)
             ],
           ),
         ),
