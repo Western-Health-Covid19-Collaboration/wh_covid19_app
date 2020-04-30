@@ -70,7 +70,7 @@ class ReferenceView extends StatelessWidget {
                     child: const Text('References', style: Styles.textH4),
                   ),
                   ..._sections.map((e) =>
-                      ReusableCard.fromData(card: e, height: _sectionHeight))
+                      ReusableCard.fromData(card: e, height: _sectionHeight)),
                 ]))));
   }
 }

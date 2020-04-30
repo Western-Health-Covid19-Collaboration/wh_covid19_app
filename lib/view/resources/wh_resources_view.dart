@@ -5,9 +5,10 @@ import '../../strings.dart';
 import '../../style.dart';
 import '../../widget/reusable_card.dart';
 
-class DefinitiveView extends StatelessWidget {
+class WHResourcesView extends StatelessWidget {
   static const _cardHeight = 40.0;
   static const _cardElevation = 1.0;
+  static const _space = 16.0;
 
   final cards = <Widget>[
     ReusableCard(
@@ -30,7 +31,8 @@ class DefinitiveView extends StatelessWidget {
     ),
   ];
 
-  static Widget _buildSpacer({double height = 16}) => Container(height: height);
+  static Widget _buildSpacer({double height = _space}) =>
+      Container(height: height);
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +50,7 @@ class DefinitiveView extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(horizontal: _space),
         child: ListView(
           children: <Widget>[
             _buildSpacer(),

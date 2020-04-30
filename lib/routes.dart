@@ -49,6 +49,6 @@ class Routes {
 
   // Resources routes
   static const _resources = '/resources';
-  static const definitiveResources = '$_resources/definitive';
+  static const whResources = '$_resources/definitive';
   static const additionalResources = '$_resources/additional';
 }
