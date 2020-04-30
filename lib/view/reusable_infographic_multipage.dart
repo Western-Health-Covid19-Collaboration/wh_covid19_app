@@ -42,16 +42,15 @@ class _InfographicMultiPageState extends State<InfographicMultiPage> {
             ),
             Text(
               'Page ${_pageIndex + 1} of ${widget.imageUrls.length}',
-              style: Styles.textP,
+              style: Styles.textFooter,
             )
           ]),
           leading: IconButton(
-            icon: Icon(Icons.close),
-            onPressed: () => Navigator.of(context).pop(null),
-          ),
+              icon: Icon(Icons.close),
+              onPressed: () => Navigator.of(context).pop(null)),
         ),
-        body: PhotoViewGallery(
-          scrollPhysics: const BouncingScrollPhysics(),
+        body: Scrollbar(
+            child: PhotoViewGallery(
           pageOptions: widget.imageUrls
               .map((url) => PhotoViewGalleryPageOptions(
                   imageProvider: AssetImage(url),
@@ -66,6 +65,6 @@ class _InfographicMultiPageState extends State<InfographicMultiPage> {
               _pageIndex = index;
             });
           },
-        ));
+        )));
   }
 }
