@@ -170,17 +170,17 @@ class _HomePageState extends State<HomePage> {
                     children: <Widget>[
                       mainLogo,
                       const Spacer(),
-                      GestureDetector(
-                        onTap: () => InfoView.navigateTo(context),
-                        child: Icon(
-                          Icons.info_outline,
-                          size: 24,
-                          color: generateIconColor(
-                            AppColors.homeAppBarIcon,
-                            AppColors.appBarIcon,
-                            percentage,
-                          ),
-                        ),
+                      IconButton(
+                        constraints: const BoxConstraints.tightFor(
+                            width: 24, height: 24),
+                        padding: const EdgeInsets.all(0),
+                        icon: Icon(Icons.info_outline,
+                            color: generateIconColor(
+                              AppColors.homeAppBarIcon,
+                              AppColors.appBarIcon,
+                              percentage,
+                            )),
+                        onPressed: () => InfoView.navigateTo(context),
                       ),
                       const SizedBox(width: 16),
                       CallButton(whURL,
