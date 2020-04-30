@@ -76,7 +76,7 @@ const List<HomeCard> icu = [
 const List<HomeCard> resources = [
   HomeCard(
     title: Strings.whResourcesTitle,
-    route: Routes.definitiveResources,
+    route: Routes.whResources,
   ),
   HomeCard(
     title: Strings.additionalResourcesTitle,
