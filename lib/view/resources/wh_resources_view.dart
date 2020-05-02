@@ -11,19 +11,19 @@ class WHResourcesView extends StatelessWidget {
   static const _space = 16.0;
 
   final cards = <Widget>[
-    ReusableCard(
+    const ReusableCard(
       title: Strings.informationWhCoronaTitle,
       height: _cardHeight,
       elevation: _cardElevation,
       routeTo: whCoronavirusInfoURL,
     ),
-    ReusableCard(
+    const ReusableCard(
       title: Strings.informationWhAnaestheticTitle,
       height: _cardHeight,
       elevation: _cardElevation,
       routeTo: whAnaestheticMicrositeURL,
     ),
-    ReusableCard(
+    const ReusableCard(
       title: Strings.informationWhIcuTitle,
       height: _cardHeight,
       elevation: _cardElevation,
