@@ -66,7 +66,6 @@ class _HomePageState extends State<HomePage> {
                   (c) => ReusableCard.fromData(
                     card: c,
                     color: Colors.white,
-                    margin: const EdgeInsets.all(0.0),
                   ),
                 )
                 .toList(),
@@ -79,7 +78,6 @@ class _HomePageState extends State<HomePage> {
                   (c) => ReusableCard.fromData(
                     card: c,
                     color: AppColors.backgroundGreen,
-                    margin: const EdgeInsets.all(0.0),
                     height: 70,
                   ),
                 )
