@@ -5,10 +5,6 @@ import '../style.dart';
 import '../widget/switch_card.dart';
 
 class SettingsView extends StatelessWidget {
-  final EdgeInsets _contentPadding = const EdgeInsets.fromLTRB(16, 0, 16, 16);
-
-  static const _cardHeight = 40.0;
-  static const _cardElevation = 1.0;
   static const _space = 16.0;
 
   final cards = <Widget>[

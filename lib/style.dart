@@ -152,7 +152,16 @@ abstract class Styles {
     fontFamily: fontFamily,
   );
 
-  static const TextStyle textFooterHyperlink = TextStyle(
+  static const TextStyle subText = TextStyle(
+    height: 1.4,
+    color: AppColors.minorText,
+    fontWeight: FontWeight.normal,
+    fontSize: 13.0,
+    fontFamily: fontFamily,
+  );
+
+  static const TextStyle subtextHyperlink = TextStyle(
+    height: 1.4,
     color: Colors.blue,
     fontWeight: FontWeight.w600,
     fontSize: 13.0,

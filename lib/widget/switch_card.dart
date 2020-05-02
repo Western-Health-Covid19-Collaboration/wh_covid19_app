@@ -39,24 +39,30 @@ class _SwitchCardState extends State<SwitchCard> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Text(
-                  Strings.settingsPrivacyTitle,
-                  style: Styles.textP,
-                  overflow: TextOverflow.fade,
+              Expanded(
+                flex: 80,
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Text(
+                    Strings.settingsPrivacyTitle,
+                    style: Styles.textP,
+                    overflow: TextOverflow.fade,
+                  ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(right: 16.0),
-                child: CupertinoSwitch(
-                  activeColor: AppColors.backgroundGreen,
-                  value: _selected,
-                  onChanged: (bool value) {
-                    setState(() {
-                      _selected = value;
-                    });
-                  },
+              Expanded(
+                flex: 20,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 16.0),
+                  child: CupertinoSwitch(
+                    activeColor: AppColors.backgroundGreen,
+                    value: _selected,
+                    onChanged: (bool value) {
+                      setState(() {
+                        _selected = value;
+                      });
+                    },
+                  ),
                 ),
               ),
             ],
@@ -69,11 +75,11 @@ class _SwitchCardState extends State<SwitchCard> {
               children: [
                 const TextSpan(
                   text: 'The app gathers general usage information using ',
-                  style: Styles.textFooter,
+                  style: Styles.subText,
                 ),
                 TextSpan(
                   text: 'Google Analytics',
-                  style: Styles.textFooterHyperlink,
+                  style: Styles.subtextHyperlink,
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
                       launch(googleAnalyticsURL);
@@ -81,11 +87,11 @@ class _SwitchCardState extends State<SwitchCard> {
                 ),
                 const TextSpan(
                   text: ' alongside crash and error reporting via ',
-                  style: Styles.textFooter,
+                  style: Styles.subText,
                 ),
                 TextSpan(
                   text: 'Sentry',
-                  style: Styles.textFooterHyperlink,
+                  style: Styles.subtextHyperlink,
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
                       launch(sentryURL);
@@ -95,7 +101,7 @@ class _SwitchCardState extends State<SwitchCard> {
                   text: ' to help improve the app.\n\nNo personal identifiable'
                       ' information is gathered and you can opt out at any time'
                       ' with this setting.',
-                  style: Styles.textFooter,
+                  style: Styles.subText,
                 ),
               ],
             ),

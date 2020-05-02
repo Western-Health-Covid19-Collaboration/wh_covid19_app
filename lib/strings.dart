@@ -75,7 +75,7 @@ This app is designed to be used by the anaesthetist and critical care doctors at
 
   /// Information
   static const String settingsTitle = 'Privacy';
-  static const String settingsPrivacyTitle = 'Report usage and crash data';
+  static const String settingsPrivacyTitle = 'Report usage & crash data';
 
   static const String informationTitle = 'Information';
   static const String acknowledgementsTitle = 'Acknowledgements';
