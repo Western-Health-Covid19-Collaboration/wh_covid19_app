@@ -342,93 +342,147 @@ const List<IntubationChecklist> intubationChecklist = [
 ];
 const List<IntubationContent> intubationGuide = [
   IntubationContent(
-    'Planning',
+    'Activation',
     [
       IntubationSection(
         items: [
-          IntubationItem('Intervene early'),
-          IntubationItem('Negative pressure room', subtitle: 'If possible'),
-          IntubationItem('Meticulous airway assessment'),
-          IntubationItem('Discuss ventilation plan',
-              subtitle: 'Protective lung ventilation', icon: '💬'),
+          IntubationItem('Prior to activating Intubation team:',
+              subtitle:
+                  '• Clearly documented goals of care \n• Acute Resuscitation Plan (ARP)\n• Appropriate for intubation?',
+              icon: '💬'),
+          IntubationItem('Call EARLY for deteriorating patient review',
+              icon: '📞',
+              subtitle:
+                  'Clinical concern:\n • SaO2 <92% on 6l/M\n • Resp. distress or RR >24'),
+          IntubationItem('MET and code blue calls as per WH guidelines:',
+              icon: '🚨',
+              subtitle:
+                  '• ICU liaison nurses to escalate if required\n• Code blue - Intubation team if COVID high risk/confirmed'),
+//          IntubationItem('Discuss ventilation plan',
+//              subtitle: 'Protective lung ventilation', icon: '💬'),
         ],
       )
     ],
   ),
   IntubationContent(
-    'Prepare',
+    'Preparation',
     [
       IntubationSection(
+        name: 'Location',
         items: [
-          IntubationItem('Assemble airway team', subtitle: 'See checklist'),
-          IntubationItem('Allocate roles and share airway plan',
-              subtitle: 'See checklist'),
-          IntubationItem('Use COVID-19 Intubation tray',
-              subtitle: 'See checklist'),
           IntubationItem(
-              'Ensure viral filter and etCO2 in ventilation circuit'),
+              'Intubating team to decide if patient is stable enough for transfer'),
+          IntubationItem(
+            'Preference of Intubation location:',
+            subtitle:
+                '1. ICU NPR\n2. NPR in ED or other sites\n3. Designated COVID19 theatre\n4. ED rooms, ward rooms',
+          ),
         ],
-      )
-    ],
-  ),
-  IntubationContent(
-    'PPE',
-    [
+      ),
       IntubationSection(
+        name: 'PPE',
         items: [
-          IntubationItem('As per WH guidelines',
-              subtitle: 'See step-by-step guide'),
+          IntubationItem('Don AGE PPE prior to entering Intubation room',
+              icon: '🚨', subtitle: 'Follow step-by-step guide'),
           // ignore: prefer_single_quotes
           IntubationItem("“Buddy system” - use a Spotter", icon: '😊'),
-          IntubationItem('Airway operator, Assistant, Team Leader'),
-          IntubationItem('Airway operator consider double gloves'),
         ],
-      )
-    ],
-  ),
-  IntubationContent(
-    'Pre-oxygenation',
-    [
+      ),
       IntubationSection(
+        name: 'Staff Positioning',
         items: [
-          IntubationItem('45-degree head-up position'),
+          IntubationItem('Refer to SAS Infographic',
+              subtitle: ' available through PDF icon ↗️'),
+        ],
+      ),
+      IntubationSection(
+        name: 'Communication',
+        items: [
           IntubationItem(
-              'Stop high flow O2 via HFNP, NP, face mask or non-rebreather',
-              icon: '❌'),
-          IntubationItem('Use best-fitting face mask'),
-          IntubationItem('2-handed vice grip'),
-          IntubationItem('Ensure square etCO2 waveform'),
-          IntubationItem('Avoid manual bagging unless rescue oxygenation',
-              icon: '❌'),
+            'Support team will stand outside the anteroom',
+          ),
+          IntubationItem(
+            'Place any clean equipment required on "exchange trolley" inside the anteroom',
+          ),
+          IntubationItem(
+            'Use Walkie talkie or other means for communication',
+            icon: '📞',
+          ),
         ],
-      )
+      ),
     ],
   ),
   IntubationContent(
-    'Perform',
+    'Intubation',
     [
       IntubationSection(
-        name: 'Induction',
+        name: 'Preoxygenation',
         items: [
-          IntubationItem('Modified RSI technique'),
-          IntubationItem('Generous dosing of NMBA',
+          IntubationItem('Circuit osrder of Placement:',
               subtitle:
-                  '• Rocuronium >1.5mg/kg IBW or\n• Suxamethonium 1.5mg/kg IBW'),
-          IntubationItem('Minimise apnoea time while minimising risk of cough',
-              icon: '⚖'),
-          IntubationItem('Avoid ventilation unless rescue oxygenation',
-              icon: '❌'),
+                  ' • Mask\n • Filter\n • ETCO2\n • PEEP\n • Laerdal bag'),
+          IntubationItem(
+            'Tight fitting mask, with two-hand grip',
+          ),
+          IntubationItem(
+            '45° head up',
+          ),
+        ],
+      ),
+      IntubationSection(
+        name: 'Rapid sequence induction',
+        items: [
+          IntubationItem('Modified RSI technique',
+              subtitle:
+                  '• Rocuronium >1.5mg/kg IBW or\n• Suxamethonium 1.5mg/kg IBW\n• Wait 60s for paralysis'),
+          IntubationItem('Avoid routine cricoid pressure'),
+          IntubationItem(
+            'Avoid BMV during apnoea unless life threatening hypoxia',
+            icon: '⚖',
+          ),
         ],
       ),
       IntubationSection(
         name: 'Intubation',
         items: [
-          IntubationItem('Use Videolaryngoscope CMAC'),
-          IntubationItem('Indirect view'),
-          IntubationItem('Tube to correct depth 1st time',
-              subtitle: 'Cuff manometry not required'),
-          IntubationItem('Inflate cuff generously before ventilation',
-              subtitle: '10mls of air', icon: '🛑'),
+          IntubationItem('Use Videolaryngoscopy for 1st attempt',
+              subtitle: '• Indirect view'),
+          IntubationItem(' Size 8.0 ETT if available'),
+          IntubationItem('Cuff up with 10ml air prior to ventilating',
+              icon: '🛑'),
+          IntubationItem(
+            'Confirm ventilation:',
+            subtitle:
+                '• Capnography waveform\n• Chest movement\n• Auscultation',
+          ),
+          IntubationItem(
+            'If Plan A - Intubation fails:',
+            subtitle:
+                '• Plan B i-gel LMA\n• Plan C 2-handed BMV\n• Plan D Scalpel-bougie-tube',
+          ),
+        ],
+      )
+    ],
+  ),
+  IntubationContent(
+    'Transfer to ventilator',
+    [
+      IntubationSection(
+        items: [
+          IntubationItem('Ventilator preferences:',
+              subtitle:
+                  ' 1. ICU Marquet\n 2. ED Hamilton\n 3. ICU/Other Oxylog/Hamilton'),
+          IntubationItem(
+            'Circuit of Marquet to be prepared by ICU nurse',
+            subtitle:
+                '• SIMV + PS, volume control\n• Vt 6-8ml/kg IBW (often 400-500ml)\n• RR 12',
+          ),
+          IntubationItem('Airway doctor:',
+              subtitle:
+                  ' • Turn off O2 flow to self-inflating bag\n • Clam the ETT with a chest drain clamp\n • Disconnect ETT from HME\n • Connect prepared circuit to ETT\n • Unclamp ETT\n •Turn ventilator on\n • Commence ventilation\n • Sleek ETT connections '),
+          IntubationItem('ETCO2:',
+              subtitle:
+                  '• In ICU NPR: ETCO2 not part of ventilator circuit\n • In ED/Ward: ETCO2 should be part of circuit for transport'),
         ],
       )
     ],
@@ -438,11 +492,13 @@ const List<IntubationContent> intubationGuide = [
     [
       IntubationSection(
         items: [
-          IntubationItem('Consider NG tube and in-line suction'),
           IntubationItem(
-              'Remove outer gloves, dispose of airway equipment in sealed bag',
-              icon: '🛑'),
+              'Insert NG tube immediately post-intubation in the NPR'),
           IntubationItem('PPE removed as per WH guidelines', icon: '🛑'),
+          IntubationItem(
+            'Move patient to a COVID19 cubicle in ICU as soon as available',
+          ),
+          IntubationItem('Lines and CXR outside NPR'),
           IntubationItem('Debrief and share lessons', icon: '💬'),
         ],
       )
