@@ -100,24 +100,29 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                           ' for this.',
                           style: Styles.textH5,
                         ),
-                        Text.rich(TextSpan(children: [
-                          const TextSpan(
-                            text: '\n\nPlease refer to ',
-                            style: Styles.textH5,
-                          ),
+                        Text.rich(
                           TextSpan(
-                              text: whCoronavirusInfoURL,
-                              style: Styles.textH5Hyperlink,
-                              recognizer: TapGestureRecognizer()
-                                ..onTap = () {
-                                  launch(whCoronavirusInfoURL);
-                                }),
-                          const TextSpan(
-                            text:
-                                ' to ensure you have the latest up-to-date information on Western Health\'s Coronavirus guidelines.\n\n',
-                            style: Styles.textH5,
+                            children: [
+                              const TextSpan(
+                                text: '\n\nPlease refer to ',
+                                style: Styles.textH5,
+                              ),
+                              TextSpan(
+                                text: whCoronavirusInfoURL,
+                                style: Styles.textH5Hyperlink,
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {
+                                    launch(whCoronavirusInfoURL);
+                                  },
+                              ),
+                              const TextSpan(
+                                text:
+                                    ' to ensure you have the latest up-to-date information on Western Health\'s Coronavirus guidelines.\n\n',
+                                style: Styles.textH5,
+                              ),
+                            ],
                           ),
-                        ])),
+                        ),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[

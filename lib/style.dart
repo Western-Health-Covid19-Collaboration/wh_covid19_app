@@ -152,6 +152,13 @@ abstract class Styles {
     fontFamily: fontFamily,
   );
 
+  static const TextStyle textFooterHyperlink = TextStyle(
+    color: Colors.blue,
+    fontWeight: FontWeight.w600,
+    fontSize: 13.0,
+    fontFamily: fontFamily,
+  );
+
   static const TextStyle textCaption = TextStyle(
       color: AppColors.minorText,
       fontWeight: FontWeight.w600, // semi-bold
