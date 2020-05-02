@@ -37,7 +37,7 @@ abstract class AppColors {
   static const Color blue800 = Color.fromRGBO(68, 94, 131, 1.0);
   static const Color blue900 = Color.fromRGBO(52, 50, 92, 1.0);
   static const Color purple50 = Color.fromRGBO(197, 168, 200, 1.0);
-  static const Color purple500 = Color.fromRGBO(139, 81, 144, 1.0);
+  static const Color purple500 = Color.fromRGBO(158, 118, 161, 1.0);
   static const Color purple600 = Color.fromRGBO(120, 72, 127, 1.0);
   static const Color purple800 = Color.fromRGBO(74, 50, 86, 1.0);
   static const Color purple900 = Color.fromRGBO(46, 37, 61, 1.0);
@@ -106,6 +106,9 @@ abstract class Styles {
     fontSize: 22.0,
     fontFamily: fontFamily,
   );
+
+  static TextStyle textH4Light =
+      Styles.textH4.merge(const TextStyle(color: Colors.white));
 
   static const TextStyle textH5 = TextStyle(
     color: AppColors.majorText,

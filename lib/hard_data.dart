@@ -72,6 +72,18 @@ const List<HomeCard> icu = [
   ),
 ];
 
+// Resources
+const List<HomeCard> resources = [
+  HomeCard(
+    title: Strings.whResourcesTitle,
+    route: Routes.whResources,
+  ),
+  HomeCard(
+    title: Strings.additionalResourcesTitle,
+    route: Routes.additionalResources,
+  ),
+];
+
 /// Data for a screen that can be rendered with
 /// html_text_card_view_template.dart
 class HtmlTextScreenData {

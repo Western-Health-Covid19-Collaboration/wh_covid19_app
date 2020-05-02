@@ -4,9 +4,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../hard_data.dart';
 import '../strings.dart';
 import '../style.dart';
-import '../utils/color.dart';
 import '../utils/firebase.dart';
 import '../utils/system_bars.dart';
+import '../widget/call_button.dart';
 import '../widget/card_container.dart';
 import '../widget/reusable_card.dart';
 import 'info_view.dart';
@@ -98,6 +98,18 @@ class _HomePageState extends State<HomePage> {
                 .toList(),
             containerLayout: CardsLayout.threeDoubleRowBigTop,
           ),
+          CardContainer(
+            title: Strings.homeHeading4,
+            cards: resources
+                .map(
+                  (c) => ReusableCard.fromData(
+                    card: c,
+                    color: AppColors.purple50,
+                  ),
+                )
+                .toList(),
+            containerLayout: CardsLayout.twoRow,
+          ),
           // Make sure the bottom CardContainer has room to breathe.
           const SizedBox(height: 12),
         ],
@@ -156,18 +168,30 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       mainLogo,
-                      GestureDetector(
-                        onTap: () => InfoView.navigateTo(context),
-                        child: Icon(
+                      const Spacer(),
+                      IconButton(
+                        constraints: const BoxConstraints.tightFor(
+                            width: 24, height: 24),
+                        padding: const EdgeInsets.all(0),
+                        icon: Icon(
                           Icons.info_outline,
-                          size: 24,
                           color: generateIconColor(
                             AppColors.homeAppBarIcon,
                             AppColors.appBarIcon,
                             percentage,
                           ),
                         ),
-                      )
+                        onPressed: () => InfoView.navigateTo(context),
+                      ),
+                      const SizedBox(width: 16),
+                      CallButton(
+                        whURL,
+                        color: generateIconColor(
+                          AppColors.homeAppBarIcon,
+                          AppColors.appBarIcon,
+                          percentage,
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -178,6 +202,33 @@ class _HomePageState extends State<HomePage> {
         );
       },
     );
+  }
+
+  Color generateIconColor(
+      Color fromColor, Color toColor, double deltaPercentage) {
+    final fromRed = fromColor.red;
+    final fromGreen = fromColor.green;
+    final fromBlue = fromColor.blue;
+
+    final toRed = toColor.red;
+    final toGreen = toColor.green;
+    final toBlue = toColor.blue;
+
+    final deltaRed = (fromRed - toRed).abs();
+    final deltaGreen = (fromGreen - toGreen).abs();
+    final deltaBlue = (fromBlue - toBlue).abs();
+
+    final newRed = fromRed < toRed
+        ? fromRed + deltaRed * deltaPercentage
+        : fromRed - deltaRed * deltaPercentage;
+    final newGreen = fromGreen < toGreen
+        ? fromGreen + deltaGreen * deltaPercentage
+        : fromGreen - deltaGreen * deltaPercentage;
+    final newBlue = fromBlue < toGreen
+        ? fromBlue + deltaBlue * deltaPercentage
+        : fromBlue - deltaBlue * deltaPercentage;
+
+    return Color.fromRGBO(newRed.toInt(), newGreen.toInt(), newBlue.toInt(), 1);
   }
 
   @override

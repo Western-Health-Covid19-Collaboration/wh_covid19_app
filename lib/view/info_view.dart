@@ -9,7 +9,6 @@ import '../widget/reusable_card.dart';
 
 class InfoView extends StatelessWidget {
   static const _cardHeight = 40.0;
-  static const _cardColor = AppColors.purple50;
   static const _cardElevation = 1.0;
 
   static void navigateTo(BuildContext context) {
@@ -17,41 +16,6 @@ class InfoView extends StatelessWidget {
   }
 
   final cards = <Widget>[
-    ReusableCard(
-      title: Strings.informationWhCoronaTitle,
-      color: _cardColor,
-      height: _cardHeight,
-      elevation: _cardElevation,
-      routeTo: whCoronavirusInfoURL,
-    ),
-    ReusableCard(
-      title: Strings.informationWhAnaestheticTitle,
-      color: _cardColor,
-      height: _cardHeight,
-      elevation: _cardElevation,
-      routeTo: whAnaestheticMicrositeURL,
-    ),
-    ReusableCard(
-      title: Strings.informationWhIcuTitle,
-      color: _cardColor,
-      height: _cardHeight,
-      elevation: _cardElevation,
-      routeTo: whIcuMicrositeURL,
-    ),
-    _buildSpacer(),
-    ReusableCard(
-      title: Strings.informationWhContactsTitle,
-      height: _cardHeight,
-      elevation: _cardElevation,
-      routeTo: whURL,
-    ),
-    const ReusableCard(
-      title: Strings.additionalResourcesTitle,
-      height: _cardHeight,
-      elevation: _cardElevation,
-      routeTo: Routes.additionalResources,
-    ),
-    _buildSpacer(),
     ReusableCard(
       title: Strings.informationAppFeedbackTitle,
       height: _cardHeight,
@@ -65,10 +29,16 @@ class InfoView extends StatelessWidget {
       routeTo: Routes.disclaimer,
     ),
     const ReusableCard(
-      title: Strings.informationAppAckRefTitle,
+      title: Strings.acknowledegementsTitle,
       height: _cardHeight,
       elevation: _cardElevation,
       routeTo: Routes.acknowledgements,
+    ),
+    const ReusableCard(
+      title: Strings.referencesTitle,
+      height: _cardHeight,
+      elevation: _cardElevation,
+      routeTo: Routes.references,
     ),
     const ReusableCard(
       title: Strings.informationAppThirdPartyTitle,

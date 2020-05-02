@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../models/home_card.dart';
-import '../strings.dart';
-import '../style.dart';
-import '../widget/reusable_card.dart';
+import '../../models/home_card.dart';
+import '../../strings.dart';
+import '../../style.dart';
+import '../../widget/reusable_card.dart';
 
 class AdditionalResourcesView extends StatelessWidget {
   static const _cards = [
@@ -45,12 +45,12 @@ class AdditionalResourcesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppColors.appBackground,
+        backgroundColor: AppColors.backgroundPurple,
         appBar: AppBar(
           // Warning brightness interacts with SystemUiOverlayStyle
           // See system_bars.dart comments
           brightness: Brightness.light,
-          backgroundColor: AppColors.appBarBackground,
+          backgroundColor: AppColors.purple50,
           iconTheme: Styles.appBarIconTheme,
           title: const Text(
             Strings.additionalResourcesTitle,
@@ -73,7 +73,7 @@ class AdditionalResourcesView extends StatelessWidget {
                           padding: const EdgeInsets.fromLTRB(0, 24, 16, 0),
                           child: Text(
                             e.toString(),
-                            style: Styles.textH4,
+                            style: Styles.textH4Light,
                           ));
                     }).toList()))));
   }

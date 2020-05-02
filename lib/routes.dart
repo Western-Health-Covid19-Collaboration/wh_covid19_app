@@ -23,7 +23,7 @@ class Routes {
 
   // Info routes
   static const acknowledgements = '/acknowledgements';
-  static const additionalResources = '/additional_resources';
+  static const references = '/references';
   static const licenses = '/licenses';
 
   // ICU routes
@@ -46,4 +46,9 @@ class Routes {
   static const extubationGuidance = '/extubation/guidance';
   static const extubationGuidanceInfographic =
       '/extubation/guidance/infographic';
+
+  // Resources routes
+  static const _resources = '/resources';
+  static const whResources = '$_resources/definitive';
+  static const additionalResources = '$_resources/additional';
 }
