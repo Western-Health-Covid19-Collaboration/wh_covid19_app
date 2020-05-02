@@ -15,5 +15,5 @@ class IntubationSection {
 
 class IntubationItem {
   final String icon, title, subtitle;
-  const IntubationItem(this.title, {this.subtitle, this.icon = '✅'});
+  const IntubationItem(this.title, {this.subtitle, this.icon = '•'});
 }
