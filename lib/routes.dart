@@ -22,6 +22,7 @@ class Routes {
   static const sbsGuidance = '/sbs_guidance';
 
   // Info routes
+  static const settings = '/settings';
   static const acknowledgements = '/acknowledgements';
   static const references = '/references';
   static const licenses = '/licenses';

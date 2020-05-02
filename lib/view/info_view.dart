@@ -17,6 +17,12 @@ class InfoView extends StatelessWidget {
 
   final cards = <Widget>[
     ReusableCard(
+      title: Strings.settingsPrivacyTitle,
+      height: _cardHeight,
+      elevation: _cardElevation,
+      routeTo: Routes.settings,
+    ),
+    ReusableCard(
       title: Strings.informationAppFeedbackTitle,
       height: _cardHeight,
       elevation: _cardElevation,
@@ -29,7 +35,7 @@ class InfoView extends StatelessWidget {
       routeTo: Routes.disclaimer,
     ),
     const ReusableCard(
-      title: Strings.acknowledegementsTitle,
+      title: Strings.acknowledgementsTitle,
       height: _cardHeight,
       elevation: _cardElevation,
       routeTo: Routes.acknowledgements,

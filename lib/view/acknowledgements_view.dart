@@ -70,7 +70,7 @@ Those who have given helpful and timely advice, including Byron Teu.<br/>
         backgroundColor: AppColors.appBarBackground,
         iconTheme: Styles.appBarIconTheme,
         title: const Text(
-          Strings.acknowledegementsTitle,
+          Strings.acknowledgementsTitle,
           style: Styles.textH5,
         ),
       ),
