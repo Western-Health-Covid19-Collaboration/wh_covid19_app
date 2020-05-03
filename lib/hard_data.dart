@@ -369,9 +369,11 @@ const List<IntubationContent> intubationGuide = [
         name: 'Location',
         items: [
           IntubationItem(
-              'Intubating team to decide if patient is stable enough for transfer'),
+              'Intubating team to decide if patient is stable enough for transfer',
+              icon: '🤔'),
           IntubationItem(
             'Preference of Intubation location:',
+            icon: '🛏',
             subtitle:
                 '1. ICU NPR\n2. NPR in ED or other sites\n3. Designated COVID19 theatre\n4. ED rooms, ward rooms',
           ),
@@ -390,7 +392,7 @@ const List<IntubationContent> intubationGuide = [
         name: 'Staff Positioning',
         items: [
           IntubationItem('Refer to SAS Infographic',
-              subtitle: ' available through PDF icon ↗️'),
+              icon: '📄', subtitle: ' available through PDF icon ↗️'),
         ],
       ),
       IntubationSection(
@@ -398,9 +400,11 @@ const List<IntubationContent> intubationGuide = [
         items: [
           IntubationItem(
             'Support team will stand outside the anteroom',
+            icon: '👫',
           ),
           IntubationItem(
             'Place any clean equipment required on "exchange trolley" inside the anteroom',
+            icon: '🛒',
           ),
           IntubationItem(
             'Use Walkie talkie or other means for communication',
@@ -416,14 +420,17 @@ const List<IntubationContent> intubationGuide = [
       IntubationSection(
         name: 'Preoxygenation',
         items: [
-          IntubationItem('Circuit osrder of Placement:',
+          IntubationItem('Circuit order of Placement:',
+              icon: '🔢',
               subtitle:
                   ' • Mask\n • Filter\n • ETCO2\n • PEEP\n • Laerdal bag'),
           IntubationItem(
             'Tight fitting mask, with two-hand grip',
+            icon: '🤲',
           ),
           IntubationItem(
             '45° head up',
+            icon: '📐',
           ),
         ],
       ),
@@ -431,9 +438,10 @@ const List<IntubationContent> intubationGuide = [
         name: 'Rapid sequence induction',
         items: [
           IntubationItem('Modified RSI technique',
+              icon: '💉',
               subtitle:
                   '• Rocuronium >1.5mg/kg IBW or\n• Suxamethonium 1.5mg/kg IBW\n• Wait 60s for paralysis'),
-          IntubationItem('Avoid routine cricoid pressure'),
+          IntubationItem('Avoid routine cricoid pressure', icon: '🙅‍♀️'),
           IntubationItem(
             'Avoid BMV during apnoea unless life threatening hypoxia',
             icon: '⚖',
@@ -444,17 +452,19 @@ const List<IntubationContent> intubationGuide = [
         name: 'Intubation',
         items: [
           IntubationItem('Use Videolaryngoscopy for 1st attempt',
-              subtitle: '• Indirect view'),
-          IntubationItem(' Size 8.0 ETT if available'),
+              icon: '📷', subtitle: '• Indirect view'),
+          IntubationItem(' Size 8.0 ETT if available', icon: '📏'),
           IntubationItem('Cuff up with 10ml air prior to ventilating',
               icon: '🛑'),
           IntubationItem(
             'Confirm ventilation:',
+            icon: '📈',
             subtitle:
                 '• Capnography waveform\n• Chest movement\n• Auscultation',
           ),
           IntubationItem(
             'If Plan A - Intubation fails:',
+            icon: '🔤',
             subtitle:
                 '• Plan B i-gel LMA\n• Plan C 2-handed BMV\n• Plan D Scalpel-bougie-tube',
           ),
@@ -468,6 +478,7 @@ const List<IntubationContent> intubationGuide = [
       IntubationSection(
         items: [
           IntubationItem('Ventilator preferences:',
+              icon: '🌬',
               subtitle:
                   ' 1. ICU Marquet\n 2. ED Hamilton\n 3. ICU/Other Oxylog/Hamilton'),
           IntubationItem(
@@ -476,6 +487,7 @@ const List<IntubationContent> intubationGuide = [
                 '• SIMV + PS, volume control\n• Vt 6-8ml/kg IBW (often 400-500ml)\n• RR 12',
           ),
           IntubationItem('Airway doctor:',
+              icon: '👩‍⚕️',
               subtitle:
                   ' • Turn off O2 flow to self-inflating bag\n • Clam the ETT with a chest drain clamp\n • Disconnect ETT from HME\n • Connect prepared circuit to ETT\n • Unclamp ETT\n •Turn ventilator on\n • Commence ventilation\n • Sleek ETT connections '),
           IntubationItem('ETCO2:',
@@ -491,11 +503,12 @@ const List<IntubationContent> intubationGuide = [
       IntubationSection(
         items: [
           IntubationItem(
-              'Insert NG tube immediately post-intubation in the NPR'),
+              'Insert NG tube immediately post-intubation in the NPR',
+              icon: '👃'),
           IntubationItem('PPE removed as per WH guidelines', icon: '🛑'),
           IntubationItem(
-            'Move patient to a COVID19 cubicle in ICU as soon as available',
-          ),
+              'Move patient to a COVID19 cubicle in ICU as soon as available',
+              icon: '🚪'),
           IntubationItem('Lines and CXR outside NPR'),
           IntubationItem('Debrief and share lessons', icon: '💬'),
         ],
