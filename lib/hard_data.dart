@@ -1397,30 +1397,6 @@ const airwayAssessmentGuide = [
       )
     ],
   ),
-//  IntubationContent(
-//    'Assessment',
-//    [
-//      IntubationSection(
-//        name: 'History',
-//        items: [
-//          IntubationItem('Hx of difficult BMV/Intubation', icon: '👐'),
-//          IntubationItem('PMH - ?RA/Reflux/OSA', icon: '📜'),
-//          IntubationItem('HPC - burns/Airway swelling/trauma', icon: '🧨'),
-//        ],
-//      ),
-//      IntubationSection(
-//        name: 'Examination',
-//        items: [
-//          IntubationItem('Teeth/Dentition?', icon: '🦷'),
-//          IntubationItem('Mouth opening?', icon: '👄'),
-//          IntubationItem('Mallampati score'),
-//          IntubationItem('Thyromental distance'),
-//          IntubationItem('Neck extension'),
-//          IntubationItem('Chin - receding?'),
-//        ],
-//      ),
-//    ],
-//  ),
   ICUDailyRoundSteps(heading: 'Assessment', sections: [
     ICUDailyRoundStepSection(subsections: [
       ICUDailyRoundStepSubsection(heading: 'History', footer: '', list: [
@@ -1482,7 +1458,7 @@ const ventBasicsGuide = [
   ),
   ICUDailyRoundSteps(heading: 'Principles', sections: [
     ICUDailyRoundStepSection(
-        heading: 'Default Ventilator setting',
+        heading: 'Default Ventilator settings',
         subsections: [
           ICUDailyRoundStepSubsection(
               heading: 'Ventilator settings',
@@ -1496,533 +1472,317 @@ const ventBasicsGuide = [
                     title: 'Are all connections secured with sleek?'),
               ])
         ]),
-    ICUDailyRoundStepSection(heading: 'Plan', subsections: [
+    ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
       ICUDailyRoundStepSubsection(
-          heading: 'If planned for extubation:',
+          heading: 'If FiO2> 0.6 and PEEP 15 for 4-6 hours:',
           footer: '',
           list: [
-            ICUDailyRoundItem(icon: '⏰', title: 'When?'),
-            ICUDailyRoundItem(icon: '📍', title: 'Where?'),
-            ICUDailyRoundItem(icon: '💨', title: 'How? (see airway resources)'),
+            ICUDailyRoundItem(icon: '⏰', title: 'Senior Review'),
             ICUDailyRoundItem(
-                icon: '😮', title: 'Does ETT need advancing / withdrawing?'),
+                icon: '📍',
+                title:
+                    'Consider:\n • Secondary pathology\n • NM blockade\n • Diuresis\n • Recruitment manoeuvre\n • Prone positiiong'),
+          ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'CXR', subsections: [
+      ICUDailyRoundStepSubsection(
+          heading: 'CXR frequency - COVID patients',
+          footer: '',
+          list: [
+            ICUDailyRoundItem(icon: '⏰', title: 'Mon/Wed/Friday - routine'),
+            ICUDailyRoundItem(icon: '📍', title: 'If new CVC/NGT'),
+            ICUDailyRoundItem(
+                icon: '📍', title: 'If significant clinical change'),
           ])
     ])
-  ]),
-  IntubationContent(
-    'BLS',
-    [
-      IntubationSection(
-        items: [
-          IntubationItem('COMPRESSION ONLY CPR', icon: '👐'),
-          IntubationItem('Do NOT use airway adjuncts or ventilate with BMV',
-              icon: '☝️'),
-          IntubationItem('Apply Hudson mask at 10L O₂.', icon: '🌬'),
-        ],
-      )
-    ],
-  ),
-  ICUDailyRoundSteps(heading: 'ALS', sections: [
-    ICUDailyRoundStepSection(
-      subsections: [
-        ICUDailyRoundStepSubsection(
-          heading: 'Early Intubation',
-          list: [
-            ICUDailyRoundItem(
-                title: 'The most experienced operator needs to be present',
-                icon: '👩‍⚕️'),
-            ICUDailyRoundItem(
-                title: 'Use video laryngoscope',
-                icon: '📺',
-                subtitle:
-                    '• McGrath on Code Blue response trolley\n• Intubating anaesthetist will attend where possible'),
-            ICUDailyRoundItem(
-                title:
-                    'The viral filter MUST be placed on circuit closest to the airway device',
-                icon: '🦠'),
-            ICUDailyRoundItem(
-                title:
-                    'Follow the airway strategy as per Safe Airway Society/WH guidelines',
-                icon: '🛩'),
-            ICUDailyRoundItem(
-                title: 'If BMV required: 2 handed vice-like grip', icon: '👐'),
-          ],
-        )
-      ],
-    ),
   ]),
 ];
 
 const cvsBasicsGuide = [
   IntubationContent(
-    'Principles',
+    'Aims',
     [
       IntubationSection(
         items: [
-          IntubationItem('CPR is an Aerosol Generating Procedure (AGP)!',
-              icon: '🌬'),
-          IntubationItem('Your safety is a priority', icon: '☝️'),
-          IntubationItem(
-              'Do NOT enter the bed space until appropriate PPE applied',
-              icon: '😷'),
-          IntubationItem('Limit number of responders to essential staff only',
+          IntubationItem('SpO2: 92-96% (COVID-19/COPD):88-92% ', icon: '🌬'),
+          IntubationItem('PaO2> 55-60mmHg', icon: '☝️'),
+          IntubationItem('PaCO2 35-45mmHg or pH > 7.2', icon: '😷'),
+          IntubationItem('Normal / stable work od breathing / RR',
               icon: '👩‍⚕️'),
-          IntubationItem('Minimise interruptions to compressions', icon: '🤫'),
-          IntubationItem('Rhythm check at appropriate times', icon: '⏱'),
+          IntubationItem('I:E ratio 1:2', icon: '🤫'),
         ],
       )
     ],
   ),
-  ICUDailyRoundSteps(heading: 'PPE', sections: [
+  ICUDailyRoundSteps(heading: 'Principles', sections: [
     ICUDailyRoundStepSection(
-      subsections: [
-        ICUDailyRoundStepSubsection(
-          heading: 'For COVID-19 proven, suspected or unknown patients',
-          list: [
-            ICUDailyRoundItem(title: 'Full PPE including N95 mask', icon: '☣️'),
-          ],
-        )
-      ],
-    ),
-    ICUDailyRoundStepSection(subsections: [
+        heading: 'Default Ventilator settings',
+        subsections: [
+          ICUDailyRoundStepSubsection(
+              heading: 'Ventilator settings',
+              footer: '',
+              list: [
+                ICUDailyRoundItem(icon: '👀', title: 'SIMV VC'),
+                ICUDailyRoundItem(icon: '📍', title: 'FiO2 dependent on PEEP'),
+                ICUDailyRoundItem(icon: '🔍', title: 'Confirmed with CXR?'),
+                ICUDailyRoundItem(
+                    icon: '🔒',
+                    title: 'Are all connections secured with sleek?'),
+              ])
+        ]),
+    ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
       ICUDailyRoundStepSubsection(
-          heading: 'For non-COVID-19 patients',
+          heading: 'If FiO2> 0.6 and PEEP 15 for 4-6 hours:',
+          footer: '',
           list: [
+            ICUDailyRoundItem(icon: '⏰', title: 'Senior Review'),
             ICUDailyRoundItem(
-                title: 'Please use universal precautions', icon: '😷'),
-          ],
-          footer: 'Surgical mask, eye protection and gloves')
+                icon: '📍',
+                title:
+                    'Consider:\n • Secondary pathology\n • NM blockade\n • Diuresis\n • Recruitment manoeuvre\n • Prone positiiong'),
+          ])
     ]),
-    ICUDailyRoundStepSection(
-      subsections: [
-        ICUDailyRoundStepSubsection(
-          heading: 'If you are unsure',
+    ICUDailyRoundStepSection(heading: 'CXR', subsections: [
+      ICUDailyRoundStepSubsection(
+          heading: 'CXR frequency - COVID patients',
+          footer: '',
           list: [
-            ICUDailyRoundItem(title: 'Full PPE', icon: '☣️'),
-          ],
-        )
-      ],
-    )
-  ]),
-  IntubationContent(
-    'BLS',
-    [
-      IntubationSection(
-        items: [
-          IntubationItem('COMPRESSION ONLY CPR', icon: '👐'),
-          IntubationItem('Do NOT use airway adjuncts or ventilate with BMV',
-              icon: '☝️'),
-          IntubationItem('Apply Hudson mask at 10L O₂.', icon: '🌬'),
-        ],
-      )
-    ],
-  ),
-  ICUDailyRoundSteps(heading: 'ALS', sections: [
-    ICUDailyRoundStepSection(
-      subsections: [
-        ICUDailyRoundStepSubsection(
-          heading: 'Early Intubation',
-          list: [
+            ICUDailyRoundItem(icon: '⏰', title: 'Mon/Wed/Friday - routine'),
+            ICUDailyRoundItem(icon: '📍', title: 'If new CVC/NGT'),
             ICUDailyRoundItem(
-                title: 'The most experienced operator needs to be present',
-                icon: '👩‍⚕️'),
-            ICUDailyRoundItem(
-                title: 'Use video laryngoscope',
-                icon: '📺',
-                subtitle:
-                    '• McGrath on Code Blue response trolley\n• Intubating anaesthetist will attend where possible'),
-            ICUDailyRoundItem(
-                title:
-                    'The viral filter MUST be placed on circuit closest to the airway device',
-                icon: '🦠'),
-            ICUDailyRoundItem(
-                title:
-                    'Follow the airway strategy as per Safe Airway Society/WH guidelines',
-                icon: '🛩'),
-            ICUDailyRoundItem(
-                title: 'If BMV required: 2 handed vice-like grip', icon: '👐'),
-          ],
-        )
-      ],
-    ),
+                icon: '📍', title: 'If significant clinical change'),
+          ])
+    ])
   ]),
 ];
 
 const neuroBasicsGuide = [
   IntubationContent(
-    'Principles',
+    'Aims',
     [
       IntubationSection(
         items: [
-          IntubationItem('CPR is an Aerosol Generating Procedure (AGP)!',
-              icon: '🌬'),
-          IntubationItem('Your safety is a priority', icon: '☝️'),
-          IntubationItem(
-              'Do NOT enter the bed space until appropriate PPE applied',
-              icon: '😷'),
-          IntubationItem('Limit number of responders to essential staff only',
+          IntubationItem('SpO2: 92-96% (COVID-19/COPD):88-92% ', icon: '🌬'),
+          IntubationItem('PaO2> 55-60mmHg', icon: '☝️'),
+          IntubationItem('PaCO2 35-45mmHg or pH > 7.2', icon: '😷'),
+          IntubationItem('Normal / stable work od breathing / RR',
               icon: '👩‍⚕️'),
-          IntubationItem('Minimise interruptions to compressions', icon: '🤫'),
-          IntubationItem('Rhythm check at appropriate times', icon: '⏱'),
+          IntubationItem('I:E ratio 1:2', icon: '🤫'),
         ],
       )
     ],
   ),
-  ICUDailyRoundSteps(heading: 'PPE', sections: [
+  ICUDailyRoundSteps(heading: 'Principles', sections: [
     ICUDailyRoundStepSection(
-      subsections: [
-        ICUDailyRoundStepSubsection(
-          heading: 'For COVID-19 proven, suspected or unknown patients',
-          list: [
-            ICUDailyRoundItem(title: 'Full PPE including N95 mask', icon: '☣️'),
-          ],
-        )
-      ],
-    ),
-    ICUDailyRoundStepSection(subsections: [
+        heading: 'Default Ventilator settings',
+        subsections: [
+          ICUDailyRoundStepSubsection(
+              heading: 'Ventilator settings',
+              footer: '',
+              list: [
+                ICUDailyRoundItem(icon: '👀', title: 'SIMV VC'),
+                ICUDailyRoundItem(icon: '📍', title: 'FiO2 dependent on PEEP'),
+                ICUDailyRoundItem(icon: '🔍', title: 'Confirmed with CXR?'),
+                ICUDailyRoundItem(
+                    icon: '🔒',
+                    title: 'Are all connections secured with sleek?'),
+              ])
+        ]),
+    ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
       ICUDailyRoundStepSubsection(
-          heading: 'For non-COVID-19 patients',
+          heading: 'If FiO2> 0.6 and PEEP 15 for 4-6 hours:',
+          footer: '',
           list: [
+            ICUDailyRoundItem(icon: '⏰', title: 'Senior Review'),
             ICUDailyRoundItem(
-                title: 'Please use universal precautions', icon: '😷'),
-          ],
-          footer: 'Surgical mask, eye protection and gloves')
+                icon: '📍',
+                title:
+                    'Consider:\n • Secondary pathology\n • NM blockade\n • Diuresis\n • Recruitment manoeuvre\n • Prone positiiong'),
+          ])
     ]),
-    ICUDailyRoundStepSection(
-      subsections: [
-        ICUDailyRoundStepSubsection(
-          heading: 'If you are unsure',
+    ICUDailyRoundStepSection(heading: 'CXR', subsections: [
+      ICUDailyRoundStepSubsection(
+          heading: 'CXR frequency - COVID patients',
+          footer: '',
           list: [
-            ICUDailyRoundItem(title: 'Full PPE', icon: '☣️'),
-          ],
-        )
-      ],
-    )
-  ]),
-  IntubationContent(
-    'BLS',
-    [
-      IntubationSection(
-        items: [
-          IntubationItem('COMPRESSION ONLY CPR', icon: '👐'),
-          IntubationItem('Do NOT use airway adjuncts or ventilate with BMV',
-              icon: '☝️'),
-          IntubationItem('Apply Hudson mask at 10L O₂.', icon: '🌬'),
-        ],
-      )
-    ],
-  ),
-  ICUDailyRoundSteps(heading: 'ALS', sections: [
-    ICUDailyRoundStepSection(
-      subsections: [
-        ICUDailyRoundStepSubsection(
-          heading: 'Early Intubation',
-          list: [
+            ICUDailyRoundItem(icon: '⏰', title: 'Mon/Wed/Friday - routine'),
+            ICUDailyRoundItem(icon: '📍', title: 'If new CVC/NGT'),
             ICUDailyRoundItem(
-                title: 'The most experienced operator needs to be present',
-                icon: '👩‍⚕️'),
-            ICUDailyRoundItem(
-                title: 'Use video laryngoscope',
-                icon: '📺',
-                subtitle:
-                    '• McGrath on Code Blue response trolley\n• Intubating anaesthetist will attend where possible'),
-            ICUDailyRoundItem(
-                title:
-                    'The viral filter MUST be placed on circuit closest to the airway device',
-                icon: '🦠'),
-            ICUDailyRoundItem(
-                title:
-                    'Follow the airway strategy as per Safe Airway Society/WH guidelines',
-                icon: '🛩'),
-            ICUDailyRoundItem(
-                title: 'If BMV required: 2 handed vice-like grip', icon: '👐'),
-          ],
-        )
-      ],
-    ),
+                icon: '📍', title: 'If significant clinical change'),
+          ])
+    ])
   ]),
 ];
 
 const idBasicsGuide = [
   IntubationContent(
-    'Principles',
+    'Aims',
     [
       IntubationSection(
         items: [
-          IntubationItem('CPR is an Aerosol Generating Procedure (AGP)!',
-              icon: '🌬'),
-          IntubationItem('Your safety is a priority', icon: '☝️'),
-          IntubationItem(
-              'Do NOT enter the bed space until appropriate PPE applied',
-              icon: '😷'),
-          IntubationItem('Limit number of responders to essential staff only',
+          IntubationItem('SpO2: 92-96% (COVID-19/COPD):88-92% ', icon: '🌬'),
+          IntubationItem('PaO2> 55-60mmHg', icon: '☝️'),
+          IntubationItem('PaCO2 35-45mmHg or pH > 7.2', icon: '😷'),
+          IntubationItem('Normal / stable work od breathing / RR',
               icon: '👩‍⚕️'),
-          IntubationItem('Minimise interruptions to compressions', icon: '🤫'),
-          IntubationItem('Rhythm check at appropriate times', icon: '⏱'),
+          IntubationItem('I:E ratio 1:2', icon: '🤫'),
         ],
       )
     ],
   ),
-  ICUDailyRoundSteps(heading: 'PPE', sections: [
+  ICUDailyRoundSteps(heading: 'Principles', sections: [
     ICUDailyRoundStepSection(
-      subsections: [
-        ICUDailyRoundStepSubsection(
-          heading: 'For COVID-19 proven, suspected or unknown patients',
-          list: [
-            ICUDailyRoundItem(title: 'Full PPE including N95 mask', icon: '☣️'),
-          ],
-        )
-      ],
-    ),
-    ICUDailyRoundStepSection(subsections: [
+        heading: 'Default Ventilator settings',
+        subsections: [
+          ICUDailyRoundStepSubsection(
+              heading: 'Ventilator settings',
+              footer: '',
+              list: [
+                ICUDailyRoundItem(icon: '👀', title: 'SIMV VC'),
+                ICUDailyRoundItem(icon: '📍', title: 'FiO2 dependent on PEEP'),
+                ICUDailyRoundItem(icon: '🔍', title: 'Confirmed with CXR?'),
+                ICUDailyRoundItem(
+                    icon: '🔒',
+                    title: 'Are all connections secured with sleek?'),
+              ])
+        ]),
+    ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
       ICUDailyRoundStepSubsection(
-          heading: 'For non-COVID-19 patients',
+          heading: 'If FiO2> 0.6 and PEEP 15 for 4-6 hours:',
+          footer: '',
           list: [
+            ICUDailyRoundItem(icon: '⏰', title: 'Senior Review'),
             ICUDailyRoundItem(
-                title: 'Please use universal precautions', icon: '😷'),
-          ],
-          footer: 'Surgical mask, eye protection and gloves')
+                icon: '📍',
+                title:
+                    'Consider:\n • Secondary pathology\n • NM blockade\n • Diuresis\n • Recruitment manoeuvre\n • Prone positiiong'),
+          ])
     ]),
-    ICUDailyRoundStepSection(
-      subsections: [
-        ICUDailyRoundStepSubsection(
-          heading: 'If you are unsure',
+    ICUDailyRoundStepSection(heading: 'CXR', subsections: [
+      ICUDailyRoundStepSubsection(
+          heading: 'CXR frequency - COVID patients',
+          footer: '',
           list: [
-            ICUDailyRoundItem(title: 'Full PPE', icon: '☣️'),
-          ],
-        )
-      ],
-    )
-  ]),
-  IntubationContent(
-    'BLS',
-    [
-      IntubationSection(
-        items: [
-          IntubationItem('COMPRESSION ONLY CPR', icon: '👐'),
-          IntubationItem('Do NOT use airway adjuncts or ventilate with BMV',
-              icon: '☝️'),
-          IntubationItem('Apply Hudson mask at 10L O₂.', icon: '🌬'),
-        ],
-      )
-    ],
-  ),
-  ICUDailyRoundSteps(heading: 'ALS', sections: [
-    ICUDailyRoundStepSection(
-      subsections: [
-        ICUDailyRoundStepSubsection(
-          heading: 'Early Intubation',
-          list: [
+            ICUDailyRoundItem(icon: '⏰', title: 'Mon/Wed/Friday - routine'),
+            ICUDailyRoundItem(icon: '📍', title: 'If new CVC/NGT'),
             ICUDailyRoundItem(
-                title: 'The most experienced operator needs to be present',
-                icon: '👩‍⚕️'),
-            ICUDailyRoundItem(
-                title: 'Use video laryngoscope',
-                icon: '📺',
-                subtitle:
-                    '• McGrath on Code Blue response trolley\n• Intubating anaesthetist will attend where possible'),
-            ICUDailyRoundItem(
-                title:
-                    'The viral filter MUST be placed on circuit closest to the airway device',
-                icon: '🦠'),
-            ICUDailyRoundItem(
-                title:
-                    'Follow the airway strategy as per Safe Airway Society/WH guidelines',
-                icon: '🛩'),
-            ICUDailyRoundItem(
-                title: 'If BMV required: 2 handed vice-like grip', icon: '👐'),
-          ],
-        )
-      ],
-    ),
+                icon: '📍', title: 'If significant clinical change'),
+          ])
+    ])
   ]),
 ];
 const renalBasicsGuide = [
   IntubationContent(
-    'Principles',
+    'Aims',
     [
       IntubationSection(
         items: [
-          IntubationItem('CPR is an Aerosol Generating Procedure (AGP)!',
-              icon: '🌬'),
-          IntubationItem('Your safety is a priority', icon: '☝️'),
-          IntubationItem(
-              'Do NOT enter the bed space until appropriate PPE applied',
-              icon: '😷'),
-          IntubationItem('Limit number of responders to essential staff only',
+          IntubationItem('SpO2: 92-96% (COVID-19/COPD):88-92% ', icon: '🌬'),
+          IntubationItem('PaO2> 55-60mmHg', icon: '☝️'),
+          IntubationItem('PaCO2 35-45mmHg or pH > 7.2', icon: '😷'),
+          IntubationItem('Normal / stable work od breathing / RR',
               icon: '👩‍⚕️'),
-          IntubationItem('Minimise interruptions to compressions', icon: '🤫'),
-          IntubationItem('Rhythm check at appropriate times', icon: '⏱'),
+          IntubationItem('I:E ratio 1:2', icon: '🤫'),
         ],
       )
     ],
   ),
-  ICUDailyRoundSteps(heading: 'PPE', sections: [
+  ICUDailyRoundSteps(heading: 'Principles', sections: [
     ICUDailyRoundStepSection(
-      subsections: [
-        ICUDailyRoundStepSubsection(
-          heading: 'For COVID-19 proven, suspected or unknown patients',
-          list: [
-            ICUDailyRoundItem(title: 'Full PPE including N95 mask', icon: '☣️'),
-          ],
-        )
-      ],
-    ),
-    ICUDailyRoundStepSection(subsections: [
+        heading: 'Default Ventilator settings',
+        subsections: [
+          ICUDailyRoundStepSubsection(
+              heading: 'Ventilator settings',
+              footer: '',
+              list: [
+                ICUDailyRoundItem(icon: '👀', title: 'SIMV VC'),
+                ICUDailyRoundItem(icon: '📍', title: 'FiO2 dependent on PEEP'),
+                ICUDailyRoundItem(icon: '🔍', title: 'Confirmed with CXR?'),
+                ICUDailyRoundItem(
+                    icon: '🔒',
+                    title: 'Are all connections secured with sleek?'),
+              ])
+        ]),
+    ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
       ICUDailyRoundStepSubsection(
-          heading: 'For non-COVID-19 patients',
+          heading: 'If FiO2> 0.6 and PEEP 15 for 4-6 hours:',
+          footer: '',
           list: [
+            ICUDailyRoundItem(icon: '⏰', title: 'Senior Review'),
             ICUDailyRoundItem(
-                title: 'Please use universal precautions', icon: '😷'),
-          ],
-          footer: 'Surgical mask, eye protection and gloves')
+                icon: '📍',
+                title:
+                    'Consider:\n • Secondary pathology\n • NM blockade\n • Diuresis\n • Recruitment manoeuvre\n • Prone positiiong'),
+          ])
     ]),
-    ICUDailyRoundStepSection(
-      subsections: [
-        ICUDailyRoundStepSubsection(
-          heading: 'If you are unsure',
+    ICUDailyRoundStepSection(heading: 'CXR', subsections: [
+      ICUDailyRoundStepSubsection(
+          heading: 'CXR frequency - COVID patients',
+          footer: '',
           list: [
-            ICUDailyRoundItem(title: 'Full PPE', icon: '☣️'),
-          ],
-        )
-      ],
-    )
-  ]),
-  IntubationContent(
-    'BLS',
-    [
-      IntubationSection(
-        items: [
-          IntubationItem('COMPRESSION ONLY CPR', icon: '👐'),
-          IntubationItem('Do NOT use airway adjuncts or ventilate with BMV',
-              icon: '☝️'),
-          IntubationItem('Apply Hudson mask at 10L O₂.', icon: '🌬'),
-        ],
-      )
-    ],
-  ),
-  ICUDailyRoundSteps(heading: 'ALS', sections: [
-    ICUDailyRoundStepSection(
-      subsections: [
-        ICUDailyRoundStepSubsection(
-          heading: 'Early Intubation',
-          list: [
+            ICUDailyRoundItem(icon: '⏰', title: 'Mon/Wed/Friday - routine'),
+            ICUDailyRoundItem(icon: '📍', title: 'If new CVC/NGT'),
             ICUDailyRoundItem(
-                title: 'The most experienced operator needs to be present',
-                icon: '👩‍⚕️'),
-            ICUDailyRoundItem(
-                title: 'Use video laryngoscope',
-                icon: '📺',
-                subtitle:
-                    '• McGrath on Code Blue response trolley\n• Intubating anaesthetist will attend where possible'),
-            ICUDailyRoundItem(
-                title:
-                    'The viral filter MUST be placed on circuit closest to the airway device',
-                icon: '🦠'),
-            ICUDailyRoundItem(
-                title:
-                    'Follow the airway strategy as per Safe Airway Society/WH guidelines',
-                icon: '🛩'),
-            ICUDailyRoundItem(
-                title: 'If BMV required: 2 handed vice-like grip', icon: '👐'),
-          ],
-        )
-      ],
-    ),
+                icon: '📍', title: 'If significant clinical change'),
+          ])
+    ])
   ]),
 ];
 
 const gitBasicsGuide = [
   IntubationContent(
-    'Principles',
+    'Aims',
     [
       IntubationSection(
         items: [
-          IntubationItem('CPR is an Aerosol Generating Procedure (AGP)!',
-              icon: '🌬'),
-          IntubationItem('Your safety is a priority', icon: '☝️'),
-          IntubationItem(
-              'Do NOT enter the bed space until appropriate PPE applied',
-              icon: '😷'),
-          IntubationItem('Limit number of responders to essential staff only',
+          IntubationItem('SpO2: 92-96% (COVID-19/COPD):88-92% ', icon: '🌬'),
+          IntubationItem('PaO2> 55-60mmHg', icon: '☝️'),
+          IntubationItem('PaCO2 35-45mmHg or pH > 7.2', icon: '😷'),
+          IntubationItem('Normal / stable work od breathing / RR',
               icon: '👩‍⚕️'),
-          IntubationItem('Minimise interruptions to compressions', icon: '🤫'),
-          IntubationItem('Rhythm check at appropriate times', icon: '⏱'),
+          IntubationItem('I:E ratio 1:2', icon: '🤫'),
         ],
       )
     ],
   ),
-  ICUDailyRoundSteps(heading: 'PPE', sections: [
+  ICUDailyRoundSteps(heading: 'Principles', sections: [
     ICUDailyRoundStepSection(
-      subsections: [
-        ICUDailyRoundStepSubsection(
-          heading: 'For COVID-19 proven, suspected or unknown patients',
-          list: [
-            ICUDailyRoundItem(title: 'Full PPE including N95 mask', icon: '☣️'),
-          ],
-        )
-      ],
-    ),
-    ICUDailyRoundStepSection(subsections: [
+        heading: 'Default Ventilator settings',
+        subsections: [
+          ICUDailyRoundStepSubsection(
+              heading: 'Ventilator settings',
+              footer: '',
+              list: [
+                ICUDailyRoundItem(icon: '👀', title: 'SIMV VC'),
+                ICUDailyRoundItem(icon: '📍', title: 'FiO2 dependent on PEEP'),
+                ICUDailyRoundItem(icon: '🔍', title: 'Confirmed with CXR?'),
+                ICUDailyRoundItem(
+                    icon: '🔒',
+                    title: 'Are all connections secured with sleek?'),
+              ])
+        ]),
+    ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
       ICUDailyRoundStepSubsection(
-          heading: 'For non-COVID-19 patients',
+          heading: 'If FiO2> 0.6 and PEEP 15 for 4-6 hours:',
+          footer: '',
           list: [
+            ICUDailyRoundItem(icon: '⏰', title: 'Senior Review'),
             ICUDailyRoundItem(
-                title: 'Please use universal precautions', icon: '😷'),
-          ],
-          footer: 'Surgical mask, eye protection and gloves')
+                icon: '📍',
+                title:
+                    'Consider:\n • Secondary pathology\n • NM blockade\n • Diuresis\n • Recruitment manoeuvre\n • Prone positiiong'),
+          ])
     ]),
-    ICUDailyRoundStepSection(
-      subsections: [
-        ICUDailyRoundStepSubsection(
-          heading: 'If you are unsure',
+    ICUDailyRoundStepSection(heading: 'CXR', subsections: [
+      ICUDailyRoundStepSubsection(
+          heading: 'CXR frequency - COVID patients',
+          footer: '',
           list: [
-            ICUDailyRoundItem(title: 'Full PPE', icon: '☣️'),
-          ],
-        )
-      ],
-    )
-  ]),
-  IntubationContent(
-    'BLS',
-    [
-      IntubationSection(
-        items: [
-          IntubationItem('COMPRESSION ONLY CPR', icon: '👐'),
-          IntubationItem('Do NOT use airway adjuncts or ventilate with BMV',
-              icon: '☝️'),
-          IntubationItem('Apply Hudson mask at 10L O₂.', icon: '🌬'),
-        ],
-      )
-    ],
-  ),
-  ICUDailyRoundSteps(heading: 'ALS', sections: [
-    ICUDailyRoundStepSection(
-      subsections: [
-        ICUDailyRoundStepSubsection(
-          heading: 'Early Intubation',
-          list: [
+            ICUDailyRoundItem(icon: '⏰', title: 'Mon/Wed/Friday - routine'),
+            ICUDailyRoundItem(icon: '📍', title: 'If new CVC/NGT'),
             ICUDailyRoundItem(
-                title: 'The most experienced operator needs to be present',
-                icon: '👩‍⚕️'),
-            ICUDailyRoundItem(
-                title: 'Use video laryngoscope',
-                icon: '📺',
-                subtitle:
-                    '• McGrath on Code Blue response trolley\n• Intubating anaesthetist will attend where possible'),
-            ICUDailyRoundItem(
-                title:
-                    'The viral filter MUST be placed on circuit closest to the airway device',
-                icon: '🦠'),
-            ICUDailyRoundItem(
-                title:
-                    'Follow the airway strategy as per Safe Airway Society/WH guidelines',
-                icon: '🛩'),
-            ICUDailyRoundItem(
-                title: 'If BMV required: 2 handed vice-like grip', icon: '👐'),
-          ],
-        )
-      ],
-    ),
+                icon: '📍', title: 'If significant clinical change'),
+          ])
+    ])
   ]),
 ];
