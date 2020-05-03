@@ -54,7 +54,6 @@ class ReusableCardBase extends StatelessWidget {
     final col = Column(
       mainAxisAlignment: verticalAlignment,
       crossAxisAlignment: CrossAxisAlignment.start,
-      //mainAxisSize: MainAxisSize.min,
       children: child,
     );
     void Function() onTap;

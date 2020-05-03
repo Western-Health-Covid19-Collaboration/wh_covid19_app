@@ -1,6 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../constants.dart';
+import '../models/disclaimer_model.dart';
 import '../strings.dart';
 
 /// Persistent Storage on device read/write
@@ -12,10 +13,10 @@ import '../strings.dart';
 /// persistent storage as devices have slow storage speeds.
 
 class Settings {
-  static Future<bool> readDisclaimerAgreed() async {
-    final sharedPrefs = await SharedPreferences.getInstance();
-    return sharedPrefs.getBool(Constants.settingDisclaimerAgreed) ?? false;
-  }
+//  static Future<bool> readDisclaimerAgreed() async {
+//    final sharedPrefs = await SharedPreferences.getInstance();
+//    return sharedPrefs.getBool(Constants.settingDisclaimerAgreed) ?? false;
+//  }
 
   static Future<String> readDisclaimerVersion() async {
     final sharedPrefs = await SharedPreferences.getInstance();
@@ -26,6 +27,20 @@ class Settings {
     final sharedPrefs = await SharedPreferences.getInstance();
     return sharedPrefs.getString(Constants.settingDisclaimerAgreedDateTime) ??
         '';
+  }
+
+  static Future<DisclaimerDetails> readDisclaimerAgreed() async {
+    final sharedPrefs = await SharedPreferences.getInstance();
+    final disclaimerDetails = DisclaimerDetails();
+
+    disclaimerDetails.agreed =
+        sharedPrefs.getBool(Constants.settingDisclaimerAgreed) ?? false;
+    disclaimerDetails.version =
+        sharedPrefs.getString(Constants.settingDisclaimerVersion) ?? '0';
+    disclaimerDetails.dateStamp =
+        sharedPrefs.getString(Constants.settingDisclaimerAgreedDateTime) ?? '';
+
+    return disclaimerDetails;
   }
 
   static Future<void> writeDisclaimerAgreed() async {
