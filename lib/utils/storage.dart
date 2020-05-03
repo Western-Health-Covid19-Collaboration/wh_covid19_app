@@ -1,6 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../constants.dart';
+import '../strings.dart';
 
 /// Persistent Storage on device read/write
 /// Read Settings values at app startup and set app state for these values
@@ -19,5 +20,20 @@ class Settings {
   static Future<String> readDisclaimerVersion() async {
     final sharedPrefs = await SharedPreferences.getInstance();
     return sharedPrefs.getString(Constants.settingDisclaimerVersion) ?? '0';
+  }
+
+  static Future<String> readDisclaimerAgreedDateTime() async {
+    final sharedPrefs = await SharedPreferences.getInstance();
+    return sharedPrefs.getString(Constants.settingDisclaimerAgreedDateTime) ??
+        '';
+  }
+
+  static Future<void> writeDisclaimerAgreed() async {
+    final sharedPrefs = await SharedPreferences.getInstance();
+    await sharedPrefs.setBool(Constants.settingDisclaimerAgreed, true);
+    await sharedPrefs.setString(
+        Constants.settingDisclaimerVersion, Strings.disclaimerCurrentVersion);
+    await sharedPrefs.setString(
+        Constants.settingDisclaimerAgreedDateTime, DateTime.now().toString());
   }
 }

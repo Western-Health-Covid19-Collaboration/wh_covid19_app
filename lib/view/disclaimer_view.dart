@@ -1,15 +1,14 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../constants.dart';
 import '../hard_data.dart';
 import '../models/disclaimer_model.dart';
 import '../routes.dart';
 import '../strings.dart';
 import '../style.dart';
+import '../utils/storage.dart';
 import '../utils/system_bars.dart';
 
 // *** WARNING ***
@@ -21,29 +20,18 @@ class DisclaimerView extends StatefulWidget {
 }
 
 class _DisclaimerViewState extends State<DisclaimerView> {
-  // When user agrees to disclaimer, persist values for that agreement, version of disclaimer and date/time to storage
-  Future<void> _setAgreed() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool(Constants.settingDisclaimerAgreed, true);
-    await prefs.setString(
-        Constants.settingDisclaimerVersion, Strings.disclaimerCurrentVersion);
-    await prefs.setString(
-        Constants.settingDisclaimerAgreedDateTime, DateTime.now().toString());
-  }
-
   // Check persisted values for disclaimer agreement if they exist
-  Future<DisclaimerDetails> _getAgreed() async {
-    final prefs = await SharedPreferences.getInstance();
+  Future<DisclaimerDetails> _checkDisclaimerAgreed() async {
+    //final prefs = await SharedPreferences.getInstance();
     final disclaimerValues = DisclaimerDetails();
 
-    disclaimerValues.agreed =
-        prefs.getBool(Constants.settingDisclaimerAgreed) ?? false;
-    // Disclaimer version flag starts at '1' normally
-    disclaimerValues.version =
-        prefs.getString(Constants.settingDisclaimerVersion) ?? '0';
+    // Read any storage persisted values
+    disclaimerValues.agreed = await Settings.readDisclaimerAgreed();
+    disclaimerValues.version = await Settings.readDisclaimerVersion();
+    disclaimerValues.dateStamp = await Settings.readDisclaimerAgreedDateTime();
 
-    final dateStamp =
-        prefs.getString(Constants.settingDisclaimerAgreedDateTime) ?? '';
+    // Format the datStamp to be more user readable
+    final dateStamp = await Settings.readDisclaimerAgreedDateTime();
     if (dateStamp != '') {
       disclaimerValues.dateStamp =
           DateFormat.yMMMd().add_jm().format(DateTime.parse(dateStamp));
@@ -213,7 +201,7 @@ class _DisclaimerViewState extends State<DisclaimerView> {
         ),
         onPressed: () {
           // Write agreement of disclaimer to device storage to persist this decision
-          _setAgreed();
+          Settings.writeDisclaimerAgreed();
           // Make sure user cannot press back to return to the disclaimer once accepted
           Navigator.pushReplacementNamed(context, Routes.home);
         },
@@ -241,7 +229,7 @@ class _DisclaimerViewState extends State<DisclaimerView> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<DisclaimerDetails>(
-      future: _getAgreed(),
+      future: _checkDisclaimerAgreed(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           // AnnotatedRegion set the system bar styles
