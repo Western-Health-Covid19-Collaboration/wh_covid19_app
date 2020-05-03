@@ -426,7 +426,7 @@ const List<IntubationContent> intubationGuide = [
                   ' • Mask\n • Filter\n • ETCO2\n • PEEP\n • Laerdal bag'),
           IntubationItem(
             'Tight fitting mask, with two-hand grip',
-            icon: '🤲',
+            icon: '✊',
           ),
           IntubationItem(
             '45° head up',
@@ -452,7 +452,7 @@ const List<IntubationContent> intubationGuide = [
         name: 'Intubation',
         items: [
           IntubationItem('Use Videolaryngoscopy for 1st attempt',
-              icon: '📷', subtitle: '• Indirect view'),
+              icon: '📺', subtitle: '• Indirect view'),
           IntubationItem(' Size 8.0 ETT if available', icon: '📏'),
           IntubationItem('Cuff up with 10ml air prior to ventilating',
               icon: '🛑'),
@@ -483,6 +483,7 @@ const List<IntubationContent> intubationGuide = [
                   ' 1. ICU Marquet\n 2. ED Hamilton\n 3. ICU/Other Oxylog/Hamilton'),
           IntubationItem(
             'Circuit of Marquet to be prepared by ICU nurse',
+            icon: '⚙️',
             subtitle:
                 '• SIMV + PS, volume control\n• Vt 6-8ml/kg IBW (often 400-500ml)\n• RR 12',
           ),
@@ -491,6 +492,7 @@ const List<IntubationContent> intubationGuide = [
               subtitle:
                   ' • Turn off O2 flow to self-inflating bag\n • Clam the ETT with a chest drain clamp\n • Disconnect ETT from HME\n • Connect prepared circuit to ETT\n • Unclamp ETT\n •Turn ventilator on\n • Commence ventilation\n • Sleek ETT connections '),
           IntubationItem('ETCO2:',
+              icon: '🌊',
               subtitle:
                   '• In ICU NPR: ETCO2 not part of ventilator circuit\n • In ED/Ward: ETCO2 should be part of circuit for transport'),
         ],
@@ -509,7 +511,7 @@ const List<IntubationContent> intubationGuide = [
           IntubationItem(
               'Move patient to a COVID19 cubicle in ICU as soon as available',
               icon: '🚪'),
-          IntubationItem('Lines and CXR outside NPR'),
+          IntubationItem('Lines and CXR outside NPR', icon: '💉'),
           IntubationItem('Debrief and share lessons', icon: '💬'),
         ],
       )
@@ -523,9 +525,10 @@ const List<IntubationContent> extubationGuide = [
     [
       IntubationSection(
         items: [
-          IntubationItem('Is patient clinically stable to extubate now?'),
+          IntubationItem('Is patient clinically stable to extubate now?',
+              icon: '❓'),
           IntubationItem('Assemble team',
-              subtitle: 'Anaesthetists and anaesthetic nurse ONLY'),
+              icon: '👫', subtitle: 'Anaesthetists and anaesthetic nurse ONLY'),
           IntubationItem('Discuss extubation plan', icon: '💬'),
           IntubationItem(
               'Consider strategies to reduce coughing if you are familiar with them',
@@ -560,7 +563,7 @@ const List<IntubationContent> extubationGuide = [
       IntubationSection(
         items: [
           IntubationItem('All staff in the room must wear FULL PPE',
-              subtitle: 'Including N95 mask and eye protection'),
+              icon: '⚠️', subtitle: 'Including N95 mask and eye protection'),
           IntubationItem(
               'Buddy check each other PPE prior to performing extubation',
               icon: '😊'),
@@ -574,16 +577,19 @@ const List<IntubationContent> extubationGuide = [
       IntubationSection(
         items: [
           IntubationItem('Extubate patient with cuff down and APL fully open',
-              subtitle: 'NO positive pressure'),
+              icon: '🎚', subtitle: 'NO positive pressure'),
           IntubationItem('Carefully discard ETT into clinical waste bin',
               icon: '🚮'),
           IntubationItem(
               'Immediately apply face mask to patient with 2 hand grip',
+              icon: '😷',
               subtitle: 'Over nasal prongs if present'),
           IntubationItem(
-              'Continue to apply face mask until able to protect their own airway'),
+              'Continue to apply face mask until able to protect their own airway',
+              icon: '⏳'),
           IntubationItem(
-              'Switch to Hudson or nasal prongs O2 with a surgical mask over the top'),
+              'Switch to Hudson or nasal prongs O2 with a surgical mask over the top',
+              icon: '👃'),
         ],
       )
     ],
