@@ -67,6 +67,13 @@ This app is designed to be used by the anaesthetist and critical care doctors at
   static const String alsBlsGuideTitle = 'ALS/BLS Modifications';
   static const String alsBlsGuideInfographicTitle =
       'ALS/BLS Modifications Infographic';
+  static const String airwayAssessmentTitle = 'Airway Assessment';
+  static const String ventBasicsTitle = 'Ventilator Basics';
+  static const String cvsBasicsTitle = 'CVS Basics';
+  static const String neuroBasicsTitle = 'Neuro Basics';
+  static const String infectionBasicsTitle = 'ID Basics';
+  static const String renalBasicsTitle = 'Renal Basics';
+  static const String gastroBasicsTitle = 'GIT Basics';
 
   /// Your Welfare
   static const String yourWelfareTitle = 'Your Welfare';

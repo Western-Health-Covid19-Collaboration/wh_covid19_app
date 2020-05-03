@@ -21,6 +21,13 @@ import 'view/icu_non_intensivist/proning_guide_view.dart';
 import 'view/icu_non_intensivist/tips_junior_staff_view.dart';
 import 'view/icu_non_intensivist/ventilation/ventilation_infographic_page.dart';
 import 'view/icu_non_intensivist/ventilation/ventilation_view.dart';
+import 'view/icu_non_intensivist/airway_assessment_guide_view.dart';
+import 'view/icu_non_intensivist/ventilator_basics_guide_view.dart';
+import 'view/icu_non_intensivist/cvs_basics_guide_view.dart';
+import 'view/icu_non_intensivist/neuro_basics_guide_view.dart';
+import 'view/icu_non_intensivist/id_basics_guide_view.dart';
+import 'view/icu_non_intensivist/renal_basics_guide_view.dart';
+import 'view/icu_non_intensivist/git_basics_guide_view.dart';
 import 'view/info_view.dart';
 import 'view/license_view.dart';
 import 'view/ppe/ppe_off_guidance_method_1.dart';
@@ -58,6 +65,13 @@ class WHApp extends StatelessWidget {
         Routes.tipsJuniorStaff: (context) => TipsJuniorStaffView(),
         Routes.proningGuide: (context) => ProningGuideView(),
         Routes.alsBlsGuide: (context) => AlsBlsGuideView(),
+        Routes.airwayAssessment: (context) => AirwayAssessmentView(),
+        Routes.ventBasics: (context) => VentBasicsView(),
+        Routes.cvsBasics: (context) => CVSBasicsView(),
+        Routes.neuroBasics: (context) => NeuroBasicsView(),
+        Routes.infectionBasics: (context) => InfectionBasicsView(),
+        Routes.renalBasics: (context) => RenalBasicsView(),
+        Routes.gastroBasics: (context) => GastroBasicsView(),
         Routes.introRouter: (context) => IntroRouter(),
         Routes.disclaimer: (context) => DisclaimerView(),
         Routes.licenses: (context) => LicenseView(),
