@@ -1564,58 +1564,89 @@ const neuroBasicsGuide = [
           IntubationItem('Consider sedation targets in clinical context',
               icon: '🤔'),
           IntubationItem(
-              'If Haemodynamically unstable/ hypoxi/ prone\n • RIKER 1',
+              'If Haemodynamically unstable/ hypoxic/ prone\n • RIKER 1',
               icon: '🎯'),
           IntubationItem('If weaning & FiO2 < 0.4\n • RIKER 3-4', icon: '🎯'),
-          IntubationItem('Cardiac index > 2.2', icon: '🎯'),
-          IntubationItem(
-              'Common ❤️ medications and doses:\n • Noradrenaline\n     • 0.5-100mcg/min\n • Amiodarone\n     • 15mg/kg/d',
-              icon: '🤫'),
         ],
       )
     ],
   ),
-  ICUDailyRoundSteps(heading: 'Principles', sections: [
-    ICUDailyRoundStepSection(heading: 'Actions', subsections: [
+  ICUDailyRoundSteps(heading: 'Riker Score', sections: [
+    ICUDailyRoundStepSection(
+        heading: 'Condition and example behaviours',
+        subsections: [
+          ICUDailyRoundStepSubsection(
+              heading: '',
+              footer: 'The Riker is a Sedation-Agitation Scale commonly used',
+              list: [
+                ICUDailyRoundItem(
+                    icon: '7️',
+                    title:
+                        'Dangerous agitation\n • Pulling ETT\n • Climbing out of bed'),
+                ICUDailyRoundItem(
+                    icon: '6️',
+                    title:
+                        'Very agitated\n • Does not calm down\n • May require restraint at times'),
+                ICUDailyRoundItem(
+                    icon: '5',
+                    title:
+                        'Agitated\n • Anxious or mildly agitated\n • Attempting to sit up\n • Calms with verbal instructions'),
+                ICUDailyRoundItem(
+                    icon: '4️',
+                    title:
+                        'Calm and co-operative\n • Calm, awakens easily\n • Follows commands'),
+                ICUDailyRoundItem(
+                    icon: '3',
+                    title:
+                        'Dangerous agitation\n • Pulling ETT, climbing out of bed'),
+                ICUDailyRoundItem(
+                    icon: '2️',
+                    title:
+                        'Sedated\n • Difficult to rouse\n • Awakens to verbal stimuli\n • Does not follow commands'),
+                ICUDailyRoundItem(
+                    icon: '1',
+                    title:
+                        'Unrousable\n • No response to noxious stiumuli\n • Does not follow commands'),
+              ])
+        ]),
+  ]),
+  ICUDailyRoundSteps(heading: 'Sedation', sections: [
+    ICUDailyRoundStepSection(heading: 'Basic Principles', subsections: [
       ICUDailyRoundStepSubsection(
-          heading: 'Basic vasopressor guidance',
+          heading: 'Choice of sedative',
           footer: '',
           list: [
             ICUDailyRoundItem(
                 icon: '👀',
-                title: 'If MAP < 65 & adequately fluid resuscitated'),
-            ICUDailyRoundItem(
-                icon: '📍', title: 'Start noradrenaline at 5mcg/min'),
-            ICUDailyRoundItem(icon: '📈', title: 'Titrate to MAP'),
-          ])
-    ]),
-    ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
-      ICUDailyRoundStepSubsection(
-          heading: 'If Haemodynamically unstable/ Norad > 20mcg/min',
-          footer: '',
-          list: [
-            ICUDailyRoundItem(icon: '⏰', title: 'Re-examine patient'),
-            ICUDailyRoundItem(
-                icon: '📍',
                 title:
-                    'Consider:\n • ECG\n • Echocardiography\n • Troponin\n • Invasive cardiac monitoring'),
+                    'If post-intubation:\n • Propofol 50-100mg/hr\n • +/- Fentanyl 10-20mcg/hr'),
           ])
     ]),
     ICUDailyRoundStepSection(heading: '', subsections: [
       ICUDailyRoundStepSubsection(
-          heading: 'If Haemodynamically unstable/ Norad > 30mcg/min',
+          heading: 'Daily sedation break if',
           footer: '',
           list: [
-            ICUDailyRoundItem(icon: '💬', title: 'Discuss with Intensivist'),
+            ICUDailyRoundItem(icon: '📍', title: 'FiO2 < 0.4'),
+            ICUDailyRoundItem(icon: '📍', title: 'Noradrenaline < 20'),
+            ICUDailyRoundItem(icon: '📍', title: 'No muscle relaxant'),
+          ])
+    ]),
+    ICUDailyRoundStepSection(heading: '', subsections: [
+      ICUDailyRoundStepSubsection(
+          heading: 'Commonly used drugs and infusion ranges',
+          footer: 'Discuss with intensivist or senior colleague if unsure',
+          list: [
+            ICUDailyRoundItem(icon: '💊', title: 'Propofol\n     • 5-200mg/hr'),
             ICUDailyRoundItem(
-                icon: '💪', title: 'Consider Hydrocortisone 50mg IV QID'),
+                icon: '💊', title: 'Midazolam\n     • 0.5-10mg/hr'),
             ICUDailyRoundItem(
-                icon: '📍', title: 'Consider Argipressin 1-2 units/hr'),
+                icon: '💊', title: 'Fentanyl\n     • 10-30mcg/hr'),
             ICUDailyRoundItem(
-                icon: '💧', title: 'Consider not giving fluid bolus'),
+                icon: '💊', title: 'Morphine\n     • 0.5-10mg/hr'),
             ICUDailyRoundItem(
-                icon: '🤔',
-                title: 'Re-visit diagnosis - does patient need inotropes'),
+                icon: '💊',
+                title: 'Cisatracurium\n     • 15mg blous then 10mg/hr'),
           ])
     ])
   ]),
@@ -1623,65 +1654,48 @@ const neuroBasicsGuide = [
 
 const idBasicsGuide = [
   IntubationContent(
-    'Aims',
+    'Antimicrobials',
     [
       IntubationSection(
         items: [
-          IntubationItem('MAP > 65mmHg', icon: '🎯'),
-          IntubationItem('HR < 130', icon: '🎯'),
-          IntubationItem('Cap refill < 2', icon: '🎯'),
-          IntubationItem('Cardiac index > 2.2', icon: '🎯'),
           IntubationItem(
-              'Common ❤️ medications and doses:\n • Noradrenaline\n     • 0.5-100mcg/min\n • Amiodarone\n     • 15mg/kg/d',
-              icon: '🤫'),
+              'Empiric antimicrobials for COVID-19 patients:\n• Ceftriaxone 2g IV daily\n• Azithromycin 500mg IV OD',
+              icon: '🦠'),
+          IntubationItem(
+              'Add vancomycin if profound shock:\n• 2g load\n• 1g BD\n• Doses based on levels\n• Levels pre 3rd dose',
+              icon: '🦠'),
+          IntubationItem('Steroids currently not recommended for COVID 19',
+              icon: '❌'),
+          IntubationItem(
+              'Antiviral therapies to be commenced ONLY IN  CONTEXT OF CLINICAL TRIAL',
+              icon: '🧑‍⚕️'),
         ],
       )
     ],
   ),
-  ICUDailyRoundSteps(heading: 'Principles', sections: [
-    ICUDailyRoundStepSection(heading: 'Actions', subsections: [
-      ICUDailyRoundStepSubsection(
-          heading: 'Basic vasopressor guidance',
-          footer: '',
-          list: [
-            ICUDailyRoundItem(
-                icon: '👀',
-                title: 'If MAP < 65 & adequately fluid resuscitated'),
-            ICUDailyRoundItem(
-                icon: '📍', title: 'Start noradrenaline at 5mcg/min'),
-            ICUDailyRoundItem(icon: '📈', title: 'Titrate to MAP'),
-          ])
+  ICUDailyRoundSteps(heading: 'Infection control', sections: [
+    ICUDailyRoundStepSection(heading: 'Line changes', subsections: [
+      ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
+        ICUDailyRoundItem(
+            icon: '👀', title: 'Empiric line changes of CVC not recommended'),
+      ])
     ]),
-    ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
-      ICUDailyRoundStepSubsection(
-          heading: 'If Haemodynamically unstable/ Norad > 20mcg/min',
-          footer: '',
-          list: [
-            ICUDailyRoundItem(icon: '⏰', title: 'Re-examine patient'),
-            ICUDailyRoundItem(
-                icon: '📍',
-                title:
-                    'Consider:\n • ECG\n • Echocardiography\n • Troponin\n • Invasive cardiac monitoring'),
-          ])
+    ICUDailyRoundStepSection(heading: 'Septic screen', subsections: [
+      ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
+        ICUDailyRoundItem(
+            icon: '📍', title: 'Blood cultures\n• peripheral and central'),
+        ICUDailyRoundItem(icon: '📍', title: 'Urine MCS'),
+        ICUDailyRoundItem(icon: '📍', title: 'Sputum MCS'),
+        ICUDailyRoundItem(icon: '📍', title: 'CXR'),
+        ICUDailyRoundItem(icon: '📍', title: 'FBE, UEC, CRP, Lactate'),
+        ICUDailyRoundItem(icon: '📍', title: 'COVID swab - NPA + Sputum'),
+        ICUDailyRoundItem(icon: '📍', title: 'Viral PCR throat swab'),
+        ICUDailyRoundItem(
+            icon: '📍', title: 'Legionella and pneumococcal antigen'),
+        ICUDailyRoundItem(icon: '📍', title: 'Faecal MCS if diarrhoea'),
+      ])
     ]),
-    ICUDailyRoundStepSection(heading: '', subsections: [
-      ICUDailyRoundStepSubsection(
-          heading: 'If Haemodynamically unstable/ Norad > 30mcg/min',
-          footer: '',
-          list: [
-            ICUDailyRoundItem(icon: '💬', title: 'Discuss with Intensivist'),
-            ICUDailyRoundItem(
-                icon: '💪', title: 'Consider Hydrocortisone 50mg IV QID'),
-            ICUDailyRoundItem(
-                icon: '📍', title: 'Consider Argipressin 1-2 units/hr'),
-            ICUDailyRoundItem(
-                icon: '💧', title: 'Consider not giving fluid bolus'),
-            ICUDailyRoundItem(
-                icon: '🤔',
-                title: 'Re-visit diagnosis - does patient need inotropes'),
-          ])
-    ])
-  ]),
+  ])
 ];
 const renalBasicsGuide = [
   IntubationContent(
@@ -1689,14 +1703,10 @@ const renalBasicsGuide = [
     [
       IntubationSection(
         items: [
-          IntubationItem('MAP > 65mmHg', icon: '🎯'),
-          IntubationItem('HR < 130', icon: '🎯'),
-          IntubationItem('Cap refill < 2', icon: '🎯'),
-          IntubationItem('Cardiac index > 2.2', icon: '🎯'),
-          IntubationItem('Common ❤️ medications and doses:',
-              subtitle:
-                  '• Noradrenaline\n     • 0.5-100mcg/min\n • Amiodarone\n     • 15mg/kg/d',
-              icon: '🤫'),
+          IntubationItem('Negative fluid balance - 1l/day', icon: '🎯'),
+          IntubationItem('K+ target 3.5-5.5, >4 if cardiac arrhthmias',
+              icon: '🎯'),
+          IntubationItem('Na 135-145', icon: '🎯'),
         ],
       )
     ],
@@ -1811,4 +1821,4 @@ const gitBasicsGuide = [
 ];
 
 // '💬' '😷' '❤️''✅' '👟'
-// '⚖️'),'🔈''🌊' '🎚''👀' '😅'),'😬''🙃''🤔''🚨''👉''🛌''💧''👉')'💪''🙇‍♀️'📈'•'
+// '⚖️'),'🔈''🌊' '🎚''👀' '😅'),'😬''🙃''🤔''🚨''👉''🛌''💧''👉')'💪''🙇‍♀️'📈'•'🦠
