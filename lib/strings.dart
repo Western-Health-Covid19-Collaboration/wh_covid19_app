@@ -18,7 +18,7 @@ This app is designed to be used by the anaesthetist and critical care doctors at
   // *** WARNING ***
   // Increment by one when the disclaimerBody changes. This will force users to accept/re-accept the disclaimer again
   // if they have previously accepted it. If the disclaimer has changed then users need to re-accept it.
-  static const String disclaimerCurrentVersion = '4';
+  static const String disclaimerCurrentVersion = '5';
   static const String disclaimerButtonAgreeText = 'I Agree';
   static const String disclaimerHaveAgreedText =
       'You have agreed to the disclaimer';
