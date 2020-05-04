@@ -1528,7 +1528,7 @@ const cvsBasicsGuide = [
           IntubationItem('Common cardiac medications and doses:',
               subtitle:
                   '• Noradrenaline\n     • 0.5-100mcg/min\n • Amiodarone\n     • 15mg/kg/d',
-              icon: '❤'),
+              icon: '♥️'),
         ],
       )
     ],
