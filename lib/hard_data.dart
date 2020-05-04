@@ -1428,7 +1428,7 @@ const airwayAssessmentGuide = [
       ])
     ])
   ]),
-  ICUDailyRoundSteps(heading: 'Predictors of Difficulty:', sections: [
+  ICUDailyRoundSteps(heading: 'Predictors of Difficulty', sections: [
     ICUDailyRoundStepSection(subsections: [
       ICUDailyRoundStepSubsection(heading: 'Difficult BMV?', footer: '', list: [
         ICUDailyRoundItem(icon: '🔍', title: 'Previous difficult BMV'),
