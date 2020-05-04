@@ -31,8 +31,8 @@ void main() {
   // including those thrown from [Timer]s, microtasks, I/O, and those forwarded
   // from the `FlutterError` handler above.
   runZoned<Future<void>>(() async {
+    // Get the privacy setting from storage
     final storedPrivacyState = await Settings.readPrivacy();
-
     runApp(
       MultiProvider(
         providers: [

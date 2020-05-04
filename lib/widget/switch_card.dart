@@ -16,11 +16,8 @@ class SwitchCard extends StatefulWidget {
 }
 
 class _SwitchCardState extends State<SwitchCard> {
-  static bool _selected;
-
   @override
   void initState() {
-    _selected = true;
     super.initState();
   }
 
@@ -62,10 +59,9 @@ class _SwitchCardState extends State<SwitchCard> {
                     value: Provider.of<PrivacyStateNotifier>(context)
                         .currentPrivacy,
                     onChanged: (bool newValue) {
-                      // On switch value changing, update app state and write
-                      // to device storage
+                      // Switch changing, update app state & write to storage
                       setState(() {
-                        // Update app state with new value
+                        // Set the app state
                         Provider.of<PrivacyStateNotifier>(context,
                                 listen: false)
                             .privacyChange(newValue);
