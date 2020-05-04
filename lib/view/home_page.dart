@@ -78,7 +78,6 @@ class _HomePageState extends State<HomePage> {
                   (c) => ReusableCard.fromData(
                     card: c,
                     color: AppColors.backgroundGreen,
-                    height: 70,
                   ),
                 )
                 .toList(),
