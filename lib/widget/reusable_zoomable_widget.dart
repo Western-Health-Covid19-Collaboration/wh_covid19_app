@@ -18,6 +18,7 @@ class ZoomablePhoto extends StatelessWidget {
             backgroundDecoration: BoxDecoration(color: backgroundColor),
             imageProvider: AssetImage(imageUrl),
             initialScale: PhotoViewComputedScale.contained * 0.9,
+            minScale: PhotoViewComputedScale.contained * 0.9,
             basePosition: Alignment.topCenter * 0.9,
           ),
         )
