@@ -4,7 +4,6 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../hard_data.dart';
 import '../../hard_data.dart';
-import '../../hard_data.dart';
 import '../../models/icu_daily_round_steps.dart';
 import '../../models/intubation_guide.dart';
 import '../../routes.dart';
@@ -30,7 +29,7 @@ class RenalBasicsView extends StatelessWidget {
         color: AppColors.blue50,
         tabs: tabs,
         indicatorColor: AppColors.blue900,
-        children: alsBlsGuide.map((e) {
+        children: renalBasicsGuide.map((e) {
           if (e is IntubationContent) {
             return IntubationContentViewTemplate(
                 key: PageStorageKey(e.heading),

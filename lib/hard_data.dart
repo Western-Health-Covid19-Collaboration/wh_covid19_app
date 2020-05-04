@@ -1389,7 +1389,7 @@ const airwayAssessmentGuide = [
               'Incident of difficult airway INCREASED up to 10x in ICU',
               icon: '🚨'),
           IntubationItem(
-              'Always take advantage of assessing before patient deteriorates',
+              'Take advantage of assessing before patient deteriorates',
               icon: '⏰'),
         ],
       )
@@ -1398,41 +1398,41 @@ const airwayAssessmentGuide = [
   ICUDailyRoundSteps(heading: 'Assessment', sections: [
     ICUDailyRoundStepSection(subsections: [
       ICUDailyRoundStepSubsection(heading: 'History', footer: '', list: [
-        ICUDailyRoundItem(icon: '👀', title: 'Hx of difficult BMV/intubation?'),
+        ICUDailyRoundItem(icon: '👀', title: 'Hx of difficult BMV/Intubation?'),
         ICUDailyRoundItem(icon: '📜', title: 'PMH - ?RA/Reflux/OSA'),
         ICUDailyRoundItem(
             icon: '🤕', title: 'HPC - burns/Airway swelling/trauma?'),
       ]),
       ICUDailyRoundStepSubsection(heading: 'Examination', footer: '', list: [
         ICUDailyRoundItem(icon: '🦷', title: 'Teeth/Dentition?'),
-        ICUDailyRoundItem(icon: '📜', title: 'Mouth opening?'),
-        ICUDailyRoundItem(icon: '📏', title: 'Mallampati score?'),
-        ICUDailyRoundItem(icon: '🔍', title: 'Thyromental distance'),
+        ICUDailyRoundItem(icon: '👄', title: 'Mouth opening?'),
+        ICUDailyRoundItem(icon: '👅', title: 'Mallampati score?'),
+        ICUDailyRoundItem(icon: '📏', title: 'Thyromental distance'),
         ICUDailyRoundItem(icon: '🦒', title: 'Neck extension'),
         ICUDailyRoundItem(icon: '🤔', title: 'Receding chin?'),
       ])
     ])
   ]),
-  ICUDailyRoundSteps(heading: 'Predictors of difficulty:', sections: [
+  ICUDailyRoundSteps(heading: 'Predictors of Difficulty:', sections: [
     ICUDailyRoundStepSection(subsections: [
       ICUDailyRoundStepSubsection(heading: 'Difficult BMV?', footer: '', list: [
-        ICUDailyRoundItem(icon: '🤔', title: 'Previous difficult BMV'),
-        ICUDailyRoundItem(icon: '🦷', title: 'Neck Irradiation'),
-        ICUDailyRoundItem(icon: '📜', title: 'Obese'),
-        ICUDailyRoundItem(icon: '📏', title: 'Age > 55'),
-        ICUDailyRoundItem(icon: '🔍', title: 'Snorer/OSA'),
-        ICUDailyRoundItem(icon: '🦒', title: 'Edentulous'),
-        ICUDailyRoundItem(icon: '🤔', title: 'MP 3/4'),
+        ICUDailyRoundItem(icon: '🔍', title: 'Previous difficult BMV'),
+        ICUDailyRoundItem(icon: '🦒', title: 'Neck Irradiation'),
+        ICUDailyRoundItem(icon: '🍔', title: 'Obese'),
+        ICUDailyRoundItem(icon: '👴', title: 'Age > 55'),
+        ICUDailyRoundItem(icon: '💤', title: 'Snorer/OSA'),
+        ICUDailyRoundItem(icon: '🦷', title: 'Edentulous'),
+        ICUDailyRoundItem(icon: '👅', title: 'MP 3/4'),
         ICUDailyRoundItem(icon: '🤔', title: 'Male'),
       ]),
       ICUDailyRoundStepSubsection(heading: 'Difficult ETT?', footer: '', list: [
-        ICUDailyRoundItem(icon: '🤔', title: 'Previous difficult intubation'),
-        ICUDailyRoundItem(icon: '🦷', title: 'Mouth Opening < 3cm'),
-        ICUDailyRoundItem(icon: '📜', title: 'Obese/Large breasts'),
-        ICUDailyRoundItem(icon: '📏', title: 'Reduced neck extension'),
-        ICUDailyRoundItem(icon: '🔍', title: 'Retrognathia'),
-        ICUDailyRoundItem(icon: '🦒', title: 'Prominent incisors'),
-        ICUDailyRoundItem(icon: '🤔', title: 'Large tongue'),
+        ICUDailyRoundItem(icon: '🔍', title: 'Previous difficult intubation'),
+        ICUDailyRoundItem(icon: '👄', title: 'Mouth Opening < 3cm'),
+        ICUDailyRoundItem(icon: '🍔', title: 'Obese/Large breasts'),
+        ICUDailyRoundItem(icon: '🦒', title: 'Reduced neck extension'),
+        ICUDailyRoundItem(icon: '🤔', title: 'Retrognathia'),
+        ICUDailyRoundItem(icon: '🦷', title: 'Prominent incisors'),
+        ICUDailyRoundItem(icon: '👅', title: 'Large tongue'),
       ])
     ])
   ]),
@@ -1444,7 +1444,9 @@ const ventBasicsGuide = [
     [
       IntubationSection(
         items: [
-          IntubationItem('SpO2: 92-96%\n COVID-19/COPD:88-92% ', icon: '🎯'),
+          IntubationItem('SpO2 88-92% in COVID19',
+              icon: '🎯',
+              subtitle: '• May be 92-96% in otherwise healthy patients'),
           IntubationItem('PaO2> 55-60mmHg', icon: '🎯'),
           IntubationItem('PaCO2 35-45mmHg or pH > 7.2', icon: '🎯'),
           IntubationItem('Normal / stable work od breathing / RR', icon: '🎯️'),
@@ -1461,7 +1463,7 @@ const ventBasicsGuide = [
               heading: 'Ventilator settings',
               footer: '',
               list: [
-                ICUDailyRoundItem(icon: '👀', title: 'SIMV VC'),
+                ICUDailyRoundItem(icon: '⚙️', title: 'SIMV VC'),
                 ICUDailyRoundItem(icon: '📍', title: 'FiO2 dependent on PEEP'),
                 ICUDailyRoundItem(icon: '🔍', title: 'Confirmed with CXR?'),
               ])
@@ -1473,7 +1475,7 @@ const ventBasicsGuide = [
           list: [
             ICUDailyRoundItem(icon: '⏰', title: 'Senior Review'),
             ICUDailyRoundItem(
-                icon: '📍',
+                icon: '🤔',
                 title:
                     'Consider:\n • Secondary pathology\n • NM blockade\n • Diuresis\n • Recruitment manoeuvre\n • Prone positiiong'),
           ])
@@ -1712,113 +1714,94 @@ const renalBasicsGuide = [
     ],
   ),
   ICUDailyRoundSteps(heading: 'Principles', sections: [
-    ICUDailyRoundStepSection(heading: 'Actions', subsections: [
-      ICUDailyRoundStepSubsection(
-          heading: 'Basic vasopressor guidance',
-          footer: '',
-          list: [
-            ICUDailyRoundItem(
-                icon: '👀',
-                title: 'If MAP < 65 & adequately fluid resuscitated'),
-            ICUDailyRoundItem(
-                icon: '📍', title: 'Start noradrenaline at 5mcg/min'),
-            ICUDailyRoundItem(icon: '📈', title: 'Titrate to MAP'),
-          ])
-    ]),
-    ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
-      ICUDailyRoundStepSubsection(
-          heading: 'If Haemodynamically unstable/ Norad > 20mcg/min',
-          footer: '',
-          list: [
-            ICUDailyRoundItem(icon: '⏰', title: 'Re-examine patient'),
-            ICUDailyRoundItem(
-                icon: '📍',
-                title:
-                    'Consider:\n • ECG\n • Echocardiography\n • Troponin\n • Invasive cardiac monitoring'),
-          ])
-    ]),
-    ICUDailyRoundStepSection(heading: '', subsections: [
-      ICUDailyRoundStepSubsection(
-          heading: 'If Haemodynamically unstable/ Norad > 30mcg/min',
-          footer: '',
-          list: [
-            ICUDailyRoundItem(icon: '💬', title: 'Discuss with Intensivist'),
-            ICUDailyRoundItem(
-                icon: '💪', title: 'Consider Hydrocortisone 50mg IV QID'),
-            ICUDailyRoundItem(
-                icon: '📍', title: 'Consider Argipressin 1-2 units/hr'),
-            ICUDailyRoundItem(
-                icon: '💧', title: 'Consider not giving fluid bolus'),
-            ICUDailyRoundItem(
-                icon: '🤔',
-                title: 'Re-visit diagnosis - does patient need inotropes'),
-          ])
-    ])
+    ICUDailyRoundStepSection(
+        heading: 'If fluid balance +ve >1l in 24h',
+        subsections: [
+          ICUDailyRoundStepSubsection(
+              heading: 'Consider frusemide',
+              footer: '',
+              list: [
+                ICUDailyRoundItem(
+                    icon: '💧', title: 'Start frusemide 40mg IV QID'),
+                ICUDailyRoundItem(
+                    icon: '📈',
+                    title:
+                        'Increase in 20mg QID increments if not meeting targets at 24 hours'),
+                ICUDailyRoundItem(
+                    icon: '📍',
+                    title:
+                        'If > 80mg QID, then switch to frusemide infusion 10mg/hr'),
+              ])
+        ]),
+    ICUDailyRoundStepSection(
+        heading: 'Renal Replacement Therapy (RRT)',
+        subsections: [
+          ICUDailyRoundStepSubsection(
+              heading: 'Discuss with Intensivist\n • Indications: AEIOU',
+              footer: '',
+              list: [
+                ICUDailyRoundItem(
+                    icon: '💧', title: 'Acidosis\n • pH <7.1 / Bicarb < 15'),
+                ICUDailyRoundItem(
+                    icon: '🧂',
+                    title: 'Electrolytes\n • Refractory K+ > 6.5mmol/l'),
+                ICUDailyRoundItem(
+                    icon: '💧',
+                    title: 'Overload\n • Refractory fluid overload'),
+                ICUDailyRoundItem(
+                    icon: '💊',
+                    title: 'Intoxication\n • Drug overdose/ intoxication'),
+                ICUDailyRoundItem(
+                    icon: '💧', title: 'Uraemia\n • > 40mmol/l or symptomatic'),
+              ])
+        ]),
   ]),
 ];
 
 const gitBasicsGuide = [
   IntubationContent(
-    'Aims',
+    'Nasogastric tube',
     [
       IntubationSection(
         items: [
-          IntubationItem('MAP > 65mmHg', icon: '🎯'),
-          IntubationItem('HR < 130', icon: '🎯'),
-          IntubationItem('Cap refill < 2', icon: '🎯'),
-          IntubationItem('Cardiac index > 2.2', icon: '🎯'),
           IntubationItem(
-              'Common ❤️ medications and doses:\n • Noradrenaline\n     • 0.5-100mcg/min\n • Amiodarone\n     • 15mg/kg/d',
-              icon: '🤫'),
+              'Confirm placement on CXR:\n • Bisects carina\n • Tip below diaphragm',
+              icon: '👀'),
+          IntubationItem('Do not commence feeding until placement confirmed',
+              icon: '🚨'),
+          IntubationItem('Check position daily on CXR', icon: '👀'),
+          IntubationItem(
+              'Clinical methods to confirm placement are not reliable',
+              icon: '🚨'),
         ],
       )
     ],
   ),
-  ICUDailyRoundSteps(heading: 'Principles', sections: [
-    ICUDailyRoundStepSection(heading: 'Actions', subsections: [
-      ICUDailyRoundStepSubsection(
-          heading: 'Basic vasopressor guidance',
-          footer: '',
-          list: [
-            ICUDailyRoundItem(
-                icon: '👀',
-                title: 'If MAP < 65 & adequately fluid resuscitated'),
-            ICUDailyRoundItem(
-                icon: '📍', title: 'Start noradrenaline at 5mcg/min'),
-            ICUDailyRoundItem(icon: '📈', title: 'Titrate to MAP'),
-          ])
+  ICUDailyRoundSteps(heading: 'Feeding', sections: [
+    ICUDailyRoundStepSection(heading: 'Principles', subsections: [
+      ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
+        ICUDailyRoundItem(icon: '👀', title: 'Start early'),
+        ICUDailyRoundItem(icon: '📍', title: 'Consult dietician if available'),
+        ICUDailyRoundItem(
+            icon: '🍲',
+            title: '1kCal/ml feed as per protocol is reasonable out of hours'),
+        ICUDailyRoundItem(icon: '✋', title: 'If high aspirates - slow rate'),
+        ICUDailyRoundItem(
+            icon: '🤔', title: 'Consider prokinetics if not absorbing'),
+      ])
     ]),
-    ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
-      ICUDailyRoundStepSubsection(
-          heading: 'If Haemodynamically unstable/ Norad > 20mcg/min',
-          footer: '',
-          list: [
-            ICUDailyRoundItem(icon: '⏰', title: 'Re-examine patient'),
-            ICUDailyRoundItem(
-                icon: '📍',
-                title:
-                    'Consider:\n • ECG\n • Echocardiography\n • Troponin\n • Invasive cardiac monitoring'),
-          ])
+    ICUDailyRoundStepSection(heading: 'Laxatives', subsections: [
+      ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
+        ICUDailyRoundItem(icon: '⏰', title: 'Early laxative use suggested'),
+        ICUDailyRoundItem(
+            icon: '⏰', title: 'Faecal containmenet device - day 3 or earlier'),
+        ICUDailyRoundItem(
+            icon: '💊',
+            title: 'Laxatives:\n • Lactulose 20ml bd\n • Movicol 1 bd'),
+      ])
     ]),
-    ICUDailyRoundStepSection(heading: '', subsections: [
-      ICUDailyRoundStepSubsection(
-          heading: 'If Haemodynamically unstable/ Norad > 30mcg/min',
-          footer: '',
-          list: [
-            ICUDailyRoundItem(icon: '💬', title: 'Discuss with Intensivist'),
-            ICUDailyRoundItem(
-                icon: '💪', title: 'Consider Hydrocortisone 50mg IV QID'),
-            ICUDailyRoundItem(
-                icon: '📍', title: 'Consider Argipressin 1-2 units/hr'),
-            ICUDailyRoundItem(
-                icon: '💧', title: 'Consider not giving fluid bolus'),
-            ICUDailyRoundItem(
-                icon: '🤔',
-                title: 'Re-visit diagnosis - does patient need inotropes'),
-          ])
-    ])
   ]),
 ];
 
 // '💬' '😷' '❤️''✅' '👟'
-// '⚖️'),'🔈''🌊' '🎚''👀' '😅'),'😬''🙃''🤔''🚨''👉''🛌''💧''👉')'💪''🙇‍♀️'📈'•'🦠
+// '⚖️'),'🔈''🌊' '🎚''👀' '😅'),'😬''🙃''🤔'✋'🚨''👉''🛌''💧''👉')'💪''🙇‍♀️'📈'•'🦠 💊
