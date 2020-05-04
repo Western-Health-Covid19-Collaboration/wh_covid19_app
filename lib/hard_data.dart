@@ -1535,8 +1535,9 @@ const cvsBasicsGuide = [
             ICUDailyRoundItem(icon: '⏰', title: 'Re-examine patient'),
             ICUDailyRoundItem(
                 icon: '🤔',
-                title:
-                    'Consider:\n • ECG\n • Echocardiography\n • Troponin\n • Invasive cardiac monitoring'),
+                title: 'Consider:',
+                subtitle:
+                    '• ECG\n• Echocardiography\n• Troponin\n• Invasive cardiac monitoring'),
           ])
     ]),
     ICUDailyRoundStepSection(heading: '', subsections: [
@@ -1625,8 +1626,8 @@ const neuroBasicsGuide = [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(
             icon: '👀',
-            title:
-                'If post-intubation:\n • Propofol 50-100mg/hr\n • +/- Fentanyl 10-20mcg/hr'),
+            title: 'If post-intubation:',
+            subtitle: '• Propofol 50-100mg/hr\n• +/- Fentanyl 10-20mcg/hr'),
       ])
     ]),
     ICUDailyRoundStepSection(
@@ -1638,7 +1639,7 @@ const neuroBasicsGuide = [
             ICUDailyRoundItem(icon: '📍', title: 'No muscle relaxant in use'),
           ])
         ]),
-    ICUDailyRoundStepSection(heading: 'Commonly used Drugs', subsections: [
+    ICUDailyRoundStepSection(heading: 'Commonly used Drugs:', subsections: [
       ICUDailyRoundStepSubsection(
           heading: '',
           footer: 'Discuss with intensivist or senior colleague if unsure',
@@ -1667,17 +1668,18 @@ const idBasicsGuide = [
     [
       IntubationSection(
         items: [
-          IntubationItem(
-              'Empiric antimicrobials for COVID-19 patients:\n• Ceftriaxone 2g IV daily\n• Azithromycin 500mg IV OD',
+          IntubationItem('Empiric antimicrobials for COVID-19 patients:',
+              subtitle: '• Ceftriaxone 2g IV daily\n• Azithromycin 500mg IV OD',
               icon: '🦠'),
-          IntubationItem(
-              'Add vancomycin if profound shock:\n• 2g load\n• 1g BD\n• Doses based on levels\n• Levels pre 3rd dose',
+          IntubationItem('Add Vancomycin if profound shock:',
+              subtitle:
+                  '• 2g load\n• 1g BD\n• Doses based on levels\n• Levels pre 3rd dose',
               icon: '🦠'),
           IntubationItem('Steroids currently not recommended for COVID 19',
               icon: '❌'),
           IntubationItem(
               'Antiviral therapies to be commenced ONLY IN  CONTEXT OF CLINICAL TRIAL',
-              icon: '🧑‍⚕️'),
+              icon: '✋️'),
         ],
       )
     ],
@@ -1686,18 +1688,21 @@ const idBasicsGuide = [
     ICUDailyRoundStepSection(heading: 'Line changes', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(
-            icon: '👀', title: 'Empiric line changes of CVC not recommended'),
+            icon: '✋', title: 'Empiric line changes of CVC not recommended'),
       ])
     ]),
     ICUDailyRoundStepSection(heading: 'Septic screen', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(
-            icon: '📍', title: 'Blood cultures\n• peripheral and central'),
+            icon: '📍',
+            title: 'Blood cultures',
+            subtitle: '• peripheral and central samples'),
         ICUDailyRoundItem(icon: '📍', title: 'Urine MCS'),
         ICUDailyRoundItem(icon: '📍', title: 'Sputum MCS'),
         ICUDailyRoundItem(icon: '📍', title: 'CXR'),
         ICUDailyRoundItem(icon: '📍', title: 'FBE, UEC, CRP, Lactate'),
-        ICUDailyRoundItem(icon: '📍', title: 'COVID swab - NPA + Sputum'),
+        ICUDailyRoundItem(
+            icon: '📍', title: 'COVID swab', subtitle: '• NPA + Sputum'),
         ICUDailyRoundItem(icon: '📍', title: 'Viral PCR throat swab'),
         ICUDailyRoundItem(
             icon: '📍', title: 'Legionella and pneumococcal antigen'),
@@ -1713,23 +1718,23 @@ const renalBasicsGuide = [
       IntubationSection(
         items: [
           IntubationItem('Negative fluid balance - 1l/day', icon: '🎯'),
-          IntubationItem('K+ target 3.5-5.5, >4 if cardiac arrhthmias',
+          IntubationItem('K+ target:',
+              subtitle: '• 3.5-5.5mmol/l\n• >4mmol/l if cardiac arrhthmias',
               icon: '🎯'),
-          IntubationItem('Na 135-145', icon: '🎯'),
+          IntubationItem('Na 135-145mmol/l', icon: '🎯'),
         ],
       )
     ],
   ),
   ICUDailyRoundSteps(heading: 'Principles', sections: [
     ICUDailyRoundStepSection(
-        heading: 'If fluid balance +ve >1l in 24h',
+        heading: 'If fluid balance +ve >1litre in 24h',
         subsections: [
           ICUDailyRoundStepSubsection(
               heading: 'Consider frusemide',
               footer: '',
               list: [
-                ICUDailyRoundItem(
-                    icon: '💧', title: 'Start frusemide 40mg IV QID'),
+                ICUDailyRoundItem(icon: '💧', title: 'Start at 40mg IV QID'),
                 ICUDailyRoundItem(
                     icon: '📈',
                     title:
@@ -1737,7 +1742,7 @@ const renalBasicsGuide = [
                 ICUDailyRoundItem(
                     icon: '📍',
                     title:
-                        'If > 80mg QID, then switch to frusemide infusion 10mg/hr'),
+                        'If > 80mg QID of frusemide, then switch to infusion starting at 10mg/hr'),
               ])
         ]),
     ICUDailyRoundStepSection(
@@ -1748,18 +1753,25 @@ const renalBasicsGuide = [
               footer: '',
               list: [
                 ICUDailyRoundItem(
-                    icon: '💧', title: 'Acidosis\n • pH <7.1 / Bicarb < 15'),
+                    icon: '💧',
+                    title: 'Acidosis',
+                    subtitle: ' • pH <7.1 or Bicarb < 15mmol/l'),
                 ICUDailyRoundItem(
                     icon: '🧂',
-                    title: 'Electrolytes\n • Refractory K+ > 6.5mmol/l'),
+                    title: 'Electrolytes',
+                    subtitle: ' • Refractory K+ > 6.5mmol/l'),
                 ICUDailyRoundItem(
                     icon: '💧',
-                    title: 'Overload\n • Refractory fluid overload'),
+                    title: 'Overload',
+                    subtitle: ' • Refractory fluid overload'),
                 ICUDailyRoundItem(
                     icon: '💊',
-                    title: 'Intoxication\n • Drug overdose/ intoxication'),
+                    title: 'Intoxication',
+                    subtitle: ' • Drug overdose/ intoxication'),
                 ICUDailyRoundItem(
-                    icon: '💧', title: 'Uraemia\n • > 40mmol/l or symptomatic'),
+                    icon: '💧',
+                    title: 'Uraemia',
+                    subtitle: ' • > 40mmol/l or symptomatic'),
               ])
         ]),
   ]),
@@ -1771,9 +1783,8 @@ const gitBasicsGuide = [
     [
       IntubationSection(
         items: [
-          IntubationItem(
-              'Confirm placement on CXR:\n • Bisects carina\n • Tip below diaphragm',
-              icon: '👀'),
+          IntubationItem('Confirm placement on CXR:',
+              subtitle: '• Bisects carina\n• Tip below diaphragm', icon: '👀'),
           IntubationItem('Do not commence feeding until placement confirmed',
               icon: '🚨'),
           IntubationItem('Check position daily on CXR', icon: '👀'),
@@ -1792,7 +1803,8 @@ const gitBasicsGuide = [
         ICUDailyRoundItem(
             icon: '🍲',
             title: '1kCal/ml feed as per protocol is reasonable out of hours'),
-        ICUDailyRoundItem(icon: '✋', title: 'If high aspirates - slow rate'),
+        ICUDailyRoundItem(
+            icon: '✋', title: 'If high aspirates - slow the rate'),
         ICUDailyRoundItem(
             icon: '🤔', title: 'Consider prokinetics if not absorbing'),
       ])
@@ -1804,7 +1816,8 @@ const gitBasicsGuide = [
             icon: '⏰', title: 'Faecal containmenet device - day 3 or earlier'),
         ICUDailyRoundItem(
             icon: '💊',
-            title: 'Laxatives:\n • Lactulose 20ml bd\n • Movicol 1 bd'),
+            title: 'Laxatives:',
+            subtitle: '• Lactulose 20ml bd\n• Movicol 1 bd'),
       ])
     ]),
   ]),
