@@ -1518,17 +1518,17 @@ const cvsBasicsGuide = [
             ICUDailyRoundItem(
                 icon: '👀',
                 title: 'If MAP < 65 & adequately fluid resuscitated'),
-            ICUDailyRoundItem(icon: '📍', title: 'Start noradrenaline'),
-            ICUDailyRoundItem(icon: '🔍', title: 'Starting dose 5mcg/min'),
-            ICUDailyRoundItem(icon: '🔒', title: 'Titrate to MAP'),
+            ICUDailyRoundItem(
+                icon: '📍', title: 'Start noradrenaline at 5mcg/min'),
+            ICUDailyRoundItem(icon: '📈', title: 'Titrate to MAP'),
           ])
     ]),
     ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
       ICUDailyRoundStepSubsection(
           heading: 'If Haemodynamically unstable/ Norad > 20mcg/min',
-          footer: 'Discuss with Intensivist',
+          footer: '',
           list: [
-            ICUDailyRoundItem(icon: '⏰', title: 'Re-examine'),
+            ICUDailyRoundItem(icon: '⏰', title: 'Re-examine patient'),
             ICUDailyRoundItem(
                 icon: '📍',
                 title:
@@ -1542,11 +1542,14 @@ const cvsBasicsGuide = [
           list: [
             ICUDailyRoundItem(icon: '💬', title: 'Discuss with Intensivist'),
             ICUDailyRoundItem(
-                icon: '⏰', title: 'Consider Hydrocortisone 50mg IV QID'),
+                icon: '💪', title: 'Consider Hydrocortisone 50mg IV QID'),
             ICUDailyRoundItem(
                 icon: '📍', title: 'Consider Argipressin 1-2 units/hr'),
             ICUDailyRoundItem(
-                icon: '📍', title: 'Consider not giving fluid bolus'),
+                icon: '💧', title: 'Consider not giving fluid bolus'),
+            ICUDailyRoundItem(
+                icon: '🤔',
+                title: 'Re-visit diagnosis - does patient need inotropes'),
           ])
     ])
   ]),
@@ -1558,53 +1561,61 @@ const neuroBasicsGuide = [
     [
       IntubationSection(
         items: [
-          IntubationItem('SpO2: 92-96% (COVID-19/COPD):88-92% ', icon: '🌬'),
-          IntubationItem('PaO2> 55-60mmHg', icon: '☝️'),
-          IntubationItem('PaCO2 35-45mmHg or pH > 7.2', icon: '😷'),
-          IntubationItem('Normal / stable work od breathing / RR',
-              icon: '👩‍⚕️'),
-          IntubationItem('I:E ratio 1:2', icon: '🤫'),
+          IntubationItem('Consider sedation targets in clinical context',
+              icon: '🤔'),
+          IntubationItem(
+              'If Haemodynamically unstable/ hypoxi/ prone\n • RIKER 1',
+              icon: '🎯'),
+          IntubationItem('If weaning & FiO2 < 0.4\n • RIKER 3-4', icon: '🎯'),
+          IntubationItem('Cardiac index > 2.2', icon: '🎯'),
+          IntubationItem(
+              'Common ❤️ medications and doses:\n • Noradrenaline\n     • 0.5-100mcg/min\n • Amiodarone\n     • 15mg/kg/d',
+              icon: '🤫'),
         ],
       )
     ],
   ),
   ICUDailyRoundSteps(heading: 'Principles', sections: [
-    ICUDailyRoundStepSection(
-        heading: 'Default Ventilator settings',
-        subsections: [
-          ICUDailyRoundStepSubsection(
-              heading: 'Ventilator settings',
-              footer: '',
-              list: [
-                ICUDailyRoundItem(icon: '👀', title: 'SIMV VC'),
-                ICUDailyRoundItem(icon: '📍', title: 'FiO2 dependent on PEEP'),
-                ICUDailyRoundItem(icon: '🔍', title: 'Confirmed with CXR?'),
-                ICUDailyRoundItem(
-                    icon: '🔒',
-                    title: 'Are all connections secured with sleek?'),
-              ])
-        ]),
-    ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
+    ICUDailyRoundStepSection(heading: 'Actions', subsections: [
       ICUDailyRoundStepSubsection(
-          heading: 'If FiO2> 0.6 and PEEP 15 for 4-6 hours:',
+          heading: 'Basic vasopressor guidance',
           footer: '',
           list: [
-            ICUDailyRoundItem(icon: '⏰', title: 'Senior Review'),
+            ICUDailyRoundItem(
+                icon: '👀',
+                title: 'If MAP < 65 & adequately fluid resuscitated'),
+            ICUDailyRoundItem(
+                icon: '📍', title: 'Start noradrenaline at 5mcg/min'),
+            ICUDailyRoundItem(icon: '📈', title: 'Titrate to MAP'),
+          ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
+      ICUDailyRoundStepSubsection(
+          heading: 'If Haemodynamically unstable/ Norad > 20mcg/min',
+          footer: '',
+          list: [
+            ICUDailyRoundItem(icon: '⏰', title: 'Re-examine patient'),
             ICUDailyRoundItem(
                 icon: '📍',
                 title:
-                    'Consider:\n • Secondary pathology\n • NM blockade\n • Diuresis\n • Recruitment manoeuvre\n • Prone positiiong'),
+                    'Consider:\n • ECG\n • Echocardiography\n • Troponin\n • Invasive cardiac monitoring'),
           ])
     ]),
-    ICUDailyRoundStepSection(heading: 'CXR', subsections: [
+    ICUDailyRoundStepSection(heading: '', subsections: [
       ICUDailyRoundStepSubsection(
-          heading: 'CXR frequency - COVID patients',
+          heading: 'If Haemodynamically unstable/ Norad > 30mcg/min',
           footer: '',
           list: [
-            ICUDailyRoundItem(icon: '⏰', title: 'Mon/Wed/Friday - routine'),
-            ICUDailyRoundItem(icon: '📍', title: 'If new CVC/NGT'),
+            ICUDailyRoundItem(icon: '💬', title: 'Discuss with Intensivist'),
             ICUDailyRoundItem(
-                icon: '📍', title: 'If significant clinical change'),
+                icon: '💪', title: 'Consider Hydrocortisone 50mg IV QID'),
+            ICUDailyRoundItem(
+                icon: '📍', title: 'Consider Argipressin 1-2 units/hr'),
+            ICUDailyRoundItem(
+                icon: '💧', title: 'Consider not giving fluid bolus'),
+            ICUDailyRoundItem(
+                icon: '🤔',
+                title: 'Re-visit diagnosis - does patient need inotropes'),
           ])
     ])
   ]),
@@ -1616,53 +1627,58 @@ const idBasicsGuide = [
     [
       IntubationSection(
         items: [
-          IntubationItem('SpO2: 92-96% (COVID-19/COPD):88-92% ', icon: '🌬'),
-          IntubationItem('PaO2> 55-60mmHg', icon: '☝️'),
-          IntubationItem('PaCO2 35-45mmHg or pH > 7.2', icon: '😷'),
-          IntubationItem('Normal / stable work od breathing / RR',
-              icon: '👩‍⚕️'),
-          IntubationItem('I:E ratio 1:2', icon: '🤫'),
+          IntubationItem('MAP > 65mmHg', icon: '🎯'),
+          IntubationItem('HR < 130', icon: '🎯'),
+          IntubationItem('Cap refill < 2', icon: '🎯'),
+          IntubationItem('Cardiac index > 2.2', icon: '🎯'),
+          IntubationItem(
+              'Common ❤️ medications and doses:\n • Noradrenaline\n     • 0.5-100mcg/min\n • Amiodarone\n     • 15mg/kg/d',
+              icon: '🤫'),
         ],
       )
     ],
   ),
   ICUDailyRoundSteps(heading: 'Principles', sections: [
-    ICUDailyRoundStepSection(
-        heading: 'Default Ventilator settings',
-        subsections: [
-          ICUDailyRoundStepSubsection(
-              heading: 'Ventilator settings',
-              footer: '',
-              list: [
-                ICUDailyRoundItem(icon: '👀', title: 'SIMV VC'),
-                ICUDailyRoundItem(icon: '📍', title: 'FiO2 dependent on PEEP'),
-                ICUDailyRoundItem(icon: '🔍', title: 'Confirmed with CXR?'),
-                ICUDailyRoundItem(
-                    icon: '🔒',
-                    title: 'Are all connections secured with sleek?'),
-              ])
-        ]),
-    ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
+    ICUDailyRoundStepSection(heading: 'Actions', subsections: [
       ICUDailyRoundStepSubsection(
-          heading: 'If FiO2> 0.6 and PEEP 15 for 4-6 hours:',
+          heading: 'Basic vasopressor guidance',
           footer: '',
           list: [
-            ICUDailyRoundItem(icon: '⏰', title: 'Senior Review'),
+            ICUDailyRoundItem(
+                icon: '👀',
+                title: 'If MAP < 65 & adequately fluid resuscitated'),
+            ICUDailyRoundItem(
+                icon: '📍', title: 'Start noradrenaline at 5mcg/min'),
+            ICUDailyRoundItem(icon: '📈', title: 'Titrate to MAP'),
+          ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
+      ICUDailyRoundStepSubsection(
+          heading: 'If Haemodynamically unstable/ Norad > 20mcg/min',
+          footer: '',
+          list: [
+            ICUDailyRoundItem(icon: '⏰', title: 'Re-examine patient'),
             ICUDailyRoundItem(
                 icon: '📍',
                 title:
-                    'Consider:\n • Secondary pathology\n • NM blockade\n • Diuresis\n • Recruitment manoeuvre\n • Prone positiiong'),
+                    'Consider:\n • ECG\n • Echocardiography\n • Troponin\n • Invasive cardiac monitoring'),
           ])
     ]),
-    ICUDailyRoundStepSection(heading: 'CXR', subsections: [
+    ICUDailyRoundStepSection(heading: '', subsections: [
       ICUDailyRoundStepSubsection(
-          heading: 'CXR frequency - COVID patients',
+          heading: 'If Haemodynamically unstable/ Norad > 30mcg/min',
           footer: '',
           list: [
-            ICUDailyRoundItem(icon: '⏰', title: 'Mon/Wed/Friday - routine'),
-            ICUDailyRoundItem(icon: '📍', title: 'If new CVC/NGT'),
+            ICUDailyRoundItem(icon: '💬', title: 'Discuss with Intensivist'),
             ICUDailyRoundItem(
-                icon: '📍', title: 'If significant clinical change'),
+                icon: '💪', title: 'Consider Hydrocortisone 50mg IV QID'),
+            ICUDailyRoundItem(
+                icon: '📍', title: 'Consider Argipressin 1-2 units/hr'),
+            ICUDailyRoundItem(
+                icon: '💧', title: 'Consider not giving fluid bolus'),
+            ICUDailyRoundItem(
+                icon: '🤔',
+                title: 'Re-visit diagnosis - does patient need inotropes'),
           ])
     ])
   ]),
@@ -1673,53 +1689,59 @@ const renalBasicsGuide = [
     [
       IntubationSection(
         items: [
-          IntubationItem('SpO2: 92-96% (COVID-19/COPD):88-92% ', icon: '🌬'),
-          IntubationItem('PaO2> 55-60mmHg', icon: '☝️'),
-          IntubationItem('PaCO2 35-45mmHg or pH > 7.2', icon: '😷'),
-          IntubationItem('Normal / stable work od breathing / RR',
-              icon: '👩‍⚕️'),
-          IntubationItem('I:E ratio 1:2', icon: '🤫'),
+          IntubationItem('MAP > 65mmHg', icon: '🎯'),
+          IntubationItem('HR < 130', icon: '🎯'),
+          IntubationItem('Cap refill < 2', icon: '🎯'),
+          IntubationItem('Cardiac index > 2.2', icon: '🎯'),
+          IntubationItem('Common ❤️ medications and doses:',
+              subtitle:
+                  '• Noradrenaline\n     • 0.5-100mcg/min\n • Amiodarone\n     • 15mg/kg/d',
+              icon: '🤫'),
         ],
       )
     ],
   ),
   ICUDailyRoundSteps(heading: 'Principles', sections: [
-    ICUDailyRoundStepSection(
-        heading: 'Default Ventilator settings',
-        subsections: [
-          ICUDailyRoundStepSubsection(
-              heading: 'Ventilator settings',
-              footer: '',
-              list: [
-                ICUDailyRoundItem(icon: '👀', title: 'SIMV VC'),
-                ICUDailyRoundItem(icon: '📍', title: 'FiO2 dependent on PEEP'),
-                ICUDailyRoundItem(icon: '🔍', title: 'Confirmed with CXR?'),
-                ICUDailyRoundItem(
-                    icon: '🔒',
-                    title: 'Are all connections secured with sleek?'),
-              ])
-        ]),
-    ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
+    ICUDailyRoundStepSection(heading: 'Actions', subsections: [
       ICUDailyRoundStepSubsection(
-          heading: 'If FiO2> 0.6 and PEEP 15 for 4-6 hours:',
+          heading: 'Basic vasopressor guidance',
           footer: '',
           list: [
-            ICUDailyRoundItem(icon: '⏰', title: 'Senior Review'),
+            ICUDailyRoundItem(
+                icon: '👀',
+                title: 'If MAP < 65 & adequately fluid resuscitated'),
+            ICUDailyRoundItem(
+                icon: '📍', title: 'Start noradrenaline at 5mcg/min'),
+            ICUDailyRoundItem(icon: '📈', title: 'Titrate to MAP'),
+          ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
+      ICUDailyRoundStepSubsection(
+          heading: 'If Haemodynamically unstable/ Norad > 20mcg/min',
+          footer: '',
+          list: [
+            ICUDailyRoundItem(icon: '⏰', title: 'Re-examine patient'),
             ICUDailyRoundItem(
                 icon: '📍',
                 title:
-                    'Consider:\n • Secondary pathology\n • NM blockade\n • Diuresis\n • Recruitment manoeuvre\n • Prone positiiong'),
+                    'Consider:\n • ECG\n • Echocardiography\n • Troponin\n • Invasive cardiac monitoring'),
           ])
     ]),
-    ICUDailyRoundStepSection(heading: 'CXR', subsections: [
+    ICUDailyRoundStepSection(heading: '', subsections: [
       ICUDailyRoundStepSubsection(
-          heading: 'CXR frequency - COVID patients',
+          heading: 'If Haemodynamically unstable/ Norad > 30mcg/min',
           footer: '',
           list: [
-            ICUDailyRoundItem(icon: '⏰', title: 'Mon/Wed/Friday - routine'),
-            ICUDailyRoundItem(icon: '📍', title: 'If new CVC/NGT'),
+            ICUDailyRoundItem(icon: '💬', title: 'Discuss with Intensivist'),
             ICUDailyRoundItem(
-                icon: '📍', title: 'If significant clinical change'),
+                icon: '💪', title: 'Consider Hydrocortisone 50mg IV QID'),
+            ICUDailyRoundItem(
+                icon: '📍', title: 'Consider Argipressin 1-2 units/hr'),
+            ICUDailyRoundItem(
+                icon: '💧', title: 'Consider not giving fluid bolus'),
+            ICUDailyRoundItem(
+                icon: '🤔',
+                title: 'Re-visit diagnosis - does patient need inotropes'),
           ])
     ])
   ]),
@@ -1731,57 +1753,62 @@ const gitBasicsGuide = [
     [
       IntubationSection(
         items: [
-          IntubationItem('SpO2: 92-96% (COVID-19/COPD):88-92% ', icon: '🌬'),
-          IntubationItem('PaO2> 55-60mmHg', icon: '☝️'),
-          IntubationItem('PaCO2 35-45mmHg or pH > 7.2', icon: '😷'),
-          IntubationItem('Normal / stable work od breathing / RR',
-              icon: '👩‍⚕️'),
-          IntubationItem('I:E ratio 1:2', icon: '🤫'),
+          IntubationItem('MAP > 65mmHg', icon: '🎯'),
+          IntubationItem('HR < 130', icon: '🎯'),
+          IntubationItem('Cap refill < 2', icon: '🎯'),
+          IntubationItem('Cardiac index > 2.2', icon: '🎯'),
+          IntubationItem(
+              'Common ❤️ medications and doses:\n • Noradrenaline\n     • 0.5-100mcg/min\n • Amiodarone\n     • 15mg/kg/d',
+              icon: '🤫'),
         ],
       )
     ],
   ),
   ICUDailyRoundSteps(heading: 'Principles', sections: [
-    ICUDailyRoundStepSection(
-        heading: 'Default Ventilator settings',
-        subsections: [
-          ICUDailyRoundStepSubsection(
-              heading: 'Ventilator settings',
-              footer: '',
-              list: [
-                ICUDailyRoundItem(icon: '👀', title: 'SIMV VC'),
-                ICUDailyRoundItem(icon: '📍', title: 'FiO2 dependent on PEEP'),
-                ICUDailyRoundItem(icon: '🔍', title: 'Confirmed with CXR?'),
-                ICUDailyRoundItem(
-                    icon: '🔒',
-                    title: 'Are all connections secured with sleek?'),
-              ])
-        ]),
-    ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
+    ICUDailyRoundStepSection(heading: 'Actions', subsections: [
       ICUDailyRoundStepSubsection(
-          heading: 'If FiO2> 0.6 and PEEP 15 for 4-6 hours:',
+          heading: 'Basic vasopressor guidance',
           footer: '',
           list: [
-            ICUDailyRoundItem(icon: '⏰', title: 'Senior Review'),
+            ICUDailyRoundItem(
+                icon: '👀',
+                title: 'If MAP < 65 & adequately fluid resuscitated'),
+            ICUDailyRoundItem(
+                icon: '📍', title: 'Start noradrenaline at 5mcg/min'),
+            ICUDailyRoundItem(icon: '📈', title: 'Titrate to MAP'),
+          ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
+      ICUDailyRoundStepSubsection(
+          heading: 'If Haemodynamically unstable/ Norad > 20mcg/min',
+          footer: '',
+          list: [
+            ICUDailyRoundItem(icon: '⏰', title: 'Re-examine patient'),
             ICUDailyRoundItem(
                 icon: '📍',
                 title:
-                    'Consider:\n • Secondary pathology\n • NM blockade\n • Diuresis\n • Recruitment manoeuvre\n • Prone positiiong'),
+                    'Consider:\n • ECG\n • Echocardiography\n • Troponin\n • Invasive cardiac monitoring'),
           ])
     ]),
-    ICUDailyRoundStepSection(heading: 'CXR', subsections: [
+    ICUDailyRoundStepSection(heading: '', subsections: [
       ICUDailyRoundStepSubsection(
-          heading: 'CXR frequency - COVID patients',
+          heading: 'If Haemodynamically unstable/ Norad > 30mcg/min',
           footer: '',
           list: [
-            ICUDailyRoundItem(icon: '⏰', title: 'Mon/Wed/Friday - routine'),
-            ICUDailyRoundItem(icon: '📍', title: 'If new CVC/NGT'),
+            ICUDailyRoundItem(icon: '💬', title: 'Discuss with Intensivist'),
             ICUDailyRoundItem(
-                icon: '📍', title: 'If significant clinical change'),
+                icon: '💪', title: 'Consider Hydrocortisone 50mg IV QID'),
+            ICUDailyRoundItem(
+                icon: '📍', title: 'Consider Argipressin 1-2 units/hr'),
+            ICUDailyRoundItem(
+                icon: '💧', title: 'Consider not giving fluid bolus'),
+            ICUDailyRoundItem(
+                icon: '🤔',
+                title: 'Re-visit diagnosis - does patient need inotropes'),
           ])
     ])
   ]),
 ];
 
 // '💬' '😷' '❤️''✅' '👟'
-// '⚖️'),'🔈''🌊' '🎚''👀' '😅'),'😬''🙃''🤔''🚨''👉''🛌''💧''👉')'💪''🙇‍♀️''•'
+// '⚖️'),'🔈''🌊' '🎚''👀' '😅'),'😬''🙃''🤔''🚨''👉''🛌''💧''👉')'💪''🙇‍♀️'📈'•'
