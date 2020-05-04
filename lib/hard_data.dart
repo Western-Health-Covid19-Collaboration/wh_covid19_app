@@ -1385,12 +1385,9 @@ const airwayAssessmentGuide = [
     [
       IntubationSection(
         items: [
-          IntubationItem(
-              'Incident of difficult airway INCREASED up to 10x in ICU',
-              icon: '🚨'),
-          IntubationItem(
-              'Take advantage of assessing before patient deteriorates',
-              icon: '⏰'),
+          IntubationItem('Difficult airway more likely in ICU',
+              subtitle: '• up to 10x Increase', icon: '🚨'),
+          IntubationItem('Assess patient before deterioration', icon: '⏰'),
         ],
       )
     ],
@@ -1425,15 +1422,19 @@ const airwayAssessmentGuide = [
         ICUDailyRoundItem(icon: '👅', title: 'MP 3/4'),
         ICUDailyRoundItem(icon: '🤔', title: 'Male'),
       ]),
-      ICUDailyRoundStepSubsection(heading: 'Difficult ETT?', footer: '', list: [
-        ICUDailyRoundItem(icon: '🔍', title: 'Previous difficult intubation'),
-        ICUDailyRoundItem(icon: '👄', title: 'Mouth Opening < 3cm'),
-        ICUDailyRoundItem(icon: '🍔', title: 'Obese/Large breasts'),
-        ICUDailyRoundItem(icon: '🦒', title: 'Reduced neck extension'),
-        ICUDailyRoundItem(icon: '🤔', title: 'Retrognathia'),
-        ICUDailyRoundItem(icon: '🦷', title: 'Prominent incisors'),
-        ICUDailyRoundItem(icon: '👅', title: 'Large tongue'),
-      ])
+      ICUDailyRoundStepSubsection(
+          heading: 'Difficult Intubation?',
+          footer: '',
+          list: [
+            ICUDailyRoundItem(
+                icon: '🔍', title: 'Previous difficult intubation'),
+            ICUDailyRoundItem(icon: '👄', title: 'Mouth Opening < 3cm'),
+            ICUDailyRoundItem(icon: '🍔', title: 'Obese/Large breasts'),
+            ICUDailyRoundItem(icon: '🦒', title: 'Reduced neck extension'),
+            ICUDailyRoundItem(icon: '🤔', title: 'Retrognathia'),
+            ICUDailyRoundItem(icon: '🦷', title: 'Prominent incisors'),
+            ICUDailyRoundItem(icon: '👅', title: 'Large tongue'),
+          ])
     ])
   ]),
 ];
@@ -1449,7 +1450,7 @@ const ventBasicsGuide = [
               subtitle: '• May be 92-96% in otherwise healthy patients'),
           IntubationItem('PaO2> 55-60mmHg', icon: '🎯'),
           IntubationItem('PaCO2 35-45mmHg or pH > 7.2', icon: '🎯'),
-          IntubationItem('Normal / stable work od breathing / RR', icon: '🎯️'),
+          IntubationItem('Stable work of breathing / RR', icon: '🎯️'),
           IntubationItem('I:E ratio 1:2', icon: '🎯'),
         ],
       )
@@ -1482,7 +1483,7 @@ const ventBasicsGuide = [
     ]),
     ICUDailyRoundStepSection(heading: 'CXR', subsections: [
       ICUDailyRoundStepSubsection(
-          heading: 'CXR frequency - COVID patients',
+          heading: 'Frequency in COVID patients',
           footer: '',
           list: [
             ICUDailyRoundItem(icon: '⏰', title: 'Mon/Wed/Friday - routine'),
@@ -1502,11 +1503,12 @@ const cvsBasicsGuide = [
         items: [
           IntubationItem('MAP > 65mmHg', icon: '🎯'),
           IntubationItem('HR < 130', icon: '🎯'),
-          IntubationItem('Cap refill < 2', icon: '🎯'),
+          IntubationItem('Cap refill < 2s', icon: '🎯'),
           IntubationItem('Cardiac index > 2.2', icon: '🎯'),
-          IntubationItem(
-              'Common ❤️ medications and doses:\n • Noradrenaline\n     • 0.5-100mcg/min\n • Amiodarone\n     • 15mg/kg/d',
-              icon: '🤫'),
+          IntubationItem('Common cardiac medications and doses:',
+              subtitle:
+                  '• Noradrenaline\n     • 0.5-100mcg/min\n • Amiodarone\n     • 15mg/kg/d',
+              icon: '❤'),
         ],
       )
     ],
@@ -1519,7 +1521,7 @@ const cvsBasicsGuide = [
           list: [
             ICUDailyRoundItem(
                 icon: '👀',
-                title: 'If MAP < 65 & adequately fluid resuscitated'),
+                title: 'If MAP < 65 & adequately fluid resuscitated:'),
             ICUDailyRoundItem(
                 icon: '📍', title: 'Start noradrenaline at 5mcg/min'),
             ICUDailyRoundItem(icon: '📈', title: 'Titrate to MAP'),
@@ -1527,12 +1529,12 @@ const cvsBasicsGuide = [
     ]),
     ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
       ICUDailyRoundStepSubsection(
-          heading: 'If Haemodynamically unstable/ Norad > 20mcg/min',
+          heading: 'If Haemodynamically unstable or Noradrenaline > 20mcg/min',
           footer: '',
           list: [
             ICUDailyRoundItem(icon: '⏰', title: 'Re-examine patient'),
             ICUDailyRoundItem(
-                icon: '📍',
+                icon: '🤔',
                 title:
                     'Consider:\n • ECG\n • Echocardiography\n • Troponin\n • Invasive cardiac monitoring'),
           ])
@@ -1546,9 +1548,8 @@ const cvsBasicsGuide = [
             ICUDailyRoundItem(
                 icon: '💪', title: 'Consider Hydrocortisone 50mg IV QID'),
             ICUDailyRoundItem(
-                icon: '📍', title: 'Consider Argipressin 1-2 units/hr'),
-            ICUDailyRoundItem(
-                icon: '💧', title: 'Consider not giving fluid bolus'),
+                icon: '🤔', title: 'Consider Argipressin 1-2 units/hr'),
+            ICUDailyRoundItem(icon: '💧', title: 'Consider giving fluid bolus'),
             ICUDailyRoundItem(
                 icon: '🤔',
                 title: 'Re-visit diagnosis - does patient need inotropes'),
@@ -1565,10 +1566,13 @@ const neuroBasicsGuide = [
         items: [
           IntubationItem('Consider sedation targets in clinical context',
               icon: '🤔'),
-          IntubationItem(
-              'If Haemodynamically unstable/ hypoxic/ prone\n • RIKER 1',
+          IntubationItem('Aim for RIKER score 1 if patient is:',
+              subtitle:
+                  ' • Haemodynamically unstable\n • Hypoxic\n • Requires proning',
               icon: '🎯'),
-          IntubationItem('If weaning & FiO2 < 0.4\n • RIKER 3-4', icon: '🎯'),
+          IntubationItem('Aim for RIKER score 3-4 if patient is:',
+              subtitle: ' • Weaning from ventilator\n • FiO2 < 0.4',
+              icon: '🎯'),
         ],
       )
     ],
@@ -1583,72 +1587,75 @@ const neuroBasicsGuide = [
               list: [
                 ICUDailyRoundItem(
                     icon: '7️',
-                    title:
-                        'Dangerous agitation\n • Pulling ETT\n • Climbing out of bed'),
+                    title: 'Dangerous agitation',
+                    subtitle: ' • Pulling at ETT\n • Climbing out of bed'),
                 ICUDailyRoundItem(
                     icon: '6️',
-                    title:
-                        'Very agitated\n • Does not calm down\n • May require restraint at times'),
+                    title: 'Very agitated',
+                    subtitle:
+                        ' • Does not calm down\n • May require restraint at times'),
                 ICUDailyRoundItem(
                     icon: '5',
-                    title:
-                        'Agitated\n • Anxious or mildly agitated\n • Attempting to sit up\n • Calms with verbal instructions'),
+                    title: 'Agitated',
+                    subtitle:
+                        ' • Anxious or mildly agitated\n • Attempts to sit up\n • Calms with verbal instructions'),
                 ICUDailyRoundItem(
                     icon: '4️',
-                    title:
-                        'Calm and co-operative\n • Calm, awakens easily\n • Follows commands'),
+                    title: 'Calm and co-operative',
+                    subtitle: ' • Calm\n • Wakens easily\n • Follows commands'),
                 ICUDailyRoundItem(
                     icon: '3',
-                    title:
-                        'Dangerous agitation\n • Pulling ETT, climbing out of bed'),
+                    title: 'Dangerous agitation',
+                    subtitle: ' • Pulling ETT\n • Climbing out of bed'),
                 ICUDailyRoundItem(
                     icon: '2️',
-                    title:
-                        'Sedated\n • Difficult to rouse\n • Awakens to verbal stimuli\n • Does not follow commands'),
+                    title: 'Sedated',
+                    subtitle:
+                        ' • Difficult to rouse\n • Awakens to verbal stimuli\n • Does not follow commands'),
                 ICUDailyRoundItem(
                     icon: '1',
-                    title:
-                        'Unrousable\n • No response to noxious stiumuli\n • Does not follow commands'),
+                    title: 'Unrousable',
+                    subtitle:
+                        ' • No response to noxious stiumuli\n • Does not follow commands'),
               ])
         ]),
   ]),
   ICUDailyRoundSteps(heading: 'Sedation', sections: [
-    ICUDailyRoundStepSection(heading: 'Basic Principles', subsections: [
-      ICUDailyRoundStepSubsection(
-          heading: 'Choice of sedative',
-          footer: '',
-          list: [
-            ICUDailyRoundItem(
-                icon: '👀',
-                title:
-                    'If post-intubation:\n • Propofol 50-100mg/hr\n • +/- Fentanyl 10-20mcg/hr'),
-          ])
+    ICUDailyRoundStepSection(heading: 'Choice of sedative:', subsections: [
+      ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
+        ICUDailyRoundItem(
+            icon: '👀',
+            title:
+                'If post-intubation:\n • Propofol 50-100mg/hr\n • +/- Fentanyl 10-20mcg/hr'),
+      ])
     ]),
-    ICUDailyRoundStepSection(heading: '', subsections: [
-      ICUDailyRoundStepSubsection(
-          heading: 'Daily sedation break if',
-          footer: '',
-          list: [
+    ICUDailyRoundStepSection(
+        heading: 'Consider daily sedation break if:',
+        subsections: [
+          ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
             ICUDailyRoundItem(icon: '📍', title: 'FiO2 < 0.4'),
-            ICUDailyRoundItem(icon: '📍', title: 'Noradrenaline < 20'),
-            ICUDailyRoundItem(icon: '📍', title: 'No muscle relaxant'),
+            ICUDailyRoundItem(icon: '📍', title: 'Noradrenaline < 20mcg/min'),
+            ICUDailyRoundItem(icon: '📍', title: 'No muscle relaxant in use'),
           ])
-    ]),
-    ICUDailyRoundStepSection(heading: '', subsections: [
+        ]),
+    ICUDailyRoundStepSection(heading: 'Commonly used Drugs', subsections: [
       ICUDailyRoundStepSubsection(
-          heading: 'Commonly used drugs and infusion ranges',
+          heading: '',
           footer: 'Discuss with intensivist or senior colleague if unsure',
           list: [
-            ICUDailyRoundItem(icon: '💊', title: 'Propofol\n     • 5-200mg/hr'),
             ICUDailyRoundItem(
-                icon: '💊', title: 'Midazolam\n     • 0.5-10mg/hr'),
+                icon: '💊', title: 'Propofol', subtitle: '• 5-200mg/hr'),
             ICUDailyRoundItem(
-                icon: '💊', title: 'Fentanyl\n     • 10-30mcg/hr'),
+                icon: '💊', title: 'Midazolam', subtitle: '• 0.5-10mg/hr'),
             ICUDailyRoundItem(
-                icon: '💊', title: 'Morphine\n     • 0.5-10mg/hr'),
+                icon: '💊', title: 'Fentanyl', subtitle: '• 10-30mcg/hr'),
+            ICUDailyRoundItem(
+                icon: '💊', title: 'Morphine', subtitle: '• 0.5-10mg/hr'),
             ICUDailyRoundItem(
                 icon: '💊',
-                title: 'Cisatracurium\n     • 15mg blous then 10mg/hr'),
+                title: 'Cisatracurium',
+                subtitle:
+                    '• 15mg blous then 10mg/hr\n• A paralysis agent rather than sedative'),
           ])
     ])
   ]),
