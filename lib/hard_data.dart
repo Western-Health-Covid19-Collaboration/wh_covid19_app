@@ -1729,7 +1729,7 @@ const renalBasicsGuide = [
   ),
   ICUDailyRoundSteps(heading: 'Principles', sections: [
     ICUDailyRoundStepSection(
-        heading: 'If fluid balance +ve >1litre in 24h',
+        heading: 'If Fluid Balance +ve >1litre in 24h',
         subsections: [
           ICUDailyRoundStepSubsection(
               heading: 'Consider frusemide',
