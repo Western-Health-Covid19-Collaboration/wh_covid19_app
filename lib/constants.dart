@@ -5,4 +5,6 @@ class Constants {
   static const String settingDisclaimerVersion = 'disclaimer_version';
   static const String settingDisclaimerAgreedDateTime =
       'disclaimer_agreed_date_time';
+  static const String settingAnalyticsReporting = 'analytics_reporting';
+  static const String settingCrashReporting = 'crash_reporting';
 }

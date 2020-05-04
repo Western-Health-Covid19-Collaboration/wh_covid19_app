@@ -11,7 +11,7 @@ class Analytics {
       FirebaseAnalyticsObserver(analytics: analytics);
 
   static Future<void> analyticsAppOpen() async {
-    // Only report to analytics if this is a release build
+    // Only report to analytics if this is a release build and privacy enabled
     if (kReleaseMode) {
       await analytics.logEvent(name: 'app_open');
     }

@@ -1,11 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../appState.dart';
 import '../hard_data.dart';
 import '../strings.dart';
 import '../style.dart';
+import '../utils/storage.dart';
 
 class SwitchCard extends StatefulWidget {
   @override
@@ -56,10 +59,18 @@ class _SwitchCardState extends State<SwitchCard> {
                   padding: const EdgeInsets.only(right: 16.0),
                   child: CupertinoSwitch(
                     activeColor: AppColors.backgroundGreen,
-                    value: _selected,
-                    onChanged: (bool value) {
+                    value: Provider.of<PrivacyStateNotifier>(context)
+                        .currentPrivacy,
+                    onChanged: (bool newValue) {
+                      // On switch value changing, update app state and write
+                      // to device storage
                       setState(() {
-                        _selected = value;
+                        // Update app state with new value
+                        Provider.of<PrivacyStateNotifier>(context,
+                                listen: false)
+                            .privacyChange(newValue);
+                        // Update persistent storage with the new value
+                        Settings.writePrivacy(newValue);
                       });
                     },
                   ),

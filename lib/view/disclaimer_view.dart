@@ -22,19 +22,13 @@ class DisclaimerView extends StatefulWidget {
 class _DisclaimerViewState extends State<DisclaimerView> {
   // Check persisted values for disclaimer agreement if they exist
   Future<DisclaimerDetails> _checkDisclaimerAgreed() async {
-    //final disclaimerValues = DisclaimerDetails();
     final disclaimerValues = await Settings.readDisclaimerAgreed();
 
-    // Read any storage persisted values
-//    disclaimerValues.agreed = await Settings.readDisclaimerAgreed();
-//    disclaimerValues.version = await Settings.readDisclaimerVersion();
-//    disclaimerValues.dateStamp = await Settings.readDisclaimerAgreedDateTime();
-
     // Format the datStamp to be more user readable
-    final dateStamp = await Settings.readDisclaimerAgreedDateTime();
     if (disclaimerValues.dateStamp != '') {
-      disclaimerValues.dateStamp =
-          DateFormat.yMMMd().add_jm().format(DateTime.parse(dateStamp));
+      disclaimerValues.dateStamp = DateFormat.yMMMd()
+          .add_jm()
+          .format(DateTime.parse(disclaimerValues.dateStamp));
     }
 
     return disclaimerValues;
