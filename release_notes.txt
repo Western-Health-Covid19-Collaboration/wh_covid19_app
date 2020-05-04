@@ -2,6 +2,7 @@
 * Updates to disclaimer to point out privacy policy
 * Copy updates and tweaks from Gregg
 * Changes to layout of home screen and information section
+* Better emoji for intubation and extubation
 
 ---- Sunday 26th April, 2020 ----
 * Add Infographic Page for ALS/BLS Modifications
