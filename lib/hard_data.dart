@@ -6,7 +6,6 @@ import 'models/PPEStepInfo.dart';
 import 'models/home_card.dart';
 import 'models/icu_daily_round_checklist.dart';
 import 'models/icu_daily_round_steps.dart';
-import 'models/icu_daily_round_steps.dart';
 import 'models/intubation_guide.dart';
 import 'models/prone_checklist.dart';
 import 'routes.dart';
@@ -1387,7 +1386,7 @@ const airwayAssessmentGuide = [
         items: [
           IntubationItem('Difficult airway more likely in ICU',
               subtitle: '• up to 10x Increase', icon: '🚨'),
-          IntubationItem('Assess patient before deterioration', icon: '⏰'),
+          IntubationItem('Assess patient before they deteriorate', icon: '⏰'),
         ],
       )
     ],
@@ -1445,11 +1444,12 @@ const ventBasicsGuide = [
     [
       IntubationSection(
         items: [
-          IntubationItem('SpO2 88-92% in COVID19',
+          IntubationItem('SpO2 88-92% for COVID19 patients',
               icon: '🎯',
-              subtitle: '• May be 92-96% in otherwise healthy patients'),
+              subtitle: 'SpO2 92-96% in otherwise healthy patients'),
           IntubationItem('PaO2> 55-60mmHg', icon: '🎯'),
-          IntubationItem('PaCO2 35-45mmHg or pH > 7.2', icon: '🎯'),
+          IntubationItem('PaCO2 35-45mmHg', icon: '🎯'),
+          IntubationItem('pH > 7.2', icon: '🎯'),
           IntubationItem('Stable work of breathing / RR', icon: '🎯️'),
           IntubationItem('I:E ratio 1:2', icon: '🎯'),
         ],
@@ -1477,8 +1477,9 @@ const ventBasicsGuide = [
             ICUDailyRoundItem(icon: '⏰', title: 'Senior Review'),
             ICUDailyRoundItem(
                 icon: '🤔',
-                title:
-                    'Consider:\n • Secondary pathology\n • NM blockade\n • Diuresis\n • Recruitment manoeuvre\n • Prone positiiong'),
+                title: 'Consider:',
+                subtitle:
+                    '• Secondary pathology\n• NM blockade\n• Diuresis\n• Recruitment manoeuvre\n• Prone positiiong'),
           ])
     ]),
     ICUDailyRoundStepSection(heading: 'CXR', subsections: [
