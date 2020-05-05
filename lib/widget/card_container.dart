@@ -7,8 +7,7 @@ enum CardsLayout { twoRow, threeColumn, threeDoubleRowBigTop, fourDoubleRow }
 
 class CardContainer extends StatelessWidget {
   static const double _outerPadding = 16;
-  static const double _innerPadding = 8;
-  static const double _headerPadding = 0;
+  static const double _headerPadding = 4;
 
   /// Title for the container
   final String title;
@@ -28,8 +27,8 @@ class CardContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final containerHeading = title != null
-        ? Padding(
-            padding: const EdgeInsets.only(left: _headerPadding),
+        ? Container(
+            margin: const EdgeInsets.only(left: _headerPadding),
             child: Text(
               title,
               style: Styles.cardContainerTextStyle,
@@ -44,7 +43,6 @@ class CardContainer extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           containerHeading,
-          _buildVerticalSpacer(),
           _cardsLayout(containerLayout),
         ],
       ),
@@ -59,7 +57,6 @@ class CardContainer extends StatelessWidget {
           return Row(
             children: <Widget>[
               Expanded(child: cards[0]),
-              _buildHorizontalSpacer(),
               Expanded(child: cards[1]),
             ],
           );
@@ -75,9 +72,7 @@ class CardContainer extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               cards[0],
-              _buildVerticalSpacer(),
               cards[1],
-              _buildVerticalSpacer(),
               cards[2]
             ],
           );
@@ -94,11 +89,9 @@ class CardContainer extends StatelessWidget {
               Row(children: <Widget>[
                 Expanded(child: cards[0]),
               ]),
-              _buildVerticalSpacer(),
               Row(
                 children: <Widget>[
                   Expanded(child: cards[1]),
-                  _buildHorizontalSpacer(),
                   Expanded(child: cards[2]),
                 ],
               )
@@ -117,14 +110,12 @@ class CardContainer extends StatelessWidget {
               Row(
                 children: <Widget>[
                   Expanded(child: cards[0]),
-                  _buildHorizontalSpacer(),
                   Expanded(child: cards[1]),
                 ],
               ),
               Row(
                 children: <Widget>[
                   Expanded(child: cards[2]),
-                  _buildHorizontalSpacer(),
                   Expanded(child: cards[3]),
                 ],
               )
@@ -139,10 +130,6 @@ class CardContainer extends StatelessWidget {
         return Container();
     }
   }
-
-  Widget _buildHorizontalSpacer() => Container(width: _innerPadding);
-
-  Widget _buildVerticalSpacer() => Container(height: _innerPadding);
 
   Widget _wrongCardsNumber() => const Center(
         child: Text(

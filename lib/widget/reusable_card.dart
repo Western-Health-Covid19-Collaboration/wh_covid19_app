@@ -6,7 +6,7 @@ import '../widget/cards/reusable_card_base.dart';
 
 class ReusableCard extends StatelessWidget {
   static const double _defaultHeight = 84;
-  static const EdgeInsets _defaultMargin = EdgeInsets.all(0.0);
+  static const EdgeInsets _defaultMargin = EdgeInsets.all(4.0);
 
   /// Title of the card
   final String title;

@@ -6,7 +6,7 @@ import '../style.dart';
 import '../widget/reusable_card.dart';
 
 class ReferenceView extends StatelessWidget {
-  final EdgeInsets _titlePadding = const EdgeInsets.fromLTRB(0, 24, 16, 0);
+  final EdgeInsets _titlePadding = const EdgeInsets.fromLTRB(4, 24, 16, 0);
   final EdgeInsets _contentPadding = const EdgeInsets.fromLTRB(16, 0, 16, 16);
   final double _sectionHeight = 48;
 
@@ -65,8 +65,8 @@ class ReferenceView extends StatelessWidget {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                  Padding(
-                    padding: _titlePadding,
+                  Container(
+                    margin: _titlePadding,
                     child: const Text('References', style: Styles.textH4),
                   ),
                   ..._sections.map((e) =>
