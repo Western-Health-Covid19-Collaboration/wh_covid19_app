@@ -70,11 +70,7 @@ class CardContainer extends StatelessWidget {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              cards[0],
-              cards[1],
-              cards[2]
-            ],
+            children: <Widget>[cards[0], cards[1], cards[2]],
           );
         } else {
           return _wrongCardsNumber();
