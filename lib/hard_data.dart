@@ -360,8 +360,6 @@ const List<IntubationContent> intubationGuide = [
               icon: '🚨',
               subtitle:
                   '• ICU liaison nurses to escalate if required\n• Code blue - Intubation team if COVID high risk/confirmed'),
-//          IntubationItem('Discuss ventilation plan',
-//              subtitle: 'Protective lung ventilation', icon: '💬'),
         ],
       )
     ],
@@ -373,9 +371,11 @@ const List<IntubationContent> intubationGuide = [
         name: 'Location',
         items: [
           IntubationItem(
-              'Intubating team to decide if patient is stable enough for transfer'),
+              'Intubating team to decide if patient is stable enough for transfer',
+              icon: '🤔'),
           IntubationItem(
             'Preference of Intubation location:',
+            icon: '🛏',
             subtitle:
                 '1. ICU NPR\n2. NPR in ED or other sites\n3. Designated COVID19 theatre\n4. ED rooms, ward rooms',
           ),
@@ -394,7 +394,7 @@ const List<IntubationContent> intubationGuide = [
         name: 'Staff Positioning',
         items: [
           IntubationItem('Refer to SAS Infographic',
-              subtitle: ' available through PDF icon ↗️'),
+              icon: '📄', subtitle: ' available through PDF icon ↗️'),
         ],
       ),
       IntubationSection(
@@ -402,9 +402,11 @@ const List<IntubationContent> intubationGuide = [
         items: [
           IntubationItem(
             'Support team will stand outside the anteroom',
+            icon: '👫',
           ),
           IntubationItem(
             'Place any clean equipment required on "exchange trolley" inside the anteroom',
+            icon: '🛒',
           ),
           IntubationItem(
             'Use Walkie talkie or other means for communication',
@@ -420,14 +422,17 @@ const List<IntubationContent> intubationGuide = [
       IntubationSection(
         name: 'Preoxygenation',
         items: [
-          IntubationItem('Circuit osrder of Placement:',
+          IntubationItem('Circuit order of Placement:',
+              icon: '🔢',
               subtitle:
                   ' • Mask\n • Filter\n • ETCO2\n • PEEP\n • Laerdal bag'),
           IntubationItem(
             'Tight fitting mask, with two-hand grip',
+            icon: '✊',
           ),
           IntubationItem(
             '45° head up',
+            icon: '📐',
           ),
         ],
       ),
@@ -435,9 +440,10 @@ const List<IntubationContent> intubationGuide = [
         name: 'Rapid sequence induction',
         items: [
           IntubationItem('Modified RSI technique',
+              icon: '💉',
               subtitle:
                   '• Rocuronium >1.5mg/kg IBW or\n• Suxamethonium 1.5mg/kg IBW\n• Wait 60s for paralysis'),
-          IntubationItem('Avoid routine cricoid pressure'),
+          IntubationItem('Avoid routine cricoid pressure', icon: '🙅‍♀️'),
           IntubationItem(
             'Avoid BMV during apnoea unless life threatening hypoxia',
             icon: '⚖',
@@ -448,17 +454,19 @@ const List<IntubationContent> intubationGuide = [
         name: 'Intubation',
         items: [
           IntubationItem('Use Videolaryngoscopy for 1st attempt',
-              subtitle: '• Indirect view'),
-          IntubationItem(' Size 8.0 ETT if available'),
+              icon: '📺', subtitle: '• Indirect view'),
+          IntubationItem(' Size 8.0 ETT if available', icon: '📏'),
           IntubationItem('Cuff up with 10ml air prior to ventilating',
               icon: '🛑'),
           IntubationItem(
             'Confirm ventilation:',
+            icon: '📈',
             subtitle:
                 '• Capnography waveform\n• Chest movement\n• Auscultation',
           ),
           IntubationItem(
             'If Plan A - Intubation fails:',
+            icon: '🔤',
             subtitle:
                 '• Plan B i-gel LMA\n• Plan C 2-handed BMV\n• Plan D Scalpel-bougie-tube',
           ),
@@ -472,17 +480,21 @@ const List<IntubationContent> intubationGuide = [
       IntubationSection(
         items: [
           IntubationItem('Ventilator preferences:',
+              icon: '🌬',
               subtitle:
                   ' 1. ICU Marquet\n 2. ED Hamilton\n 3. ICU/Other Oxylog/Hamilton'),
           IntubationItem(
             'Circuit of Marquet to be prepared by ICU nurse',
+            icon: '⚙️',
             subtitle:
                 '• SIMV + PS, volume control\n• Vt 6-8ml/kg IBW (often 400-500ml)\n• RR 12',
           ),
           IntubationItem('Airway doctor:',
+              icon: '👩‍⚕️',
               subtitle:
                   ' • Turn off O2 flow to self-inflating bag\n • Clam the ETT with a chest drain clamp\n • Disconnect ETT from HME\n • Connect prepared circuit to ETT\n • Unclamp ETT\n •Turn ventilator on\n • Commence ventilation\n • Sleek ETT connections '),
           IntubationItem('ETCO2:',
+              icon: '🌊',
               subtitle:
                   '• In ICU NPR: ETCO2 not part of ventilator circuit\n • In ED/Ward: ETCO2 should be part of circuit for transport'),
         ],
@@ -495,12 +507,13 @@ const List<IntubationContent> intubationGuide = [
       IntubationSection(
         items: [
           IntubationItem(
-              'Insert NG tube immediately post-intubation in the NPR'),
+              'Insert NG tube immediately post-intubation in the NPR',
+              icon: '👃'),
           IntubationItem('PPE removed as per WH guidelines', icon: '🛑'),
           IntubationItem(
-            'Move patient to a COVID19 cubicle in ICU as soon as available',
-          ),
-          IntubationItem('Lines and CXR outside NPR'),
+              'Move patient to a COVID19 cubicle in ICU as soon as available',
+              icon: '🚪'),
+          IntubationItem('Lines and CXR outside NPR', icon: '💉'),
           IntubationItem('Debrief and share lessons', icon: '💬'),
         ],
       )
@@ -514,9 +527,10 @@ const List<IntubationContent> extubationGuide = [
     [
       IntubationSection(
         items: [
-          IntubationItem('Is patient clinically stable to extubate now?'),
+          IntubationItem('Is patient clinically stable to extubate now?',
+              icon: '❓'),
           IntubationItem('Assemble team',
-              subtitle: 'Anaesthetists and anaesthetic nurse ONLY'),
+              icon: '👫', subtitle: 'Anaesthetists and anaesthetic nurse ONLY'),
           IntubationItem('Discuss extubation plan', icon: '💬'),
           IntubationItem(
               'Consider strategies to reduce coughing if you are familiar with them',
@@ -551,7 +565,7 @@ const List<IntubationContent> extubationGuide = [
       IntubationSection(
         items: [
           IntubationItem('All staff in the room must wear FULL PPE',
-              subtitle: 'Including N95 mask and eye protection'),
+              icon: '⚠️', subtitle: 'Including N95 mask and eye protection'),
           IntubationItem(
               'Buddy check each other PPE prior to performing extubation',
               icon: '😊'),
@@ -565,16 +579,19 @@ const List<IntubationContent> extubationGuide = [
       IntubationSection(
         items: [
           IntubationItem('Extubate patient with cuff down and APL fully open',
-              subtitle: 'NO positive pressure'),
+              icon: '🎚', subtitle: 'NO positive pressure'),
           IntubationItem('Carefully discard ETT into clinical waste bin',
               icon: '🚮'),
           IntubationItem(
               'Immediately apply face mask to patient with 2 hand grip',
+              icon: '😷',
               subtitle: 'Over nasal prongs if present'),
           IntubationItem(
-              'Continue to apply face mask until able to protect their own airway'),
+              'Continue to apply face mask until able to protect their own airway',
+              icon: '⏳'),
           IntubationItem(
-              'Switch to Hudson or nasal prongs O2 with a surgical mask over the top'),
+              'Switch to Hudson or nasal prongs O2 with a surgical mask over the top',
+              icon: '👃'),
         ],
       )
     ],
@@ -1381,3 +1398,452 @@ const alsBlsGuide = [
     ),
   ]),
 ];
+
+const airwayAssessmentGuide = [
+  IntubationContent(
+    'Principles',
+    [
+      IntubationSection(
+        items: [
+          IntubationItem('Difficult airway more likely in ICU',
+              subtitle: '• up to 10x Increase', icon: '🚨'),
+          IntubationItem('Assess patient before they deteriorate', icon: '⏰'),
+        ],
+      )
+    ],
+  ),
+  ICUDailyRoundSteps(heading: 'Assessment', sections: [
+    ICUDailyRoundStepSection(subsections: [
+      ICUDailyRoundStepSubsection(heading: 'History', footer: '', list: [
+        ICUDailyRoundItem(icon: '👀', title: 'Hx of difficult BMV/Intubation?'),
+        ICUDailyRoundItem(icon: '📜', title: 'PMH - ?RA/Reflux/OSA'),
+        ICUDailyRoundItem(
+            icon: '🤕', title: 'HPC - burns/Airway swelling/trauma?'),
+      ]),
+      ICUDailyRoundStepSubsection(heading: 'Examination', footer: '', list: [
+        ICUDailyRoundItem(icon: '🦷', title: 'Teeth/Dentition?'),
+        ICUDailyRoundItem(icon: '👄', title: 'Mouth opening?'),
+        ICUDailyRoundItem(icon: '👅', title: 'Mallampati score?'),
+        ICUDailyRoundItem(icon: '📏', title: 'Thyromental distance'),
+        ICUDailyRoundItem(icon: '🦒', title: 'Neck extension'),
+        ICUDailyRoundItem(icon: '🤔', title: 'Receding chin?'),
+      ])
+    ])
+  ]),
+  ICUDailyRoundSteps(heading: 'Predictors of Difficulty:', sections: [
+    ICUDailyRoundStepSection(subsections: [
+      ICUDailyRoundStepSubsection(heading: 'Difficult BMV?', footer: '', list: [
+        ICUDailyRoundItem(icon: '🔍', title: 'Previous difficult BMV'),
+        ICUDailyRoundItem(icon: '🦒', title: 'Neck Irradiation'),
+        ICUDailyRoundItem(icon: '🍔', title: 'Obese'),
+        ICUDailyRoundItem(icon: '👴', title: 'Age > 55'),
+        ICUDailyRoundItem(icon: '💤', title: 'Snorer/OSA'),
+        ICUDailyRoundItem(icon: '🦷', title: 'Edentulous'),
+        ICUDailyRoundItem(icon: '👅', title: 'MP 3/4'),
+        ICUDailyRoundItem(icon: '🤔', title: 'Male'),
+      ]),
+      ICUDailyRoundStepSubsection(
+          heading: 'Difficult Intubation?',
+          footer: '',
+          list: [
+            ICUDailyRoundItem(
+                icon: '🔍', title: 'Previous difficult intubation'),
+            ICUDailyRoundItem(icon: '👄', title: 'Mouth Opening < 3cm'),
+            ICUDailyRoundItem(icon: '🍔', title: 'Obese/Large breasts'),
+            ICUDailyRoundItem(icon: '🦒', title: 'Reduced neck extension'),
+            ICUDailyRoundItem(icon: '🤔', title: 'Retrognathia'),
+            ICUDailyRoundItem(icon: '🦷', title: 'Prominent incisors'),
+            ICUDailyRoundItem(icon: '👅', title: 'Large tongue'),
+          ])
+    ])
+  ]),
+];
+
+const ventBasicsGuide = [
+  IntubationContent(
+    'Aims',
+    [
+      IntubationSection(
+        items: [
+          IntubationItem('SpO2 88-92% for COVID19 patients',
+              icon: '🎯',
+              subtitle: 'SpO2 92-96% in otherwise healthy patients'),
+          IntubationItem('PaO2> 55-60mmHg', icon: '🎯'),
+          IntubationItem('PaCO2 35-45mmHg', icon: '🎯'),
+          IntubationItem('pH > 7.2', icon: '🎯'),
+          IntubationItem('Stable work of breathing / RR', icon: '🎯️'),
+          IntubationItem('I:E ratio 1:2', icon: '🎯'),
+        ],
+      )
+    ],
+  ),
+  ICUDailyRoundSteps(heading: 'Principles', sections: [
+    ICUDailyRoundStepSection(
+        heading: 'Default Ventilator settings',
+        subsections: [
+          ICUDailyRoundStepSubsection(
+              heading: 'Ventilator settings',
+              footer: '',
+              list: [
+                ICUDailyRoundItem(icon: '⚙️', title: 'SIMV VC'),
+                ICUDailyRoundItem(icon: '📍', title: 'FiO2 dependent on PEEP'),
+                ICUDailyRoundItem(icon: '🔍', title: 'Confirmed with CXR?'),
+              ])
+        ]),
+    ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
+      ICUDailyRoundStepSubsection(
+          heading: 'If FiO2> 0.6 and PEEP 15 for 4-6 hours:',
+          footer: '',
+          list: [
+            ICUDailyRoundItem(icon: '⏰', title: 'Senior Review'),
+            ICUDailyRoundItem(
+                icon: '🤔',
+                title: 'Consider:',
+                subtitle:
+                    '• Secondary pathology\n• NM blockade\n• Diuresis\n• Recruitment manoeuvre\n• Prone positiiong'),
+          ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'CXR', subsections: [
+      ICUDailyRoundStepSubsection(
+          heading: 'Frequency in COVID patients',
+          footer: '',
+          list: [
+            ICUDailyRoundItem(icon: '⏰', title: 'Mon/Wed/Friday - routine'),
+            ICUDailyRoundItem(icon: '📍', title: 'If new CVC/NGT'),
+            ICUDailyRoundItem(
+                icon: '📍', title: 'If significant clinical change'),
+          ])
+    ])
+  ]),
+];
+
+const cvsBasicsGuide = [
+  IntubationContent(
+    'Aims',
+    [
+      IntubationSection(
+        items: [
+          IntubationItem('MAP > 65mmHg', icon: '🎯'),
+          IntubationItem('HR < 130', icon: '🎯'),
+          IntubationItem('Cap refill < 2s', icon: '🎯'),
+          IntubationItem('Cardiac index > 2.2', icon: '🎯'),
+          IntubationItem('Common cardiac medications and doses:',
+              subtitle:
+                  '• Noradrenaline\n     • 0.5-100mcg/min\n • Amiodarone\n     • 15mg/kg/d',
+              icon: '❤'),
+        ],
+      )
+    ],
+  ),
+  ICUDailyRoundSteps(heading: 'Principles', sections: [
+    ICUDailyRoundStepSection(heading: 'Actions', subsections: [
+      ICUDailyRoundStepSubsection(
+          heading: 'Basic vasopressor guidance',
+          footer: '',
+          list: [
+            ICUDailyRoundItem(
+                icon: '👀',
+                title: 'If MAP < 65 & adequately fluid resuscitated:'),
+            ICUDailyRoundItem(
+                icon: '📍', title: 'Start noradrenaline at 5mcg/min'),
+            ICUDailyRoundItem(icon: '📈', title: 'Titrate to MAP'),
+          ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
+      ICUDailyRoundStepSubsection(
+          heading: 'If Haemodynamically unstable or Noradrenaline > 20mcg/min',
+          footer: '',
+          list: [
+            ICUDailyRoundItem(icon: '⏰', title: 'Re-examine patient'),
+            ICUDailyRoundItem(
+                icon: '🤔',
+                title: 'Consider:',
+                subtitle:
+                    '• ECG\n• Echocardiography\n• Troponin\n• Invasive cardiac monitoring'),
+          ])
+    ]),
+    ICUDailyRoundStepSection(heading: '', subsections: [
+      ICUDailyRoundStepSubsection(
+          heading: 'If Haemodynamically unstable/ Norad > 30mcg/min',
+          footer: '',
+          list: [
+            ICUDailyRoundItem(icon: '💬', title: 'Discuss with Intensivist'),
+            ICUDailyRoundItem(
+                icon: '💪', title: 'Consider Hydrocortisone 50mg IV QID'),
+            ICUDailyRoundItem(
+                icon: '🤔', title: 'Consider Argipressin 1-2 units/hr'),
+            ICUDailyRoundItem(icon: '💧', title: 'Consider giving fluid bolus'),
+            ICUDailyRoundItem(
+                icon: '🤔',
+                title: 'Re-visit diagnosis - does patient need inotropes'),
+          ])
+    ])
+  ]),
+];
+
+const neuroBasicsGuide = [
+  IntubationContent(
+    'Aims',
+    [
+      IntubationSection(
+        items: [
+          IntubationItem('Consider sedation targets in clinical context',
+              icon: '🤔'),
+          IntubationItem('Aim for RIKER score 1 if patient is:',
+              subtitle:
+                  ' • Haemodynamically unstable\n • Hypoxic\n • Requires proning',
+              icon: '🎯'),
+          IntubationItem('Aim for RIKER score 3-4 if patient is:',
+              subtitle: ' • Weaning from ventilator\n • FiO2 < 0.4',
+              icon: '🎯'),
+        ],
+      )
+    ],
+  ),
+  ICUDailyRoundSteps(heading: 'Riker Score', sections: [
+    ICUDailyRoundStepSection(
+        heading: 'Condition and example behaviours',
+        subsections: [
+          ICUDailyRoundStepSubsection(
+              heading: '',
+              footer: 'The Riker is a Sedation-Agitation Scale commonly used',
+              list: [
+                ICUDailyRoundItem(
+                    icon: '7️',
+                    title: 'Dangerous agitation',
+                    subtitle: ' • Pulling at ETT\n • Climbing out of bed'),
+                ICUDailyRoundItem(
+                    icon: '6️',
+                    title: 'Very agitated',
+                    subtitle:
+                        ' • Does not calm down\n • May require restraint at times'),
+                ICUDailyRoundItem(
+                    icon: '5',
+                    title: 'Agitated',
+                    subtitle:
+                        ' • Anxious or mildly agitated\n • Attempts to sit up\n • Calms with verbal instructions'),
+                ICUDailyRoundItem(
+                    icon: '4️',
+                    title: 'Calm and co-operative',
+                    subtitle: ' • Calm\n • Wakens easily\n • Follows commands'),
+                ICUDailyRoundItem(
+                    icon: '3',
+                    title: 'Dangerous agitation',
+                    subtitle: ' • Pulling ETT\n • Climbing out of bed'),
+                ICUDailyRoundItem(
+                    icon: '2️',
+                    title: 'Sedated',
+                    subtitle:
+                        ' • Difficult to rouse\n • Awakens to verbal stimuli\n • Does not follow commands'),
+                ICUDailyRoundItem(
+                    icon: '1',
+                    title: 'Unrousable',
+                    subtitle:
+                        ' • No response to noxious stiumuli\n • Does not follow commands'),
+              ])
+        ]),
+  ]),
+  ICUDailyRoundSteps(heading: 'Sedation', sections: [
+    ICUDailyRoundStepSection(heading: 'Choice of sedative:', subsections: [
+      ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
+        ICUDailyRoundItem(
+            icon: '👀',
+            title: 'If post-intubation:',
+            subtitle: '• Propofol 50-100mg/hr\n• +/- Fentanyl 10-20mcg/hr'),
+      ])
+    ]),
+    ICUDailyRoundStepSection(
+        heading: 'Consider daily sedation break if:',
+        subsections: [
+          ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
+            ICUDailyRoundItem(icon: '📍', title: 'FiO2 < 0.4'),
+            ICUDailyRoundItem(icon: '📍', title: 'Noradrenaline < 20mcg/min'),
+            ICUDailyRoundItem(icon: '📍', title: 'No muscle relaxant in use'),
+          ])
+        ]),
+    ICUDailyRoundStepSection(heading: 'Commonly used Drugs:', subsections: [
+      ICUDailyRoundStepSubsection(
+          heading: '',
+          footer: 'Discuss with intensivist or senior colleague if unsure',
+          list: [
+            ICUDailyRoundItem(
+                icon: '💊', title: 'Propofol', subtitle: '• 5-200mg/hr'),
+            ICUDailyRoundItem(
+                icon: '💊', title: 'Midazolam', subtitle: '• 0.5-10mg/hr'),
+            ICUDailyRoundItem(
+                icon: '💊', title: 'Fentanyl', subtitle: '• 10-30mcg/hr'),
+            ICUDailyRoundItem(
+                icon: '💊', title: 'Morphine', subtitle: '• 0.5-10mg/hr'),
+            ICUDailyRoundItem(
+                icon: '💊',
+                title: 'Cisatracurium',
+                subtitle:
+                    '• 15mg blous then 10mg/hr\n• A paralysis agent rather than sedative'),
+          ])
+    ])
+  ]),
+];
+
+const idBasicsGuide = [
+  IntubationContent(
+    'Antimicrobials',
+    [
+      IntubationSection(
+        items: [
+          IntubationItem('Empiric antimicrobials for COVID-19 patients:',
+              subtitle: '• Ceftriaxone 2g IV daily\n• Azithromycin 500mg IV OD',
+              icon: '🦠'),
+          IntubationItem('Add Vancomycin if profound shock:',
+              subtitle:
+                  '• 2g load\n• 1g BD\n• Doses based on levels\n• Levels pre 3rd dose',
+              icon: '🦠'),
+          IntubationItem('Steroids currently not recommended for COVID 19',
+              icon: '❌'),
+          IntubationItem(
+              'Antiviral therapies to be commenced ONLY IN  CONTEXT OF CLINICAL TRIAL',
+              icon: '✋️'),
+        ],
+      )
+    ],
+  ),
+  ICUDailyRoundSteps(heading: 'Infection control', sections: [
+    ICUDailyRoundStepSection(heading: 'Line changes', subsections: [
+      ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
+        ICUDailyRoundItem(
+            icon: '✋', title: 'Empiric line changes of CVC not recommended'),
+      ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Septic screen', subsections: [
+      ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
+        ICUDailyRoundItem(
+            icon: '📍',
+            title: 'Blood cultures',
+            subtitle: '• peripheral and central samples'),
+        ICUDailyRoundItem(icon: '📍', title: 'Urine MCS'),
+        ICUDailyRoundItem(icon: '📍', title: 'Sputum MCS'),
+        ICUDailyRoundItem(icon: '📍', title: 'CXR'),
+        ICUDailyRoundItem(icon: '📍', title: 'FBE, UEC, CRP, Lactate'),
+        ICUDailyRoundItem(
+            icon: '📍', title: 'COVID swab', subtitle: '• NPA + Sputum'),
+        ICUDailyRoundItem(icon: '📍', title: 'Viral PCR throat swab'),
+        ICUDailyRoundItem(
+            icon: '📍', title: 'Legionella and pneumococcal antigen'),
+        ICUDailyRoundItem(icon: '📍', title: 'Faecal MCS if diarrhoea'),
+      ])
+    ]),
+  ])
+];
+const renalBasicsGuide = [
+  IntubationContent(
+    'Aims',
+    [
+      IntubationSection(
+        items: [
+          IntubationItem('Negative fluid balance - 1l/day', icon: '🎯'),
+          IntubationItem('K+ target:',
+              subtitle: '• 3.5-5.5mmol/l\n• >4mmol/l if cardiac arrhthmias',
+              icon: '🎯'),
+          IntubationItem('Na 135-145mmol/l', icon: '🎯'),
+        ],
+      )
+    ],
+  ),
+  ICUDailyRoundSteps(heading: 'Principles', sections: [
+    ICUDailyRoundStepSection(
+        heading: 'If Fluid Balance +ve >1litre in 24h',
+        subsections: [
+          ICUDailyRoundStepSubsection(
+              heading: 'Consider frusemide',
+              footer: '',
+              list: [
+                ICUDailyRoundItem(icon: '💧', title: 'Start at 40mg IV QID'),
+                ICUDailyRoundItem(
+                    icon: '📈',
+                    title:
+                        'Increase in 20mg QID increments if not meeting targets at 24 hours'),
+                ICUDailyRoundItem(
+                    icon: '📍',
+                    title:
+                        'If > 80mg QID of frusemide, then switch to infusion starting at 10mg/hr'),
+              ])
+        ]),
+    ICUDailyRoundStepSection(
+        heading: 'Renal Replacement Therapy (RRT)',
+        subsections: [
+          ICUDailyRoundStepSubsection(
+              heading: 'Discuss with Intensivist\n • Indications: AEIOU',
+              footer: '',
+              list: [
+                ICUDailyRoundItem(
+                    icon: '💧',
+                    title: 'Acidosis',
+                    subtitle: ' • pH <7.1 or Bicarb < 15mmol/l'),
+                ICUDailyRoundItem(
+                    icon: '🧂',
+                    title: 'Electrolytes',
+                    subtitle: ' • Refractory K+ > 6.5mmol/l'),
+                ICUDailyRoundItem(
+                    icon: '💧',
+                    title: 'Overload',
+                    subtitle: ' • Refractory fluid overload'),
+                ICUDailyRoundItem(
+                    icon: '💊',
+                    title: 'Intoxication',
+                    subtitle: ' • Drug overdose/ intoxication'),
+                ICUDailyRoundItem(
+                    icon: '💧',
+                    title: 'Uraemia',
+                    subtitle: ' • > 40mmol/l or symptomatic'),
+              ])
+        ]),
+  ]),
+];
+
+const gitBasicsGuide = [
+  IntubationContent(
+    'Nasogastric tube',
+    [
+      IntubationSection(
+        items: [
+          IntubationItem('Confirm placement on CXR:',
+              subtitle: '• Bisects carina\n• Tip below diaphragm', icon: '👀'),
+          IntubationItem('Do not commence feeding until placement confirmed',
+              icon: '🚨'),
+          IntubationItem('Check position daily on CXR', icon: '👀'),
+          IntubationItem(
+              'Clinical methods to confirm placement are not reliable',
+              icon: '🚨'),
+        ],
+      )
+    ],
+  ),
+  ICUDailyRoundSteps(heading: 'Feeding', sections: [
+    ICUDailyRoundStepSection(heading: 'Principles', subsections: [
+      ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
+        ICUDailyRoundItem(icon: '👀', title: 'Start early'),
+        ICUDailyRoundItem(icon: '📍', title: 'Consult dietician if available'),
+        ICUDailyRoundItem(
+            icon: '🍲',
+            title: '1kCal/ml feed as per protocol is reasonable out of hours'),
+        ICUDailyRoundItem(
+            icon: '✋', title: 'If high aspirates - slow the rate'),
+        ICUDailyRoundItem(
+            icon: '🤔', title: 'Consider prokinetics if not absorbing'),
+      ])
+    ]),
+    ICUDailyRoundStepSection(heading: 'Laxatives', subsections: [
+      ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
+        ICUDailyRoundItem(icon: '⏰', title: 'Early laxative use suggested'),
+        ICUDailyRoundItem(
+            icon: '⏰', title: 'Faecal containmenet device - day 3 or earlier'),
+        ICUDailyRoundItem(
+            icon: '💊',
+            title: 'Laxatives:',
+            subtitle: '• Lactulose 20ml bd\n• Movicol 1 bd'),
+      ])
+    ]),
+  ]),
+];
+
+// '💬' '😷' '❤️''✅' '👟'
+// '⚖️'),'🔈''🌊' '🎚''👀' '😅'),'😬''🙃''🤔'✋'🚨''👉''🛌''💧''👉')'💪''🙇‍♀️'📈'•'🦠 💊
