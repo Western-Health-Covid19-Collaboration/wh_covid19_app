@@ -46,7 +46,7 @@ class Settings {
     final reportCrashes =
         sharedPrefs.getBool(Constants.settingCrashReporting) ?? true;
 
-    return reportAnalytics;
+    return reportAnalytics || reportCrashes;
   }
 
   /// Privacy setting controls both analytics and crash reporting as one

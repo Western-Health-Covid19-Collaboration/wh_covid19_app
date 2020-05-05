@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:device_info/device_info.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:package_info/package_info.dart';
 import 'package:sentry/sentry.dart';

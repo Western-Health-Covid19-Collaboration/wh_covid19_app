@@ -8,19 +8,8 @@ import '../appState.dart';
 import '../hard_data.dart';
 import '../strings.dart';
 import '../style.dart';
-import '../utils/storage.dart';
 
-class SwitchCard extends StatefulWidget {
-  @override
-  _SwitchCardState createState() => _SwitchCardState();
-}
-
-class _SwitchCardState extends State<SwitchCard> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
+class SwitchCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -60,14 +49,8 @@ class _SwitchCardState extends State<SwitchCard> {
                         .currentPrivacy,
                     onChanged: (bool newValue) {
                       // Switch changing, update app state & write to storage
-                      setState(() {
-                        // Set the app state
-                        Provider.of<PrivacyStateNotifier>(context,
-                                listen: false)
-                            .privacyChange(newValue);
-                        // Update persistent storage with the new value
-                        Settings.writePrivacy(newValue);
-                      });
+                      Provider.of<PrivacyStateNotifier>(context, listen: false)
+                          .privacyChange(newValue);
                     },
                   ),
                 ),
