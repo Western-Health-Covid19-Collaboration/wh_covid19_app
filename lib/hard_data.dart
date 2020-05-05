@@ -1632,7 +1632,8 @@ const neuroBasicsGuide = [
                 ICUDailyRoundItem(
                     icon: '2',
                     title: 'Very Sedated',
-                    subtitle: ' • Arouses to physical stimuli\n • Does not communicate or follow commands\n • May move spontaneously'),
+                    subtitle:
+                        ' • Arouses to physical stimuli\n • Does not communicate or follow commands\n • May move spontaneously'),
                 ICUDailyRoundItem(
                     icon: '1',
                     title: 'Unrousable',
