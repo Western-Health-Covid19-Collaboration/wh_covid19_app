@@ -8,29 +8,32 @@ import 'storage.dart';
 
 /// Analytics - Initialises and provides helper methods for Firebase Google Analytics
 class Analytics {
+  final Settings _settings;
   static final FirebaseAnalytics analytics = FirebaseAnalytics();
-  static final FirebaseAnalyticsObserver observer =
+  final FirebaseAnalyticsObserver observer =
       FirebaseAnalyticsObserver(analytics: analytics);
 
-  static Future<void> analyticsAppOpen() async {
+  Analytics(this._settings);
+
+  Future<void> analyticsAppOpen() async {
     // Only report to analytics if this is a release build and privacy enabled
-    if (kReleaseMode && await Settings.readPrivacy()) {
+    if (kReleaseMode && await _settings.readPrivacy()) {
       await analytics.logEvent(name: 'app_open');
     }
   }
 
-  static Future<void> analyticsScreen(String screenName) async {
+  Future<void> analyticsScreen(String screenName) async {
     // Only report to analytics if this is a release build
-    if (kReleaseMode && await Settings.readPrivacy()) {
+    if (kReleaseMode && await _settings.readPrivacy()) {
       await analytics.setCurrentScreen(
         screenName: screenName,
       );
     }
   }
 
-  static Future<void> analyticsEvent(String event, String eventData) async {
+  Future<void> analyticsEvent(String event, String eventData) async {
     // Only report to analytics if this is a release build
-    if (kReleaseMode && await Settings.readPrivacy()) {
+    if (kReleaseMode && await _settings.readPrivacy()) {
       await analytics.logEvent(
         name: event,
         parameters: <String, dynamic>{

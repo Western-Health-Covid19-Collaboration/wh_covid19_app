@@ -6,20 +6,26 @@ import 'package:provider/provider.dart';
 
 import 'appState.dart';
 import 'error_reporting.dart';
+import 'utils/firebase.dart';
 import 'utils/storage.dart';
+import 'utils/url_utils.dart';
 import 'wh_app.dart';
 
 void main() {
   // Add this, and it should be the first line in main method to ensure no crashes before runApp()
   WidgetsFlutterBinding.ensureInitialized();
 
+  final _settings = Settings();
+  final _errorReporter = ErrorReporter(_settings);
+  final analytics = Analytics(_settings);
+
   // This captures errors reported by the Flutter framework.
-  FlutterError.onError = flutterOnErrorHandler;
+  FlutterError.onError = _errorReporter.flutterOnErrorHandler;
 
   // Lets not show end users the red screen of death
   if (kReleaseMode) {
     ErrorWidget.builder = (error) {
-      flutterOnErrorHandler(error);
+      _errorReporter.flutterOnErrorHandler(error);
       return Container();
     };
   }
@@ -31,14 +37,14 @@ void main() {
   // including those thrown from [Timer]s, microtasks, I/O, and those forwarded
   // from the `FlutterError` handler above.
   runZoned<Future<void>>(() async {
-    // Get the privacy setting from storage
-    final storedPrivacyState = await Settings.readPrivacy();
     runApp(
       MultiProvider(
         providers: [
           ChangeNotifierProvider(
-            create: (context) => PrivacyStateNotifier(storedPrivacyState),
+            create: (context) => PrivacyStateNotifier(_settings),
           ),
+          Provider<UrlUtils>.value(value: UrlUtils(analytics)),
+          Provider<Analytics>.value(value: analytics),
         ],
         child: const WHApp(),
       ),
@@ -46,6 +52,6 @@ void main() {
   }, onError: (Object error, StackTrace stackTrace) {
     // Whenever an error occurs, call the `reportError` function. This sends
     // Dart errors to the dev console or Sentry depending on the environment.
-    reportError(error, stackTrace);
+    _errorReporter.reportError(error, stackTrace);
   });
 }

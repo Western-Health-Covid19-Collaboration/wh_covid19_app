@@ -12,6 +12,7 @@ import '../style.dart';
 class SwitchCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final privacy = Provider.of<PrivacyStateNotifier>(context);
     return ListView(
       shrinkWrap: true,
       children: <Widget>[
@@ -45,12 +46,10 @@ class SwitchCard extends StatelessWidget {
                   padding: const EdgeInsets.only(right: 16.0),
                   child: CupertinoSwitch(
                     activeColor: AppColors.backgroundGreen,
-                    value: Provider.of<PrivacyStateNotifier>(context)
-                        .currentPrivacy,
+                    value: privacy.currentPrivacy,
                     onChanged: (bool newValue) {
                       // Switch changing, update app state & write to storage
-                      Provider.of<PrivacyStateNotifier>(context, listen: false)
-                          .privacyChange(newValue);
+                      privacy.privacyChange(newValue);
                     },
                   ),
                 ),

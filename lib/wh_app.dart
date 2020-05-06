@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'intro_router.dart';
 import 'routes.dart';
@@ -83,7 +84,9 @@ class WHApp extends StatelessWidget {
         Routes.whResources: (context) => WHResourcesView()
       },
       // Analytics route observer to track PageRoute transitions
-      navigatorObservers: <NavigatorObserver>[Analytics.observer],
+      navigatorObservers: <NavigatorObserver>[
+        Provider.of<Analytics>(context, listen: false).observer
+      ],
       // Use onGenerateRoute to set fullscreenDialog=true for routes
       onGenerateRoute: (settings) {
         switch (settings.name) {

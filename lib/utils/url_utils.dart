@@ -4,12 +4,16 @@ import 'package:url_launcher/url_launcher.dart';
 import '../utils/firebase.dart';
 
 class UrlUtils {
+  final Analytics _analytics;
+
+  UrlUtils(this._analytics);
+
   /// Open a [url] with the default device browser
   /// Works with web
-  static Future<void> launchWithBrowser(String url) async {
+  Future<void> launchWithBrowser(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
-      await Analytics.analyticsEvent('urlBrowser', url);
+      await _analytics.analyticsEvent('urlBrowser', url);
     }
   }
 
@@ -27,27 +31,26 @@ class UrlUtils {
 
   /// Make a phone call to the provided [number] using device dial
   /// If web, open [fallbackUrl] in a new browser window
-  static Future<void> makeCall(String number, String fallbackUrl) async {
+  Future<void> makeCall(String number, String fallbackUrl) async {
     if (kIsWeb) {
-      await UrlUtils.launchWithBrowser(fallbackUrl);
+      await launchWithBrowser(fallbackUrl);
     }
 
     final url = 'tel:$number';
     if (await canLaunch(url)) {
       await launch(url);
-      await Analytics.analyticsEvent('urlCall', url);
+      await _analytics.analyticsEvent('urlCall', url);
     }
   }
 
   /// Send an email to email [address] with [subject] and [content]
   /// Works with web
-  static Future<void> sendEmail(
-      String address, String subject, String content) async {
+  Future<void> sendEmail(String address, String subject, String content) async {
     final url = 'mailto:$address?subject=$subject&body=content';
     if (await canLaunch(url)) {
       await launch(url);
       // For privacy reasons only record the address via analytics
-      await Analytics.analyticsEvent('urlEmail', address);
+      await _analytics.analyticsEvent('urlEmail', address);
     }
   }
 }

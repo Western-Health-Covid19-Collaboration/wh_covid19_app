@@ -1,14 +1,15 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../appState.dart';
 
 import '../hard_data.dart';
 import '../models/disclaimer_model.dart';
 import '../routes.dart';
 import '../strings.dart';
 import '../style.dart';
-import '../utils/storage.dart';
 import '../utils/system_bars.dart';
 
 // *** WARNING ***
@@ -20,11 +21,20 @@ class DisclaimerView extends StatefulWidget {
 }
 
 class _DisclaimerViewState extends State<DisclaimerView> {
+  PrivacyStateNotifier _privacy;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    _privacy = Provider.of<PrivacyStateNotifier>(context);
+  }
+
   // Check persisted values for disclaimer agreement if they exist
   Future<DisclaimerDetails> _checkDisclaimerAgreed() async {
-    final disclaimerValues = await Settings.readDisclaimerAgreed();
+    final disclaimerValues = await _privacy.disclaimerDetails;
 
-    // Format the datStamp to be more user readable
+    // Format the dateStamp to be more user readable
     if (disclaimerValues.dateStamp != '') {
       disclaimerValues.dateStamp = DateFormat.yMMMd()
           .add_jm()
@@ -195,7 +205,7 @@ class _DisclaimerViewState extends State<DisclaimerView> {
         ),
         onPressed: () {
           // Write agreement of disclaimer to device storage to persist this decision
-          Settings.writeDisclaimerAgreed();
+          _privacy.writeDisclaimerAgreed();
           // Make sure user cannot press back to return to the disclaimer once accepted
           Navigator.pushReplacementNamed(context, Routes.home);
         },

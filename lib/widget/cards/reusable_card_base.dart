@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../utils/url_utils.dart';
 
@@ -60,7 +61,8 @@ class ReusableCardBase extends StatelessWidget {
     if (routeTo != null) {
       onTap = () {
         if (routeTo.startsWith('http')) {
-          UrlUtils.launchWithBrowser(routeTo);
+          Provider.of<UrlUtils>(context, listen: false)
+              .launchWithBrowser(routeTo);
         } else {
           Navigator.pushNamed(context, routeTo);
         }

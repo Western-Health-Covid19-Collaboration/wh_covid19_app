@@ -8,7 +8,7 @@ import '../strings.dart';
 class Settings {
   /// Disclaimer agreement only written as agreed with other data as there is
   /// currently no option for users to not agree to the disclaimer.
-  static Future<DisclaimerDetails> readDisclaimerAgreed() async {
+  Future<DisclaimerDetails> readDisclaimerAgreed() async {
     final sharedPrefs = await SharedPreferences.getInstance();
     final disclaimerDetails = DisclaimerDetails();
 
@@ -24,7 +24,7 @@ class Settings {
 
   /// Disclaimer agreement only written as agreed with other data as there is
   /// currently no option for users to not agree to the disclaimer.
-  static Future<void> writeDisclaimerAgreed() async {
+  Future<void> writeDisclaimerAgreed() async {
     final sharedPrefs = await SharedPreferences.getInstance();
     await sharedPrefs.setBool(Constants.settingDisclaimerAgreed, true);
     await sharedPrefs.setString(
@@ -36,7 +36,7 @@ class Settings {
   /// Privacy setting controls both analytics and crash reporting as one
   /// setting for users, but stored separately on device to allow for
   /// possible future separation.
-  static Future<bool> readPrivacy() async {
+  Future<bool> readPrivacy() async {
     final sharedPrefs = await SharedPreferences.getInstance();
 
     // if not present on device assume that analytics are reported
@@ -52,7 +52,7 @@ class Settings {
   /// Privacy setting controls both analytics and crash reporting as one
   /// setting for users, but stored separately on device to allow for
   /// possible future separation.
-  static Future<void> writePrivacy(bool newValue) async {
+  Future<void> writePrivacy(bool newValue) async {
     final sharedPrefs = await SharedPreferences.getInstance();
 
     // Write the same value for both stored settings

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../utils/url_utils.dart';
 
@@ -25,7 +26,8 @@ class CallButton extends StatelessWidget {
           )
         ],
       ),
-      onPressed: () => UrlUtils.launchWithBrowser(_url),
+      onPressed: () =>
+          Provider.of<UrlUtils>(context, listen: false).launchWithBrowser(_url),
     );
   }
 }
