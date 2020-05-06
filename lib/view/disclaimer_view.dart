@@ -129,7 +129,7 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                               ),
                             ),
                             Expanded(
-                              child: Column(
+                                child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: const <Widget>[
                                 Text(
@@ -145,8 +145,7 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                                   style: Styles.textBody,
                                 )
                               ],
-                            )
-                            )
+                            ))
                           ],
                         ),
                         Row(
@@ -160,7 +159,7 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                               ),
                             ),
                             Expanded(
-                              child: Column(
+                                child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: const <Widget>[
                                 Text(
@@ -174,8 +173,7 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                                   style: Styles.textBody,
                                 )
                               ],
-                            )
-                            )
+                            ))
                           ],
                         ),
                         const Text(
