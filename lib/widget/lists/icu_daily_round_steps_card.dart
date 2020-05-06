@@ -10,9 +10,7 @@ class ICUDailyRoundStepsCard extends StatelessWidget {
   const ICUDailyRoundStepsCard({this.section});
 
   Widget _renderItems(ICUDailyRoundItem item) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 0, 0, 16),
-      child: Row(
+    return Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Expanded(
@@ -60,8 +58,7 @@ class ICUDailyRoundStepsCard extends StatelessWidget {
             ),
           )
         ],
-      ),
-    );
+      );
   }
 
   Widget _renderSubsection(ICUDailyRoundStepSubsection subsection) {
@@ -87,7 +84,12 @@ class ICUDailyRoundStepsCard extends StatelessWidget {
         elevation: 0,
         child: <Widget>[
           _renderHeading(),
-          ...subsection.list.map((item) => _renderItems(item)).toList(),
+          Wrap(
+            runSpacing: 16.0,
+            direction: Axis.horizontal,
+            children:
+                subsection.list.map((item) => _renderItems(item)).toList(),
+          ),
           _renderFooter()
         ]);
   }
