@@ -69,8 +69,8 @@ class AdditionalResourcesView extends StatelessWidget {
                           height: 48,
                         );
                       }
-                      return Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 24, 16, 0),
+                      return Container(
+                          margin: const EdgeInsets.fromLTRB(4, 24, 16, 0),
                           child: Text(
                             e.toString(),
                             style: Styles.textH4Light,

@@ -101,8 +101,8 @@ class HtmlSectionCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.fromLTRB(0, 24, 16, 0),
+        Container(
+          margin: const EdgeInsets.fromLTRB(4, 24, 16, 0),
           child: Text(
             title,
             style: Styles.textH4,
