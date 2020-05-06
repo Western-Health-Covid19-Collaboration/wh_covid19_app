@@ -60,13 +60,7 @@ Future<Event> get _environmentEvent async {
 }
 
 Future<void> flutterOnErrorHandler(FlutterErrorDetails details) async {
-  if (kReleaseMode && await Settings.readPrivacy()) {
-    // In production mode, send error to the application zone.
     Zone.current.handleUncaughtError(details.exception, details.stack);
-  } else {
-    // In debug mode, simply print to console.
-    FlutterError.dumpErrorToConsole(details);
-  }
 }
 
 Future<void> reportError(Object error, StackTrace stackTrace) async {
