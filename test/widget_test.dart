@@ -1,16 +1,48 @@
+import 'package:firebase_analytics/observer.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:wh_covid19/constants.dart';
+import 'package:mockito/mockito.dart';
+import 'package:provider/provider.dart';
+import 'package:wh_covid19/appState.dart';
 import 'package:wh_covid19/intro_router.dart';
+import 'package:wh_covid19/routes.dart';
+import 'package:wh_covid19/utils/firebase.dart';
+import 'package:wh_covid19/utils/url_utils.dart';
 import 'package:wh_covid19/wh_app.dart';
-import 'package:wh_covid19/strings.dart';
 
 void main() {
+  MockPrivacyStateNotifier mockState;
+  MockAnalytics mockAnalytics;
+
+  Widget _wrapWithProvider(Widget widget) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<PrivacyStateNotifier>(
+          create: (_) => mockState,
+        ),
+        Provider<UrlUtils>.value(value: MockUrlUtils()),
+        Provider<Analytics>.value(value: mockAnalytics),
+      ],
+      child: widget,
+    );
+  }
+
+  setUp(() {
+    mockState = MockPrivacyStateNotifier();
+    mockAnalytics = MockAnalytics();
+
+    when(mockAnalytics.observer).thenAnswer((_) => MockObserver());
+  });
+
   /// Initial Router Tests
   testWidgets(
     'IntroRouter gets created on app start',
     (tester) async {
-      await tester.pumpWidget(const WHApp());
+      when(mockState.disclaimerAgreed).thenAnswer((_) => Future.value(false));
+      when(mockAnalytics.observer).thenAnswer((_) => MockObserver());
+
+      await tester.pumpWidget(_wrapWithProvider(const WHApp()));
       expect(find.byType(IntroRouter), findsOneWidget);
     },
   );
@@ -19,38 +51,62 @@ void main() {
   testWidgets(
     'Show Disclaimer if user has not previously accepted it',
     (tester) async {
-      SharedPreferences.setMockInitialValues(<String, dynamic>{});
-      await tester.pumpWidget(const WHApp());
-      await tester.pumpAndSettle(const Duration(seconds: 3));
-      expect(find.text(Strings.disclaimerTitle), findsOneWidget);
-    },
-  );
+      final mockObserver = MockObserver();
+      when(mockState.disclaimerAgreed).thenAnswer((_) => Future.value(false));
+      when(mockAnalytics.observer).thenAnswer((_) => mockObserver);
 
-  testWidgets(
-    'Show Disclaimer screen if disclaimer current version does not match previously accepted version',
-    (tester) async {
-      SharedPreferences.setMockInitialValues(<String, dynamic>{
-        'flutter.${Constants.settingDisclaimerAgreed}': true,
-        'flutter.${Constants.settingDisclaimerVersion}': '-1',
-      });
-      await tester.pumpWidget(const WHApp());
-      await tester.pumpAndSettle(const Duration(seconds: 3));
-      expect(find.text(Strings.disclaimerTitle), findsOneWidget);
+      String route;
+
+      await tester.pumpWidget(_wrapWithProvider(
+        MaterialApp(
+            home: IntroRouter(),
+            onGenerateRoute: (settings) {
+              route = settings.name;
+              return MaterialPageRoute<Container>(
+                builder: (_) => Container(),
+              );
+            }),
+      ));
+
+      expect(Routes.disclaimer, route);
     },
   );
 
   testWidgets(
     'Show Home screen if user has previously accepted disclaimer',
     (tester) async {
-      SharedPreferences.setMockInitialValues(<String, dynamic>{
-        'flutter.${Constants.settingDisclaimerAgreed}': true,
-        'flutter.${Constants.settingDisclaimerVersion}':
-            '${Strings.disclaimerCurrentVersion}',
-      });
-      await tester.pumpWidget(const WHApp());
-      await tester.pumpAndSettle(const Duration(seconds: 3));
-      expect(find.text(Strings.homeHeading1), findsOneWidget);
-      expect(find.text(Strings.homeHeading2), findsOneWidget);
+      final mockObserver = MockObserver();
+      when(mockState.disclaimerAgreed).thenAnswer((_) => Future.value(true));
+      when(mockAnalytics.observer).thenAnswer((_) => mockObserver);
+
+      String route;
+
+      await tester.pumpWidget(_wrapWithProvider(
+        MaterialApp(
+            home: IntroRouter(),
+            onGenerateRoute: (settings) {
+              route = settings.name;
+              return MaterialPageRoute<Container>(
+                builder: (_) => Container(),
+              );
+            }),
+      ));
+
+      expect(route, Routes.home);
     },
   );
 }
+
+class MockUrlUtils extends Mock implements UrlUtils {}
+
+class MockAnalytics extends Mock implements Analytics {}
+
+class MockPrivacyStateNotifier extends Mock implements PrivacyStateNotifier {
+  MockPrivacyStateNotifier() {
+    when(hasListeners).thenReturn(false);
+  }
+}
+
+class MockObserver extends Mock implements FirebaseAnalyticsObserver {}
+
+class MockNavigatorObserver extends Mock implements NavigatorObserver {}

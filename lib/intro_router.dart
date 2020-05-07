@@ -12,11 +12,6 @@ class _IntroRouterState extends State<IntroRouter> {
   PrivacyStateNotifier _privacy;
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     _privacy = Provider.of<PrivacyStateNotifier>(context, listen: false);
