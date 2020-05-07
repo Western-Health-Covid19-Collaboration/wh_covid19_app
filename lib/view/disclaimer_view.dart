@@ -129,23 +129,24 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                               ),
                             ),
                             Expanded(
-                                child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const <Widget>[
-                                Text(
-                                  'Please keep in mind',
-                                  style: Styles.textH3,
-                                ),
-                                SizedBox(height: 10.0),
-                                Text(
-                                  'This is not a comprehensive source nor can we guarantee it is completely up to date at '
-                                  'the time of use 📱.\n\nIt is created using Western Health guidelines, informally '
-                                  'peer-reviewed and adapted, with permission, from College/Society guidelines.\n\n'
-                                  'WHAC19 gathers analytics and crash data which is used to improve the app.  For more information and to opt out, go to Information > Privacy\n\n',
-                                  style: Styles.textBody,
-                                )
-                              ],
-                            ))
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const <Widget>[
+                                  Text(
+                                    'Please keep in mind',
+                                    style: Styles.textH3,
+                                  ),
+                                  SizedBox(height: 10.0),
+                                  Text(
+                                    'This is not a comprehensive source nor can we guarantee it is completely up to date at '
+                                    'the time of use 📱.\n\nIt is created using Western Health guidelines, informally '
+                                    'peer-reviewed and adapted, with permission, from College/Society guidelines.\n\n'
+                                    'WHAC19 gathers analytics and crash data which is used to improve the app.  For more information and to opt out, go to Information > Privacy\n\n',
+                                    style: Styles.textBody,
+                                  ),
+                                ],
+                              ),
+                            ),
                           ],
                         ),
                         Row(
@@ -159,21 +160,22 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                               ),
                             ),
                             Expanded(
-                                child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const <Widget>[
-                                Text(
-                                  'WHAC19 does not constitute official advice',
-                                  style: Styles.textH3,
-                                ),
-                                SizedBox(height: 10.0),
-                                Text(
-                                  'It is your responsibility to ensure your practice is up to date, contextualised for the '
-                                  'patient and in accordance with your institution\'s practice 🤓.\n\n',
-                                  style: Styles.textBody,
-                                )
-                              ],
-                            ))
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const <Widget>[
+                                  Text(
+                                    'WHAC19 does not constitute official advice',
+                                    style: Styles.textH3,
+                                  ),
+                                  SizedBox(height: 10.0),
+                                  Text(
+                                    'It is your responsibility to ensure your practice is up to date, contextualised for the '
+                                    'patient and in accordance with your institution\'s practice 🤓.\n\n',
+                                    style: Styles.textBody,
+                                  ),
+                                ],
+                              ),
+                            ),
                           ],
                         ),
                         const Text(
