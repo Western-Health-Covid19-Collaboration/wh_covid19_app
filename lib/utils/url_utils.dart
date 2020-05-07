@@ -1,27 +1,28 @@
 import 'package:flutter/foundation.dart';
-import 'package:url_launcher/url_launcher.dart';
+import '../services/url_service.dart';
 
 import '../utils/firebase.dart';
 
 class UrlUtils {
   final Analytics _analytics;
+  final UrlService _urlService;
 
-  UrlUtils(this._analytics);
+  UrlUtils(this._analytics, this._urlService);
 
   /// Open a [url] with the default device browser
   /// Works with web
   Future<void> launchWithBrowser(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-      await _analytics.analyticsEvent('urlBrowser', url);
+    if (await _urlService.canOpen(url)) {
+      await _urlService.open(url);
+      await _analytics.analyticsEvent(Analytics.browserEvent, url);
     }
   }
 
   /// Open a [url] in a WebView (Android) or SafariViewController (iOS)
   /// Works with web
-  static Future<void> launchWithView(String url) async {
-    if (await canLaunch(url)) {
-      await launch(
+  Future<void> launchWithView(String url) async {
+    if (await _urlService.canOpen(url)) {
+      await _urlService.open(
         url,
         forceWebView: true,
         forceSafariVC: true,
@@ -37,9 +38,9 @@ class UrlUtils {
     }
 
     final url = 'tel:$number';
-    if (await canLaunch(url)) {
-      await launch(url);
-      await _analytics.analyticsEvent('urlCall', url);
+    if (await _urlService.canOpen(url)) {
+      await _urlService.open(url);
+      await _analytics.analyticsEvent(Analytics.callEvent, url);
     }
   }
 
@@ -47,10 +48,10 @@ class UrlUtils {
   /// Works with web
   Future<void> sendEmail(String address, String subject, String content) async {
     final url = 'mailto:$address?subject=$subject&body=content';
-    if (await canLaunch(url)) {
-      await launch(url);
+    if (await _urlService.canOpen(url)) {
+      await _urlService.open(url);
       // For privacy reasons only record the address via analytics
-      await _analytics.analyticsEvent('urlEmail', address);
+      await _analytics.analyticsEvent(Analytics.emailEvent, address);
     }
   }
 }

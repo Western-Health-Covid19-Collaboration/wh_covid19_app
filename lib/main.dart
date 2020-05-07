@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 
 import 'appState.dart';
 import 'error_reporting.dart';
+import 'services/url_service.dart';
 import 'utils/firebase.dart';
 import 'utils/storage.dart';
 import 'utils/url_utils.dart';
@@ -43,7 +44,7 @@ void main() {
           ChangeNotifierProvider(
             create: (context) => PrivacyStateNotifier(_settings),
           ),
-          Provider<UrlUtils>.value(value: UrlUtils(analytics)),
+          Provider<UrlUtils>.value(value: UrlUtils(analytics, UrlService())),
           Provider<Analytics>.value(value: analytics),
         ],
         child: const WHApp(),

@@ -8,6 +8,10 @@ import 'storage.dart';
 
 /// Analytics - Initialises and provides helper methods for Firebase Google Analytics
 class Analytics {
+  static const browserEvent = 'urlBrowser';
+  static const emailEvent = 'urlEmail';
+  static const callEvent = 'urlCall';
+
   final Settings _settings;
   static final FirebaseAnalytics analytics = FirebaseAnalytics();
   final FirebaseAnalyticsObserver observer =
