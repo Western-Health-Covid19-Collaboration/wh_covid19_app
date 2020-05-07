@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:package_info/package_info.dart';
 
+import '../env.dart';
 import '../hard_data.dart';
 import '../routes.dart';
 import '../strings.dart';
@@ -80,6 +81,21 @@ class InfoView extends StatelessWidget {
 
   static Widget _buildSpacer({double height = 16}) => Container(height: height);
 
+  Widget _buildLastUpdatedDate() {
+    if (lastUpdatedTime.isEmpty) {
+      return Container();
+    } else {
+      return Container(
+        margin: const EdgeInsets.all(8.0),
+        child: Text(
+          'Last updated $lastUpdatedTime',
+          textAlign: TextAlign.center,
+          style: Styles.textFooter,
+        ),
+      );
+    }
+  }
+
   List<Widget> _buildAbout() {
     return [
       Center(
@@ -99,6 +115,7 @@ class InfoView extends StatelessWidget {
       _buildSpacer(height: 8),
       Center(child: _buildVersionTextWidget()),
       _buildSpacer(height: 8),
+      _buildLastUpdatedDate(),
       const Padding(
         padding: EdgeInsets.all(8.0),
         child: Text(
