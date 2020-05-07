@@ -16,10 +16,9 @@ class YourWelfareView extends StatelessWidget {
       color: AppColors.grey50,
       actions: <Widget>[
         Row(
-          children: <Widget>[
+          children: const [
             Padding(
-                padding: const EdgeInsets.only(right: 16),
-                child: CallButton(whURL))
+                padding: EdgeInsets.only(right: 16), child: CallButton(whURL))
           ],
         ),
       ],
