@@ -78,6 +78,10 @@ In no particular order, the following people have contributed to building the pr
 * Sally Chung - Testing and general support
 * Carlos Melegrito - Design
 * Jinju Jang - Design
+* James Douglas - Intensivist
+* Josh Szental - Anaesthetist
+* Raffy Halim - Anaesthetist
+
 
 ## License
 
