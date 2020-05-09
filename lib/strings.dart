@@ -18,7 +18,7 @@ The Western Health Critical Care COVID-19 Application ('the app') has been devel
   // *** WARNING ***
   // Increment by one when the disclaimerBody changes. This will force users to accept/re-accept the disclaimer again
   // if they have previously accepted it. If the disclaimer has changed then users need to re-accept it.
-  static const String disclaimerCurrentVersion = '5';
+  static const String disclaimerCurrentVersion = '6';
   static const String disclaimerButtonAgreeText = 'I Agree';
   static const String disclaimerHaveAgreedText =
       'You have agreed to the disclaimer';
