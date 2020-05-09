@@ -1311,16 +1311,20 @@ const alsBlsGuide = [
     [
       IntubationSection(
         items: [
-          IntubationItem('CPR is an Aerosol Generating Procedure (AGP)!',
-              icon: '🌬'),
-          IntubationItem('Your safety is a priority', icon: '☝️'),
+          IntubationItem(
+              'Staff safety needs to be prioritised over resuscitation',
+              icon: '☝️'),
           IntubationItem(
               'Do NOT enter the bed space until appropriate PPE applied',
+              subtitle: 'Please review the WH PPE guidelines if needed',
               icon: '😷'),
-          IntubationItem('Limit number of responders to essential staff only',
+          IntubationItem('Minimise responders to essential staff only',
+              subtitle:
+                  '• Team leader to allocate roles\n• "Door monitor" for crowd\n   control\n• Additional team members in\n   corridor',
               icon: '👩‍⚕️'),
-          IntubationItem('Minimise interruptions to compressions', icon: '🤫'),
-          IntubationItem('Rhythm check at appropriate times', icon: '⏱'),
+          IntubationItem(
+              'Resuscitation trolley should remain outside of room, when possible.',
+              icon: '🛒'),
         ],
       )
     ],
@@ -1329,32 +1333,30 @@ const alsBlsGuide = [
     ICUDailyRoundStepSection(
       subsections: [
         ICUDailyRoundStepSubsection(
-          heading: 'For COVID-19 proven, suspected or unknown patients',
+          heading:
+              'First responders are SAFE to commence chest compressions in',
           list: [
-            ICUDailyRoundItem(title: 'Full PPE including N95 mask', icon: '☣️'),
+            ICUDailyRoundItem(
+                title:
+                    '• P2/N95 mask\n• Face shield\n• Apron\n• Gloves\n• Hand hygiene to above elbow\n   after',
+                icon: '😷'),
           ],
         )
       ],
     ),
     ICUDailyRoundStepSection(subsections: [
       ICUDailyRoundStepSubsection(
-          heading: 'For non-COVID-19 patients',
+          heading:
+              'ALL RESPONDERS:\n    •  P2/N95 mask\n    •  face shield\n    •  long sleeved gown\n    •  gloves \n      when:',
           list: [
             ICUDailyRoundItem(
-                title: 'Please use universal precautions', icon: '😷'),
+                title:
+                    '• COVID suspected or confirmed\n\n• Droplet or airborne precautions\n\n• Airway management required\n\n• CPR lasting longer than 6 mins\n\n• Code Blue in public areas',
+                subtitle: '',
+                icon: '😷'),
           ],
-          footer: 'Surgical mask, eye protection and gloves')
+          footer: '\n\n\nPPE guidance v6 10/5/2020')
     ]),
-    ICUDailyRoundStepSection(
-      subsections: [
-        ICUDailyRoundStepSubsection(
-          heading: 'If you are unsure',
-          list: [
-            ICUDailyRoundItem(title: 'Full PPE', icon: '☣️'),
-          ],
-        )
-      ],
-    )
   ]),
   IntubationContent(
     'BLS',
