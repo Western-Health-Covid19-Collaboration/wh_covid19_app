@@ -1363,8 +1363,9 @@ const alsBlsGuide = [
     [
       IntubationSection(
         items: [
-          IntubationItem('COMPRESSION ONLY CPR', icon: '👐'),
-          IntubationItem('Do NOT use airway adjuncts or ventilate with BMV',
+          IntubationItem('COMPRESSION ONLY CPR',
+              subtitle: '• Until code response team arrives', icon: '👐'),
+          IntubationItem('No airway adjuncts and AVOID bag mask ventilation',
               icon: '☝️'),
           IntubationItem('Apply Hudson mask at 10L O₂.', icon: '🌬'),
         ],
@@ -1378,7 +1379,7 @@ const alsBlsGuide = [
           heading: 'Early Intubation',
           list: [
             ICUDailyRoundItem(
-                title: 'The most experienced operator needs to be present',
+                title: 'The most experienced operator to intubate',
                 icon: '👩‍⚕️'),
             ICUDailyRoundItem(
                 title: 'Use video laryngoscope',
@@ -1390,11 +1391,26 @@ const alsBlsGuide = [
                     'The viral filter MUST be placed on circuit closest to the airway device',
                 icon: '🦠'),
             ICUDailyRoundItem(
-                title:
-                    'Follow the airway strategy as per Safe Airway Society/WH guidelines',
+                title: 'Follow airway strategy as per WH guidelines',
                 icon: '🛩'),
             ICUDailyRoundItem(
                 title: 'If BMV required: 2 handed vice-like grip', icon: '👐'),
+          ],
+        ),
+        ICUDailyRoundStepSubsection(
+          heading: 'Additional points',
+          list: [
+            ICUDailyRoundItem(
+                title: 'Use COACHED for ALS rythym checks', icon: '❤️️'),
+            ICUDailyRoundItem(
+              title: 'Intubated = Closed Circuit',
+              subtitle: '• Do not disconnect for defibrillation',
+              icon: '🚨',
+            ),
+            ICUDailyRoundItem(
+                title:
+                    'During a cardiac arrest, CPR and intubation can take place outside of a negative pressure room',
+                icon: '🚪'),
           ],
         )
       ],
