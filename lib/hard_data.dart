@@ -30,7 +30,7 @@ const List<HomeCard> staffWelfare = [
   ),
   HomeCard(
     title: Strings.yourWelfareTitle,
-    description: 'Info for mental well-being',
+    description: 'Info for well-being',
     route: Routes.staffWelfare,
   )
 ];
@@ -38,12 +38,12 @@ const List<HomeCard> staffWelfare = [
 const List<HomeCard> airway = [
   HomeCard(
     title: Strings.intubationGuideTitle,
-    description: 'WH step by step guide v6',
+    description: 'WH Intubation Team Guidelines v9',
     route: Routes.intubationGuidance,
   ),
   HomeCard(
     title: Strings.intubationChecklistTitle,
-    description: 'As per WH intubation team v6',
+    description: 'WH COVID-19 Intubation Checklist v9',
     route: Routes.intubationChecklist,
   ),
   HomeCard(
@@ -509,7 +509,7 @@ const List<IntubationContent> intubationGuide = [
               icon: '👃'),
           IntubationItem('PPE removed as per WH guidelines', icon: '🛑'),
           IntubationItem(
-              'Move patient to a COVID19 cubicle in ICU as soon as available',
+              'Before moving patient to a COVID cubicle, wait at least 30min (but ideally 60 min) post-procedure',
               icon: '🚪'),
           IntubationItem('Lines and CXR outside NPR', icon: '💉'),
           IntubationItem('Debrief and share lessons', icon: '💬'),
@@ -1067,7 +1067,10 @@ const yourWelfareSteps = [
         ICUDailyRoundItem(
             icon: '📖', title: 'Learning and preparing for future'),
         ICUDailyRoundItem(
-            icon: '👏', title: 'Gratitude and thanks to all our colleagues'),
+            icon: '👏',
+            title: 'Gratitude and thanks to all our colleagues',
+            subtitle:
+                '\n\n\nReference: Australian Society of Anaesthetists "Staff wellbeing preparation during COVID-19 pandemic phases" guidance'),
       ])
     ])
   ])

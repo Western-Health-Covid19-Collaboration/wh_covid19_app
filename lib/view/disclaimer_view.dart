@@ -87,7 +87,7 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                           ),
                         ),
                         const Text(
-                          'This app is for clinicians and hospital staff use'
+                          'This app is for Western Health clinicians and hospital staff use'
                           ' ONLY\n',
                           style: Styles.textH3,
                         ),
@@ -97,7 +97,9 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                           '\n\nWe want to protect our staff from infection risk 🌡 and ensure excellent patient '
                           'care 🏥. WHAC19 aims to provide a really quick, '
                           'usable means to access the core information ℹ️'
-                          ' for this.',
+                          ' for this.'
+                          '\n\nIt is created using content developed by contributing members of the Western Health COVID-19 Guidelines Working Group. '
+                          ' All content of the app is informally peer-reviewed.',
                           style: Styles.textH5,
                         ),
                         Text.rich(TextSpan(children: [
@@ -139,38 +141,8 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                                   SizedBox(height: 10.0),
                                   Text(
                                     'This is not a comprehensive source nor can we guarantee it is completely up to date at '
-                                    'the time of use 📱.\n\nIt is created using Western Health guidelines, informally '
-                                    'peer-reviewed and adapted, with permission, from College/Society guidelines.\n\n'
+                                    'the time of use 📱.\n\n\ '
                                     'WHAC19 gathers analytics and crash data which is used to improve the app.  For more information and to opt out, go to Information > Privacy\n\n',
-                                    style: Styles.textBody,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Container(
-                              margin: const EdgeInsets.only(right: 14.0),
-                              child: const Text(
-                                '🛑',
-                                style: Styles.textH3,
-                              ),
-                            ),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const <Widget>[
-                                  Text(
-                                    'WHAC19 does not constitute official advice',
-                                    style: Styles.textH3,
-                                  ),
-                                  SizedBox(height: 10.0),
-                                  Text(
-                                    'It is your responsibility to ensure your practice is up to date, contextualised for the '
-                                    'patient and in accordance with your institution\'s practice 🤓.\n\n',
                                     style: Styles.textBody,
                                   ),
                                 ],
