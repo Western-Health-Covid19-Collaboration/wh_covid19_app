@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:package_info/package_info.dart';
 
 import '../env.dart';
@@ -82,13 +83,22 @@ class InfoView extends StatelessWidget {
   static Widget _buildSpacer({double height = 16}) => Container(height: height);
 
   Widget _buildLastUpdatedDate() {
-    if (lastUpdatedTime.isEmpty) {
+
+    String formatTimestamp(int timestamp) {
+      final format = DateFormat('h:mma dd MMMM yyyy');
+      final date = DateTime.fromMillisecondsSinceEpoch(timestamp * 1000);
+      return format.format(date);
+    }
+
+    final timestamp = int.tryParse(lastUpdatedTime);
+
+    if (timestamp == null) {
       return Container();
     } else {
       return Container(
         margin: const EdgeInsets.all(8.0),
         child: Text(
-          'Last updated $lastUpdatedTime',
+          'Last updated ${formatTimestamp(timestamp)}',
           textAlign: TextAlign.center,
           style: Styles.textFooter,
         ),
