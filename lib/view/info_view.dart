@@ -83,7 +83,6 @@ class InfoView extends StatelessWidget {
   static Widget _buildSpacer({double height = 16}) => Container(height: height);
 
   Widget _buildLastUpdatedDate() {
-
     String formatTimestamp(int timestamp) {
       final format = DateFormat('h:mma dd MMMM yyyy');
       final date = DateTime.fromMillisecondsSinceEpoch(timestamp * 1000);
