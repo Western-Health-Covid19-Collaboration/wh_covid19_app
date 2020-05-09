@@ -1,3 +1,17 @@
+---- Saturday 9th May, 2020 ----
+Major changes:
+- ALS/BLS changes completed
+- Significant changes to extubation guide
+- Disclaimer update to current apporoved version. (I did not update form V5 to V6 so that may require to be done.)
+- Onboarding information condensed in accordance with medico-legal opinion.
+
+Other changes:
+- Minor homescreen changes to reflect that it complies with guidelines at time of issue.
+- Updated acknowledgements to acknowledge 3 contributors from medical staff I had omitted.
+- Review of all other copy to ensure it is compliant with current guidelines.
+
+
+
 ---- Monday 4th May, 2020 ----
 Added in 7 new ICU screens:
  - Airway Assessment
