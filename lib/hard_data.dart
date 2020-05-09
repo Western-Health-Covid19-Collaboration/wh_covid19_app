@@ -48,7 +48,7 @@ const List<HomeCard> airway = [
   ),
   HomeCard(
     title: Strings.extubationGuideTitle,
-    description: 'WH Step by step guide v1.1',
+    description: 'WH Theatre Extubation guideline v1.1',
     route: Routes.extubationGuidance,
   )
 ];
@@ -480,9 +480,9 @@ const List<IntubationContent> intubationGuide = [
           IntubationItem('Ventilator preferences:',
               icon: '🌬',
               subtitle:
-                  ' 1. ICU Marquet\n 2. ED Hamilton\n 3. ICU/Other Oxylog/Hamilton'),
+                  ' 1. ICU Maquet\n 2. ED Hamilton\n 3. ICU/Other Oxylog/Hamilton'),
           IntubationItem(
-            'Circuit of Marquet to be prepared by ICU nurse',
+            'Circuit of Maquet to be prepared by ICU nurse',
             icon: '⚙️',
             subtitle:
                 '• SIMV + PS, volume control\n• Vt 6-8ml/kg IBW (often 400-500ml)\n• RR 12',
@@ -490,7 +490,7 @@ const List<IntubationContent> intubationGuide = [
           IntubationItem('Airway doctor:',
               icon: '👩‍⚕️',
               subtitle:
-                  ' • Turn off O2 flow to self-inflating bag\n • Clam the ETT with a chest drain clamp\n • Disconnect ETT from HME\n • Connect prepared circuit to ETT\n • Unclamp ETT\n •Turn ventilator on\n • Commence ventilation\n • Sleek ETT connections '),
+                  ' • Turn off O2 flow to self-inflating bag\n • Clamp the ETT with a chest drain clamp\n • Disconnect ETT from HME\n • Connect prepared circuit to ETT\n • Unclamp ETT\n •Turn ventilator on\n • Commence ventilation\n • Sleek ETT connections '),
           IntubationItem('ETCO2:',
               icon: '🌊',
               subtitle:
@@ -525,6 +525,10 @@ const List<IntubationContent> extubationGuide = [
     [
       IntubationSection(
         items: [
+          IntubationItem(
+            'Extubation is an AGP',
+            icon: '🚨',
+          ),
           IntubationItem('Is patient clinically stable to extubate now?',
               icon: '❓'),
           IntubationItem('Assemble team',
@@ -532,10 +536,11 @@ const List<IntubationContent> extubationGuide = [
           IntubationItem('Discuss extubation plan', icon: '💬'),
           IntubationItem(
               'Consider strategies to reduce coughing if you are familiar with them',
-              subtitle: '• Lignocaine\n'
+              subtitle: '• TIVA\n'
                   '• Remifentanil\n'
-                  '• Spont breathing deep extubation\n'
+                  '• Topical/IV Lignocaine\n'
                   '• Dexmedetomidine\n'
+                  '• Spont breathing deep extubation\n'
                   '• LMA exchange',
               icon: '🤔'),
         ],
@@ -553,6 +558,12 @@ const List<IntubationContent> extubationGuide = [
           IntubationItem(
               'Ensure viral filter and etCO2 ready to be connected to disposable mask following extubation',
               icon: '🦠'),
+          IntubationItem('Extubation should occur on the patient\'s bed',
+              icon: '🛏️'),
+          IntubationItem(
+              'Optimise airway and oxygenation through positioning and recruitment manoevre',
+              icon: '📈'),
+          IntubationItem('Consider extubating under plastic drape', icon: '🤔'),
         ],
       )
     ],
@@ -563,7 +574,7 @@ const List<IntubationContent> extubationGuide = [
       IntubationSection(
         items: [
           IntubationItem('All staff in the room must wear FULL PPE',
-              icon: '⚠️', subtitle: 'Including N95 mask and eye protection'),
+              icon: '⚠️', subtitle: 'Non-essential staff out of room'),
           IntubationItem(
               'Buddy check each other PPE prior to performing extubation',
               icon: '😊'),
@@ -576,14 +587,20 @@ const List<IntubationContent> extubationGuide = [
     [
       IntubationSection(
         items: [
+          IntubationItem(
+              'Patient should ideally be ready for extubation onto facemask',
+              icon: '😷'),
+          IntubationItem(
+              'Have patient sitting up with no theatre staff in front of them',
+              icon: '📐'),
           IntubationItem('Extubate patient with cuff down and APL fully open',
               icon: '🎚', subtitle: 'NO positive pressure'),
           IntubationItem('Carefully discard ETT into clinical waste bin',
               icon: '🚮'),
           IntubationItem(
-              'Immediately apply face mask to patient with 2 hand grip',
-              icon: '😷',
-              subtitle: 'Over nasal prongs if present'),
+            'Immediately apply face mask to patient with 2 hand grip',
+            icon: '😷',
+          ),
           IntubationItem(
               'Continue to apply face mask until able to protect their own airway',
               icon: '⏳'),
@@ -602,6 +619,12 @@ const List<IntubationContent> extubationGuide = [
           IntubationItem(
               'Carefully discard face mask and other disposable equipment into clinical waste',
               icon: '🚮'),
+          IntubationItem('Patient should be encouraged not to cough',
+              icon: '🤐'),
+          IntubationItem('Oral suctioning may be performed',
+              subtitle:
+                  '• Care to avoid coughing\n• Ensure no contamination of self\n   or others',
+              icon: '☣️'),
           IntubationItem(
               'Patient must wear surgical mask on transfer back to ward',
               icon: '😷'),
@@ -1318,10 +1341,11 @@ const alsBlsGuide = [
               'Do NOT enter the bed space until appropriate PPE applied',
               subtitle: 'Please review the WH PPE guidelines if needed',
               icon: '😷'),
-          IntubationItem('Minimise responders to essential staff only',
+          IntubationItem('Minimise responders in room to essential staff only',
               subtitle:
                   '• Team leader to allocate roles\n• "Door monitor" for crowd\n   control\n• Additional team members in\n   corridor',
               icon: '👩‍⚕️'),
+          IntubationItem('Communication in PPE is more difficult', icon: '💬'),
           IntubationItem(
               'Resuscitation trolley should remain outside of room, when possible.',
               icon: '🛒'),
@@ -1355,7 +1379,7 @@ const alsBlsGuide = [
                 subtitle: '',
                 icon: '😷'),
           ],
-          footer: '\n\n\nPPE guidance v6 10/5/2020')
+          footer: '\n\n\nALS/BLS PPE guidance v6 10/5/2020')
     ]),
   ]),
   IntubationContent(
@@ -1379,7 +1403,7 @@ const alsBlsGuide = [
           heading: 'Early Intubation',
           list: [
             ICUDailyRoundItem(
-                title: 'The most experienced operator to intubate',
+                title: 'The most experienced operator should intubate',
                 icon: '👩‍⚕️'),
             ICUDailyRoundItem(
                 title: 'Use video laryngoscope',
@@ -1594,7 +1618,7 @@ const cvsBasicsGuide = [
             ICUDailyRoundItem(icon: '💧', title: 'Consider giving fluid bolus'),
             ICUDailyRoundItem(
                 icon: '🤔',
-                title: 'Re-visit diagnosis - does patient need inotropes'),
+                title: 'Re-visit diagnosis - does patient need inotropes?'),
           ])
     ])
   ]),
@@ -1625,7 +1649,8 @@ const neuroBasicsGuide = [
         subsections: [
           ICUDailyRoundStepSubsection(
               heading: '',
-              footer: 'The Riker is a Sedation-Agitation Scale commonly used',
+              footer:
+                  '\n\nThe Riker score is a Sedation-Agitation Scale commonly used in ICUs',
               list: [
                 ICUDailyRoundItem(
                     icon: '7',
@@ -1684,7 +1709,7 @@ const neuroBasicsGuide = [
     ICUDailyRoundStepSection(heading: 'Commonly used Drugs:', subsections: [
       ICUDailyRoundStepSubsection(
           heading: '',
-          footer: 'Discuss with intensivist or senior colleague if unsure',
+          footer: '\n\nDiscuss with intensivist or senior colleague if unsure',
           list: [
             ICUDailyRoundItem(
                 icon: '💊', title: 'Propofol', subtitle: '• 5-200mg/hr'),
