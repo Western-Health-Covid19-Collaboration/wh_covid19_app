@@ -32,7 +32,7 @@ const List<HomeCard> staffWelfare = [
   ),
   HomeCard(
     title: Strings.yourWelfareTitle,
-    description: 'Info for mental well-being',
+    description: 'Info for well-being',
     route: Routes.staffWelfare,
   )
 ];
@@ -40,17 +40,17 @@ const List<HomeCard> staffWelfare = [
 const List<HomeCard> airway = [
   HomeCard(
     title: Strings.intubationGuideTitle,
-    description: 'WH step by step guide v6',
+    description: 'WH Intubation Team Guidelines v9',
     route: Routes.intubationGuidance,
   ),
   HomeCard(
     title: Strings.intubationChecklistTitle,
-    description: 'As per WH intubation team v6',
+    description: 'WH COVID-19 Intubation Checklist v9',
     route: Routes.intubationChecklist,
   ),
   HomeCard(
     title: Strings.extubationGuideTitle,
-    description: 'WH Step by step guide v1.1',
+    description: 'WH Theatre Extubation guideline v1.1',
     route: Routes.extubationGuidance,
   )
 ];
@@ -482,9 +482,9 @@ const List<IntubationContent> intubationGuide = [
           IntubationItem('Ventilator preferences:',
               icon: '🌬',
               subtitle:
-                  ' 1. ICU Marquet\n 2. ED Hamilton\n 3. ICU/Other Oxylog/Hamilton'),
+                  ' 1. ICU Maquet\n 2. ED Hamilton\n 3. ICU/Other Oxylog/Hamilton'),
           IntubationItem(
-            'Circuit of Marquet to be prepared by ICU nurse',
+            'Circuit of Maquet to be prepared by ICU nurse',
             icon: '⚙️',
             subtitle:
                 '• SIMV + PS, volume control\n• Vt 6-8ml/kg IBW (often 400-500ml)\n• RR 12',
@@ -492,7 +492,7 @@ const List<IntubationContent> intubationGuide = [
           IntubationItem('Airway doctor:',
               icon: '👩‍⚕️',
               subtitle:
-                  ' • Turn off O2 flow to self-inflating bag\n • Clam the ETT with a chest drain clamp\n • Disconnect ETT from HME\n • Connect prepared circuit to ETT\n • Unclamp ETT\n •Turn ventilator on\n • Commence ventilation\n • Sleek ETT connections '),
+                  ' • Turn off O2 flow to self-inflating bag\n • Clamp the ETT with a chest drain clamp\n • Disconnect ETT from HME\n • Connect prepared circuit to ETT\n • Unclamp ETT\n •Turn ventilator on\n • Commence ventilation\n • Sleek ETT connections '),
           IntubationItem('ETCO2:',
               icon: '🌊',
               subtitle:
@@ -511,7 +511,7 @@ const List<IntubationContent> intubationGuide = [
               icon: '👃'),
           IntubationItem('PPE removed as per WH guidelines', icon: '🛑'),
           IntubationItem(
-              'Move patient to a COVID19 cubicle in ICU as soon as available',
+              'Before moving patient to a COVID cubicle, wait at least 30min (but ideally 60 min) post-procedure',
               icon: '🚪'),
           IntubationItem('Lines and CXR outside NPR', icon: '💉'),
           IntubationItem('Debrief and share lessons', icon: '💬'),
@@ -527,6 +527,10 @@ const List<IntubationContent> extubationGuide = [
     [
       IntubationSection(
         items: [
+          IntubationItem(
+            'Extubation is an AGP',
+            icon: '🚨',
+          ),
           IntubationItem('Is patient clinically stable to extubate now?',
               icon: '❓'),
           IntubationItem('Assemble team',
@@ -534,10 +538,11 @@ const List<IntubationContent> extubationGuide = [
           IntubationItem('Discuss extubation plan', icon: '💬'),
           IntubationItem(
               'Consider strategies to reduce coughing if you are familiar with them',
-              subtitle: '• Lignocaine\n'
+              subtitle: '• TIVA\n'
                   '• Remifentanil\n'
-                  '• Spont breathing deep extubation\n'
+                  '• Topical/IV Lignocaine\n'
                   '• Dexmedetomidine\n'
+                  '• Spont breathing deep extubation\n'
                   '• LMA exchange',
               icon: '🤔'),
         ],
@@ -555,6 +560,12 @@ const List<IntubationContent> extubationGuide = [
           IntubationItem(
               'Ensure viral filter and etCO2 ready to be connected to disposable mask following extubation',
               icon: '🦠'),
+          IntubationItem('Extubation should occur on the patient\'s bed',
+              icon: '🛏️'),
+          IntubationItem(
+              'Optimise airway and oxygenation through positioning and recruitment manoevre',
+              icon: '📈'),
+          IntubationItem('Consider extubating under plastic drape', icon: '🤔'),
         ],
       )
     ],
@@ -565,7 +576,7 @@ const List<IntubationContent> extubationGuide = [
       IntubationSection(
         items: [
           IntubationItem('All staff in the room must wear FULL PPE',
-              icon: '⚠️', subtitle: 'Including N95 mask and eye protection'),
+              icon: '⚠️', subtitle: 'Non-essential staff out of room'),
           IntubationItem(
               'Buddy check each other PPE prior to performing extubation',
               icon: '😊'),
@@ -578,14 +589,20 @@ const List<IntubationContent> extubationGuide = [
     [
       IntubationSection(
         items: [
+          IntubationItem(
+              'Patient should ideally be ready for extubation onto facemask',
+              icon: '😷'),
+          IntubationItem(
+              'Have patient sitting up with no theatre staff in front of them',
+              icon: '📐'),
           IntubationItem('Extubate patient with cuff down and APL fully open',
               icon: '🎚', subtitle: 'NO positive pressure'),
           IntubationItem('Carefully discard ETT into clinical waste bin',
               icon: '🚮'),
           IntubationItem(
-              'Immediately apply face mask to patient with 2 hand grip',
-              icon: '😷',
-              subtitle: 'Over nasal prongs if present'),
+            'Immediately apply face mask to patient with 2 hand grip',
+            icon: '😷',
+          ),
           IntubationItem(
               'Continue to apply face mask until able to protect their own airway',
               icon: '⏳'),
@@ -604,6 +621,12 @@ const List<IntubationContent> extubationGuide = [
           IntubationItem(
               'Carefully discard face mask and other disposable equipment into clinical waste',
               icon: '🚮'),
+          IntubationItem('Patient should be encouraged not to cough',
+              icon: '🤐'),
+          IntubationItem('Oral suctioning may be performed',
+              subtitle:
+                  '• Care to avoid coughing\n• Ensure no contamination of self\n   or others',
+              icon: '☣️'),
           IntubationItem(
               'Patient must wear surgical mask on transfer back to ward',
               icon: '😷'),
@@ -1069,7 +1092,10 @@ const yourWelfareSteps = [
         ICUDailyRoundItem(
             icon: '📖', title: 'Learning and preparing for future'),
         ICUDailyRoundItem(
-            icon: '👏', title: 'Gratitude and thanks to all our colleagues'),
+            icon: '👏',
+            title: 'Gratitude and thanks to all our colleagues',
+            subtitle:
+                '\n\n\nReference: Australian Society of Anaesthetists "Staff wellbeing preparation during COVID-19 pandemic phases" guidance'),
       ])
     ])
   ])
@@ -1310,16 +1336,21 @@ const alsBlsGuide = [
     [
       IntubationSection(
         items: [
-          IntubationItem('CPR is an Aerosol Generating Procedure (AGP)!',
-              icon: '🌬'),
-          IntubationItem('Your safety is a priority', icon: '☝️'),
+          IntubationItem(
+              'Staff safety needs to be prioritised over resuscitation',
+              icon: '☝️'),
           IntubationItem(
               'Do NOT enter the bed space until appropriate PPE applied',
+              subtitle: 'Please review the WH PPE guidelines if needed',
               icon: '😷'),
-          IntubationItem('Limit number of responders to essential staff only',
+          IntubationItem('Minimise responders in room to essential staff only',
+              subtitle:
+                  '• Team leader to allocate roles\n• "Door monitor" for crowd\n   control\n• Additional team members in\n   corridor',
               icon: '👩‍⚕️'),
-          IntubationItem('Minimise interruptions to compressions', icon: '🤫'),
-          IntubationItem('Rhythm check at appropriate times', icon: '⏱'),
+          IntubationItem('Communication in PPE is more difficult', icon: '💬'),
+          IntubationItem(
+              'Resuscitation trolley should remain outside of room, when possible.',
+              icon: '🛒'),
         ],
       )
     ],
@@ -1328,40 +1359,39 @@ const alsBlsGuide = [
     ICUDailyRoundStepSection(
       subsections: [
         ICUDailyRoundStepSubsection(
-          heading: 'For COVID-19 proven, suspected or unknown patients',
+          heading:
+              'First responders are SAFE to commence chest compressions in',
           list: [
-            ICUDailyRoundItem(title: 'Full PPE including N95 mask', icon: '☣️'),
+            ICUDailyRoundItem(
+                title:
+                    '• P2/N95 mask\n• Face shield\n• Apron\n• Gloves\n• Hand hygiene to above elbow\n   after',
+                icon: '😷'),
           ],
         )
       ],
     ),
     ICUDailyRoundStepSection(subsections: [
       ICUDailyRoundStepSubsection(
-          heading: 'For non-COVID-19 patients',
+          heading:
+              'ALL RESPONDERS:\n    •  P2/N95 mask\n    •  face shield\n    •  long sleeved gown\n    •  gloves \n      when:',
           list: [
             ICUDailyRoundItem(
-                title: 'Please use universal precautions', icon: '😷'),
+                title:
+                    '• COVID suspected or confirmed\n\n• Droplet or airborne precautions\n\n• Airway management required\n\n• CPR lasting longer than 6 mins\n\n• Code Blue in public areas',
+                subtitle: '',
+                icon: '😷'),
           ],
-          footer: 'Surgical mask, eye protection and gloves')
+          footer: '\n\n\nALS/BLS PPE guidance v6 10/5/2020')
     ]),
-    ICUDailyRoundStepSection(
-      subsections: [
-        ICUDailyRoundStepSubsection(
-          heading: 'If you are unsure',
-          list: [
-            ICUDailyRoundItem(title: 'Full PPE', icon: '☣️'),
-          ],
-        )
-      ],
-    )
   ]),
   IntubationContent(
     'BLS',
     [
       IntubationSection(
         items: [
-          IntubationItem('COMPRESSION ONLY CPR', icon: '👐'),
-          IntubationItem('Do NOT use airway adjuncts or ventilate with BMV',
+          IntubationItem('COMPRESSION ONLY CPR',
+              subtitle: '• Until code response team arrives', icon: '👐'),
+          IntubationItem('No airway adjuncts and AVOID bag mask ventilation',
               icon: '☝️'),
           IntubationItem('Apply Hudson mask at 10L O₂.', icon: '🌬'),
         ],
@@ -1375,7 +1405,7 @@ const alsBlsGuide = [
           heading: 'Early Intubation',
           list: [
             ICUDailyRoundItem(
-                title: 'The most experienced operator needs to be present',
+                title: 'The most experienced operator should intubate',
                 icon: '👩‍⚕️'),
             ICUDailyRoundItem(
                 title: 'Use video laryngoscope',
@@ -1387,11 +1417,26 @@ const alsBlsGuide = [
                     'The viral filter MUST be placed on circuit closest to the airway device',
                 icon: '🦠'),
             ICUDailyRoundItem(
-                title:
-                    'Follow the airway strategy as per Safe Airway Society/WH guidelines',
+                title: 'Follow airway strategy as per WH guidelines',
                 icon: '🛩'),
             ICUDailyRoundItem(
                 title: 'If BMV required: 2 handed vice-like grip', icon: '👐'),
+          ],
+        ),
+        ICUDailyRoundStepSubsection(
+          heading: 'Additional points',
+          list: [
+            ICUDailyRoundItem(
+                title: 'Use COACHED for ALS rythym checks', icon: '❤️️'),
+            ICUDailyRoundItem(
+              title: 'Intubated = Closed Circuit',
+              subtitle: '• Do not disconnect for defibrillation',
+              icon: '🚨',
+            ),
+            ICUDailyRoundItem(
+                title:
+                    'During a cardiac arrest, CPR and intubation can take place outside of a negative pressure room',
+                icon: '🚪'),
           ],
         )
       ],
@@ -1430,7 +1475,7 @@ const airwayAssessmentGuide = [
       ])
     ])
   ]),
-  ICUDailyRoundSteps(heading: 'Predictors of Difficulty:', sections: [
+  ICUDailyRoundSteps(heading: 'Predictors of Difficulty', sections: [
     ICUDailyRoundStepSection(subsections: [
       ICUDailyRoundStepSubsection(heading: 'Difficult BMV?', footer: '', list: [
         ICUDailyRoundItem(icon: '🔍', title: 'Previous difficult BMV'),
@@ -1530,7 +1575,7 @@ const cvsBasicsGuide = [
           IntubationItem('Common cardiac medications and doses:',
               subtitle:
                   '• Noradrenaline\n     • 0.5-100mcg/min\n • Amiodarone\n     • 15mg/kg/d',
-              icon: '❤'),
+              icon: '♥️'),
         ],
       )
     ],
@@ -1575,7 +1620,7 @@ const cvsBasicsGuide = [
             ICUDailyRoundItem(icon: '💧', title: 'Consider giving fluid bolus'),
             ICUDailyRoundItem(
                 icon: '🤔',
-                title: 'Re-visit diagnosis - does patient need inotropes'),
+                title: 'Re-visit diagnosis - does patient need inotropes?'),
           ])
     ])
   ]),
@@ -1606,14 +1651,15 @@ const neuroBasicsGuide = [
         subsections: [
           ICUDailyRoundStepSubsection(
               heading: '',
-              footer: 'The Riker is a Sedation-Agitation Scale commonly used',
+              footer:
+                  '\n\nThe Riker score is a Sedation-Agitation Scale commonly used in ICUs',
               list: [
                 ICUDailyRoundItem(
-                    icon: '7️',
+                    icon: '7',
                     title: 'Dangerous agitation',
                     subtitle: ' • Pulling at ETT\n • Climbing out of bed'),
                 ICUDailyRoundItem(
-                    icon: '6️',
+                    icon: '6',
                     title: 'Very agitated',
                     subtitle:
                         ' • Does not calm down\n • May require restraint at times'),
@@ -1623,18 +1669,19 @@ const neuroBasicsGuide = [
                     subtitle:
                         ' • Anxious or mildly agitated\n • Attempts to sit up\n • Calms with verbal instructions'),
                 ICUDailyRoundItem(
-                    icon: '4️',
+                    icon: '4',
                     title: 'Calm and co-operative',
                     subtitle: ' • Calm\n • Wakens easily\n • Follows commands'),
                 ICUDailyRoundItem(
                     icon: '3',
-                    title: 'Dangerous agitation',
-                    subtitle: ' • Pulling ETT\n • Climbing out of bed'),
-                ICUDailyRoundItem(
-                    icon: '2️',
                     title: 'Sedated',
                     subtitle:
                         ' • Difficult to rouse\n • Awakens to verbal stimuli\n • Does not follow commands'),
+                ICUDailyRoundItem(
+                    icon: '2',
+                    title: 'Very Sedated',
+                    subtitle:
+                        ' • Arouses to physical stimuli\n • Does not communicate or follow commands\n • May move spontaneously'),
                 ICUDailyRoundItem(
                     icon: '1',
                     title: 'Unrousable',
@@ -1664,7 +1711,7 @@ const neuroBasicsGuide = [
     ICUDailyRoundStepSection(heading: 'Commonly used Drugs:', subsections: [
       ICUDailyRoundStepSubsection(
           heading: '',
-          footer: 'Discuss with intensivist or senior colleague if unsure',
+          footer: '\n\nDiscuss with intensivist or senior colleague if unsure',
           list: [
             ICUDailyRoundItem(
                 icon: '💊', title: 'Propofol', subtitle: '• 5-200mg/hr'),
@@ -1844,6 +1891,3 @@ const gitBasicsGuide = [
     ]),
   ]),
 ];
-
-// '💬' '😷' '❤️''✅' '👟'
-// '⚖️'),'🔈''🌊' '🎚''👀' '😅'),'😬''🙃''🤔'✋'🚨''👉''🛌''💧''👉')'💪''🙇‍♀️'📈'•'🦠 💊

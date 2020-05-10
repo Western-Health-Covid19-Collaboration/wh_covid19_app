@@ -78,6 +78,10 @@ In no particular order, the following people have contributed to building the pr
 * Sally Chung - Testing and general support
 * Carlos Melegrito - Design
 * Jinju Jang - Design
+* James Douglas - Intensivist
+* Josh Szental - Anaesthetist
+* Raffy Halim - Anaesthetist
+
 
 ## License
 
@@ -90,7 +94,7 @@ Western Health logos belong solely to Western Health may be subject to their cop
 
 For any urgent requests relating to this app you can contact luke.sleeman@gmail.com - It will go to Luke's phone.  You can also DM Luke through [GDG Melbourne's slack](http://bit.ly/join_gdgslack) - DM `@luke.sleeman`.
 
-## Acknowledgments
+## Acknowledgements
 
 So many people have worked together to make this project happen, and helped out in so many ways 🥰
 

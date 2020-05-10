@@ -1,3 +1,29 @@
+---- Saturday 9th May, 2020 ----
+Major changes:
+- ALS/BLS changes completed
+- Significant changes to extubation guide
+- Disclaimer update to current apporoved version. (I did not update form V5 to V6 so that may require to be done.)
+- Onboarding information condensed in accordance with medico-legal opinion.
+- Updated Intubation guide infographic
+- Updated ALS and BLS modifications infographic
+
+Other changes:
+- Minor homescreen changes to reflect that it complies with guidelines at time of issue.
+- Updated acknowledgements to acknowledge 3 contributors from medical staff I had omitted.
+- Review of all other copy to ensure it is compliant with current guidelines.
+- Adjusted margins and padding
+
+
+---- Monday 4th May, 2020 ----
+Added in 7 new ICU screens:
+ - Airway Assessment
+ - Ventilator Basics
+ - CVS Basics
+ - Neuro Basics
+ - ID Basics
+ - Renal Basics
+ - GIT Basics
+
 ---- Sunday 2nd May, 2020 ----
 * Updates to disclaimer to point out privacy policy
 * Copy updates and tweaks from Gregg

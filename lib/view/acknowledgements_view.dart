@@ -56,7 +56,10 @@ Those who have given helpful and timely advice, including Byron Teu.<br/>
 <b>Fabio</b> - Documentation<br/>
 <b>Sally Chung</b> - Testing and General Support<br/>
 <b>Carlos Melegrito</b> - Design<br/>
-<b>Jinju Jang</b> - Design
+<b>Jinju Jang</b> - Design<br/>
+<b>James Douglas</b> - Intensivist<br/>
+<b>Josh Szental</b> - Anaesthetist<br/>
+<b>Raffy Halim</b> - Anaesthetist
   ''';
 
   @override
@@ -101,8 +104,8 @@ class HtmlSectionCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.fromLTRB(0, 24, 16, 0),
+        Container(
+          margin: const EdgeInsets.fromLTRB(4, 24, 16, 0),
           child: Text(
             title,
             style: Styles.textH4,

@@ -10,57 +10,54 @@ class ICUDailyRoundStepsCard extends StatelessWidget {
   const ICUDailyRoundStepsCard({this.section});
 
   Widget _renderItems(ICUDailyRoundItem item) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 0, 0, 16),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Expanded(
-            flex: 10,
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Text(
-                    item.icon,
-                    style: Styles.textH4,
-                  ),
-                ],
-              ),
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Expanded(
+          flex: 10,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Text(
+                  item.icon,
+                  style: Styles.textH4,
+                ),
+              ],
             ),
           ),
-          Expanded(
-            flex: 90,
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(12, 2, 2, 2),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(3.0),
-                    child: Text(
-                      item.title,
-                      style: Styles.textBody,
-                    ),
+        ),
+        Expanded(
+          flex: 90,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(12, 2, 2, 2),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(3.0),
+                  child: Text(
+                    item.title,
+                    style: Styles.textBody,
                   ),
-                  if (item.subtitle != null)
-                    Padding(
-                      padding: const EdgeInsets.all(2.0),
-                      child: Text(
-                        item.subtitle,
-                        style: Styles.textFooter,
-                      ),
-                    )
-                ],
-              ),
+                ),
+                if (item.subtitle != null)
+                  Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: Text(
+                      item.subtitle,
+                      style: Styles.textFooter,
+                    ),
+                  )
+              ],
             ),
-          )
-        ],
-      ),
+          ),
+        )
+      ],
     );
   }
 
@@ -87,7 +84,12 @@ class ICUDailyRoundStepsCard extends StatelessWidget {
         elevation: 0,
         child: <Widget>[
           _renderHeading(),
-          ...subsection.list.map((item) => _renderItems(item)).toList(),
+          Wrap(
+            runSpacing: 16.0,
+            direction: Axis.horizontal,
+            children:
+                subsection.list.map((item) => _renderItems(item)).toList(),
+          ),
           _renderFooter()
         ]);
   }
