@@ -8,7 +8,10 @@ import '../appState.dart';
 import '../hard_data.dart';
 import '../strings.dart';
 import '../style.dart';
+import '../utils/firebase.dart';
 
+// Currently there is only this single switch card and there may not be others
+// so this card has not yet been abstracted to an independent widget
 class SwitchCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -51,6 +54,8 @@ class SwitchCard extends StatelessWidget {
                       // Switch changing, update app state & write to storage
                       Provider.of<PrivacyStateNotifier>(context, listen: false)
                           .privacyChange(newValue);
+                      // Hard enable/disable analytics reporting
+                      Analytics.analyticsEnabled(newValue);
                     },
                   ),
                 ),
