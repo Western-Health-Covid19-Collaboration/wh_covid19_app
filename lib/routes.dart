@@ -38,6 +38,13 @@ class Routes {
   static const alsBlsGuide = '$_icuNonIntensivist/als_bls';
   static const alsBlsGuideInfographic =
       '$_icuNonIntensivist/als_bls/infographic';
+  static const airwayAssessment = '$_icuNonIntensivist/airwayAssessment';
+  static const ventBasics = '$_icuNonIntensivist/ventBasics';
+  static const cvsBasics = '$_icuNonIntensivist/cvsBasics';
+  static const neuroBasics = '$_icuNonIntensivist/neuroBasics';
+  static const infectionBasics = '$_icuNonIntensivist/infectionBasics';
+  static const renalBasics = '$_icuNonIntensivist/renalBasics';
+  static const gastroBasics = '$_icuNonIntensivist/gastroBasics';
 
   // Airway routes
   static const intubationGuidance = '/airway/guidance';

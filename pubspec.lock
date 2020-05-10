@@ -190,7 +190,14 @@ packages:
       name: http
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.1"
+    version: "0.12.0+4"
+  http_client_helper:
+    dependency: transitive
+    description:
+      name: http_client_helper
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.1"
   http_parser:
     dependency: transitive
     description:
@@ -240,6 +247,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.8"
+  native_pdf_renderer:
+    dependency: transitive
+    description:
+      name: native_pdf_renderer
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.1"
+  native_pdf_view:
+    dependency: "direct main"
+    description:
+      name: native_pdf_view
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.1.0"
   nested:
     dependency: transitive
     description:
