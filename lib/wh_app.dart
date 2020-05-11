@@ -41,6 +41,7 @@ import 'view/reference_view.dart';
 import 'view/resources/additional_resources_view.dart';
 import 'view/resources/wh_resources_view.dart';
 import 'view/sbs_guide_view.dart';
+import 'view/settings_view.dart';
 import 'view/staff_welfare/your_welfare_view.dart';
 
 class WHApp extends StatelessWidget {
@@ -75,6 +76,7 @@ class WHApp extends StatelessWidget {
         Routes.introRouter: (context) => IntroRouter(),
         Routes.disclaimer: (context) => DisclaimerView(),
         Routes.licenses: (context) => LicenseView(),
+        Routes.settings: (context) => SettingsView(),
         Routes.acknowledgements: (context) => AcknowledgementsView(),
         Routes.references: (context) => ReferenceView(),
         Routes.additionalResources: (context) => AdditionalResourcesView(),

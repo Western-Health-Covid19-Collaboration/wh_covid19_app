@@ -2,10 +2,13 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:device_info/device_info.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:package_info/package_info.dart';
 import 'package:sentry/sentry.dart';
+
 import 'env.dart';
+import 'utils/storage.dart';
 
 Future<SentryClient> get _sentryClient async => SentryClient(
       dsn: dsn,
@@ -56,8 +59,8 @@ Future<Event> get _environmentEvent async {
   return environment;
 }
 
-void flutterOnErrorHandler(FlutterErrorDetails details) {
-  if (kReleaseMode) {
+Future<void> flutterOnErrorHandler(FlutterErrorDetails details) async {
+  if (kReleaseMode && await Settings.readPrivacy()) {
     // In production mode, send error to the application zone.
     Zone.current.handleUncaughtError(details.exception, details.stack);
   } else {
@@ -67,7 +70,7 @@ void flutterOnErrorHandler(FlutterErrorDetails details) {
 }
 
 Future<void> reportError(Object error, StackTrace stackTrace) async {
-  if (kReleaseMode) {
+  if (kReleaseMode && await Settings.readPrivacy()) {
     final sentry = await _sentryClient;
     // Send the Exception and Stacktrace to Sentry in Production mode.
     await sentry.captureException(

@@ -47,30 +47,34 @@ class ReferenceView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppColors.appBackground,
-        appBar: AppBar(
-          // Warning brightness interacts with SystemUiOverlayStyle
-          // See system_bars.dart comments
-          brightness: Brightness.light,
-          backgroundColor: AppColors.appBarBackground,
-          iconTheme: Styles.appBarIconTheme,
-          title: const Text(
-            Strings.referencesTitle,
-            style: Styles.textH5,
+      backgroundColor: AppColors.appBackground,
+      appBar: AppBar(
+        // Warning brightness interacts with SystemUiOverlayStyle
+        // See system_bars.dart comments
+        brightness: Brightness.light,
+        backgroundColor: AppColors.appBarBackground,
+        iconTheme: Styles.appBarIconTheme,
+        title: const Text(
+          Strings.referencesTitle,
+          style: Styles.textH5,
+        ),
+      ),
+      body: Padding(
+        padding: _contentPadding,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Padding(
+                padding: _titlePadding,
+                child: const Text('References', style: Styles.textH4),
+              ),
+              ..._sections.map((e) =>
+                  ReusableCard.fromData(card: e, height: _sectionHeight)),
+            ],
           ),
         ),
-        body: Padding(
-            padding: _contentPadding,
-            child: SingleChildScrollView(
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                  Container(
-                    margin: _titlePadding,
-                    child: const Text('References', style: Styles.textH4),
-                  ),
-                  ..._sections.map((e) =>
-                      ReusableCard.fromData(card: e, height: _sectionHeight)),
-                ]))));
+      ),
+    );
   }
 }

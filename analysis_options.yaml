@@ -21,7 +21,7 @@ linter:
     avoid_init_to_null: true
     avoid_js_rounded_ints: true
     avoid_null_checks_in_equality_operators: true
-    avoid_positional_boolean_parameters: true
+    avoid_positional_boolean_parameters: false
     avoid_print: true
     avoid_private_typedef_functions: true
     avoid_relative_lib_imports: true
@@ -83,7 +83,7 @@ linter:
     prefer_is_not_empty: true
     prefer_is_not_operator: true
     prefer_iterable_whereType: true
-    prefer_mixin: true
+    prefer_mixin: false
     prefer_null_aware_operators: true
     prefer_relative_imports: true
     prefer_single_quotes: true

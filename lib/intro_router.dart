@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-import 'constants.dart';
 import 'routes.dart';
 import 'strings.dart';
+import 'utils/storage.dart';
 
 class IntroRouter extends StatefulWidget {
   @override
@@ -24,18 +23,14 @@ class _IntroRouterState extends State<IntroRouter> {
 
   // Check any persisted values for the disclaimer if present
   Future<void> _checkDisclaimerFirstView() async {
-    final prefs = await SharedPreferences.getInstance();
-    final disclaimerAgreedOnDevice =
-        prefs.getBool(Constants.settingDisclaimerAgreed) ?? false;
-    final disclaimerVersionOnDevice =
-        prefs.getString(Constants.settingDisclaimerVersion) ?? '0';
+    final disclaimerAgreedOnDevice = await Settings.readDisclaimerAgreed();
 
     // Disclaimer should be shown (not the Home screen) if the user has not previously agreed to the disclaimer, or
     // the version of the disclaimer the user agreed to is not the latest version of the disclaimer.
     // Users should not be able to access the app if they have not agreed to the latest version of the disclaimer,
     // which may be updated over time.
-    if (disclaimerAgreedOnDevice == true &&
-        disclaimerVersionOnDevice == Strings.disclaimerCurrentVersion) {
+    if (disclaimerAgreedOnDevice.agreed == true &&
+        disclaimerAgreedOnDevice.version == Strings.disclaimerCurrentVersion) {
       await Navigator.of(context).pushReplacementNamed(Routes.home);
     } else {
       await Navigator.of(context).pushReplacementNamed(Routes.disclaimer);

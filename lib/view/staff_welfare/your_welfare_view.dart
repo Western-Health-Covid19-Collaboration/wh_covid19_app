@@ -14,12 +14,14 @@ class YourWelfareView extends StatelessWidget {
     return TabViewTemplate(
       Strings.yourWelfareTitle,
       color: AppColors.grey50,
-      actions: [
-        Row(children: <Widget>[
-          Padding(
-              padding: const EdgeInsets.only(right: 16),
-              child: CallButton(whURL))
-        ]),
+      actions: <Widget>[
+        Row(
+          children: <Widget>[
+            Padding(
+                padding: const EdgeInsets.only(right: 16),
+                child: CallButton(whURL))
+          ],
+        ),
       ],
       tabs: yourWelfareSteps.map((s) => s.heading).toList(),
       children: yourWelfareSteps

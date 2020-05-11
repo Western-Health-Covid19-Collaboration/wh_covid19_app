@@ -81,8 +81,11 @@ The Western Health Critical Care COVID-19 Application ('the app') has been devel
       'suggestions ';
 
   /// Information
+  static const String settingsTitle = 'Privacy';
+  static const String settingsPrivacyTitle = 'Report usage & crash data';
+
   static const String informationTitle = 'Information';
-  static const String acknowledegementsTitle = 'Acknowledgements';
+  static const String acknowledgementsTitle = 'Acknowledgements';
   static const String referencesTitle = 'References';
   static const String informationWhCoronaTitle = 'WH Novel Coronavirus Website';
   static const String informationWhAnaestheticTitle =

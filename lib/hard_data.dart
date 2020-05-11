@@ -20,6 +20,8 @@ const String whIcuMicrositeURL = 'https://whicu2020.wixsite.com/icuquickguide';
 const String feedbackFormUrl = 'https://forms.gle/zQtfhvswrKmjJjNV7';
 const String proningTechniqueUrl =
     'https://www.youtube.com/watch?v=YFrA1cCuDnY&feature=youtu.be';
+const String googleAnalyticsURL = 'https://analytics.google.com/';
+const String sentryURL = 'https://sentry.io/welcome/';
 
 //Staff Welfare card list composition
 const List<HomeCard> staffWelfare = [

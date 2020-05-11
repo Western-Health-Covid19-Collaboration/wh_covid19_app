@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../utils/url_utils.dart';
 
 class ReusableCardBase extends StatelessWidget {
@@ -53,7 +54,6 @@ class ReusableCardBase extends StatelessWidget {
     final col = Column(
       mainAxisAlignment: verticalAlignment,
       crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
       children: child,
     );
     void Function() onTap;
