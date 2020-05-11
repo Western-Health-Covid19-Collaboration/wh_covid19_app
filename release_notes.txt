@@ -1,3 +1,7 @@
+---- Monday 11th May, 2020 ----
+* Added Information / Privacy to disable/enable reporting analytics & crash data
+* Fixed build and testing issues with viewing pdf files
+
 ---- Saturday 9th May, 2020 ----
 Major changes:
 - ALS/BLS changes completed
@@ -6,23 +10,21 @@ Major changes:
 - Onboarding information condensed in accordance with medico-legal opinion.
 - Updated Intubation guide infographic
 - Updated ALS and BLS modifications infographic
-
 Other changes:
 - Minor homescreen changes to reflect that it complies with guidelines at time of issue.
 - Updated acknowledgements to acknowledge 3 contributors from medical staff I had omitted.
 - Review of all other copy to ensure it is compliant with current guidelines.
 - Adjusted margins and padding
 
-
 ---- Monday 4th May, 2020 ----
 Added in 7 new ICU screens:
- - Airway Assessment
- - Ventilator Basics
- - CVS Basics
- - Neuro Basics
- - ID Basics
- - Renal Basics
- - GIT Basics
+- Airway Assessment
+- Ventilator Basics
+- CVS Basics
+- Neuro Basics
+- ID Basics
+- Renal Basics
+- GIT Basics
 
 ---- Sunday 2nd May, 2020 ----
 * Updates to disclaimer to point out privacy policy
@@ -30,14 +32,14 @@ Added in 7 new ICU screens:
 * Changes to layout of home screen and information section
 * Better emoji for intubation and extubation
 
----- Sunday 26th April, 2020 ----
-* Add Infographic Page for ALS/BLS Modifications
-
 ---- Tuesday 28th April, 2020 ----
 * Add resource section
 * Add Contributors
 * Move some of the sections from Info page to the new resource section
 * Add phone call button on the home page
+
+---- Sunday 26th April, 2020 ----
+* Add Infographic Page for ALS/BLS Modifications
 
 ---- Friday 10th April, 2020 ----
 * Disclaimer updates, including a link to https://coronavirus.wh.org.au/
@@ -94,32 +96,25 @@ Added in 7 new ICU screens:
 * Added Screen for putting on PPE
 * Branded Home Screen
 
----- Thursday 26th March, 2020 ----
-
 ---- Wednesday 25th March, 2020 ----
-
 * Contact numbers now shows WH phonebook webpage
 * Added initial versions of ICU screens
 
 ---- Tuesday 24th March, 2020 ----
-
 * Improved PPE screens including videos
 * Built out your welfare screen
 * Build out rough versions of intubation screens, including intubation steps infographic with pinch to zoom
 
 ---- Monday 23rd March, 2020 ----
-
 * Initial PPE screens
 * Updated colours
 * Cleanup UI spacing and layout
 
 ---- Sunday 22nd March, 2020 ----
-
 * Added simple info screen
 * Added Home screen.
 * Initial app version.
 
 ---- Saturday 21st March, 2020 ----
-
 * Licensed under ASF 2.0
 * Imported code from Gregg
