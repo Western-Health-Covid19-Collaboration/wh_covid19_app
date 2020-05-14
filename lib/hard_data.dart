@@ -81,7 +81,7 @@ const List<HomeCard> resources = [
   ),
   HomeCard(
     title: Strings.yourWelfareTitle,
-    description: 'ASA advice on maintaining wellbeing throughout the pandemic',
+    description: 'ASA advice on wellbeing throughout the pandemic',
     route: Routes.staffWelfare,
   )
 ];
