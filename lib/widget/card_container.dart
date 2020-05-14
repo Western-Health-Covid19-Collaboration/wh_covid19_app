@@ -3,7 +3,13 @@ import 'package:flutter/material.dart';
 import '../style.dart';
 import 'reusable_card.dart';
 
-enum CardsLayout { twoRow, threeColumn, threeDoubleRowBigTop, fourDoubleRow }
+enum CardsLayout {
+  oneRow,
+  twoRow,
+  threeColumn,
+  threeDoubleRowBigTop,
+  fourDoubleRow
+}
 
 class CardContainer extends StatelessWidget {
   static const double _outerPadding = 16;
@@ -58,6 +64,18 @@ class CardContainer extends StatelessWidget {
             children: <Widget>[
               Expanded(child: cards[0]),
               Expanded(child: cards[1]),
+            ],
+          );
+        } else {
+          return _wrongCardsNumber();
+        }
+        break;
+
+      case CardsLayout.oneRow:
+        if (cards.length == 1) {
+          return Row(
+            children: <Widget>[
+              Expanded(child: cards[0]),
             ],
           );
         } else {
