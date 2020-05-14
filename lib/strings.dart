@@ -30,7 +30,7 @@ The Western Health Critical Care COVID-19 Application ('the app') has been devel
   static const String homeHeading4 = 'Resources';
 
   /// PPE
-  static const String ppeTitle = 'Basic ICU Technique';
+  static const String ppeTitle = 'Basic ICU technique';
   static const String ppeDonningTitle = 'Donning Personal Protective Equipment';
   static const String ppeDoffingTitle = 'Doffing Personal Protective Equipment';
   static const String ppeMethod1Title = 'Method 1';

@@ -8,7 +8,8 @@ enum CardsLayout {
   twoRow,
   threeColumn,
   threeDoubleRowBigTop,
-  fourDoubleRow
+  fourDoubleRow,
+  threeDoubleRowBigBottom
 }
 
 class CardContainer extends StatelessWidget {
@@ -109,6 +110,29 @@ class CardContainer extends StatelessWidget {
                   Expanded(child: cards[2]),
                 ],
               )
+            ],
+          );
+        } else {
+          return _wrongCardsNumber();
+        }
+        break;
+
+      case CardsLayout.threeDoubleRowBigBottom:
+        if (cards.length == 3) {
+          return Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  Expanded(child: cards[0]),
+                  Expanded(child: cards[1]),
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  Expanded(child: cards[2]),
+                ],
+              ),
             ],
           );
         } else {
