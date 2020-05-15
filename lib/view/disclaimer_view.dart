@@ -65,12 +65,12 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                         const Padding(
                           padding: EdgeInsets.symmetric(vertical: 10.0),
                         ),
-                        Text(
+                        const Text(
                           Strings.disclaimerHeading,
                           style: Styles.textH3,
                         ),
                         const SizedBox(height: 10.0),
-                        Text(
+                        const Text(
                           Strings.disclaimerBody,
                           style: Styles.textP,
                         ),
