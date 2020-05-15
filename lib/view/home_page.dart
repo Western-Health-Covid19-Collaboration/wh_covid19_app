@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 )
                 .toList(),
-            containerLayout: CardsLayout.twoRow,
+            containerLayout: CardsLayout.oneRow,
           ),
           CardContainer(
             title: Strings.homeHeading2,
@@ -105,7 +105,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 )
                 .toList(),
-            containerLayout: CardsLayout.twoRow,
+            containerLayout: CardsLayout.threeDoubleRowBigBottom,
           ),
           // Make sure the bottom CardContainer has room to breathe.
           const SizedBox(height: 12),
