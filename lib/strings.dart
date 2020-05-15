@@ -25,13 +25,13 @@ developed to support the implementation of selected Western Health guidelines, p
       'You have agreed to the disclaimer';
 
   /// Home screen strings
-  static const String homeHeading1 = 'Staff Welfare';
+  static const String homeHeading1 = 'PPE';
   static const String homeHeading2 = 'Airway';
   static const String homeHeading3 = 'ICU';
   static const String homeHeading4 = 'Resources';
 
   /// PPE
-  static const String ppeTitle = 'PPE Technique';
+  static const String ppeTitle = 'Basic ICU technique';
   static const String ppeDonningTitle = 'Donning Personal Protective Equipment';
   static const String ppeDoffingTitle = 'Doffing Personal Protective Equipment';
   static const String ppeMethod1Title = 'Method 1';
