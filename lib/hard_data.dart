@@ -27,14 +27,9 @@ const String sentryURL = 'https://sentry.io/welcome/';
 const List<HomeCard> staffWelfare = [
   HomeCard(
     title: Strings.ppeTitle,
-    description: 'Basic ICU technique',
+    description: 'WH videos and step by step guide',
     route: Routes.ppe,
   ),
-  HomeCard(
-    title: Strings.yourWelfareTitle,
-    description: 'Info for well-being',
-    route: Routes.staffWelfare,
-  )
 ];
 
 const List<HomeCard> airway = [
@@ -84,6 +79,11 @@ const List<HomeCard> resources = [
     title: Strings.additionalResourcesTitle,
     route: Routes.additionalResources,
   ),
+  HomeCard(
+    title: Strings.yourWelfareTitle,
+    description: 'ASA advice on wellbeing throughout the pandemic',
+    route: Routes.staffWelfare,
+  )
 ];
 
 /// Data for a screen that can be rendered with
@@ -348,7 +348,7 @@ const List<IntubationContent> intubationGuide = [
     [
       IntubationSection(
         items: [
-          IntubationItem('Prior to activating Intubation team:',
+          IntubationItem('Prior to activating Intubation team',
               subtitle:
                   '• Clearly documented goals of care \n• Acute Resuscitation Plan (ARP)\n• Appropriate for intubation?',
               icon: '💬'),
@@ -356,7 +356,7 @@ const List<IntubationContent> intubationGuide = [
               icon: '📞',
               subtitle:
                   'Clinical concern:\n • SaO2 <92% on 6l/M\n • Resp. distress or RR >24'),
-          IntubationItem('MET and code blue calls as per WH guidelines:',
+          IntubationItem('MET and code blue calls as per WH guidelines',
               icon: '🚨',
               subtitle:
                   '• ICU liaison nurses to escalate if required\n• Code blue - Intubation team if COVID high risk/confirmed'),
@@ -374,7 +374,7 @@ const List<IntubationContent> intubationGuide = [
               'Intubating team to decide if patient is stable enough for transfer',
               icon: '🤔'),
           IntubationItem(
-            'Preference of Intubation location:',
+            'Preference of Intubation location',
             icon: '🛏',
             subtitle:
                 '1. ICU NPR\n2. NPR in ED or other sites\n3. Designated COVID19 theatre\n4. ED rooms, ward rooms',
@@ -459,13 +459,13 @@ const List<IntubationContent> intubationGuide = [
           IntubationItem('Cuff up with 10ml air prior to ventilating',
               icon: '🛑'),
           IntubationItem(
-            'Confirm ventilation:',
+            'Confirm ventilation',
             icon: '📈',
             subtitle:
                 '• Capnography waveform\n• Chest movement\n• Auscultation',
           ),
           IntubationItem(
-            'If Plan A - Intubation fails:',
+            'If Plan A - Intubation fails',
             icon: '🔤',
             subtitle:
                 '• Plan B i-gel LMA\n• Plan C 2-handed BMV\n• Plan D Scalpel-bougie-tube',
@@ -479,7 +479,7 @@ const List<IntubationContent> intubationGuide = [
     [
       IntubationSection(
         items: [
-          IntubationItem('Ventilator preferences:',
+          IntubationItem('Ventilator preferences',
               icon: '🌬',
               subtitle:
                   ' 1. ICU Maquet\n 2. ED Hamilton\n 3. ICU/Other Oxylog/Hamilton'),
@@ -489,11 +489,11 @@ const List<IntubationContent> intubationGuide = [
             subtitle:
                 '• SIMV + PS, volume control\n• Vt 6-8ml/kg IBW (often 400-500ml)\n• RR 12',
           ),
-          IntubationItem('Airway doctor:',
+          IntubationItem('Airway doctor',
               icon: '👩‍⚕️',
               subtitle:
                   ' • Turn off O2 flow to self-inflating bag\n • Clamp the ETT with a chest drain clamp\n • Disconnect ETT from HME\n • Connect prepared circuit to ETT\n • Unclamp ETT\n •Turn ventilator on\n • Commence ventilation\n • Sleek ETT connections '),
-          IntubationItem('ETCO2:',
+          IntubationItem('ETCO2',
               icon: '🌊',
               subtitle:
                   '• In ICU NPR: ETCO2 not part of ventilator circuit\n • In ED/Ward: ETCO2 should be part of circuit for transport'),
@@ -1180,7 +1180,7 @@ const proningGuide = [
     ICUDailyRoundStepSection(heading: 'Breathing', subsections: [
       ICUDailyRoundStepSubsection(list: [
         ICUDailyRoundItem(icon: '💨', title: 'Pre-oxygenate'),
-        ICUDailyRoundItem(icon: '🎚️', title: 'Confirm ventilator settings'),
+        ICUDailyRoundItem(icon: '⚙️', title: 'Confirm ventilator settings'),
         ICUDailyRoundItem(icon: '♨', title: 'Check capnography'),
       ])
     ]),
@@ -1427,7 +1427,7 @@ const alsBlsGuide = [
           heading: 'Additional points',
           list: [
             ICUDailyRoundItem(
-                title: 'Use COACHED for ALS rythym checks', icon: '❤️️'),
+                title: 'Use COACHED for ALS rhythm checks', icon: '❤️️'),
             ICUDailyRoundItem(
               title: 'Intubated = Closed Circuit',
               subtitle: '• Do not disconnect for defibrillation',
