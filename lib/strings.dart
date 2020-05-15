@@ -6,19 +6,20 @@ class Strings {
 
   /// Disclaimer strings
   static const String disclaimerTitle = 'Disclaimer & Conditions of Use';
+  static const String disclaimerHeading = 'Disclaimer';
   // *** WARNING ***
   // When disclaimerBody changes in any way, increment disclaimerVersion by one
   static const String disclaimerBody = '''
-The Western Health Critical Care COVID-19 Application ('the app') has been developed to support the implementation of selected Western Health guidelines, protocols and advice by anaesthesia and critical care doctors at Western Health. The app reproduces content developed by contributing members of the COVID-19 Guidelines Working Group, the most current versions of which can be found at the Western Health Novel Coronavirus Information microsite (https://coronavirus.wh.org.au/clinical-guidelines/). 
+The Western Health Critical Care COVID-19 Application ('the app') has been 
+developed to support the implementation of selected Western Health guidelines, protocols and advice by anaesthesia and critical care doctors at Western Health. The app reproduces content developed by contributing members of the COVID-19 Guidelines Working Group, the most current versions of which can be found at the Western Health Novel Coronavirus Information microsite https://coronavirus.wh.org.au/clinical-guidelines. 
 \nWe provide no warranty that the information contained within the app is accurate, up to date or complete and in no circumstance does the information constitute professional advice. You are responsible for independently verifying the information and acknowledge that the guidance provided may not be applicable in all circumstances or for all patients..
 \nTo the extent permitted by law, Western Health, Western Health employees, the designers, developers, testers, reviewers, organisers and all other contributors to the project (‘app developers’) have no liability (including liability arising as a result of the negligence of any of the app developers or the app developers jointly) to the users for any loss, damage, cost or expense incurred or arising by reason of any person using or relying on the information and whether caused by reason of any error, negligent act, omission or misinterpretation in the app or otherwise.
 \nThe Western Health trademark and app cannot be copied, modified, reproduced, published, uploaded, distributed or posted without the prior written consent of Western Health. 
-
-\nUse of this app constitutes acknowledgement of these conditions.\n\n\n\n\n\n''';
+\nUse of this app constitutes acknowledgement of these conditions.\n\n\n\n''';
   // *** WARNING ***
   // Increment by one when the disclaimerBody changes. This will force users to accept/re-accept the disclaimer again
   // if they have previously accepted it. If the disclaimer has changed then users need to re-accept it.
-  static const String disclaimerCurrentVersion = '6';
+  static const String disclaimerCurrentVersion = '7';
   static const String disclaimerButtonAgreeText = 'I Agree';
   static const String disclaimerHaveAgreedText =
       'You have agreed to the disclaimer';

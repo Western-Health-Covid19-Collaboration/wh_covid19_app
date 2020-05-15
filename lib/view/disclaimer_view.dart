@@ -1,10 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
-import 'package:url_launcher/url_launcher.dart';
 
-import '../hard_data.dart';
 import '../models/disclaimer_model.dart';
 import '../routes.dart';
 import '../strings.dart';
@@ -59,91 +57,20 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        const Center(
-                          child: Padding(
-                            padding: EdgeInsets.only(top: 15.0, bottom: 30.0),
-                            child: Text(
-                              '🛑 ✋',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(fontSize: 44.0),
-                            ),
-                          ),
+                        SvgPicture.asset(
+                          'assets/images/onboarding/disclaimer.svg',
+                          height: 80,
+                          color: AppColors.green500,
                         ),
-                        const Text(
-                          'This app is for Western Health clinicians and hospital staff use'
-                          ' ONLY\n',
-                          style: Styles.textH3,
+                        const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 10.0),
                         ),
-                        const Text(
-                          'Western Health Anaesthesia COVID-19 (WHAC19) is an educational tool and interactive cognitive aid for Western Health '
-                          'anaesthetists and ICU doctors 👩‍⚕ 👨‍⚕ who are managing patients with COVID-19 🤒 .'
-                          '\n\nWe want to protect our staff from infection risk 🌡 and ensure excellent patient '
-                          'care 🏥. WHAC19 aims to provide a really quick, '
-                          'usable means to access the core information ℹ️'
-                          ' for this.'
-                          '\n\nIt is created using content developed by contributing members of the Western Health COVID-19 Guidelines Working Group. '
-                          ' All content of the app is informally peer-reviewed.',
-                          style: Styles.textH5,
-                        ),
-                        Text.rich(
-                          TextSpan(
-                            children: [
-                              const TextSpan(
-                                text: 'Please refer to ',
-                                style: Styles.textH5,
-                              ),
-                              TextSpan(
-                                text: whCoronavirusInfoURL,
-                                style: Styles.textH5Hyperlink,
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = () {
-                                    launch(whCoronavirusInfoURL);
-                                  },
-                              ),
-                              const TextSpan(
-                                text:
-                                    ' to ensure you have the latest up-to-date information on Western Health\'s Coronavirus guidelines.\n\n',
-                                style: Styles.textH5,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Container(
-                              margin: const EdgeInsets.only(right: 14.0),
-                              child: const Text(
-                                '✋',
-                                style: Styles.textH3,
-                              ),
-                            ),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const <Widget>[
-                                  Text(
-                                    'Please keep in mind',
-                                    style: Styles.textH3,
-                                  ),
-                                  SizedBox(height: 10.0),
-                                  Text(
-                                    'This is not a comprehensive source nor can we guarantee it is completely up to date at '
-                                    'the time of use 📱.\n\n\ '
-                                    'WHAC19 gathers analytics and crash data which is used to improve the app.  For more information and to opt out, go to Information > Privacy\n\n',
-                                    style: Styles.textBody,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                        const Text(
-                          'Full Disclaimer',
+                        Text(
+                          Strings.disclaimerHeading,
                           style: Styles.textH3,
                         ),
                         const SizedBox(height: 10.0),
-                        const Text(
+                        Text(
                           Strings.disclaimerBody,
                           style: Styles.textP,
                         ),
