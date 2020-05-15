@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -161,8 +162,8 @@ class _DisclaimerViewState extends State<DisclaimerView> {
   /// Agree button - only at app startup button a user taps to agree to the disclaimer
   Widget _agreeButton(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: 16, right: 16, bottom: 8, top: 8),
-      height: 44.0,
+      margin: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
+      height: 46.0,
       child: RaisedButton(
         color: AppColors.green500,
         shape: const RoundedRectangleBorder(
@@ -188,7 +189,7 @@ class _DisclaimerViewState extends State<DisclaimerView> {
   Widget _agreedMessage(
       BuildContext context, dynamic version, dynamic dateStampString) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
       color: Colors.white,
       child: Text(
         '${Strings.disclaimerHaveAgreedText} \nVersion: $version \nDate & time: $dateStampString',
@@ -221,35 +222,28 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                   style: Styles.textH5,
                 ),
               ),
-              body: Stack(
-                children: <Widget>[
-                  // Widget to hold content of the right size, with white space for tall height screens and yet scrolls for
-                  // short height screens
-                  _disclaimerScrollingContent(context),
-                  Positioned(
-                    bottom: 0.0,
-                    left: 0.0,
-                    right: 0.0,
-                    child: Container(
-                      padding: const EdgeInsets.only(
-                          left: 16, right: 16, bottom: 16, top: 16),
-                      color: Colors.white,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: <Widget>[
-                          if (snapshot.data.agreed == false ||
-                              snapshot.data.version !=
-                                  Strings.disclaimerCurrentVersion)
-                            _agreeButton(context)
-                          else
-                            _agreedMessage(context, snapshot.data.version,
-                                snapshot.data.dateStamp),
-                        ],
-                      ),
-                    ),
-                  )
-                ],
+              body: _disclaimerScrollingContent(context),
+              bottomSheet: BottomSheet(
+                elevation: 18.0,
+                onClosing: () {},
+                builder: (context) => Container(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  color: Colors.white,
+                  height: 80.0,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      if (snapshot.data.agreed == false ||
+                          snapshot.data.version !=
+                              Strings.disclaimerCurrentVersion)
+                        _agreeButton(context)
+                      else
+                        _agreedMessage(context, snapshot.data.version,
+                            snapshot.data.dateStamp),
+                    ],
+                  ),
+                ),
               ),
             ),
           );
