@@ -60,7 +60,7 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                         SvgPicture.asset(
                           'assets/images/onboarding/disclaimer.svg',
                           height: 80,
-                          color: AppColors.green500,
+                          color: AppColors.backgroundGreen,
                         ),
                         const Padding(
                           padding: EdgeInsets.symmetric(vertical: 10.0),
@@ -86,7 +86,8 @@ class _DisclaimerViewState extends State<DisclaimerView> {
     );
   }
 
-  /// Agree button - only at app startup button a user taps to agree to the disclaimer
+  /// Agree button - only at app startup button a user taps to agree to the
+  /// disclaimer. May then transition to onboarding screens or home screen.
   Widget _agreeButton(BuildContext context) {
     return Container(
       margin: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
@@ -98,11 +99,19 @@ class _DisclaimerViewState extends State<DisclaimerView> {
             Radius.circular(8),
           ),
         ),
-        onPressed: () {
+        onPressed: () async {
           // Write agreement of disclaimer to device storage to persist this decision
-          Settings.writeDisclaimerAgreed();
-          // Make sure user cannot press back to return to the disclaimer once accepted
-          Navigator.pushReplacementNamed(context, Routes.home);
+          await Settings.writeDisclaimerAgreed();
+          // Check to see if the user has previously onboarded
+          await Settings.readOnboarded().then((onboarded) {
+            if (onboarded) {
+              // If already onboarded then go to home and prevent returning
+              Navigator.pushReplacementNamed(context, Routes.home);
+            } else {
+              // else show onboarding screens and prevent returning
+              Navigator.pushReplacementNamed(context, Routes.onboarding);
+            }
+          });
         },
         child: const Text(
           Strings.disclaimerButtonAgreeText,

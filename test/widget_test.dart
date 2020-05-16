@@ -2,8 +2,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wh_covid19/constants.dart';
 import 'package:wh_covid19/intro_router.dart';
-import 'package:wh_covid19/wh_app.dart';
 import 'package:wh_covid19/strings.dart';
+import 'package:wh_covid19/wh_app.dart';
 
 void main() {
   /// Initial Router Tests

@@ -7,6 +7,7 @@ class Routes {
   static const home = '/home';
   static const info = '/info';
   static const disclaimer = '/disclaimer';
+  static const onboarding = '/onboarding';
 
   // PPE routes
   static const ppe = '/ppe';
