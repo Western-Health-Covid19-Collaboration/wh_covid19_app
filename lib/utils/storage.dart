@@ -59,4 +59,22 @@ class Settings {
     await sharedPrefs.setBool(Constants.settingAnalyticsReporting, newValue);
     await sharedPrefs.setBool(Constants.settingCrashReporting, newValue);
   }
+
+  /// Read the onboarded value from storage if present
+  static Future<bool> readOnboarded() async {
+    final sharedPrefs = await SharedPreferences.getInstance();
+
+    // if not present on device assume that onboarded is false
+    final hasOnboarded =
+        sharedPrefs.getBool(Constants.settingOnboarded) ?? false;
+
+    return hasOnboarded;
+  }
+
+  static Future<void> writeOnboarded(bool newValue) async {
+    final sharedPrefs = await SharedPreferences.getInstance();
+
+    // When user has completed onboarding write to stored settings
+    await sharedPrefs.setBool(Constants.settingOnboarded, newValue);
+  }
 }

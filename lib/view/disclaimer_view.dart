@@ -1,9 +1,8 @@
-import 'package:flutter/gestures.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
-import 'package:url_launcher/url_launcher.dart';
 
-import '../hard_data.dart';
 import '../models/disclaimer_model.dart';
 import '../routes.dart';
 import '../strings.dart';
@@ -53,100 +52,36 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                   minHeight: viewportConstraints.maxHeight,
                 ),
                 child: IntrinsicHeight(
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        const Center(
-                          child: Padding(
-                            padding: EdgeInsets.only(top: 15.0, bottom: 30.0),
-                            child: Text(
-                              '🛑 ✋',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(fontSize: 44.0),
-                            ),
+                  // SafeArea to ensure does not start at top of screen
+                  child: SafeArea(
+                    child: Padding(
+                      padding: const EdgeInsets.all(18.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          const Padding(
+                            padding: EdgeInsets.symmetric(vertical: 20.0),
                           ),
-                        ),
-                        const Text(
-                          'This app is for Western Health clinicians and hospital staff use'
-                          ' ONLY\n',
-                          style: Styles.textH3,
-                        ),
-                        const Text(
-                          'Western Health Anaesthesia COVID-19 (WHAC19) is an educational tool and interactive cognitive aid for Western Health '
-                          'anaesthetists and ICU doctors 👩‍⚕ 👨‍⚕ who are managing patients with COVID-19 🤒 .'
-                          '\n\nWe want to protect our staff from infection risk 🌡 and ensure excellent patient '
-                          'care 🏥. WHAC19 aims to provide a really quick, '
-                          'usable means to access the core information ℹ️'
-                          ' for this.'
-                          '\n\nIt is created using content developed by contributing members of the Western Health COVID-19 Guidelines Working Group. '
-                          ' All content of the app is informally peer-reviewed.',
-                          style: Styles.textH5,
-                        ),
-                        Text.rich(
-                          TextSpan(
-                            children: [
-                              const TextSpan(
-                                text: 'Please refer to ',
-                                style: Styles.textH5,
-                              ),
-                              TextSpan(
-                                text: whCoronavirusInfoURL,
-                                style: Styles.textH5Hyperlink,
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = () {
-                                    launch(whCoronavirusInfoURL);
-                                  },
-                              ),
-                              const TextSpan(
-                                text:
-                                    ' to ensure you have the latest up-to-date information on Western Health\'s Coronavirus guidelines.\n\n',
-                                style: Styles.textH5,
-                              ),
-                            ],
+                          SvgPicture.asset(
+                            'assets/images/onboarding/disclaimer.svg',
+                            height: 80,
+                            color: AppColors.backgroundGreen,
                           ),
-                        ),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Container(
-                              margin: const EdgeInsets.only(right: 14.0),
-                              child: const Text(
-                                '✋',
-                                style: Styles.textH3,
-                              ),
-                            ),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const <Widget>[
-                                  Text(
-                                    'Please keep in mind',
-                                    style: Styles.textH3,
-                                  ),
-                                  SizedBox(height: 10.0),
-                                  Text(
-                                    'This is not a comprehensive source nor can we guarantee it is completely up to date at '
-                                    'the time of use 📱.\n\n\ '
-                                    'WHAC19 gathers analytics and crash data which is used to improve the app.  For more information and to opt out, go to Information > Privacy\n\n',
-                                    style: Styles.textBody,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                        const Text(
-                          'Full Disclaimer',
-                          style: Styles.textH3,
-                        ),
-                        const SizedBox(height: 10.0),
-                        const Text(
-                          Strings.disclaimerBody,
-                          style: Styles.textP,
-                        ),
-                      ],
+                          const Padding(
+                            padding: EdgeInsets.symmetric(vertical: 12.0),
+                          ),
+                          const Text(
+                            Strings.disclaimerHeading,
+                            style: Styles.textH3,
+                          ),
+                          const SizedBox(height: 10.0),
+                          const Text(
+                            Strings.disclaimerBody,
+                            style: Styles.textP,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -158,11 +93,12 @@ class _DisclaimerViewState extends State<DisclaimerView> {
     );
   }
 
-  /// Agree button - only at app startup button a user taps to agree to the disclaimer
+  /// Agree button - only at app startup button a user taps to agree to the
+  /// disclaimer. May then transition to onboarding screens or home screen.
   Widget _agreeButton(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: 16, right: 16, bottom: 8, top: 8),
-      height: 44.0,
+      margin: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
+      height: 46.0,
       child: RaisedButton(
         color: AppColors.green500,
         shape: const RoundedRectangleBorder(
@@ -170,11 +106,19 @@ class _DisclaimerViewState extends State<DisclaimerView> {
             Radius.circular(8),
           ),
         ),
-        onPressed: () {
+        onPressed: () async {
           // Write agreement of disclaimer to device storage to persist this decision
-          Settings.writeDisclaimerAgreed();
-          // Make sure user cannot press back to return to the disclaimer once accepted
-          Navigator.pushReplacementNamed(context, Routes.home);
+          await Settings.writeDisclaimerAgreed();
+          // Check to see if the user has previously onboarded
+          await Settings.readOnboarded().then((onboarded) {
+            if (onboarded) {
+              // If already onboarded then go to home and prevent returning
+              Navigator.pushReplacementNamed(context, Routes.home);
+            } else {
+              // else show onboarding screens and prevent returning
+              Navigator.pushReplacementNamed(context, Routes.onboarding);
+            }
+          });
         },
         child: const Text(
           Strings.disclaimerButtonAgreeText,
@@ -188,7 +132,7 @@ class _DisclaimerViewState extends State<DisclaimerView> {
   Widget _agreedMessage(
       BuildContext context, dynamic version, dynamic dateStampString) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
       color: Colors.white,
       child: Text(
         '${Strings.disclaimerHaveAgreedText} \nVersion: $version \nDate & time: $dateStampString',
@@ -208,48 +152,47 @@ class _DisclaimerViewState extends State<DisclaimerView> {
             value: systemBarStyle(context),
             sized: false,
             child: Scaffold(
-              appBar: AppBar(
-                // Warning brightness interacts with SystemUiOverlayStyle
-                // See system_bars.dart comments
-                brightness: Brightness.light,
-                backgroundColor: AppColors.appBarBackground,
-                iconTheme: Styles.appBarIconTheme,
-                elevation: 4.0,
-                automaticallyImplyLeading: snapshot.data.agreed,
-                title: const Text(
-                  Strings.disclaimerTitle,
-                  style: Styles.textH5,
-                ),
-              ),
-              body: Stack(
-                children: <Widget>[
-                  // Widget to hold content of the right size, with white space for tall height screens and yet scrolls for
-                  // short height screens
-                  _disclaimerScrollingContent(context),
-                  Positioned(
-                    bottom: 0.0,
-                    left: 0.0,
-                    right: 0.0,
-                    child: Container(
-                      padding: const EdgeInsets.only(
-                          left: 16, right: 16, bottom: 16, top: 16),
-                      color: Colors.white,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: <Widget>[
-                          if (snapshot.data.agreed == false ||
-                              snapshot.data.version !=
-                                  Strings.disclaimerCurrentVersion)
-                            _agreeButton(context)
-                          else
-                            _agreedMessage(context, snapshot.data.version,
-                                snapshot.data.dateStamp),
-                        ],
+              // Do not show the app bar for Disclaimer at app startup.
+              // Only show the app bar when in Information view of Disclaimer
+              // We know this when disclaimer is agreed AND version matches
+              // current version of disclaimer.
+              appBar: (snapshot.data.agreed)
+                  ? AppBar(
+                      // Warning brightness interacts with SystemUiOverlayStyle
+                      // See system_bars.dart comments
+                      brightness: Brightness.light,
+                      backgroundColor: AppColors.appBarBackground,
+                      iconTheme: Styles.appBarIconTheme,
+                      elevation: 4.0,
+                      automaticallyImplyLeading: snapshot.data.agreed,
+                      title: const Text(
+                        Strings.disclaimerTitle,
+                        style: Styles.textH5,
                       ),
-                    ),
-                  )
-                ],
+                    )
+                  : null,
+              body: _disclaimerScrollingContent(context),
+              bottomSheet: BottomSheet(
+                elevation: 18.0,
+                onClosing: () {},
+                builder: (context) => Container(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  color: Colors.white,
+                  height: 80.0,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      if (snapshot.data.agreed == false ||
+                          snapshot.data.version !=
+                              Strings.disclaimerCurrentVersion)
+                        _agreeButton(context)
+                      else
+                        _agreedMessage(context, snapshot.data.version,
+                            snapshot.data.dateStamp),
+                    ],
+                  ),
+                ),
               ),
             ),
           );

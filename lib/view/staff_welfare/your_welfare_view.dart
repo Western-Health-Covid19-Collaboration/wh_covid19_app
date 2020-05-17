@@ -16,19 +16,22 @@ class YourWelfareView extends StatelessWidget {
       color: AppColors.grey50,
       actions: <Widget>[
         Row(
-          children: <Widget>[
+          children: const <Widget>[
             Padding(
-                padding: const EdgeInsets.only(right: 16),
-                child: CallButton(whURL))
+              padding: EdgeInsets.only(right: 16),
+              child: CallButton(whURL),
+            )
           ],
         ),
       ],
       tabs: yourWelfareSteps.map((s) => s.heading).toList(),
       children: yourWelfareSteps
-          .map((e) => ICUDailyRoundStepsContainer(
-              key: PageStorageKey(e.heading),
-              steps: e,
-              backgroundColor: AppColors.grey500))
+          .map(
+            (e) => ICUDailyRoundStepsContainer(
+                key: PageStorageKey(e.heading),
+                steps: e,
+                backgroundColor: AppColors.grey500),
+          )
           .toList(),
     );
   }

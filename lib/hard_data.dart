@@ -7,9 +7,11 @@ import 'models/home_card.dart';
 import 'models/icu_daily_round_checklist.dart';
 import 'models/icu_daily_round_steps.dart';
 import 'models/intubation_guide.dart';
+import 'models/onboardingPage_model.dart';
 import 'models/prone_checklist.dart';
 import 'routes.dart';
 import 'strings.dart';
+import 'style.dart';
 
 /// Web urls
 const String whURL = 'http://wh.cyphix.net/';
@@ -23,7 +25,38 @@ const String proningTechniqueUrl =
 const String googleAnalyticsURL = 'https://analytics.google.com/';
 const String sentryURL = 'https://sentry.io/welcome/';
 
-//Staff Welfare card list composition
+// Onboarding screens composition
+const List<OnboardingSinglePage> onboardingPages = [
+  OnboardingSinglePage(
+    graphicAssetPath: 'assets/images/onboarding/staff-use.svg',
+    color: AppColors.backgroundBlue,
+    title: Strings.onboarding1Title,
+    subTitle:
+        'This app is for Western Health clinicians and hospital staff use ONLY !',
+  ),
+  OnboardingSinglePage(
+    graphicAssetPath: 'assets/images/onboarding/educational.svg',
+    color: AppColors.purple50,
+    title: Strings.onboarding2Title,
+    subTitle:
+        'Western Health Anaesthesia COVID-19 (WHAC19) is an educational tool and interactive cognitive aid for Western Health '
+        'anaesthetists and ICU doctors who are managing patients with COVID-19.'
+        '\n\nWe want to protect our staff from infection risk and ensure excellent patient '
+        'care. WHAC19 aims to provide a really quick, usable means to '
+        'access the core information.️',
+  ),
+  OnboardingSinglePage(
+    graphicAssetPath: 'assets/images/onboarding/reference.svg',
+    color: AppColors.backgroundGreen,
+    title: Strings.onboarding3Title,
+    subTitle:
+        'The app uses guidelines, protocols and advice from the Western Health COVID-19 Guidelines Working Group.'
+        'To ensure you have the latest up-to-date information on Western '
+        'Health’s Coronavirus guidelines visit coronavirus.wh.org.au',
+  ),
+];
+
+// Staff Welfare card list composition
 const List<HomeCard> staffWelfare = [
   HomeCard(
     title: Strings.ppeTitle,
@@ -32,6 +65,7 @@ const List<HomeCard> staffWelfare = [
   ),
 ];
 
+// Airway car list composition
 const List<HomeCard> airway = [
   HomeCard(
     title: Strings.intubationGuideTitle,

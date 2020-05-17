@@ -30,6 +30,7 @@ import 'view/icu_non_intensivist/ventilation/ventilation_view.dart';
 import 'view/icu_non_intensivist/ventilator_basics_guide_view.dart';
 import 'view/info_view.dart';
 import 'view/license_view.dart';
+import 'view/onboarding_view.dart';
 import 'view/ppe/ppe_off_guidance_method_1.dart';
 import 'view/ppe/ppe_off_guidance_method_1_infographic.dart';
 import 'view/ppe/ppe_off_guidance_method_2.dart';
@@ -52,9 +53,9 @@ class WHApp extends StatelessWidget {
       title: Strings.appName,
       theme: Styles.appThemeLight,
       initialRoute: Routes.introRouter,
-      // Routes should be in routes or onGenerateRoute not both
       routes: {
         Routes.home: (context) => HomePage(),
+        Routes.onboarding: (context) => Onboarding(),
         Routes.ppe: (context) => PPEView(),
         Routes.ppeOnGuidance: (context) => PPEOnGuidance(),
         Routes.ppeOffGuidanceMethod1: (context) => PPEOffGuidanceMethod1(),

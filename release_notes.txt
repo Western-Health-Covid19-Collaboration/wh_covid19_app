@@ -1,3 +1,7 @@
+---- Sunday 17th May, 2020 ----
+* Added Onboarding screens for key content at app startup
+* Updated Disclaimer to remove content moved to Onboarding screens
+
 ---- Monday 11th May, 2020 ----
 * Added Information / Privacy to disable/enable reporting analytics & crash data
 * Fixed build and testing issues with viewing pdf files

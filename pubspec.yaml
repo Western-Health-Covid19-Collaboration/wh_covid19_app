@@ -42,6 +42,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/infographics/
+    - assets/images/onboarding/
     - assets/images/icon/
     - assets/images/icon/SVG/
     - assets/images/steps/
