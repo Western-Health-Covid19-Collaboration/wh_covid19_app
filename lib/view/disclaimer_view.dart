@@ -152,7 +152,11 @@ class _DisclaimerViewState extends State<DisclaimerView> {
             value: systemBarStyle(context),
             sized: false,
             child: Scaffold(
-              appBar: (snapshot.data.agreed == true)
+              // Do not show the app bar for Disclaimer at app startup.
+              // Only show the app bar when in Information view of Disclaimer
+              // We know this when disclaimer is agreed AND version matches
+              // current version of disclaimer.
+              appBar: (snapshot.data.agreed)
                   ? AppBar(
                       // Warning brightness interacts with SystemUiOverlayStyle
                       // See system_bars.dart comments
