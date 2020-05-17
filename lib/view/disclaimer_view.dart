@@ -52,29 +52,36 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                   minHeight: viewportConstraints.maxHeight,
                 ),
                 child: IntrinsicHeight(
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        SvgPicture.asset(
-                          'assets/images/onboarding/disclaimer.svg',
-                          height: 80,
-                          color: AppColors.backgroundGreen,
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.symmetric(vertical: 10.0),
-                        ),
-                        const Text(
-                          Strings.disclaimerHeading,
-                          style: Styles.textH3,
-                        ),
-                        const SizedBox(height: 10.0),
-                        const Text(
-                          Strings.disclaimerBody,
-                          style: Styles.textP,
-                        ),
-                      ],
+                  // SafeArea to ensure does not start at top of screen
+                  child: SafeArea(
+                    child: Padding(
+                      padding: const EdgeInsets.all(18.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          const Padding(
+                            padding: EdgeInsets.symmetric(vertical: 20.0),
+                          ),
+                          SvgPicture.asset(
+                            'assets/images/onboarding/disclaimer.svg',
+                            height: 80,
+                            color: AppColors.backgroundGreen,
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(vertical: 12.0),
+                          ),
+                          const Text(
+                            Strings.disclaimerHeading,
+                            style: Styles.textH3,
+                          ),
+                          const SizedBox(height: 10.0),
+                          const Text(
+                            Strings.disclaimerBody,
+                            style: Styles.textP,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -145,19 +152,21 @@ class _DisclaimerViewState extends State<DisclaimerView> {
             value: systemBarStyle(context),
             sized: false,
             child: Scaffold(
-              appBar: AppBar(
-                // Warning brightness interacts with SystemUiOverlayStyle
-                // See system_bars.dart comments
-                brightness: Brightness.light,
-                backgroundColor: AppColors.appBarBackground,
-                iconTheme: Styles.appBarIconTheme,
-                elevation: 4.0,
-                automaticallyImplyLeading: snapshot.data.agreed,
-                title: const Text(
-                  Strings.disclaimerTitle,
-                  style: Styles.textH5,
-                ),
-              ),
+              appBar: (snapshot.data.agreed == true)
+                  ? AppBar(
+                      // Warning brightness interacts with SystemUiOverlayStyle
+                      // See system_bars.dart comments
+                      brightness: Brightness.light,
+                      backgroundColor: AppColors.appBarBackground,
+                      iconTheme: Styles.appBarIconTheme,
+                      elevation: 4.0,
+                      automaticallyImplyLeading: snapshot.data.agreed,
+                      title: const Text(
+                        Strings.disclaimerTitle,
+                        style: Styles.textH5,
+                      ),
+                    )
+                  : null,
               body: _disclaimerScrollingContent(context),
               bottomSheet: BottomSheet(
                 elevation: 18.0,

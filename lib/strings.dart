@@ -24,6 +24,11 @@ developed to support the implementation of selected Western Health guidelines, p
   static const String disclaimerHaveAgreedText =
       'You have agreed to the disclaimer';
 
+  /// Onboarding screen titles
+  static const String onboarding1Title = 'Hospital Staff Use Only';
+  static const String onboarding2Title = 'Educational Use Only';
+  static const String onboarding3Title = 'Content from Western Health';
+
   /// Home screen strings
   static const String homeHeading1 = 'PPE';
   static const String homeHeading2 = 'Airway';
