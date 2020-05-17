@@ -24,6 +24,7 @@ void main() {
     };
   }
 
+  // TODO - runZoned is deprecated, ignoring for now until Sentry setup is clear
   // This creates a [Zone] that contains the Flutter application and establishes
   // an error handler that captures errors.
   //
@@ -43,6 +44,7 @@ void main() {
         child: const WHApp(),
       ),
     );
+    // ignore: deprecated_member_use
   }, onError: (Object error, StackTrace stackTrace) {
     // Whenever an error occurs, call the `reportError` function. This sends
     // Dart errors to the dev console or Sentry depending on the environment.
