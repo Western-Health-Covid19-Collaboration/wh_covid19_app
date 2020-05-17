@@ -1,6 +1,6 @@
 ---- Monday 18th May, 2020 ----
 * Updated Flutter framework to latest stable
-* Updated several packages and build setups to versions with fixes
+* Updated several packages and build setups to versions with fixes 
 
 ---- Sunday 17th May, 2020 ----
 * Added Onboarding screens for key content at app startup
