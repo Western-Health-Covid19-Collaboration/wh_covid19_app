@@ -25,6 +25,9 @@ void main() {
   }
 
   // TODO - runZoned is deprecated, ignoring for now until Sentry setup is clear
+  // with runZonedGuarded as per https://github.com/dart-lang/sdk/issues/40681
+  // and https://github.com/flutter/flutter/issues/53185
+  //
   // This creates a [Zone] that contains the Flutter application and establishes
   // an error handler that captures errors.
   //
