@@ -1,3 +1,8 @@
+---- Monday 18th May, 2020 ----
+* Updated Flutter framework to latest stable
+* Updated several packages with fixes
+* Build pipeline updated for new configuration
+
 ---- Sunday 17th May, 2020 ----
 * Added Onboarding screens for key content at app startup
 * Updated Disclaimer to remove content moved to Onboarding screens
