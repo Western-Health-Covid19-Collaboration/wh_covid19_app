@@ -37,14 +37,18 @@ You will need to install and setup Flutter to develop this application. You can 
 - the installation of dependencies
 - running the application
 
-### **BETA CHANNEL USAGE**
+### **STABLE CHANNEL USAGE**
 
-We are currently using the Flutter v1.15.17 (the current beta channel version) for app development, so once you have the Flutter SDK set-up and working please change to the beta channel using on the command line:
+We are currently using the Flutter stable channel (currently v1.17.1) for app development, so once you have the Flutter
+SDK set-up make sure you are on the stable channel:
 
 ```
-flutter channel beta
+flutter channel stable
 flutter upgrade
 ```
+
+Check the pubspec.yaml file in the repo for the current version of Flutter we are using for builds (including CI
+ builds via codemagic).
 
 ### Installing dependencies
 
@@ -124,7 +128,8 @@ If you have any questions about why things are done a certain way in the app, ch
 
 ## Method 1 - If you are part of the team
 - Please make sure the work you are doing is described in an existing Github issue.
-- Develop your work in a branch. Branch names should be prefixed with `feature`, `tech`, `docs` or `bugfix` depending on what is being done in them AND should contain the number of the matching Github issue. eg: `feature/142-update-homescreen`
+- Develop your work in a branch. Branch names should be prefixed with `feature`, `tech`, `docs`, `update` or `fix`
+depending on what is being done in them AND should contain the number of the matching Github issue. eg: `feature/142-update-homescreen`
 - Open a pull request onto master. Be sure to include a detailed description in your pull request per the PR template. Other contributors will comment on your code or approve it
 - Please be sure to note the build status of your PR reported by the Codemagic CI
 - Once your pull request has been approved, please merge into master.
