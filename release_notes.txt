@@ -1,3 +1,13 @@
+---- Monday 4th May, 2020 ----
+Added in 7 new ICU screens:
+ - Airway Assessment
+ - Ventilator Basics
+ - CVS Basics
+ - Neuro Basics
+ - ID Basics
+ - Renal Basics
+ - GIT Basics
+
 ---- Sunday 2nd May, 2020 ----
 * Updates to disclaimer to point out privacy policy
 * Copy updates and tweaks from Gregg

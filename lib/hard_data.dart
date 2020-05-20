@@ -1430,7 +1430,7 @@ const airwayAssessmentGuide = [
       ])
     ])
   ]),
-  ICUDailyRoundSteps(heading: 'Predictors of Difficulty:', sections: [
+  ICUDailyRoundSteps(heading: 'Predictors of Difficulty', sections: [
     ICUDailyRoundStepSection(subsections: [
       ICUDailyRoundStepSubsection(heading: 'Difficult BMV?', footer: '', list: [
         ICUDailyRoundItem(icon: '🔍', title: 'Previous difficult BMV'),
@@ -1530,7 +1530,7 @@ const cvsBasicsGuide = [
           IntubationItem('Common cardiac medications and doses:',
               subtitle:
                   '• Noradrenaline\n     • 0.5-100mcg/min\n • Amiodarone\n     • 15mg/kg/d',
-              icon: '❤'),
+              icon: '♥️'),
         ],
       )
     ],
@@ -1609,11 +1609,11 @@ const neuroBasicsGuide = [
               footer: 'The Riker is a Sedation-Agitation Scale commonly used',
               list: [
                 ICUDailyRoundItem(
-                    icon: '7️',
+                    icon: '7',
                     title: 'Dangerous agitation',
                     subtitle: ' • Pulling at ETT\n • Climbing out of bed'),
                 ICUDailyRoundItem(
-                    icon: '6️',
+                    icon: '6',
                     title: 'Very agitated',
                     subtitle:
                         ' • Does not calm down\n • May require restraint at times'),
@@ -1623,18 +1623,19 @@ const neuroBasicsGuide = [
                     subtitle:
                         ' • Anxious or mildly agitated\n • Attempts to sit up\n • Calms with verbal instructions'),
                 ICUDailyRoundItem(
-                    icon: '4️',
+                    icon: '4',
                     title: 'Calm and co-operative',
                     subtitle: ' • Calm\n • Wakens easily\n • Follows commands'),
                 ICUDailyRoundItem(
                     icon: '3',
-                    title: 'Dangerous agitation',
-                    subtitle: ' • Pulling ETT\n • Climbing out of bed'),
-                ICUDailyRoundItem(
-                    icon: '2️',
                     title: 'Sedated',
                     subtitle:
                         ' • Difficult to rouse\n • Awakens to verbal stimuli\n • Does not follow commands'),
+                ICUDailyRoundItem(
+                    icon: '2',
+                    title: 'Very Sedated',
+                    subtitle:
+                        ' • Arouses to physical stimuli\n • Does not communicate or follow commands\n • May move spontaneously'),
                 ICUDailyRoundItem(
                     icon: '1',
                     title: 'Unrousable',
@@ -1844,6 +1845,3 @@ const gitBasicsGuide = [
     ]),
   ]),
 ];
-
-// '💬' '😷' '❤️''✅' '👟'
-// '⚖️'),'🔈''🌊' '🎚''👀' '😅'),'😬''🙃''🤔'✋'🚨''👉''🛌''💧''👉')'💪''🙇‍♀️'📈'•'🦠 💊
