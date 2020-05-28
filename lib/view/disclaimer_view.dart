@@ -172,25 +172,27 @@ class _DisclaimerViewState extends State<DisclaimerView> {
                     )
                   : null,
               body: _disclaimerScrollingContent(context),
-              bottomSheet: BottomSheet(
-                elevation: 18.0,
-                onClosing: () {},
-                builder: (context) => Container(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  color: Colors.white,
-                  height: 80.0,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: <Widget>[
-                      if (snapshot.data.agreed == false ||
-                          snapshot.data.version !=
-                              Strings.disclaimerCurrentVersion)
-                        _agreeButton(context)
-                      else
-                        _agreedMessage(context, snapshot.data.version,
-                            snapshot.data.dateStamp),
-                    ],
+              bottomSheet: SafeArea(
+                child: BottomSheet(
+                  elevation: 18.0,
+                  onClosing: () {},
+                  builder: (context) => Container(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    color: Colors.white,
+                    height: 90.0,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: <Widget>[
+                        if (snapshot.data.agreed == false ||
+                            snapshot.data.version !=
+                                Strings.disclaimerCurrentVersion)
+                          _agreeButton(context)
+                        else
+                          _agreedMessage(context, snapshot.data.version,
+                              snapshot.data.dateStamp),
+                      ],
+                    ),
                   ),
                 ),
               ),

@@ -37,7 +37,7 @@ You will need to install and setup Flutter to develop this application. You can 
 - the installation of dependencies
 - running the application
 
-### **STABLE CHANNEL USAGE**
+### Developer Setup
 
 We are currently using the Flutter stable channel (currently v1.17.1) for app development, so once you have the Flutter
 SDK set-up make sure you are on the stable channel:
@@ -50,6 +50,14 @@ flutter upgrade
 Check the pubspec.yaml file in the repo for the current version of Flutter we are using for builds (including CI
  builds via codemagic).
 
+iOS build setup recommended:
+- Xcode 11.5.x
+- Cocoapods 1.9.1
+
+Android build setup recommended:
+- Android Studio 3.6.x or VS Code 1.45 or higher with latest
+  Dart/Flutter plugins
+
 ### Installing dependencies
 
 To install dependencies, simply run `flutter pub get` in your terminal.
@@ -58,7 +66,7 @@ To install dependencies, simply run `flutter pub get` in your terminal.
 
 #### iOS
 
-For iOS Flutter development you will need to have Xcode v13.3 installed. Then initialise an instance of an iOS Simulator or connect physical iOS device, navigate to the cloned repo and run from root:
+For iOS Flutter development you will need to have Xcode installed. Then initialise an instance of an iOS Simulator or connect physical iOS device, navigate to the cloned repo and run from root:
 
 ```sh
 # from terminal
