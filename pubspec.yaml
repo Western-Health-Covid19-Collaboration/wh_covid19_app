@@ -26,6 +26,7 @@ dependencies:
   sentry: ^3.0.1
   device_info: ^0.4.2+4
   native_pdf_view: ^3.6.0
+  font_awesome_flutter: ^8.8.1
 
 dev_dependencies:
   flutter_test:

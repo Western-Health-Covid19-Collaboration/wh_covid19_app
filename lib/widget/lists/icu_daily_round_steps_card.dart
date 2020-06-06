@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../models/icu_daily_round_steps.dart';
 import '../../style.dart';
@@ -21,9 +22,10 @@ class ICUDailyRoundStepsCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.max,
               children: [
-                Text(
+                Icon(
                   item.icon,
-                  style: Styles.textH4,
+                  size: 22,
+                  color: Colors.grey[700],
                 ),
               ],
             ),
