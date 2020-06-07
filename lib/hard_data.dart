@@ -62,7 +62,7 @@ const List<OnboardingSinglePage> onboardingPages = [
 const List<HomeCard> staffWelfare = [
   HomeCard(
     title: Strings.ppeTitle,
-    description: 'WH videos and step by step guide',
+    description: 'WH Videos and Step by Step Guide',
     route: Routes.ppe,
   ),
 ];
@@ -81,7 +81,7 @@ const List<HomeCard> airway = [
   ),
   HomeCard(
     title: Strings.extubationGuideTitle,
-    description: 'WH Theatre Extubation guideline v1.1',
+    description: 'WH Theatre Extubation Guideline v1.1',
     route: Routes.extubationGuidance,
   )
 ];
@@ -90,12 +90,12 @@ const List<HomeCard> airway = [
 const List<HomeCard> icu = [
   HomeCard(
     title: Strings.ventilationTitle,
-    description: 'Basic ARDS strategy',
+    description: 'Basic ARDS Strategy',
     route: Routes.ventilation,
   ),
   HomeCard(
     title: Strings.dailyRoundTitle,
-    description: 'Basic A-G template',
+    description: 'Basic A-G Template',
     route: Routes.generalCare,
   ),
   HomeCard(
@@ -561,7 +561,7 @@ const List<IntubationContent> intubationGuide = [
             icon: FontAwesomeIcons.userClock,
           ),
           IntubationItem('Lines and CXR outside NPR',
-              icon: FontAwesomeIcons.lungs),
+              icon: FontAwesomeIcons.xRay),
           IntubationItem('Debrief and share lessons',
               icon: FontAwesomeIcons.comment),
         ],
@@ -733,15 +733,14 @@ const ventilationGuide = [
       ICUDailyRoundStepSubsection(
         list: [
           ICUDailyRoundItem(
-              title: 'SaO₂ 88-92%', icon: FontAwesomeIcons.tachometerAlt),
+              title: 'SaO₂ 88-92%', icon: FontAwesomeIcons.crosshairs),
           ICUDailyRoundItem(
-            title: 'PaO₂ 55-70mmHg',
-          ),
+              title: 'PaO₂ 55-70mmHg', icon: FontAwesomeIcons.crosshairs),
           ICUDailyRoundItem(
-            title: 'Pplat < 30',
-          ),
+              title: 'Pplat < 30', icon: FontAwesomeIcons.crosshairs),
           ICUDailyRoundItem(
             title: 'pH > 7.20',
+            icon: FontAwesomeIcons.crosshairs,
             subtitle: '(Permissive hypercapnia is ok)',
           ),
         ],
@@ -773,7 +772,7 @@ const ventilationGuide = [
                 title: 'Deep sedation', icon: FontAwesomeIcons.bed),
             ICUDailyRoundItem(
                 title: 'Restrictive fluid regime',
-                icon: FontAwesomeIcons.plus,
+                icon: FontAwesomeIcons.tintSlash,
                 subtitle: 'Aim for Negative fluid balance'),
             ICUDailyRoundItem(
                 title: 'Ensure senior ICU review',
@@ -801,11 +800,13 @@ const List<ICUDailyRoundSteps> icuDailyRoundSteps = [
           heading: 'ETT (Endotracheal Tube)',
           footer: '',
           list: [
-            ICUDailyRoundItem(icon: Icons.add, title: 'Size?'),
-            ICUDailyRoundItem(icon: Icons.add, title: 'Position?'),
-            ICUDailyRoundItem(icon: Icons.add, title: 'Confirmed with CXR?'),
             ICUDailyRoundItem(
-                icon: Icons.add,
+                icon: FontAwesomeIcons.rulerVertical, title: 'Size?'),
+            ICUDailyRoundItem(icon: FontAwesomeIcons.lungs, title: 'Position?'),
+            ICUDailyRoundItem(
+                icon: FontAwesomeIcons.xRay, title: 'Confirmed with CXR?'),
+            ICUDailyRoundItem(
+                icon: FontAwesomeIcons.lock,
                 title: 'Are all connections secured with sleek?'),
           ])
     ]),
@@ -814,25 +815,26 @@ const List<ICUDailyRoundSteps> icuDailyRoundSteps = [
           heading: 'If planned for extubation:',
           footer: '',
           list: [
-            ICUDailyRoundItem(icon: Icons.add, title: 'When?'),
-            ICUDailyRoundItem(icon: Icons.add, title: 'Where?'),
+            ICUDailyRoundItem(icon: FontAwesomeIcons.userClock, title: 'When?'),
             ICUDailyRoundItem(
-                icon: Icons.add, title: 'How? (see airway resources)'),
+                icon: FontAwesomeIcons.searchLocation, title: 'Where?'),
             ICUDailyRoundItem(
-                icon: Icons.add,
-                title: 'Does ETT need advancing / withdrawing?'),
+                icon: FontAwesomeIcons.procedures,
+                title: 'How? (see airway resources)'),
           ])
     ])
   ]),
   ICUDailyRoundSteps(heading: 'B - Breathing', sections: [
     ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
-        ICUDailyRoundItem(icon: Icons.add, title: 'SpO₂?'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'PaO₂?'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'CXR reviewed?'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'ABG reviewed?'),
+        ICUDailyRoundItem(icon: FontAwesomeIcons.waveSquare, title: 'SpO₂?'),
+        ICUDailyRoundItem(icon: FontAwesomeIcons.vial, title: 'PaO₂?'),
+        ICUDailyRoundItem(icon: FontAwesomeIcons.xRay, title: 'CXR reviewed?'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Current ventilator settings reviewed?'),
+            icon: FontAwesomeIcons.fileSignature, title: 'ABG reviewed?'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.slidersH,
+            title: 'Current ventilator settings reviewed?'),
       ])
     ]),
     ICUDailyRoundStepSection(heading: 'Plan', subsections: [
@@ -841,13 +843,16 @@ const List<ICUDailyRoundSteps> icuDailyRoundSteps = [
           footer: '',
           list: [
             ICUDailyRoundItem(
-                icon: Icons.add, title: 'PaO₂ > 55-60mmHg\nSaO₂ > 88-92%'),
+                icon: FontAwesomeIcons.crosshairs,
+                title: 'PaO₂ > 55-60mmHg\nSaO₂ > 88-92%'),
             ICUDailyRoundItem(
-                icon: Icons.add, title: 'pH > 7.20\nif pH normal, CO₂ 35-45'),
+                icon: FontAwesomeIcons.crosshairs,
+                title: 'pH > 7.20\nif pH normal, CO₂ 35-45'),
             ICUDailyRoundItem(
-                icon: Icons.add, title: 'VTe 4-8 ml/kg\nwith Pplat < 30'),
+                icon: FontAwesomeIcons.crosshairs,
+                title: 'VTe 4-8 ml/kg\nwith Pplat < 30'),
             ICUDailyRoundItem(
-                icon: Icons.add,
+                icon: FontAwesomeIcons.crosshairs,
                 title:
                     'PEEP: According to PEEP Table\nAlso check ETT lines NG ICC'),
           ]),
@@ -856,32 +861,34 @@ const List<ICUDailyRoundSteps> icuDailyRoundSteps = [
           footer: '',
           list: [
             ICUDailyRoundItem(
-                icon: Icons.add, title: 'Specialist review and see resources'),
+                icon: FontAwesomeIcons.userMd,
+                title: 'Specialist review and see resources'),
           ])
     ])
   ]),
   ICUDailyRoundSteps(heading: 'C - Circulation', sections: [
     ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
-        ICUDailyRoundItem(icon: Icons.add, title: 'HR / rhythm / MAP?'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'ECG / Echocardigram?'),
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.heartbeat, title: 'HR / rhythm / MAP?'),
+        ICUDailyRoundItem(title: 'ECG / Echocardigram?'),
+        ICUDailyRoundItem(
             title:
                 'Lactate? (Signs of end organ perfusion: mottled / cool peripheries / cap refill time?)'),
       ])
     ]),
     ICUDailyRoundStepSection(heading: 'Plan', subsections: [
       ICUDailyRoundStepSubsection(heading: 'Aims', footer: '', list: [
-        ICUDailyRoundItem(icon: Icons.add, title: 'MAP > 65'),
-        ICUDailyRoundItem(icon: Icons.add, title: '[Hb] > 70'),
+        ICUDailyRoundItem(icon: FontAwesomeIcons.crosshairs, title: 'MAP > 65'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.crosshairs, title: '[Hb] > 70'),
       ]),
       ICUDailyRoundStepSubsection(
           heading: 'If haemodyamically unstable / MAP < 65',
           footer: '',
           list: [
             ICUDailyRoundItem(
-                icon: Icons.add,
+                icon: FontAwesomeIcons.prescription,
                 title:
                     'Commence noradrenaline, see resources / echocardiogram'),
           ])
@@ -891,19 +898,18 @@ const List<ICUDailyRoundSteps> icuDailyRoundSteps = [
     ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Riker score & pain assessment?'),
-        ICUDailyRoundItem(
-            icon: Icons.add, title: 'Current sedation / analgesic infusions?'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Neuromuscular blockers?'),
+            icon: FontAwesomeIcons.brain,
+            title: 'Riker score & pain assessment?'),
+        ICUDailyRoundItem(title: 'Current sedation / analgesic infusions?'),
+        ICUDailyRoundItem(title: 'Neuromuscular blockers?'),
       ])
     ]),
     ICUDailyRoundStepSection(heading: 'Plan', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.prescription,
             title: 'Analgesia / sedation plan and target (see resources)'),
         ICUDailyRoundItem(
-            icon: Icons.add,
             title:
                 'Consider sedation break (see resources) / cessation of neuromuscular blocker'),
       ])
@@ -912,33 +918,34 @@ const List<ICUDailyRoundSteps> icuDailyRoundSteps = [
   ICUDailyRoundSteps(heading: 'E - Infection/Exposure', sections: [
     ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
-        ICUDailyRoundItem(icon: Icons.add, title: 'Temperature?'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Culture results?'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Current antibiotics?'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Invasive lines?'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Pressure areas / wounds / cellulitis'),
+            icon: FontAwesomeIcons.thermometerThreeQuarters,
+            title: 'Temperature?'),
+        ICUDailyRoundItem(title: 'Culture results?'),
+        ICUDailyRoundItem(title: 'Current antibiotics?'),
+        ICUDailyRoundItem(title: 'Invasive lines?'),
+        ICUDailyRoundItem(title: 'Pressure areas / wounds / cellulitis'),
       ])
     ]),
     ICUDailyRoundStepSection(heading: 'Plan', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Antimicrobials (see resources)'),
+            icon: FontAwesomeIcons.viruses,
+            title: 'Antimicrobials (see resources)'),
         ICUDailyRoundItem(
-            icon: Icons.add,
             title: 'If patient deteriorating / septic workup (see resources)'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Can lines be removed?'),
+        ICUDailyRoundItem(title: 'Can lines be removed?'),
       ])
     ])
   ]),
   ICUDailyRoundSteps(heading: 'F - Renal', sections: [
     ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
-        ICUDailyRoundItem(icon: Icons.add, title: 'Current urine output?'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Fluid balance last 24 hours?'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Electrolytes?'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Acid-Base status?'),
+            icon: FontAwesomeIcons.tint, title: 'Current urine output?'),
+        ICUDailyRoundItem(title: 'Fluid balance last 24 hours?'),
+        ICUDailyRoundItem(title: 'Electrolytes?'),
+        ICUDailyRoundItem(title: 'Acid-Base status?'),
       ])
     ]),
     ICUDailyRoundStepSection(heading: 'Plan', subsections: [
@@ -947,32 +954,36 @@ const List<ICUDailyRoundSteps> icuDailyRoundSteps = [
           footer: 'Target for next 24 hours + diuretics',
           list: [
             ICUDailyRoundItem(
-                icon: Icons.add,
+                icon: FontAwesomeIcons.crosshairs,
                 title: 'Aim for negative fluid balance around 1L/d stable'),
+            ICUDailyRoundItem(
+                icon: FontAwesomeIcons.prescription,
+                title: 'Electrolyte supplementation / goals'),
           ]),
-      ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
-        ICUDailyRoundItem(
-            icon: Icons.add, title: 'Electrolyte supplementation / goals'),
-      ])
     ])
   ]),
   ICUDailyRoundSteps(heading: 'G - GIT', sections: [
     ICUDailyRoundStepSection(heading: 'Assessment', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'NGT confirmed correctly positioned?'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Abdominal examination?'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'LFTs checked?'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Absorbing feeds?'),
+            icon: FontAwesomeIcons.xRay,
+            title: 'NGT confirmed correctly positioned?'),
+        ICUDailyRoundItem(title: 'Abdominal examination?'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.diagnoses, title: 'LFTs checked?'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.fillDrip, title: 'Absorbing feeds?'),
       ])
     ]),
     ICUDailyRoundStepSection(heading: 'Plan', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
-        ICUDailyRoundItem(icon: Icons.add, title: 'Nutrition (resources)'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Any surgical issues?'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Any liver issues?'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Change meds\n(NG → IV or vice versa)'),
+            icon: FontAwesomeIcons.crosshairs, title: 'Nutrition (resources)'),
+        ICUDailyRoundItem(title: 'Any surgical issues?'),
+        ICUDailyRoundItem(title: 'Any liver issues?'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.prescription,
+            title: 'Change meds\n(NG → IV or vice versa)'),
       ]),
     ])
   ])
@@ -1020,8 +1031,10 @@ const yourWelfareSteps = [
           subsections: [
             ICUDailyRoundStepSubsection(list: [
               ICUDailyRoundItem(
-                  icon: Icons.add, title: 'STOP, BREATHE then think'),
-              ICUDailyRoundItem(icon: Icons.add, title: 'Limit news intake'),
+                  icon: FontAwesomeIcons.stopCircle,
+                  title: 'STOP, BREATHE then think'),
+              ICUDailyRoundItem(
+                  icon: FontAwesomeIcons.newspaper, title: 'Limit news intake'),
             ])
           ],
         ),
@@ -1029,18 +1042,21 @@ const yourWelfareSteps = [
             heading: 'Take care of basic needs ',
             subsections: [
               ICUDailyRoundStepSubsection(list: [
-                ICUDailyRoundItem(icon: Icons.add, title: 'Rest'),
-                ICUDailyRoundItem(icon: Icons.add, title: 'Eat well'),
+                ICUDailyRoundItem(icon: FontAwesomeIcons.couch, title: 'Rest'),
                 ICUDailyRoundItem(
-                    icon: Icons.add, title: 'Engage in physical activity'),
+                    icon: FontAwesomeIcons.carrot, title: 'Eat well'),
                 ICUDailyRoundItem(
-                    icon: Icons.add, title: 'Stay in contact with loved ones'),
+                    icon: FontAwesomeIcons.running,
+                    title: 'Engage in physical activity'),
                 ICUDailyRoundItem(
-                    icon: Icons.add,
+                    icon: FontAwesomeIcons.users,
+                    title: 'Stay in contact with loved ones'),
+                ICUDailyRoundItem(
+                    icon: FontAwesomeIcons.wineGlassAlt,
                     title:
                         'Avoid unhelpful coping strategies (Tobacco, alcohol or other drugs)'),
                 ICUDailyRoundItem(
-                    icon: Icons.add,
+                    icon: FontAwesomeIcons.batteryThreeQuarters,
                     title:
                         'Consider psychological energy levels. “Fill up” after “Emptying the tank”')
               ])
@@ -1052,26 +1068,34 @@ const yourWelfareSteps = [
       subsections: [
         ICUDailyRoundStepSubsection(heading: 'Number of cases: 0', list: [
           ICUDailyRoundItem(
-              icon: Icons.add,
+              icon: FontAwesomeIcons.meh,
               title: 'Anticipatory anxiety about what’s on its way.'),
           ICUDailyRoundItem(
-              icon: Icons.add,
+              icon: FontAwesomeIcons.cloud,
               title:
                   'Inability to think clearly, feeling overwhelmed, planning.'),
-          ICUDailyRoundItem(icon: Icons.add, title: 'Communication errors.'),
           ICUDailyRoundItem(
-              icon: Icons.add, title: 'Tension in working relationships.'),
-          ICUDailyRoundItem(icon: Icons.add, title: '“Readiness” burnout.'),
+              icon: FontAwesomeIcons.comments, title: 'Communication errors.'),
+          ICUDailyRoundItem(
+              icon: FontAwesomeIcons.userMd,
+              title: 'Tension in working relationships.'),
+          ICUDailyRoundItem(
+              icon: FontAwesomeIcons.tired, title: '“Readiness” burnout.'),
         ])
       ],
     ),
     ICUDailyRoundStepSection(heading: 'How to self-care', subsections: [
       ICUDailyRoundStepSubsection(list: [
-        ICUDailyRoundItem(icon: Icons.add, title: 'Reassure colleagues'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Family and personal planning'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Communication updates'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Employee wellbeing officer'),
+            icon: FontAwesomeIcons.userPlus, title: 'Reassure colleagues'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.users,
+            title: 'Family and personal planning'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.commentMedical,
+            title: 'Communication updates'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.smile, title: 'Employee wellbeing officer'),
       ])
     ])
   ]),
@@ -1081,23 +1105,29 @@ const yourWelfareSteps = [
       subsections: [
         ICUDailyRoundStepSubsection(heading: 'Number of cases: 1', list: [
           ICUDailyRoundItem(
-              icon: Icons.add,
+              icon: FontAwesomeIcons.running,
               title:
                   'Starting to get going, lots of trying out, lost time, repetition and frustration.'),
           ICUDailyRoundItem(
-              icon: Icons.add, title: 'Further anticipatory anxiety'),
+              icon: FontAwesomeIcons.meh,
+              title: 'Further anticipatory anxiety'),
         ])
       ],
     ),
     ICUDailyRoundStepSection(heading: 'How to self-care', subsections: [
       ICUDailyRoundStepSubsection(list: [
-        ICUDailyRoundItem(icon: Icons.add, title: 'Battlefield central plan'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Centralised communication'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'It’s OK to say you’re not OK!'),
+            icon: FontAwesomeIcons.hospital, title: 'Battlefield central plan'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Pre-brief and debrief each day'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Sleep hygiene!'),
+            icon: FontAwesomeIcons.commentMedical,
+            title: 'Centralised communication'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.thumbsUp,
+            title: 'It’s OK to say you’re not OK!'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.comment,
+            title: 'Pre-brief and debrief each day'),
+        ICUDailyRoundItem(icon: FontAwesomeIcons.bed, title: 'Sleep hygiene!'),
       ])
     ])
   ]),
@@ -1109,32 +1139,41 @@ const yourWelfareSteps = [
             heading: 'Number of cases: Full scale/Multiple',
             list: [
               ICUDailyRoundItem(
-                  icon: Icons.add,
+                  icon: FontAwesomeIcons.exclamation,
                   title: 'Greatest risk period psychologically'),
               ICUDailyRoundItem(
-                  icon: Icons.add,
+                  icon: FontAwesomeIcons.sadTear,
                   title: 'Fear infection and implications for families'),
               ICUDailyRoundItem(
-                  icon: Icons.add, title: 'Overwhelming workload'),
+                  icon: FontAwesomeIcons.plus, title: 'Overwhelming workload'),
               ICUDailyRoundItem(
-                  icon: Icons.add, title: 'Adrenaline and auto-pilot'),
-              ICUDailyRoundItem(icon: Icons.add, title: 'Exhaustion'),
-              ICUDailyRoundItem(icon: Icons.add, title: 'Distress'),
+                  icon: FontAwesomeIcons.heartbeat,
+                  title: 'Adrenaline and auto-pilot'),
+              ICUDailyRoundItem(
+                  icon: FontAwesomeIcons.frown, title: 'Exhaustion'),
+              ICUDailyRoundItem(
+                  icon: FontAwesomeIcons.tired, title: 'Distress'),
             ])
       ],
     ),
     ICUDailyRoundStepSection(heading: 'How to self-care', subsections: [
       ICUDailyRoundStepSubsection(list: [
-        ICUDailyRoundItem(icon: Icons.add, title: 'Promote peer support'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Management are visible and available'),
+            icon: FontAwesomeIcons.peopleArrows, title: 'Promote peer support'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Regular communication bulletins'),
+            icon: FontAwesomeIcons.hospitalUser,
+            title: 'Management are visible and available'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Small pre-brief and debrief'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Psychological first-aid'),
+            icon: FontAwesomeIcons.newspaper,
+            title: 'Regular communication bulletins'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Ensure the basics (as per previous page)'),
+            icon: FontAwesomeIcons.comments,
+            title: 'Small pre-brief and debrief'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.firstAid, title: 'Psychological first-aid'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.tasks,
+            title: 'Ensure the basics (as per previous page)'),
       ])
     ])
   ]),
@@ -1143,19 +1182,22 @@ const yourWelfareSteps = [
       heading: 'End phase',
       subsections: [
         ICUDailyRoundStepSubsection(heading: 'Number of cases: Few', list: [
-          ICUDailyRoundItem(icon: Icons.add, title: 'Lookout for each other!'),
-          ICUDailyRoundItem(icon: Icons.add, title: 'Exhaustion'),
-          ICUDailyRoundItem(icon: Icons.add, title: 'Stress'),
-          ICUDailyRoundItem(icon: Icons.add, title: 'Post-traumatic stress'),
+          ICUDailyRoundItem(
+              icon: FontAwesomeIcons.glasses, title: 'Lookout for each other!'),
+          ICUDailyRoundItem(icon: FontAwesomeIcons.frown, title: 'Exhaustion'),
+          ICUDailyRoundItem(icon: FontAwesomeIcons.tired, title: 'Stress'),
+          ICUDailyRoundItem(
+              icon: FontAwesomeIcons.sadTear, title: 'Post-traumatic stress'),
         ])
       ],
     ),
     ICUDailyRoundStepSection(heading: 'How to self-care', subsections: [
       ICUDailyRoundStepSubsection(list: [
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Staff and 1:1 group sessions'),
+            icon: FontAwesomeIcons.peopleArrows,
+            title: 'Staff and 1:1 group sessions'),
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.thumbsUp,
             title: 'Gratitude and thanks to all our colleagues'),
       ])
     ])
@@ -1168,27 +1210,31 @@ const yourWelfareSteps = [
             heading: 'Number of cases: 0 (or very low)',
             list: [
               ICUDailyRoundItem(
-                  icon: Icons.add, title: 'Lookout for each other!'),
+                  icon: FontAwesomeIcons.users,
+                  title: 'Lookout for each other!'),
               ICUDailyRoundItem(
-                  icon: Icons.add, title: 'Reflection and learning'),
+                  icon: FontAwesomeIcons.chalkboardTeacher,
+                  title: 'Reflection and learning'),
               ICUDailyRoundItem(
-                  icon: Icons.add, title: 'Post-traumatic stress'),
+                  icon: FontAwesomeIcons.sadTear,
+                  title: 'Post-traumatic stress'),
             ])
       ],
     ),
     ICUDailyRoundStepSection(heading: 'How to self-care', subsections: [
       ICUDailyRoundStepSubsection(list: [
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.peopleArrows,
             title: 'Debriefing (Staff and 1:1 group sessions)'),
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.users,
             title: 'Look out for signs of PTSD:',
             subtitle: '• Edgy\n• Poor sleep\n• Avoid reminders'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Learning and preparing for future'),
+            icon: FontAwesomeIcons.chalkboardTeacher,
+            title: 'Learning and preparing for future'),
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.thumbsUp,
             title: 'Gratitude and thanks to all our colleagues',
             subtitle:
                 '\n\n\nReference: Australian Society of Anaesthetists "Staff wellbeing preparation during COVID-19 pandemic phases" guidance'),
@@ -1201,41 +1247,56 @@ const proningGuide = [
   ICUDailyRoundSteps(heading: 'Indication', sections: [
     ICUDailyRoundStepSection(heading: 'Indications', subsections: [
       ICUDailyRoundStepSubsection(list: [
-        ICUDailyRoundItem(icon: Icons.add, title: 'Severe ARDS with hypoxia'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Posterior wounds / skin flaps'),
+            icon: FontAwesomeIcons.lungsVirus,
+            title: 'Severe ARDS with hypoxia'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.userInjured,
+            title: 'Posterior wounds / skin flaps'),
       ])
     ]),
     ICUDailyRoundStepSection(heading: 'Contraindications', subsections: [
       ICUDailyRoundStepSubsection(list: [
-        ICUDailyRoundItem(icon: Icons.add, title: 'Lack of staff'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Untrained staff'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Out of hours'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Open abdomen'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'C spine precautions'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Haemodynamic instability'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.userNurse, title: 'Lack of staff'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.user, title: 'Untrained staff'),
+        ICUDailyRoundItem(icon: FontAwesomeIcons.clock, title: 'Out of hours'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.procedures, title: 'Open abdomen'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.exclamation, title: 'C spine precautions'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.chartLine,
+            title: 'Haemodynamic instability'),
       ])
     ]),
   ]),
   ICUDailyRoundSteps(heading: 'Staff Pre-Manoeuvre', sections: [
     ICUDailyRoundStepSection(heading: 'Team', subsections: [
       ICUDailyRoundStepSubsection(list: [
-        ICUDailyRoundItem(icon: Icons.add, title: 'ICU consultant aware'),
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.userMd, title: 'ICU consultant aware'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.users,
             title: 'Specialised proning team on site?',
             subtitle: '(Contact ICU physio)'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Adequate staffing on unit?'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Staff trained in proning procedure'),
+            icon: FontAwesomeIcons.userPlus,
+            title: 'Adequate staffing on unit?'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: '6 x staff available for proning'),
+            icon: FontAwesomeIcons.chalkboardTeacher,
+            title: 'Staff trained in proning procedure'),
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.diceSix,
+            title: '6 x staff available for proning'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.usersCog,
             title: 'Allocate roles',
             subtitle:
                 '• Airway x 1\n• Trunk and limbs x 4\n• Lines and equipment x1'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Able to reintubate?'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.teethOpen, title: 'Able to reintubate?'),
       ])
     ]),
     ICUDailyRoundStepSection(
@@ -1244,11 +1305,16 @@ const proningGuide = [
           ICUDailyRoundStepSubsection(list: [
             ICUDailyRoundItem(
                 icon: FontAwesomeIcons.dollyFlatbed, title: 'Crash trolley'),
-            ICUDailyRoundItem(icon: Icons.add, title: 'ECG dots'),
-            ICUDailyRoundItem(icon: Icons.add, title: 'Fresh sheet x 2'),
-            ICUDailyRoundItem(icon: Icons.add, title: 'Slide sheet x 2'),
-            ICUDailyRoundItem(icon: Icons.add, title: 'Foldable Pillows x 3'),
-            ICUDailyRoundItem(icon: Icons.add, title: 'Clear bed area'),
+            ICUDailyRoundItem(
+                icon: FontAwesomeIcons.heartbeat, title: 'ECG dots'),
+            ICUDailyRoundItem(
+                icon: FontAwesomeIcons.bed, title: 'Fresh sheet x 2'),
+            ICUDailyRoundItem(
+                icon: FontAwesomeIcons.plus, title: 'Slide sheet x 2'),
+            ICUDailyRoundItem(
+                icon: FontAwesomeIcons.plus, title: 'Foldable Pillows x 3'),
+            ICUDailyRoundItem(
+                icon: FontAwesomeIcons.plus, title: 'Clear bed area'),
           ])
         ])
   ]),
@@ -1256,75 +1322,99 @@ const proningGuide = [
     ICUDailyRoundStepSection(heading: 'General Considerations', subsections: [
       ICUDailyRoundStepSubsection(list: [
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Review indications and contraindications'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Check ROM of neck - 90°'),
+            icon: FontAwesomeIcons.userCheck,
+            title: 'Review indications and contraindications'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Explain procedure to patient/family'),
+            icon: FontAwesomeIcons.rulerCombined,
+            title: 'Check ROM of neck - 90°'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.commentMedical,
+            title: 'Explain procedure to patient/family'),
       ])
     ]),
     ICUDailyRoundStepSection(heading: 'Airway', subsections: [
       ICUDailyRoundStepSubsection(list: [
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.xRay,
             title: 'Check ETT position on CXR',
             subtitle: '(Document lip level)'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Check patient airway grade'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Secure ETT'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Sleek connections'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Check for cuff leak'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Suction mouth and nasal passages'),
+            icon: FontAwesomeIcons.bookReader,
+            title: 'Check patient airway grade'),
+        ICUDailyRoundItem(icon: FontAwesomeIcons.userLock, title: 'Secure ETT'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.tape, title: 'Sleek connections'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.tachometerAlt, title: 'Check for cuff leak'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.teethOpen,
+            title: 'Suction mouth and nasal passages'),
       ])
     ]),
     ICUDailyRoundStepSection(heading: 'Breathing', subsections: [
       ICUDailyRoundStepSubsection(list: [
-        ICUDailyRoundItem(icon: Icons.add, title: 'Pre-oxygenate'),
+        ICUDailyRoundItem(icon: FontAwesomeIcons.lungs, title: 'Pre-oxygenate'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Confirm ventilator settings'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Check capnography'),
+            icon: FontAwesomeIcons.slidersH,
+            title: 'Confirm ventilator settings'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.waveSquare, title: 'Check capnography'),
       ])
     ]),
     ICUDailyRoundStepSection(heading: 'Circulation', subsections: [
       ICUDailyRoundStepSubsection(list: [
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Check adequate vascular access + secure'),
+            icon: FontAwesomeIcons.syringe,
+            title: 'Check adequate vascular access + secure'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Confirm haemodynamically stable'),
+            icon: FontAwesomeIcons.chartLine,
+            title: 'Confirm haemodynamically stable'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Confirm plan if patient becomes unstable'),
+            icon: FontAwesomeIcons.commentMedical,
+            title: 'Confirm plan if patient becomes unstable'),
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.prescription,
             title: 'Identify drug access point and metaraminol accessible'),
       ])
     ]),
     ICUDailyRoundStepSection(heading: 'Disability', subsections: [
       ICUDailyRoundStepSubsection(list: [
-        ICUDailyRoundItem(icon: Icons.add, title: 'Sedated'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Plan for further sedation discussed'),
+            icon: FontAwesomeIcons.prescription, title: 'Sedated'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.commentMedical,
+            title: 'Plan for further sedation discussed'),
       ])
     ]),
     ICUDailyRoundStepSection(heading: 'Equipment & Lines', subsections: [
       ICUDailyRoundStepSubsection(list: [
-        ICUDailyRoundItem(icon: Icons.add, title: 'Secure all tubes and lines'),
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.userLock,
+            title: 'Secure all tubes and lines'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.lockOpen,
             title: 'Consider disconnecting unnecessary infusions'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Remove unnecessary indwelling devices'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Consider disconnecting RRT'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'NGT - aspirate and spigot'),
+            icon: FontAwesomeIcons.minus,
+            title: 'Remove unnecessary indwelling devices'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.minus, title: 'Consider disconnecting RRT'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.minus, title: 'NGT - aspirate and spigot'),
       ])
     ]),
     ICUDailyRoundStepSection(heading: 'Other', subsections: [
       ICUDailyRoundStepSubsection(list: [
         ICUDailyRoundItem(
-            icon: Icons.add,
-            title: 'Assess for device potential for pressure injury'),
+            icon: FontAwesomeIcons.userInjured,
+            title: 'Assess for potential for pressure injury'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Apply padding to bony prominences'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Mouth care'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Dress anterior wounds'),
+            icon: FontAwesomeIcons.bone,
+            title: 'Apply padding to bony prominences'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.teethOpen, title: 'Mouth care'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.bandAid, title: 'Dress anterior wounds'),
       ])
     ])
   ]),
@@ -1332,29 +1422,31 @@ const proningGuide = [
     ICUDailyRoundStepSection(heading: 'Prepare', subsections: [
       ICUDailyRoundStepSubsection(list: [
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.users,
             title: 'Position team',
             subtitle: 'Team leader at head of bed'),
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.comments,
             title: 'Brief team on steps',
             subtitle: 'Turning direction'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Position ETT on opposite side'),
+            icon: FontAwesomeIcons.searchLocation,
+            title: 'Position ETT on opposite side'),
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.bed,
             title: 'Remove patient pillow and set air mattress to firm'),
       ])
     ]),
     ICUDailyRoundStepSection(heading: 'Horizontal Move', subsections: [
       ICUDailyRoundStepSubsection(list: [
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Move patient to edge of bed'),
+            icon: FontAwesomeIcons.peopleCarry,
+            title: 'Move patient to edge of bed'),
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.handHolding,
             title: 'Tuck original sheet + new slide sheet under patient'),
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.handHolding,
             title:
                 'Tuck new sheet and slide sheet on side patient turning towards'),
       ])
@@ -1362,34 +1454,41 @@ const proningGuide = [
     ICUDailyRoundStepSection(heading: 'Side Lying Position', subsections: [
       ICUDailyRoundStepSubsection(list: [
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.handPaper,
             title: 'Tuck lower arm under buttock with palm up'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Turn patient into lateral position'),
+            icon: FontAwesomeIcons.directions,
+            title: 'Turn patient into lateral position'),
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.heartbeat,
             title: 'Untangle lines and remove ECG leads to anterior thorax'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Place ECG leads on posterior thorax'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Remove old sheet'),
+            icon: FontAwesomeIcons.levelUpAlt,
+            title: 'Place ECG leads on posterior thorax'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Pull new sheet + slide sheet through'),
+            icon: FontAwesomeIcons.bed, title: 'Remove old sheet'),
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.peopleCarry,
+            title: 'Pull new sheet + slide sheet through'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.arrowLeft,
             title: 'Slide patient to end of bed - away from ventilator'),
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.bed,
             title: 'Fold pillows by 1/3 and place under chest and pelvis'),
       ])
     ]),
     ICUDailyRoundStepSection(heading: 'Complete Prone', subsections: [
       ICUDailyRoundStepSubsection(list: [
-        ICUDailyRoundItem(icon: Icons.add, title: 'Turn patient onto stomach'),
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.levelDownAlt,
+            title: 'Turn patient onto stomach'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.peopleArrows,
             title: 'Pull pillows through position in swimmer position'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Place pillow under lower legs'),
+            icon: FontAwesomeIcons.arrowDown,
+            title: 'Place pillow under lower legs'),
       ])
     ])
   ]),
@@ -1444,17 +1543,17 @@ const alsBlsGuide = [
         items: [
           IntubationItem(
               'Staff safety needs to be prioritised over resuscitation',
-              icon: Icons.add),
+              icon: FontAwesomeIcons.userShield),
           IntubationItem(
               'Do NOT enter the bed space until appropriate PPE applied',
               subtitle: 'Please review the WH PPE guidelines if needed',
-              icon: Icons.add),
+              icon: FontAwesomeIcons.headSideMask),
           IntubationItem('Minimise responders in room to essential staff only',
               subtitle:
                   '• Team leader to allocate roles\n• "Door monitor" for crowd\n   control\n• Additional team members in\n   corridor',
-              icon: Icons.add),
+              icon: FontAwesomeIcons.peopleArrows),
           IntubationItem('Communication in PPE is more difficult',
-              icon: Icons.add),
+              icon: FontAwesomeIcons.comments),
           IntubationItem(
               'Resuscitation trolley should remain outside of room, when possible.',
               icon: FontAwesomeIcons.dollyFlatbed),
@@ -1466,27 +1565,30 @@ const alsBlsGuide = [
     ICUDailyRoundStepSection(
       subsections: [
         ICUDailyRoundStepSubsection(
-          heading:
-              'First responders are SAFE to commence chest compressions in',
+          heading: 'During BLS',
           list: [
             ICUDailyRoundItem(
                 title:
-                    '• P2/N95 mask\n• Face shield\n• Apron\n• Gloves\n• Hand hygiene to above elbow\n   after',
-                icon: Icons.add),
+                    'First responders are SAFE to commence chest compressions wearing\n        • P2/N95 mask\n        • Face shield\n        • Apron\n        • Gloves\n        • Hand hygiene to above elbow afterwards',
+                icon: FontAwesomeIcons.headSideMask),
           ],
         )
       ],
     ),
     ICUDailyRoundStepSection(subsections: [
       ICUDailyRoundStepSubsection(
-          heading:
-              'ALL RESPONDERS:\n    •  P2/N95 mask\n    •  face shield\n    •  long sleeved gown\n    •  gloves \n      when:',
+          heading: 'During ALS',
           list: [
             ICUDailyRoundItem(
                 title:
-                    '• COVID suspected or confirmed\n\n• Droplet or airborne precautions\n\n• Airway management required\n\n• CPR lasting longer than 6 mins\n\n• Code Blue in public areas',
+                    'If any of the risk factors below are present\n        • COVID suspected or confirmed\n        • Droplet or airborne precautions\n        • Airway management required\n        • CPR lasting longer than 6 mins\n        • Code Blue in public areas',
                 subtitle: '',
-                icon: Icons.add),
+                icon: FontAwesomeIcons.biohazard),
+            ICUDailyRoundItem(
+                title:
+                    'Then ALL RESPONDERS should wear\n        •  P2/N95 mask\n        •  face shield\n        •  long sleeved gown\n        •  gloves',
+                subtitle: '',
+                icon: FontAwesomeIcons.exclamationTriangle),
           ],
           footer: '\n\n\nALS/BLS PPE guidance v6 10/5/2020')
     ]),
@@ -1497,10 +1599,12 @@ const alsBlsGuide = [
       IntubationSection(
         items: [
           IntubationItem('COMPRESSION ONLY CPR',
-              subtitle: '• Until code response team arrives', icon: Icons.add),
+              subtitle: '• Until code response team arrives',
+              icon: FontAwesomeIcons.handPaper),
           IntubationItem('No airway adjuncts and AVOID bag mask ventilation',
-              icon: Icons.add),
-          IntubationItem('Apply Hudson mask at 10L O₂.', icon: Icons.add),
+              icon: FontAwesomeIcons.exclamationTriangle),
+          IntubationItem('Apply Hudson mask at 10l O₂.',
+              icon: FontAwesomeIcons.procedures),
         ],
       )
     ],
@@ -1528,7 +1632,7 @@ const alsBlsGuide = [
                 icon: FontAwesomeIcons.hospital),
             ICUDailyRoundItem(
                 title: 'If BMV required: 2 handed vice-like grip',
-                icon: FontAwesomeIcons.prayingHands),
+                icon: FontAwesomeIcons.hands),
           ],
         ),
         ICUDailyRoundStepSubsection(
@@ -1545,7 +1649,7 @@ const alsBlsGuide = [
             ICUDailyRoundItem(
                 title:
                     'During a cardiac arrest, CPR and intubation can take place outside of a negative pressure room',
-                icon: FontAwesomeIcons.heart),
+                icon: FontAwesomeIcons.heartbeat),
           ],
         )
       ],
@@ -1560,9 +1664,10 @@ const airwayAssessmentGuide = [
       IntubationSection(
         items: [
           IntubationItem('Difficult airway more likely in ICU',
-              subtitle: '• up to 10x Increase', icon: Icons.add),
+              subtitle: '• up to 10x Increase',
+              icon: FontAwesomeIcons.exclamationTriangle),
           IntubationItem('Assess patient before they deteriorate',
-              icon: Icons.add),
+              icon: FontAwesomeIcons.procedures),
         ],
       )
     ],
@@ -1571,45 +1676,46 @@ const airwayAssessmentGuide = [
     ICUDailyRoundStepSection(subsections: [
       ICUDailyRoundStepSubsection(heading: 'History', footer: '', list: [
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Hx of difficult BMV/Intubation?'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'PMH - ?RA/Reflux/OSA'),
-        ICUDailyRoundItem(
-            icon: Icons.add, title: 'HPC - burns/Airway swelling/trauma?'),
+            icon: FontAwesomeIcons.fileMedical,
+            title: 'Important aspects:',
+            subtitle:
+                '\nPrevious difficult BMV/Intubation\n\nPMH - RA/Reflux/OSA\n\nHPC - burns/Airway swelling/trauma'),
       ]),
       ICUDailyRoundStepSubsection(heading: 'Examination', footer: '', list: [
-        ICUDailyRoundItem(icon: Icons.add, title: 'Teeth/Dentition?'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Mouth opening?'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Mallampati score?'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Thyromental distance'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Neck extension'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Receding chin?'),
+        ICUDailyRoundItem(
+          icon: FontAwesomeIcons.teethOpen,
+          title: 'Airway assessment:',
+          subtitle:
+              '\nMouth opening\n\nMallampati score\n\nTeeth/Dentition\n\nThyromental distance\n\nNeck extension\n\nReceding chin',
+        ),
       ])
     ])
   ]),
   ICUDailyRoundSteps(heading: 'Predictors of Difficulty', sections: [
     ICUDailyRoundStepSection(subsections: [
       ICUDailyRoundStepSubsection(heading: 'Difficult BMV?', footer: '', list: [
-        ICUDailyRoundItem(icon: Icons.add, title: 'Previous difficult BMV'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Neck Irradiation'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Obese'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Age > 55'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Snorer/OSA'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Edentulous'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'MP 3/4'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Male'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.exclamationTriangle,
+            title: 'Previous difficult BMV'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.search,
+            title: 'Other prognostic factors:',
+            subtitle:
+                '\nNeck Irradiation\n\nObese\n\nAge > 55\n\nSnorer/OSA\n\nEdentulous\n\nMP 3/4\n\nMale'),
       ]),
       ICUDailyRoundStepSubsection(
           heading: 'Difficult Intubation?',
           footer: '',
           list: [
             ICUDailyRoundItem(
-                icon: Icons.add, title: 'Previous difficult intubation'),
-            ICUDailyRoundItem(icon: Icons.add, title: 'Mouth Opening < 3cm'),
-            ICUDailyRoundItem(icon: Icons.add, title: 'Obese/Large breasts'),
-            ICUDailyRoundItem(icon: Icons.add, title: 'Reduced neck extension'),
-            ICUDailyRoundItem(icon: Icons.add, title: 'Retrognathia'),
-            ICUDailyRoundItem(icon: Icons.add, title: 'Prominent incisors'),
-            ICUDailyRoundItem(icon: Icons.add, title: 'Large tongue'),
+                icon: FontAwesomeIcons.exclamationTriangle,
+                title: 'Previous difficult intubation'),
+            ICUDailyRoundItem(
+              icon: FontAwesomeIcons.search,
+              title: 'Other prognostic factors:',
+              subtitle:
+                  '\nMouth Opening < 3cm\n\nObese/Large breasts\n\nReduced neck extension\n\nRetrognathia\n\nProminent incisors\n\nLarge tongue',
+            ),
           ])
     ])
   ]),
@@ -1622,13 +1728,14 @@ const ventBasicsGuide = [
       IntubationSection(
         items: [
           IntubationItem('SpO2 88-92% for COVID19 patients',
-              icon: Icons.add,
+              icon: FontAwesomeIcons.crosshairs,
               subtitle: 'SpO2 92-96% in otherwise healthy patients'),
-          IntubationItem('PaO2> 55-60mmHg', icon: Icons.add),
-          IntubationItem('PaCO2 35-45mmHg', icon: Icons.add),
-          IntubationItem('pH > 7.2', icon: Icons.add),
-          IntubationItem('Stable work of breathing / RR', icon: Icons.add),
-          IntubationItem('I:E ratio 1:2', icon: Icons.add),
+          IntubationItem('PaO2> 55-60mmHg', icon: FontAwesomeIcons.crosshairs),
+          IntubationItem('PaCO2 35-45mmHg', icon: FontAwesomeIcons.crosshairs),
+          IntubationItem('pH > 7.2', icon: FontAwesomeIcons.crosshairs),
+          IntubationItem('Stable work of breathing / RR',
+              icon: FontAwesomeIcons.crosshairs),
+          IntubationItem('I:E ratio 1:2', icon: FontAwesomeIcons.crosshairs),
         ],
       )
     ],
@@ -1641,11 +1748,13 @@ const ventBasicsGuide = [
               heading: 'Ventilator settings',
               footer: '',
               list: [
-                ICUDailyRoundItem(icon: Icons.add, title: 'SIMV VC'),
                 ICUDailyRoundItem(
-                    icon: Icons.add, title: 'FiO2 dependent on PEEP'),
+                    icon: FontAwesomeIcons.slidersH, title: 'SIMV VC'),
                 ICUDailyRoundItem(
-                    icon: Icons.add, title: 'Confirmed with CXR?'),
+                    icon: FontAwesomeIcons.slidersH,
+                    title: 'FiO2 dependent on PEEP'),
+                ICUDailyRoundItem(
+                    icon: FontAwesomeIcons.xRay, title: 'Confirmed with CXR?'),
               ])
         ]),
     ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
@@ -1653,9 +1762,10 @@ const ventBasicsGuide = [
           heading: 'If FiO2> 0.6 and PEEP 15 for 4-6 hours:',
           footer: '',
           list: [
-            ICUDailyRoundItem(icon: Icons.add, title: 'Senior Review'),
             ICUDailyRoundItem(
-                icon: Icons.add,
+                icon: FontAwesomeIcons.userMd, title: 'Senior Review'),
+            ICUDailyRoundItem(
+                icon: FontAwesomeIcons.search,
                 title: 'Consider:',
                 subtitle:
                     '• Secondary pathology\n• NM blockade\n• Diuresis\n• Recruitment manoeuvre\n• Prone positiiong'),
@@ -1667,10 +1777,13 @@ const ventBasicsGuide = [
           footer: '',
           list: [
             ICUDailyRoundItem(
-                icon: Icons.add, title: 'Mon/Wed/Friday - routine'),
-            ICUDailyRoundItem(icon: Icons.add, title: 'If new CVC/NGT'),
+                icon: FontAwesomeIcons.calendar,
+                title: 'Mon/Wed/Friday - routine'),
             ICUDailyRoundItem(
-                icon: Icons.add, title: 'If significant clinical change'),
+                icon: FontAwesomeIcons.xRay, title: 'If new CVC/NGT'),
+            ICUDailyRoundItem(
+                icon: FontAwesomeIcons.chartLine,
+                title: 'If significant clinical change'),
           ])
     ])
   ]),
@@ -1682,14 +1795,15 @@ const cvsBasicsGuide = [
     [
       IntubationSection(
         items: [
-          IntubationItem('MAP > 65mmHg', icon: Icons.add),
-          IntubationItem('HR < 130', icon: Icons.add),
-          IntubationItem('Cap refill < 2s', icon: Icons.add),
-          IntubationItem('Cardiac index > 2.2', icon: Icons.add),
+          IntubationItem('MAP > 65mmHg', icon: FontAwesomeIcons.crosshairs),
+          IntubationItem('HR < 130', icon: FontAwesomeIcons.crosshairs),
+          IntubationItem('Cap refill < 2s', icon: FontAwesomeIcons.crosshairs),
+          IntubationItem('Cardiac index > 2.2',
+              icon: FontAwesomeIcons.heartbeat),
           IntubationItem('Common cardiac medications and doses:',
               subtitle:
                   '• Noradrenaline\n     • 0.5-100mcg/min\n • Amiodarone\n     • 15mg/kg/d',
-              icon: Icons.add),
+              icon: FontAwesomeIcons.prescription),
         ],
       )
     ],
@@ -1701,44 +1815,53 @@ const cvsBasicsGuide = [
           footer: '',
           list: [
             ICUDailyRoundItem(
-                icon: Icons.add,
+                icon: FontAwesomeIcons.procedures,
                 title: 'If MAP < 65 & adequately fluid resuscitated:'),
             ICUDailyRoundItem(
-                icon: Icons.add, title: 'Start noradrenaline at 5mcg/min'),
-            ICUDailyRoundItem(icon: Icons.add, title: 'Titrate to MAP'),
+                icon: FontAwesomeIcons.prescription,
+                title: 'Start noradrenaline at 5mcg/min'),
+            ICUDailyRoundItem(
+                icon: FontAwesomeIcons.chartLine, title: 'Titrate to MAP'),
           ])
     ]),
-    ICUDailyRoundStepSection(heading: 'Troubleshooting', subsections: [
+    ICUDailyRoundStepSection(heading: 'Basic Troubleshooting', subsections: [
       ICUDailyRoundStepSubsection(
           heading: 'If Haemodynamically unstable or Noradrenaline > 20mcg/min',
           footer: '',
           list: [
-            ICUDailyRoundItem(icon: Icons.add, title: 'Re-examine patient'),
             ICUDailyRoundItem(
-                icon: Icons.add,
+                icon: FontAwesomeIcons.diagnoses, title: 'Re-examine patient'),
+            ICUDailyRoundItem(
+                icon: FontAwesomeIcons.search,
                 title: 'Consider:',
                 subtitle:
                     '• ECG\n• Echocardiography\n• Troponin\n• Invasive cardiac monitoring'),
           ])
     ]),
-    ICUDailyRoundStepSection(heading: '', subsections: [
-      ICUDailyRoundStepSubsection(
-          heading: 'If Haemodynamically unstable/ Norad > 30mcg/min',
-          footer: '',
-          list: [
-            ICUDailyRoundItem(
-                icon: Icons.add, title: 'Discuss with Intensivist'),
-            ICUDailyRoundItem(
-                icon: Icons.add, title: 'Consider Hydrocortisone 50mg IV QID'),
-            ICUDailyRoundItem(
-                icon: Icons.add, title: 'Consider Argipressin 1-2 units/hr'),
-            ICUDailyRoundItem(
-                icon: Icons.add, title: 'Consider giving fluid bolus'),
-            ICUDailyRoundItem(
-                icon: Icons.add,
-                title: 'Re-visit diagnosis - does patient need inotropes?'),
-          ])
-    ])
+    ICUDailyRoundStepSection(
+        heading: 'Additional Considerations',
+        subsections: [
+          ICUDailyRoundStepSubsection(
+              heading: 'If Haemodynamically unstable/ Norad > 30mcg/min',
+              footer: '',
+              list: [
+                ICUDailyRoundItem(
+                    icon: FontAwesomeIcons.userMd,
+                    title: 'Discuss with Intensivist'),
+                ICUDailyRoundItem(
+                    icon: FontAwesomeIcons.prescription,
+                    title: 'Consider Hydrocortisone 50mg IV QID'),
+                ICUDailyRoundItem(
+                    icon: FontAwesomeIcons.prescription,
+                    title: 'Consider Argipressin 1-2 units/hr'),
+                ICUDailyRoundItem(
+                    icon: FontAwesomeIcons.fillDrip,
+                    title: 'Consider giving fluid bolus'),
+                ICUDailyRoundItem(
+                    icon: FontAwesomeIcons.fileMedicalAlt,
+                    title: 'Re-visit diagnosis - does patient need inotropes?'),
+              ])
+        ])
   ]),
 ];
 
@@ -1749,21 +1872,21 @@ const neuroBasicsGuide = [
       IntubationSection(
         items: [
           IntubationItem('Consider sedation targets in clinical context',
-              icon: Icons.add),
+              icon: FontAwesomeIcons.crosshairs),
           IntubationItem('Aim for RIKER score 1 if patient is:',
               subtitle:
                   ' • Haemodynamically unstable\n • Hypoxic\n • Requires proning',
-              icon: Icons.add),
+              icon: FontAwesomeIcons.crosshairs),
           IntubationItem('Aim for RIKER score 3-4 if patient is:',
               subtitle: ' • Weaning from ventilator\n • FiO2 < 0.4',
-              icon: Icons.add),
+              icon: FontAwesomeIcons.crosshairs),
         ],
       )
     ],
   ),
   ICUDailyRoundSteps(heading: 'Riker Score', sections: [
     ICUDailyRoundStepSection(
-        heading: 'Condition and example behaviours',
+        heading: 'Condition and Example Behaviours',
         subsections: [
           ICUDailyRoundStepSubsection(
               heading: '',
@@ -1771,76 +1894,71 @@ const neuroBasicsGuide = [
                   '\n\nThe Riker score is a Sedation-Agitation Scale commonly used in ICUs',
               list: [
                 ICUDailyRoundItem(
-                    icon: Icons.add,
-                    title: 'Dangerous agitation',
+                    title: '7 - Dangerous agitation',
                     subtitle: ' • Pulling at ETT\n • Climbing out of bed'),
                 ICUDailyRoundItem(
-                    icon: Icons.add,
-                    title: 'Very agitated',
+                    title: '6 - Very agitated',
                     subtitle:
                         ' • Does not calm down\n • May require restraint at times'),
                 ICUDailyRoundItem(
-                    icon: Icons.add,
-                    title: 'Agitated',
+                    title: '5 - Agitated',
                     subtitle:
                         ' • Anxious or mildly agitated\n • Attempts to sit up\n • Calms with verbal instructions'),
                 ICUDailyRoundItem(
-                    icon: Icons.add,
-                    title: 'Calm and co-operative',
+                    title: '4 - Calm and co-operative',
                     subtitle: ' • Calm\n • Wakens easily\n • Follows commands'),
                 ICUDailyRoundItem(
-                    icon: Icons.add,
-                    title: 'Sedated',
+                    title: '3 - Sedated',
                     subtitle:
                         ' • Difficult to rouse\n • Awakens to verbal stimuli\n • Does not follow commands'),
                 ICUDailyRoundItem(
-                    icon: Icons.add,
-                    title: 'Very Sedated',
+                    title: '2 - Very Sedated',
                     subtitle:
-                        ' • Arouses to physical stimuli\n • Does not communicate or follow commands\n • May move spontaneously'),
+                        ' • Arouses to physical stimuli\n • Does not communicate or follow\n    commands\n • May move spontaneously'),
                 ICUDailyRoundItem(
-                    icon: Icons.add,
-                    title: 'Unrousable',
+                    title: '1 - Unrousable',
                     subtitle:
                         ' • No response to noxious stiumuli\n • Does not follow commands'),
               ])
         ]),
   ]),
   ICUDailyRoundSteps(heading: 'Sedation', sections: [
-    ICUDailyRoundStepSection(heading: 'Choice of sedative:', subsections: [
+    ICUDailyRoundStepSection(heading: 'Choice of Sedative:', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.prescription,
             title: 'If post-intubation:',
             subtitle: '• Propofol 50-100mg/hr\n• +/- Fentanyl 10-20mcg/hr'),
       ])
     ]),
     ICUDailyRoundStepSection(
-        heading: 'Consider daily sedation break if:',
+        heading: 'Consider Daily Sedation Break If:',
         subsections: [
           ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
-            ICUDailyRoundItem(icon: Icons.add, title: 'FiO2 < 0.4'),
             ICUDailyRoundItem(
-                icon: Icons.add, title: 'Noradrenaline < 20mcg/min'),
+                icon: FontAwesomeIcons.slidersH, title: 'FiO2 < 0.4'),
             ICUDailyRoundItem(
-                icon: Icons.add, title: 'No muscle relaxant in use'),
+                icon: FontAwesomeIcons.heartbeat,
+                title: 'Noradrenaline < 20mcg/min'),
+            ICUDailyRoundItem(
+                icon: FontAwesomeIcons.notEqual,
+                title: 'No muscle relaxant in use'),
           ])
         ]),
-    ICUDailyRoundStepSection(heading: 'Commonly used Drugs:', subsections: [
+    ICUDailyRoundStepSection(heading: 'Commonly Used Drugs:', subsections: [
       ICUDailyRoundStepSubsection(
           heading: '',
-          footer: '\n\nDiscuss with intensivist or senior colleague if unsure',
+          footer:
+              '\n\nDiscuss with intensivist or senior colleague if unsure of most appropriate option.',
           list: [
             ICUDailyRoundItem(
-                icon: Icons.add, title: 'Propofol', subtitle: '• 5-200mg/hr'),
+                icon: FontAwesomeIcons.prescription,
+                title: 'Propofol',
+                subtitle: '• 5-200mg/hr'),
+            ICUDailyRoundItem(title: 'Midazolam', subtitle: '• 0.5-10mg/hr'),
+            ICUDailyRoundItem(title: 'Fentanyl', subtitle: '• 10-30mcg/hr'),
+            ICUDailyRoundItem(title: 'Morphine', subtitle: '• 0.5-10mg/hr'),
             ICUDailyRoundItem(
-                icon: Icons.add, title: 'Midazolam', subtitle: '• 0.5-10mg/hr'),
-            ICUDailyRoundItem(
-                icon: Icons.add, title: 'Fentanyl', subtitle: '• 10-30mcg/hr'),
-            ICUDailyRoundItem(
-                icon: Icons.add, title: 'Morphine', subtitle: '• 0.5-10mg/hr'),
-            ICUDailyRoundItem(
-                icon: Icons.add,
                 title: 'Cisatracurium',
                 subtitle:
                     '• 15mg blous then 10mg/hr\n• A paralysis agent rather than sedative'),
@@ -1855,18 +1973,19 @@ const idBasicsGuide = [
     [
       IntubationSection(
         items: [
-          IntubationItem('Empiric antimicrobials for COVID-19 patients:',
+          IntubationItem(
+              'Empiric antimicrobials to consider for COVID-19 patients:',
               subtitle: '• Ceftriaxone 2g IV daily\n• Azithromycin 500mg IV OD',
-              icon: Icons.add),
+              icon: FontAwesomeIcons.prescription),
           IntubationItem('Add Vancomycin if profound shock:',
               subtitle:
                   '• 2g load\n• 1g BD\n• Doses based on levels\n• Levels pre 3rd dose',
-              icon: Icons.add),
+              icon: FontAwesomeIcons.prescription),
           IntubationItem('Steroids currently not recommended for COVID 19',
-              icon: Icons.add),
+              icon: FontAwesomeIcons.prescription),
           IntubationItem(
               'Antiviral therapies to be commenced ONLY IN  CONTEXT OF CLINICAL TRIAL',
-              icon: Icons.add),
+              icon: FontAwesomeIcons.prescription),
         ],
       )
     ],
@@ -1875,26 +1994,33 @@ const idBasicsGuide = [
     ICUDailyRoundStepSection(heading: 'Line changes', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.notEqual,
             title: 'Empiric line changes of CVC not recommended'),
       ])
     ]),
     ICUDailyRoundStepSection(heading: 'Septic screen', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.vials,
             title: 'Blood cultures',
             subtitle: '• peripheral and central samples'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Urine MCS'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Sputum MCS'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'CXR'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'FBE, UEC, CRP, Lactate'),
+        ICUDailyRoundItem(icon: FontAwesomeIcons.vial, title: 'Urine MCS'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'COVID swab', subtitle: '• NPA + Sputum'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Viral PCR throat swab'),
+            icon: FontAwesomeIcons.headSideCough, title: 'Sputum MCS'),
+        ICUDailyRoundItem(icon: FontAwesomeIcons.xRay, title: 'CXR'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Legionella and pneumococcal antigen'),
-        ICUDailyRoundItem(icon: Icons.add, title: 'Faecal MCS if diarrhoea'),
+            icon: FontAwesomeIcons.vials, title: 'FBE, UEC, CRP, Lactate'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.viruses,
+            title: 'COVID swab',
+            subtitle: '• NPA + Sputum'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.teethOpen, title: 'Viral PCR throat swab'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.disease,
+            title: 'Legionella and pneumococcal antigen'),
+        ICUDailyRoundItem(
+            icon: FontAwesomeIcons.vial, title: 'Faecal MCS if diarrhoea'),
       ])
     ]),
   ])
@@ -1905,11 +2031,14 @@ const renalBasicsGuide = [
     [
       IntubationSection(
         items: [
-          IntubationItem('Negative fluid balance - 1l/day', icon: Icons.add),
+          IntubationItem(
+            'Negative fluid balance - 1l/day',
+            icon: FontAwesomeIcons.crosshairs,
+          ),
           IntubationItem('K+ target:',
               subtitle: '• 3.5-5.5mmol/l\n• >4mmol/l if cardiac arrhthmias',
-              icon: Icons.add),
-          IntubationItem('Na 135-145mmol/l', icon: Icons.add),
+              icon: FontAwesomeIcons.crosshairs),
+          IntubationItem('Na 135-145mmol/l', icon: FontAwesomeIcons.crosshairs),
         ],
       )
     ],
@@ -1923,13 +2052,14 @@ const renalBasicsGuide = [
               footer: '',
               list: [
                 ICUDailyRoundItem(
-                    icon: Icons.add, title: 'Start at 40mg IV QID'),
+                    icon: FontAwesomeIcons.prescription,
+                    title: 'Start at 40mg IV QID'),
                 ICUDailyRoundItem(
-                    icon: Icons.add,
+                    icon: FontAwesomeIcons.chartLine,
                     title:
                         'Increase in 20mg QID increments if not meeting targets at 24 hours'),
                 ICUDailyRoundItem(
-                    icon: Icons.add,
+                    icon: FontAwesomeIcons.exchangeAlt,
                     title:
                         'If > 80mg QID of frusemide, then switch to infusion starting at 10mg/hr'),
               ])
@@ -1938,29 +2068,24 @@ const renalBasicsGuide = [
         heading: 'Renal Replacement Therapy (RRT)',
         subsections: [
           ICUDailyRoundStepSubsection(
-              heading: 'Discuss with Intensivist\n • Indications: AEIOU',
+              heading: 'Discuss with Intensivist\n       • Indications: AEIOU',
               footer: '',
               list: [
                 ICUDailyRoundItem(
-                    icon: Icons.add,
+                    icon: FontAwesomeIcons.procedures,
                     title: 'Acidosis',
                     subtitle: ' • pH <7.1 or Bicarb < 15mmol/l'),
                 ICUDailyRoundItem(
-                    icon: Icons.add,
                     title: 'Electrolytes',
                     subtitle: ' • Refractory K+ > 6.5mmol/l'),
                 ICUDailyRoundItem(
-                    icon: Icons.add,
                     title: 'Overload',
                     subtitle: ' • Refractory fluid overload'),
                 ICUDailyRoundItem(
-                    icon: Icons.add,
                     title: 'Intoxication',
                     subtitle: ' • Drug overdose/ intoxication'),
                 ICUDailyRoundItem(
-                    icon: Icons.add,
-                    title: 'Uraemia',
-                    subtitle: ' • > 40mmol/l or symptomatic'),
+                    title: 'Uraemia', subtitle: ' • > 40mmol/l or symptomatic'),
               ])
         ]),
   ]),
@@ -1974,13 +2099,14 @@ const gitBasicsGuide = [
         items: [
           IntubationItem('Confirm placement on CXR:',
               subtitle: '• Bisects carina\n• Tip below diaphragm',
-              icon: Icons.add),
+              icon: FontAwesomeIcons.xRay),
           IntubationItem('Do not commence feeding until placement confirmed',
-              icon: Icons.add),
-          IntubationItem('Check position daily on CXR', icon: Icons.add),
+              icon: FontAwesomeIcons.exclamationTriangle),
+          IntubationItem('Check position daily on CXR',
+              icon: FontAwesomeIcons.calendar),
           IntubationItem(
               'Clinical methods to confirm placement are not reliable',
-              icon: null),
+              icon: FontAwesomeIcons.diagnoses),
         ],
       )
     ],
@@ -1988,27 +2114,31 @@ const gitBasicsGuide = [
   ICUDailyRoundSteps(heading: 'Feeding', sections: [
     ICUDailyRoundStepSection(heading: 'Principles', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
-        ICUDailyRoundItem(icon: Icons.add, title: 'Start early'),
+        ICUDailyRoundItem(icon: FontAwesomeIcons.clock, title: 'Start early'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Consult dietician if available'),
+            icon: FontAwesomeIcons.comments,
+            title: 'Consult dietician if available'),
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.projectDiagram,
             title: '1kCal/ml feed as per protocol is reasonable out of hours'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'If high aspirates - slow the rate'),
+            icon: FontAwesomeIcons.arrowDown,
+            title: 'If high aspirates - slow the rate'),
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Consider prokinetics if not absorbing'),
+            icon: FontAwesomeIcons.prescription,
+            title: 'Consider prokinetics if not absorbing'),
       ])
     ]),
     ICUDailyRoundStepSection(heading: 'Laxatives', subsections: [
       ICUDailyRoundStepSubsection(heading: '', footer: '', list: [
         ICUDailyRoundItem(
-            icon: Icons.add, title: 'Early laxative use suggested'),
+            icon: FontAwesomeIcons.prescription,
+            title: 'Early laxative use suggested'),
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.calendar,
             title: 'Faecal containmenet device - day 3 or earlier'),
         ICUDailyRoundItem(
-            icon: Icons.add,
+            icon: FontAwesomeIcons.prescriptionBottleAlt,
             title: 'Laxatives:',
             subtitle: '• Lactulose 20ml bd\n• Movicol 1 bd'),
       ])
