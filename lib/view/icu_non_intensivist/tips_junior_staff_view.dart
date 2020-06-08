@@ -57,6 +57,11 @@ class TipsJuniorStaffView extends StatelessWidget {
         title: 'GIT Basics',
         description: 'Simple Guide for JMS',
         route: Routes.gastroBasics),
+    'Welfare',
+    HomeCard(
+        title: 'Your welfare',
+        description: 'ASA advice on wellbeing throughout the pandemic',
+        route: Routes.staffWelfare),
   ];
   @override
   Widget build(BuildContext context) {

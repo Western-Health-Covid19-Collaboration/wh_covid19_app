@@ -116,8 +116,9 @@ const List<HomeCard> resources = [
     route: Routes.additionalResources,
   ),
   HomeCard(
-    title: Strings.yourWelfareTitle,
-    description: 'ASA advice on wellbeing throughout the pandemic',
+    title: Strings.rotemInterpretation,
+    description:
+        'Clinical decision support tool based on WH Rotational Thromboelastometry(ROTEM) Usage Guidelines',
     route: Routes.staffWelfare,
   )
 ];
