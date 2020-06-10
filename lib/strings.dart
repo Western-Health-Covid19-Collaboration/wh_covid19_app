@@ -106,5 +106,6 @@ developed to support the implementation of selected Western Health guidelines, p
   /// Resources
   static const String whResourcesTitle = 'WH Resources';
   static const String additionalResourcesTitle = 'Additional Resources';
-  static const String rotemInterpretation = 'ROTEM Interpretation';
+  static const String rotemInput = 'ROTEM Interpretation';
+  static const String rotemResults = 'Rotem/Results';
 }

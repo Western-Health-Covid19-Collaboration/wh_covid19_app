@@ -116,10 +116,10 @@ const List<HomeCard> resources = [
     route: Routes.additionalResources,
   ),
   HomeCard(
-    title: Strings.rotemInterpretation,
+    title: Strings.rotemInput,
     description:
         'Clinical decision support tool based on WH Rotational Thromboelastometry(ROTEM) Usage Guidelines',
-    route: Routes.staffWelfare,
+    route: Routes.rotemInput,
   )
 ];
 

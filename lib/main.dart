@@ -8,6 +8,7 @@ import 'appState.dart';
 import 'error_reporting.dart';
 import 'utils/storage.dart';
 import 'wh_app.dart';
+import './rotem/data_classes_rotem.dart';
 
 void main() {
   // Add this, and it should be the first line in main method to ensure no crashes before runApp()
@@ -43,6 +44,9 @@ void main() {
           ChangeNotifierProvider(
             create: (context) => PrivacyStateNotifier(storedPrivacyState),
           ),
+//          ChangeNotifierProvider<ROTEMData>(
+//            create: (context) => ROTEMData(),
+//          ),
         ],
         child: const WHApp(),
       ),
