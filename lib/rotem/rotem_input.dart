@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:wh_covid19/routes.dart';
 
 import 'data_classes_rotem.dart';
 import 'ROTEM_card.dart';
 import 'rotem_results.dart';
 import '../style.dart';
-import '../widget/all.dart';
+
 import 'constants.dart';
 import 'radio_button.dart';
-import 'package:wh_covid19/style.dart';
 
 class ROTEMInput extends StatefulWidget {
   @override
@@ -57,7 +55,6 @@ class _ROTEMInputState extends State<ROTEMInput> {
                         onPress: () {
                           Provider.of<ROTEMData>(context, listen: false);
                           rotem.setType(ROTEMType.Obstetrics);
-                          print('Obstetrics selected');
                         },
                       ),
                     ),
@@ -78,7 +75,6 @@ class _ROTEMInputState extends State<ROTEMInput> {
                         onPress: () {
                           Provider.of<ROTEMData>(context, listen: false);
                           rotem.setType(ROTEMType.General);
-                          print('General selected');
                         },
                       ),
                     )
@@ -106,7 +102,6 @@ class _ROTEMInputState extends State<ROTEMInput> {
                     max: 15,
                     onChanged: (double _newValue) {
                       rotem.setFIBTEMA5(_newValue.round());
-                      print('FIBTEMA5 changed');
                     },
                   ),
                 ),
@@ -120,7 +115,6 @@ class _ROTEMInputState extends State<ROTEMInput> {
                     onChange: (level _value) {
                       Provider.of<ROTEMData>(context, listen: false)
                           .setEXTEMA5(_value);
-                      print('EXTEM A5 changed');
                     }),
                 SizedBox(height: 20),
                 Text('EXTEM CT', style: Styles.textH3),
@@ -132,7 +126,6 @@ class _ROTEMInputState extends State<ROTEMInput> {
                     onChange: (level _value) {
                       Provider.of<ROTEMData>(context, listen: false)
                           .setEXTEMCT(_value);
-                      print('EXTEM CT changed');
                     }),
               ],
             ),

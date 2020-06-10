@@ -17,25 +17,27 @@ class Button extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-        onTap: () {
-          onPress();
-        },
-        child: Container(
-            child: Center(child: buttonChild),
-            margin: EdgeInsets.all(10),
-            padding: EdgeInsets.all(20),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              color: colour,
-              border: Border.all(color: kPurpleText, width: borderWidth),
-              boxShadow: shadow
-                  ? [
-                      BoxShadow(
-                          color: kGreyText,
-                          offset: Offset(5, 5),
-                          blurRadius: 10)
-                    ]
-                  : null,
-            )));
+      onTap: () {
+        onPress();
+      },
+      child: Container(
+        child: Center(child: buttonChild),
+        margin: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          color: colour,
+          border: Border.all(color: kPurpleText, width: borderWidth),
+          boxShadow: shadow
+              ? [
+                  BoxShadow(
+                      color: kGreyText,
+                      offset: const Offset(5, 5),
+                      blurRadius: 10)
+                ]
+              : null,
+        ),
+      ),
+    );
   }
 }

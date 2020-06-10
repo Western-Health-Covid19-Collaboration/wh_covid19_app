@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import '../widget/all.dart';
 import 'constants.dart';
-import 'rotem_input.dart';
-import 'rotem_results.dart';
-import 'data_classes_rotem.dart';
 
 class AdviceWidget extends StatelessWidget {
   AdviceWidget({this.title, this.subtitle, this.list});
@@ -15,14 +11,14 @@ class AdviceWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (list.isEmpty) {
-      return SizedBox(height: 0);
+      return const SizedBox(height: 0);
     } else {
       return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Container(
               decoration: headerDecoration,
-              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 6),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 6),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -33,8 +29,8 @@ class AdviceWidget extends StatelessWidget {
             ),
             ListView.builder(
                 shrinkWrap: true,
-                padding: EdgeInsets.fromLTRB(15, 5, 5, 10),
-                physics: NeverScrollableScrollPhysics(),
+                padding: const EdgeInsets.fromLTRB(15, 5, 5, 10),
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: list.length,
                 itemBuilder: (context, index) {
                   return Text(list[index].toString(), style: kSmaller);

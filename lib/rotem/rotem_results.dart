@@ -3,13 +3,11 @@ import 'package:provider/provider.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 import '../style.dart';
-import '../widget/all.dart';
 
 import 'advice_widget.dart';
+import 'button.dart';
 import 'constants.dart';
 import 'data_classes_rotem.dart';
-
-import 'button.dart';
 
 class ROTEMResults extends StatelessWidget {
   @override
@@ -76,10 +74,10 @@ class ROTEMResults extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('ROTEM Interpretation'),
+        title: const Text('ROTEM Interpretation'),
       ),
       body: SafeArea(
-        minimum: EdgeInsets.all(20),
+        minimum: const EdgeInsets.all(20),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -88,7 +86,7 @@ class ROTEMResults extends StatelessWidget {
               anyProduct
                   ? Text('Consider', style: kLargeBold)
                   : Text('No products currently indicated', style: kLargeBold),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               AdviceWidget(
                   title: 'Fibrinogen',
                   subtitle:
@@ -107,9 +105,9 @@ class ROTEMResults extends StatelessWidget {
                   ? Text(
                       '\nRepeat ROTEM 10 minutes after completion of each intervention to assess response',
                       style: Styles.textH4)
-                  : SizedBox(height: 0),
+                  : const SizedBox(height: 0),
               SizedBox(height: 20),
-              Divider(),
+              const Divider(),
               Text('General Measures', style: kSmallerBold),
               Text(
                   '• Exclude ${type == ROTEMType.Obstetrics ? 'obstetric' : 'surgical'} cause for bleeding\n• Transfuse RBC to appropriate threshold\n• Avoid hypothermia, hypocalcaemia, acidosis',
