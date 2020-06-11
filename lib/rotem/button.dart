@@ -30,9 +30,9 @@ class Button extends StatelessWidget {
           border: Border.all(color: AppColors.purple500, width: borderWidth),
           boxShadow: shadow
               ? [
-                  BoxShadow(
+                  const BoxShadow(
                       color: AppColors.grey500,
-                      offset: const Offset(5, 5),
+                      offset: Offset(5, 5),
                       blurRadius: 10)
                 ]
               : null,
