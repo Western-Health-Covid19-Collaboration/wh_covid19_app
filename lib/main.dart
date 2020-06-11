@@ -43,9 +43,6 @@ void main() {
           ChangeNotifierProvider(
             create: (context) => PrivacyStateNotifier(storedPrivacyState),
           ),
-//          ChangeNotifierProvider<ROTEMData>(
-//            create: (context) => ROTEMData(),
-//          ),
         ],
         child: const WHApp(),
       ),

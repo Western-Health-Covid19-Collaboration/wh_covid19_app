@@ -6,6 +6,11 @@ import 'routes.dart';
 import 'strings.dart';
 import 'style.dart';
 import 'utils/firebase.dart';
+// ignore: directives_ordering
+import 'rotem/data_classes_rotem.dart';
+import 'rotem/rotem_infographic_page.dart';
+import 'rotem/rotem_input.dart';
+import 'rotem/rotem_results.dart';
 import 'view/acknowledgements_view.dart';
 import 'view/airway/checklist/intubation_checklist_infographic_page.dart';
 import 'view/airway/checklist/intubation_checklist_page.dart';
@@ -45,10 +50,6 @@ import 'view/resources/wh_resources_view.dart';
 import 'view/sbs_guide_view.dart';
 import 'view/settings_view.dart';
 import 'view/staff_welfare/your_welfare_view.dart';
-import 'rotem/data_classes_rotem.dart';
-import 'rotem/rotem_input.dart';
-import 'rotem/rotem_results.dart';
-import 'rotem/rotem_infographic_page.dart';
 
 class WHApp extends StatelessWidget {
   const WHApp();

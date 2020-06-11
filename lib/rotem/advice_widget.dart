@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
+import '../style.dart';
 
 class AdviceWidget extends StatelessWidget {
-  AdviceWidget({this.title, this.subtitle, this.list});
+  const AdviceWidget({this.title, this.subtitle, this.list});
 
   final String title;
   final String subtitle;
@@ -17,13 +17,18 @@ class AdviceWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Container(
-              decoration: headerDecoration,
+              decoration: BoxDecoration(
+                  color: const Color(0x339E9E9E), //Colors.grey.withAlpha(30)
+                  border: Border(
+                    top: BorderSide(width: 2, color: AppColors.grey50),
+                    bottom: BorderSide(width: 0.5, color: AppColors.grey50),
+                  )),
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 6),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text('$title', style: kMediumBold),
-                  Text('$subtitle', style: kSmaller),
+                  Text('$title', style: Styles.textH3),
+                  Text('$subtitle', style: Styles.textH5),
                 ],
               ),
             ),
@@ -33,7 +38,8 @@ class AdviceWidget extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: list.length,
                 itemBuilder: (context, index) {
-                  return Text(list[index].toString(), style: kSmaller);
+                  return Text(list[index].toString(),
+                      style: Styles.textSemiBold);
                 }),
           ]);
     }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wh_covid19/style.dart';
+import '../style.dart';
 
 import 'data_classes_rotem.dart';
 
@@ -13,7 +13,7 @@ class RadioButtonLevel extends StatefulWidget {
   final String label3;
   final void Function(level selected) onChange;
 
-  RadioButtonLevel(
+  const RadioButtonLevel(
       {this.groupValue,
       this.value1 = level.low,
       this.value2 = level.middle,
@@ -76,42 +76,3 @@ class _RadioButtonLevelState extends State<RadioButtonLevel> {
     );
   }
 }
-
-//class RadioButtonYesNo extends StatefulWidget {
-//  final bool groupValue;
-//  final void Function(bool selected) onChange;
-//  RadioButtonYesNo({this.groupValue, this.onChange});
-//
-//  @override
-//  _RadioButtonYesNoState createState() => _RadioButtonYesNoState();
-//}
-//
-//class _RadioButtonYesNoState extends State<RadioButtonYesNo> {
-//  @override
-//  Widget build(BuildContext context) {
-//    return Row(
-//        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//        children: <Widget>[
-//          Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-//            Radio(
-//                activeColor: kPurpleDark ?? kGreyText,
-//                groupValue: widget.groupValue,
-//                value: true,
-//                onChanged: (_value) {
-//                  widget.onChange(_value);
-//                }),
-//            Text('Yes', style: kSmaller)
-//          ]),
-//          Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-//            Radio(
-//                activeColor: kPurpleDark ?? kGreyText,
-//                groupValue: widget.groupValue,
-//                value: false,
-//                onChanged: (_value) {
-//                  widget.onChange(_value);
-//                }),
-//            Text('No', style: kSmaller)
-//          ])
-//        ]);
-//  }
-//}

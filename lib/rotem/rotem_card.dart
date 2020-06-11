@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../style.dart';
 
 class RotemCard extends StatelessWidget {
-  RotemCard(
+  const RotemCard(
       {this.colour = AppColors.purple500,
       this.iconColour = AppColors.purple50,
       this.text,
@@ -49,7 +49,7 @@ class RotemCard extends StatelessWidget {
               Expanded(
                 flex: 2,
                 child: Padding(
-                  padding: EdgeInsets.all(15),
+                  padding: const EdgeInsets.all(15),
                   child: FittedBox(
                     alignment: Alignment.center,
                     fit: BoxFit.fitHeight,

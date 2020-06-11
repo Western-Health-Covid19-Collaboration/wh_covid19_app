@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
+
+import '../style.dart';
 
 class Button extends StatelessWidget {
-  Button(
+  const Button(
       {this.colour, // =const COLOR gives a default state
       this.buttonChild,
       this.onPress,
@@ -21,22 +22,22 @@ class Button extends StatelessWidget {
         onPress();
       },
       child: Container(
-        child: Center(child: buttonChild),
         margin: const EdgeInsets.all(10),
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
           color: colour,
-          border: Border.all(color: kPurpleText, width: borderWidth),
+          border: Border.all(color: AppColors.purple500, width: borderWidth),
           boxShadow: shadow
               ? [
                   BoxShadow(
-                      color: kGreyText,
+                      color: AppColors.grey500,
                       offset: const Offset(5, 5),
                       blurRadius: 10)
                 ]
               : null,
         ),
+        child: Center(child: buttonChild),
       ),
     );
   }

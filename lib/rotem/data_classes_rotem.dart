@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 
-
-enum ROTEMType { Obstetrics, General }
+enum ROTEMType { obstetrics, general }
 enum level { low, middle, high }
 
 class ROTEMData extends ChangeNotifier {
-  ROTEMType selectedPatientType = null;
-  int FIBTEMA5 = 14;
-  level EXTEMA5;
-  level EXTEMCT;
+  ROTEMType selectedPatientType;
+  int fibtemA5 = 14;
+  level extemA5;
+  level extemCT;
 
   void setType(ROTEMType input) {
     selectedPatientType = input;
@@ -16,22 +15,22 @@ class ROTEMData extends ChangeNotifier {
   }
 
   void setFIBTEMA5(int input) {
-    FIBTEMA5 = input;
+    fibtemA5 = input;
     notifyListeners();
   }
 
   void setEXTEMA5(level input) {
-    EXTEMA5 = input;
+    extemA5 = input;
     notifyListeners();
   }
 
   void setEXTEMCT(level input) {
-    EXTEMCT = input;
+    extemCT = input;
     notifyListeners();
   }
 
   bool get validate {
-    if (selectedPatientType != null && EXTEMA5 != null && EXTEMCT != null) {
+    if (selectedPatientType != null && extemA5 != null && extemCT != null) {
       return true;
     } else {
       return false;
@@ -40,8 +39,8 @@ class ROTEMData extends ChangeNotifier {
 
   void reset() {
     selectedPatientType = null;
-    FIBTEMA5 = 14;
-    EXTEMA5 = null;
-    EXTEMCT = null;
+    fibtemA5 = 14;
+    extemA5 = null;
+    extemCT = null;
   }
 }
