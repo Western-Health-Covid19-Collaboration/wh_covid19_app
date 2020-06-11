@@ -34,7 +34,7 @@ class RotemCard extends StatelessWidget {
               color: colour,
               borderRadius: BorderRadius.circular(20),
               boxShadow: highlight
-                  ? [BoxShadow(color: AppColors.grey50, blurRadius: 8)]
+                  ? [const BoxShadow(color: AppColors.grey50, blurRadius: 8)]
                   : null),
           margin: const EdgeInsets.all(10),
           padding: const EdgeInsets.all(15),
