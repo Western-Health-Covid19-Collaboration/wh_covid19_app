@@ -88,7 +88,7 @@ class ROTEMResults extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               if (anyProduct)
-                Text('Consider', style: Styles.textH1)
+                const Text('Consider', style: Styles.textH1)
               else
                 Text('No products currently indicated', style: Styles.textH1),
               const SizedBox(height: 20),
