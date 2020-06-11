@@ -40,7 +40,7 @@ class _ROTEMInputState extends State<ROTEMInput> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'Complete at 5 minutes',
                   style: Styles.textH2,
                   textAlign: TextAlign.left,
@@ -91,7 +91,7 @@ class _ROTEMInputState extends State<ROTEMInput> {
                   ],
                 ),
                 const SizedBox(height: 20),
-                Text('FIBTEM A5', style: Styles.textH3),
+                const Text('FIBTEM A5', style: Styles.textH3),
                 Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -102,7 +102,7 @@ class _ROTEMInputState extends State<ROTEMInput> {
                               ? '> 15'
                               : rotem.fibtemA5.toString(),
                           style: Styles.textH4),
-                      Text('mm', style: Styles.textH4)
+                      const Text('mm', style: Styles.textH4)
                     ]),
                 SliderTheme(
                   data: rotemSlider,
@@ -116,7 +116,7 @@ class _ROTEMInputState extends State<ROTEMInput> {
                   ),
                 ),
                 const SizedBox(height: 20),
-                Text('EXTEM A5', style: Styles.textH3),
+                const Text('EXTEM A5', style: Styles.textH3),
                 RadioButtonLevel(
                     groupValue: rotem.extemA5,
                     label1: '< 25 mm',
@@ -127,7 +127,7 @@ class _ROTEMInputState extends State<ROTEMInput> {
                           .setEXTEMA5(_value);
                     }),
                 const SizedBox(height: 20),
-                Text('EXTEM CT', style: Styles.textH3),
+                const Text('EXTEM CT', style: Styles.textH3),
                 RadioButtonLevel(
                     groupValue: rotem.extemCT,
                     label1: '< 80 s',
