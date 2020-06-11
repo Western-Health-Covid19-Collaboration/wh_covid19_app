@@ -90,7 +90,8 @@ class ROTEMResults extends StatelessWidget {
               if (anyProduct)
                 const Text('Consider', style: Styles.textH1)
               else
-                Text('No products currently indicated', style: Styles.textH1),
+                const Text('No products currently indicated',
+                    style: Styles.textH1),
               const SizedBox(height: 20),
               AdviceWidget(
                   title: 'Fibrinogen',
@@ -107,21 +108,21 @@ class ROTEMResults extends StatelessWidget {
                   subtitle: '',
                   list: productsTXA),
               if (anyProduct)
-                Text(
+                const Text(
                     '\nRepeat ROTEM 10 minutes after completion of each intervention to assess response',
                     style: Styles.textH3)
               else
                 const SizedBox(height: 0),
               const SizedBox(height: 20),
               const Divider(),
-              Text('General Measures', style: Styles.textH4),
+              const Text('General Measures', style: Styles.textH4),
               Text(
                   '• Exclude ${type == ROTEMType.obstetrics ? 'obstetric' : 'surgical'} cause for bleeding\n• Transfuse RBC to appropriate threshold\n• Avoid hypothermia, hypocalcaemia, acidosis',
                   style: Styles.textSemiBold),
               const SizedBox(height: 30),
               Button(
                 colour: AppColors.purple500,
-                buttonChild: AutoSizeText('Return to main menu',
+                buttonChild: const AutoSizeText('Return to main menu',
                     style: Styles.textH4, maxLines: 1),
                 onPress: () {
                   //reset choices
