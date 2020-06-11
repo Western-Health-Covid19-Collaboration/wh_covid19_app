@@ -17,8 +17,8 @@ class AdviceWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Container(
-              decoration: BoxDecoration(
-                  color: const Color(0x339E9E9E), //Colors.grey.withAlpha(30)
+              decoration: const BoxDecoration(
+                  color: Color(0x339E9E9E), //Colors.grey.withAlpha(30)
                   border: Border(
                     top: BorderSide(width: 2, color: AppColors.grey50),
                     bottom: BorderSide(width: 0.5, color: AppColors.grey50),
