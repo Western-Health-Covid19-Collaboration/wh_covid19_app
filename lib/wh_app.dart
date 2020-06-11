@@ -48,6 +48,7 @@ import 'view/staff_welfare/your_welfare_view.dart';
 import 'rotem/data_classes_rotem.dart';
 import 'rotem/rotem_input.dart';
 import 'rotem/rotem_results.dart';
+import 'rotem/rotem_infographic_page.dart';
 
 class WHApp extends StatelessWidget {
   const WHApp();
@@ -95,6 +96,7 @@ class WHApp extends StatelessWidget {
           Routes.whResources: (context) => WHResourcesView(),
           Routes.rotemInput: (context) => ROTEMInput(),
           Routes.rotemResults: (context) => ROTEMResults(),
+          Routes.rotemInfographicTitle: (context) => RotemInfographicPage(),
         },
         // Analytics route observer to track PageRoute transitions
         navigatorObservers: <NavigatorObserver>[Analytics.observer],
@@ -169,6 +171,11 @@ class WHApp extends StatelessWidget {
             case Routes.rotemResults:
               return MaterialPageRoute<void>(
                 builder: (context) => ROTEMResults(),
+                fullscreenDialog: true,
+              );
+            case Routes.rotemInfographicTitle:
+              return MaterialPageRoute<void>(
+                builder: (context) => RotemInfographicPage(),
                 fullscreenDialog: true,
               );
             // Fallback, won't be called unless an unknown route is called

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../strings.dart';
 import '../../../style.dart';
-import '../../reusable_infographic_page.dart';
+import 'package:wh_covid19/view/reusable_infographic_page.dart';
 
 class VentilationInfographicPage extends StatelessWidget {
   @override

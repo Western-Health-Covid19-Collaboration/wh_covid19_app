@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_svg/svg.dart';
+import 'rotem_slider.dart';
 
 import 'data_classes_rotem.dart';
-import 'ROTEM_card.dart';
+import 'rotem_card.dart';
 import 'rotem_results.dart';
 import '../style.dart';
+import '../routes.dart';
 
 import 'constants.dart';
 import 'radio_button.dart';
@@ -20,8 +23,17 @@ class _ROTEMInputState extends State<ROTEMInput> {
     return Consumer<ROTEMData>(builder: (context, rotem, child) {
       return Scaffold(
         appBar: AppBar(
-          title: Text('ROTEM Interpretation'),
+          title: Text('ROTEM'),
           backgroundColor: AppColors.backgroundBlue,
+          actions: <Widget>[
+            IconButton(
+              icon: SvgPicture.asset(
+                'assets/images/icon/SVG/icon_infographic.svg',
+              ),
+              onPressed: () =>
+                  Navigator.of(context).pushNamed(Routes.rotemInfographicTitle),
+            )
+          ],
         ),
         body: SafeArea(
           minimum: EdgeInsets.all(20),
@@ -64,8 +76,8 @@ class _ROTEMInputState extends State<ROTEMInput> {
                         icon: Icons.local_hospital,
                         iconSize: 58,
                         colour: rotem.selectedPatientType == ROTEMType.General
-                            ? AppColors.green50
-                            : AppColors.green500.withAlpha(100),
+                            ? AppColors.green800
+                            : AppColors.green50.withAlpha(100),
                         iconColour:
                             rotem.selectedPatientType == ROTEMType.General
                                 ? AppColors.grey50
@@ -91,11 +103,11 @@ class _ROTEMInputState extends State<ROTEMInput> {
                           rotem.FIBTEMA5 == 15
                               ? '> 15'
                               : rotem.FIBTEMA5.toString(),
-                          style: kSmallXBold),
-                      Text('mm', style: kSmallXBold)
+                          style: Styles.textH4),
+                      Text('mm', style: Styles.textH4)
                     ]),
                 SliderTheme(
-                  data: kSlider,
+                  data: rotemSlider,
                   child: Slider(
                     value: rotem.FIBTEMA5.toDouble(),
                     min: 0,

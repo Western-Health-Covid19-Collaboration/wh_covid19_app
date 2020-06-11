@@ -61,6 +61,9 @@ class Routes {
   static const _resources = '/resources';
   static const whResources = '$_resources/definitive';
   static const additionalResources = '$_resources/additional';
+
+  // ROTEM routes
   static const rotemInput = '/rotem/Input';
   static const rotemResults = 'Rotem/Results';
+  static const rotemInfographicTitle = 'rotem/algorithms';
 }
