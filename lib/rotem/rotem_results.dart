@@ -75,6 +75,10 @@ class ROTEMResults extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        // Warning brightness interacts with SystemUiOverlayStyle
+        // See system_bars.dart comments
+        brightness: Brightness.light,
+        iconTheme: Styles.appBarIconTheme,
         title: const Text(
           'ROTEM Interpretation',
           style: Styles.textH5,
