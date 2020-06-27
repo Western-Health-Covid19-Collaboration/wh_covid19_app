@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 class ICUDailyRoundSteps {
   final String heading, subheading;
   final List<ICUDailyRoundStepSection> sections;
@@ -21,7 +23,8 @@ class ICUDailyRoundStepSubsection {
 }
 
 class ICUDailyRoundItem {
-  final String icon, title, subtitle;
+  final IconData icon;
+  final String title, subtitle;
 
   const ICUDailyRoundItem({this.icon, this.title, this.subtitle});
 }

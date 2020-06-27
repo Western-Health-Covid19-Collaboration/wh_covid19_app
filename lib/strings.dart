@@ -12,7 +12,7 @@ class Strings {
   static const String disclaimerBody = '''
 The Western Health Critical Care COVID-19 Application ('the app') has been 
 developed to support the implementation of selected Western Health guidelines, protocols and advice by anaesthesia and critical care doctors at Western Health. The app reproduces content developed by contributing members of the COVID-19 Guidelines Working Group, the most current versions of which can be found at the Western Health Novel Coronavirus Information microsite https://coronavirus.wh.org.au/clinical-guidelines. 
-\nWe provide no warranty that the information contained within the app is accurate, up to date or complete and in no circumstance does the information constitute professional advice. You are responsible for independently verifying the information and acknowledge that the guidance provided may not be applicable in all circumstances or for all patients..
+\nWe provide no warranty that the information contained within the app is accurate, up to date or complete and in no circumstance does the information constitute professional advice. You are responsible for independently verifying the information and acknowledge that the guidance provided may not be applicable in all circumstances or for all patients.
 \nTo the extent permitted by law, Western Health, Western Health employees, the designers, developers, testers, reviewers, organisers and all other contributors to the project (‘app developers’) have no liability (including liability arising as a result of the negligence of any of the app developers or the app developers jointly) to the users for any loss, damage, cost or expense incurred or arising by reason of any person using or relying on the information and whether caused by reason of any error, negligent act, omission or misinterpretation in the app or otherwise.
 \nThe Western Health trademark and app cannot be copied, modified, reproduced, published, uploaded, distributed or posted without the prior written consent of Western Health. 
 \nUse of this app constitutes acknowledgement of these conditions.\n\n\n\n''';
@@ -106,4 +106,9 @@ developed to support the implementation of selected Western Health guidelines, p
   /// Resources
   static const String whResourcesTitle = 'WH Resources';
   static const String additionalResourcesTitle = 'Additional Resources';
+
+  ///ROTEM resources
+  static const String rotemInput = 'ROTEM Interpretation';
+  static const String rotemResults = 'Rotem Results';
+  static const String rotemInfographicTitle = 'ROTEM Algorithms';
 }

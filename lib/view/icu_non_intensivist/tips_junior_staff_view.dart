@@ -13,12 +13,12 @@ class TipsJuniorStaffView extends StatelessWidget {
     'Airway',
     HomeCard(
         title: 'Airway Assessment',
-        description: 'Basic guide for JMS',
+        description: 'Basic Guide for JMS',
         route: Routes.airwayAssessment),
     'Breathing',
     HomeCard(
         title: 'Ventilator basics',
-        description: 'Simple guide for JMS',
+        description: 'Simple Guide for JMS',
         route: Routes.ventBasics),
     HomeCard(
         title: 'Proning',
@@ -31,7 +31,7 @@ class TipsJuniorStaffView extends StatelessWidget {
     'Circulation',
     HomeCard(
         title: 'CVS Basics',
-        description: 'Simple guide for JMS',
+        description: 'Simple Guide for JMS',
         route: Routes.cvsBasics),
     HomeCard(
         title: 'ALS/BLS Pandemic Modifications',
@@ -40,23 +40,28 @@ class TipsJuniorStaffView extends StatelessWidget {
     'Disability/Neurological',
     HomeCard(
         title: 'Neuro Basics',
-        description: 'Simple guide for JMS',
+        description: 'Simple Guide for JMS',
         route: Routes.neuroBasics),
     'Exposure/Infection',
     HomeCard(
         title: 'ID Basics',
-        description: 'Simple guide for JMS',
+        description: 'Simple Guide for JMS',
         route: Routes.infectionBasics),
     'Fluids/Renal',
     HomeCard(
         title: 'Renal Basics',
-        description: 'Simple guide for JMS',
+        description: 'Simple Guide for JMS',
         route: Routes.renalBasics),
     'GIT',
     HomeCard(
         title: 'GIT Basics',
-        description: 'Simple guide for JMS',
+        description: 'Simple Guide for JMS',
         route: Routes.gastroBasics),
+    'Welfare',
+    HomeCard(
+        title: 'Your welfare',
+        description: 'ASA advice on wellbeing throughout the pandemic',
+        route: Routes.staffWelfare),
   ];
   @override
   Widget build(BuildContext context) {

@@ -19,7 +19,7 @@ class Routes {
       '/ppe/off/method_1/infographic';
   static const ppeOffGuidanceMethod2Infographic =
       '/ppe/off/method_2/infographic';
-  static const staffWelfare = '/staff_welfare';
+//  static const staffWelfare = '/staff_welfare';
   static const sbsGuidance = '/sbs_guidance';
 
   // Info routes
@@ -46,6 +46,7 @@ class Routes {
   static const infectionBasics = '$_icuNonIntensivist/infectionBasics';
   static const renalBasics = '$_icuNonIntensivist/renalBasics';
   static const gastroBasics = '$_icuNonIntensivist/gastroBasics';
+  static const staffWelfare = '/staff_welfare';
 
   // Airway routes
   static const intubationGuidance = '/airway/guidance';
@@ -60,4 +61,9 @@ class Routes {
   static const _resources = '/resources';
   static const whResources = '$_resources/definitive';
   static const additionalResources = '$_resources/additional';
+
+  // ROTEM routes
+  static const rotemInput = '/rotem/Input';
+  static const rotemResults = 'Rotem/Results';
+  static const rotemInfographicTitle = 'rotem/algorithms';
 }

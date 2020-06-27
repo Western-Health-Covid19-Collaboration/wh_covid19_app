@@ -87,6 +87,8 @@ PODS:
     - Flutter
   - path_provider (0.0.1):
     - Flutter
+  - path_provider_linux (0.0.1):
+    - Flutter
   - path_provider_macos (0.0.1):
     - Flutter
   - PromisesObjC (1.2.8)
@@ -123,6 +125,7 @@ DEPENDENCIES:
   - native_pdf_renderer (from `.symlinks/plugins/native_pdf_renderer/ios`)
   - package_info (from `.symlinks/plugins/package_info/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
+  - path_provider_linux (from `.symlinks/plugins/path_provider_linux/ios`)
   - path_provider_macos (from `.symlinks/plugins/path_provider_macos/ios`)
   - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
   - shared_preferences_macos (from `.symlinks/plugins/shared_preferences_macos/ios`)
@@ -169,6 +172,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/package_info/ios"
   path_provider:
     :path: ".symlinks/plugins/path_provider/ios"
+  path_provider_linux:
+    :path: ".symlinks/plugins/path_provider_linux/ios"
   path_provider_macos:
     :path: ".symlinks/plugins/path_provider_macos/ios"
   shared_preferences:
@@ -215,6 +220,7 @@ SPEC CHECKSUMS:
   native_pdf_renderer: fa374da660730abe059e7a178e79895dd202f007
   package_info: 873975fc26034f0b863a300ad47e7f1ac6c7ec62
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
+  path_provider_linux: 4d630dc393e1f20364f3e3b4a2ff41d9674a84e4
   path_provider_macos: f760a3c5b04357c380e2fddb6f9db6f3015897e0
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   shared_preferences: af6bfa751691cdc24be3045c43ec037377ada40d

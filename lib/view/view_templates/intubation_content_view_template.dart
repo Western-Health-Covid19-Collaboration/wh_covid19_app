@@ -41,9 +41,10 @@ class IntubationContentViewTemplate extends StatelessWidget {
                 padding: const EdgeInsets.all(16),
                 child: Stack(
                   children: <Widget>[
-                    Text(
+                    Icon(
                       item.icon,
-                      style: Styles.textH4,
+                      size: 22,
+                      color: Colors.grey[700],
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 40),

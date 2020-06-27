@@ -21,9 +21,10 @@ class ICUDailyRoundStepsCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.max,
               children: [
-                Text(
+                Icon(
                   item.icon,
-                  style: Styles.textH4,
+                  size: 22,
+                  color: Colors.grey[700],
                 ),
               ],
             ),

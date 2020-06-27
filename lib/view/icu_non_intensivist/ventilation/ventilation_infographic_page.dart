@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../strings.dart';
 import '../../../style.dart';
 import '../../reusable_infographic_page.dart';
