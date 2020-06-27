@@ -28,8 +28,7 @@ class _ROTEMInputState extends State<ROTEMInput> {
               icon: SvgPicture.asset(
                 'assets/images/icon/SVG/icon_infographic.svg',
               ),
-              onPressed: () =>
-                  Navigator.of(context).pushNamed(Routes.rotemInfographicTitle),
+              onPressed: () => Navigator.of(context).pushNamed(Routes.rotemInfographicTitle),
             )
           ],
         ),
@@ -52,16 +51,13 @@ class _ROTEMInputState extends State<ROTEMInput> {
                         text: 'Obstetrics',
                         icon: Icons.pregnant_woman,
                         iconSize: 58,
-                        colour:
-                            rotem.selectedPatientType == ROTEMType.obstetrics
-                                ? AppColors.purple500
-                                : AppColors.purple500.withAlpha(100),
-                        iconColour:
-                            rotem.selectedPatientType == ROTEMType.obstetrics
-                                ? AppColors.purple50
-                                : AppColors.purple50.withAlpha(100),
-                        highlight:
-                            rotem.selectedPatientType == ROTEMType.obstetrics,
+                        colour: rotem.selectedPatientType == ROTEMType.obstetrics
+                            ? AppColors.purple500
+                            : AppColors.purple500.withAlpha(100),
+                        iconColour: rotem.selectedPatientType == ROTEMType.obstetrics
+                            ? AppColors.purple50
+                            : AppColors.purple50.withAlpha(100),
+                        highlight: rotem.selectedPatientType == ROTEMType.obstetrics,
                         onPress: () {
                           Provider.of<ROTEMData>(context, listen: false);
                           rotem.setType(ROTEMType.obstetrics);
@@ -76,12 +72,10 @@ class _ROTEMInputState extends State<ROTEMInput> {
                         colour: rotem.selectedPatientType == ROTEMType.general
                             ? AppColors.green800
                             : AppColors.green50.withAlpha(100),
-                        iconColour:
-                            rotem.selectedPatientType == ROTEMType.general
-                                ? AppColors.grey50
-                                : AppColors.grey500.withAlpha(100),
-                        highlight:
-                            rotem.selectedPatientType == ROTEMType.general,
+                        iconColour: rotem.selectedPatientType == ROTEMType.general
+                            ? AppColors.grey50
+                            : AppColors.grey500.withAlpha(100),
+                        highlight: rotem.selectedPatientType == ROTEMType.general,
                         onPress: () {
                           Provider.of<ROTEMData>(context, listen: false);
                           rotem.setType(ROTEMType.general);
@@ -97,11 +91,7 @@ class _ROTEMInputState extends State<ROTEMInput> {
                     crossAxisAlignment: CrossAxisAlignment.baseline,
                     textBaseline: TextBaseline.alphabetic,
                     children: <Widget>[
-                      Text(
-                          rotem.fibtemA5 == 15
-                              ? '> 15'
-                              : rotem.fibtemA5.toString(),
-                          style: Styles.textH4),
+                      Text(rotem.fibtemA5 == 15 ? '> 15' : rotem.fibtemA5.toString(), style: Styles.textH4),
                       const Text('mm', style: Styles.textH4)
                     ]),
                 SliderTheme(
@@ -123,20 +113,19 @@ class _ROTEMInputState extends State<ROTEMInput> {
                     label2: '25-35 mm',
                     label3: '> 35 mm',
                     onChange: (level _value) {
-                      Provider.of<ROTEMData>(context, listen: false)
-                          .setEXTEMA5(_value);
+                      Provider.of<ROTEMData>(context, listen: false).setEXTEMA5(_value);
                     }),
                 const SizedBox(height: 20),
                 const Text('EXTEM CT', style: Styles.textH3),
                 RadioButtonLevel(
-                    groupValue: rotem.extemCT,
-                    label1: '< 80 s',
-                    label2: '80-140 s',
-                    label3: '> 140 s',
-                    onChange: (level _value) {
-                      Provider.of<ROTEMData>(context, listen: false)
-                          .setEXTEMCT(_value);
-                    }),
+                  groupValue: rotem.extemCT,
+                  label1: '< 80 s',
+                  label2: '80-140 s',
+                  label3: '> 140 s',
+                  onChange: (level _value) {
+                    Provider.of<ROTEMData>(context, listen: false).setEXTEMCT(_value);
+                  },
+                ),
               ],
             ),
           ),
@@ -146,10 +135,7 @@ class _ROTEMInputState extends State<ROTEMInput> {
           child: FloatingActionButton(
             backgroundColor: AppColors.purple500,
             onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute<ROTEMResults>(
-                      builder: (context) => ROTEMResults()));
+              Navigator.push(context, MaterialPageRoute<ROTEMResults>(builder: (context) => ROTEMResults()));
             },
             child: Icon(Icons.arrow_forward),
           ),
