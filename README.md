@@ -1,3 +1,16 @@
+**🚨🚨🚨 The WHAC19 project is no longer being developed & maintained.  🚨🚨🚨** 
+
+We are incredibly grateful to all our [contributors](#Contributors) - we did great things together
+during the most difficult of times ❤️
+
+Thank-you everybody for the huge amounts of effort which was contributed to this project.
+
+This projects open issues, branches and PR's have been cleaned out and put in a state which gives 
+an accurate snapshot of the project.  We are not soliciting pull requests or other contributions.  
+The project is in a state where it could be picked up and used as a 
+basis for other hospital informational apps.  Please make sure you check through the list of
+open [issues](https://github.com/Western-Health-Covid19-Collaboration/wh_covid19_app/issues) before beginning any work.
+
 # WHAC19 - Western Health Anaesthesia Covid-19
 
 The WHAC19 app is a tool to safeguard the welfare of Western Health anaesthetists during COVID-19 and provide instant access to the most up-to-date information for time-critical procedures to ensure optimal patient care.  This app will contain information for frontline medical staff on subjects such as:
